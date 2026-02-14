@@ -1,7 +1,30 @@
 'use client'
 
-import { useId } from 'react'
+import { useId, useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+
+/** Startet Animation wenn Element sichtbar ist ODER nach Fallback-Zeit (für iOS/Safari) */
+function useVisibleOnce(fallbackMs = 2500) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true)
+      },
+      { rootMargin: '100px', threshold: 0 }
+    )
+    observer.observe(el)
+    const t = setTimeout(() => setVisible(true), fallbackMs)
+    return () => {
+      observer.disconnect()
+      clearTimeout(t)
+    }
+  }, [fallbackMs])
+  return { ref, visible }
+}
 
 /** Dekorative Gradient-Blobs für moderne Hintergründe */
 export function GradientBlobs() {
@@ -70,8 +93,9 @@ export function GlassCard({
   )
 }
 
-/** SEO Ranking-Chart: Moderner Area-Chart mit weicher Kurve – iOS/Safari-kompatibel */
+/** SEO Ranking-Chart: Area-Chart mit Animation – läuft auch auf iOS (Fallback-Timer) */
 export function SeoRankingVisual() {
+  const { ref, visible } = useVisibleOnce(2500)
   const id = useId().replace(/:/g, '-')
   const areaGradId = `areaGrad-${id}`
   const lineGradId = `lineGrad-${id}`
@@ -115,7 +139,13 @@ export function SeoRankingVisual() {
   const areaPath = `${curvePath} L ${points[points.length - 1].x} ${baseY} L ${points[0].x} ${baseY} Z`
 
   return (
-    <div className="relative w-full min-h-[200px] sm:min-h-[220px]">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 12 }}
+      animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
+      transition={{ duration: 0.5 }}
+      className="relative w-full min-h-[200px] sm:min-h-[220px]"
+    >
       <svg
         viewBox={`0 0 ${width} ${height}`}
         className="w-full max-w-lg mx-auto block"
@@ -135,28 +165,46 @@ export function SeoRankingVisual() {
           </linearGradient>
         </defs>
 
-        {/* Area-Füllung – sofort sichtbar, keine Animation für zuverlässiges iOS-Rendering */}
-        <path d={areaPath} fill={`url(#${areaGradId})`} />
+        {/* Area-Füllung mit Animation */}
+        <motion.path
+          d={areaPath}
+          fill={`url(#${areaGradId})`}
+          initial={{ opacity: 0 }}
+          animate={visible ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.8 }}
+        />
 
-        {/* Trend-Linie */}
-        <path
+        {/* Trend-Linie mit pathLength-Animation */}
+        <motion.path
           d={curvePath}
           fill="none"
           stroke={`url(#${lineGradId})`}
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
+          initial={{ pathLength: 0, opacity: 0.6 }}
+          animate={visible ? { pathLength: 1, opacity: 1 } : { pathLength: 0, opacity: 0.6 }}
+          transition={{ duration: 1, ease: 'easeOut' }}
         />
 
-        {/* Datenpunkte */}
+        {/* Datenpunkte mit Scale-Animation */}
         {points.map((p, i) => (
-          <g key={i}>
+          <motion.g
+            key={i}
+            initial={{ scale: 0 }}
+            animate={visible ? { scale: 1 } : { scale: 0 }}
+            transition={{ delay: 0.3 + i * 0.05, type: 'spring', stiffness: 300, damping: 20 }}
+          >
             <circle cx={p.x} cy={p.y} r={i === 6 ? 6 : 4} fill="white" stroke={`url(#${lineGradId})`} strokeWidth={i === 6 ? 3 : 2} />
-          </g>
+          </motion.g>
         ))}
 
-        {/* Platz 1 Badge – ohne SVG-Filter (Safari-Probleme), Schatten per CSS auf dem Container */}
-        <g>
+        {/* Platz 1 Badge – ohne SVG-Filter (Safari), mit Animation */}
+        <motion.g
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={visible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+          transition={{ delay: 0.7, type: 'spring', stiffness: 200, damping: 20 }}
+        >
           <rect
             x={points[6].x - 36}
             y={points[6].y - 42}
@@ -168,7 +216,7 @@ export function SeoRankingVisual() {
           <text x={points[6].x} y={points[6].y - 24} textAnchor="middle" fill="white" style={{ fontSize: 12, fontFamily: 'system-ui', fontWeight: 700 }}>
             Platz 1
           </text>
-        </g>
+        </motion.g>
 
         {/* Labels */}
         {labels.map((label, i) => (
@@ -188,6 +236,6 @@ export function SeoRankingVisual() {
           Sichtbarkeit über 6 Monate
         </text>
       </svg>
-    </div>
+    </motion.div>
   )
 }
