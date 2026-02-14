@@ -1,5 +1,6 @@
 'use client'
 
+import { useId } from 'react'
 import { motion } from 'framer-motion'
 
 /** Dekorative Gradient-Blobs für moderne Hintergründe */
@@ -69,8 +70,12 @@ export function GlassCard({
   )
 }
 
-/** SEO Ranking-Chart: Moderner Area-Chart mit weicher Kurve */
+/** SEO Ranking-Chart: Moderner Area-Chart mit weicher Kurve – iOS/Safari-kompatibel */
 export function SeoRankingVisual() {
+  const id = useId().replace(/:/g, '-')
+  const areaGradId = `areaGrad-${id}`
+  const lineGradId = `lineGrad-${id}`
+
   const values = [35, 55, 72, 88, 78, 65, 100]
   const labels = ['Start', 'M1', 'M2', 'M3', 'M4', 'M5', 'M6']
   const padding = { top: 50, right: 40, bottom: 50, left: 40 }
@@ -110,73 +115,48 @@ export function SeoRankingVisual() {
   const areaPath = `${curvePath} L ${points[points.length - 1].x} ${baseY} L ${points[0].x} ${baseY} Z`
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '0px' }}
-      transition={{ duration: 0.5 }}
-      className="relative w-full min-h-[200px] sm:min-h-[220px]"
-    >
+    <div className="relative w-full min-h-[200px] sm:min-h-[220px]">
       <svg
         viewBox={`0 0 ${width} ${height}`}
-        className="w-full max-w-lg mx-auto h-auto"
+        className="w-full max-w-lg mx-auto block"
         fill="none"
         preserveAspectRatio="xMidYMid meet"
-        style={{ minHeight: '200px' }}
+        style={{ minHeight: '200px', maxWidth: '100%' }}
       >
         <defs>
-          <linearGradient id="areaGrad" x1="0" y1="1" x2="0" y2="0">
+          <linearGradient id={areaGradId} x1="0" y1="1" x2="0" y2="0">
             <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.15" />
             <stop offset="50%" stopColor="#6366f1" stopOpacity="0.25" />
             <stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.12" />
           </linearGradient>
-          <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+          <linearGradient id={lineGradId} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0%" stopColor="#3b82f6" />
             <stop offset="100%" stopColor="#8b5cf6" />
           </linearGradient>
-          <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="4" stdDeviation="8" floodColor="#6366f1" floodOpacity="0.15" />
-          </filter>
         </defs>
 
-        {/* Area-Füllung mit Animation */}
-        <motion.path
-          d={areaPath}
-          fill="url(#areaGrad)"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        />
+        {/* Area-Füllung – sofort sichtbar, keine Animation für zuverlässiges iOS-Rendering */}
+        <path d={areaPath} fill={`url(#${areaGradId})`} />
 
         {/* Trend-Linie */}
-        <motion.path
+        <path
           d={curvePath}
           fill="none"
-          stroke="url(#lineGrad)"
+          stroke={`url(#${lineGradId})`}
           strokeWidth="2.5"
           strokeLinecap="round"
           strokeLinejoin="round"
-          initial={{ pathLength: 0, opacity: 0.6 }}
-          whileInView={{ pathLength: 1, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1, ease: 'easeOut' }}
         />
 
         {/* Datenpunkte */}
         {points.map((p, i) => (
-          <motion.g key={i} initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.3 + i * 0.05 }}>
-            <circle cx={p.x} cy={p.y} r={i === 6 ? 6 : 4} fill="white" stroke="url(#lineGrad)" strokeWidth={i === 6 ? 3 : 2} />
-          </motion.g>
+          <g key={i}>
+            <circle cx={p.x} cy={p.y} r={i === 6 ? 6 : 4} fill="white" stroke={`url(#${lineGradId})`} strokeWidth={i === 6 ? 3 : 2} />
+          </g>
         ))}
 
-        {/* Platz 1 Badge */}
-        <motion.g
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.7, type: 'spring', stiffness: 200 }}
-        >
+        {/* Platz 1 Badge – ohne SVG-Filter (Safari-Probleme), Schatten per CSS auf dem Container */}
+        <g>
           <rect
             x={points[6].x - 36}
             y={points[6].y - 42}
@@ -184,12 +164,11 @@ export function SeoRankingVisual() {
             height={28}
             rx={14}
             fill="#4f46e5"
-            filter="url(#softShadow)"
           />
           <text x={points[6].x} y={points[6].y - 24} textAnchor="middle" fill="white" style={{ fontSize: 12, fontFamily: 'system-ui', fontWeight: 700 }}>
             Platz 1
           </text>
-        </motion.g>
+        </g>
 
         {/* Labels */}
         {labels.map((label, i) => (
@@ -209,6 +188,6 @@ export function SeoRankingVisual() {
           Sichtbarkeit über 6 Monate
         </text>
       </svg>
-    </motion.div>
+    </div>
   )
 }

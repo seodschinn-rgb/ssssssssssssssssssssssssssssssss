@@ -68,13 +68,13 @@ export default function ScreenshotsSection() {
           {/* Glasmorphism Card mit Gradient-Border */}
           <div className="relative rounded-3xl p-[2px] bg-gradient-to-br from-blue-400/40 via-violet-400/30 to-emerald-400/30 shadow-2xl shadow-blue-500/10">
             <div className="rounded-3xl bg-white/95 backdrop-blur-xl overflow-hidden">
-              <div className="flex items-center gap-2 px-8 pt-6 pb-4 border-b border-zinc-100">
+              <div className="flex items-center gap-2 px-4 sm:px-8 pt-6 pb-4 border-b border-zinc-100">
                 <span className="w-3 h-3 rounded-full bg-red-400 shadow-sm" />
                 <span className="w-3 h-3 rounded-full bg-amber-400 shadow-sm" />
                 <span className="w-3 h-3 rounded-full bg-emerald-400 shadow-sm" />
                 <span className="ml-3 text-zinc-500 text-sm font-medium">Live Ranking-Entwicklung</span>
               </div>
-              <div className="p-8 sm:p-10">
+              <div className="p-4 sm:p-8 md:p-10 overflow-visible min-h-[240px]">
                 <SeoRankingVisual />
               </div>
             </div>
