@@ -5,8 +5,30 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    max-width: 100%;
   }
   body {
     @apply antialiased text-zinc-900 bg-white;
+    overflow-x: hidden;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  /* Lange Wörter und Text-Inhalte brechen innerhalb der Ränder */
+  main,
+  section,
+  article,
+  header,
+  footer,
+  p,
+  h1, h2, h3, h4, h5, h6,
+  li,
+  span {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+  main, section, article, header, footer {
+    min-width: 0;
   }
 }
