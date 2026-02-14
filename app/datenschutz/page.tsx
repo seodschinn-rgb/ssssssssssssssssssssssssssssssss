@@ -24,7 +24,7 @@ export default function DatenschutzPage() {
           <section className="mt-10 space-y-8 text-zinc-700 prose prose-zinc max-w-none">
             <div>
               <h2 className="text-lg font-semibold text-zinc-900 mb-2">1. Verantwortlicher</h2>
-              <p>Venus Management GbR, Kevin Ringsdorf<br />E-Mail: info@seomuenchen.com</p>
+              <p>Venus Management GbR, Ringsdorf<br />E-Mail: info@seomuenchen.com</p>
             </div>
 
             <div>

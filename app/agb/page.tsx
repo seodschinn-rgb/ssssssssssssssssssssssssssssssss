@@ -24,7 +24,7 @@ export default function AGBPage() {
           <section className="mt-10 space-y-8 text-zinc-700 prose prose-zinc max-w-none">
             <div>
               <h2 className="text-lg font-semibold text-zinc-900 mb-2">§ 1 Geltungsbereich</h2>
-              <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen Venus Management GbR (Kevin Ringsdorf) und dem Kunden über SEO-Dienstleistungen.</p>
+              <p>Diese Allgemeinen Geschäftsbedingungen gelten für alle Verträge zwischen Venus Management GbR (Ringsdorf) und dem Kunden über SEO-Dienstleistungen.</p>
             </div>
 
             <div>

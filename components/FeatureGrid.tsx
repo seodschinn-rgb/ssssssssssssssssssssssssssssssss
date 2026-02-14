@@ -35,10 +35,10 @@ export default function FeatureGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-16 min-w-0 px-1"
         >
           <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">Leistungen</span>
-          <h2 id="features-heading" className="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">
+          <h2 id="features-heading" className="text-xl sm:text-3xl md:text-4xl font-bold text-zinc-900 mt-2 break-words">
             Suchmaschinenoptimierung München – Ihre Vorteile
           </h2>
           <p className="mt-4 text-zinc-600 leading-relaxed">

@@ -25,7 +25,7 @@ export default function ImpressumPage() {
             <div>
               <h2 className="text-lg font-semibold text-zinc-900 mb-2">Anbieter</h2>
               <p className="font-medium">Venus Management GbR</p>
-              <p>Kevin Ringsdorf</p>
+              <p>Ringsdorf</p>
               <p>Ulmenweg 15</p>
               <p>51766 Engelskirchen</p>
               <p>Deutschland</p>
@@ -43,7 +43,7 @@ export default function ImpressumPage() {
 
             <div>
               <h2 className="text-lg font-semibold text-zinc-900 mb-2">Verantwortlich für den Inhalt</h2>
-              <p>Kevin Ringsdorf, Venus Management GbR</p>
+              <p>Ringsdorf, Venus Management GbR</p>
             </div>
 
             <div>
