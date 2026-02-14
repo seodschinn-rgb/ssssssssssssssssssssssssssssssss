@@ -5,8 +5,12 @@ import { motion } from 'framer-motion'
 import { GradientBlobs } from './ModernGraphics'
 
 const GoogleSearchAnimation = dynamic(() => import('./GoogleSearchAnimation'), {
-  ssr: true,
-  loading: () => <div className="w-full max-w-2xl h-[280px] rounded-2xl bg-zinc-100/50 animate-pulse" />,
+  ssr: false,
+  loading: () => (
+    <div className="w-full max-w-2xl mx-auto min-h-[280px] sm:min-h-[320px] rounded-2xl bg-zinc-100/50 animate-pulse flex items-center justify-center">
+      <span className="text-zinc-400 text-sm">Lade Vorschau…</span>
+    </div>
+  ),
 })
 
 interface HeroProps {
@@ -32,7 +36,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section
-      className="relative min-h-[95vh] flex flex-col justify-center px-6 pt-32 pb-20 overflow-hidden"
+      className="relative min-h-[95vh] flex flex-col justify-center px-4 sm:px-6 pt-28 sm:pt-32 pb-20 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {showSearchAnimation && (
@@ -41,11 +45,11 @@ export default function Hero({
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
         </>
       )}
-      <div className="relative mx-auto max-w-6xl w-full">
+      <div className="relative mx-auto max-w-6xl w-full min-w-0">
         {showSearchAnimation ? (
           <>
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-12">
-              <div className="flex-1 lg:max-w-xl">
+              <div className="flex-1 min-w-0 lg:max-w-xl">
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -59,7 +63,7 @@ export default function Hero({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-4xl sm:text-5xl md:text-6xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15] tracking-tight break-words"
                 >
                   <span className="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 bg-clip-text text-transparent">
                     {headline}
@@ -69,7 +73,7 @@ export default function Hero({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="mt-6 text-lg text-zinc-600"
+                  className="mt-6 text-base sm:text-lg text-zinc-600 break-words"
                 >
                   {subheadline}
                 </motion.p>
@@ -119,7 +123,7 @@ export default function Hero({
                   </motion.div>
                 )}
               </div>
-              <div className="mt-10 lg:mt-0 lg:shrink-0 lg:w-[420px]">
+              <div className="mt-10 lg:mt-0 lg:shrink-0 w-full min-w-0 lg:w-[420px]">
                 <GoogleSearchAnimation />
               </div>
             </div>
