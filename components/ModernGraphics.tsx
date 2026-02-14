@@ -113,11 +113,17 @@ export function SeoRankingVisual() {
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      viewport={{ once: true, margin: '0px' }}
       transition={{ duration: 0.5 }}
-      className="relative"
+      className="relative w-full min-h-[200px] sm:min-h-[220px]"
     >
-      <svg viewBox={`0 0 ${width} ${height}`} className="w-full max-w-lg mx-auto" fill="none">
+      <svg
+        viewBox={`0 0 ${width} ${height}`}
+        className="w-full max-w-lg mx-auto h-auto"
+        fill="none"
+        preserveAspectRatio="xMidYMid meet"
+        style={{ minHeight: '200px' }}
+      >
         <defs>
           <linearGradient id="areaGrad" x1="0" y1="1" x2="0" y2="0">
             <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.15" />
