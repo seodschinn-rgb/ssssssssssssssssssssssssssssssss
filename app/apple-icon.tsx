@@ -17,8 +17,8 @@ export default function AppleIcon() {
           borderRadius: 24,
         }}
       >
-        {/* Lupe: Kreis + Griff */}
-        <div style={{ position: 'relative', width: 100, height: 100 }}>
+        {/* Lupe: Kreis + Griff – display: flex erforderlich für @vercel/og */}
+        <div style={{ display: 'flex', position: 'relative', width: 100, height: 100 }}>
           <div
             style={{
               position: 'absolute',
