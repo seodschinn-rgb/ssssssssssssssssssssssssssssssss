@@ -34,6 +34,12 @@ export default function ImpressumPage() {
             <div>
               <h2 className="text-lg font-semibold text-zinc-900 mb-2">Kontakt</h2>
               <p>E-Mail: info@seomuenchen.com</p>
+              <p>
+                Telefon:{' '}
+                <a href="tel:+4915565087694" className="text-indigo-600 hover:underline">
+                  +49 155 65087694
+                </a>
+              </p>
             </div>
 
             <div>
