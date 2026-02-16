@@ -1,8 +1,41 @@
 'use client'
 
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || 'xvzbgggb'
+
 export default function ContactSection() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    const form = e.currentTarget
+    setStatus('sending')
+    setErrorMsg('')
+    try {
+      const formData = new FormData(form)
+      formData.append('_subject', `Kontaktanfrage: ${formData.get('name')}`)
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      })
+      const json = await res.json()
+      if (json.ok) {
+        setStatus('success')
+        form.reset()
+      } else {
+        setStatus('error')
+        setErrorMsg(json.error || 'Fehler beim Senden.')
+      }
+    } catch {
+      setStatus('error')
+      setErrorMsg('Netzwerkfehler. Bitte später erneut versuchen.')
+    }
+  }
+
   return (
     <section
       id="kontakt"
@@ -55,44 +88,58 @@ export default function ContactSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
           className="mt-10 space-y-4"
-          action="#"
-          method="POST"
+          onSubmit={handleSubmit}
         >
+          {status === 'success' && (
+            <div className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
+              Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.
+            </div>
+          )}
+          {status === 'error' && (
+            <div className="rounded-2xl bg-red-500/20 border border-red-400/30 px-4 py-3 text-red-200">
+              {errorMsg}
+            </div>
+          )}
           <div className="grid sm:grid-cols-2 gap-4">
             <input
               type="text"
               name="name"
               placeholder="Name"
               required
-              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors"
+              disabled={status === 'sending'}
+              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
             />
             <input
               type="email"
               name="email"
               placeholder="E-Mail"
               required
-              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors"
+              disabled={status === 'sending'}
+              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
             />
           </div>
           <input
             type="tel"
             name="phone"
             placeholder="Telefon"
-            className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors"
+            disabled={status === 'sending'}
+            className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
           />
           <textarea
             name="message"
             placeholder="Ihr Anliegen"
             rows={4}
-            className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 resize-none transition-colors"
+            disabled={status === 'sending'}
+            className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 resize-none transition-colors disabled:opacity-70"
           />
           <motion.button
             type="submit"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            className="w-full sm:w-auto sm:px-12 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-8 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all"
+            disabled={status === 'sending'}
+            whileHover={status !== 'sending' ? { scale: 1.02 } : undefined}
+            whileTap={status !== 'sending' ? { scale: 0.98 } : undefined}
+            className="w-full sm:w-auto sm:px-12 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-8 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Beratung anfragen
+            {status === 'sending' ? 'Wird gesendet…' : 'Beratung anfragen'}
           </motion.button>
         </motion.form>
       </div>

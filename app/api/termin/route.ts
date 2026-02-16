@@ -4,7 +4,10 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY
 const NOTIFY_EMAIL = process.env.TERMIN_NOTIFY_EMAIL || process.env.ADMIN_EMAIL
 const EMAIL_FROM = process.env.EMAIL_FROM || 'SEO München <kontakt@seomuenchen.com>'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
-const LOGO_URL = process.env.EMAIL_LOGO_URL || `${SITE_URL}/logo.png`
+const EMAIL_LOGO_BASE64 = process.env.EMAIL_LOGO_BASE64
+const LOGO_URL = process.env.EMAIL_LOGO_URL
+  || (EMAIL_LOGO_BASE64 ? `data:image/png;base64,${EMAIL_LOGO_BASE64}` : '')
+const USE_LOGO_IMAGE = Boolean(process.env.EMAIL_LOGO_URL || EMAIL_LOGO_BASE64)
 
 const CONFIRM_HTML = (name: string) => `
 <!DOCTYPE html>
@@ -22,7 +25,21 @@ const CONFIRM_HTML = (name: string) => `
           <tr>
             <td style="padding: 32px 40px 24px 40px; text-align: center; border-bottom: 1px solid #e4e4e7;">
               <a href="${SITE_URL}" target="_blank" style="text-decoration: none;">
-                <img src="${LOGO_URL}" alt="SEO München" width="180" height="48" style="display: inline-block; max-width: 180px; height: auto;" />
+                ${USE_LOGO_IMAGE
+                  ? `<img src="${LOGO_URL}" alt="SEO München" width="180" height="48" style="display: inline-block; max-width: 180px; height: auto;" />`
+                  : `<table role="presentation" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
+                      <tr>
+                        <td style="background-color: #4f46e5; border-radius: 10px; padding: 12px 24px;">
+                          <table role="presentation" cellspacing="0" cellpadding="0" align="center">
+                            <tr>
+                              <td style="padding-right: 10px; vertical-align: middle;"><span style="font-size: 22px; color: white;">🔍</span></td>
+                              <td style="vertical-align: middle;"><span style="font-size: 18px; font-weight: 700; color: white; letter-spacing: -0.02em;">SEO München</span></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>`
+                }
               </a>
             </td>
           </tr>
