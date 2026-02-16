@@ -47,7 +47,7 @@ export default function KontaktPageContent() {
             const confirmJson = await confirmRes.json().catch(() => ({}))
             if (!confirmRes.ok) {
               console.error('Bestätigungs-Mail fehlgeschlagen:', confirmRes.status, confirmJson)
-              setErrorMsg('Anfrage gesendet. Die Bestätigungs-E-Mail konnte nicht zugestellt werden – bitte RESEND_API_KEY in .env.local prüfen.')
+              setErrorMsg('Anfrage gesendet. Bestätigungs-E-Mail fehlgeschlagen – auf der Live-Seite RESEND_API_KEY in den Umgebungsvariablen des Hosters setzen (z. B. Vercel/Netlify).')
               setStatus('error')
               return
             }
