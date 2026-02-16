@@ -24,6 +24,27 @@ export default function ContactSection() {
       })
       const json = await res.json()
       if (json.ok) {
+        // Bestätigungs-Mail an den Absender senden (wie bei der Termin-Seite)
+        const data = Object.fromEntries(new FormData(form))
+        try {
+          const confirmRes = await fetch('/api/termin', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
+          })
+          const confirmJson = await confirmRes.json().catch(() => ({}))
+          if (!confirmRes.ok) {
+            console.error('Bestätigungs-Mail fehlgeschlagen:', confirmRes.status, confirmJson)
+            setErrorMsg('Anfrage gesendet. Die Bestätigungs-E-Mail konnte nicht zugestellt werden – RESEND_API_KEY beim Hoster prüfen.')
+            setStatus('error')
+            return
+          }
+        } catch (err) {
+          console.error('Bestätigungs-Mail Fehler:', err)
+          setErrorMsg('Anfrage gesendet. Bestätigungs-E-Mail konnte nicht versendet werden.')
+          setStatus('error')
+          return
+        }
         setStatus('success')
         form.reset()
       } else {
