@@ -17,29 +17,31 @@ export default function AppleIcon() {
           borderRadius: 24,
         }}
       >
-        {/* Lupe: Kreis + Griff – display: flex erforderlich für @vercel/og */}
-        <div style={{ display: 'flex', position: 'relative', width: 100, height: 100 }}>
+        {/* Lupe: Kreis + kräftiger Griff wie im Logo */}
+        <div style={{ display: 'flex', position: 'relative', width: 120, height: 120 }}>
+          {/* Glas (Kreis) */}
           <div
             style={{
               position: 'absolute',
-              left: 10,
-              top: 10,
-              width: 56,
-              height: 56,
-              border: '4px solid white',
+              left: 0,
+              top: 0,
+              width: 72,
+              height: 72,
+              border: '5px solid white',
               borderRadius: '50%',
               boxSizing: 'border-box',
             }}
           />
+          {/* Griff – dick und lang, setzt am Kreisrand an */}
           <div
             style={{
               position: 'absolute',
-              left: 48,
-              top: 48,
-              width: 4,
-              height: 32,
+              left: 50,
+              top: 50,
+              width: 8,
+              height: 55,
               background: 'white',
-              borderRadius: 2,
+              borderRadius: 4,
               transform: 'rotate(45deg)',
               transformOrigin: 'top left',
             }}
