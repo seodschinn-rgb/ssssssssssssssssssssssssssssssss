@@ -39,7 +39,7 @@ export default function Header() {
     setLeistungenOpen(true)
   }
   const handleLeistungenLeave = () => {
-    closeTimeoutRef.current = setTimeout(() => setLeistungenOpen(false), 120)
+    closeTimeoutRef.current = setTimeout(() => setLeistungenOpen(false), 400)
   }
 
   return (
@@ -83,7 +83,7 @@ export default function Header() {
                         transition={{ duration: 0.15 }}
                         className="absolute left-0 top-full pt-2"
                       >
-                        <div className="min-w-[360px] rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
+                        <div className="min-w-[420px] rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
                           <Link
                             href="/leistungen"
                             className="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-colors"
@@ -111,7 +111,7 @@ export default function Header() {
                                 <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors ${iconColors[l.color] || iconColors.blue}`}>
                                   <LeistungIcons icon={l.icon} className="w-4 h-4" />
                                 </span>
-                                <span className="font-medium truncate">{l.title}</span>
+                                <span className="font-medium leading-snug">{l.title}</span>
                               </Link>
                             ))}
                           </div>
