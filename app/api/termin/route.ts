@@ -3,13 +3,62 @@ import { NextResponse } from 'next/server'
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const NOTIFY_EMAIL = process.env.TERMIN_NOTIFY_EMAIL || process.env.ADMIN_EMAIL
 const EMAIL_FROM = process.env.EMAIL_FROM || 'SEO München <kontakt@seomuenchen.com>'
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
+const LOGO_URL = process.env.EMAIL_LOGO_URL || `${SITE_URL}/logo.png`
 
 const CONFIRM_HTML = (name: string) => `
-  <h2>Anfrage erhalten</h2>
-  <p>Hallo ${name},</p>
-  <p>vielen Dank für Ihre Terminanfrage. Wir haben Ihre Nachricht erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.</p>
-  <p>Bei Rückfragen erreichen Sie uns unter <a href="tel:+4915565087694">+49 155 65087694</a> oder per E-Mail an <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a>.</p>
-  <p>Mit freundlichen Grüßen<br>Ihr Team von SEO München</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ihre Terminanfrage bei SEO München</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f5; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color:#f4f4f5;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width: 560px; background-color:#ffffff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.07);">
+          <tr>
+            <td style="padding: 32px 40px 24px 40px; text-align: center; border-bottom: 1px solid #e4e4e7;">
+              <a href="${SITE_URL}" target="_blank" style="text-decoration: none;">
+                <img src="${LOGO_URL}" alt="SEO München" width="180" height="48" style="display: inline-block; max-width: 180px; height: auto;" />
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 32px 40px;">
+              <h1 style="margin: 0 0 8px 0; font-size: 22px; font-weight: 700; color: #18181b;">Anfrage erhalten</h1>
+              <p style="margin: 0 0 20px 0; font-size: 15px; color: #71717a; line-height: 1.5;">Ihre Terminanfrage bei SEO München</p>
+              <p style="margin: 0 0 20px 0; font-size: 16px; color: #3f3f46; line-height: 1.6;">Hallo ${name},</p>
+              <p style="margin: 0 0 24px 0; font-size: 16px; color: #3f3f46; line-height: 1.6;">vielen Dank für Ihre Terminanfrage. Wir haben Ihre Nachricht erhalten und melden uns <strong>innerhalb von 24 Stunden</strong> bei Ihnen.</p>
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background-color: #f4f4f5; border-radius: 8px; margin-bottom: 24px;">
+                <tr>
+                  <td style="padding: 20px;">
+                    <p style="margin: 0 0 8px 0; font-size: 13px; font-weight: 600; color: #52525b;">Bei Rückfragen erreichen Sie uns:</p>
+                    <p style="margin: 0; font-size: 15px; color: #3f3f46;">
+                      <a href="tel:+4915565087694" style="color: #4f46e5; text-decoration: none;">+49 155 65087694</a><br/>
+                      <a href="mailto:info@seomuenchen.com" style="color: #4f46e5; text-decoration: none;">info@seomuenchen.com</a>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <p style="margin: 0; font-size: 16px; color: #3f3f46; line-height: 1.6;">Mit freundlichen Grüßen<br/><strong>Ihr Team von SEO München</strong></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 20px 40px 28px 40px; text-align: center; border-top: 1px solid #e4e4e7;">
+              <p style="margin: 0; font-size: 12px; color: #a1a1aa;">
+                <a href="${SITE_URL}" style="color: #4f46e5; text-decoration: none;">seomuenchen.com</a>
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
 `
 
 async function sendMail(to: string, subject: string, html: string, replyTo?: string) {
