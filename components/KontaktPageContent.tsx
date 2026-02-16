@@ -11,7 +11,6 @@ export default function KontaktPageContent() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null)
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
-  const [confirmSent, setConfirmSent] = useState(true)
 
   useEffect(() => {
     if (typeof window !== 'undefined' && new URLSearchParams(location.search).get('success') === '1') {
@@ -39,14 +38,13 @@ export default function KontaktPageContent() {
         if (json.ok) {
           const data = Object.fromEntries(new FormData(form))
           try {
-            const confirmRes = await fetch('/api/termin', {
+            await fetch('/api/termin', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
             })
-            if (!confirmRes.ok) setConfirmSent(false)
           } catch {
-            setConfirmSent(false)
+            // Bestätigungs-Mail optional
           }
           setStatus('success')
           form.reset()
@@ -134,15 +132,8 @@ export default function KontaktPageContent() {
         >
           <h2 className="text-xl font-semibold text-zinc-900 mb-6">Ihre Angaben</h2>
           {status === 'success' && (
-            <div className="mb-6 space-y-2">
-              <div className="rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-emerald-800">
-                Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns in Kürze bei Ihnen.
-              </div>
-              {!confirmSent && (
-                <p className="text-sm text-zinc-500">
-                  Die Bestätigungs-E-Mail konnte nicht versendet werden (RESEND_API_KEY in Netlify setzen).
-                </p>
-              )}
+            <div className="mb-6 rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-emerald-800">
+              Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns in Kürze bei Ihnen.
             </div>
           )}
           {status === 'error' && (

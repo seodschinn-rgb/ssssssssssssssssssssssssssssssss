@@ -8,14 +8,12 @@ const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || 'xvzbgggb'
 export default function ContactSection() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
-  const [confirmSent, setConfirmSent] = useState(true) // true = keine Meldung, false = Hinweis „Bestätigungs-Mail nicht versendet“
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     const form = e.currentTarget
     setStatus('sending')
     setErrorMsg('')
-    setConfirmSent(true)
     try {
       const formData = new FormData(form)
       formData.append('_subject', `Kontaktanfrage: ${formData.get('name')}`)
@@ -28,14 +26,13 @@ export default function ContactSection() {
       if (json.ok) {
         const data = Object.fromEntries(new FormData(form))
         try {
-          const confirmRes = await fetch('/api/termin', {
+          await fetch('/api/termin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
           })
-          if (!confirmRes.ok) setConfirmSent(false)
         } catch {
-          setConfirmSent(false)
+          // Bestätigungs-Mail optional, kein Hinweis mehr
         }
         setStatus('success')
         form.reset()
@@ -104,15 +101,8 @@ export default function ContactSection() {
           onSubmit={handleSubmit}
         >
           {status === 'success' && (
-            <div className="space-y-2">
-              <div className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
-                Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.
-              </div>
-              {!confirmSent && (
-                <p className="text-sm text-zinc-400">
-                  Die Bestätigungs-E-Mail konnte nicht versendet werden (RESEND_API_KEY beim Hoster setzen).
-                </p>
-              )}
+            <div className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
+              Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.
             </div>
           )}
           {status === 'error' && (
