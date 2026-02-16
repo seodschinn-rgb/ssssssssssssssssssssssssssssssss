@@ -12,6 +12,7 @@ const colorStyles: Record<string, { icon: string; border: string; link: string; 
   amber: { icon: 'bg-amber-500/15 text-amber-600 group-hover:bg-amber-500 group-hover:text-white', border: 'border-amber-200 hover:border-amber-400', link: 'text-amber-600', bullet: 'bg-amber-500' },
   rose: { icon: 'bg-rose-500/15 text-rose-600 group-hover:bg-rose-500 group-hover:text-white', border: 'border-rose-200 hover:border-rose-400', link: 'text-rose-600', bullet: 'bg-rose-500' },
   cyan: { icon: 'bg-cyan-500/15 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white', border: 'border-cyan-200 hover:border-cyan-400', link: 'text-cyan-600', bullet: 'bg-cyan-500' },
+  indigo: { icon: 'bg-indigo-500/15 text-indigo-600 group-hover:bg-indigo-500 group-hover:text-white', border: 'border-indigo-200 hover:border-indigo-400', link: 'text-indigo-600', bullet: 'bg-indigo-500' },
 }
 
 const container = {

@@ -15,10 +15,12 @@ const iconColors: Record<string, string> = {
   amber: 'bg-amber-500/15 text-amber-600 group-hover:bg-amber-500 group-hover:text-white',
   rose: 'bg-rose-500/15 text-rose-600 group-hover:bg-rose-500 group-hover:text-white',
   cyan: 'bg-cyan-500/15 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white',
+  indigo: 'bg-indigo-500/15 text-indigo-600 group-hover:bg-indigo-500 group-hover:text-white',
 }
 
 const navLinks = [
   { href: '/leistungen', label: 'Leistungen', hasDropdown: true },
+  { href: '/preise', label: 'Preise', hasDropdown: false },
   { href: '/blog', label: 'Blog', hasDropdown: false },
   { href: '/standorte', label: 'Standorte', hasDropdown: false },
   { href: '/kontakt', label: 'Kontakt', hasDropdown: false },

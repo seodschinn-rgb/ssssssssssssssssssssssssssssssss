@@ -12,6 +12,7 @@ const colorClasses: Record<string, string> = {
   amber: 'bg-amber-500/15 text-amber-600 border-amber-200 hover:bg-amber-500 hover:text-white hover:border-amber-500',
   rose: 'bg-rose-500/15 text-rose-600 border-rose-200 hover:bg-rose-500 hover:text-white hover:border-rose-500',
   cyan: 'bg-cyan-500/15 text-cyan-600 border-cyan-200 hover:bg-cyan-500 hover:text-white hover:border-cyan-500',
+  indigo: 'bg-indigo-500/15 text-indigo-600 border-indigo-200 hover:bg-indigo-500 hover:text-white hover:border-indigo-500',
 }
 
 export default function LeistungenHero() {

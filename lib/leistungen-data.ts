@@ -18,11 +18,18 @@ export interface Leistung {
   slug: string
   title: string
   shortDescription: string
-  icon: 'search' | 'map' | 'cog' | 'chart' | 'link' | 'document'
-  color: 'blue' | 'emerald' | 'violet' | 'amber' | 'rose' | 'cyan'
+  icon: 'search' | 'map' | 'cog' | 'chart' | 'link' | 'document' | 'audit'
+  color: 'blue' | 'emerald' | 'violet' | 'amber' | 'rose' | 'cyan' | 'indigo'
 }
 
 export const LEISTUNGEN: Leistung[] = [
+  {
+    slug: 'seo-audit',
+    title: 'SEO-Audit',
+    shortDescription: 'Umfassende Analyse Ihrer Website – Stärken, Schwächen und konkrete Handlungsempfehlungen.',
+    icon: 'audit',
+    color: 'indigo',
+  },
   {
     slug: 'keyword-recherche',
     title: 'Keyword-Recherche',
@@ -68,6 +75,57 @@ export const LEISTUNGEN: Leistung[] = [
 ]
 
 export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
+  'seo-audit': {
+    title: 'SEO-Audit',
+    metaDescription: 'Professioneller SEO-Audit in München. Analyse Ihrer Website – OnPage, Technik, Content. Konkrete Handlungsempfehlungen für bessere Rankings.',
+    shortDescription: 'Umfassende Analyse mit konkreten Handlungsempfehlungen.',
+    heroSubline: 'Der erste Schritt zu mehr Sichtbarkeit',
+    intro:
+      'Ein SEO-Audit ist die systematische Analyse Ihrer Website aus Sicht von Suchmaschinen und Nutzern. Wir prüfen OnPage-Optimierung, technisches SEO, Content-Struktur und Wettbewerbsposition. Am Ende erhalten Sie einen klaren Report mit priorisierten Maßnahmen – keine Theorie, sondern konkrete nächste Schritte. Ideal als Einstieg vor einer längerfristigen Zusammenarbeit oder als jährliche Bestandsaufnahme.',
+    benefits: [
+      {
+        title: 'OnPage-Analyse',
+        text: 'Titel, Meta-Descriptions, Überschriften, interne Verlinkung – wir bewerten alle relevanten Seiten und identifizieren Optimierungspotenzial.',
+      },
+      {
+        title: 'Technisches SEO',
+        text: 'Ladezeiten, Core Web Vitals, Indexierung, mobile Darstellung. Technische Mängel werden erkannt und priorisiert.',
+      },
+      {
+        title: 'Content & Keywords',
+        text: 'Welche Keywords bedienen Sie? Wo fehlen Inhalte? Wir analysieren Ihre Content-Struktur im Vergleich zum Wettbewerb.',
+      },
+      {
+        title: 'Priorisierter Maßnahmenkatalog',
+        text: 'Kein 100-Seiten-Report ohne Handlungsfolge. Sie erhalten eine klare Reihenfolge: was zuerst angehen, was langfristig planen.',
+      },
+    ],
+    process: [
+      {
+        step: 1,
+        title: 'Crawl & Datenerfassung',
+        description: 'Wir erfassen Ihre Website-Struktur, technische Daten und bestehende Rankings mit professionellen Tools.',
+      },
+      {
+        step: 2,
+        title: 'Analyse OnPage, Technik, Content',
+        description: 'Systematische Auswertung aller Bereiche – Stärken und Schwächen werden dokumentiert.',
+      },
+      {
+        step: 3,
+        title: 'Wettbewerbsvergleich',
+        description: 'Wo steht Ihre Domain im Vergleich zu Mitbewerbern? Welche Lücken können Sie schließen?',
+      },
+      {
+        step: 4,
+        title: 'Audit-Report & Präsentation',
+        description: 'Sie erhalten einen verständlichen Report mit priorisierten Empfehlungen und optionaler Besprechung der Ergebnisse.',
+      },
+    ],
+    ctaHeadline: 'Wissen, wo Sie stehen – und wohin Sie gehen',
+    ctaText: 'SEO-Audit anfragen',
+  },
+
   'keyword-recherche': {
     title: 'Keyword-Recherche',
     metaDescription: 'Professionelle Keyword-Recherche für München und Bayern. Zielgruppenorientierte Analyse für maximale Sichtbarkeit bei Google.',

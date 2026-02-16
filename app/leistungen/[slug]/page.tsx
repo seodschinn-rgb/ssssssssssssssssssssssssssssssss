@@ -19,6 +19,7 @@ const heroIconGradients: Record<Leistung['color'], string> = {
   amber: 'from-amber-500 to-amber-600',
   rose: 'from-rose-500 to-rose-600',
   cyan: 'from-cyan-500 to-cyan-600',
+  indigo: 'from-indigo-500 to-indigo-600',
 }
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import ServiceSchema from '@/components/ServiceSchema'

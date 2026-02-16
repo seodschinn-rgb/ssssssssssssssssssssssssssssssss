@@ -62,6 +62,9 @@ export default function FeatureGrid() {
               emerald: 'from-emerald-500/15 to-teal-500/10 text-emerald-600 group-hover:from-emerald-500 group-hover:to-teal-500',
               violet: 'from-violet-500/15 to-purple-500/10 text-violet-600 group-hover:from-violet-500 group-hover:to-purple-500',
               amber: 'from-amber-500/15 to-orange-500/10 text-amber-600 group-hover:from-amber-500 group-hover:to-orange-500',
+              rose: 'from-rose-500/15 to-pink-500/10 text-rose-600 group-hover:from-rose-500 group-hover:to-pink-500',
+              cyan: 'from-cyan-500/15 to-sky-500/10 text-cyan-600 group-hover:from-cyan-500 group-hover:to-sky-500',
+              indigo: 'from-indigo-500/15 to-blue-500/10 text-indigo-600 group-hover:from-indigo-500 group-hover:to-blue-500',
             }
             const colors = colorMap[leistung.color] || colorMap.blue
             return (
