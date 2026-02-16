@@ -28,10 +28,10 @@ export default function ContactSection() {
       if (json.ok) {
         const data = Object.fromEntries(new FormData(form))
         try {
-          const confirmRes = await fetch('/api/contact-confirm', {
+          const confirmRes = await fetch('/api/termin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
+            body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
           })
           if (!confirmRes.ok) setConfirmSent(false)
         } catch {
