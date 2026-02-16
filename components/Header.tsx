@@ -174,7 +174,7 @@ export default function Header() {
         createPortal(
           <>
             <div
-              className="md:hidden fixed inset-0 w-full h-full bg-white"
+              className="md:hidden fixed inset-0 w-full bg-white"
               style={{ zIndex: 9998 }}
               aria-hidden="true"
             />
@@ -185,15 +185,7 @@ export default function Header() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="md:hidden fixed left-0 right-0 bg-white"
-                style={{
-                  zIndex: 9999,
-                  top: '4rem',
-                  bottom: 0,
-                  height: 'calc(100vh - 4rem)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                }}
+                className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-[9999] flex flex-col bg-white"
               >
                 {/* Menüpunkte + Unterpunkte – scrollbar, explizite Höhe damit Inhalt sichtbar ist */}
                 <div
