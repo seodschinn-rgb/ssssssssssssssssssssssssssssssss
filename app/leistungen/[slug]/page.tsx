@@ -9,7 +9,17 @@ import {
   getLeistungContent,
   getAllLeistungSlugs,
 } from '@/lib/leistungen-data'
+import type { Leistung } from '@/lib/leistungen-data'
 import LeistungIcons from '@/components/LeistungIcons'
+
+const heroIconGradients: Record<Leistung['color'], string> = {
+  blue: 'from-blue-500 to-blue-600',
+  emerald: 'from-emerald-500 to-emerald-600',
+  violet: 'from-violet-500 to-violet-600',
+  amber: 'from-amber-500 to-amber-600',
+  rose: 'from-rose-500 to-rose-600',
+  cyan: 'from-cyan-500 to-cyan-600',
+}
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import ServiceSchema from '@/components/ServiceSchema'
 
@@ -56,22 +66,13 @@ export default function LeistungPage({ params }: PageProps) {
       />
       <Header />
       <main>
-        {/* Hero mit Gradient */}
-        <section className="relative pt-32 pb-24 px-6 overflow-hidden">
+        {/* Hero mit Gradient – mehr Abstand zum Header, Back-Link unten */}
+        <section className="relative pt-40 pb-24 px-6 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-white to-accent/10" />
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/10 to-transparent opacity-50" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
           <div className="relative mx-auto max-w-4xl text-center">
-            <Link
-              href="/leistungen"
-              className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-accent transition-colors mb-8"
-            >
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-              Zurück zu allen Leistungen
-            </Link>
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-accent to-accent-hover text-white shadow-xl shadow-accent/25 mb-8">
+            <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${heroIconGradients[leistung.color]} text-white shadow-xl mb-8`}>
               <LeistungIcons icon={leistung.icon} className="w-8 h-8" />
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
@@ -81,6 +82,15 @@ export default function LeistungPage({ params }: PageProps) {
             <p className="mt-6 text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
               {content.intro}
             </p>
+            <Link
+              href="/leistungen"
+              className="mt-10 inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-accent transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+              Zurück zu allen Leistungen
+            </Link>
           </div>
         </section>
 
