@@ -7,7 +7,7 @@ import { GradientBlobs } from './ModernGraphics'
 const GoogleSearchAnimation = dynamic(() => import('./GoogleSearchAnimation'), {
   ssr: false,
   loading: () => (
-    <div className="w-full max-w-2xl mx-auto min-h-[280px] sm:min-h-[320px] rounded-2xl bg-zinc-100/50 animate-pulse flex items-center justify-center">
+    <div className="w-full max-w-2xl mx-auto h-[560px] rounded-2xl bg-zinc-100/50 animate-pulse flex items-center justify-center" aria-hidden="true">
       <span className="text-zinc-400 text-sm">Lade Vorschau…</span>
     </div>
   ),
@@ -123,7 +123,7 @@ export default function Hero({
                   </motion.div>
                 )}
               </div>
-              <div className="mt-10 lg:mt-0 lg:shrink-0 w-full min-w-0 lg:w-[420px]">
+              <div className="mt-10 lg:mt-0 lg:shrink-0 w-full min-w-0 lg:w-[420px] h-[560px]">
                 <GoogleSearchAnimation />
               </div>
             </div>

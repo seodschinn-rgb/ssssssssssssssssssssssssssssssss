@@ -8,9 +8,7 @@ const INITIAL_RESULTS = [
   { domain: 'timospecht.de', title: 'SEO Agentur München - Timo Specht', position: 2 },
   { domain: 'jsh.marketing', title: 'SEO Agentur München | JSH Marketing', position: 3 },
   { domain: 'netzbekannt.de', title: 'SEO Agentur München - Netzbekannt', position: 4 },
-  { domain: 'suchhelden.de', title: 'SEO Agentur München - Suchhelden', position: 5 },
-  { domain: 'ithelps-digital.com', title: 'SEO Agentur München | ithelps', position: 6 },
-  { domain: 'seomuenchen.com', title: 'SEO Agentur München | Suchmaschinenoptimierung', position: 7, highlight: true },
+  { domain: 'seomuenchen.com', title: 'SEO Agentur München | Suchmaschinenoptimierung', position: 5, highlight: true },
 ]
 
 const FINAL_RESULTS = [
@@ -63,9 +61,9 @@ export default function GoogleSearchAnimation() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="w-full max-w-2xl mx-auto"
+      className="w-full max-w-2xl mx-auto h-[560px] flex flex-col"
     >
-      <div className="rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
+      <div className="rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden flex flex-col flex-1 min-h-0">
         {/* Google-like header */}
         <div className="flex items-center gap-4 px-5 py-4 border-b border-zinc-100">
           <div className="flex gap-2">
@@ -99,7 +97,7 @@ export default function GoogleSearchAnimation() {
         </div>
 
         {/* Search bar */}
-        <div className="px-4 py-5">
+        <div className="px-4 pt-4 pb-5">
           <div className="flex items-center gap-3 px-4 py-3 rounded-full border border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50 transition-colors">
             <svg className="w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -116,14 +114,14 @@ export default function GoogleSearchAnimation() {
         </div>
 
         {/* Results */}
-        {(phase === 'results' || phase === 'ranking') && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            transition={{ duration: 0.5 }}
-            className="border-t border-zinc-100"
-          >
-            <div className="px-4 pb-4 space-y-1">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: phase === 'results' || phase === 'ranking' ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+          className="border-t border-zinc-100 pt-4 h-[340px] flex flex-col flex-1 overflow-visible"
+        >
+          {(phase === 'results' || phase === 'ranking') && (
+            <div className="px-4 pt-1 pb-5 space-y-1 flex-1 overflow-auto min-h-0">
               {displayResults.map((result) => (
                 <motion.div
                   key={result.domain}
@@ -165,14 +163,14 @@ export default function GoogleSearchAnimation() {
                 </motion.div>
               ))}
             </div>
-          </motion.div>
-        )}
+          )}
+        </motion.div>
       </div>
 
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: phase === 'ranking' ? 1 : 0 }}
-        className="mt-4 text-center text-sm text-zinc-500"
+        className="mt-4 min-h-[1.5rem] text-center text-sm text-zinc-500"
       >
         So stellen wir Sie auf Platz 1.
       </motion.p>
