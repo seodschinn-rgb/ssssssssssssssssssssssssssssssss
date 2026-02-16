@@ -172,68 +172,72 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden border-t border-zinc-100 bg-white"
+            className="md:hidden flex flex-col border-t border-zinc-100 bg-white max-h-[85vh]"
           >
-            <ul className="px-6 py-4 flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  {link.hasDropdown ? (
-                    <div className="py-2">
+            {/* Navigationslinks – scrollbar, Buttons bleiben unten sichtbar */}
+            <div className="flex-1 min-h-0 overflow-y-auto overscroll-contain">
+              <ul className="px-6 py-4 flex flex-col gap-1">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    {link.hasDropdown ? (
+                      <div className="py-2">
+                        <Link
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="block py-2 text-base font-medium text-zinc-700"
+                        >
+                          {link.label}
+                        </Link>
+                        <ul className="ml-4 mt-2 space-y-0.5 border-l-2 border-zinc-200 pl-3">
+                          {LEISTUNGEN.map((l) => (
+                            <li key={l.slug}>
+                              <Link
+                                href={`/leistungen/${l.slug}`}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-sm text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"
+                              >
+                                <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${iconColors[l.color] || iconColors.blue}`}>
+                                  <LeistungIcons icon={l.icon} className="w-4 h-4" />
+                                </span>
+                                {l.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : (
                       <Link
                         href={link.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-base font-medium text-zinc-700"
+                        className="block py-3 text-base font-medium text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50 -mx-2 px-2 rounded-lg transition-colors"
                       >
                         {link.label}
                       </Link>
-                      <ul className="ml-4 mt-2 space-y-0.5 border-l-2 border-zinc-200 pl-3">
-                        {LEISTUNGEN.map((l) => (
-                          <li key={l.slug}>
-                            <Link
-                              href={`/leistungen/${l.slug}`}
-                              onClick={() => setMobileMenuOpen(false)}
-                              className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-sm text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"
-                            >
-                              <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${iconColors[l.color] || iconColors.blue}`}>
-                                <LeistungIcons icon={l.icon} className="w-4 h-4" />
-                              </span>
-                              {l.title}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block py-3 text-base font-medium text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50 -mx-2 px-2 rounded-lg transition-colors"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
-                </li>
-              ))}
-              <li className="pt-2 border-t border-zinc-100 mt-2 space-y-2">
-                <a
-                  href="tel:+4915565087694"
-                  className="flex items-center justify-center gap-2 py-3 rounded-lg border-2 border-indigo-200 text-indigo-600 font-semibold hover:bg-indigo-50 transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
-                  Jetzt anrufen
-                </a>
-                <Link
-                  href="/kontakt"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block py-3 text-center rounded-lg bg-accent text-white font-semibold hover:bg-accent-hover transition-colors"
-                >
-                  Termin buchen
-                </Link>
-              </li>
-            </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Jetzt anrufen + Termin buchen – immer unten sichtbar, nie abgeschnitten */}
+            <div className="flex-shrink-0 px-4 pt-3 pb-4 border-t border-zinc-100 bg-white flex flex-col gap-2">
+              <a
+                href="tel:+4915565087694"
+                className="flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-indigo-200 text-indigo-600 font-semibold hover:bg-indigo-50 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                Jetzt anrufen
+              </a>
+              <Link
+                href="/kontakt"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-3 text-center rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover transition-colors"
+              >
+                Termin buchen
+              </Link>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
