@@ -36,16 +36,26 @@ export default function KontaktPageContent() {
         })
         const json = await res.json()
         if (json.ok) {
-          // Bestätigungs-Mail an User senden (über eigene API mit Resend)
+          // Bestätigungs-Mail an User senden (über eigene API mit SendGrid/Resend)
           const data = Object.fromEntries(new FormData(form))
           try {
-            await fetch('/api/termin', {
+            const confirmRes = await fetch('/api/termin', {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
             })
-          } catch {
-            // Bestätigungs-Mail optional – Formular war erfolgreich
+            const confirmJson = await confirmRes.json().catch(() => ({}))
+            if (!confirmRes.ok) {
+              console.error('Bestätigungs-Mail fehlgeschlagen:', confirmRes.status, confirmJson)
+              setErrorMsg('Anfrage gesendet. Die Bestätigungs-E-Mail konnte nicht zugestellt werden – bitte RESEND_API_KEY in .env.local prüfen.')
+              setStatus('error')
+              return
+            }
+          } catch (err) {
+            console.error('Bestätigungs-Mail Fehler:', err)
+            setErrorMsg('Anfrage gesendet. Bestätigungs-E-Mail konnte nicht versendet werden (Netzwerk/Server).')
+            setStatus('error')
+            return
           }
           setStatus('success')
           form.reset()

@@ -1,10 +1,8 @@
 import { NextResponse } from 'next/server'
-import sgMail from '@sendgrid/mail'
 
-const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY
 const RESEND_API_KEY = process.env.RESEND_API_KEY
 const NOTIFY_EMAIL = process.env.TERMIN_NOTIFY_EMAIL || process.env.ADMIN_EMAIL
-const EMAIL_FROM = process.env.EMAIL_FROM || 'SEO Agentur <noreply@seomuenchen.com>'
+const EMAIL_FROM = process.env.EMAIL_FROM || 'SEO München <kontakt@seomuenchen.com>'
 
 const CONFIRM_HTML = (name: string) => `
   <h2>Anfrage erhalten</h2>
@@ -14,19 +12,8 @@ const CONFIRM_HTML = (name: string) => `
   <p>Mit freundlichen Grüßen<br>Ihr Team von SEO München</p>
 `
 
-async function sendWithSendGrid(to: string, subject: string, html: string, replyTo?: string) {
-  if (!SENDGRID_API_KEY) throw new Error('SENDGRID_API_KEY nicht gesetzt')
-  sgMail.setApiKey(SENDGRID_API_KEY)
-  await sgMail.send({
-    to,
-    from: EMAIL_FROM,
-    replyTo: replyTo || undefined,
-    subject,
-    html,
-  })
-}
-
-async function sendWithResend(to: string, subject: string, html: string, replyTo?: string) {
+async function sendMail(to: string, subject: string, html: string, replyTo?: string) {
+  if (!RESEND_API_KEY) throw new Error('RESEND_API_KEY nicht gesetzt')
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -34,7 +21,7 @@ async function sendWithResend(to: string, subject: string, html: string, replyTo
       Authorization: `Bearer ${RESEND_API_KEY}`,
     },
     body: JSON.stringify({
-      from: process.env.EMAIL_FROM || 'SEO Agentur <onboarding@resend.dev>',
+      from: EMAIL_FROM,
       to,
       replyTo: replyTo || undefined,
       subject,
@@ -43,17 +30,9 @@ async function sendWithResend(to: string, subject: string, html: string, replyTo
   })
   if (!res.ok) {
     const err = await res.json().catch(() => ({}))
-    throw new Error(err?.message || err?.msg || 'E-Mail konnte nicht gesendet werden.')
-  }
-}
-
-async function sendMail(to: string, subject: string, html: string, replyTo?: string) {
-  if (SENDGRID_API_KEY) {
-    await sendWithSendGrid(to, subject, html, replyTo)
-  } else if (RESEND_API_KEY) {
-    await sendWithResend(to, subject, html, replyTo)
-  } else {
-    throw new Error('Weder SENDGRID_API_KEY noch RESEND_API_KEY gesetzt.')
+    const msg = err?.message || err?.msg || 'E-Mail konnte nicht gesendet werden.'
+    console.error('Resend Fehler:', msg)
+    throw new Error(msg)
   }
 }
 
@@ -71,9 +50,9 @@ export async function POST(request: Request) {
 
     // Nur Bestätigungs-Mail an User (z. B. nach Formspree-Submit)
     if (sendConfirmationOnly) {
-      if (!SENDGRID_API_KEY && !RESEND_API_KEY) {
+      if (!RESEND_API_KEY) {
         return NextResponse.json(
-          { error: 'SENDGRID_API_KEY oder RESEND_API_KEY in .env.local setzen.' },
+          { error: 'RESEND_API_KEY in .env.local setzen.' },
           { status: 500 }
         )
       }
@@ -92,11 +71,11 @@ export async function POST(request: Request) {
         { status: 500 }
       )
     }
-    if (!SENDGRID_API_KEY && !RESEND_API_KEY) {
-      console.log('Terminanfrage (kein API-Key):', { name, email, phone, message, termin_datum, termin_uhrzeit })
+    if (!RESEND_API_KEY) {
+      console.log('Terminanfrage (kein RESEND_API_KEY):', { name, email, phone, message, termin_datum, termin_uhrzeit })
       return NextResponse.json({
         success: true,
-        message: 'SENDGRID_API_KEY (oder RESEND_API_KEY) und TERMIN_NOTIFY_EMAIL setzen für E-Mail-Versand.',
+        message: 'RESEND_API_KEY und TERMIN_NOTIFY_EMAIL setzen für E-Mail-Versand.',
       })
     }
 
@@ -129,7 +108,6 @@ export async function POST(request: Request) {
       email
     )
 
-    // Bestätigungs-Mail an den User
     try {
       await sendMail(
         email,
