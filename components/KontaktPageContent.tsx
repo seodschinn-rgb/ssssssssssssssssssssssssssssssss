@@ -11,6 +11,7 @@ export default function KontaktPageContent() {
   const [selectedTime, setSelectedTime] = useState<string | null>(null)
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [confirmSent, setConfirmSent] = useState(true)
 
   useEffect(() => {
     if (typeof window !== 'undefined' && new URLSearchParams(location.search).get('success') === '1') {
@@ -36,7 +37,6 @@ export default function KontaktPageContent() {
         })
         const json = await res.json()
         if (json.ok) {
-          // Bestätigungs-Mail an User senden (über eigene API mit SendGrid/Resend)
           const data = Object.fromEntries(new FormData(form))
           try {
             const confirmRes = await fetch('/api/termin', {
@@ -44,18 +44,9 @@ export default function KontaktPageContent() {
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
             })
-            const confirmJson = await confirmRes.json().catch(() => ({}))
-            if (!confirmRes.ok) {
-              console.error('Bestätigungs-Mail fehlgeschlagen:', confirmRes.status, confirmJson)
-              setErrorMsg('Anfrage gesendet. Bestätigungs-E-Mail fehlgeschlagen – auf der Live-Seite RESEND_API_KEY in den Umgebungsvariablen des Hosters setzen (z. B. Vercel/Netlify).')
-              setStatus('error')
-              return
-            }
-          } catch (err) {
-            console.error('Bestätigungs-Mail Fehler:', err)
-            setErrorMsg('Anfrage gesendet. Bestätigungs-E-Mail konnte nicht versendet werden (Netzwerk/Server).')
-            setStatus('error')
-            return
+            if (!confirmRes.ok) setConfirmSent(false)
+          } catch {
+            setConfirmSent(false)
           }
           setStatus('success')
           form.reset()
@@ -143,8 +134,15 @@ export default function KontaktPageContent() {
         >
           <h2 className="text-xl font-semibold text-zinc-900 mb-6">Ihre Angaben</h2>
           {status === 'success' && (
-            <div className="mb-6 rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-emerald-800">
-              Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns in Kürze bei Ihnen.
+            <div className="mb-6 space-y-2">
+              <div className="rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-emerald-800">
+                Vielen Dank! Ihre Anfrage wurde gesendet. Wir melden uns in Kürze bei Ihnen.
+              </div>
+              {!confirmSent && (
+                <p className="text-sm text-zinc-500">
+                  Die Bestätigungs-E-Mail konnte nicht versendet werden (RESEND_API_KEY in Netlify setzen).
+                </p>
+              )}
             </div>
           )}
           {status === 'error' && (
