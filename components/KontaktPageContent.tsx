@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import BookingCalendar from './BookingCalendar'
 
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || 'xvzbgggb'
 
 export default function KontaktPageContent() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null)
