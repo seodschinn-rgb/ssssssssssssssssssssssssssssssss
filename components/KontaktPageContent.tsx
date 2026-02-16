@@ -36,6 +36,17 @@ export default function KontaktPageContent() {
         })
         const json = await res.json()
         if (json.ok) {
+          // Bestätigungs-Mail an User senden (über eigene API mit Resend)
+          const data = Object.fromEntries(new FormData(form))
+          try {
+            await fetch('/api/termin', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
+            })
+          } catch {
+            // Bestätigungs-Mail optional – Formular war erfolgreich
+          }
           setStatus('success')
           form.reset()
           setSelectedDate(null)

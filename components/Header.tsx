@@ -53,7 +53,7 @@ export default function Header() {
       >
         <Logo />
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <li
               key={link.href}
@@ -150,7 +150,7 @@ export default function Header() {
           <button
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 transition-colors"
+            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 transition-colors"
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
             aria-label="Menü öffnen"
@@ -174,7 +174,7 @@ export default function Header() {
         createPortal(
           <>
             <div
-              className="md:hidden fixed inset-0 w-full bg-white"
+              className="lg:hidden fixed inset-0 w-full bg-white"
               style={{ zIndex: 9998 }}
               aria-hidden="true"
             />
@@ -185,7 +185,7 @@ export default function Header() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.2 }}
-                className="md:hidden fixed left-0 right-0 top-16 bottom-0 z-[9999] flex flex-col bg-white"
+                className="lg:hidden fixed left-0 right-0 top-16 bottom-0 z-[9999] flex flex-col bg-white"
               >
                 {/* Menüpunkte + Unterpunkte – scrollbar, explizite Höhe damit Inhalt sichtbar ist */}
                 <div
