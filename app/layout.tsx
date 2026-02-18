@@ -40,7 +40,11 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    icon: [{ url: '/icon.svg', type: 'image/svg+xml', sizes: 'any' }],
+    // Google zeigt in Suchergebnissen bevorzugt PNG (48×48). SVG wird oft nicht angezeigt.
+    icon: [
+      { url: '/icon.png', type: 'image/png', sizes: '48x48' },
+      { url: '/icon.svg', type: 'image/svg+xml', sizes: 'any' },
+    ],
     apple: [{ url: '/apple-icon', type: 'image/png', sizes: '180x180' }],
   },
 }
