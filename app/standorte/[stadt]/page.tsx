@@ -7,11 +7,9 @@ import FeatureGrid from '@/components/FeatureGrid'
 import CityLinks from '@/components/CityLinks'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
-import LocalBusinessSchema from '@/components/LocalBusinessSchema'
+import CityPageSchema from '@/components/CityPageSchema'
 import CityFAQ from '@/components/CityFAQ'
 import AppointmentCalendar from '@/components/AppointmentCalendar'
-import FAQSchema from '@/components/FAQSchema'
-import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import type { Metadata } from 'next'
 
 interface PageProps {
@@ -52,18 +50,19 @@ export default function CityPage({ params }: PageProps) {
   const headline = `SEO Agentur ${city.name}`
   const subheadline = `Suchmaschinenoptimierung für Unternehmen in ${city.name} und Umgebung. Als SEO Agentur mit Sitz in München betreuen wir Sie professionell – von Local SEO bis technischem SEO.`
 
+  const breadcrumbItems = [
+    { name: 'Startseite', url: '/' },
+    { name: 'Standorte', url: '/standorte' },
+    { name: `SEO Agentur ${city.name}`, url: `/standorte/${city.slug}` },
+  ]
+  const businessDescription = `Professionelle Suchmaschinenoptimierung für ${city.name}. Local SEO, technisches SEO und SEO Beratung aus München für Unternehmen in ${city.name}.`
+
   return (
     <>
-      <FAQSchema cityName={city.name} />
-      <BreadcrumbSchema items={[
-        { name: 'Startseite', url: '/' },
-        { name: 'Standorte', url: '/standorte' },
-        { name: `SEO Agentur ${city.name}`, url: `/standorte/${city.slug}` },
-      ]} />
-      <LocalBusinessSchema
-        name={`SEO Agentur ${city.name}`}
-        city={city.name}
-        description={`Professionelle Suchmaschinenoptimierung für ${city.name}. Local SEO, technisches SEO und SEO Beratung aus München für Unternehmen in ${city.name}.`}
+      <CityPageSchema
+        cityName={city.name}
+        breadcrumbItems={breadcrumbItems}
+        businessDescription={businessDescription}
       />
       <Header />
       <main>

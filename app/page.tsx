@@ -7,9 +7,7 @@ import KeywordSection from '@/components/KeywordSection'
 import ScreenshotsSection from '@/components/ScreenshotsSection'
 import WhySeoSection from '@/components/WhySeoSection'
 import Footer from '@/components/Footer'
-import LocalBusinessSchema from '@/components/LocalBusinessSchema'
-import HomepageFAQSchema from '@/components/HomepageFAQSchema'
-import WebSiteSchema from '@/components/WebSiteSchema'
+import HomePageSchema from '@/components/HomePageSchema'
 
 // Below-fold sections: lazy load für kleinere Initial-Bundle
 const ProcessSection = dynamic(() => import('@/components/ProcessSection'), { ssr: true })
@@ -32,9 +30,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <LocalBusinessSchema />
-      <HomepageFAQSchema />
-      <WebSiteSchema />
+      <HomePageSchema />
       <Header />
       <main>
         <Hero showSearchAnimation />
