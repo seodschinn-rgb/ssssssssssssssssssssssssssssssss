@@ -134,7 +134,7 @@ export default function GoogleSearchAnimation() {
                     backgroundColor: result.highlight ? 'rgba(37, 99, 235, 0.06)' : 'transparent',
                   }}
                   transition={{
-                    layout: { type: 'spring', stiffness: 300, damping: 30 },
+                    layout: { duration: 0.5, ease: [0.22, 0.61, 0.36, 1] },
                     opacity: { duration: 0.3 },
                   }}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg ${
