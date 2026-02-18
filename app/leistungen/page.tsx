@@ -1,11 +1,13 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import Header from '@/components/Header'
 import LeistungenHero from '@/components/LeistungenHero'
 import LeistungenGrid from '@/components/LeistungenGrid'
-import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import ItemListSchema from '@/components/ItemListSchema'
+
+const ContactSection = dynamic(() => import('@/components/ContactSection'), { ssr: true })
 
 export const metadata: Metadata = {
   title: { absolute: 'SEO Leistungen | Suchmaschinenoptimierung München & Bayern' },

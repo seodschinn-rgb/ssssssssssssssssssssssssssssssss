@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
-import KontaktPageContent from '@/components/KontaktPageContent'
+
+const KontaktPageContent = dynamic(() => import('@/components/KontaktPageContent'), { ssr: true })
 
 export const metadata: Metadata = {
   title: { absolute: 'Kontakt & Termin buchen | SEO Agentur München' },

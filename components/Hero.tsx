@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { GradientBlobs } from './ModernGraphics'
 
@@ -104,22 +105,12 @@ export default function Hero({
                     transition={{ delay: 0.5 }}
                     className="mt-8 flex flex-col sm:flex-row gap-4"
                   >
-                    <motion.a
-                      href="/kontakt"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200"
-                    >
+                    <Link href="/kontakt" prefetch className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
                       Kostenloses SEO-Gespräch
-                    </motion.a>
-                    <motion.a
-                      href="/leistungen"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center justify-center rounded-2xl border-2 border-zinc-200 bg-white/80 backdrop-blur-sm px-8 py-4 text-base font-semibold text-zinc-900 hover:border-zinc-300 hover:bg-white transition-all duration-200"
-                    >
+                    </Link>
+                    <Link href="/leistungen" prefetch className="inline-flex items-center justify-center rounded-2xl border-2 border-zinc-200 bg-white/80 backdrop-blur-sm px-8 py-4 text-base font-semibold text-zinc-900 hover:border-zinc-300 hover:bg-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
                       Unsere Leistungen
-                    </motion.a>
+                    </Link>
                   </motion.div>
                 )}
               </div>
@@ -178,22 +169,12 @@ export default function Hero({
                   transition={{ duration: 0.6, delay: 0.35, ease: 'easeOut' }}
                   className="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
                 >
-                  <motion.a
-                    href="/kontakt"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-base font-semibold text-white hover:bg-accent-hover transition-all duration-200 shadow-card hover:shadow-card-hover"
-                  >
+                  <Link href="/kontakt" prefetch className="inline-flex items-center justify-center rounded-lg bg-accent px-8 py-4 text-base font-semibold text-white hover:bg-accent-hover transition-all duration-200 shadow-card hover:shadow-card-hover hover:scale-[1.02] active:scale-[0.98]">
                     Kostenloses SEO-Gespräch
-                  </motion.a>
-                  <motion.a
-                    href="/leistungen"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center justify-center rounded-lg border-2 border-zinc-200 bg-white px-8 py-4 text-base font-semibold text-zinc-900 hover:border-zinc-300 hover:bg-zinc-50 transition-colors duration-200"
-                  >
+                  </Link>
+                  <Link href="/leistungen" prefetch className="inline-flex items-center justify-center rounded-lg border-2 border-zinc-200 bg-white px-8 py-4 text-base font-semibold text-zinc-900 hover:border-zinc-300 hover:bg-zinc-50 transition-colors duration-200 hover:scale-[1.02] active:scale-[0.98]">
                     Unsere Leistungen
-                  </motion.a>
+                  </Link>
                 </motion.div>
               )}
             </div>
