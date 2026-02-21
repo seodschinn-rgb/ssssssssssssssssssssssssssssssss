@@ -79,12 +79,12 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
                       className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm hover:border-indigo-200 hover:shadow-md transition-all"
                     >
                       {post.image && (
-                        <div className="relative w-full aspect-[3/1] max-h-40 bg-zinc-100">
+                        <div className="w-full bg-zinc-100 rounded-t-2xl flex items-center justify-center min-h-0 max-h-48 sm:max-h-56">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={post.image}
                             alt={post.imageAlt ?? post.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-auto max-h-48 sm:max-h-56 object-contain object-center"
                           />
                         </div>
                       )}
