@@ -3,7 +3,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 
-const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || 'xvzbgggb'
+/** Formspree-Endpoint – Sie erhalten Nachrichten unter https://formspree.io/f/xvzbgggb */
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzbgggb'
 
 export default function ContactSection() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
@@ -17,7 +18,7 @@ export default function ContactSection() {
     try {
       const formData = new FormData(form)
       formData.append('_subject', `Kontaktanfrage: ${formData.get('name')}`)
-      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' },
@@ -32,7 +33,7 @@ export default function ContactSection() {
             body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
           })
         } catch {
-          // Bestätigungs-Mail optional, kein Hinweis mehr
+          // Bestätigungs-Mail optional
         }
         setStatus('success')
         form.reset()
@@ -101,6 +102,8 @@ export default function ContactSection() {
         >
           <form
             id="contact-form"
+            action={FORMSPREE_ENDPOINT}
+            method="POST"
             className="space-y-4"
             onSubmit={handleSubmit}
           >
