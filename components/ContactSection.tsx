@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 /** Formspree-Endpoint – Sie erhalten Nachrichten unter https://formspree.io/f/xvzbgggb */
@@ -9,6 +9,19 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzbgggb'
 export default function ContactSection() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const formRef = useRef<HTMLFormElement>(null)
+
+  // Auf Mobile kann die native Formular-Absendung vor Reacts preventDefault() ausgelöst werden.
+  // Ein Listener in der Capture-Phase verhindert das zuverlässig.
+  useEffect(() => {
+    const form = formRef.current
+    if (!form) return
+    const handler = (e: Event) => {
+      e.preventDefault()
+    }
+    form.addEventListener('submit', handler, true)
+    return () => form.removeEventListener('submit', handler, true)
+  }, [])
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -101,9 +114,8 @@ export default function ContactSection() {
           className="mt-10"
         >
           <form
+            ref={formRef}
             id="contact-form"
-            action={FORMSPREE_ENDPOINT}
-            method="POST"
             className="space-y-4"
             onSubmit={handleSubmit}
           >
