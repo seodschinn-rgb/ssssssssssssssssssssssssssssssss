@@ -62,7 +62,7 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
 
         {/* Artikel-Liste */}
         {filteredPosts.length > 0 ? (
-          <ul className="space-y-6">
+          <ul className="space-y-5 md:space-y-6">
             <AnimatePresence mode="wait">
               {filteredPosts.map((post, index) => {
                 const category = categories.find((c) => c.slug === post.category)
@@ -76,36 +76,36 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
                   >
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="group block overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm hover:border-indigo-200 hover:shadow-md transition-all"
+                      className="group flex flex-col md:flex-row overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm hover:border-indigo-200 hover:shadow-lg md:hover:shadow-xl transition-all duration-300"
                     >
                       {post.image && (
-                        <div className="w-full bg-zinc-100 rounded-t-2xl flex items-center justify-center min-h-0 max-h-48 sm:max-h-56">
+                        <div className="w-full md:w-72 md:min-w-[18rem] md:shrink-0 bg-gradient-to-br from-zinc-50 to-zinc-100 rounded-t-2xl md:rounded-t-none md:rounded-l-2xl flex items-center justify-center p-4 md:p-5 border-b md:border-b-0 md:border-r border-zinc-100">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={post.image}
                             alt={post.imageAlt ?? post.title}
-                            className="w-full h-auto max-h-48 sm:max-h-56 object-contain object-center"
+                            className="w-full h-auto max-h-44 md:max-h-40 object-contain object-center drop-shadow-sm"
                           />
                         </div>
                       )}
-                      <div className="p-6">
-                      {category && (
-                        <span className="inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 mb-3">
-                          {category.title}
+                      <div className="p-5 md:p-6 md:flex-1 flex flex-col md:justify-center">
+                        {category && (
+                          <span className="inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 mb-3 w-fit">
+                            {category.title}
+                          </span>
+                        )}
+                        <h3 className="text-lg md:text-xl font-bold text-zinc-900 group-hover:text-indigo-600 transition-colors">
+                          {post.title}
+                        </h3>
+                        <p className="mt-2 text-zinc-600 text-sm leading-relaxed line-clamp-2">
+                          {post.metaDescription}
+                        </p>
+                        <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 group-hover:gap-3 transition-all w-fit">
+                          Artikel lesen
+                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
                         </span>
-                      )}
-                      <h3 className="text-xl font-bold text-zinc-900 group-hover:text-indigo-600 transition-colors">
-                        {post.title}
-                      </h3>
-                      <p className="mt-2 text-zinc-600 text-sm leading-relaxed line-clamp-2">
-                        {post.metaDescription}
-                      </p>
-                      <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 group-hover:gap-3 transition-all">
-                        Artikel lesen
-                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </span>
                       </div>
                     </Link>
                   </motion.li>
