@@ -5,6 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import ArticleSchema from '@/components/ArticleSchema'
+import BlogFAQSchema from '@/components/BlogFAQSchema'
 import { getBlogCategoryBySlug, getAllBlogCategorySlugs } from '@/lib/blog-categories'
 import {
   getBlogPostBySlug,
@@ -160,6 +161,8 @@ export default function BlogSlugPage({ params }: PageProps) {
           image={post.image}
           imageAlt={post.imageAlt}
         />
+        {/* Pro Artikel nur ein FAQPage-Schema, um "Duplicate field FAQPage" in der Search Console zu vermeiden */}
+        {post.faqs?.length ? <BlogFAQSchema faqs={post.faqs} /> : null}
         <style dangerouslySetInnerHTML={{ __html: BLOG_ARTICLE_STYLE }} />
         <Header />
         <main>
