@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 
 /** Formspree-Endpoint – Sie erhalten Nachrichten unter https://formspree.io/f/xvzbgggb */
@@ -11,21 +11,11 @@ export default function ContactSection() {
   const [errorMsg, setErrorMsg] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
 
-  // Auf Mobile kann die native Formular-Absendung vor Reacts preventDefault() ausgelöst werden.
-  // Ein Listener in der Capture-Phase verhindert das zuverlässig.
-  useEffect(() => {
+  // Absenden per Button-Klick statt Form-Submit – funktioniert auf Mobile zuverlässig.
+  async function handleSubmitClick() {
     const form = formRef.current
     if (!form) return
-    const handler = (e: Event) => {
-      e.preventDefault()
-    }
-    form.addEventListener('submit', handler, true)
-    return () => form.removeEventListener('submit', handler, true)
-  }, [])
-
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    const form = e.currentTarget
+    if (!form.reportValidity()) return
     setStatus('sending')
     setErrorMsg('')
     try {
@@ -117,7 +107,7 @@ export default function ContactSection() {
             ref={formRef}
             id="contact-form"
             className="space-y-4"
-            onSubmit={handleSubmit}
+            onSubmit={(e) => { e.preventDefault(); handleSubmitClick(); }}
           >
             {status === 'success' && (
               <div className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
@@ -166,9 +156,10 @@ export default function ContactSection() {
               className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 resize-none transition-colors disabled:opacity-70"
             />
             <button
-              type="submit"
+              type="button"
               disabled={status === 'sending'}
-              className="w-full sm:w-auto sm:px-12 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-8 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all disabled:opacity-70 disabled:cursor-not-allowed hover:enabled:scale-[1.02] active:enabled:scale-[0.98]"
+              onClick={handleSubmitClick}
+              className="w-full sm:w-auto sm:px-12 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-8 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all disabled:opacity-70 disabled:cursor-not-allowed hover:enabled:scale-[1.02] active:enabled:scale-[0.98] touch-manipulation"
             >
               {status === 'sending' ? 'Wird gesendet…' : 'Beratung anfragen'}
             </button>

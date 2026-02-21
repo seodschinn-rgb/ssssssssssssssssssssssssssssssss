@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
+
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzbgggb'
 
 interface AppointmentCalendarProps {
   cityName: string
@@ -17,20 +19,66 @@ const WEEKDAY_NAMES = ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa']
 export default function AppointmentCalendar({ cityName }: AppointmentCalendarProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
   const [selectedTime, setSelectedTime] = useState<string | null>(null)
-  const [submitted, setSubmitted] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+  const formRef = useRef<HTMLFormElement>(null)
 
-  const nextWeekDates = Array.from({ length: 5 }, (_, i) => {
+  // Termine ab dem nächsten Tag (5 Tage)
+  const selectableDates = Array.from({ length: 5 }, (_, i) => {
     const d = new Date()
-    d.setDate(d.getDate() + 7 + i)
+    d.setDate(d.getDate() + 1 + i)
     return d
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
+  async function handleSubmitClick() {
+    const form = formRef.current
+    if (!form || !selectedDate || !selectedTime) return
+    if (!form.reportValidity()) return
+    setStatus('sending')
+    setErrorMsg('')
+    try {
+      const formData = new FormData(form)
+      formData.set('termin_datum', selectedDate)
+      formData.set('termin_uhrzeit', selectedTime)
+      formData.append('_subject', `Terminanfrage: ${formData.get('name')} – ${selectedDate} ${selectedTime}`)
+
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      })
+      const json = await res.json()
+      if (!json.ok) {
+        throw new Error(json.error || 'Fehler beim Senden.')
+      }
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone') || '',
+        termin_datum: selectedDate,
+        termin_uhrzeit: selectedTime,
+        message: '',
+      }
+      try {
+        await fetch('/api/termin', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ ...data, sendConfirmationOnly: true }),
+        })
+      } catch {
+        // Bestätigungs-Mail optional
+      }
+      setStatus('success')
+      form.reset()
+      setSelectedDate(null)
+      setSelectedTime(null)
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg(err instanceof Error ? err.message : 'Ein Fehler ist aufgetreten.')
+    }
   }
 
-  if (submitted) {
+  if (status === 'success') {
     return (
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
@@ -72,16 +120,17 @@ export default function AppointmentCalendar({ cityName }: AppointmentCalendarPro
         >
           <div className="grid md:grid-cols-2 gap-0">
             <div className="p-6 md:p-8">
-              <h3 className="font-semibold text-zinc-900 mb-4">Wochentag wählen</h3>
+              <h3 className="font-semibold text-zinc-900 mb-4">Datum wählen</h3>
               <div className="flex flex-wrap gap-2">
-                {nextWeekDates.map((date) => {
+                {selectableDates.map((date) => {
                   const dateStr = date.toISOString().split('T')[0]
                   const label = `${WEEKDAY_NAMES[date.getDay()]}, ${date.getDate()}.${date.getMonth() + 1}.`
                   return (
                     <button
                       key={dateStr}
+                      type="button"
                       onClick={() => setSelectedDate(dateStr)}
-                      className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                      className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors touch-manipulation ${
                         selectedDate === dateStr
                           ? 'bg-accent text-white'
                           : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
@@ -100,8 +149,9 @@ export default function AppointmentCalendar({ cityName }: AppointmentCalendarPro
                     {TIME_SLOTS.map((time) => (
                       <button
                         key={time}
+                        type="button"
                         onClick={() => setSelectedTime(time)}
-                        className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
+                        className={`px-4 py-2.5 rounded-lg text-sm font-medium transition-colors touch-manipulation ${
                           selectedTime === time
                             ? 'bg-accent text-white'
                             : 'bg-zinc-100 text-zinc-700 hover:bg-zinc-200'
@@ -116,42 +166,54 @@ export default function AppointmentCalendar({ cityName }: AppointmentCalendarPro
             </div>
 
             <div className="bg-zinc-50 p-6 md:p-8">
-              <form onSubmit={handleSubmit} className="space-y-4">
+              <form
+                ref={formRef}
+                onSubmit={(e) => { e.preventDefault(); handleSubmitClick(); }}
+                className="space-y-4"
+              >
+                {status === 'error' && (
+                  <div className="rounded-lg bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700">
+                    {errorMsg}
+                  </div>
+                )}
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-zinc-700 mb-1.5">
+                  <label htmlFor="termin-name" className="block text-sm font-medium text-zinc-700 mb-1.5">
                     Name *
                   </label>
                   <input
-                    id="name"
+                    id="termin-name"
                     name="name"
                     type="text"
                     required
-                    className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-zinc-900 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none"
+                    disabled={status === 'sending'}
+                    className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-zinc-900 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none disabled:opacity-70"
                     placeholder="Ihr Name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-zinc-700 mb-1.5">
+                  <label htmlFor="termin-email" className="block text-sm font-medium text-zinc-700 mb-1.5">
                     E-Mail *
                   </label>
                   <input
-                    id="email"
+                    id="termin-email"
                     name="email"
                     type="email"
                     required
-                    className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-zinc-900 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none"
+                    disabled={status === 'sending'}
+                    className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-zinc-900 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none disabled:opacity-70"
                     placeholder="ihre@email.de"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-zinc-700 mb-1.5">
+                  <label htmlFor="termin-phone" className="block text-sm font-medium text-zinc-700 mb-1.5">
                     Telefon
                   </label>
                   <input
-                    id="phone"
+                    id="termin-phone"
                     name="phone"
                     type="tel"
-                    className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-zinc-900 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none"
+                    disabled={status === 'sending'}
+                    className="w-full rounded-lg border border-zinc-200 px-4 py-3 text-zinc-900 focus:border-accent focus:ring-2 focus:ring-accent/20 outline-none disabled:opacity-70"
                     placeholder="+49 123 456789"
                   />
                 </div>
@@ -161,11 +223,12 @@ export default function AppointmentCalendar({ cityName }: AppointmentCalendarPro
                   </p>
                 )}
                 <button
-                  type="submit"
-                  disabled={!selectedDate || !selectedTime}
-                  className="w-full rounded-lg bg-accent py-3.5 font-semibold text-white hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  type="button"
+                  disabled={!selectedDate || !selectedTime || status === 'sending'}
+                  onClick={handleSubmitClick}
+                  className="w-full rounded-lg bg-accent py-3.5 font-semibold text-white hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors touch-manipulation"
                 >
-                  Termin anfragen
+                  {status === 'sending' ? 'Wird gesendet…' : 'Termin anfragen'}
                 </button>
               </form>
             </div>
