@@ -92,66 +92,73 @@ export default function ContactSection() {
             Jetzt anrufen: +49 155 65087694
           </a>
         </motion.p>
-        <motion.form
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: '-50px' }}
           transition={{ delay: 0.2 }}
-          className="mt-10 space-y-4"
-          onSubmit={handleSubmit}
+          className="mt-10"
         >
-          {status === 'success' && (
-            <div className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
-              Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.
-            </div>
-          )}
-          {status === 'error' && (
-            <div className="rounded-2xl bg-red-500/20 border border-red-400/30 px-4 py-3 text-red-200">
-              {errorMsg}
-            </div>
-          )}
-          <div className="grid sm:grid-cols-2 gap-4">
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              required
-              disabled={status === 'sending'}
-              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="E-Mail"
-              required
-              disabled={status === 'sending'}
-              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
-            />
-          </div>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Telefon"
-            disabled={status === 'sending'}
-            className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
-          />
-          <textarea
-            name="message"
-            placeholder="Ihr Anliegen"
-            rows={4}
-            disabled={status === 'sending'}
-            className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 resize-none transition-colors disabled:opacity-70"
-          />
-          <motion.button
-            type="submit"
-            disabled={status === 'sending'}
-            whileHover={status !== 'sending' ? { scale: 1.02 } : undefined}
-            whileTap={status !== 'sending' ? { scale: 0.98 } : undefined}
-            className="w-full sm:w-auto sm:px-12 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-8 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+          <form
+            id="contact-form"
+            className="space-y-4"
+            onSubmit={handleSubmit}
           >
-            {status === 'sending' ? 'Wird gesendet…' : 'Beratung anfragen'}
-          </motion.button>
-        </motion.form>
+            {status === 'success' && (
+              <div className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
+                Vielen Dank! Ihre Nachricht wurde gesendet. Wir melden uns in Kürze.
+              </div>
+            )}
+            {status === 'error' && (
+              <div className="rounded-2xl bg-red-500/20 border border-red-400/30 px-4 py-3 text-red-200">
+                {errorMsg}
+              </div>
+            )}
+            <div className="grid sm:grid-cols-2 gap-4">
+              <input
+                id="contact-name"
+                type="text"
+                name="name"
+                placeholder="Name"
+                required
+                disabled={status === 'sending'}
+                className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
+              />
+              <input
+                id="contact-email"
+                type="email"
+                name="email"
+                placeholder="E-Mail"
+                required
+                disabled={status === 'sending'}
+                className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
+              />
+            </div>
+            <input
+              id="contact-phone"
+              type="tel"
+              name="phone"
+              placeholder="Telefon"
+              disabled={status === 'sending'}
+              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 transition-colors disabled:opacity-70"
+            />
+            <textarea
+              id="contact-message"
+              name="message"
+              placeholder="Ihr Anliegen"
+              rows={4}
+              disabled={status === 'sending'}
+              className="w-full rounded-2xl border-2 border-zinc-600/50 bg-zinc-800/50 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 resize-none transition-colors disabled:opacity-70"
+            />
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="w-full sm:w-auto sm:px-12 rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 py-4 px-8 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all disabled:opacity-70 disabled:cursor-not-allowed hover:enabled:scale-[1.02] active:enabled:scale-[0.98]"
+            >
+              {status === 'sending' ? 'Wird gesendet…' : 'Beratung anfragen'}
+            </button>
+          </form>
+        </motion.div>
       </div>
     </section>
   )
