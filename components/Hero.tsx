@@ -50,12 +50,12 @@ export default function Hero({
         {showSearchAnimation ? (
           <>
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-12">
-              <div className="flex-1 min-w-0 lg:max-w-xl">
+              <div className="flex-1 min-w-0 lg:max-w-2xl">
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="inline-block rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 mb-6"
+                  className="inline-block rounded-full bg-gradient-to-r from-indigo-500 to-blue-600 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 mb-8"
                 >
                   #1 SEO Agentur München
                 </motion.span>
@@ -64,17 +64,28 @@ export default function Hero({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.15] tracking-tight break-words"
+                  className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.28] tracking-tight text-balance pb-1"
                 >
-                  <span className="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 bg-clip-text text-transparent">
-                    {headline}
-                  </span>
+                  {headline.includes(':') ? (
+                    <>
+                      <span className="block bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent leading-[1.4] pb-0.5">
+                        {headline.split(':')[0].trim()}
+                      </span>
+                      <span className="block mt-2 text-zinc-700 font-semibold">
+                        {headline.split(':').slice(1).join(':').trim()}
+                      </span>
+                    </>
+                  ) : (
+                    <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-700 bg-clip-text text-transparent">
+                      {headline}
+                    </span>
+                  )}
                 </motion.h1>
                 <motion.p
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="mt-6 text-base sm:text-lg text-zinc-600 break-words"
+                  className="mt-8 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-xl"
                 >
                   {subheadline}
                 </motion.p>
