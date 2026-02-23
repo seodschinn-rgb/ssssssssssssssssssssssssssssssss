@@ -94,7 +94,7 @@ export default function Hero({
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.35 }}
-                    className="mt-5 md:mt-6 lg:mt-8 flex flex-col sm:flex-row gap-3 flex-shrink-0"
+                    className="mt-3 sm:mt-5 md:mt-6 lg:mt-8 flex flex-col sm:flex-row gap-3 flex-shrink-0"
                   >
                     <Link href="/kontakt" prefetch className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] touch-manipulation">
                       Kostenloses SEO-Gespräch
@@ -108,7 +108,7 @@ export default function Hero({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
-                  className="mt-5 md:mt-6 lg:mt-8 grid grid-cols-2 md:grid-cols-2 lg:flex lg:flex-wrap gap-2 md:gap-3 lg:gap-3"
+                  className="mt-3 sm:mt-5 md:mt-6 lg:mt-8 grid grid-cols-2 md:grid-cols-2 lg:flex lg:flex-wrap gap-2 md:gap-3 lg:gap-3"
                 >
                   <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-zinc-100/90 md:bg-zinc-100/80 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-700 ring-1 ring-zinc-200/60 backdrop-blur-sm min-w-0">
                     <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-emerald-500 flex-shrink-0" />
