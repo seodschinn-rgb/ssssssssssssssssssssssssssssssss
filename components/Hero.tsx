@@ -37,7 +37,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section
-      className="relative min-h-[95vh] flex flex-col justify-center px-4 sm:px-6 pt-28 sm:pt-32 pb-20 overflow-hidden"
+      className="relative min-h-0 md:min-h-[70vh] lg:min-h-[95vh] flex flex-col justify-start md:justify-center px-4 sm:px-6 md:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {showSearchAnimation && (
@@ -49,13 +49,13 @@ export default function Hero({
       <div className="relative mx-auto max-w-6xl w-full min-w-0">
         {showSearchAnimation ? (
           <>
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between lg:gap-12">
-              <div className="flex-1 min-w-0 lg:max-w-2xl">
+            <div className="flex flex-col md:max-w-2xl md:mx-auto lg:mx-0 lg:max-w-none lg:flex-row lg:items-start lg:justify-between lg:gap-12">
+              <div className="flex-1 min-w-0 md:max-w-xl md:mx-auto lg:mx-0 lg:max-w-2xl">
                 <motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="inline-block rounded-full bg-gradient-to-r from-indigo-500 to-blue-600 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 mb-8"
+                  className="inline-block rounded-full bg-gradient-to-r from-indigo-500 to-blue-600 px-4 py-1.5 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 mb-4 md:mb-6 lg:mb-8"
                 >
                   #1 SEO Agentur München
                 </motion.span>
@@ -64,7 +64,7 @@ export default function Hero({
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.28] tracking-tight text-balance pb-1"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold leading-[1.28] tracking-tight text-balance pb-1"
                 >
                   {headline.includes(':') ? (
                     <>
@@ -85,47 +85,49 @@ export default function Hero({
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className="mt-8 text-base sm:text-lg text-zinc-600 leading-relaxed max-w-xl"
+                  className="mt-4 md:mt-6 lg:mt-8 text-base sm:text-lg md:text-lg text-zinc-600 leading-relaxed max-w-xl"
                 >
                   {subheadline}
                 </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.35 }}
-                  className="mt-8 flex flex-wrap gap-3"
-                >
-                  <span className="inline-flex items-center gap-2 rounded-full bg-zinc-100/80 px-4 py-2 text-sm text-zinc-700 ring-1 ring-zinc-200/60 backdrop-blur-sm">
-                    <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-emerald-500" />
-                    47+ Unternehmen vertrauen uns
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm text-zinc-800 ring-1 ring-accent/20">
-                    <span className="font-bold text-accent">+312%</span> mehr Traffic
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-amber-50 px-4 py-2 text-sm text-zinc-700 ring-1 ring-amber-200/60">
-                    <span className="font-semibold text-zinc-900">Erste Seite Google</span> in 3–6 Monaten
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-full bg-zinc-100/80 px-4 py-2 text-sm text-zinc-700 ring-1 ring-zinc-200/60">
-                    <span className="font-bold text-accent">100+</span> Projekte abgeschlossen
-                  </span>
-                </motion.div>
                 {showCTA && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="mt-8 flex flex-col sm:flex-row gap-4"
+                    transition={{ delay: 0.35 }}
+                    className="mt-5 md:mt-6 lg:mt-8 flex flex-col sm:flex-row gap-3 flex-shrink-0"
                   >
-                    <Link href="/kontakt" prefetch className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                    <Link href="/kontakt" prefetch className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] touch-manipulation">
                       Kostenloses SEO-Gespräch
                     </Link>
-                    <Link href="/leistungen" prefetch className="inline-flex items-center justify-center rounded-2xl border-2 border-zinc-200 bg-white/80 backdrop-blur-sm px-8 py-4 text-base font-semibold text-zinc-900 hover:border-zinc-300 hover:bg-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]">
+                    <Link href="/leistungen" prefetch className="inline-flex items-center justify-center rounded-2xl border-2 border-zinc-200 bg-white/80 backdrop-blur-sm px-6 py-3.5 sm:px-8 sm:py-4 text-base font-semibold text-zinc-900 hover:border-zinc-300 hover:bg-white transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] touch-manipulation">
                       Unsere Leistungen
                     </Link>
                   </motion.div>
                 )}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                  className="mt-5 md:mt-6 lg:mt-8 grid grid-cols-2 md:grid-cols-2 lg:flex lg:flex-wrap gap-2 md:gap-3 lg:gap-3"
+                >
+                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-zinc-100/90 md:bg-zinc-100/80 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-700 ring-1 ring-zinc-200/60 backdrop-blur-sm min-w-0">
+                    <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-emerald-500 flex-shrink-0" />
+                    <span className="break-words">47+ Unternehmen vertrauen uns</span>
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-accent/10 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-800 ring-1 ring-accent/20 min-w-0">
+                    <span className="font-bold text-accent flex-shrink-0">+312%</span>
+                    <span className="break-words">mehr Traffic</span>
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-amber-50 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-700 ring-1 ring-amber-200/60 min-w-0">
+                    <span className="font-semibold text-zinc-900 break-words">Erste Seite Google in 3–6 Monaten</span>
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-zinc-100/90 md:bg-zinc-100/80 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-700 ring-1 ring-zinc-200/60 min-w-0">
+                    <span className="font-bold text-accent flex-shrink-0">100+</span>
+                    <span className="break-words">Projekte abgeschlossen</span>
+                  </span>
+                </motion.div>
               </div>
-              <div className="mt-10 lg:mt-0 lg:shrink-0 w-full min-w-0 lg:w-[420px] h-[560px]">
+              <div className="mt-6 md:mt-8 lg:mt-0 lg:shrink-0 w-full min-w-0 md:max-w-lg md:mx-auto lg:mx-0 lg:max-w-none lg:w-[420px] h-[320px] sm:h-[380px] md:h-[420px] lg:h-[560px]">
                 <GoogleSearchAnimation />
               </div>
             </div>
