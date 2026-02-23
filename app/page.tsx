@@ -18,13 +18,13 @@ const ContactSection = dynamic(() => import('@/components/ContactSection'), { ss
 const SeoArticleSection = dynamic(() => import('@/components/SeoArticleSection'), { ssr: true })
 
 export const metadata: Metadata = {
-  title: { absolute: 'SEO Agentur München: Ihr Experte für nachhaltige Sichtbarkeit & Top-Rankings' },
+  title: { absolute: 'SEO Agentur München: Ihr Partner für Top-Rankings & mehr Sichtbarkeit' },
   description:
-    'Professionelle SEO Agentur in München. Suchmaschinenoptimierung, Local SEO und SEO Beratung für Unternehmen in Bayern. Transparente Preise, messbare Erfolge. Kostenloses Erstgespräch.',
+    'Die führende SEO Agentur in München für messbare Ranking-Verbesserungen und mehr organischen Traffic. Wir bringen Ihr Unternehmen auf die erste Google-Seite. Jetzt unverbindlich informieren!',
   openGraph: {
-    title: 'SEO Agentur München: Ihr Experte für nachhaltige Sichtbarkeit & Top-Rankings',
+    title: 'SEO Agentur München: Ihr Partner für Top-Rankings & mehr Sichtbarkeit',
     description:
-      'Professionelle SEO Agentur in München. Suchmaschinenoptimierung, Local SEO und SEO Beratung für Unternehmen in Bayern.',
+      'Die führende SEO Agentur in München für messbare Ranking-Verbesserungen und mehr organischen Traffic. Wir bringen Ihr Unternehmen auf die erste Google-Seite. Jetzt unverbindlich informieren!',
   },
 }
 
