@@ -61,18 +61,18 @@ export default function GoogleSearchAnimation() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.4 }}
-      className="w-full max-w-2xl mx-auto h-[560px] flex flex-col"
+      className="w-full max-w-2xl mx-auto h-[480px] sm:h-[520px] md:h-[420px] lg:h-[560px] flex flex-col"
     >
       <div className="rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden flex flex-col flex-1 min-h-0">
         {/* Google-like header */}
-        <div className="flex items-center gap-4 px-5 py-4 border-b border-zinc-100">
-          <div className="flex gap-2">
-            <span className="w-3 h-3 rounded-full bg-red-400" />
-            <span className="w-3 h-3 rounded-full bg-amber-400" />
-            <span className="w-3 h-3 rounded-full bg-emerald-400" />
+        <div className="flex items-center gap-2 sm:gap-4 px-3 sm:px-5 py-2.5 sm:py-4 border-b border-zinc-100 flex-shrink-0">
+          <div className="flex gap-1.5 sm:gap-2">
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-400" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-amber-400" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-400" />
           </div>
-          <div className="flex-1 flex items-center justify-center">
-            <div className="flex items-center gap-2 text-zinc-400 text-sm">
+          <div className="flex-1 flex items-center justify-center min-w-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-zinc-400 text-xs sm:text-sm">
               <svg className="w-4 h-4" viewBox="0 0 24 24">
                 <path
                   fill="currentColor"
@@ -97,12 +97,12 @@ export default function GoogleSearchAnimation() {
         </div>
 
         {/* Search bar */}
-        <div className="px-4 pt-4 pb-5">
-          <div className="flex items-center gap-3 px-4 py-3 rounded-full border border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50 transition-colors">
-            <svg className="w-5 h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="px-3 sm:px-4 pt-2 sm:pt-4 pb-3 sm:pb-5 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2.5 sm:py-3 rounded-full border border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50 transition-colors">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <span className="text-zinc-900 text-sm">{searchText}</span>
+            <span className="text-zinc-900 text-xs sm:text-sm truncate">{searchText}</span>
             {phase === 'typing' && (
               <motion.span
                 animate={{ opacity: [1, 0] }}
@@ -118,10 +118,10 @@ export default function GoogleSearchAnimation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: phase === 'results' || phase === 'ranking' ? 1 : 0 }}
           transition={{ duration: 0.4 }}
-          className="border-t border-zinc-100 pt-4 h-[340px] flex flex-col flex-1 overflow-visible"
+          className="border-t border-zinc-100 pt-2 sm:pt-4 flex flex-col flex-1 min-h-0"
         >
           {(phase === 'results' || phase === 'ranking') && (
-            <div className="px-4 pt-1 pb-5 space-y-1 flex-1 overflow-auto min-h-0">
+            <div className="px-3 sm:px-4 pt-1 pb-3 sm:pb-5 space-y-0.5 sm:space-y-1 h-[220px] sm:h-[260px] lg:h-[340px]">
               {displayResults.map((result) => (
                 <motion.div
                   key={result.domain}
@@ -137,25 +137,25 @@ export default function GoogleSearchAnimation() {
                     layout: { duration: 0.5, ease: [0.22, 0.61, 0.36, 1] },
                     opacity: { duration: 0.3 },
                   }}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg ${
+                  className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg ${
                     result.highlight ? 'ring-2 ring-accent/30' : ''
                   }`}
                 >
-                  <span className="text-zinc-400 text-sm font-medium w-5">
+                  <span className="text-zinc-400 text-xs sm:text-sm font-medium w-4 sm:w-5 shrink-0">
                     {result.position}
                   </span>
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-emerald-700 truncate">{result.domain}</p>
-                    <p className="text-sm text-zinc-800 font-medium truncate">{result.title}</p>
+                    <p className="text-[10px] sm:text-xs text-emerald-700 truncate">{result.domain}</p>
+                    <p className="text-xs sm:text-sm text-zinc-800 font-medium truncate">{result.title}</p>
                   </div>
                   {result.highlight && (
                     <motion.span
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.3 }}
-                      className="shrink-0 w-7 h-7 rounded-full bg-accent flex items-center justify-center"
+                      className="shrink-0 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-accent flex items-center justify-center"
                     >
-                      <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                       </svg>
                     </motion.span>
@@ -170,7 +170,7 @@ export default function GoogleSearchAnimation() {
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: phase === 'ranking' ? 1 : 0 }}
-        className="mt-4 min-h-[1.5rem] text-center text-sm text-zinc-500"
+        className="mt-2 sm:mt-4 min-h-[1.25rem] sm:min-h-[1.5rem] text-center text-xs sm:text-sm text-zinc-500 flex-shrink-0"
       >
         So stellen wir Sie auf Platz 1.
       </motion.p>

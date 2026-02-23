@@ -127,7 +127,7 @@ export default function Hero({
                   </span>
                 </motion.div>
               </div>
-              <div className="mt-6 md:mt-8 lg:mt-0 lg:shrink-0 w-full min-w-0 md:max-w-lg md:mx-auto lg:mx-0 lg:max-w-none lg:w-[420px] h-[320px] sm:h-[380px] md:h-[420px] lg:h-[560px]">
+              <div className="mt-6 md:mt-8 lg:mt-0 lg:shrink-0 w-full min-w-0 md:max-w-lg md:mx-auto lg:mx-0 lg:max-w-none lg:w-[420px] h-[480px] sm:h-[520px] md:h-[420px] lg:h-[560px]">
                 <GoogleSearchAnimation />
               </div>
             </div>
