@@ -156,7 +156,7 @@ export default function SeoArticleSection() {
         </div>
         <div className="rounded-xl border-l-4 border-emerald-500 bg-emerald-50/50 p-4 sm:p-5 my-6">
           <p className="text-zinc-700 m-0">
-            <strong>Wussten Sie?</strong> Organische Suchergebnisse generieren 94 % aller Klicks. Deshalb lohnt sich die Investition in nachhaltige SEO-Maßnahmen. (Quelle: AIOSEO.com)
+            <strong>Wussten Sie?</strong> Organische Suchergebnisse generieren 94 % aller Klicks. Deshalb lohnt sich die Investition in nachhaltige SEO-Maßnahmen.
           </p>
         </div>
 
