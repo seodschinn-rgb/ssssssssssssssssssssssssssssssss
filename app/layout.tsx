@@ -40,9 +40,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   icons: {
-    // Google zeigt in Suchergebnissen bevorzugt PNG (48×48). SVG wird oft nicht angezeigt.
+    // Erste Eintrag = Standard-Favicon. Google Search Console nutzt 48×48 PNG (/icon aus app/icon.tsx).
     icon: [
-      { url: '/icon.png', type: 'image/png', sizes: '48x48' },
+      { url: '/icon', type: 'image/png', sizes: '48x48' },
       { url: '/icon.svg', type: 'image/svg+xml', sizes: 'any' },
     ],
     apple: [{ url: '/apple-icon', type: 'image/png', sizes: '180x180' }],
