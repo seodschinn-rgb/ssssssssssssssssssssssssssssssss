@@ -15,7 +15,7 @@ const ProcessSection = dynamic(() => import('@/components/ProcessSection'), { ss
 const TestimonialSlider = dynamic(() => import('@/components/TestimonialSlider'), { ssr: true })
 const CityLinks = dynamic(() => import('@/components/CityLinks'), { ssr: true })
 const ContactSection = dynamic(() => import('@/components/ContactSection'), { ssr: true })
-const SeoArticleSection = dynamic(() => import('@/components/SeoArticleSection'), { ssr: true })
+import SeoArticleSection from '@/components/SeoArticleSection'
 
 export const metadata: Metadata = {
   title: { absolute: 'SEO Agentur München: Ihr Partner für Top-Rankings & mehr Sichtbarkeit' },

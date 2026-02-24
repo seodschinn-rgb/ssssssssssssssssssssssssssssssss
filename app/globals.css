@@ -8,6 +8,12 @@
     overflow-x: hidden;
     max-width: 100%;
   }
+  /* Auf Mobile: auto statt smooth, um verzögerte Scroll-Sprünge am Seitenende zu vermeiden */
+  @media (max-width: 767px) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
   body {
     @apply antialiased text-zinc-900 bg-white;
     overflow-x: hidden;
