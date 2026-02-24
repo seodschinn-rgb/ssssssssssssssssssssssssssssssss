@@ -37,7 +37,7 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section
-      className="relative min-h-0 md:min-h-[70vh] lg:min-h-[95vh] flex flex-col justify-start md:justify-center px-4 sm:px-6 md:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden"
+      className="relative min-h-0 md:min-h-[70svh] lg:min-h-[95svh] flex flex-col justify-start md:justify-center px-4 sm:px-6 md:px-8 pt-24 sm:pt-28 md:pt-32 lg:pt-32 pb-12 sm:pb-16 md:pb-20 overflow-hidden"
       aria-labelledby="hero-heading"
     >
       {showSearchAnimation && (

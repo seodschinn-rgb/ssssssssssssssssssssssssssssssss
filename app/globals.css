@@ -8,10 +8,19 @@
     overflow-x: hidden;
     max-width: 100%;
   }
-  /* Auf Mobile: auto statt smooth, um verzögerte Scroll-Sprünge am Seitenende zu vermeiden */
+  /* iOS/Mobile: stabile Viewport-Höhe und weniger Nachscrollen beim Loslassen */
   @media (max-width: 767px) {
     html {
       scroll-behavior: auto;
+      /* Kleine Viewport-Höhe (svh) = Layout ändert sich nicht, wenn die Adressleiste ein-/ausblendet */
+      min-height: 100vh;
+      min-height: 100svh;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: none;
+    }
+    body {
+      min-height: 100%;
+      min-height: 100svh;
     }
   }
   body {
