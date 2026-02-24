@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export default function SeoArticleSection() {
   return (
-    <article className="py-20 px-4 sm:px-6 bg-zinc-50/80">
+    <article className="py-20 px-4 sm:px-6 bg-zinc-50/80 [overflow-anchor:none]">
       <div className="mx-auto max-w-4xl">
         <h1 className="sr-only">
           SEO Agentur München: Ihr Experte für nachhaltige Sichtbarkeit & Top-Rankings

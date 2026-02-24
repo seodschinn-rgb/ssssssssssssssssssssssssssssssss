@@ -42,8 +42,8 @@ export default function TestimonialSlider() {
       <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 to-white" />
       <div className="relative mx-auto max-w-4xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"

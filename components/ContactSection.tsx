@@ -53,7 +53,7 @@ export default function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="py-24 px-6 relative overflow-hidden"
+      className="py-24 px-6 relative overflow-hidden [overflow-anchor:none]"
       aria-labelledby="contact-heading"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-800" />
@@ -62,16 +62,16 @@ export default function ContactSection() {
       <div className="relative mx-auto max-w-3xl text-center">
         <motion.h2
           id="contact-heading"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-3xl sm:text-4xl font-bold text-white"
         >
           Kostenloses SEO-Gespräch
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
           className="mt-4 text-zinc-400"
@@ -80,8 +80,8 @@ export default function ContactSection() {
           Stunden.
         </motion.p>
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.15 }}
           className="mt-4"
@@ -97,8 +97,8 @@ export default function ContactSection() {
           </a>
         </motion.p>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ delay: 0.2 }}
           className="mt-10"

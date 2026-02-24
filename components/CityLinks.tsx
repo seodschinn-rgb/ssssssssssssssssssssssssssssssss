@@ -14,8 +14,8 @@ export default function CityLinks() {
       <div className="absolute inset-0 bg-gradient-to-b from-white to-zinc-50/80" />
       <div className="relative mx-auto max-w-6xl">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-12"
@@ -31,8 +31,8 @@ export default function CityLinks() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-wrap justify-center gap-3"
