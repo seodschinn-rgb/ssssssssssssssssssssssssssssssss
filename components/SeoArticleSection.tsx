@@ -2,8 +2,11 @@ import Link from 'next/link'
 
 export default function SeoArticleSection() {
   return (
-    <article className="py-20 px-4 sm:px-6 bg-zinc-50/80 [overflow-anchor:none]">
-      <div className="mx-auto max-w-4xl">
+    <article
+      className="py-20 px-4 sm:px-6 bg-zinc-50/80 [overflow-anchor:none] [contain:layout] pb-[max(8rem,calc(env(safe-area-inset-bottom)+5rem))]"
+      style={{ overflowAnchor: 'none' }}
+    >
+      <div className="mx-auto max-w-4xl [overflow-anchor:none]">
         <h1 className="sr-only">
           SEO Agentur München: Ihr Experte für nachhaltige Sichtbarkeit & Top-Rankings
         </h1>
@@ -34,7 +37,7 @@ export default function SeoArticleSection() {
 
         <hr className="border-0 border-t border-zinc-200 my-10" />
 
-        <h2 id="was-ist-seo" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-24">
+        <h2 id="was-ist-seo" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-16">
           Was ist Suchmaschinenoptimierung (SEO) und ihre Relevanz für Unternehmen in München?
         </h2>
         <p className="text-zinc-600 leading-relaxed mb-6">
@@ -52,7 +55,7 @@ export default function SeoArticleSection() {
 
         <hr className="border-0 border-t border-zinc-200 my-10" />
 
-        <h2 id="leistungsspektrum" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-24">
+        <h2 id="leistungsspektrum" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-16">
           Das Leistungsspektrum einer SEO Agentur in München: Von der Analyse bis zur Umsetzung
         </h2>
         <p className="text-zinc-600 leading-relaxed mb-6">
@@ -87,7 +90,7 @@ export default function SeoArticleSection() {
 
         <hr className="border-0 border-t border-zinc-200 my-10" />
 
-        <h2 id="warum-agentur" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-24">
+        <h2 id="warum-agentur" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-16">
           Warum sich die Zusammenarbeit mit einer erfahrenen SEO Agentur in München lohnt
         </h2>
         <p className="text-zinc-600 leading-relaxed mb-6">
@@ -119,7 +122,7 @@ export default function SeoArticleSection() {
 
         <hr className="border-0 border-t border-zinc-200 my-10" />
 
-        <h2 id="prozess" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-24">
+        <h2 id="prozess" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-16">
           Der transparente Prozess: So läuft die Zusammenarbeit mit Ihrer SEO Agentur in München ab
         </h2>
         <p className="text-zinc-600 leading-relaxed mb-6">
@@ -162,7 +165,7 @@ export default function SeoArticleSection() {
 
         <hr className="border-0 border-t border-zinc-200 my-10" />
 
-        <h2 id="kosten" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-24">
+        <h2 id="kosten" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-16">
           Kosten, Dauer und messbarer Erfolg Ihrer SEO Investition in München
         </h2>
         <p className="text-zinc-600 leading-relaxed mb-6">
@@ -215,7 +218,7 @@ export default function SeoArticleSection() {
 
         <hr className="border-0 border-t border-zinc-200 my-10" />
 
-        <h2 id="content-marketing" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-24">
+        <h2 id="content-marketing" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-16">
           Content Marketing und Keyword-Strategie: Bausteine für langfristige Sichtbarkeit in Bayern
         </h2>
         <p className="text-zinc-600 leading-relaxed mb-6">
@@ -239,7 +242,7 @@ export default function SeoArticleSection() {
 
         <hr className="border-0 border-t border-zinc-200 my-10" />
 
-        <h2 id="faq-seo-muenchen" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-24">
+        <h2 id="faq-seo-muenchen" className="text-2xl sm:text-3xl font-bold text-zinc-900 mt-12 mb-4 scroll-mt-16">
           Häufig gestellte Fragen (FAQ) zur SEO Agentur München
         </h2>
         <p className="text-zinc-600 leading-relaxed mb-6">

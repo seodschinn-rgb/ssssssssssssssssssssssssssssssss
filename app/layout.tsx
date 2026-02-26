@@ -5,7 +5,7 @@ import './globals.css'
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
-  display: 'swap',
+  display: 'optional', // Verhindert verzögerten Reflow: Schrift wechselt nicht mehr nach dem ersten Paint
   weight: ['400', '500', '600', '700'],
   preload: true,
   adjustFontFallback: true,
