@@ -3,10 +3,9 @@ import Link from 'next/link'
 export default function SeoArticleSection() {
   return (
     <article
-      className="py-20 px-4 sm:px-6 bg-zinc-50/80 [overflow-anchor:none] [contain:layout] pb-[max(8rem,calc(env(safe-area-inset-bottom)+5rem))]"
-      style={{ overflowAnchor: 'none' }}
+      className="py-20 px-4 sm:px-6 bg-zinc-50/80 pb-24 sm:pb-[max(8rem,calc(env(safe-area-inset-bottom)+5rem))]"
     >
-      <div className="mx-auto max-w-4xl [overflow-anchor:none]">
+      <div className="mx-auto max-w-4xl">
         <h1 className="sr-only">
           SEO Agentur München: Ihr Experte für nachhaltige Sichtbarkeit & Top-Rankings
         </h1>

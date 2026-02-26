@@ -46,10 +46,10 @@
   main, section, article, header, footer {
     min-width: 0;
   }
-  /* iOS: Scroll-Anchoring auf der Startseite deaktivieren, damit der lange SEO-Text unten keinen Sprung nach oben auslöst */
+  /* Mobile: Scroll-Anchoring aktiv lassen, damit der SEO-Text unten nicht nach oben springt bei Viewport-Änderungen (z. B. Adressleiste) */
   @media (max-width: 767px) {
     main.home-main {
-      overflow-anchor: none;
+      overflow-anchor: auto;
     }
   }
 }
