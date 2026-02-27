@@ -3,6 +3,7 @@
  */
 
 import { keywordMappingAnleitungContent } from './blog-posts/keyword-mapping-anleitung-content'
+import { schemaMarkupAnleitungContent } from './blog-posts/schema-markup-anleitung-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -25,6 +26,44 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'schema-markup-anleitung',
+    title: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
+    metaTitle: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
+    metaDescription:
+      'Umfassender Leitfaden zu Schema Markup und strukturierten Daten: JSON-LD implementieren, testen und optimieren. Rich Snippets, LocalBusiness und Best Practices für München und Bayern.',
+    category: 'technisches-seo',
+    content: schemaMarkupAnleitungContent,
+    image: '/images/blog/schema%20markup%20anleitung%20(1).webp',
+    imageAlt: 'Schema Markup Anleitung: Strukturierte Daten und JSON-LD für bessere Google Rankings',
+    faqs: [
+      {
+        question: 'Was ist der Unterschied zwischen strukturierten Daten und unstrukturierten Daten?',
+        answer:
+          'Strukturierte Daten folgen einem vordefinierten Datenmodell und sind leicht maschinenlesbar (z. B. Datenbanken, Tabellen, Schema Markup). Unstrukturierte Daten bestehen aus Rohdaten wie Textdokumenten, Bildern oder Videos – etwa 80 % der Unternehmensdaten.',
+      },
+      {
+        question: 'Kann Schema Markup auch für Bilder und Videos verwendet werden?',
+        answer:
+          'Ja. Für Videos wird das VideoObject-Schema empfohlen (Titel, Beschreibung, Thumbnail-URL, Upload-Datum, Video-URL), um in Google-Videokarussells und als Rich Snippets zu erscheinen. ImageObject-Markup definiert Bilder präziser für Suchmaschinen.',
+      },
+      {
+        question: 'Wie aktuell muss Schema Markup gehalten werden, um wirksam zu sein?',
+        answer:
+          'Die Aktualität ist entscheidend. Google nutzt strukturierte Daten für aktuelle Infos zu Preisen, Verfügbarkeit oder Bewertungen. Veraltete Daten können dazu führen, dass Rich Snippets nicht angezeigt werden. Schema Markup regelmäßig prüfen und bei Änderungen anpassen; dateModified für präzise Datumsangaben nutzen.',
+      },
+      {
+        question: 'Verringert Schema Markup die Ladezeit meiner Website?',
+        answer:
+          'Nein. JSON-LD ist sehr leichtgewichtig und wird oft asynchron geladen, sodass es den Aufbau der Seite nicht blockiert. Schema Markup kann durch bessere Rich Snippets und höhere Klickrate indirekt zur SEO-Leistung beitragen.',
+      },
+      {
+        question: 'Ist es möglich, Schema Markup manuell zu erstellen, oder brauche ich immer ein Tool?',
+        answer:
+          'Schema Markup lässt sich manuell erstellen, besonders mit JSON-LD – das bietet maximale Flexibilität für individuelle oder dynamische Strukturen. Tools wie der Merkle Generator oder Googles Markup-Hilfe sind effizienter und fehlerärmer, besonders für Einsteiger.',
+      },
+    ],
+  },
   {
     slug: 'keyword-mapping-anleitung',
     title: 'Keyword Mapping Anleitung: In 5 Schritten zur optimalen SEO-Strategie',
