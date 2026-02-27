@@ -64,7 +64,7 @@ export const schemaMarkupAnleitungContent = `
                 <div style="background: #27ae60; color: #fff; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em; flex-shrink: 0;">3</div>
                 <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px 22px; flex: 1;">
                     <h4 style="margin-top: 0; margin-bottom: 8px;">Strategisch optimieren</h4>
-                    <p style="margin: 0;">Ein tiefgreifendes Verständnis der <a href="https://seomuenchen.com/seo-grundlagen/">SEO Grundlagen</a> unterstützt Sie dabei, diese Optimierungen noch strategischer anzugehen.</p>
+                    <p style="margin: 0;">Ein tiefgreifendes Verständnis der <a href="/blog/seo-grundlagen">SEO Grundlagen</a> unterstützt Sie dabei, diese Optimierungen noch strategischer anzugehen.</p>
                 </div>
             </div>
         </div>
@@ -86,7 +86,7 @@ export const schemaMarkupAnleitungContent = `
         <!-- Statistik-Warnung -->
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 22px; margin: 24px 0; border-left: 4px solid #e53935;">
             <h3 style="margin-top: 0; color: #c62828;">⚠️ Alarmierende Fehlerquote</h3>
-            <p style="margin: 8px 0 0; padding-top: 8px; border-top: 1px dashed #e0e0e0;">Eine <a href="https://famefact.com/2025/06/07/social-media-links-bringen-keinen-seo-traffic-schema-markup-fehler/">DeepCrawl-Studie von 2025</a> zeigt, dass <strong>67 % der Schema Markups kritische Fehler</strong> enthalten. Diese verhindern Rich Snippets, beeinträchtigen Ihre <a href="https://seomuenchen.com/leistungen/seo-audit">SEO-Leistung</a> erheblich und bleiben oft monatelang unentdeckt.</p>
+            <p style="margin: 8px 0 0; padding-top: 8px; border-top: 1px dashed #e0e0e0;">Eine DeepCrawl-Studie von 2025 zeigt, dass <strong>67 % der Schema Markups kritische Fehler</strong> enthalten. Diese verhindern Rich Snippets, beeinträchtigen Ihre <a href="https://seomuenchen.com/leistungen/seo-audit">SEO-Leistung</a> erheblich und bleiben oft monatelang unentdeckt.</p>
         </div>
 
         <h3>So vermeiden Sie Fehler: Best Practices für Schema Markup</h3>
@@ -141,7 +141,7 @@ export const schemaMarkupAnleitungContent = `
 
         <!-- KI-Zukunft Highlight -->
         <div style="background: #e8f4fd; border-left: 4px solid #2196F3; border-radius: 6px; padding: 18px 22px; margin: 24px 0;">
-            <p style="margin: 0;"><strong>Zukunft: KI-Suche</strong> – Eine aktuelle Studie zeigt, dass umfassendes Schema-Markup die Wahrscheinlichkeit erhöht, in generativen Antworten <a href="https://searchgptagentur.de/blog/schema-fuer-ki-suche-das-einzige-markup-setup-2026">3,2-fach zitiert zu werden</a>. Für KI-gestützte Suchanfragen wird Schema Markup künftig noch wichtiger werden.</p>
+            <p style="margin: 0;"><strong>Zukunft: KI-Suche</strong> – Eine aktuelle Studie zeigt, dass umfassendes Schema-Markup die Wahrscheinlichkeit erhöht, in generativen Antworten 3,2-fach zitiert zu werden. Für KI-gestützte Suchanfragen wird Schema Markup künftig noch wichtiger werden.</p>
         </div>
 
         <hr style="border: none; border-top: 1px solid #e8e8e8; margin: 40px 0;">
@@ -151,7 +151,7 @@ export const schemaMarkupAnleitungContent = `
         <p>Wir bei SEO München wissen: Gezieltes Schema Markup, wie das LocalBusiness- und Service-Schema, hebt Ihre lokale Sichtbarkeit in München und Bayern deutlich hervor. Ihre Geschäftsdaten, ob Öffnungszeiten oder Kundenbewertungen, erscheinen so prominenter in Google-Suchergebnissen und auf Google Maps – fast so, als hätten Sie einen VIP-Pass für die erste Reihe!</p>
 
         <div style="background: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 6px; padding: 18px 22px; margin: 24px 0;">
-            <p style="margin: 0;"><strong>Nachgewiesen:</strong> Eine <a href="https://localo.com/de/blog/local-business-schema">Localo-Studie</a> belegt: Korrekt implementiertes LocalBusiness-Schema steigert Ihre Google-Sichtbarkeit bereits innerhalb weniger Wochen. Das ist entscheidend, um die Lead-Generierung und Kundenansprache spürbar zu optimieren.</p>
+            <p style="margin: 0;"><strong>Nachgewiesen:</strong> Eine Localo-Studie belegt: Korrekt implementiertes LocalBusiness-Schema steigert Ihre Google-Sichtbarkeit bereits innerhalb weniger Wochen. Das ist entscheidend, um die Lead-Generierung und Kundenansprache spürbar zu optimieren.</p>
         </div>
 
         <h3>Integration in Ihre lokale SEO-Strategie</h3>
@@ -211,13 +211,13 @@ export const schemaMarkupAnleitungContent = `
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
             <h3 style="margin: 0; padding: 18px 24px; background: #f9fafb; border-bottom: 1px solid #eee; font-size: 1em;">Verringert Schema Markup die Ladezeit meiner Website?</h3>
-            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Nein, die Implementierung von Schema Markup, insbesondere im empfohlenen JSON-LD-Format, hat in der Regel keine negativen Auswirkungen auf die Ladezeit. JSON-LD ist sehr leichtgewichtig und wird oft asynchron geladen, was bedeutet, dass es den Aufbau der sichtbaren Seite nicht blockiert (<a href="https://webmasters.stackexchange.com/questions/131615/schema-json-codes-and-their-effect-on-the-page-speed-rank">Webmasters Stack Exchange</a>). Durch die Verbesserung der Rich Snippets und damit der Klickrate kann Schema Markup indirekt zur SEO-Leistung beitragen (<a href="https://www.schemaapp.com/schema-markup/common-questions-about-schema-markup-for-seo/">Schema App</a>).</p>
+            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Nein, die Implementierung von Schema Markup, insbesondere im empfohlenen JSON-LD-Format, hat in der Regel keine negativen Auswirkungen auf die Ladezeit. JSON-LD ist sehr leichtgewichtig und wird oft asynchron geladen, was bedeutet, dass es den Aufbau der sichtbaren Seite nicht blockiert. Durch die Verbesserung der Rich Snippets und damit der Klickrate kann Schema Markup indirekt zur SEO-Leistung beitragen.</p>
         </div>
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
             <h3 style="margin: 0; padding: 18px 24px; background: #f9fafb; border-bottom: 1px solid #eee; font-size: 1em;">Ist es möglich, Schema Markup manuell zu erstellen, oder brauche ich immer ein Tool?</h3>
             <div style="padding: 16px 24px;">
-                <p style="margin: 0 0 12px; font-size: 0.95em; color: #444;">Es ist durchaus möglich, Schema Markup manuell zu erstellen, insbesondere mit JSON-LD. Dies bietet maximale Flexibilität (<a href="https://netzhelfer.de/organisation-mit-schema-org/">NETZhelfer GmbH</a>).</p>
+                <p style="margin: 0 0 12px; font-size: 0.95em; color: #444;">Es ist durchaus möglich, Schema Markup manuell zu erstellen, insbesondere mit JSON-LD. Dies bietet maximale Flexibilität.</p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
                     <div style="background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 6px; padding: 12px;">
                         <p style="margin: 0 0 4px; font-weight: bold; color: #2e7d32;">Manuell</p>
@@ -225,7 +225,7 @@ export const schemaMarkupAnleitungContent = `
                     </div>
                     <div style="background: #e8f4fd; border: 1px solid #bbdefb; border-radius: 6px; padding: 12px;">
                         <p style="margin: 0 0 4px; font-weight: bold; color: #1565c0;">Mit Tools</p>
-                        <p style="margin: 0; font-size: 0.85em; color: #555;">Effizienter und fehlerärmer – z.B. Merkle Generator oder Googles Markup-Hilfe (<a href="https://omr.com/de/reviews/contenthub/schema-markup">OMR</a>)</p>
+                        <p style="margin: 0; font-size: 0.85em; color: #555;">Effizienter und fehlerärmer – z.B. Merkle Generator oder Googles Markup-Hilfe</p>
                     </div>
                 </div>
             </div>

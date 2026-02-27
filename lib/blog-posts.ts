@@ -31,7 +31,7 @@ const POSTS: BlogPost[] = [
     title: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
     metaTitle: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
     metaDescription:
-      'Umfassender Leitfaden zu Schema Markup und strukturierten Daten: JSON-LD implementieren, testen und optimieren. Rich Snippets, LocalBusiness und Best Practices für München und Bayern.',
+      'Umfassende Schema Markup Anleitung: Lernen Sie, wie Sie strukturierte Daten implementieren, testen und optimieren, um Rich Snippets zu erzielen und Ihre Google Rankings zu verbessern. Für Unternehmen in München & Bayern.',
     category: 'technisches-seo',
     content: schemaMarkupAnleitungContent,
     image: '/images/blog/schema%20markup%20anleitung%20(1).webp',
