@@ -4,6 +4,7 @@
 
 import { keywordMappingAnleitungContent } from './blog-posts/keyword-mapping-anleitung-content'
 import { schemaMarkupAnleitungContent } from './blog-posts/schema-markup-anleitung-content'
+import { interneVerlinkungAnleitungContent } from './blog-posts/interne-verlinkung-anleitung-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -26,6 +27,44 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'interne-verlinkung-anleitung',
+    title: 'Interne Verlinkung Anleitung: Der Schlüssel zu mehr SEO-Sichtbarkeit für Ihre Website',
+    metaTitle: 'Interne Verlinkung Anleitung: Der Schlüssel zu mehr SEO-Sichtbarkeit für Ihre Website',
+    metaDescription:
+      'Umfassende Anleitung zur internen Verlinkung: Erfahren Sie, wie Sie interne Links strategisch setzen, Linkjuice optimal verteilen und Ihre Google Rankings verbessern – mit Praxis-Tipps und WordPress-Guide.',
+    category: 'content-keywords',
+    content: interneVerlinkungAnleitungContent,
+    image: '/images/blog/interne%20verlinkung%20anleitung%20(1).webp',
+    imageAlt: 'Interne Verlinkung Anleitung: Teaserbild – SEO-Sichtbarkeit und Linkstruktur mit Siloing und Onlineshop-Strategien optimieren',
+    faqs: [
+      {
+        question: 'Wie viele interne Links sollte eine Website haben?',
+        answer:
+          'Es gibt keine feste ideale Anzahl. Google empfiehlt eine „angemessene Anzahl", um die Navigation zu erleichtern und den Linkjuice zu verteilen. Wichtiger als die Menge sind Relevanz und strategische Platzierung; übermäßige Verlinkung kann die Linkkraft verwässern.',
+      },
+      {
+        question: 'Können Seiten auch ohne externe Links gut ranken?',
+        answer:
+          'Ja. Hochwertige Inhalte zusammen mit einer starken internen Verlinkungsstruktur können die Sichtbarkeit deutlich verbessern. Interne Links verteilen den Linkjuice und helfen Suchmaschinen, alle relevanten Seiten zu entdecken und Autorität von starken auf schwächere Seiten zu übertragen.',
+      },
+      {
+        question: 'Was ist der Unterschied zwischen den Statuscodes 404 und 410?',
+        answer:
+          '404 Not Found bedeutet „Seite nicht gefunden" – oft temporär, die Seite kann später wieder existieren. 410 Gone bedeutet „dauerhaft entfernt" – die Ressource wird nicht wiederhergestellt; Google entfernt 410-Seiten in der Regel schneller aus dem Index.',
+      },
+      {
+        question: 'Wie oft sollten interne Links überprüft und aktualisiert werden?',
+        answer:
+          'Idealerweise vierteljährlich, mindestens halbjährlich. Nach einem Relaunch oder größeren Strukturänderungen sollten Sie sofort prüfen. Broken Links (404/410) sollten umgehend behoben werden, damit die Linkkraft optimal verteilt bleibt.',
+      },
+      {
+        question: 'Gibt es spezifische Metriken, um den Erfolg zu verfolgen?',
+        answer:
+          'Ja: Crawltiefe und -frequenz, organische Sichtbarkeit, Keyword-Rankings sowie Verweildauer und Absprungrate. Tools wie Google Search Console, SISTRIX oder Ahrefs liefern wertvolle Einblicke für die Erfolgsmessung interner Verlinkung.',
+      },
+    ],
+  },
   {
     slug: 'schema-markup-anleitung',
     title: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',

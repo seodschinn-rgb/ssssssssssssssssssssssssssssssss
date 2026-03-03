@@ -201,12 +201,12 @@ export default function BlogSlugPage({ params }: PageProps) {
           </section>
           {post.image && (
             <div className="mx-auto max-w-3xl px-6 mb-8">
-              <div className="relative w-full aspect-[2/1] rounded-xl overflow-hidden bg-zinc-100">
+              <div className="relative w-full rounded-xl overflow-hidden bg-zinc-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={post.image}
                   alt={post.imageAlt ?? post.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-auto object-contain"
                 />
               </div>
             </div>
