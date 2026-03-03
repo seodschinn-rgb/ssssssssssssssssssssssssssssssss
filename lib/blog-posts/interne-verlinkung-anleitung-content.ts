@@ -44,7 +44,7 @@ export const interneVerlinkungAnleitungContent = `
 
         <h3>Bedeutung für Rankings</h3>
 
-        <p>Strategische interne Links sind eine fundamentale SEO-Grundlage. Sie zeigen Suchmaschinen wie Google die hierarchische Struktur Ihrer Website auf und signalisieren die Wichtigkeit einzelner Inhalte. Eine <a href="https://www.semrush.com/blog/internal-links-for-seo-ultimate-guide/">SEMrush-Studie aus dem Jahr 2022</a> belegt, dass interne Links die Rankings verbessern, indem sie die Crawlbarkeit erhöhen und die thematische Relevanz stärken. Eine durchdachte interne Verlinkung ist der Grundstein für eine starke Online-Präsenz und den Weg zu Top-Rankings.</p>
+        <p>Strategische interne Links sind eine fundamentale SEO-Grundlage. Sie zeigen Suchmaschinen wie Google die hierarchische Struktur Ihrer Website auf und signalisieren die Wichtigkeit einzelner Inhalte. Eine SEMrush-Studie aus dem Jahr 2022 belegt, dass interne Links die Rankings verbessern, indem sie die Crawlbarkeit erhöhen und die thematische Relevanz stärken. Eine durchdachte interne Verlinkung ist der Grundstein für eine starke Online-Präsenz und den Weg zu Top-Rankings.</p>
 
         <hr style="border: none; border-top: 1px solid #e8e8e8; margin: 40px 0;">
 
@@ -133,7 +133,7 @@ export const interneVerlinkungAnleitungContent = `
         <!-- Statistik-Warnung -->
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 22px; margin: 24px 0; border-left: 4px solid #e53935;">
             <h4 style="margin-top: 0; color: #c62828;">⚠️ Ungenutztes Potenzial</h4>
-            <p style="margin: 0;">Eine InLinks-Studie 2022 zeigt, dass <strong><a href="https://www.seo-suedwest.de/7293-studie-zeigt-viele-websites-verpassen-chancen-fuer-interne-verlinkung.html">82 % der Linkchancen ungenutzt bleiben</a></strong>. Optimieren Sie diese Mischung für Ihr <a href="/leistungen/technisches-seo">technisches SEO</a> und bessere Rankings.</p>
+            <p style="margin: 0;">Eine InLinks-Studie 2022 zeigt, dass <strong><a href="https://inlinks.com/case-studies/internal-linking-opportunities/">82 % der Linkchancen ungenutzt bleiben</a></strong>. Optimieren Sie diese Mischung für Ihr <a href="/leistungen/technisches-seo">technisches SEO</a> und bessere Rankings.</p>
         </div>
 
         <p>Wir empfehlen, manuelle Links und „Related Posts"-Plugins zu nutzen. Ein bewusster Umgang mit internen Links zahlt sich aus und stärkt Ihre gesamte SEO-Strategie.</p>
@@ -192,7 +192,7 @@ export const interneVerlinkungAnleitungContent = `
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
             <h3 style="margin: 0; padding: 18px 24px; background: #f9fafb; border-bottom: 1px solid #eee; font-size: 1em;">Wie viele interne Links sollte eine Website haben?</h3>
-            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Es gibt keine festgelegte ideale Anzahl interner Links für eine Website, da diese stark von der Größe, Struktur und dem Inhalt abhängt. Google empfiehlt, eine „angemessene Anzahl" von internen Links zu verwenden, um die Navigation zu erleichtern und den Linkjuice effizient zu verteilen. Übermäßige Verlinkung kann die Linkkraft verwässern und die Nutzererfahrung beeinträchtigen (<a href="https://developers.google.com/search/docs/fundamentals/internal-linking?hl=de">Google Search Central</a>). Wichtiger als die reine Anzahl ist die Relevanz und strategische Platzierung der Links.</p>
+            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Es gibt keine festgelegte ideale Anzahl interner Links für eine Website, da diese stark von der Größe, Struktur und dem Inhalt abhängt. Google empfiehlt, eine „angemessene Anzahl" von internen Links zu verwenden, um die Navigation zu erleichtern und den Linkjuice effizient zu verteilen. Übermäßige Verlinkung kann die Linkkraft verwässern und die Nutzererfahrung beeinträchtigen (Google Search Central). Wichtiger als die reine Anzahl ist die Relevanz und strategische Platzierung der Links.</p>
         </div>
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
@@ -255,7 +255,7 @@ export const interneVerlinkungAnleitungContent = `
                         <div style="font-weight: bold; font-size: 0.9em;">Verweildauer &amp; Absprungrate</div>
                     </div>
                 </div>
-                <p style="margin: 0; font-size: 0.95em; color: #444;">Tools wie Google Search Console, SISTRIX oder Ahrefs können wertvolle Einblicke liefern (<a href="https://ahrefs.com/blog/de/interne-links/">Ahrefs</a>). Die strategische Nutzung interner Links ist komplex, aber essenziell für den Erfolg Ihrer Website.</p>
+                <p style="margin: 0; font-size: 0.95em; color: #444;">Tools wie Google Search Console, SISTRIX oder Ahrefs können wertvolle Einblicke liefern. Die strategische Nutzung interner Links ist komplex, aber essenziell für den Erfolg Ihrer Website.</p>
             </div>
         </div>
 
