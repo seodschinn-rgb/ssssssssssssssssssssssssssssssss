@@ -87,7 +87,7 @@ export const interneVerlinkungAnleitungContent = `
         <div style="background: linear-gradient(135deg, #2c3e50, #34495e); color: #fff; border-radius: 10px; padding: 28px 32px; margin: 24px 0; text-align: center;">
             <p style="font-size: 2.2em; font-weight: bold; margin: 0 0 4px;">+40 %</p>
             <p style="margin: 0; opacity: 0.85;">Steigerung der organischen Sichtbarkeit durch Siloing-Prinzipien</p>
-            <p style="margin: 8px 0 0; font-size: 0.85em; opacity: 0.6;">Quelle: <a href="https://increv.co/academy/seo/internal-links/" style="color: #fff; opacity: 0.7;">Increv</a></p>
+            <p style="margin: 8px 0 0; font-size: 0.85em; opacity: 0.6;">Quelle: Increv</p>
         </div>
 
         <p>Um Siloing erfolgreich umzusetzen, fragen Sie sich:</p>
