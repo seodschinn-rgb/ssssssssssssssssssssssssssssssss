@@ -51,5 +51,11 @@
     main.home-main {
       overflow-anchor: auto;
     }
+    /* SEO-Artikel-Sektion explizit als Anker: bleibt beim Scrollen stabil */
+    .seo-article-section {
+      overflow-anchor: auto;
+      /* Verhindert Layout-Sprünge durch Viewport-Änderungen (z. B. Mobile-Browser-Leiste) */
+      min-height: 1px;
+    }
   }
 }

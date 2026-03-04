@@ -53,7 +53,7 @@ export default function ContactSection() {
   return (
     <section
       id="kontakt"
-      className="py-24 px-6 relative overflow-hidden [overflow-anchor:none]"
+      className="py-24 px-6 relative overflow-hidden"
       aria-labelledby="contact-heading"
     >
       <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 via-zinc-900 to-zinc-800" />

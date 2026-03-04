@@ -3,7 +3,8 @@ import Link from 'next/link'
 export default function SeoArticleSection() {
   return (
     <article
-      className="py-20 px-4 sm:px-6 bg-zinc-50/80 pb-24 sm:pb-[max(8rem,calc(env(safe-area-inset-bottom)+5rem))]"
+      className="seo-article-section py-20 px-4 sm:px-6 bg-zinc-50/80 pb-24 sm:pb-[max(8rem,calc(env(safe-area-inset-bottom)+5rem))]"
+      style={{ overflowAnchor: 'auto' }}
     >
       <div className="mx-auto max-w-4xl">
         <h1 className="sr-only">
