@@ -1,16 +1,12 @@
 import Link from 'next/link'
+import { memo } from 'react'
 
-export default function SeoArticleSection() {
+function SeoArticleSectionComponent() {
   return (
     <article
       className="seo-article-section py-20 px-4 sm:px-6 bg-zinc-50/80 pb-24 sm:pb-[max(8rem,calc(env(safe-area-inset-bottom)+5rem))]"
-      style={{ overflowAnchor: 'auto' }}
     >
       <div className="mx-auto max-w-4xl">
-        <h1 className="sr-only">
-          SEO Agentur München: Ihr Experte für nachhaltige Sichtbarkeit & Top-Rankings
-        </h1>
-
         <p className="text-lg text-zinc-600 leading-relaxed mb-6">
           Wenn Sie in München Ihr Unternehmen online sichtbar machen und Top-Rankings erreichen möchten, erhalten Sie hier einen umfassenden Überblick, wie eine spezialisierte SEO Agentur Sie dabei unterstützen kann. Sie erfahren, wie gezielte Suchmaschinenoptimierung Ihre Reichweite steigert, qualitativ hochwertige Kundenanfragen generiert und nachhaltigen Erfolg sichert. Von einer detaillierten Analyse und fundierter Keyword-Recherche über technisches SEO und On-Page-Optimierungen bis hin zu maßgeschneidertem Content Marketing entwickeln wir Strategien, die Ihre Online-Präsenz stärken.
         </p>
@@ -339,3 +335,5 @@ export default function SeoArticleSection() {
     </article>
   )
 }
+
+export default memo(SeoArticleSectionComponent)

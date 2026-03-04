@@ -8,19 +8,24 @@
     overflow-x: hidden;
     max-width: 100%;
   }
-  /* iOS/Mobile: stabile Viewport-Höhe und weniger Nachscrollen beim Loslassen */
+  /* iOS/Mobile: stabile Viewport-Höhe, kein Doppel-Scroll/Flackern */
   @media (max-width: 767px) {
     html {
       scroll-behavior: auto;
-      /* Kleine Viewport-Höhe (svh) = Layout ändert sich nicht, wenn die Adressleiste ein-/ausblendet */
       min-height: 100vh;
       min-height: 100svh;
-      -webkit-overflow-scrolling: touch;
       overscroll-behavior-y: none;
+      overflow-anchor: none;
+      /* Kein -webkit-overflow-scrolling: touch – kann auf iOS eigenständiges Scrollen/Flackern auslösen */
     }
     body {
       min-height: 100%;
       min-height: 100svh;
+      overflow-anchor: none;
+      touch-action: pan-y;
+    }
+    main.home-main {
+      touch-action: pan-y;
     }
   }
   body {
@@ -46,16 +51,21 @@
   main, section, article, header, footer {
     min-width: 0;
   }
-  /* Mobile: Scroll-Anchoring aktiv lassen, damit der SEO-Text unten nicht nach oben springt bei Viewport-Änderungen (z. B. Adressleiste) */
+  /* Mobile: Kein Scroll-Anchoring – verhindert automatisches Hochscrollen beim SEO-Text (Browser korrigiert sonst bei Layout-Änderungen) */
   @media (max-width: 767px) {
     main.home-main {
-      overflow-anchor: auto;
+      overflow-anchor: none;
     }
-    /* SEO-Artikel-Sektion explizit als Anker: bleibt beim Scrollen stabil */
     .seo-article-section {
-      overflow-anchor: auto;
-      /* Verhindert Layout-Sprünge durch Viewport-Änderungen (z. B. Mobile-Browser-Leiste) */
-      min-height: 1px;
+      overflow-anchor: none;
+      overscroll-behavior-y: contain;
+      contain: layout paint;
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      /* Verhindert, dass Touch/Scroll an anderen Elementen hängt */
+      touch-action: pan-y;
+      /* Feste Schicht – kein Nachziehen bei Viewport-Änderungen */
+      will-change: auto;
     }
   }
 }

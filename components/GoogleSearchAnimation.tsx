@@ -3,6 +3,18 @@
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const m = window.matchMedia('(max-width: 767px)')
+    setIsMobile(m.matches)
+    const fn = () => setIsMobile(window.matchMedia('(max-width: 767px)').matches)
+    m.addEventListener('change', fn)
+    return () => m.removeEventListener('change', fn)
+  }, [])
+  return isMobile
+}
+
 const INITIAL_RESULTS = [
   { domain: 'seokratie.de', title: 'SEO Agentur München | Seokratie', position: 1 },
   { domain: 'timospecht.de', title: 'SEO Agentur München - Timo Specht', position: 2 },
@@ -20,6 +32,7 @@ const FINAL_RESULTS = [
 ]
 
 export default function GoogleSearchAnimation() {
+  const isMobile = useIsMobile()
   const [searchText, setSearchText] = useState('')
   const [phase, setPhase] = useState<'typing' | 'searching' | 'results' | 'ranking'>('typing')
   const [displayResults, setDisplayResults] = useState(INITIAL_RESULTS)
@@ -125,8 +138,8 @@ export default function GoogleSearchAnimation() {
               {displayResults.map((result) => (
                 <motion.div
                   key={result.domain}
-                  layout
-                  layoutId={result.domain}
+                  layout={!isMobile}
+                  layoutId={isMobile ? undefined : result.domain}
                   initial={phase === 'ranking' && result.highlight ? { opacity: 0, y: 20 } : false}
                   animate={{
                     opacity: 1,

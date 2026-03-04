@@ -3,6 +3,18 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
+function useIsMobile() {
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const m = window.matchMedia('(max-width: 767px)')
+    setIsMobile(m.matches)
+    const fn = () => setIsMobile(window.matchMedia('(max-width: 767px)').matches)
+    m.addEventListener('change', fn)
+    return () => m.removeEventListener('change', fn)
+  }, [])
+  return isMobile
+}
+
 const testimonials = [
   {
     quote:
@@ -25,14 +37,16 @@ const testimonials = [
 ]
 
 export default function TestimonialSlider() {
+  const isMobile = useIsMobile()
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
+    if (isMobile) return
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % testimonials.length)
     }, 5000)
     return () => clearInterval(interval)
-  }, [])
+  }, [isMobile])
 
   return (
     <section
