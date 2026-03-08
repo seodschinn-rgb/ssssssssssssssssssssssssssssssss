@@ -5,6 +5,7 @@
 import { keywordMappingAnleitungContent } from './blog-posts/keyword-mapping-anleitung-content'
 import { schemaMarkupAnleitungContent } from './blog-posts/schema-markup-anleitung-content'
 import { interneVerlinkungAnleitungContent } from './blog-posts/interne-verlinkung-anleitung-content'
+import { onpageSeoChecklisteContent } from './blog-posts/onpage-seo-checkliste-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -27,6 +28,39 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'onpage-seo-checkliste',
+    title: 'Onpage SEO Checkliste: Ihr Leitfaden für Top-Rankings in München und Bayern',
+    metaTitle: 'Onpage SEO Checkliste: Ihr Leitfaden für Top-Rankings in München und Bayern',
+    metaDescription:
+      'Umfassende Onpage SEO Checkliste für Unternehmen in München & Bayern. Erfahren Sie, wie Sie Ihre Webseite technisch und inhaltlich optimieren und Top-Rankings erzielen.',
+    category: 'content-keywords',
+    content: onpageSeoChecklisteContent,
+    image: '/images/blog/onpage%20seo%20checkliste%20(1).webp',
+    imageAlt: 'Onpage SEO Checkliste: Leitfaden für Top-Rankings in München und Bayern',
+    faqs: [
+      {
+        question: 'Wie prüfe ich, ob eine Webseite von Google indexiert ist?',
+        answer:
+          'Über die Google Search Console mit dem URL-Prüftool oder den Indexierungsbericht. Alternativ die site:-Abfrage in Google nutzen (z. B. site:ihredomain.de), um erfasste Seiten zu sehen.',
+      },
+      {
+        question: 'Warum sind externe Quellen und Backlinks im Kontext der Onpage-Optimierung wichtig?',
+        answer:
+          'Ausgehende Links zu hochwertigen Quellen stärken Vertrauen und Relevanz. Backlinks (Offpage) von anderen Webseiten erhöhen die Domain-Autorität. Beides signalisiert Google gut recherchierte Inhalte und kann indirekt zu besseren Rankings führen.',
+      },
+      {
+        question: 'Welche Rolle spielt Local SEO für Unternehmen in München und Bayern?',
+        answer:
+          'Local SEO ist Teil einer umfassenden Onpage-Strategie: lokale Keywords in Titeln und Inhalten, konsistente NAP-Daten (Name, Adresse, Telefon), Optimierung des Google-My-Business-Profils und standortspezifische Inhalte steigern die Sichtbarkeit vor Ort.',
+      },
+      {
+        question: 'Wie optimiere ich die Usability über reine SEO-Aspekte hinaus?',
+        answer:
+          'Favicon für Wiedererkennung, Barrierefreiheit für bessere Nutzersignale und ein durchgängig responsives Design (Mobile-First) verbessern die User Experience und werden von Suchmaschinen positiv bewertet.',
+      },
+    ],
+  },
   {
     slug: 'interne-verlinkung-anleitung',
     title: 'Interne Verlinkung Anleitung: Der Schlüssel zu mehr SEO-Sichtbarkeit für Ihre Website',
