@@ -35,7 +35,7 @@ export const onpageSeoChecklisteContent = `
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin: 24px 0;">
             <div style="background: #e8f4fd; border: 1px solid #bbdefb; border-radius: 8px; padding: 22px;">
                 <h4 style="margin-top: 0; color: #1565c0;">Onpage-SEO</h4>
-                <p style="margin: 0;"><a href="/seo-grundlagen/onpage-seo/">Onpage-Optimierung</a> verbessert interne Website-Faktoren wie Inhalte und Technik.</p>
+                <p style="margin: 0;"><a href="/leistungen/onpage-optimierung">Onpage-Optimierung</a> verbessert interne Website-Faktoren wie Inhalte und Technik.</p>
             </div>
             <div style="background: #fff3e0; border: 1px solid #ffe0b2; border-radius: 8px; padding: 22px;">
                 <h4 style="margin-top: 0; color: #e65100;">Offpage-SEO</h4>
@@ -123,13 +123,13 @@ export const onpageSeoChecklisteContent = `
             </div>
         </div>
 
-        <p>Laut <a href="https://www.beyondweb.ch/blog/wie-lange-dauert-seo/">Beyondweb.ch</a> sehen Sie erste spürbare Verbesserungen Ihrer Google-Rankings oft nach 3 bis 6 Monaten. Umfassendere Erfolge stellen sich typischerweise nach 6 bis 12 Monaten ein. Diese langfristige Perspektive unterstreicht, wie wichtig ein fundiertes Verständnis der Metriken ist, um den Fortschritt Ihrer Onpage-SEO-Maßnahmen kontinuierlich zu bewerten.</p>
+        <p>Erste spürbare Verbesserungen Ihrer Google-Rankings zeigen sich oft nach 3 bis 6 Monaten. Umfassendere Erfolge stellen sich typischerweise nach 6 bis 12 Monaten ein. Diese langfristige Perspektive unterstreicht, wie wichtig ein fundiertes Verständnis der Metriken ist, um den Fortschritt Ihrer Onpage-SEO-Maßnahmen kontinuierlich zu bewerten.</p>
 
         <hr style="border: none; border-top: 1px solid #e8e8e8; margin: 40px 0;">
 
         <h2 id="rechtliches">Rechtliche Aspekte und technische Optimierung für Ihre Webseite</h2>
 
-        <p>Für gewerbliche Webseiten in München sind <a href="https://www.gesetze-im-internet.de/tmg/__5.html">rechtliche Vorgaben wie ein Impressum nach § 5 TMG</a> und eine DSGVO-konforme Datenschutzerklärung unerlässlich. Das schützt Sie vor Abmahnungen und schafft Vertrauen bei Ihren Kunden. Auch hreflang-Tags für mehrsprachige Inhalte und regelmäßige Sicherheits-Checks sind für Ihre Reichweite und Sicherheit entscheidend. So vermeiden Sie ungebetene Überraschungen.</p>
+        <p>Für gewerbliche Webseiten in München sind <a href="https://www.gesetze-im-internet.de/ddg/__5.html">rechtliche Vorgaben wie ein Impressum nach § 5 TMG</a> und eine DSGVO-konforme Datenschutzerklärung unerlässlich. Das schützt Sie vor Abmahnungen und schafft Vertrauen bei Ihren Kunden. Auch hreflang-Tags für mehrsprachige Inhalte und regelmäßige Sicherheits-Checks sind für Ihre Reichweite und Sicherheit entscheidend. So vermeiden Sie ungebetene Überraschungen.</p>
 
         <!-- Rechtliche Punkte -->
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 24px 0;">
@@ -201,7 +201,7 @@ export const onpageSeoChecklisteContent = `
 
         <h2>Häufig gestellte Fragen zur Onpage-SEO</h2>
 
-        <p>Sie wollen online gefunden werden, anstatt im digitalen Nirwana zu versinken? Onpage-SEO ist entscheidend für die Sichtbarkeit Ihrer Webseite und beeinflusst direkt Ihre Google-Rankings. <a href="https://www.wordstream.com/blog/ws/2020/09/09/google-ranking-factors">WordStream</a> betont, wie wichtig Nutzerintention und hochwertige Inhalte für Top-Rankings sind. Eine ganzheitliche Optimierung für Suchmaschinen und Nutzer ist daher essenziell.</p>
+        <p>Sie wollen online gefunden werden, anstatt im digitalen Nirwana zu versinken? Onpage-SEO ist entscheidend für die Sichtbarkeit Ihrer Webseite und beeinflusst direkt Ihre Google-Rankings. Nutzerintention und hochwertige Inhalte sind für Top-Rankings zentral. Eine ganzheitliche Optimierung für Suchmaschinen und Nutzer ist daher essenziell.</p>
 
         <h3>Welche Elemente umfasst Onpage-SEO?</h3>
 
@@ -263,7 +263,7 @@ export const onpageSeoChecklisteContent = `
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
             <h3 style="margin: 0; padding: 18px 24px; background: #f9fafb; border-bottom: 1px solid #eee; font-size: 1em;">Welche Rolle spielt Local SEO für Unternehmen in München und Bayern?</h3>
-            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Local SEO ist ein entscheidender Bestandteil einer umfassenden Onpage-Strategie, insbesondere für Unternehmen in regionalen Märkten. Die Onpage-Optimierung unterstützt Local SEO, indem relevante lokale Keywords in Titeln, Meta-Beschreibungen und Inhalten integriert werden. Die konsistente Nennung von Name, Adresse, Telefonnummer (NAP-Daten) sowie die Optimierung des Google My Business Profils und die Erstellung standortspezifischer Inhalte spielen eine wichtige Rolle. Weitere Informationen finden Sie bei den <a href="/local-seo-muenchen/">SEO-Experten aus München</a>.</p>
+            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Local SEO ist ein entscheidender Bestandteil einer umfassenden Onpage-Strategie, insbesondere für Unternehmen in regionalen Märkten. Die Onpage-Optimierung unterstützt Local SEO, indem relevante lokale Keywords in Titeln, Meta-Beschreibungen und Inhalten integriert werden. Die konsistente Nennung von Name, Adresse, Telefonnummer (NAP-Daten) sowie die Optimierung des Google My Business Profils und die Erstellung standortspezifischer Inhalte spielen eine wichtige Rolle. Weitere Informationen finden Sie bei den <a href="/">SEO-Experten aus München</a>.</p>
         </div>
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
@@ -297,6 +297,6 @@ export const onpageSeoChecklisteContent = `
         <div style="background: linear-gradient(135deg, #2c3e50, #3498db); color: #fff; border-radius: 10px; padding: 36px; text-align: center; margin: 36px 0;">
             <h2 style="color: #fff; margin: 0 0 8px; font-size: 1.4em;">Kostenloses Erstgespräch sichern</h2>
             <p style="margin: 0 0 20px 0; opacity: 0.9;">Nehmen Sie Ihr Online-Potenzial in die Hand und besprechen Sie Ihre individuelle Onpage-Strategie mit den SEO-Experten aus München.</p>
-            <a href="/" style="display: inline-block; background: #fff; color: #2c3e50; padding: 12px 32px; border-radius: 25px; text-decoration: none; font-weight: bold;">Jetzt Erstgespräch buchen</a>
+            <a href="/kontakt" style="display: inline-block; background: #fff; color: #2c3e50; padding: 12px 32px; border-radius: 25px; text-decoration: none; font-weight: bold;">Jetzt Erstgespräch buchen</a>
         </div>
 `
