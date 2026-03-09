@@ -6,6 +6,7 @@ import { keywordMappingAnleitungContent } from './blog-posts/keyword-mapping-anl
 import { schemaMarkupAnleitungContent } from './blog-posts/schema-markup-anleitung-content'
 import { interneVerlinkungAnleitungContent } from './blog-posts/interne-verlinkung-anleitung-content'
 import { onpageSeoChecklisteContent } from './blog-posts/onpage-seo-checkliste-content'
+import { keywordRechercheAnleitungContent } from './blog-posts/keyword-recherche-anleitung-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -28,6 +29,44 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'keyword-recherche-anleitung',
+    title: 'Keyword-Recherche Anleitung: Strategien für Top-Rankings und regionale Sichtbarkeit',
+    metaTitle: 'Keyword-Recherche Anleitung: Schritt für Schritt zum richtigen Suchbegriff',
+    metaDescription:
+      'Keyword-Recherche Anleitung: Lerne Schritt für Schritt, wie du die richtigen Keywords findest, Tools nutzt & deine Google-Rankings in München nachhaltig steigerst.',
+    category: 'content-keywords',
+    content: keywordRechercheAnleitungContent,
+    image: '/images/blog/keyword%20recherche%20anleitung%20(1).webp',
+    imageAlt: 'Keyword-Recherche Anleitung: Schritt für Schritt zum richtigen Suchbegriff für bessere Google-Rankings in München',
+    faqs: [
+      {
+        question: 'Wie lange dauert eine professionelle Keyword-Recherche?',
+        answer:
+          'Die Dauer hängt stark vom Umfang ab: kleine Projekte oft Tage bis eine Woche, mittelgroße Websites mehrere Wochen, internationale Projekte mehrere Monate. Entscheidend ist, ausreichend Zeit für eine gründliche Analyse einzuplanen.',
+      },
+      {
+        question: 'Was kostet eine Keyword-Recherche von einer Agentur?',
+        answer:
+          'Die Kosten variieren je nach Projektumfang: kleine Projekte ca. 599 €–800 €, Stundensätze typisch 90 €–200 €, monatliche SEO-Betreuung oft 1.000 €–5.000 €. Wettbewerbsintensität und Detailtiefe beeinflussen den Preis.',
+      },
+      {
+        question: 'Wie oft sollte eine Keyword-Map aktualisiert werden?',
+        answer:
+          'Mindestens einmal jährlich eine umfassende Überprüfung. Zusätzlich bei Google-Updates, Änderungen im Suchverhalten, neuen Produkten oder Märkten sowie Verschiebungen im Wettbewerb. Kontinuierliche SERP- und Leistungsbeobachtung ist wichtig.',
+      },
+      {
+        question: "Wie erkennt man 'Fake'-Suchvolumen durch Bots oder saisonale Anomalien?",
+        answer:
+          'Bot-Traffic zeigt sich durch unnatürlich hohe Spitzen, untypische Regionen und extrem kurze Verweildauer. Saisonale Muster sind vorhersehbar – Google Trends hilft. Daten über mehrere Jahre vergleichen und verschiedene Keyword-Tools cross-referenzieren.',
+      },
+      {
+        question: 'Wie führt man eine Keyword-Recherche für internationale Märkte durch?',
+        answer:
+          'Lokale Sprachen und Dialekte berücksichtigen, idealerweise mit Muttersprachlern arbeiten. Lokale Suchgewohnheiten und kulturelle Nuancen einbeziehen, länderspezifische Tool-Versionen nutzen und Wettbewerber in den Zielländern analysieren.',
+      },
+    ],
+  },
   {
     slug: 'onpage-seo-checkliste',
     title: 'Onpage SEO Checkliste: Ihr Leitfaden für Top-Rankings in München und Bayern',

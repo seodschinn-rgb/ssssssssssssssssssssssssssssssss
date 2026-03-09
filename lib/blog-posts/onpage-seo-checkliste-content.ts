@@ -199,7 +199,7 @@ export const onpageSeoChecklisteContent = `
 
         <hr style="border: none; border-top: 1px solid #e8e8e8; margin: 40px 0;">
 
-        <h2>Häufig gestellte Fragen zur Onpage-SEO</h2>
+        <h2 id="faqs">Häufig gestellte Fragen zur Onpage-SEO</h2>
 
         <p>Sie wollen online gefunden werden, anstatt im digitalen Nirwana zu versinken? Onpage-SEO ist entscheidend für die Sichtbarkeit Ihrer Webseite und beeinflusst direkt Ihre Google-Rankings. Nutzerintention und hochwertige Inhalte sind für Top-Rankings zentral. Eine ganzheitliche Optimierung für Suchmaschinen und Nutzer ist daher essenziell.</p>
 
@@ -222,10 +222,6 @@ export const onpageSeoChecklisteContent = `
                 <div style="font-size: 0.9em; color: #555;">Interne Verlinkung, Hierarchie</div>
             </div>
         </div>
-
-        <hr style="border: none; border-top: 1px solid #e8e8e8; margin: 40px 0;">
-
-        <h2 id="faqs">Häufig gestellte Fragen zur Onpage-SEO</h2>
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
             <h3 style="margin: 0; padding: 18px 24px; background: #f9fafb; border-bottom: 1px solid #eee; font-size: 1em;">Wie prüfe ich, ob eine Webseite von Google indexiert ist?</h3>
