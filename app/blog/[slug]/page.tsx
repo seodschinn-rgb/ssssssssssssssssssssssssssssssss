@@ -221,8 +221,10 @@ export default function BlogSlugPage({ params }: PageProps) {
         <style dangerouslySetInnerHTML={{ __html: BLOG_ARTICLE_STYLE }} />
         <Header />
         <main>
-          <section className="pt-28 pb-8 px-6 bg-gradient-to-b from-zinc-50 to-white">
-            <div className="mx-auto max-w-3xl lg:ml-[280px] lg:mr-auto">
+          <section className="pt-28 pb-8 px-6 bg-gradient-to-b from-zinc-50 to-white lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:max-w-6xl lg:mx-auto lg:items-start">
+            {/* Platzhalter für TOC-Spalte, damit Breadcrumb nicht überlappt */}
+            <div className="hidden lg:block lg:col-start-1" aria-hidden />
+            <div className="lg:col-start-2 max-w-3xl lg:max-w-none">
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex flex-wrap items-center gap-2 text-sm text-zinc-500">
                   <li>
@@ -273,7 +275,7 @@ export default function BlogSlugPage({ params }: PageProps) {
               <div className="w-[240px] shrink-0" aria-hidden />
               <BlogTocDesktopWrapper />
             </div>
-            <div className="lg:col-start-2 min-w-0">
+            <div className="lg:col-start-2 min-w-0 px-6 lg:px-0">
               {/* Thumbnail auf Desktop in rechter Spalte */}
               {post.image && (
                 <div className="hidden lg:block mb-8">
@@ -287,14 +289,14 @@ export default function BlogSlugPage({ params }: PageProps) {
                   </div>
                 </div>
               )}
-              {/* Autorenbox: unter Thumbnail, über Titel/Artikel */}
+              {/* Autorenbox auf jeder Artikel-Seite: unter Thumbnail, über Titel/Artikel */}
               <BlogAuthorBox
-                authorName="Thomas Ringsdorf"
+                authorName="Joel Ringsdorf"
                 readingMinutes={getReadingTimeMinutes(post.content)}
               />
               <article
                 data-blog-article
-                className="blog-article max-w-3xl lg:max-w-3xl pb-24 px-6 lg:px-0"
+                className="blog-article max-w-3xl lg:max-w-3xl pb-24"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>
