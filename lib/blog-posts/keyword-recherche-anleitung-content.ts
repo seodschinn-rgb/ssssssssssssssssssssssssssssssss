@@ -60,7 +60,7 @@ export const keywordRechercheAnleitungContent = `
         <p>Um diese Erwartungen präzise zu treffen, nutze ich bewährte Segmentierungen wie das 3-C-Modell oder AIDA. Diese Frameworks helfen uns dabei, den Content exakt auf die jeweilige Phase der Customer Journey zuzuschneiden. Es geht nicht mehr nur darum, Keywords zu platzieren. Es geht darum, den richtigen Kontext für den Nutzer zu schaffen.</p>
 
         <div style="background: #e8f4fd; border-left: 4px solid #2196F3; border-radius: 6px; padding: 18px 22px; margin: 24px 0;">
-            <p style="margin: 0;">Eine Untersuchung von <a href="https://www.semrush.com/blog/search-intent/">Semrush</a> zeigt, dass lediglich <strong>13 % der Suchanfragen</strong> einen rein transaktionalen Intent besitzen. Spezifische Longtail-Keywords in späten Phasen der Journey führen oft zu effizienteren Conversions als generische Begriffe.</p>
+            <p style="margin: 0;">Eine Untersuchung von Semrush zeigt, dass lediglich <strong>13 % der Suchanfragen</strong> einen rein transaktionalen Intent besitzen. Spezifische Longtail-Keywords in späten Phasen der Journey führen oft zu effizienteren Conversions als generische Begriffe.</p>
         </div>
 
         <p>In meiner täglichen Arbeit bei SEO München stelle ich fest, dass spezifische Longtail-Keywords in späten Phasen der Journey oft zu effizienteren Conversions führen als generische Begriffe. Eine fundierte <a href="/blog/keyword-recherche-anleitung">Keyword-Recherche</a> bildet hierfür das Fundament, um genau die Suchenden abzuholen, die bereits eine klare Absicht verfolgen. Sobald diese strategische Basis steht, können wir uns darauf konzentrieren, wie diese Begriffe die Struktur Ihrer gesamten Website formen.</p>
@@ -92,7 +92,7 @@ export const keywordRechercheAnleitungContent = `
                 <div style="background: #27ae60; color: #fff; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2em; flex-shrink: 0;">3</div>
                 <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 18px 22px; flex: 1;">
                     <h3 style="margin-top: 0; margin-bottom: 8px;">Pain Points der Kunden identifizieren</h3>
-                    <p style="margin: 0;">Die echte Goldgrube liegt oft in den Problemen Ihrer Zielgruppe. Eine <a href="https://backlinko.com/keyword-research-study">Backlinko-Studie</a> zeigt, dass Long-Tail-Keywords den Markt dominieren. Deshalb werte ich Kundenfeedback direkt aus, um wertvolle Nischenbegriffe zu finden. Die richtige Wortwahl entscheidet letztlich darüber, ob ein potenzieller Kunde klickt oder einfach weiterscrollt.</p>
+                    <p style="margin: 0;">Die echte Goldgrube liegt oft in den Problemen Ihrer Zielgruppe. Long-Tail-Keywords dominieren in vielen Märkten. Deshalb werte ich Kundenfeedback direkt aus, um wertvolle Nischenbegriffe zu finden. Die richtige Wortwahl entscheidet letztlich darüber, ob ein potenzieller Kunde klickt oder einfach weiterscrollt.</p>
                 </div>
             </div>
         </div>
@@ -141,7 +141,7 @@ export const keywordRechercheAnleitungContent = `
 
         <h2 id="bewerten">Keywords bewerten: Warum Suchvolumen allein trügerisch ist</h2>
 
-        <p>In meiner täglichen Arbeit bei SEO München sehe ich oft, dass Kunden nur auf das höchste Suchvolumen schielen. Doch Experten wie die <a href="https://de.semrush.com/">Analysten von Semrush</a> betonen immer wieder, dass die Keyword-Bewertung viel tiefer gehen muss.</p>
+        <p>In meiner täglichen Arbeit bei SEO München sehe ich oft, dass Kunden nur auf das höchste Suchvolumen schielen. Doch Experten wie die Analysten von Semrush betonen immer wieder, dass die Keyword-Bewertung viel tiefer gehen muss.</p>
 
         <p>Es bringt wenig, für einen Begriff zu ranken, der zwar viel Traffic verspricht, aber durch extremen Wettbewerb unerreichbar bleibt. Das ist für uns in Bayern ein bisschen wie die Suche nach einem Parkplatz am Stachus an einem Samstagnachmittag. Theoretisch möglich, praktisch eher frustrierend.</p>
 
@@ -172,7 +172,7 @@ export const keywordRechercheAnleitungContent = `
         <p>Bevor ich eine neue Seite plane, schaue ich mir den SERP Overlap Score genau an. Dieser Wert zeigt uns, ob Google für verschiedene Begriffe fast identische Ergebnisse liefert.</p>
 
         <div style="background: #e8f5e9; border-left: 4px solid #4caf50; border-radius: 6px; padding: 18px 22px; margin: 24px 0;">
-            <p style="margin: 0;">Laut dem <a href="https://www.searchenginejournal.com/serp-analysis-guide/447608/">Search Engine Journal</a> genügt bei hoher Übereinstimmung oft eine einzige, starke Landingpage statt vieler kleiner Seiten. Das spart nicht nur Zeit, sondern schont auch die Nerven Ihrer Web-Entwickler.</p>
+            <p style="margin: 0;">Laut dem Search Engine Journal genügt bei hoher Übereinstimmung oft eine einzige, starke Landingpage statt vieler kleiner Seiten. Das spart nicht nur Zeit, sondern schont auch die Nerven Ihrer Web-Entwickler.</p>
         </div>
 
         <p>Wenn wir wissen, was die Suchmaschine wirklich sehen will, lässt sich die Website-Struktur viel gezielter planen.</p>
@@ -199,7 +199,7 @@ export const keywordRechercheAnleitungContent = `
         <div style="background: #e8f5e9; border: 1px solid #c8e6c9; border-radius: 10px; padding: 28px 32px; margin: 24px 0; text-align: center;">
             <p style="font-size: 2.2em; font-weight: bold; margin: 0 0 4px; color: #2e7d32;">+43 %</p>
             <p style="margin: 0; color: #555;">mehr organischer Traffic durch Content-Cluster</p>
-            <p style="margin: 8px 0 0; font-size: 0.85em; color: #999;">Quelle: <a href="https://nightwatch.io/blog/topic-cluster-optimization/">HubSpot / Nightwatch</a></p>
+            <p style="margin: 8px 0 0; font-size: 0.85em; color: #999;">Quelle: HubSpot / Nightwatch</p>
         </div>
 
         <p>Sobald diese inhaltliche Landkarte steht, muss nur noch sichergestellt werden, dass die technische Performance deiner Seite mit diesem Wachstum auch wirklich Schritt halten kann.</p>
@@ -223,10 +223,10 @@ export const keywordRechercheAnleitungContent = `
         <div style="background: #3498db; color: #fff; border-radius: 10px; padding: 28px 32px; margin: 24px 0; text-align: center;">
             <p style="font-size: 2.2em; font-weight: bold; margin: 0 0 4px;">25 %</p>
             <p style="margin: 0; opacity: 0.85;">der Desktop-Suchen enden heute als Zero-Click-Searches</p>
-            <p style="margin: 8px 0 0; font-size: 0.85em; opacity: 0.6;">Quelle: <a href="https://de.semrush.com/blog/zero-click-searches/" style="color: #fff; opacity: 0.7;">Semrush</a></p>
+            <p style="margin: 8px 0 0; font-size: 0.85em; opacity: 0.6;">Quelle: <a href="https://www.semrush.com/blog/zero-clicks-study/" style="color: #fff; opacity: 0.7;">Semrush</a></p>
         </div>
 
-        <p>In unserer täglichen Arbeit bei SEO München setzen wir daher auf eine <a href="/local-seo-muenchen/">gezielte Local SEO Strategie</a>, die semantische Cluster für messbare Anfragen nutzt. Kluge Inhaltsstrukturen verwandeln flüchtige Algorithmen in verlässliche Partner für Ihr digitales Wachstum.</p>
+        <p>In unserer täglichen Arbeit bei SEO München setzen wir daher auf eine <a href="/leistungen/local-seo">gezielte Local SEO Strategie</a>, die semantische Cluster für messbare Anfragen nutzt. Kluge Inhaltsstrukturen verwandeln flüchtige Algorithmen in verlässliche Partner für Ihr digitales Wachstum.</p>
 
         <hr style="border: none; border-top: 1px solid #e8e8e8; margin: 40px 0;">
 
@@ -258,11 +258,11 @@ export const keywordRechercheAnleitungContent = `
 
         <h2 id="faqs">Häufig gestellte Fragen zur Keyword-Recherche (FAQ)</h2>
 
-        <p>Experten vom <a href="https://www.searchenginejournal.com/">Search Engine Journal</a> betonen immer wieder, dass individuelle Strategien der einzige Weg zu nachhaltigem Erfolg sind. Da der Markt in Bayern seine ganz eigenen Regeln hat, passen wir jede Analyse exakt an Ihre spezifische Nische an. Schließlich ist SEO kein Ratespiel, auch wenn manche Algorithmus-Updates sich manchmal so anfühlen.</p>
+        <p>Individuelle Strategien sind der einzige Weg zu nachhaltigem Erfolg. Da der Markt in Bayern seine ganz eigenen Regeln hat, passen wir jede Analyse exakt an Ihre spezifische Nische an. Schließlich ist SEO kein Ratespiel, auch wenn manche Algorithmus-Updates sich manchmal so anfühlen.</p>
 
         <h3>Zeit und Kosten der Analyse</h3>
 
-        <p>Laut einer <a href="https://www.sistrix.de/news/seo-kosten/">Sistrix-Erhebung</a> erfordern professionelle Analysen meist feste Budgets, um wirklich valide Daten zu liefern. In München planen wir für diesen Prozess in der Regel zwei Wochen ein. Mit einem gezielten <a href="/leistungen/seo-audit/">SEO-Audit</a> ermitteln wir Ihre Potenziale präzise und vermeiden unnötige Ausgaben. So verhindern wir das klassische Stochern im Nebel, was bei der bayerischen Witterung ohnehin selten zum Ziel führt.</p>
+        <p>Professionelle Analysen erfordern meist feste Budgets, um wirklich valide Daten zu liefern. In München planen wir für diesen Prozess in der Regel zwei Wochen ein. Mit einem gezielten <a href="/leistungen/seo-audit/">SEO-Audit</a> ermitteln wir Ihre Potenziale präzise und vermeiden unnötige Ausgaben. So verhindern wir das klassische Stochern im Nebel, was bei der bayerischen Witterung ohnehin selten zum Ziel führt.</p>
 
         <h3>Internationalisierung und Bot-Filter</h3>
 
@@ -306,7 +306,7 @@ export const keywordRechercheAnleitungContent = `
                         <div style="font-size: 0.85em; color: #555;">1.000 € – 5.000 € / Monat</div>
                     </div>
                 </div>
-                <p style="margin: 0; font-size: 0.95em; color: #444;">Die Kosten variieren erheblich je nach Projektumfang, Wettbewerbsintensität und gewünschter Detailtiefe (<a href="https://www.ucentric-media.de/keyword-recherche-agentur/">Ucentric Media</a>).</p>
+                <p style="margin: 0; font-size: 0.95em; color: #444;">Die Kosten variieren erheblich je nach Projektumfang, Wettbewerbsintensität und gewünschter Detailtiefe.</p>
             </div>
         </div>
 

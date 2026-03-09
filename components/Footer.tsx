@@ -19,7 +19,7 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-zinc-200 bg-zinc-50/80" role="contentinfo">
+    <footer id="site-footer" className="relative border-t border-zinc-200 bg-zinc-50/80" role="contentinfo">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-200/50 to-transparent" />
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">

@@ -12,6 +12,10 @@ import {
   getAllBlogPostSlugs,
   getPostsByCategory,
 } from '@/lib/blog-posts'
+import BlogTableOfContents from '@/components/BlogTableOfContents'
+import BlogTocDesktopWrapper from '@/components/BlogTocDesktopWrapper'
+import BlogAuthorBox from '@/components/BlogAuthorBox'
+import { getReadingTimeMinutes } from '@/lib/reading-time'
 
 const BLOG_ARTICLE_STYLE = `
 article img.emoji,
@@ -98,6 +102,57 @@ article .entry-content img.wp-smiley {
 .blog-article ul li {
   margin-bottom: 0.5rem;
 }
+/* Floating TOC: Desktop = fixed (floating), blendet sich aus sobald Footer sichtbar; Mobile/Tablet = sticky oben */
+.blog-toc-wrap {
+  position: sticky;
+  top: 5rem;
+  align-self: start;
+  z-index: 10;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  border-bottom: 1px solid #e4e4e7;
+  margin-bottom: 0;
+}
+@media (min-width: 1024px) {
+  .blog-toc-wrap {
+    position: sticky;
+    top: 6rem;
+    width: 220px;
+    max-height: calc(100vh - 8rem);
+    overflow-y: auto;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    padding-top: 0.5rem;
+    background: #fff;
+    backdrop-filter: none;
+    border-bottom: none;
+  }
+  .blog-toc-wrap--fixed {
+    position: fixed;
+    top: 6rem;
+    left: max(1.5rem, calc((100vw - 72rem) / 2 + 1.5rem));
+    z-index: 10;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+  }
+  .blog-toc-wrap--fixed.blog-toc-wrap--hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+@media (max-width: 1023px) {
+  .blog-toc-wrap {
+    position: sticky;
+    top: 5rem;
+  }
+}
 `
 
 interface PageProps {
@@ -167,7 +222,7 @@ export default function BlogSlugPage({ params }: PageProps) {
         <Header />
         <main>
           <section className="pt-28 pb-8 px-6 bg-gradient-to-b from-zinc-50 to-white">
-            <div className="mx-auto max-w-3xl">
+            <div className="mx-auto max-w-3xl lg:ml-[280px] lg:mr-auto">
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex flex-wrap items-center gap-2 text-sm text-zinc-500">
                   <li>
@@ -199,8 +254,9 @@ export default function BlogSlugPage({ params }: PageProps) {
               </nav>
             </div>
           </section>
+          {/* Thumbnail nur auf Mobile/Tablet oben (auf Desktop in der rechten Spalte) */}
           {post.image && (
-            <div className="mx-auto max-w-3xl px-6 mb-8">
+            <div className="lg:hidden mx-auto max-w-3xl px-6 mb-8">
               <div className="relative w-full rounded-xl overflow-hidden bg-zinc-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -211,10 +267,38 @@ export default function BlogSlugPage({ params }: PageProps) {
               </div>
             </div>
           )}
-          <article
-            className="blog-article mx-auto max-w-3xl px-6 pb-24"
-            dangerouslySetInnerHTML={{ __html: post.content }}
-          />
+          <div className="mx-auto max-w-6xl px-6 lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:items-start overflow-visible">
+            {/* Desktop: TOC fixed (floating), blendet sich aus sobald Footer sichtbar */}
+            <div className="hidden lg:block lg:col-start-1">
+              <div className="w-[240px] shrink-0" aria-hidden />
+              <BlogTocDesktopWrapper />
+            </div>
+            <div className="lg:col-start-2 min-w-0">
+              {/* Thumbnail auf Desktop in rechter Spalte */}
+              {post.image && (
+                <div className="hidden lg:block mb-8">
+                  <div className="relative w-full rounded-xl overflow-hidden bg-zinc-100">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={post.image}
+                      alt={post.imageAlt ?? post.title}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                </div>
+              )}
+              {/* Autorenbox: unter Thumbnail, über Titel/Artikel */}
+              <BlogAuthorBox
+                authorName="Thomas Ringsdorf"
+                readingMinutes={getReadingTimeMinutes(post.content)}
+              />
+              <article
+                data-blog-article
+                className="blog-article max-w-3xl lg:max-w-3xl pb-24 px-6 lg:px-0"
+                dangerouslySetInnerHTML={{ __html: post.content }}
+              />
+            </div>
+          </div>
         </main>
         <Footer />
       </>
