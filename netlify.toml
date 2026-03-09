@@ -1,5 +1,9 @@
 # Netlify-Konfiguration für Next.js
 # https://docs.netlify.com/framework-setup/frameworks/next-js/
+#
+# WICHTIG: Im Netlify-Dashboard unter "Build & deploy" → "Publish directory"
+# NICHTS eintragen (leer lassen). Das @netlify/plugin-nextjs setzt das selbst.
+# Sonst wird nur der .next-Ordner ausgeliefert und die Seite ist "zerschossen".
 
 [build]
   command = "npm run build"

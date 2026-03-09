@@ -16,11 +16,11 @@ export interface TocItem {
  */
 function getTocFromInlineList(article: Element): TocItem[] {
   const lists = article.querySelectorAll('ol')
-  for (const ol of lists) {
+  for (const ol of Array.from(lists)) {
     const links = ol.querySelectorAll<HTMLAnchorElement>('li a[href^="#"]')
     if (links.length === 0) continue
     const items: TocItem[] = []
-    for (const a of links) {
+    for (const a of Array.from(links)) {
       const href = a.getAttribute('href')
       if (!href || href === '#') continue
       const id = href.slice(1).trim()

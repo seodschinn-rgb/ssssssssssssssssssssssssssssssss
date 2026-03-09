@@ -7,10 +7,8 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
-  // Tree-shaking für große Pakete (nur verwendete Exports laden)
-  experimental: {
-    optimizePackageImports: ['framer-motion'],
-  },
+  // optimizePackageImports für framer-motion deaktiviert – verursacht sonst
+  // "Cannot find module './vendor-chunks/framer-motion.js'" bei SSR (Blog, Header).
 }
 
 module.exports = nextConfig
