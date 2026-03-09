@@ -1,0 +1,8 @@
+# Netlify-Konfiguration für Next.js
+# https://docs.netlify.com/framework-setup/frameworks/next-js/
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
