@@ -15,6 +15,8 @@ import {
 import BlogTableOfContents from '@/components/BlogTableOfContents'
 import BlogTocDesktopWrapper from '@/components/BlogTocDesktopWrapper'
 import BlogAuthorBox from '@/components/BlogAuthorBox'
+import BlogReadingProgressBar from '@/components/BlogReadingProgressBar'
+import BlogTocMobileCollapsible from '@/components/BlogTocMobileCollapsible'
 import { getReadingTimeMinutes } from '@/lib/reading-time'
 
 const BLOG_ARTICLE_STYLE = `
@@ -112,12 +114,20 @@ article .entry-content img.wp-smiley {
   backdrop-filter: blur(8px);
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-bottom: 1px solid #e4e4e7;
   margin-bottom: 0;
+}
+@media (min-width: 640px) {
+  .blog-toc-wrap {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 }
 @media (min-width: 1024px) {
   .blog-toc-wrap {
@@ -219,12 +229,13 @@ export default function BlogSlugPage({ params }: PageProps) {
         {/* Pro Artikel nur ein FAQPage-Schema, um "Duplicate field FAQPage" in der Search Console zu vermeiden */}
         {post.faqs?.length ? <BlogFAQSchema faqs={post.faqs} /> : null}
         <style dangerouslySetInnerHTML={{ __html: BLOG_ARTICLE_STYLE }} />
+        <BlogReadingProgressBar />
         <Header />
         <main>
-          <section className="pt-28 pb-8 px-6 bg-gradient-to-b from-zinc-50 to-white lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:max-w-6xl lg:mx-auto lg:items-start">
+          <section className="pt-28 pb-6 sm:pb-8 px-4 sm:px-6 bg-gradient-to-b from-zinc-50 to-white lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:max-w-6xl lg:mx-auto lg:items-start">
             {/* Platzhalter für TOC-Spalte, damit Breadcrumb nicht überlappt */}
             <div className="hidden lg:block lg:col-start-1" aria-hidden />
-            <div className="lg:col-start-2 max-w-3xl lg:max-w-none">
+            <div className="lg:col-start-2 max-w-none lg:max-w-3xl">
               <nav aria-label="Breadcrumb" className="mb-6">
                 <ol className="flex flex-wrap items-center gap-2 text-sm text-zinc-500">
                   <li>
@@ -249,16 +260,18 @@ export default function BlogSlugPage({ params }: PageProps) {
                     </>
                   )}
                   <li aria-hidden>/</li>
-                  <li className="text-zinc-900 font-medium truncate max-w-[180px] sm:max-w-none" aria-current="page">
+                  <li className="text-zinc-900 font-medium" aria-current="page">
                     {post.title}
                   </li>
                 </ol>
               </nav>
             </div>
           </section>
+          {/* Mobile/Tablet: Aufklappbares Inhaltsverzeichnis (fixed, erscheint erst nach dem TOC im Text) */}
+          <BlogTocMobileCollapsible />
           {/* Thumbnail nur auf Mobile/Tablet oben (auf Desktop in der rechten Spalte) */}
           {post.image && (
-            <div className="lg:hidden mx-auto max-w-3xl px-6 mb-8">
+            <div className="lg:hidden w-full px-4 sm:px-6 mb-8">
               <div className="relative w-full rounded-xl overflow-hidden bg-zinc-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
@@ -269,13 +282,13 @@ export default function BlogSlugPage({ params }: PageProps) {
               </div>
             </div>
           )}
-          <div className="mx-auto max-w-6xl px-6 lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:items-start overflow-visible">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:items-start overflow-visible">
             {/* Desktop: TOC fixed (floating), blendet sich aus sobald Footer sichtbar */}
             <div className="hidden lg:block lg:col-start-1">
               <div className="w-[240px] shrink-0" aria-hidden />
               <BlogTocDesktopWrapper />
             </div>
-            <div className="lg:col-start-2 min-w-0 px-6 lg:px-0">
+            <div className="lg:col-start-2 min-w-0 lg:px-0">
               {/* Thumbnail auf Desktop in rechter Spalte */}
               {post.image && (
                 <div className="hidden lg:block mb-8">
@@ -291,12 +304,12 @@ export default function BlogSlugPage({ params }: PageProps) {
               )}
               {/* Autorenbox auf jeder Artikel-Seite: unter Thumbnail, über Titel/Artikel */}
               <BlogAuthorBox
-                authorName="Joel Ringsdorf"
+                authorName="Joel Siebert"
                 readingMinutes={getReadingTimeMinutes(post.content)}
               />
               <article
                 data-blog-article
-                className="blog-article max-w-3xl lg:max-w-3xl pb-24"
+                className="blog-article w-full max-w-none lg:max-w-3xl pb-24"
                 dangerouslySetInnerHTML={{ __html: post.content }}
               />
             </div>

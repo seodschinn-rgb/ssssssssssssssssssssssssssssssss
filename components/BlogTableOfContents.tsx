@@ -47,7 +47,7 @@ function getTocFromHeadings(article: Element): TocItem[] {
   return list
 }
 
-export default function BlogTableOfContents() {
+export default function BlogTableOfContents({ hideTitle = false }: { hideTitle?: boolean }) {
   const [items, setItems] = useState<TocItem[]>([])
   const [activeId, setActiveId] = useState<string | null>(null)
 
@@ -87,8 +87,10 @@ export default function BlogTableOfContents() {
       aria-label="Inhaltsverzeichnis"
       className="blog-toc"
     >
-      <p className="text-sm font-bold text-zinc-900 mb-3">Inhaltsverzeichnis</p>
-      <ul className="space-y-1.5 text-sm max-h-[50vh] overflow-y-auto lg:max-h-none lg:overflow-visible">
+      {!hideTitle && (
+        <p className="text-sm font-bold text-zinc-900 mb-3">Inhaltsverzeichnis</p>
+      )}
+      <ul className={`space-y-1.5 text-sm ${hideTitle ? '' : 'max-h-[50vh] overflow-y-auto lg:max-h-none lg:overflow-visible'}`}>
         {items.map(({ id, text }) => (
           <li key={id}>
             <a
