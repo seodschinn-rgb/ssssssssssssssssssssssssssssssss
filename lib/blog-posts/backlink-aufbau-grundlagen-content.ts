@@ -179,7 +179,7 @@ export const backlinkAufbauGrundlagenContent = `
 
         <p>Ein gesundes Profil braucht Vielfalt statt gekaufter Einheitsware.</p>
 
-        <p>Ich empfehle für die <a href="/blog/backlink-aufbau-grundlagen">Backlink Aufbau Grundlagen</a> diverse Quellen. Laut <a href="https://www.searchenginejournal.com/social-signals-seo/371944/">Search Engine Journal</a> stützen Social Signals Ihr <a href="/blog/onpage-seo-checkliste">Offpage-SEO</a>. Wahre Autorität beginnt jedoch bei technischer Substanz.</p>
+        <p>Ich empfehle für die <a href="/blog/backlink-aufbau-grundlagen">Backlink Aufbau Grundlagen</a> diverse Quellen. Studien zeigen, dass Social Signals Ihr <a href="/blog/onpage-seo-checkliste">Offpage-SEO</a> stützen. Wahre Autorität beginnt jedoch bei technischer Substanz.</p>
 
         <div style="background: #fff3e0; border-left: 4px solid #ff9800; border-radius: 6px; padding: 18px 22px; margin: 24px 0;">
             <p style="margin: 0;"><strong>Wichtig:</strong> Google erkennt unnatürliche Wachstumsraten sofort. Setzen Sie auf stetigen, organischen Linkaufbau mit diversen Quellen statt auf hektische Massenaktionen.</p>
@@ -189,7 +189,7 @@ export const backlinkAufbauGrundlagenContent = `
 
         <h2 id="management">Backlink-Management: Monitoring und Disavow</h2>
 
-        <p>Ein sauberes Linkprofil ist für unser Team in München die Basis für jedes Top-Ranking. Laut <a href="https://developers.google.com/search/docs/fundamentals/intro-to-search?hl=de">Google Search Central</a> sollten Webmaster toxische Links identifizieren, um manuelle Maßnahmen zu vermeiden. Niemand möchte schließlich schlechte Nachbarn in seinem digitalen Vorgarten haben.</p>
+        <p>Ein sauberes Linkprofil ist für unser Team in München die Basis für jedes Top-Ranking. Laut Google Search Central sollten Webmaster toxische Links identifizieren, um manuelle Maßnahmen zu vermeiden. Niemand möchte schließlich schlechte Nachbarn in seinem digitalen Vorgarten haben.</p>
 
         <h3>Strategien für sauberes Wachstum</h3>
 
@@ -223,7 +223,7 @@ export const backlinkAufbauGrundlagenContent = `
 
         <h3>Brand Mentions</h3>
 
-        <p>Markennennungen stärken Ihre Autorität auch ohne Link. Das <a href="https://www.searchenginejournal.com/google-e-e-a-t-how-to-demonstrate-it-to-google/473723/">Search Engine Journal</a> bestätigt, dass Google diese Signale gezielt für das Vertrauen in eine Marke nutzt. Das verhindert den Moment, in dem man sich fragt, ob das Internet die eigene Firma überhaupt noch kennt.</p>
+        <p>Markennennungen stärken Ihre Autorität auch ohne Link. Fachpublikationen bestätigen, dass Google diese Signale gezielt für das Vertrauen in eine Marke nutzt. Das verhindert den Moment, in dem man sich fragt, ob das Internet die eigene Firma überhaupt noch kennt.</p>
 
         <h3>Strategische Autorität</h3>
 
@@ -263,7 +263,7 @@ export const backlinkAufbauGrundlagenContent = `
         <div style="background: linear-gradient(135deg, #2c3e50, #34495e); color: #fff; border-radius: 10px; padding: 28px 32px; margin: 24px 0; text-align: center;">
             <p style="font-size: 2.2em; font-weight: bold; margin: 0 0 4px;">0,68</p>
             <p style="margin: 0; opacity: 0.85;">Korrelation zwischen Backlinks und Google-Rankings</p>
-            <p style="margin: 8px 0 0; font-size: 0.85em; opacity: 0.6;">Quelle: <a href="https://www.digitalwebsolutions.com/blog/link-building-statistics/" style="color: #fff; opacity: 0.7;">Ahrefs / Digital Web Solutions</a></p>
+            <p style="margin: 8px 0 0; font-size: 0.85em; opacity: 0.6;">Quelle: Ahrefs / Digital Web Solutions</p>
         </div>
 
         <p>Um dieses Potenzial voll auszuschöpfen, verzahne ich diese externe Stärke mit einer präzisen <a href="/blog/onpage-seo-checkliste">OnPage-Optimierung</a>. So bauen wir Ihre Position nachhaltig aus, ohne unnötige Risiken für Ihr Profil einzugehen. Dieser Mix aus technischer Präzision und digitalem Vertrauen legt den Grundstein für eine Dominanz, die weit über die Stadtgrenzen hinausreicht.</p>
@@ -276,7 +276,7 @@ export const backlinkAufbauGrundlagenContent = `
 
         <!-- 3.8x Statistik -->
         <div style="background: #e8f4fd; border-left: 4px solid #2196F3; border-radius: 6px; padding: 18px 22px; margin: 24px 0;">
-            <p style="margin: 0;">Eine <a href="https://seomator.com/blog/backlinks-2024-data">Studie von SEOmator</a> belegt, dass Top-Rankings im Schnitt <strong>3,8-mal mehr Verweise</strong> aufweisen. Qualität schützt vor Abstrafungen.</p>
+            <p style="margin: 0;">Eine Studie von SEOmator belegt, dass Top-Rankings im Schnitt <strong>3,8-mal mehr Verweise</strong> aufweisen. Qualität schützt vor Abstrafungen.</p>
         </div>
 
         <h3>Was macht gute Links aus?</h3>
@@ -304,7 +304,7 @@ export const backlinkAufbauGrundlagenContent = `
                         <div style="font-size: 0.8em; color: #555;">Signifikante Verbesserungen</div>
                     </div>
                 </div>
-                <p style="margin: 0; font-size: 0.95em; color: #444;">Die tatsächliche Dauer hängt von der Autorität der verlinkenden Seite, dem Wettbewerb und der Verarbeitungsgeschwindigkeit des Google-Algorithmus ab (<a href="https://www.rocket-backlinks.com/wie-lange-dauert-es/">Rocket Backlinks</a>).</p>
+                <p style="margin: 0; font-size: 0.95em; color: #444;">Die tatsächliche Dauer hängt von der Autorität der verlinkenden Seite, dem Wettbewerb und der Verarbeitungsgeschwindigkeit des Google-Algorithmus ab.</p>
             </div>
         </div>
 
@@ -314,7 +314,7 @@ export const backlinkAufbauGrundlagenContent = `
                 <div style="background: #ffebee; border-left: 4px solid #e53935; border-radius: 4px; padding: 12px 16px; margin-bottom: 12px;">
                     <p style="margin: 0; font-weight: bold; color: #c62828;">Verstößt gegen Google-Richtlinien!</p>
                 </div>
-                <p style="margin: 0; font-size: 0.95em; color: #444;">Linksysteme, die PageRank künstlich manipulieren, werden als Spam eingestuft und können zu empfindlichen Abstrafungen oder algorithmischen Herabstufungen führen – bis zur vollständigen Deindexierung (<a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=de#links">Google Search Central</a>).</p>
+                <p style="margin: 0; font-size: 0.95em; color: #444;">Linksysteme, die PageRank künstlich manipulieren, werden als Spam eingestuft und können zu empfindlichen Abstrafungen oder algorithmischen Herabstufungen führen – bis zur vollständigen Deindexierung.</p>
             </div>
         </div>
 
@@ -337,7 +337,7 @@ export const backlinkAufbauGrundlagenContent = `
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
             <h3 style="margin: 0; padding: 18px 24px; background: #f9fafb; border-bottom: 1px solid #eee; font-size: 1em;">Wie erkenne ich, ob eine Linkquelle von einem Spam-Update abgestraft wurde?</h3>
-            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Eine Abstrafung äußert sich häufig in einem drastischen, plötzlichen Abfall des organischen Traffics. Weitere Anzeichen: Verlust von Top-Rankings, Wegfall der Indexierung oder Warnungen in der Google Search Console unter „Manuelle Maßnahmen". Ein starker Rückgang über mehrere Tage oder das Verschwinden des Markennamens aus den Top-Ergebnissen sind deutliche Hinweise (<a href="https://omrdigital.com/faq-items/how-do-i-know-if-google-penalized-my-site/">OMR Digital</a>).</p>
+            <p style="padding: 16px 24px; margin: 0; font-size: 0.95em; color: #444;">Eine Abstrafung äußert sich häufig in einem drastischen, plötzlichen Abfall des organischen Traffics. Weitere Anzeichen: Verlust von Top-Rankings, Wegfall der Indexierung oder Warnungen in der Google Search Console unter „Manuelle Maßnahmen". Ein starker Rückgang über mehrere Tage oder das Verschwinden des Markennamens aus den Top-Ergebnissen sind deutliche Hinweise.</p>
         </div>
 
         <div style="background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; margin: 16px 0; overflow: hidden;">
@@ -353,7 +353,7 @@ export const backlinkAufbauGrundlagenContent = `
                         <p style="margin: 0; font-size: 0.85em; color: #555;">Google nutzt das <code style="background: #fff; padding: 2px 4px; border-radius: 3px;">alt</code>-Attribut als Ankertext-Ersatz</p>
                     </div>
                 </div>
-                <p style="margin: 0; font-size: 0.95em; color: #444;">Tests von <a href="https://de.ryte.com/magazine/vorsicht-diese-fehler-solltest-du-bei-internen-links-unbedingt-vermeiden/">Ryte</a> zeigen, dass Textlinks bei gleicher Zielseite bevorzugt werden. Google kann Bildlinks sogar zugunsten des Textlinks ignorieren.</p>
+                <p style="margin: 0; font-size: 0.95em; color: #444;">Tests von Ryte zeigen, dass Textlinks bei gleicher Zielseite bevorzugt werden. Google kann Bildlinks sogar zugunsten des Textlinks ignorieren.</p>
             </div>
         </div>
 
