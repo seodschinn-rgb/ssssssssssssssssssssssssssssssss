@@ -7,6 +7,7 @@ import { schemaMarkupAnleitungContent } from './blog-posts/schema-markup-anleitu
 import { interneVerlinkungAnleitungContent } from './blog-posts/interne-verlinkung-anleitung-content'
 import { onpageSeoChecklisteContent } from './blog-posts/onpage-seo-checkliste-content'
 import { keywordRechercheAnleitungContent } from './blog-posts/keyword-recherche-anleitung-content'
+import { backlinkAufbauGrundlagenContent } from './blog-posts/backlink-aufbau-grundlagen-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -29,6 +30,49 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'backlink-aufbau-grundlagen',
+    title: 'Backlink-Aufbau Grundlagen: Der Guide für Top-Rankings 2026',
+    metaTitle: 'Backlink Aufbau Grundlagen: Der Guide für bessere Rankings 2026',
+    metaDescription:
+      'Backlink Aufbau Grundlagen für Unternehmen in München: Erfahren Sie alles über hochwertige Links, Linkbuilding-Strategien und wie Sie Ihre Google-Rankings verbessern.',
+    category: 'linkaufbau',
+    content: backlinkAufbauGrundlagenContent,
+    image: '/images/blog/backlink%20aufbau.webp',
+    imageAlt: 'Backlink Aufbau Grundlagen: Guide für bessere Rankings 2026',
+    faqs: [
+      {
+        question: 'Wie lange dauert es, bis neu aufgebaute Backlinks Wirkung zeigen?',
+        answer:
+          'Die Indexierung neuer Links dauert typischerweise 5–15 Tage, erste leichte Effekte zeigen sich nach 2–6 Wochen, signifikante Verbesserungen oft nach etwa 10 Wochen. Die Dauer hängt von der Autorität der verlinkenden Seite, dem Wettbewerb und der Verarbeitungsgeschwindigkeit des Google-Algorithmus ab.',
+      },
+      {
+        question: 'Warum sollte man Backlinks auf keinen Fall kaufen?',
+        answer:
+          'Gekaufte Links bzw. Linksysteme, die PageRank künstlich manipulieren, verstoßen gegen die Google-Richtlinien und werden als Spam eingestuft. Sie können zu empfindlichen Abstrafungen, algorithmischen Herabstufungen oder bis zur vollständigen Deindexierung führen.',
+      },
+      {
+        question: 'Was ist der Unterschied zwischen Domain-Autorität und Seiten-Autorität?',
+        answer:
+          'Domain-Autorität (DA) beschreibt die Stärke der gesamten Website (Skala 1–100), aufgebaut über die Zeit. Seiten-Autorität (PA) ist die Stärke einer einzelnen Unterseite – beides sind Moz-Metriken und dienen als Proxys für die Bewertung der Linkkraft, werden aber nicht direkt von Google verwendet.',
+      },
+      {
+        question: 'Wie erkenne ich, ob eine Linkquelle von einem Spam-Update abgestraft wurde?',
+        answer:
+          'Typische Anzeichen: drastischer, plötzlicher Abfall des organischen Traffics, Verlust von Top-Rankings, Wegfall der Indexierung oder Warnungen in der Google Search Console unter „Manuelle Maßnahmen". Ein starker Rückgang über mehrere Tage oder das Verschwinden des Markennamens aus den Top-Ergebnissen sind deutliche Hinweise.',
+      },
+      {
+        question: 'Gibt es einen Unterschied in der Linkkraft zwischen Text- und Bildlinks?',
+        answer:
+          'Textlinks liefern über den Ankertext direkte, relevante Informationen über das Linkziel und werden von Google in der Regel stärker gewichtet. Bei Bildlinks nutzt Google das alt-Attribut als Ankertext-Ersatz; Tests zeigen, dass Textlinks bei gleicher Zielseite bevorzugt werden.',
+      },
+      {
+        question: 'Welche kostenlosen Tools bieten verlässliche Backlink-Daten?',
+        answer:
+          'Google Search Console (direkt von Google, unerlässlich), Ahrefs Free Checker für grundlegende Backlink-Profile, Moz Link Explorer für DA/PA-Metriken und Ubersuggest für die Konkurrenz-Analyse.',
+      },
+    ],
+  },
   {
     slug: 'keyword-recherche-anleitung',
     title: 'Keyword-Recherche Anleitung: Strategien für Top-Rankings und regionale Sichtbarkeit',
