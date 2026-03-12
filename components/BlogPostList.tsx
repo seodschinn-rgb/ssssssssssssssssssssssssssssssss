@@ -62,7 +62,7 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
 
         {/* Artikel-Liste: 2 Spalten */}
         {filteredPosts.length > 0 ? (
-          <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
             <AnimatePresence mode="wait">
               {filteredPosts.map((post, index) => {
                 const category = categories.find((c) => c.slug === post.category)
