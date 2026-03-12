@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 /** Formspree-Endpoint – Sie erhalten Nachrichten unter https://formspree.io/f/xvzbgggb */
@@ -9,7 +9,16 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzbgggb'
 export default function ContactSection() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [isMobile, setIsMobile] = useState(false)
   const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    const m = window.matchMedia('(max-width: 767px)')
+    setIsMobile(m.matches)
+    const fn = () => setIsMobile(window.matchMedia('(max-width: 767px)').matches)
+    m.addEventListener('change', fn)
+    return () => m.removeEventListener('change', fn)
+  }, [])
 
   // Absenden per Button-Klick statt Form-Submit – funktioniert auf Mobile zuverlässig.
   async function handleSubmitClick() {
@@ -62,17 +71,19 @@ export default function ContactSection() {
       <div className="relative mx-auto max-w-3xl text-center">
         <motion.h2
           id="contact-heading"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: isMobile ? 1 : 0 }}
+          animate={{ opacity: 1 }}
+          whileInView={isMobile ? undefined : { opacity: 1 }}
+          viewport={isMobile ? undefined : { once: true }}
           className="text-3xl sm:text-4xl font-bold text-white"
         >
           Kostenloses SEO-Gespräch
         </motion.h2>
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: isMobile ? 1 : 0 }}
+          animate={{ opacity: 1 }}
+          whileInView={isMobile ? undefined : { opacity: 1 }}
+          viewport={isMobile ? undefined : { once: true }}
           transition={{ delay: 0.1 }}
           className="mt-4 text-zinc-400"
         >
@@ -80,9 +91,10 @@ export default function ContactSection() {
           Stunden.
         </motion.p>
         <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
+          initial={{ opacity: isMobile ? 1 : 0 }}
+          animate={{ opacity: 1 }}
+          whileInView={isMobile ? undefined : { opacity: 1 }}
+          viewport={isMobile ? undefined : { once: true }}
           transition={{ delay: 0.15 }}
           className="mt-4"
         >
@@ -97,9 +109,10 @@ export default function ContactSection() {
           </a>
         </motion.p>
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: '-50px' }}
+          initial={{ opacity: isMobile ? 1 : 0 }}
+          animate={{ opacity: 1 }}
+          whileInView={isMobile ? undefined : { opacity: 1 }}
+          viewport={isMobile ? undefined : { once: true, margin: '-50px' }}
           transition={{ delay: 0.2 }}
           className="mt-10"
         >
