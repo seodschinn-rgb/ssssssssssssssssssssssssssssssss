@@ -60,9 +60,9 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
           </div>
         </div>
 
-        {/* Artikel-Liste */}
+        {/* Artikel-Liste: 2 Spalten */}
         {filteredPosts.length > 0 ? (
-          <ul className="space-y-5 md:space-y-6">
+          <ul className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
             <AnimatePresence mode="wait">
               {filteredPosts.map((post, index) => {
                 const category = categories.find((c) => c.slug === post.category)
@@ -76,28 +76,28 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
                   >
                     <Link
                       href={`/blog/${post.slug}`}
-                      className="group flex flex-col md:flex-row overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm hover:border-indigo-200 hover:shadow-lg md:hover:shadow-xl transition-all duration-300"
+                      className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 h-full"
                     >
                       {post.image && (
-                        <div className="w-full md:w-96 md:min-w-[22rem] md:shrink-0 bg-zinc-50/50 rounded-t-2xl md:rounded-t-none md:rounded-l-2xl flex items-center justify-center p-1.5 md:p-2">
+                        <div className="w-full aspect-[16/10] bg-zinc-50/50 flex items-center justify-center p-2 shrink-0">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img
                             src={post.image}
                             alt={post.imageAlt ?? post.title}
-                            className="w-full h-auto max-h-52 md:max-h-56 object-contain object-center"
+                            className="w-full h-full object-contain object-center"
                           />
                         </div>
                       )}
-                      <div className="p-5 md:p-6 md:flex-1 flex flex-col md:justify-center">
+                      <div className="p-5 flex flex-col flex-1">
                         {category && (
                           <span className="inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 mb-3 w-fit">
                             {category.title}
                           </span>
                         )}
-                        <h3 className="text-lg md:text-xl font-bold text-zinc-900 group-hover:text-indigo-600 transition-colors">
+                        <h3 className="text-lg font-bold text-zinc-900 group-hover:text-indigo-600 transition-colors">
                           {post.title}
                         </h3>
-                        <p className="mt-2 text-zinc-600 text-sm leading-relaxed line-clamp-2">
+                        <p className="mt-2 text-zinc-600 text-sm leading-relaxed line-clamp-2 flex-1">
                           {post.metaDescription}
                         </p>
                         <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 group-hover:gap-3 transition-all w-fit">
