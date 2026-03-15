@@ -510,11 +510,6 @@ export const seoKosten2026Content = `
             </div>
         </div>
 
-        <div style="background: #F9FAFB; border-radius: 8px; padding: 20px 24px; margin: 40px 0 32px; border-left: 4px solid #4F46E5;">
-            <p style="font-weight: 700; margin-bottom: 8px; color: #4F46E5;">Über den Autor</p>
-            <p style="font-size: 0.95rem; margin: 0;">Dieser Artikel wurde vom SEO-Team bei <strong>SEO München</strong> erstellt. Als spezialisierte SEO-Agentur in München betreuen wir Unternehmen aus der Region seit mehreren Jahren — von lokalen Dienstleistern bis zum B2B-Mittelstand. Unsere Strategien basieren auf datengetriebener Analyse, transparentem Reporting und persönlicher Betreuung mit festem Ansprechpartner.</p>
-        </div>
-
         <div style="background: #EEF2FF; border-radius: 8px; padding: 28px; margin-top: 40px;">
             <h2 id="fazit">Fazit — So planst du dein SEO-Budget 2026 richtig</h2>
 
