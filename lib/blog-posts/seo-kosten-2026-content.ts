@@ -4,28 +4,30 @@
 export const seoKosten2026Content = `
         <h1>SEO Kosten 2026 — Was kostet Suchmaschinenoptimierung wirklich?</h1>
 
+        <p style="color: #6B7280; font-size: 0.9rem; margin-bottom: 24px;">Stand: März 2026 | Lesezeit: ca. 15 Minuten</p>
+
         <div style="background: #EEF2FF; border-left: 4px solid #4F46E5; padding: 24px 28px; border-radius: 0 8px 8px 0; font-size: 1.05rem; margin-bottom: 32px;">
-            <p style="margin: 0 0 12px 0;">Zwischen <strong>500 und 25.000 Euro pro Monat</strong> — das ist die ehrliche Antwort auf die Frage, was SEO kostet. Eine riesige Spanne, die erst einmal nicht weiterhilft. Deshalb schlüsseln wir in diesem Preisguide auf, was du 2026 tatsächlich für professionelle Suchmaschinenoptimierung einplanen solltest — mit konkreten Zahlen, Münchner Preiskontext und einem Blick auf den neuen Kostenfaktor GEO.</p>
-            <p style="margin: 0;">Ob lokaler Handwerker, Zahnarztpraxis oder wachsendes SaaS-Startup: Am Ende dieses Artikels weißt du, welches SEO-Budget für dein Unternehmen realistisch ist und worauf du bei Angeboten achten musst.</p>
+            <p style="margin: 0 0 12px 0;">Zwischen <strong>500 und 25.000 Euro pro Monat</strong> — das ist die ehrliche Antwort auf die Frage, was SEO kostet. Eine riesige Spanne, die erst einmal nicht weiterhilft. Deshalb schlüsseln wir in diesem Preisguide die SEO Kosten monatlich auf und zeigen, was du 2026 tatsächlich für professionelle Suchmaschinenoptimierung einplanen solltest — mit konkreten Zahlen, Münchner Preiskontext und einem Blick auf den neuen Kostenfaktor GEO.</p>
+            <p style="margin: 0;">Ob lokaler Dienstleister, der bei Google nicht gefunden wird, KMU-Geschäftsführer mit knappem Marketingbudget oder B2B-Unternehmen, das von Google Ads unabhängiger werden will: Am Ende dieses Artikels weißt du, welches SEO-Budget für dein Unternehmen realistisch ist — und worauf du bei Angeboten achten musst, um keine schlechten Agentur-Erfahrungen zu machen.</p>
         </div>
 
-        <div style="background: #f8f9fa; border: 1px solid #E5E7EB; border-radius: 8px; padding: 24px 28px; margin: 28px 0;">
-            <p style="margin: 0 0 12px 0; font-weight: bold;">Inhaltsverzeichnis</p>
-            <ol style="margin: 0; padding-left: 24px;">
-                <li><a href="#preisueberblick">Was kostet SEO im Monat? — Der große Preisüberblick 2026</a></li>
+        <nav aria-label="Inhaltsverzeichnis" style="background: #F9FAFB; border-radius: 8px; padding: 20px 24px; margin-bottom: 36px;">
+            <p style="font-weight: 700; font-size: 1.05rem; margin-bottom: 12px; color: #4F46E5;">Inhaltsverzeichnis</p>
+            <ol style="margin: 0; padding-left: 20px; line-height: 2;">
+                <li><a href="#preisueberblick">Was kostet SEO im Monat?</a></li>
                 <li><a href="#stundensaetze">SEO-Stundensätze in Deutschland 2026</a></li>
-                <li><a href="#einmalige-kosten">Einmalige SEO-Kosten — Audit, Keyword-Recherche und Setup</a></li>
-                <li><a href="#agentur-freelancer-inhouse">SEO Agentur vs. Freelancer vs. Inhouse — Kostenvergleich</a></li>
-                <li><a href="#local-seo-muenchen">Local SEO Kosten in München und Bayern</a></li>
+                <li><a href="#einmalige-kosten">Einmalige SEO-Kosten</a></li>
+                <li><a href="#agentur-vs-freelancer">SEO Agentur vs. Freelancer vs. Inhouse</a></li>
+                <li><a href="#local-seo-muenchen">Local SEO Kosten in München</a></li>
                 <li><a href="#budgetempfehlung">Budgetempfehlung nach Unternehmenstyp</a></li>
-                <li><a href="#geo-kostenfaktoren">Neue Kostenfaktoren 2026 — GEO und KI-Sichtbarkeit</a></li>
-                <li><a href="#seo-vs-ads">SEO vs. Google Ads — ROI-Vergleich mit Rechenbeispiel</a></li>
-                <li><a href="#serioese-anbieter">Woran du seriöse SEO-Anbieter erkennst — Red Flags und Gütesiegel</a></li>
-                <li><a href="#versteckte-kosten">Versteckte SEO-Kosten, die viele Unternehmen übersehen</a></li>
-                <li><a href="#faqs">Häufig gestellte Fragen zu SEO-Kosten</a></li>
-                <li><a href="#fazit">Fazit — So planst du dein SEO-Budget 2026 richtig</a></li>
+                <li><a href="#geo-kosten">Neue Kostenfaktoren 2026 — GEO</a></li>
+                <li><a href="#seo-vs-ads">SEO vs. Google Ads — ROI-Vergleich</a></li>
+                <li><a href="#serioese-anbieter">Seriöse SEO-Anbieter erkennen</a></li>
+                <li><a href="#versteckte-kosten">Versteckte SEO-Kosten</a></li>
+                <li><a href="#faq">Häufig gestellte Fragen</a></li>
+                <li><a href="#fazit">Fazit</a></li>
             </ol>
-        </div>
+        </nav>
 
         <h2 id="preisueberblick">Was kostet SEO im Monat? — Der große Preisüberblick 2026</h2>
 
@@ -58,7 +60,7 @@ export const seoKosten2026Content = `
 
         <p>Warum ist die Preisspanne so groß? Ein Münchner Zahnarzt, der für drei lokale Keywords gefunden werden will, braucht einen ganz anderen Aufwand als ein nationaler Online-Shop mit 10.000 Produktseiten. Die Branche, die Anzahl der Wettbewerber und der technische Zustand deiner Website bestimmen den Preis.</p>
 
-        <h3>Preismodelle im Vergleich — Monatspauschale, Stundensatz oder Projektbasis?</h3>
+        <h3>SEO Preise im Vergleich — Monatspauschale, Stundensatz oder Projektbasis</h3>
 
         <p>Es gibt drei gängige Preismodelle für SEO-Dienstleistungen:</p>
 
@@ -80,7 +82,9 @@ export const seoKosten2026Content = `
             </table>
         </div>
 
-        <p>Für die meisten Unternehmen ist die <strong>Monatspauschale</strong> das sinnvollste Modell. SEO ist keine einmalige Maßnahme, sondern ein fortlaufender Prozess. Ein Retainer stellt sicher, dass deine Rankings kontinuierlich aufgebaut und gepflegt werden.</p>
+        <p>Für die meisten Unternehmen ist die <strong>Monatspauschale</strong> das sinnvollste Modell. SEO ist keine einmalige Maßnahme, sondern ein fortlaufender Prozess.</p>
+
+        <p>Ein Retainer stellt sicher, dass deine Rankings kontinuierlich aufgebaut und gepflegt werden. Gerade in München, wo der Wettbewerb in vielen Branchen überdurchschnittlich hoch ist, zahlt sich eine laufende Betreuung erfahrungsgemäß schneller aus als punktuelle Einzelmaßnahmen.</p>
 
         <h2 id="stundensaetze">SEO-Stundensätze in Deutschland 2026</h2>
 
@@ -106,9 +110,11 @@ export const seoKosten2026Content = `
 
         <p>Die Einstiegs-Stundensätze ab 50 Euro betreffen in der Regel Freelancer mit weniger als zwei Jahren SEO-Erfahrung oder Berufseinsteiger aus angrenzenden Bereichen wie Webdesign oder Texterstellung.</p>
 
-        <p>Laut der OMT-Agenturfinder-Umfrage liegen die Stundensätze von SEO-Freelancern in der DACH-Region bei <strong>90 bis 120 Euro</strong>. Erfahrene Berater im Agenturumfeld verlangen laut Branchenberichten <strong>150 bis 300 Euro pro Stunde</strong>.</p>
+        <p>Laut der <a href="https://www.omt.de/agenturfinder/" target="_blank" rel="noopener noreferrer">OMT-Agenturfinder-Umfrage</a> liegen die Stundensätze von SEO-Freelancern in der DACH-Region bei <strong>90 bis 120 Euro</strong>. Erfahrene Berater im Agenturumfeld verlangen laut Branchenberichten <strong>150 bis 300 Euro pro Stunde</strong>.</p>
 
-        <p>Ein günstiger Stundensatz allein sagt wenig aus. Ein erfahrener SEO-Experte, der <strong>150 Euro pro Stunde</strong> verlangt und in zwei Stunden das richtige Problem identifiziert, ist günstiger als ein Einsteiger, der für <strong>60 Euro</strong> zehn Stunden braucht und das Problem nicht findet.</p>
+        <p>In München und dem Großraum Bayern liegen die Sätze erfahrungsgemäß am oberen Ende dieser Spanne, bedingt durch das höhere Preisniveau der Region.</p>
+
+        <p>Ein günstiger Stundensatz allein sagt wenig über die Qualität aus. Ein erfahrener SEO-Experte, der <strong>150 Euro pro Stunde</strong> verlangt und in zwei Stunden das richtige Problem identifiziert, ist günstiger als ein Einsteiger, der für <strong>60 Euro</strong> zehn Stunden braucht und das Problem nicht findet.</p>
 
         <h2 id="einmalige-kosten">Einmalige SEO-Kosten — Audit, Keyword-Recherche und Setup</h2>
 
@@ -124,7 +130,7 @@ export const seoKosten2026Content = `
                     </tr>
                 </thead>
                 <tbody>
-                    <tr style="background: #fff; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;"><a href="/leistungen/keyword-recherche">Professionelle Keyword-Recherche</a></td><td style="padding: 10px 16px;"><strong>1.000 — 3.500 EUR</strong></td><td style="padding: 10px 16px;"><a href="/blog/keyword-mapping-anleitung">Keyword-Mapping</a>, Suchintent-Analyse</td></tr>
+                    <tr style="background: #fff; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;"><a href="/blog/keyword-recherche-anleitung">Professionelle Keyword-Recherche</a></td><td style="padding: 10px 16px;"><strong>1.000 — 3.500 EUR</strong></td><td style="padding: 10px 16px;"><a href="/blog/keyword-mapping-anleitung">Keyword-Mapping</a>, Suchintent-Analyse</td></tr>
                     <tr style="background: #F9FAFB; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;">Basis-SEO-Audit</td><td style="padding: 10px 16px;"><strong>500 — 1.500 EUR</strong></td><td style="padding: 10px 16px;">Technische Analyse, OnPage-Check</td></tr>
                     <tr style="background: #fff; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;">Vollständiger SEO-Audit</td><td style="padding: 10px 16px;"><strong>1.500 — 3.500 EUR</strong></td><td style="padding: 10px 16px;">Technik + Content + Wettbewerb</td></tr>
                     <tr style="background: #F9FAFB;"><td style="padding: 10px 16px;">Enterprise-Audit</td><td style="padding: 10px 16px;"><strong>3.000 — 10.000 EUR</strong></td><td style="padding: 10px 16px;">Content-Gap-Analyse, umfassende Strategie</td></tr>
@@ -142,7 +148,7 @@ export const seoKosten2026Content = `
 
         <p>Viele Agenturen verteilen die einmaligen Kosten auf die ersten Monate des Retainers. Frag also gezielt nach, ob ein Setup-Fee anfällt oder ob die Einmalkosten bereits im monatlichen Preis enthalten sind.</p>
 
-        <h2 id="agentur-freelancer-inhouse">SEO Agentur vs. Freelancer vs. Inhouse — Kostenvergleich</h2>
+        <h2 id="agentur-vs-freelancer">SEO Agentur vs. Freelancer vs. Inhouse — Kostenvergleich</h2>
 
         <p>Eine der wichtigsten Entscheidungen bei der SEO-Budgetplanung: Beauftragst du eine Agentur, einen Freelancer oder baust du eine Inhouse-Stelle auf?</p>
 
@@ -272,11 +278,15 @@ export const seoKosten2026Content = `
 
         <p>Diese Werte basieren auf aggregierten Branchendaten und unserer Erfahrung mit Münchner Unternehmen. Dein tatsächliches Budget hängt von deinem Ausgangspunkt, deinen Zielen und der Wettbewerbssituation ab.</p>
 
+        <p>Unsere Pakete orientieren sich an diesen Budgetstufen: Das <strong>Starter-Paket</strong> (ab 990 EUR/Monat) eignet sich für lokale Unternehmen und Startups, das <strong>Growth-Paket</strong> (ab 1.590 EUR/Monat) für wachsende KMU. Für etablierte Mittelständler bieten wir das <strong>Business-Paket</strong> (ab 2.390 EUR/Monat) an.</p>
+
+        <p>Für ambitionierte Unternehmen und komplexere Projekte gibt es unser <strong>Professional-Paket</strong> (ab 2.590 EUR/Monat) und <strong>Enterprise</strong> (ab 2.990 EUR/Monat). Alle Pakete beinhalten einen festen Ansprechpartner und monatliches Reporting mit transparenten KPIs.</p>
+
         <div style="background: #FFFBEB; border: 2px solid #F59E0B; border-radius: 8px; padding: 20px 24px; margin: 28px 0;">
-            <p style="margin: 0;">Du möchtest wissen, welches Budget für deine Branche und deinen Standort sinnvoll ist? In einem kurzen <a href="/kontakt">kostenlosen Erstgespräch</a> können wir das gemeinsam einschätzen.</p>
+            <p style="margin: 0;">Du möchtest wissen, welches Budget für deine Branche und deinen Standort sinnvoll ist? In einem <a href="/kontakt">kostenlosen Erstgespräch</a> (ohne Bindung) können wir das gemeinsam einschätzen. Erfahrungsgemäß erreichen unsere Kunden die erste Seite bei Google in 3–6 Monaten.</p>
         </div>
 
-        <h2 id="geo-kostenfaktoren">Neue Kostenfaktoren 2026 — GEO und KI-Sichtbarkeit</h2>
+        <h2 id="geo-kosten">Neue Kostenfaktoren 2026 — GEO und KI-Sichtbarkeit</h2>
 
         <p>2026 bringt einen Kostenfaktor mit, den es vor zwei Jahren noch nicht gab: <strong>Generative Engine Optimization (GEO)</strong>.</p>
 
@@ -286,7 +296,9 @@ export const seoKosten2026Content = `
 
         <p>Das bedeutet: Selbst wenn du klassisch auf Position 1 rankst, kann eine KI-Antwort über deinem Ergebnis stehen und Klicks abfangen. Wer in diesen KI-Antworten als Quelle zitiert wird, gewinnt. Wer nicht vorkommt, verliert Sichtbarkeit.</p>
 
-        <p>Für SEO-Verantwortliche ergibt sich daraus eine doppelte Herausforderung: Einerseits müssen Inhalte weiterhin klassisch für Google optimiert werden. Andererseits brauchen sie eine Struktur und Qualität, die KI-Systeme als zitierfähige Quelle erkennen. Konkret heißt das: klare Antworten auf häufige Fragen, starke E-E-A-T-Signale (Expertise, Erfahrung, Autorität, Vertrauenswürdigkeit) und regelmäßig aktualisierte Daten.</p>
+        <p>Für SEO-Verantwortliche ergibt sich daraus eine doppelte Herausforderung: Einerseits müssen Inhalte weiterhin klassisch für Google optimiert werden. Andererseits brauchen sie eine Struktur und Qualität, die KI-Systeme als zitierfähige Quelle erkennen.</p>
+
+  <p>Konkret heißt das: klare Antworten auf häufige Fragen, starke E-E-A-T-Signale (Expertise, Erfahrung, Autorität, Vertrauenswürdigkeit) und regelmäßig aktualisierte Daten. Für Münchner Unternehmen bedeutet das zusätzliche Investitionen in Content-Qualität und Aktualität.</p>
 
         <h3>Was kostet GEO zusätzlich zum klassischen SEO?</h3>
 
@@ -295,7 +307,7 @@ export const seoKosten2026Content = `
         <ul>
             <li><strong>Neue Tracking-Tools:</strong> Spezial-Tools für KI-Sichtbarkeits-Monitoring kosten <strong>100 bis 300 EUR/Monat</strong> zusätzlich</li>
             <li><strong>Höhere Content-Frequenz:</strong> Inhalte sollten laut Branchenempfehlungen alle <strong>7 bis 14 Tage</strong> aktualisiert werden, da KI-Ergebnisse auf aktuelle Quellen setzen</li>
-            <li><strong>Neue Anforderungen:</strong> <a href="/blog/schema-markup-anleitung">Strukturierte Daten und Schema Markup</a>, stärkere E-E-A-T-Signale und eine höhere Zitierfähigkeit deiner Inhalte</li>
+            <li><strong>Neue Anforderungen:</strong> <a href="/blog/schema-markup-anleitung">Strukturierte Daten und Schema Markup</a>, stärkere E-E-A-T-Signale und eine höhere Zitierfähigkeit deiner Inhalte für KI-Suchmaschinen</li>
         </ul>
 
         <p>Für ein Unternehmen, das heute <strong>2.000 Euro monatlich</strong> für SEO ausgibt, bedeutet das potenziell <strong>400 bis 700 Euro Mehrkosten</strong> für eine zukunftsfähige GEO-Strategie.</p>
@@ -335,11 +347,11 @@ export const seoKosten2026Content = `
 
         <p>In den ersten Monaten wirst du in SEO investieren, ohne sofort messbaren Return zu sehen. Der typische Break-Even-Punkt liegt laut Branchenerfahrung bei <strong>8 bis 14 Monaten</strong>, abhängig von Branche und Wettbewerb. In dieser Phase baust du Rankings, Autorität und Content-Fundament auf.</p>
 
-        <p>Ab dem Break-Even generiert jeder weitere Monat organischen Traffic, für den du bei Google Ads bezahlen müsstest. Bei einem monatlichen SEO-Budget von 2.000 Euro und einem angenommenen Wert des organischen Traffics von 4.000 Euro (gemessen am äquivalenten CPC) hast du deine SEO-Investition nach 12 Monaten rechnerisch verdoppelt — und der Wert steigt mit jedem weiteren Monat.</p>
+        <p>Ab dem Break-Even generiert jeder weitere Monat organischen Traffic, für den du bei Google Ads bezahlen müsstest. Bei einem monatlichen SEO-Budget von 2.000 Euro und einem angenommenen Wert des organischen Traffics von 4.000 Euro (gemessen am äquivalenten CPC) hast du deine SEO-Investition nach 12 Monaten erfahrungsgemäß rechnerisch verdoppelt.</p>
 
         <h3>SEO ROI — Typische Renditen nach 12 Monaten</h3>
 
-        <p>Laut einer Studie von First Page Sage liegt der typische SEO-ROI bei <strong>300 bis 500 Prozent</strong> über einen Zeitraum von 12 und mehr Monaten. Diese Zahl variiert stark nach Branche und Umsetzungsqualität.</p>
+        <p>Laut einer <a href="https://firstpagesage.com/seo/seo-roi-statistics/" target="_blank" rel="noopener noreferrer">Studie von First Page Sage</a> liegt der typische SEO-ROI bei <strong>300 bis 500 Prozent</strong> über einen Zeitraum von 12 und mehr Monaten. Diese Zahl variiert stark nach Branche und Umsetzungsqualität.</p>
 
         <p>Weitere Kennzahlen, die für SEO sprechen:</p>
 
@@ -387,7 +399,7 @@ export const seoKosten2026Content = `
         <p><strong>Tipp:</strong> Starte mit einem <strong>einmaligen SEO-Audit</strong>, bevor du einen laufenden Vertrag abschließt. So lernst du die Arbeitsweise des Anbieters kennen, ohne dich langfristig zu binden.</p>
 
         <div style="background: #FFFBEB; border: 2px solid #F59E0B; border-radius: 8px; padding: 20px 24px; margin: 28px 0;">
-            <p style="margin: 0;">Du hast ein SEO-Angebot erhalten und bist dir unsicher, ob es seriös ist? Wir schauen es uns gerne <a href="/kontakt">unverbindlich an</a>.</p>
+            <p style="margin: 0;">Du hast ein SEO-Angebot erhalten und bist dir unsicher, ob es seriös ist? Wir schauen es uns gerne <a href="/kontakt">unverbindlich an</a> — mit persönlicher Einschätzung von deinem festen Ansprechpartner. Innerhalb von 24 Stunden melden wir uns bei dir.</p>
         </div>
 
         <h2 id="versteckte-kosten">Versteckte SEO-Kosten, die viele Unternehmen übersehen</h2>
@@ -411,7 +423,7 @@ export const seoKosten2026Content = `
                     <tr style="background: #fff; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;">Ahrefs</td><td style="padding: 10px 16px;">ab <strong>99 EUR</strong></td><td style="padding: 10px 16px;">Backlink-Analyse, Keyword-Recherche</td></tr>
                     <tr style="background: #F9FAFB; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;">Semrush</td><td style="padding: 10px 16px;">ab <strong>130 EUR</strong></td><td style="padding: 10px 16px;">All-in-One SEO-Suite</td></tr>
                     <tr style="background: #fff; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;">Screaming Frog</td><td style="padding: 10px 16px;"><strong>209 EUR/Jahr</strong></td><td style="padding: 10px 16px;">Technisches Crawling</td></tr>
-                    <tr style="background: #F9FAFB; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;">Google Search Console</td><td style="padding: 10px 16px;"><strong>Kostenlos</strong></td><td style="padding: 10px 16px;">Performance-Monitoring</td></tr>
+                    <tr style="background: #F9FAFB; border-bottom: 1px solid #E5E7EB;"><td style="padding: 10px 16px;"><a href="https://search.google.com/search-console/about" target="_blank" rel="noopener noreferrer">Google Search Console</a></td><td style="padding: 10px 16px;"><strong>Kostenlos</strong></td><td style="padding: 10px 16px;">Performance-Monitoring</td></tr>
                     <tr style="background: #fff;"><td style="padding: 10px 16px;">Surfer SEO</td><td style="padding: 10px 16px;">ab <strong>69 EUR</strong></td><td style="padding: 10px 16px;">Content-Optimierung</td></tr>
                 </tbody>
             </table>
@@ -432,13 +444,15 @@ export const seoKosten2026Content = `
 
         <p>Bei einer Content-Strategie mit vier Artikeln pro Monat kommen schnell <strong>1.000 bis 3.000 Euro</strong> zusätzlich zusammen. Bei Agenturen ist Content oft im Paket enthalten, bei Freelancern wird er meist separat berechnet.</p>
 
+        <p>Für Münchner Unternehmen, die branchenspezifischen Content mit regionalem Bezug benötigen, solltest du eher mit dem oberen Ende rechnen.</p>
+
         <h3>Linkbuilding — die unterschätzte Kostenstelle</h3>
 
         <p>Hochwertiger <a href="/blog/backlink-aufbau-grundlagen">Backlink-Aufbau</a> kostet ab <strong>2.000 Euro pro Monat</strong> aufwärts. Seriöses Linkbuilding basiert auf Outreach, Gastbeiträgen und Digital PR — alles zeitintensive Maßnahmen.</p>
 
-        <p>Vorsicht vor günstigen Link-Paketen ("100 Backlinks für 99 Euro"). Solche Links stammen aus Spam-Netzwerken und können deinem Ranking schaden statt zu helfen.</p>
+        <p>Vorsicht vor günstigen Link-Paketen ("100 Backlinks für 99 Euro"). Solche Links stammen aus Spam-Netzwerken und können deinem Ranking schaden statt zu helfen. Für Münchner Unternehmen empfehlen sich erfahrungsgemäß lokale Linkbuilding-Strategien — etwa Gastbeiträge in bayerischen Fachmedien oder Kooperationen mit regionalen Partnern.</p>
 
-        <h2 id="faqs">Häufig gestellte Fragen zu SEO-Kosten</h2>
+        <h2 id="faq">Häufig gestellte Fragen zu SEO-Kosten</h2>
 
         <div style="background: #fff; border: 1px solid #E5E7EB; border-radius: 8px; margin: 16px 0; overflow: hidden;">
             <h3 style="margin: 0; padding: 18px 24px; background: #F0FDF4; border-bottom: 1px solid #E5E7EB; font-size: 1em;">Was kostet SEO im Monat für ein kleines Unternehmen?</h3>
@@ -496,6 +510,11 @@ export const seoKosten2026Content = `
             </div>
         </div>
 
+        <div style="background: #F9FAFB; border-radius: 8px; padding: 20px 24px; margin: 40px 0 32px; border-left: 4px solid #4F46E5;">
+            <p style="font-weight: 700; margin-bottom: 8px; color: #4F46E5;">Über den Autor</p>
+            <p style="font-size: 0.95rem; margin: 0;">Dieser Artikel wurde vom SEO-Team bei <strong>SEO München</strong> erstellt. Als spezialisierte SEO-Agentur in München betreuen wir Unternehmen aus der Region seit mehreren Jahren — von lokalen Dienstleistern bis zum B2B-Mittelstand. Unsere Strategien basieren auf datengetriebener Analyse, transparentem Reporting und persönlicher Betreuung mit festem Ansprechpartner.</p>
+        </div>
+
         <div style="background: #EEF2FF; border-radius: 8px; padding: 28px; margin-top: 40px;">
             <h2 id="fazit">Fazit — So planst du dein SEO-Budget 2026 richtig</h2>
 
@@ -504,11 +523,13 @@ export const seoKosten2026Content = `
             <p>Drei Dinge solltest du mitnehmen:</p>
 
             <ol>
-                <li><strong>SEO ist eine Investition, keine Ausgabe.</strong> Mit einem typischen ROI von 300 bis 500 Prozent über 12+ Monate rechnet sich professionelles SEO für die meisten Unternehmen.</li>
+                <li><strong>SEO ist eine Investition, keine Ausgabe.</strong> Mit einem typischen ROI von 300 bis 500 Prozent über 12+ Monate kann sich professionelles SEO erfahrungsgemäß für viele Unternehmen lohnen.</li>
                 <li><strong>Vorsicht vor Billigangeboten.</strong> Unter 300 Euro monatlich kann niemand seriös arbeiten. Achte auf die Red Flags in diesem Artikel.</li>
-                <li><strong>GEO wird zum Pflichtprogramm.</strong> Wer 2026 nur klassisches SEO macht, verliert mittelfristig Sichtbarkeit an Wettbewerber, die auch in KI-Suchergebnissen präsent sind.</li>
+                <li><strong>GEO wird zum Pflichtprogramm.</strong> Wer 2026 nur klassisches SEO macht, verliert erfahrungsgemäß mittelfristig Sichtbarkeit an Wettbewerber, die auch in KI-Suchergebnissen präsent sind.</li>
             </ol>
 
-            <p>Der beste erste Schritt: Starte mit einer fundierten SEO-Analyse. In unserem <a href="/kontakt">kostenlosen Erstgespräch</a> analysieren wir deine aktuelle Sichtbarkeit und zeigen dir, welches Budget für deine Ziele realistisch ist. Schau dir auch <a href="/leistungen">unsere SEO-Leistungen</a> im Detail an.</p>
+            <p>Der beste erste Schritt: Starte mit einer fundierten SEO-Analyse. In unserem <a href="/kontakt">kostenlosen Erstgespräch</a> (ohne Bindung) analysieren wir deine aktuelle Sichtbarkeit und zeigen dir, welches Budget für deine Ziele realistisch ist.</p>
+
+            <p>Unsere Kunden erzielen erfahrungsgemäß durchschnittlich <strong>+312&nbsp;% mehr organischen Traffic</strong> und messbare Ranking-Verbesserungen — mit festem Ansprechpartner und transparentem monatlichem Reporting. Schau dir auch <a href="/leistungen">unsere SEO-Leistungen</a> im Detail an.</p>
         </div>
 `
