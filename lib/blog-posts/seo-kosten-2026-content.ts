@@ -4,8 +4,6 @@
 export const seoKosten2026Content = `
         <h1>SEO Kosten 2026 — Was kostet Suchmaschinenoptimierung wirklich?</h1>
 
-        <p style="color: #6B7280; font-size: 0.9rem; margin-bottom: 24px;">Stand: März 2026 | Lesezeit: ca. 15 Minuten</p>
-
         <div style="background: #EEF2FF; border-left: 4px solid #4F46E5; padding: 24px 28px; border-radius: 0 8px 8px 0; font-size: 1.05rem; margin-bottom: 32px;">
             <p style="margin: 0 0 12px 0;">Zwischen <strong>500 und 25.000 Euro pro Monat</strong> — das ist die ehrliche Antwort auf die Frage, was SEO kostet. Eine riesige Spanne, die erst einmal nicht weiterhilft. Deshalb schlüsseln wir in diesem Preisguide die SEO Kosten monatlich auf und zeigen, was du 2026 tatsächlich für professionelle Suchmaschinenoptimierung einplanen solltest — mit konkreten Zahlen, Münchner Preiskontext und einem Blick auf den neuen Kostenfaktor GEO.</p>
             <p style="margin: 0;">Ob lokaler Dienstleister, der bei Google nicht gefunden wird, KMU-Geschäftsführer mit knappem Marketingbudget oder B2B-Unternehmen, das von Google Ads unabhängiger werden will: Am Ende dieses Artikels weißt du, welches SEO-Budget für dein Unternehmen realistisch ist — und worauf du bei Angeboten achten musst, um keine schlechten Agentur-Erfahrungen zu machen.</p>
