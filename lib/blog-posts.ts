@@ -211,34 +211,64 @@ const POSTS: BlogPost[] = [
   },
   {
     slug: 'onpage-seo-checkliste',
-    title: 'Onpage SEO Checkliste: Ihr Leitfaden für Top-Rankings in München und Bayern',
-    metaTitle: 'Onpage SEO Checkliste: Ihr Leitfaden für Top-Rankings in München und Bayern',
+    title: 'OnPage SEO Checkliste 2026: Die vollständige Anleitung für Top-Rankings bei Google',
+    metaTitle: 'OnPage SEO Checkliste 2026: Die vollständige Anleitung für Top-Rankings',
     metaDescription:
-      'Umfassende Onpage SEO Checkliste für Unternehmen in München & Bayern. Erfahren Sie, wie Sie Ihre Webseite technisch und inhaltlich optimieren und Top-Rankings erzielen.',
+      'OnPage SEO Checkliste 2026: Alle Faktoren mit Prioritäts-Matrix, aktuellen Daten und Münchner Praxistipps. Jetzt Rankings systematisch verbessern.',
     category: 'content-keywords',
     content: onpageSeoChecklisteContent,
-    image: '/images/blog/onpage%20seo%20checkliste%20(1).webp',
-    imageAlt: 'Onpage SEO Checkliste: Leitfaden für Top-Rankings in München und Bayern',
+    image: '/images/blog/onpage-seo-checkliste-featured-image.webp',
+    imageAlt: 'OnPage SEO Checkliste 2026: Die vollständige Anleitung für Top-Rankings bei Google',
     faqs: [
       {
-        question: 'Wie prüfe ich, ob eine Webseite von Google indexiert ist?',
+        question: 'Was ist der häufigste OnPage-SEO-Fehler?',
         answer:
-          'Über die Google Search Console mit dem URL-Prüftool oder den Indexierungsbericht. Alternativ die site:-Abfrage in Google nutzen (z. B. site:ihredomain.de), um erfasste Seiten zu sehen.',
+          'Content erstellen, der nicht zur Suchintention passt. Alle technischen Faktoren perfekt umsetzen bringt nichts, wenn dein Inhalt nicht beantwortet, was der Nutzer sucht.',
       },
       {
-        question: 'Warum sind externe Quellen und Backlinks im Kontext der Onpage-Optimierung wichtig?',
+        question: 'Ist Keyword-Dichte noch relevant in 2026?',
         answer:
-          'Ausgehende Links zu hochwertigen Quellen stärken Vertrauen und Relevanz. Backlinks (Offpage) von anderen Webseiten erhöhen die Domain-Autorität. Beides signalisiert Google gut recherchierte Inhalte und kann indirekt zu besseren Rankings führen.',
+          'Nein, nicht als feste Prozentzahl. Google versteht Semantik und Kontext. Fokussiere dich auf natürliche Sprache, verwandte Begriffe und vollständige Themenabdeckung.',
       },
       {
-        question: 'Welche Rolle spielt Local SEO für Unternehmen in München und Bayern?',
+        question: 'Wie oft sollte man OnPage SEO überprüfen?',
         answer:
-          'Local SEO ist Teil einer umfassenden Onpage-Strategie: lokale Keywords in Titeln und Inhalten, konsistente NAP-Daten (Name, Adresse, Telefon), Optimierung des Google-My-Business-Profils und standortspezifische Inhalte steigern die Sichtbarkeit vor Ort.',
+          'Mindestens quartalsweise eine vollständige Prüfung. Title Tags und Meta Descriptions bei CTR-Problemen sofort anpassen. Content-Audits alle 6 Monate.',
       },
       {
-        question: 'Wie optimiere ich die Usability über reine SEO-Aspekte hinaus?',
+        question: 'Wie lange dauert es, bis OnPage-Änderungen wirken?',
         answer:
-          'Favicon für Wiedererkennung, Barrierefreiheit für bessere Nutzersignale und ein durchgängig responsives Design (Mobile-First) verbessern die User Experience und werden von Suchmaschinen positiv bewertet.',
+          'Typischerweise 2 bis 8 Wochen. Title-Tag-Änderungen zeigen oft schon nach wenigen Tagen Wirkung in der CTR.',
+      },
+      {
+        question: 'Kann man zu viel OnPage-Optimierung betreiben?',
+        answer:
+          'Ja — Überoptimierung. Keyword-Stuffing, unnatürliche Ankertexte und erzwungene Keywords schaden mehr als sie nutzen.',
+      },
+      {
+        question: 'Braucht man ein SEO-Tool für die OnPage-Optimierung?',
+        answer:
+          'Die Google Search Console ist kostenlos und unverzichtbar. Screaming Frog eignet sich für technische Audits. Für tiefere Analysen: Ahrefs, Semrush oder SurferSEO.',
+      },
+      {
+        question: 'Ist OnPage SEO alleine ausreichend?',
+        answer:
+          'OnPage SEO ist das Fundament, aber in umkämpften Branchen brauchst du zusätzlich OffPage-Signale und technisches SEO.',
+      },
+      {
+        question: 'Was kostet professionelle OnPage-Optimierung?',
+        answer:
+          'Ein professioneller OnPage-Audit liegt bei 500 bis 3.500 EUR einmalig. Laufende Betreuung kostet 1.000 bis 3.000 EUR monatlich.',
+      },
+      {
+        question: 'Welche OnPage-Faktoren haben 2026 am meisten Einfluss?',
+        answer:
+          'Content-Relevanz und Suchintention (Korrelation: 0,47), gefolgt von internen Links und Core Web Vitals.',
+      },
+      {
+        question: 'Wie finde ich meine OnPage-Schwachstellen?',
+        answer:
+          'Google Search Console: Unter Leistung siehst du Seiten mit hohen Impressionen aber niedriger CTR. Unter Core Web Vitals findest du Performance-Probleme.',
       },
     ],
   },

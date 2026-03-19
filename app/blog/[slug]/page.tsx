@@ -163,6 +163,235 @@ article .entry-content img.wp-smiley {
     top: 5rem;
   }
 }
+
+/* Zusätzliche Styles für ältere/ausführliche Blog-HTMLs (z. B. OnPage-Checkliste)
+   Wichtig: Alles ist auf .blog-article gescoped, damit es die restliche Seite nicht beeinflusst. */
+.blog-article .intro-text {
+  font-size: 1.1rem;
+  color: #6B7280;
+  line-height: 1.9;
+  margin-bottom: 2rem;
+}
+
+.blog-article .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.blog-article .stat-card {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+}
+.blog-article .stat-card .stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #4F46E5;
+  display: block;
+}
+.blog-article .stat-card .stat-label {
+  font-size: 0.85rem;
+  color: #6B7280;
+  margin-top: 0.25rem;
+}
+
+.blog-article figure {
+  margin: 2rem 0;
+  background: #F9FAFB;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+}
+.blog-article figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.blog-article figcaption {
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  color: #6B7280;
+  text-align: center;
+  background: #FFFFFF;
+  border-top: 1px solid #E5E7EB;
+}
+
+.blog-article .checklist {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-left: 4px solid #4F46E5;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+}
+.blog-article .checklist h3 {
+  margin-top: 0;
+  color: #4F46E5;
+  font-size: 1.1rem;
+}
+.blog-article .checklist ul {
+  list-style: none;
+  padding: 0;
+}
+.blog-article .checklist li {
+  padding: 0.4rem 0 0.4rem 2rem;
+  position: relative;
+  line-height: 1.6;
+}
+.blog-article .checklist li::before {
+  content: '☐';
+  position: absolute;
+  left: 0;
+  color: #4F46E5;
+  font-size: 1.1rem;
+}
+
+.blog-article .tip-box {
+  background: #FFFBEB;
+  border-left: 4px solid #F59E0B;
+  border-radius: 0 12px 12px 0;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+.blog-article .tip-box strong { color: #B45309; }
+
+.blog-article .cta-box {
+  background: linear-gradient(135deg, #EEF2FF, #C7D2FE);
+  border: 2px solid #4F46E5;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2.5rem 0;
+  text-align: center;
+}
+.blog-article .cta-box p { margin-bottom: 1rem; }
+
+.blog-article .cta-button {
+  display: inline-block;
+  background: #4F46E5;
+  color: #fff !important;
+  padding: 0.85rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.blog-article .cta-button:hover { background: #4338CA; }
+
+.blog-article .priority-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.blog-article .priority-card {
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+}
+.blog-article .priority-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-article .priority-card ul {
+  padding-left: 1.25rem;
+  font-size: 0.9rem;
+}
+.blog-article .priority-card li { margin-bottom: 0.3rem; }
+.blog-article .priority-card.high-low { background: #ECFDF5; border-color: #10B981; }
+.blog-article .priority-card.high-low h4 { color: #10B981; }
+.blog-article .priority-card.high-high { background: #EEF2FF; border-color: #4F46E5; }
+.blog-article .priority-card.high-high h4 { color: #4F46E5; }
+.blog-article .priority-card.low-low { background: #FFFBEB; border-color: #F59E0B; }
+.blog-article .priority-card.low-low h4 { color: #B45309; }
+.blog-article .priority-card.low-high { background: #F9FAFB; border-color: #E5E7EB; }
+.blog-article .priority-card.low-high h4 { color: #6B7280; }
+
+.blog-article .red-flag-list {
+  list-style: none;
+  padding-left: 0;
+}
+.blog-article .red-flag-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+}
+.blog-article .red-flag-list li::before {
+  content: "⚠";
+  position: absolute;
+  left: 0;
+}
+
+.blog-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E5E7EB;
+}
+.blog-article th {
+  background: #4F46E5;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.blog-article td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid #E5E7EB;
+}
+.blog-article tr:nth-child(even) td { background: #F9FAFB; }
+.blog-article tr:hover td { background: #EEF2FF; }
+
+/* FAQ Accordion */
+.blog-article .faq-item {
+  background: #F9FAFB;
+  border: 1px solid #E5E7EB;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+.blog-article .faq-question {
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1F2937;
+}
+.blog-article .faq-question:hover { background: #EEF2FF; }
+.blog-article .faq-question::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: #4F46E5;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: 1rem;
+  transition: transform 0.2s;
+}
+.blog-article .faq-item.open .faq-question::after { content: '−'; }
+.blog-article .faq-answer {
+  padding: 0 1.25rem 1rem;
+  display: none;
+  color: #6B7280;
+  line-height: 1.7;
+}
+.blog-article .faq-item.open .faq-answer { display: block; }
+
+@media (max-width: 768px) {
+  .blog-article .priority-grid { grid-template-columns: 1fr; }
+  .blog-article .stat-grid { grid-template-columns: 1fr; }
+}
 `
 
 interface PageProps {
