@@ -10,6 +10,7 @@ import { keywordRechercheAnleitungContent } from './blog-posts/keyword-recherche
 import { backlinkAufbauGrundlagenContent } from './blog-posts/backlink-aufbau-grundlagen-content'
 import { seoToolsAnfaengerContent } from './blog-posts/seo-tools-anfaenger-content'
 import { seoKosten2026Content } from './blog-posts/seo-kosten-2026-content'
+import { seoAuditChecklisteContent } from './blog-posts/seo-audit-checkliste-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -32,6 +33,60 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'seo-audit-checkliste',
+    title: 'SEO Audit 2026: Der komplette Leitfaden mit Checkliste',
+    metaTitle: 'SEO Audit 2026: Checkliste, Kosten & Anleitung | SEO München',
+    metaDescription:
+      'SEO Audit 2026: Was wird geprüft, was kostet es und wie führst du es selbst durch? Komplette Checkliste mit Schritt-für-Schritt-Anleitung für KMU in München.',
+    category: 'technisches-seo',
+    content: seoAuditChecklisteContent,
+    image: '/images/blog/seo-audit-thumbnail.webp',
+    imageAlt:
+      'SEO Audit 2026: Dashboard mit Health Score, Checkliste und Ranking-Faktoren',
+    faqs: [
+      {
+        question: 'Was kostet ein SEO Audit?',
+        answer:
+          'Ein professionelles SEO Audit kostet je nach Umfang zwischen 300 und 10.000 EUR. Für ein mittelständisches Unternehmen mit 50-500 Seiten liegt der typische Preis bei 1.000-3.000 EUR. DIY-Audits mit kostenlosen Tools wie der Google Search Console sind kostenlos, decken aber nur einen Teil der relevanten Faktoren ab.',
+      },
+      {
+        question: 'Wie lange dauert ein SEO Audit?',
+        answer:
+          'Ein professionelles Audit dauert typischerweise 3-10 Arbeitstage, abhängig von der Websitegröße. Ein Quick-Check ist in wenigen Stunden erledigt, ein Enterprise-Audit für große Websites mit tausenden Seiten kann 2-3 Wochen beanspruchen.',
+      },
+      {
+        question: 'Wie oft sollte man ein SEO Audit machen?',
+        answer:
+          'Wir empfehlen mindestens ein vollständiges Audit pro Jahr und einen Quick-Check alle 3-6 Monate. Nach großen Google-Updates, einem Website-Relaunch oder einem Agenturwechsel ist ein zusätzliches Audit sinnvoll.',
+      },
+      {
+        question: 'Kann man ein SEO Audit selber machen?',
+        answer:
+          'Ja, mit kostenlosen Tools wie der Google Search Console, Screaming Frog und PageSpeed Insights kannst du ein Basis-Audit selbst durchführen. Für eine vollständige Analyse mit Wettbewerbsvergleich, strategischer Priorisierung und Backlink-Audit ist jedoch SEO-Fachwissen erforderlich.',
+      },
+      {
+        question: 'Was beinhaltet ein technisches SEO Audit?',
+        answer:
+          'Ein technisches SEO Audit prüft Crawlbarkeit, Indexierung, Core Web Vitals, HTTPS-Konfiguration, Redirect-Ketten, Canonical Tags, Structured Data, Mobile-Friendliness und Server-Performance. Es bildet das Fundament jedes vollständigen SEO Audits.',
+      },
+      {
+        question: 'Lohnt sich ein SEO Audit für kleine Unternehmen?',
+        answer:
+          'Absolut. Gerade für kleine Unternehmen in München und Bayern kann ein SEO Audit den entscheidenden Unterschied machen — denn oft sind es wenige technische Fehler, die das Ranking blockieren. Ein Audit ab 300-500 EUR kann sich durch gewonnene Kunden schnell amortisieren.',
+      },
+      {
+        question: 'Was ist der Unterschied zwischen SEO Audit und SEO-Beratung?',
+        answer:
+          'Das Audit ist die Diagnose — es analysiert den Ist-Zustand deiner Website. Die SEO-Beratung geht einen Schritt weiter und entwickelt eine Strategie zur Umsetzung der Empfehlungen. Viele Agenturen bieten beides als Paket an.',
+      },
+      {
+        question: 'Was passiert nach dem SEO Audit?',
+        answer:
+          'Nach dem Audit erhältst du einen priorisierten Maßnahmenplan. Quick Wins (technische Fixes) werden in Woche 1-4 umgesetzt. Strategische Maßnahmen wie Content-Optimierung und Backlink-Aufbau folgen in den Monaten danach. Ein Follow-up Audit nach 3-6 Monaten misst den Fortschritt.',
+      },
+    ],
+  },
   {
     slug: 'seo-kosten',
     title: 'SEO Kosten 2026 — Was kostet Suchmaschinenoptimierung wirklich?',
