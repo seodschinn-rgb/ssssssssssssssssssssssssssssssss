@@ -39,7 +39,6 @@ export default function Home() {
           headline="SEO Agentur München — Dein Weg von unsichtbar zu Seite 1"
           subheadline="Du investierst in eine Website, aber Google schickt dir keine Kunden? Wir ändern das. Mit einer datengetriebenen SEO-Strategie, die Rankings liefert — nicht nur Reports. Durchschnittlich +312 % mehr organischer Traffic für Unternehmen in München und Bayern."
           showSearchAnimation
-          showHomeSecondaryLinks
         />
         <PainPointsSection />
         <FeatureGrid />
