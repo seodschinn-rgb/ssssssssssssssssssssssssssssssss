@@ -16,7 +16,7 @@ export const HOME_PAGE_FAQ_ITEMS = [
   },
   {
     q: 'Was unterscheidet euch von anderen SEO-Agenturen in München?',
-    a: 'Wir versprechen keine Wunder und verstecken keine Kosten. Konkret: Du bekommst einen festen Ansprechpartner, der dein Projekt kennt — keinen Junior, der jede Woche wechselt. Unsere Preise stehen offen auf der Website — ohne Verhandlungsspielchen. Und wir optimieren nicht nur für das Google von heute, sondern auch für KI-gestützte Suchsysteme wie Google AI Overviews (GEO). Das machen in München aktuell die wenigsten.',
+    a: 'Du bekommst einen festen Ansprechpartner, der dein Projekt kennt — keinen Junior, der jede Woche wechselt. Unsere Preise stehen offen auf der Website — ohne Verhandlungsspielchen. Und wir optimieren nicht nur für das Google von heute, sondern auch für KI-gestützte Suchsysteme wie Google AI Overviews (GEO).',
   },
   {
     q: 'Kann ich SEO nicht einfach selbst machen?',
@@ -27,7 +27,7 @@ export const HOME_PAGE_FAQ_ITEMS = [
     a: 'Wir empfehlen eine Zusammenarbeit von mindestens 6 Monaten, weil SEO Zeit braucht. Aber: Kein Knebelvertrag. Du kannst monatlich kündigen. Wir überzeugen mit Ergebnissen — nicht mit Vertragsbindung.',
   },
   {
-    q: 'Bietet ihr auch Einmal-Leistungen an (z. B. nur ein SEO-Audit)?',
+    q: 'Bietet ihr auch Einmal-Leistungen an?',
     a: 'Ja. Neben unseren monatlichen Paketen bieten wir auch Einmal-Leistungen wie ein SEO-Audit oder eine Keyword-Recherche an. Sprich uns im Erstgespräch darauf an.',
   },
   {

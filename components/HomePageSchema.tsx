@@ -4,8 +4,8 @@ import { HOME_PAGE_FAQ_ITEMS } from '@/lib/home-page-faqs'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
 /**
- * Ein einziges JSON-LD mit @graph für die Startseite.
- * FAQPage entspricht den sichtbaren FAQs auf der Startseite (Du-Form).
+ * Ein JSON-LD mit @graph: LocalBusiness (+ ProfessionalService, Pakete), FAQPage, WebSite.
+ * FAQPage entspricht den sichtbaren FAQs (lib/home-page-faqs.ts).
  */
 export default function HomePageSchema() {
   const schema = {
@@ -13,9 +13,18 @@ export default function HomePageSchema() {
     '@graph': [
       {
         '@type': 'LocalBusiness',
-        name: 'SEO Agentur München',
+        additionalType: 'https://schema.org/ProfessionalService',
+        name: 'SEO München',
+        url: SITE_URL,
+        telephone: '+4915565087694',
+        email: 'info@seomuenchen.com',
         description:
-          'Professionelle Suchmaschinenoptimierung und Local SEO für Unternehmen in München und Bayern.',
+          'SEO Agentur in München: Datengetriebene SEO-Optimierung ab 990 EUR/Monat. +312% mehr Traffic für unsere Kunden.',
+        founder: {
+          '@type': 'Person',
+          name: 'Julian Schäfer',
+          jobTitle: 'Gründer & SEO-Stratege',
+        },
         address: {
           '@type': 'PostalAddress',
           addressLocality: 'München',
@@ -23,44 +32,99 @@ export default function HomePageSchema() {
           addressCountry: 'DE',
         },
         areaServed: [
-          'München',
-          'Garching',
-          'Starnberg',
-          'Freising',
-          'Augsburg',
-          'Bayern',
+          { '@type': 'City', name: 'München' },
+          { '@type': 'City', name: 'Garching' },
+          { '@type': 'City', name: 'Starnberg' },
+          { '@type': 'City', name: 'Rosenheim' },
+          { '@type': 'City', name: 'Augsburg' },
+          { '@type': 'City', name: 'Freising' },
+          { '@type': 'City', name: 'Dachau' },
+          { '@type': 'City', name: 'Landshut' },
+          { '@type': 'City', name: 'Ingolstadt' },
+          { '@type': 'City', name: 'Regensburg' },
+          { '@type': 'City', name: 'Kempten' },
+          { '@type': 'State', name: 'Bayern' },
         ],
-        serviceType: [
+        priceRange: '990-2990 EUR/Monat',
+        knowsAbout: [
           'Suchmaschinenoptimierung',
-          'SEO Beratung',
           'Local SEO',
           'Technisches SEO',
+          'SEO Audit',
+          'Keyword-Recherche',
+          'OnPage-Optimierung',
+          'Generative Engine Optimization',
         ],
-        url: SITE_URL,
-      },
-      {
-        '@type': 'WebSite',
-        name: 'SEO Agentur München',
-        url: SITE_URL,
-        description:
-          'SEO Agentur München: datengetriebene Suchmaschinenoptimierung, Local SEO und messbare Rankings für KMU in Bayern.',
-        inLanguage: 'de-DE',
-        publisher: {
-          '@type': 'Organization',
-          name: 'SEO Agentur München',
-          url: SITE_URL,
-          logo: {
-            '@type': 'ImageObject',
-            url: `${SITE_URL}/logo.png`,
-          },
-        },
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: {
-            '@type': 'EntryPoint',
-            urlTemplate: `${SITE_URL}/standorte?q={search_term_string}`,
-          },
-          'query-input': 'required name=search_term_string',
+        hasOfferCatalog: {
+          '@type': 'OfferCatalog',
+          name: 'SEO-Pakete',
+          itemListElement: [
+            {
+              '@type': 'Offer',
+              name: 'Starter',
+              description: 'SEO-Paket für lokale Unternehmen & Startups',
+              price: '990',
+              priceCurrency: 'EUR',
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: '990',
+                priceCurrency: 'EUR',
+                billingDuration: 'P1M',
+              },
+            },
+            {
+              '@type': 'Offer',
+              name: 'Growth',
+              description: 'SEO-Paket für wachsende KMU',
+              price: '1590',
+              priceCurrency: 'EUR',
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: '1590',
+                priceCurrency: 'EUR',
+                billingDuration: 'P1M',
+              },
+            },
+            {
+              '@type': 'Offer',
+              name: 'Business',
+              description: 'SEO-Paket für etablierte Mittelständler',
+              price: '2390',
+              priceCurrency: 'EUR',
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: '2390',
+                priceCurrency: 'EUR',
+                billingDuration: 'P1M',
+              },
+            },
+            {
+              '@type': 'Offer',
+              name: 'Professional',
+              description: 'SEO-Paket für ambitionierte Unternehmen',
+              price: '2590',
+              priceCurrency: 'EUR',
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: '2590',
+                priceCurrency: 'EUR',
+                billingDuration: 'P1M',
+              },
+            },
+            {
+              '@type': 'Offer',
+              name: 'Enterprise',
+              description: 'SEO-Paket für Großunternehmen & komplexe Projekte',
+              price: '2990',
+              priceCurrency: 'EUR',
+              priceSpecification: {
+                '@type': 'UnitPriceSpecification',
+                price: '2990',
+                priceCurrency: 'EUR',
+                billingDuration: 'P1M',
+              },
+            },
+          ],
         },
       },
       {
@@ -73,6 +137,16 @@ export default function HomePageSchema() {
             text: faq.a,
           },
         })),
+      },
+      {
+        '@type': 'WebSite',
+        name: 'SEO München',
+        url: SITE_URL,
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: `${SITE_URL}/?s={search_term_string}`,
+          'query-input': 'required name=search_term_string',
+        },
       },
     ],
   }
