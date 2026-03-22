@@ -25,7 +25,7 @@ export default function BlogPage() {
         <section className="pt-28 pb-12 px-6 text-center bg-gradient-to-b from-zinc-50 to-white">
           <h1 className="text-3xl sm:text-4xl font-bold text-zinc-900">Blog</h1>
           <p className="mt-4 max-w-xl mx-auto text-zinc-600">
-            SEO-Tipps, Branchen-Insights und Best Practices für Ihre Sichtbarkeit bei Google.
+            SEO-Tipps, Branchen-Insights und Best Practices für deine Sichtbarkeit bei Google.
           </p>
         </section>
         <BlogPostList posts={posts} categories={BLOG_CATEGORIES} />

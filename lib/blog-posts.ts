@@ -188,7 +188,7 @@ const POSTS: BlogPost[] = [
     title: 'Backlink-Aufbau Grundlagen: Der Guide für Top-Rankings 2026',
     metaTitle: 'Backlink Aufbau Grundlagen: Der Guide für bessere Rankings 2026',
     metaDescription:
-      'Backlink Aufbau Grundlagen für Unternehmen in München: Erfahren Sie alles über hochwertige Links, Linkbuilding-Strategien und wie Sie Ihre Google-Rankings verbessern.',
+      'Backlink-Aufbau-Grundlagen für Unternehmen in München: Erfahre alles über hochwertige Links, Linkbuilding-Strategien und wie du deine Google-Rankings verbesserst.',
     category: 'linkaufbau',
     content: backlinkAufbauGrundlagenContent,
     image: '/images/blog/backlink%20aufbau.webp',
@@ -329,10 +329,10 @@ const POSTS: BlogPost[] = [
   },
   {
     slug: 'interne-verlinkung-anleitung',
-    title: 'Interne Verlinkung Anleitung: Der Schlüssel zu mehr SEO-Sichtbarkeit für Ihre Website',
-    metaTitle: 'Interne Verlinkung Anleitung: Der Schlüssel zu mehr SEO-Sichtbarkeit für Ihre Website',
+    title: 'Interne Verlinkung Anleitung: Der Schlüssel zu mehr SEO-Sichtbarkeit für deine Website',
+    metaTitle: 'Interne Verlinkung Anleitung: Der Schlüssel zu mehr SEO-Sichtbarkeit für deine Website',
     metaDescription:
-      'Umfassende Anleitung zur internen Verlinkung: Erfahren Sie, wie Sie interne Links strategisch setzen, Linkjuice optimal verteilen und Ihre Google Rankings verbessern – mit Praxis-Tipps und WordPress-Guide.',
+      'Umfassende Anleitung zur internen Verlinkung: Erfahre, wie du interne Links strategisch setzt, Linkjuice optimal verteilst und deine Google-Rankings verbesserst – mit Praxis-Tipps und WordPress-Guide.',
     category: 'content-keywords',
     content: interneVerlinkungAnleitungContent,
     image: '/images/blog/interne%20verlinkung%20anleitung%20(1).webp',
@@ -370,7 +370,7 @@ const POSTS: BlogPost[] = [
     title: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
     metaTitle: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
     metaDescription:
-      'Umfassende Schema Markup Anleitung: Lernen Sie, wie Sie strukturierte Daten implementieren, testen und optimieren, um Rich Snippets zu erzielen und Ihre Google Rankings zu verbessern. Für Unternehmen in München & Bayern.',
+      'Umfassende Schema-Markup-Anleitung: Lerne, wie du strukturierte Daten implementierst, testest und optimierst, um Rich Snippets zu erzielen und deine Google-Rankings zu verbessern. Für Unternehmen in München & Bayern.',
     category: 'technisches-seo',
     content: schemaMarkupAnleitungContent,
     image: '/images/blog/schema%20markup%20anleitung%20(1).webp',
@@ -408,7 +408,7 @@ const POSTS: BlogPost[] = [
     title: 'Keyword Mapping Anleitung: In 5 Schritten zur optimalen SEO-Strategie',
     metaTitle: 'Keyword Mapping Anleitung: In 5 Schritten zur perfekten SEO-Strategie',
     metaDescription:
-      'Erfahren Sie in dieser umfassenden Keyword Mapping Anleitung, wie Sie Ihre Suchbegriffe strategisch organisieren, Duplicate Content vermeiden und Ihre Google Rankings deutlich verbessern.',
+      'Erfahre in dieser umfassenden Keyword-Mapping-Anleitung, wie du deine Suchbegriffe strategisch organisierst, Duplicate Content vermeidest und deine Google-Rankings deutlich verbesserst.',
     category: 'content-keywords',
     content: keywordMappingAnleitungContent,
     image: '/images/blog/keyword%20mapping%20anleitung%20(1).webp',
