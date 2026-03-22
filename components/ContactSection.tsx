@@ -85,23 +85,36 @@ export default function ContactSection() {
             Jetzt anrufen: +49 155 65087694
           </a>
         </p>
-        <p className="mt-3">
+        <div className="mx-auto mt-4 flex w-full max-w-md flex-col items-stretch gap-3 sm:max-w-lg sm:flex-row sm:flex-wrap sm:justify-center">
           <a
             href="mailto:info@seomuenchen.com"
-            className="text-zinc-300 hover:text-white underline text-sm font-medium"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-white/30 hover:bg-white/10 sm:min-w-[14rem]"
           >
-            info@seomuenchen.com
+            <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+              />
+            </svg>
+            E-Mail schreiben
           </a>
-        </p>
-        <p className="mt-4">
           <Link
             href="/kontakt"
-            className="inline-flex font-semibold text-white underline hover:text-zinc-200"
+            prefetch
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-indigo-400/40 bg-indigo-500/15 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:border-indigo-300/60 hover:bg-indigo-500/25 sm:min-w-[14rem]"
           >
-            → Termin für dein SEO-Erstgespräch wählen
+            <svg className="h-5 w-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5a2.25 2.25 0 002.25-2.25m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5a2.25 2.25 0 012.25 2.25v7.5"
+              />
+            </svg>
+            Termin fürs SEO-Erstgespräch
           </Link>
-        </p>
-        <p className="mt-3 text-sm italic text-zinc-500">Wir melden uns innerhalb von 24 Stunden.</p>
+        </div>
+        <p className="mt-4 text-sm italic text-zinc-500">Wir melden uns innerhalb von 24 Stunden.</p>
         <p className="mt-10 text-sm text-zinc-400">Oder schreib uns direkt über das Formular:</p>
         <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/20 ring-1 ring-white/[0.06] backdrop-blur-md sm:p-8">
           <form
