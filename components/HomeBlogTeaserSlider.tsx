@@ -96,7 +96,7 @@ export default function HomeBlogTeaserSlider({ items }: { items: BlogTeaserItem[
         {items.map((item, index) => (
           <li
             key={item.href}
-            className="min-w-0 shrink-0 snap-start flex-[0_0_calc((100%-0.75rem)/2)] md:flex-[0_0_calc((100%-3rem)/3)]"
+            className="min-w-0 shrink-0 snap-start flex-[0_0_100%] sm:flex-[0_0_calc((100%-0.75rem)/2)] md:flex-[0_0_calc((100%-3rem)/3)]"
           >
             <Link
               href={item.href}
