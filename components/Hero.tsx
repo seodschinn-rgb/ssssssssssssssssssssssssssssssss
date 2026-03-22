@@ -91,8 +91,22 @@ export default function Hero({
                         {headline.split(':').slice(1).join(':').trim()}
                       </span>
                     </>
+                  ) : headline.includes('—') ? (
+                    <>
+                      <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">
+                        {headline.split(/\s*—\s*/)[0].trim()}
+                      </span>
+                      <span className="text-zinc-900">
+                        {' — '}
+                        {headline
+                          .split(/\s*—\s*/)
+                          .slice(1)
+                          .join(' — ')
+                          .trim()}
+                      </span>
+                    </>
                   ) : (
-                    <span className="text-indigo-950">
+                    <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 bg-clip-text text-transparent">
                       {headline}
                     </span>
                   )}
