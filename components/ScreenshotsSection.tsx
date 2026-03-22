@@ -1,162 +1,95 @@
-'use client'
-
-import { motion } from 'framer-motion'
-import { SeoRankingVisual } from './ModernGraphics'
-
-const metrics = [
-  {
-    value: '+312%',
-    label: 'Mehr Traffic',
-    desc: 'Durchschnittliche Steigerung',
-    icon: 'trend',
-  },
-  {
-    value: 'Erste Seite',
-    label: 'bei Google',
-    desc: 'typisch in 3–6 Monaten erreichbar',
-    icon: 'rank',
-  },
-  {
-    value: '47+',
-    label: 'Unternehmen',
-    desc: 'vertrauen uns',
-    icon: 'trust',
-  },
-  {
-    value: '100+',
-    label: 'Projekte',
-    desc: 'erfolgreich umgesetzt',
-    icon: 'done',
-  },
-]
+import Link from 'next/link'
+import HomeSectionLabel from '@/components/HomeSectionLabel'
+import FallstudieSeoDashboard from '@/components/FallstudieSeoDashboard'
 
 export default function ScreenshotsSection() {
   return (
     <section
       id="referenzen"
-      className="py-24 px-6 relative overflow-hidden"
+      className="border-y border-zinc-200/80 bg-zinc-50 py-20 md:py-24"
       aria-labelledby="screenshots-heading"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-white" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-300/20 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-violet-300/15 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
-      <div className="relative mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16"
-        >
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">Erfolge</span>
-          <h2 id="screenshots-heading" className="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">
-            Messbare Erfolge durch SEO
-          </h2>
-          <p className="mt-4 text-zinc-600 leading-relaxed">
-            Unsere Ziele für Ihre Sichtbarkeit: Mehr Traffic, bessere Rankings und
-            eine starke lokale Präsenz in München und Bayern.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.6 }}
-          className="relative max-w-2xl mx-auto"
-        >
-          {/* Glasmorphism Card mit Gradient-Border */}
-          <div className="relative rounded-3xl p-[2px] bg-gradient-to-br from-blue-400/40 via-violet-400/30 to-emerald-400/30 shadow-2xl shadow-blue-500/10">
-            <div className="rounded-3xl bg-white/95 backdrop-blur-xl overflow-hidden">
-              <div className="flex items-center gap-2 px-4 sm:px-8 pt-6 pb-4 border-b border-zinc-100">
-                <span className="w-3 h-3 rounded-full bg-red-400 shadow-sm" />
-                <span className="w-3 h-3 rounded-full bg-amber-400 shadow-sm" />
-                <span className="w-3 h-3 rounded-full bg-emerald-400 shadow-sm" />
-                <span className="ml-3 text-zinc-500 text-sm font-medium">Live Ranking-Entwicklung</span>
-              </div>
-              <div className="p-4 sm:p-8 md:p-10 overflow-visible min-h-[240px]">
-                <SeoRankingVisual />
-              </div>
-            </div>
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center md:mb-12">
+          <div className="mb-3 flex justify-center">
+            <HomeSectionLabel>Erfolge</HomeSectionLabel>
           </div>
-        </motion.div>
+          <h2
+            id="screenshots-heading"
+            className="text-balance text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl md:text-[2rem] md:leading-snug"
+          >
+            Messbare Ergebnisse für unsere Kunden
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-zinc-600 sm:text-base">
+            Wir könnten viel erzählen. Stattdessen zeigen wir dir, was bei unseren Kunden passiert ist:
+          </p>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-5 max-w-5xl mx-auto"
-        >
-          {metrics.map((m, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.08 * i }}
-              className={`relative rounded-2xl backdrop-blur-sm p-6 text-left overflow-hidden group hover:-translate-y-1 transition-all duration-300 ${
-                m.icon === 'rank' ? 'bg-gradient-to-br from-indigo-50/80 to-violet-50/60 ring-1 ring-indigo-100' : 'bg-white/90'
-              }`}
-              style={{
-                boxShadow: m.icon === 'rank'
-                  ? '0 4px 24px -4px rgba(99, 102, 241, 0.15), 0 0 0 1px rgba(99, 102, 241, 0.08)'
-                  : '0 4px 24px -4px rgba(99, 102, 241, 0.08), 0 0 0 1px rgba(99, 102, 241, 0.04)',
-              }}
-            >
-              {/* Dezenter Gradient-Akzent passend zur Grafik */}
-              <div
-                className="absolute inset-x-0 top-0 h-[2px] opacity-80 group-hover:opacity-100 transition-opacity rounded-t-2xl"
-                style={{
-                  background: 'linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6)',
-                }}
-              />
-              {m.icon === 'rank' && (
-                <span className="absolute top-4 right-4 text-[10px] font-semibold uppercase tracking-wider text-indigo-600/80">
-                  Unser Ziel
-                </span>
-              )}
-              {/* Individuelle Icons */}
-              <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-50 to-violet-50 text-indigo-600">
-                {m.icon === 'trend' && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
-                    <path d="M3 17l6-6 4 4 8-8" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M14 7h7v7" strokeLinecap="round" />
-                  </svg>
-                )}
-                {m.icon === 'rank' && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
-                    <path d="M7 17V9M12 17V5M17 17v-4" strokeLinecap="round" strokeLinejoin="round" />
-                    <path d="M4 20h16" strokeLinecap="round" />
-                  </svg>
-                )}
-                {m.icon === 'trust' && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-                {m.icon === 'done' && (
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-4 w-4">
-                    <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                )}
-              </div>
-              <p
-                className="text-2xl sm:text-3xl font-bold tabular-nums"
-                style={{
-                  background: 'linear-gradient(135deg, #3b82f6, #6366f1, #8b5cf6)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                {m.value}
+        {/* Fallstudie: Text-Karte + Dashboard getrennt nebeneinander (nicht ein gemeinsamer Kasten) */}
+        <div className="flex flex-col items-stretch gap-8 lg:flex-row lg:items-start lg:gap-10 xl:gap-12">
+          <article className="min-w-0 flex-1 rounded-2xl border border-indigo-200/60 bg-white p-6 shadow-md shadow-indigo-950/[0.04] ring-1 ring-indigo-100/50 sm:p-8 lg:rounded-3xl lg:p-10">
+            <h3 className="text-lg font-bold leading-snug text-zinc-900 sm:text-xl">
+              Fallstudie: Schreinerei in München — von Seite 3 auf Platz 2 in 5 Monaten
+            </h3>
+            <div className="mt-5 rounded-xl border border-indigo-100 bg-indigo-50/50 py-4 pl-4 pr-3 sm:pl-5 lg:rounded-2xl">
+              <p className="m-0 border-l-4 border-indigo-600 pl-4 text-sm leading-relaxed text-zinc-600 sm:text-[15px]">
+                <strong className="text-zinc-800">Ausgangslage:</strong> Eine Schreinerei in München-Sendling (8
+                Mitarbeiter) war bei Google praktisch unsichtbar. Haupt-Keywords wie „Schreiner München“ rankten auf
+                Seite 3–4. Monatlich kamen weniger als 150 Besucher über die organische Suche. Neue Aufträge kamen fast
+                ausschließlich über Mundpropaganda.
               </p>
-              <p className="text-sm font-semibold text-zinc-800 mt-0.5">{m.label}</p>
-              <p className="text-xs text-zinc-500 mt-0.5">{m.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+            </div>
+            <p className="mb-2 mt-8 text-sm font-semibold text-zinc-900">Maßnahmen (Paket: Growth):</p>
+            <ul className="mb-6 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-600 marker:text-indigo-400 sm:text-[15px]">
+              <li>
+                <strong className="text-zinc-800">Monat 1:</strong> SEO-Audit, Google Business Profile Optimierung,
+                technische Fehler behoben
+              </li>
+              <li>
+                <strong className="text-zinc-800">Monat 2–3:</strong> Lokale Keyword-Strategie umgesetzt, 6 optimierte
+                Leistungsseiten erstellt
+              </li>
+              <li>
+                <strong className="text-zinc-800">Monat 4–5:</strong> Content-Aufbau, Bewertungsstrategie, Core Web
+                Vitals optimiert
+              </li>
+            </ul>
+            <p className="mb-2 text-sm font-semibold text-zinc-900">Ergebnis nach 5 Monaten:</p>
+            <ul className="m-0 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-600 marker:text-emerald-500 sm:text-[15px]">
+              <li>
+                Von Seite 3 auf <strong className="text-zinc-800">Platz 2</strong> für „Schreiner München“
+              </li>
+              <li>
+                Von 150 auf <strong className="text-zinc-800">570 organische Besucher/Monat</strong> (+280 %)
+              </li>
+              <li>
+                <strong className="text-zinc-800">+160 %</strong> mehr Kontaktanfragen über die Website
+              </li>
+              <li>
+                Google Maps: <strong className="text-zinc-800">Top 3</strong> im Local Pack für „Schreinerei München“
+              </li>
+            </ul>
+          </article>
+
+          {/* Volle nutzbare Breite bis lg (auch Mobil); ab lg schmale Sidebar neben Text */}
+          <div className="mx-auto w-full min-w-0 max-w-full md:max-w-4xl lg:mx-0 lg:max-w-[min(100%,32rem)] lg:flex-none lg:sticky lg:top-28 lg:self-start">
+            <FallstudieSeoDashboard large />
+          </div>
+        </div>
+
+        <div className="mt-10 text-center md:mt-12">
+          <p className="text-sm font-semibold text-zinc-900 sm:text-base">
+            Du willst ähnliche Ergebnisse für dein Unternehmen?
+          </p>
+          <Link
+            href="/kontakt"
+            className="mt-4 inline-flex max-w-full items-center justify-center rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-md transition-colors hover:bg-zinc-800 sm:px-8"
+          >
+            <span className="text-center leading-snug">
+              → Jetzt kostenloses Erstgespräch sichern — wir zeigen dir dein SEO-Potenzial
+            </span>
+          </Link>
+        </div>
       </div>
     </section>
   )

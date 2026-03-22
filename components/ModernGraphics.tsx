@@ -94,7 +94,7 @@ export function GlassCard({
 }
 
 /** SEO Ranking-Chart: Area-Chart mit Animation – läuft auch auf iOS (Fallback-Timer) */
-export function SeoRankingVisual() {
+export function SeoRankingVisual({ compact = false }: { compact?: boolean }) {
   const { ref, visible } = useVisibleOnce(2500)
   const id = useId().replace(/:/g, '-')
   const areaGradId = `areaGrad-${id}`
@@ -144,14 +144,18 @@ export function SeoRankingVisual() {
       initial={{ opacity: 0, y: 12 }}
       animate={visible ? { opacity: 1, y: 0 } : { opacity: 0, y: 12 }}
       transition={{ duration: 0.5 }}
-      className="relative w-full min-h-[200px] sm:min-h-[220px]"
+      className={
+        compact
+          ? 'relative mx-auto w-full max-w-[300px]'
+          : 'relative w-full min-h-[200px] sm:min-h-[220px]'
+      }
     >
       <svg
         viewBox={`0 0 ${width} ${height}`}
-        className="w-full max-w-lg mx-auto block"
+        className={compact ? 'mx-auto block h-auto w-full max-w-[280px]' : 'mx-auto block w-full max-w-lg'}
         fill="none"
         preserveAspectRatio="xMidYMid meet"
-        style={{ minHeight: '200px', maxWidth: '100%' }}
+        style={compact ? { maxWidth: '100%' } : { minHeight: '200px', maxWidth: '100%' }}
       >
         <defs>
           <linearGradient id={areaGradId} x1="0" y1="1" x2="0" y2="0">

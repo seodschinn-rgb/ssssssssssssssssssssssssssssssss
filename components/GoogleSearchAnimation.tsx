@@ -1,19 +1,8 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
-function useIsMobile() {
-  const [isMobile, setIsMobile] = useState(false)
-  useEffect(() => {
-    const m = window.matchMedia('(max-width: 767px)')
-    setIsMobile(m.matches)
-    const fn = () => setIsMobile(window.matchMedia('(max-width: 767px)').matches)
-    m.addEventListener('change', fn)
-    return () => m.removeEventListener('change', fn)
-  }, [])
-  return isMobile
-}
+const FULL_QUERY = 'SEO Agentur München'
 
 const INITIAL_RESULTS = [
   { domain: 'seokratie.de', title: 'SEO Agentur München | Seokratie', position: 1 },
@@ -31,62 +20,72 @@ const FINAL_RESULTS = [
   { domain: 'netzbekannt.de', title: 'SEO Agentur München - Netzbekannt', position: 5 },
 ]
 
+type Phase = 'typing' | 'searching' | 'results' | 'ranking'
+
+function sleep(ms: number) {
+  return new Promise<void>((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
+
+/**
+ * Google-ähnliche Suchvorschau — eine Sequenz in einem Effect (kein mounted-Ref, kein Framer Motion).
+ * Funktioniert zuverlässig mit React 18 Strict Mode.
+ */
 export default function GoogleSearchAnimation() {
-  const isMobile = useIsMobile()
   const [searchText, setSearchText] = useState('')
-  const [phase, setPhase] = useState<'typing' | 'searching' | 'results' | 'ranking'>('typing')
+  const [phase, setPhase] = useState<Phase>('typing')
   const [displayResults, setDisplayResults] = useState(INITIAL_RESULTS)
-  const fullText = 'SEO Agentur München'
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (phase === 'typing' && searchText.length < fullText.length) {
-        setSearchText(fullText.slice(0, searchText.length + 1))
-      } else if (phase === 'typing') {
-        setPhase('searching')
+    let cancelled = false
+
+    ;(async () => {
+      setPhase('typing')
+      setDisplayResults(INITIAL_RESULTS)
+      setSearchText('')
+
+      for (let i = 0; i <= FULL_QUERY.length; i++) {
+        if (cancelled) return
+        setSearchText(FULL_QUERY.slice(0, i))
+        if (i < FULL_QUERY.length) await sleep(72)
       }
-    }, 80)
-    return () => clearTimeout(timer)
-  }, [searchText, phase])
 
-  useEffect(() => {
-    if (phase === 'searching') {
-      const timer = setTimeout(() => {
-        setPhase('results')
-        setDisplayResults(INITIAL_RESULTS)
-      }, 600)
-      return () => clearTimeout(timer)
-    }
-  }, [phase])
+      if (cancelled) return
+      setPhase('searching')
+      await sleep(550)
+      if (cancelled) return
 
-  useEffect(() => {
-    if (phase === 'results') {
-      const timer = setTimeout(() => {
-        setPhase('ranking')
-        setDisplayResults(FINAL_RESULTS)
-      }, 2500)
-      return () => clearTimeout(timer)
+      setDisplayResults(INITIAL_RESULTS)
+      setPhase('results')
+      await sleep(2400)
+      if (cancelled) return
+
+      setDisplayResults(FINAL_RESULTS)
+      setPhase('ranking')
+    })()
+
+    return () => {
+      cancelled = true
     }
-  }, [phase])
+  }, [])
+
+  const showResults = phase === 'results' || phase === 'ranking'
+  const showFooter = phase === 'ranking'
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: 0.4 }}
-      className="w-full max-w-2xl mx-auto h-[480px] sm:h-[520px] md:h-[520px] lg:h-[560px] flex flex-col"
-    >
-      <div className="rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden flex flex-col flex-1 min-h-0">
-        {/* Google-like header */}
-        <div className="flex items-center gap-3 sm:gap-4 px-4 sm:px-5 py-3.5 sm:py-4 md:py-4 lg:py-5 border-b border-zinc-100 flex-shrink-0">
+    <div className="relative isolate z-20 mx-auto flex h-[480px] w-full max-w-2xl flex-col sm:h-[520px] md:h-[520px] lg:h-[560px]">
+      <div className="flex min-h-0 flex-1 flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-xl">
+        {/* Header */}
+        <div className="flex flex-shrink-0 items-center gap-3 border-b border-zinc-100 px-4 py-3.5 sm:gap-4 sm:px-5 sm:py-4 md:py-4 lg:py-5">
           <div className="flex gap-2 sm:gap-2.5">
-            <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-red-400" />
-            <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-amber-400" />
-            <span className="w-3 h-3 sm:w-3.5 sm:h-3.5 rounded-full bg-emerald-400" />
+            <span className="h-3 w-3 rounded-full bg-red-400 sm:h-3.5 sm:w-3.5" />
+            <span className="h-3 w-3 rounded-full bg-amber-400 sm:h-3.5 sm:w-3.5" />
+            <span className="h-3 w-3 rounded-full bg-emerald-400 sm:h-3.5 sm:w-3.5" />
           </div>
-          <div className="flex-1 flex items-center justify-center min-w-0">
-            <div className="flex items-center gap-2 text-zinc-400 text-sm sm:text-base md:text-base">
-              <svg className="w-4 h-4" viewBox="0 0 24 24">
+          <div className="flex min-w-0 flex-1 items-center justify-center">
+            <div className="flex items-center gap-2 text-sm text-zinc-400 sm:text-base md:text-base">
+              <svg className="h-4 w-4" viewBox="0 0 24 24" aria-hidden>
                 <path
                   fill="currentColor"
                   d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -109,84 +108,82 @@ export default function GoogleSearchAnimation() {
           </div>
         </div>
 
-        {/* Search bar */}
-        <div className="px-4 pt-3 sm:pt-4 md:pt-4 pb-4 sm:pb-5 md:pb-5 flex-shrink-0">
-          <div className="flex items-center gap-3 px-4 sm:px-5 py-3.5 sm:py-4 md:py-4 rounded-full border border-zinc-200 bg-zinc-50/50 hover:bg-zinc-50 transition-colors">
-            <svg className="w-5 h-5 sm:w-5 sm:h-5 text-zinc-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        {/* Suchleiste */}
+        <div className="flex-shrink-0 px-4 pb-4 pt-3 sm:px-4 sm:pb-5 sm:pt-4 md:pb-5 md:pt-4">
+          <div className="flex items-center gap-3 rounded-full border border-zinc-200 bg-zinc-50/50 px-4 py-3.5 transition-colors hover:bg-zinc-50 sm:px-5 sm:py-4 md:py-4">
+            <svg
+              className="h-5 w-5 shrink-0 text-zinc-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden
+            >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
-            <span className="text-zinc-900 text-sm sm:text-base truncate">{searchText}</span>
+            <span className="min-h-[1.25rem] truncate text-sm text-zinc-900 sm:text-base">{searchText}</span>
             {phase === 'typing' && (
-              <motion.span
-                animate={{ opacity: [1, 0] }}
-                transition={{ duration: 0.5, repeat: Infinity }}
-                className="w-0.5 h-4 bg-accent"
-              />
+              <span className="inline-block h-4 w-0.5 shrink-0 animate-pulse bg-accent" aria-hidden />
+            )}
+            {phase === 'searching' && (
+              <span className="ml-1 inline-flex gap-1" aria-hidden>
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 [animation-delay:-0.3s]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400 [animation-delay:-0.15s]" />
+                <span className="h-1.5 w-1.5 animate-bounce rounded-full bg-zinc-400" />
+              </span>
             )}
           </div>
         </div>
 
-        {/* Results */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: phase === 'results' || phase === 'ranking' ? 1 : 0 }}
-          transition={{ duration: 0.4 }}
-          className="border-t border-zinc-100 pt-2 sm:pt-4 md:pt-4 flex flex-col flex-1 min-h-0"
+        {/* Ergebnisse — immer Platz reservieren, sichtbar per Opacity (vermeidet „leere“ Karte) */}
+        <div
+          className={`flex min-h-[200px] min-w-0 flex-1 flex-col border-t border-zinc-100 pt-2 transition-opacity duration-300 ease-out sm:min-h-[220px] sm:pt-4 md:pt-4 ${
+            showResults ? 'opacity-100' : 'pointer-events-none select-none opacity-0'
+          }`}
+          aria-hidden={!showResults}
         >
-          {(phase === 'results' || phase === 'ranking') && (
-            <div className="px-3 sm:px-4 md:px-4 pt-1 pb-3 sm:pb-5 md:pb-5 flex-1 flex flex-col justify-between gap-1 md:gap-1.5 min-h-0">
+          {showResults && (
+            <div className="flex min-h-0 flex-1 flex-col justify-between gap-1 px-3 pb-3 pt-1 sm:gap-1.5 sm:px-4 sm:pb-5 md:gap-1.5 md:px-4 md:pb-5">
               {displayResults.map((result) => (
-                <motion.div
-                  key={result.domain}
-                  layout={!isMobile}
-                  layoutId={isMobile ? undefined : result.domain}
-                  initial={phase === 'ranking' && result.highlight ? { opacity: 0, y: 20 } : false}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                    backgroundColor: result.highlight ? 'rgba(37, 99, 235, 0.06)' : 'transparent',
-                  }}
-                  transition={{
-                    layout: { duration: 0.5, ease: [0.22, 0.61, 0.36, 1] },
-                    opacity: { duration: 0.3 },
-                  }}
-                  className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-4 md:px-4 py-2.5 sm:py-3.5 md:py-3.5 lg:py-4 rounded-lg flex-1 min-h-0 ${
-                    result.highlight ? 'ring-2 ring-accent/30' : ''
+                <div
+                  key={`${phase}-${result.domain}-${result.position}`}
+                  className={`flex min-h-0 flex-1 items-center gap-2 rounded-lg px-3 py-2.5 transition-colors duration-300 sm:gap-3 sm:px-4 sm:py-3.5 md:py-3.5 lg:py-4 ${
+                    result.highlight
+                      ? 'bg-blue-600/[0.06] ring-2 ring-accent/30'
+                      : 'bg-transparent'
                   }`}
                 >
-                  <span className="text-zinc-400 text-sm sm:text-base font-medium w-5 sm:w-6 shrink-0">
+                  <span className="w-5 shrink-0 text-sm font-medium text-zinc-400 sm:w-6 sm:text-base">
                     {result.position}
                   </span>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs sm:text-sm text-emerald-700 truncate">{result.domain}</p>
-                    <p className="text-sm sm:text-base text-zinc-800 font-medium truncate">{result.title}</p>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-xs text-emerald-700 sm:text-sm">{result.domain}</p>
+                    <p className="truncate text-sm font-medium text-zinc-800 sm:text-base">{result.title}</p>
                   </div>
                   {result.highlight && (
-                    <motion.span
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: 'spring', stiffness: 400, damping: 15, delay: 0.3 }}
-                      className="shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-accent flex items-center justify-center"
+                    <span
+                      className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent sm:h-8 sm:w-8 ${
+                        phase === 'ranking' ? 'scale-100 opacity-100' : 'scale-95 opacity-90'
+                      } transition-transform duration-300`}
                     >
-                      <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-4 w-4 text-white sm:h-5 sm:w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                       </svg>
-                    </motion.span>
+                    </span>
                   )}
-                </motion.div>
+                </div>
               ))}
             </div>
           )}
-        </motion.div>
+        </div>
       </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: phase === 'ranking' ? 1 : 0 }}
-        className="mt-3 sm:mt-4 md:mt-4 py-1 text-center text-sm sm:text-base text-zinc-500 flex-shrink-0"
+      <p
+        className={`mt-3 flex-shrink-0 py-1 text-center text-sm text-zinc-500 transition-opacity duration-500 sm:mt-4 sm:text-base md:mt-4 ${
+          showFooter ? 'opacity-100' : 'opacity-0'
+        }`}
       >
         So stellen wir Sie auf Platz 1.
-      </motion.p>
-    </motion.div>
+      </p>
+    </div>
   )
 }

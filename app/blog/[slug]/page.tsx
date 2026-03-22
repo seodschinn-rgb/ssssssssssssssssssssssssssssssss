@@ -17,6 +17,7 @@ import BlogTocDesktopWrapper from '@/components/BlogTocDesktopWrapper'
 import BlogAuthorBox from '@/components/BlogAuthorBox'
 import BlogReadingProgressBar from '@/components/BlogReadingProgressBar'
 import BlogTocMobileCollapsible from '@/components/BlogTocMobileCollapsible'
+import ClientErrorBoundary from '@/components/ClientErrorBoundary'
 import { getReadingTimeMinutes } from '@/lib/reading-time'
 
 const BLOG_ARTICLE_STYLE = `
@@ -803,7 +804,9 @@ export default function BlogSlugPage({ params }: PageProps) {
         {/* Pro Artikel nur ein FAQPage-Schema, um "Duplicate field FAQPage" in der Search Console zu vermeiden */}
         {post.faqs?.length ? <BlogFAQSchema faqs={post.faqs} /> : null}
         <style dangerouslySetInnerHTML={{ __html: BLOG_ARTICLE_STYLE }} />
-        <BlogReadingProgressBar />
+        <ClientErrorBoundary>
+          <BlogReadingProgressBar />
+        </ClientErrorBoundary>
         <Header />
         <main>
           <section className="pt-28 pb-6 sm:pb-8 px-4 sm:px-6 bg-gradient-to-b from-zinc-50 to-white lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:max-w-6xl lg:mx-auto lg:items-start">
@@ -842,7 +845,9 @@ export default function BlogSlugPage({ params }: PageProps) {
             </div>
           </section>
           {/* Mobile/Tablet: Aufklappbares Inhaltsverzeichnis (fixed, erscheint erst nach dem TOC im Text) */}
-          <BlogTocMobileCollapsible />
+          <ClientErrorBoundary>
+            <BlogTocMobileCollapsible />
+          </ClientErrorBoundary>
           {/* Thumbnail nur auf Mobile/Tablet oben (auf Desktop in der rechten Spalte) */}
           {post.image && (
             <div className="lg:hidden w-full px-4 sm:px-6 mb-8">
@@ -860,7 +865,9 @@ export default function BlogSlugPage({ params }: PageProps) {
             {/* Desktop: TOC fixed (floating), blendet sich aus sobald Footer sichtbar */}
             <div className="hidden lg:block lg:col-start-1">
               <div className="w-[240px] shrink-0" aria-hidden />
-              <BlogTocDesktopWrapper />
+              <ClientErrorBoundary>
+                <BlogTocDesktopWrapper />
+              </ClientErrorBoundary>
             </div>
             <div className="lg:col-start-2 min-w-0 lg:px-0">
               {/* Thumbnail auf Desktop in rechter Spalte */}
@@ -885,6 +892,7 @@ export default function BlogSlugPage({ params }: PageProps) {
                 data-blog-article
                 className="blog-article w-full max-w-none lg:max-w-3xl pb-24"
                 dangerouslySetInnerHTML={{ __html: post.content }}
+                suppressHydrationWarning
               />
             </div>
           </div>

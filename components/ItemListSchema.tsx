@@ -1,3 +1,5 @@
+import { jsonLdStringify } from '@/lib/safe-json-ld'
+
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
 interface Item {
@@ -46,7 +48,7 @@ export default function ItemListSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdStringify(schema) }}
     />
   )
 }

@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const pakete = [
@@ -105,15 +104,10 @@ const pakete = [
 
 export default function PreisePageContent() {
   return (
-    <section className="pt-28 pb-24 px-6">
+    <section className="relative pt-28 pb-24 px-6">
       <div className="absolute inset-0 top-0 h-64 bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none" />
       <div className="relative mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <div className="mb-16 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">Preise</span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-900 mt-2">
             Transparente SEO-Pakete
@@ -147,15 +141,12 @@ export default function PreisePageContent() {
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
             </Link>
           </div>
-        </motion.div>
+        </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-          {pakete.map((paket, i) => (
-            <motion.article
+          {pakete.map((paket) => (
+            <article
               key={paket.id}
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.06 }}
               className={`relative rounded-2xl border-2 bg-white p-6 sm:p-7 flex flex-col ${
                 paket.highlight
                   ? 'border-indigo-500 shadow-xl shadow-indigo-500/15 ring-2 ring-indigo-500/20'
@@ -199,16 +190,11 @@ export default function PreisePageContent() {
                   Anfragen
                 </Link>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.35 }}
-          className="mt-16 text-center"
-        >
+        <div className="mt-16 text-center">
           <p className="text-sm text-zinc-500 mb-6">
             Individuelle Wünsche? Wir erstellen Ihnen gerne ein maßgeschneidertes Angebot.
           </p>
@@ -221,7 +207,7 @@ export default function PreisePageContent() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

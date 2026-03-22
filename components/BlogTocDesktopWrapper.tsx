@@ -12,19 +12,25 @@ export default function BlogTocDesktopWrapper() {
   const [footerInView, setFooterInView] = useState(false)
 
   useEffect(() => {
-    const footer = document.getElementById(FOOTER_ID)
-    if (!footer) return
+    if (typeof IntersectionObserver === 'undefined') return
+    let observer: IntersectionObserver | null = null
+    try {
+      const footer = document.getElementById(FOOTER_ID)
+      if (!footer) return
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          setFooterInView(entry.isIntersecting)
-        })
-      },
-      { rootMargin: '-80px 0px 0px 0px', threshold: 0 }
-    )
-    observer.observe(footer)
-    return () => observer.disconnect()
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            setFooterInView(entry.isIntersecting)
+          })
+        },
+        { rootMargin: '-80px 0px 0px 0px', threshold: 0 }
+      )
+      observer.observe(footer)
+    } catch {
+      /* ältere Browser / Edge Cases */
+    }
+    return () => observer?.disconnect()
   }, [])
 
   return (

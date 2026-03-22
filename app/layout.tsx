@@ -14,11 +14,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'),
   title: {
-    default: 'SEO Agentur München | Suchmaschinenoptimierung & Local SEO',
+    default: 'SEO Agentur München — +312% mehr Traffic | SEO München',
     template: '%s | SEO Agentur München',
   },
   description:
-    'Professionelle SEO Agentur in München. Suchmaschinenoptimierung, Local SEO und SEO Beratung für Unternehmen in Bayern. Transparente Preise, messbare Erfolge.',
+    'SEO Agentur in München: Datengetriebene SEO-Optimierung ab 990 EUR/Monat. +312% mehr Traffic für unsere Kunden. Kostenloses Erstgespräch vereinbaren.',
   keywords: [
     'SEO Agentur München',
     'SEO München',

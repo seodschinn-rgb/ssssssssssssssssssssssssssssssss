@@ -1,3 +1,4 @@
+import { jsonLdStringify } from '@/lib/safe-json-ld'
 import { getCityFAQs } from '@/lib/faq-data'
 
 interface FAQSchemaProps {
@@ -23,7 +24,7 @@ export default function FAQSchema({ cityName }: FAQSchemaProps) {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdStringify(schema) }}
     />
   )
 }

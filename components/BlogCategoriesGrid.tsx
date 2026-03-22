@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { BLOG_CATEGORIES } from '@/lib/blog-categories'
 import LeistungIcons from './LeistungIcons'
@@ -20,77 +17,52 @@ const colorStyles: Record<string, { icon: string; border: string; link: string }
 
 const colorKeys = ['blue', 'emerald', 'violet', 'amber', 'rose', 'cyan', 'indigo', 'teal'] as const
 
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.05, delayChildren: 0.1 },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-}
-
 export default function BlogCategoriesGrid() {
   return (
-    <section className="py-16 px-6 relative overflow-hidden" aria-labelledby="blog-categories-heading">
+    <section className="relative overflow-hidden px-6 py-16" aria-labelledby="blog-categories-heading">
       <div className="absolute inset-0 bg-gradient-to-b from-white via-zinc-50/50 to-blue-50/30" />
-      <div className="absolute top-20 right-0 w-96 h-96 bg-violet-200/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-0 w-80 h-80 bg-emerald-200/20 rounded-full blur-3xl" />
+      <div className="absolute right-0 top-20 h-96 w-96 rounded-full bg-violet-200/20 blur-3xl" />
+      <div className="absolute bottom-20 left-0 h-80 w-80 rounded-full bg-emerald-200/20 blur-3xl" />
 
       <div className="relative mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-12"
-        >
-          <h2 id="blog-categories-heading" className="text-2xl sm:text-3xl font-bold text-zinc-900">
+        <div className="mx-auto mb-12 max-w-2xl text-center">
+          <h2 id="blog-categories-heading" className="text-2xl font-bold text-zinc-900 sm:text-3xl">
             Blog-Themen entdecken
           </h2>
-          <p className="mt-3 text-zinc-600 leading-relaxed">
+          <p className="mt-3 leading-relaxed text-zinc-600">
             Wählen Sie eine Kategorie – hier erscheinen künftig Artikel zu SEO, Local SEO, Content und mehr.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
-        >
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {BLOG_CATEGORIES.map((cat, i) => {
             const colors = colorStyles[colorKeys[i % colorKeys.length]]
             return (
-              <motion.article key={cat.slug} variants={item}>
+              <article key={cat.slug}>
                 <Link
                   href={`/blog/${cat.slug}`}
-                  className={`group flex flex-col h-full rounded-2xl bg-white p-6 shadow-md border-2 ${colors.border} hover:shadow-xl hover:-translate-y-1 transition-all duration-300`}
+                  className={`group flex h-full flex-col rounded-2xl border-2 bg-white p-6 shadow-md ${colors.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
                 >
-                  <span className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${colors.icon} transition-all duration-300 mb-4 shrink-0`}>
-                    <LeistungIcons icon={cat.icon as IconName} className="w-6 h-6" />
+                  <span
+                    className={`mb-4 inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${colors.icon} transition-all duration-300`}
+                  >
+                    <LeistungIcons icon={cat.icon as IconName} className="h-6 w-6" />
                   </span>
-                  <h3 className="text-lg font-bold text-zinc-900 group-hover:text-zinc-800 transition-colors">
-                    {cat.title}
-                  </h3>
-                  <p className="mt-2 text-zinc-600 text-sm leading-relaxed line-clamp-3">
-                    {cat.shortDescription}
-                  </p>
-                  <span className={`mt-4 inline-flex items-center gap-2 font-semibold text-sm group-hover:gap-3 transition-all ${colors.link}`}>
+                  <h3 className="text-lg font-bold text-zinc-900 transition-colors group-hover:text-zinc-800">{cat.title}</h3>
+                  <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-zinc-600">{cat.shortDescription}</p>
+                  <span
+                    className={`mt-4 inline-flex items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3 ${colors.link}`}
+                  >
                     Artikel anzeigen
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </span>
                 </Link>
-              </motion.article>
+              </article>
             )
           })}
-        </motion.div>
+        </div>
       </div>
     </section>
   )

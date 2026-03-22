@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
 import type { BlogPost } from '@/lib/blog-posts'
 import type { BlogCategory } from '@/lib/blog-categories'
 
@@ -17,20 +16,17 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
   const [activeFilter, setActiveFilter] = useState<string>(FILTER_ALL)
 
   const filteredPosts =
-    activeFilter === FILTER_ALL
-      ? posts
-      : posts.filter((p) => p.category === activeFilter)
+    activeFilter === FILTER_ALL ? posts : posts.filter((p) => p.category === activeFilter)
 
   return (
-    <section className="py-12 px-6" aria-labelledby="blog-posts-heading">
+    <section className="px-6 py-12" aria-labelledby="blog-posts-heading">
       <div className="mx-auto max-w-4xl">
         <h2 id="blog-posts-heading" className="sr-only">
           Blog-Artikel
         </h2>
 
-        {/* Kategorien-Filter */}
         <div className="mb-10">
-          <p className="text-sm font-medium text-zinc-500 mb-3">Kategorie filtern</p>
+          <p className="mb-3 text-sm font-medium text-zinc-500">Kategorie filtern</p>
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
@@ -60,64 +56,56 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
           </div>
         </div>
 
-        {/* Artikel-Liste: 2 Spalten */}
         {filteredPosts.length > 0 ? (
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 lg:gap-6">
-            <AnimatePresence mode="wait">
-              {filteredPosts.map((post, index) => {
-                const category = categories.find((c) => c.slug === post.category)
-                return (
-                  <motion.li
-                    key={post.slug}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.25, delay: index * 0.03 }}
+          <ul
+            key={activeFilter}
+            className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:gap-6"
+          >
+            {filteredPosts.map((post) => {
+              const category = categories.find((c) => c.slug === post.category)
+              return (
+                <li key={post.slug}>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:border-indigo-200 hover:shadow-lg"
                   >
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="group flex flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm hover:border-indigo-200 hover:shadow-lg transition-all duration-300 h-full"
-                    >
-                      {post.image && (
-                        <div className="w-full aspect-[16/10] bg-zinc-50/50 flex items-center justify-center p-2 shrink-0">
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={post.image}
-                            alt={post.imageAlt ?? post.title}
-                            className="w-full h-full object-contain object-center"
-                          />
-                        </div>
-                      )}
-                      <div className="p-5 flex flex-col flex-1">
-                        {category && (
-                          <span className="inline-block rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 mb-3 w-fit">
-                            {category.title}
-                          </span>
-                        )}
-                        <h3 className="text-lg font-bold text-zinc-900 group-hover:text-indigo-600 transition-colors">
-                          {post.title}
-                        </h3>
-                        <p className="mt-2 text-zinc-600 text-sm leading-relaxed line-clamp-2 flex-1">
-                          {post.metaDescription}
-                        </p>
-                        <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 group-hover:gap-3 transition-all w-fit">
-                          Artikel lesen
-                          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                          </svg>
-                        </span>
+                    {post.image && (
+                      <div className="flex aspect-[16/10] w-full shrink-0 items-center justify-center bg-zinc-50/50 p-2">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={post.image}
+                          alt={post.imageAlt ?? post.title}
+                          className="h-full w-full object-contain object-center"
+                        />
                       </div>
-                    </Link>
-                  </motion.li>
-                )
-              })}
-            </AnimatePresence>
+                    )}
+                    <div className="flex flex-1 flex-col p-5">
+                      {category && (
+                        <span className="mb-3 inline-block w-fit rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700">
+                          {category.title}
+                        </span>
+                      )}
+                      <h3 className="text-lg font-bold text-zinc-900 transition-colors group-hover:text-indigo-600">
+                        {post.title}
+                      </h3>
+                      <p className="mt-2 line-clamp-2 flex-1 text-sm leading-relaxed text-zinc-600">
+                        {post.metaDescription}
+                      </p>
+                      <span className="mt-4 inline-flex w-fit items-center gap-2 text-sm font-semibold text-indigo-600 transition-all group-hover:gap-3">
+                        Artikel lesen
+                        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
         ) : (
-          <div className="rounded-2xl border-2 border-dashed border-zinc-200 bg-zinc-50/50 py-16 px-8 text-center">
-            <p className="text-zinc-600">
-              In dieser Kategorie sind noch keine Artikel vorhanden.
-            </p>
+          <div className="rounded-2xl border-2 border-dashed border-zinc-200 bg-zinc-50/50 px-8 py-16 text-center">
+            <p className="text-zinc-600">In dieser Kategorie sind noch keine Artikel vorhanden.</p>
             <button
               type="button"
               onClick={() => setActiveFilter(FILTER_ALL)}

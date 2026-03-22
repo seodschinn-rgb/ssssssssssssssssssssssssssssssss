@@ -1,3 +1,5 @@
+import { jsonLdStringify } from '@/lib/safe-json-ld'
+
 /**
  * FAQ-Schema für die „Häufig gestellte Fragen“-Sektion im SEO-Artikel auf der Startseite.
  */
@@ -45,7 +47,7 @@ export default function SeoArticleFAQSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdStringify(schema) }}
     />
   )
 }

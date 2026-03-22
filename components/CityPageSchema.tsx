@@ -1,5 +1,7 @@
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
+import { jsonLdStringify } from '@/lib/safe-json-ld'
 import { getCityFAQs } from '@/lib/faq-data'
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
 interface BreadcrumbItem {
   name: string
@@ -78,7 +80,7 @@ export default function CityPageSchema({
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdStringify(schema) }}
     />
   )
 }

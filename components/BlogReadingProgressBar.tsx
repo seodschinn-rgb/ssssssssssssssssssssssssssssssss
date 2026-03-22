@@ -15,22 +15,25 @@ export default function BlogReadingProgressBar() {
     if (!article) return
 
     const updateProgress = () => {
-      const rect = article.getBoundingClientRect()
-      const viewportHeight = window.innerHeight
-      const scrollY = window.scrollY
-      const articleTop = rect.top + scrollY
-      const articleHeight = rect.height
-      const articleBottom = articleTop + articleHeight
+      try {
+        const rect = article.getBoundingClientRect()
+        const viewportHeight = window.innerHeight
+        const scrollY = window.scrollY
+        const articleTop = rect.top + scrollY
+        const articleHeight = rect.height
+        const articleBottom = articleTop + articleHeight
 
-      // 0 = Artikel-Oberkante trifft Viewport-Oberkante, 1 = Artikel-Ende wurde erreicht
-      const start = articleTop
-      const end = articleBottom - viewportHeight
-      if (end <= start) {
-        setProgress(scrollY >= articleTop ? 1 : 0)
-        return
+        const start = articleTop
+        const end = articleBottom - viewportHeight
+        if (end <= start) {
+          setProgress(scrollY >= articleTop ? 1 : 0)
+          return
+        }
+        const value = (scrollY - start) / (end - start)
+        setProgress(Math.min(1, Math.max(0, value)))
+      } catch {
+        /* Layout/DOM edge cases — kein Absturz */
       }
-      const value = (scrollY - start) / (end - start)
-      setProgress(Math.min(1, Math.max(0, value)))
     }
 
     updateProgress()

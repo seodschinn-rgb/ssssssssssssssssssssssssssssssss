@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { LEISTUNGEN } from '@/lib/leistungen-data'
 import LeistungIcons from './LeistungIcons'
@@ -17,71 +14,51 @@ const colorClasses: Record<string, string> = {
 
 export default function LeistungenHero() {
   return (
-    <section className="relative pt-32 pb-20 px-6 overflow-hidden">
-      {/* Bunter Hintergrund */}
+    <section className="relative overflow-hidden px-6 pb-20 pt-32">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/60" />
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-violet-300/20 to-transparent rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gradient-to-tr from-amber-300/15 to-transparent rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-cyan-200/10 via-transparent to-rose-200/10 rounded-full blur-3xl" />
+      <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-violet-300/20 to-transparent blur-3xl" />
+      <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-amber-300/15 to-transparent blur-3xl" />
+      <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-200/10 via-transparent to-rose-200/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-5xl">
-        {/* Logos / Service-Icons ganz oben */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12"
-        >
-          {LEISTUNGEN.map((leistung, i) => (
-            <motion.div
+        <div className="mb-12 flex flex-wrap justify-center gap-3 sm:gap-4">
+          {LEISTUNGEN.map((leistung) => (
+            <Link
               key={leistung.slug}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.05 + 0.2 }}
+              href={`#${leistung.slug}`}
+              className={`inline-flex items-center gap-2 rounded-2xl border-2 px-4 py-2.5 transition-all duration-300 ${colorClasses[leistung.color]}`}
             >
-              <Link
-                href={`#${leistung.slug}`}
-                className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl border-2 transition-all duration-300 ${colorClasses[leistung.color]}`}
-              >
-                <span className="w-8 h-8 rounded-lg bg-white/50 flex items-center justify-center shrink-0">
-                  <LeistungIcons icon={leistung.icon} className="w-4 h-4" />
-                </span>
-                <span className="text-sm font-semibold">{leistung.title}</span>
-              </Link>
-            </motion.div>
+              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/50">
+                <LeistungIcons icon={leistung.icon} className="h-4 w-4" />
+              </span>
+              <span className="text-sm font-semibold">{leistung.title}</span>
+            </Link>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-center"
-        >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-gradient-to-r from-blue-500 to-violet-500 text-white text-sm font-semibold mb-6">
+        <div className="text-center">
+          <span className="mb-6 inline-block rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-4 py-1.5 text-sm font-semibold text-white">
             Unsere Leistungen
           </span>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
+          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             <span className="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 bg-clip-text text-transparent">
               SEO Leistungen
             </span>
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-zinc-600 leading-relaxed max-w-2xl mx-auto">
-            Von der Keyword-Recherche bis zum technischen SEO: Wir bieten
-            ganzheitliche Suchmaschinenoptimierung für Unternehmen in München
-            und ganz Bayern.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 sm:text-xl">
+            Von der Keyword-Recherche bis zum technischen SEO: Wir bieten ganzheitliche Suchmaschinenoptimierung für
+            Unternehmen in München und ganz Bayern.
           </p>
           <Link
             href="/kontakt"
-            className="mt-10 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-500 to-violet-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 hover:scale-[1.02] transition-all duration-200"
+            className="mt-10 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-500 to-violet-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/40"
           >
             Kostenloses SEO-Gespräch
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

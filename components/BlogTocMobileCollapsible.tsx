@@ -35,9 +35,12 @@ export default function BlogTocMobileCollapsible() {
     if (!inlineToc) return
 
     const check = () => {
-      const rect = inlineToc.getBoundingClientRect()
-      // TOC-Kasten anzeigen, wenn das TOC im Text nach oben aus dem Bereich unter dem Header gewandert ist
-      setShowFixedToc(rect.top < HEADER_OFFSET_PX)
+      try {
+        const rect = inlineToc.getBoundingClientRect()
+        setShowFixedToc(rect.top < HEADER_OFFSET_PX)
+      } catch {
+        /* ignore */
+      }
     }
 
     check()

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
 import BookingCalendar from './BookingCalendar'
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || 'xvzbgggb'
@@ -80,15 +79,10 @@ export default function KontaktPageContent() {
   }
 
   return (
-    <section className="pt-28 pb-24 px-6">
+    <section className="relative pt-28 pb-24 px-6">
       <div className="absolute inset-0 top-0 h-64 bg-gradient-to-b from-blue-50/50 to-transparent pointer-events-none" />
       <div className="relative mx-auto max-w-4xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-14"
-        >
+        <div className="mb-14 text-center">
           <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">Kontakt</span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-900 mt-2">
             Termin für Ihr SEO-Gespräch
@@ -105,14 +99,9 @@ export default function KontaktPageContent() {
             </svg>
             Jetzt anrufen: +49 155 65087694
           </a>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-14"
-        >
+        <div className="mb-14">
           <BookingCalendar
             selectedDate={selectedDate}
             selectedTime={selectedTime}
@@ -122,14 +111,9 @@ export default function KontaktPageContent() {
             }}
             onTimeSelect={setSelectedTime}
           />
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-3xl border border-zinc-200 bg-white p-8 sm:p-10 shadow-lg shadow-zinc-200/50"
-        >
+        <div className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg shadow-zinc-200/50 sm:p-10">
           <h2 className="text-xl font-semibold text-zinc-900 mb-6">Ihre Angaben</h2>
           {status === 'success' && (
             <div className="mb-6 rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 text-emerald-800">
@@ -188,26 +172,24 @@ export default function KontaktPageContent() {
                 placeholder="Kurze Beschreibung Ihres Projekts oder Ihrer Ziele…"
               />
             </div>
-            <motion.button
+            <button
               type="submit"
               disabled={status === 'sending'}
-              whileHover={status !== 'sending' ? { scale: 1.01 } : undefined}
-              whileTap={status !== 'sending' ? { scale: 0.99 } : undefined}
-              className="w-full sm:w-auto rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 py-4 px-10 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 hover:shadow-xl hover:shadow-indigo-500/40 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-700 px-10 py-4 text-base font-semibold text-white shadow-lg shadow-indigo-500/30 transition-all hover:shadow-xl hover:shadow-indigo-500/40 disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto"
             >
               {status === 'sending' ? 'Wird gesendet…' : 'Termin anfragen'}
-            </motion.button>
+            </button>
           </form>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          className="mt-12 text-center text-sm text-zinc-500"
-        >
-          <p>Alternativ erreichen Sie uns per E-Mail: <a href="mailto:info@seomuenchen.com" className="text-indigo-600 hover:underline font-medium">info@seomuenchen.com</a></p>
-        </motion.div>
+        <div className="mt-12 text-center text-sm text-zinc-500">
+          <p>
+            Alternativ erreichen Sie uns per E-Mail:{' '}
+            <a href="mailto:info@seomuenchen.com" className="font-medium text-indigo-600 hover:underline">
+              info@seomuenchen.com
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   )

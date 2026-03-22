@@ -51,6 +51,11 @@
   main, section, article, header, footer {
     min-width: 0;
   }
+  /* Startseite: Inhalte unter dem Hero zuverlässig stapeln (kein Flex-/Clip-Bug) */
+  main.home-main {
+    display: block;
+    width: 100%;
+  }
   /* Mobile: Kein Scroll-Anchoring – verhindert automatisches Hochscrollen beim SEO-Text (Browser korrigiert sonst bei Layout-Änderungen) */
   @media (max-width: 767px) {
     main.home-main {
@@ -59,12 +64,8 @@
     .seo-article-section {
       overflow-anchor: none;
       overscroll-behavior-y: contain;
-      contain: layout paint;
-      transform: translateZ(0);
-      backface-visibility: hidden;
-      /* Verhindert, dass Touch/Scroll an anderen Elementen hängt */
+      /* kein contain:paint / kein translateZ — kann Inhalte in manchen Browsern unsichtbar machen */
       touch-action: pan-y;
-      /* Feste Schicht – kein Nachziehen bei Viewport-Änderungen */
       will-change: auto;
     }
   }

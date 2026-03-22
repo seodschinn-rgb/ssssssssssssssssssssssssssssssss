@@ -35,7 +35,7 @@ export default function HomepageFAQ() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           className="text-center mb-16"
         >
           <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">FAQ</span>
@@ -53,7 +53,7 @@ export default function HomepageFAQ() {
               key={i}
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.05 }}
               transition={{ delay: i * 0.05 }}
               className="rounded-2xl border-2 border-zinc-200 bg-white shadow-sm overflow-hidden hover:border-blue-200 hover:shadow-md transition-all"
             >

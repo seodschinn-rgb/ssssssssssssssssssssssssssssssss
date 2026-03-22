@@ -1,62 +1,44 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { LEISTUNGEN, LEISTUNGEN_CONTENT } from '@/lib/leistungen-data'
 import LeistungIcons from './LeistungIcons'
+import HomeSectionLabel from '@/components/HomeSectionLabel'
 
 const homepageLeistungen = LEISTUNGEN.slice(0, 4)
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-}
 
 export default function FeatureGrid() {
   return (
     <section
       id="leistungen"
-      className="py-24 px-6 relative overflow-hidden"
+      className="relative overflow-hidden px-4 py-20 sm:px-6 md:py-28"
       aria-labelledby="features-heading"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-zinc-50/60 to-white" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-blue-400/10 rounded-full blur-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-indigo-50/20 to-white" />
+      <div className="absolute left-1/2 top-1/4 h-[420px] w-[min(100%,720px)] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-400/15 via-violet-300/10 to-indigo-400/15 blur-3xl" />
       <div className="relative mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-16 min-w-0 px-1"
-        >
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">Leistungen</span>
-          <h2 id="features-heading" className="text-xl sm:text-3xl md:text-4xl font-bold text-zinc-900 mt-2 break-words">
-            Suchmaschinenoptimierung München – Ihre Vorteile
+        <div className="mx-auto mb-14 flex max-w-2xl min-w-0 flex-col items-center gap-3 px-1 text-center md:mb-20">
+          <HomeSectionLabel>Leistungen</HomeSectionLabel>
+          <h2
+            id="features-heading"
+            className="break-words text-balance text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl md:text-4xl"
+          >
+            SEO-Leistungen in München: Von Audit bis Optimierung
           </h2>
-          <p className="mt-4 text-zinc-600 leading-relaxed">
-            Von der SEO Beratung bis zur Umsetzung: Wir kombinieren strategisches
-            Denken mit technischer Expertise für nachhaltige Rankings.
+          <p className="mt-1 text-sm leading-relaxed text-zinc-600 sm:text-base">
+            Wir finden heraus, was Google von deiner Seite will — und liefern es. Jede Maßnahme wird priorisiert nach
+            Impact: die größten Hebel zuerst.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: '-50px' }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
-        >
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {homepageLeistungen.map((leistung) => {
             const content = LEISTUNGEN_CONTENT[leistung.slug]
             const benefits = content?.benefits?.slice(0, 2) ?? []
+            const cardTitle =
+              leistung.slug === 'local-seo'
+                ? 'Local SEO München'
+                : leistung.slug === 'technisches-seo'
+                  ? 'Technisches SEO & Optimierung'
+                  : leistung.title
             const colorMap: Record<string, string> = {
               blue: 'from-blue-500/15 to-violet-500/10 text-blue-600 group-hover:from-blue-500 group-hover:to-violet-500',
               emerald: 'from-emerald-500/15 to-teal-500/10 text-emerald-600 group-hover:from-emerald-500 group-hover:to-teal-500',
@@ -68,30 +50,24 @@ export default function FeatureGrid() {
             }
             const colors = colorMap[leistung.color] || colorMap.blue
             return (
-              <motion.article
-                key={leistung.slug}
-                variants={item}
-                className="group"
-              >
+              <article key={leistung.slug} className="group">
                 <Link
                   href={`/leistungen/${leistung.slug}`}
-                  className="block h-full rounded-2xl bg-white/80 backdrop-blur-sm p-8 shadow-lg shadow-zinc-200/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 border border-zinc-100/80 hover:border-blue-200 hover:-translate-y-1"
+                  className="block h-full rounded-3xl border border-zinc-200/60 bg-white/85 p-8 shadow-lg shadow-zinc-200/50 ring-1 ring-black/[0.04] transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-200/70 hover:shadow-2xl hover:shadow-indigo-500/10"
                 >
-                  <div className={`mb-5 w-12 h-12 rounded-2xl bg-gradient-to-br ${colors} group-hover:text-white flex items-center justify-center transition-all duration-300`}>
-                    <LeistungIcons icon={leistung.icon} className="w-6 h-6" />
+                  <div
+                    className={`mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${colors} shadow-inner transition-all duration-300 group-hover:text-white`}
+                  >
+                    <LeistungIcons icon={leistung.icon} className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-semibold text-zinc-900 mb-2">
-                    {leistung.title}
-                  </h3>
-                  <p className="text-zinc-600 text-sm leading-relaxed">
-                    {leistung.shortDescription}
-                  </p>
+                  <h3 className="mb-2 text-lg font-semibold text-zinc-900">{cardTitle}</h3>
+                  <p className="text-sm leading-relaxed text-zinc-600">{leistung.shortDescription}</p>
                   {benefits.length > 0 && (
-                    <div className="mt-4 opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[100px] transition-all duration-300 ease-out">
+                    <div className="mt-4 max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-out group-hover:max-h-[100px] group-hover:opacity-100">
                       <ul className="space-y-1">
                         {benefits.map((b) => (
                           <li key={b.title} className="flex items-center gap-2 text-xs text-zinc-500">
-                            <span className="w-1 h-1 rounded-full bg-blue-500 shrink-0" />
+                            <span className="h-1 w-1 shrink-0 rounded-full bg-blue-500" />
                             {b.title}
                           </li>
                         ))}
@@ -99,26 +75,21 @@ export default function FeatureGrid() {
                     </div>
                   )}
                 </Link>
-              </motion.article>
+              </article>
             )
           })}
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="mt-12 text-center"
-        >
+        </div>
+        <div className="mt-12 text-center">
           <Link
             href="/leistungen"
-            className="inline-flex items-center gap-2 rounded-2xl bg-zinc-100 px-5 py-2.5 text-sm font-semibold text-zinc-800 hover:bg-zinc-200 hover:text-zinc-900 transition-all"
+            className="inline-flex items-center gap-2 rounded-full bg-zinc-900 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-zinc-900/20 transition-all hover:scale-[1.02] hover:bg-zinc-800"
           >
-            Alle Leistungen im Detail
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            Alle Leistungen im Detail (inkl. OnPage, Beratung & Monitoring)
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

@@ -1,3 +1,5 @@
+import { jsonLdStringify } from '@/lib/safe-json-ld'
+
 const faqs = [
   {
     q: 'Was kostet eine SEO Agentur in München?',
@@ -38,7 +40,7 @@ export default function HomepageFAQSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      dangerouslySetInnerHTML={{ __html: jsonLdStringify(schema) }}
     />
   )
 }

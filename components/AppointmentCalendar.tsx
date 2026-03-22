@@ -115,7 +115,7 @@ export default function AppointmentCalendar({ cityName }: AppointmentCalendarPro
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           className="rounded-2xl bg-white border border-zinc-200 shadow-card overflow-hidden"
         >
           <div className="grid md:grid-cols-2 gap-0">

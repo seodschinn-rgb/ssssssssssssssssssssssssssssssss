@@ -1,45 +1,35 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
+import HomeSectionLabel from '@/components/HomeSectionLabel'
 import { CITIES } from '@/lib/seo-data'
 
 export default function CityLinks() {
   return (
     <section
       id="orte"
-      className="py-24 px-6 relative overflow-hidden"
+      className="relative overflow-hidden px-4 py-20 sm:px-6 md:py-28"
       aria-labelledby="city-links-heading"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-zinc-50/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-indigo-50/10 to-zinc-50/70" />
       <div className="relative mx-auto max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.5 }}
-          className="text-center max-w-2xl mx-auto mb-12"
-        >
-          <span className="text-xs font-semibold uppercase tracking-widest text-blue-600">Standorte</span>
-          <h2 id="city-links-heading" className="text-3xl sm:text-4xl font-bold text-zinc-900 mt-2">
-            Für ganz Bayern
+        <div className="mx-auto mb-10 flex max-w-2xl flex-col items-center gap-3 text-center md:mb-12">
+          <HomeSectionLabel>Standorte</HomeSectionLabel>
+          <h2
+            id="city-links-heading"
+            className="text-balance text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl md:text-4xl"
+          >
+            SEO für München und ganz Bayern
           </h2>
-          <p className="mt-4 text-zinc-600 leading-relaxed">
-            Suchmaschinenoptimierung und Local SEO aus München für Unternehmen in
-            Garching, Starnberg, Augsburg, Freising und vielen weiteren Städten.
+          <p className="mt-1 text-sm leading-relaxed text-zinc-600 sm:text-base">
+            Von München aus betreuen wir Unternehmen in der gesamten Region. Ob Handwerker in Rosenheim, Arztpraxis in
+            Starnberg oder IT-Firma in Augsburg — wir helfen dir, dein Google-Ranking in München und Bayern nachhaltig zu
+            verbessern.
           </p>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-3"
-        >
+        <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3">
           <Link
             href="/"
-            className="rounded-2xl bg-gradient-to-r from-blue-500 to-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/30 transition-all"
+            className="rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-indigo-500/30 ring-1 ring-white/20 transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-indigo-500/35"
           >
             München
           </Link>
@@ -47,30 +37,24 @@ export default function CityLinks() {
             <Link
               key={city.slug}
               href={`/standorte/${city.slug}`}
-              className="rounded-2xl border-2 border-zinc-200 bg-white px-6 py-3 text-sm font-medium text-zinc-700 shadow-sm hover:border-blue-200 hover:shadow-md hover:text-zinc-900 transition-all duration-200"
+              className="rounded-full border border-zinc-200/90 bg-white/95 px-5 py-2.5 text-sm font-medium text-zinc-700 shadow-sm ring-1 ring-black/[0.03] backdrop-blur-sm transition-all duration-200 hover:border-indigo-200 hover:bg-indigo-50/40 hover:text-zinc-900 hover:shadow-md sm:px-6 sm:py-3"
             >
               {city.name}
             </Link>
           ))}
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="mt-8 text-center"
-        >
+        <div className="mt-8 text-center">
           <Link
             href="/standorte"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-600 hover:text-blue-600 transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition-colors hover:text-indigo-700"
           >
             Alle Standorte anzeigen
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

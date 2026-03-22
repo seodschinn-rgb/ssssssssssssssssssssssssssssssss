@@ -18,7 +18,7 @@ export default function KeywordSection() {
           id="keywords-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           className="text-2xl sm:text-3xl font-bold text-zinc-900 mb-10 text-center"
         >
           SEO aus München für Bayern
@@ -26,7 +26,7 @@ export default function KeywordSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ delay: 0.1 }}
           className="max-w-none space-y-6 rounded-3xl bg-white/80 backdrop-blur-sm p-8 sm:p-10 shadow-xl shadow-zinc-200/50 border border-zinc-100/80"
         >

@@ -26,28 +26,32 @@ export const LEISTUNGEN: Leistung[] = [
   {
     slug: 'seo-audit',
     title: 'SEO-Audit',
-    shortDescription: 'Umfassende Analyse Ihrer Website – Stärken, Schwächen und konkrete Handlungsempfehlungen.',
+    shortDescription:
+      'Umfassende Analyse deiner Website: Stärken, Schwächen und konkrete Handlungsempfehlungen. OnPage, Technik, Backlinks und Content — alles auf dem Prüfstand.',
     icon: 'audit',
     color: 'indigo',
   },
   {
     slug: 'keyword-recherche',
     title: 'Keyword-Recherche',
-    shortDescription: 'Zielgruppenorientierte Analyse für maximalen Traffic und die richtigen Suchanfragen.',
+    shortDescription:
+      'Wir finden die Suchbegriffe, die deine Zielgruppe tatsächlich nutzt — von High-Volume-Keywords bis zu profitablen Long-Tail-Chancen.',
     icon: 'search',
     color: 'blue',
   },
   {
     slug: 'local-seo',
     title: 'Local SEO',
-    shortDescription: 'Google Business Profile, lokale Suchergebnisse und Maps-Optimierung für München und Bayern.',
+    shortDescription:
+      'Google Business Profile, lokale Suchergebnisse und Maps-Optimierung. Damit Kunden in München und Umgebung dich zuerst finden — nicht deine Wettbewerber.',
     icon: 'map',
     color: 'emerald',
   },
   {
     slug: 'technisches-seo',
     title: 'Technisches SEO',
-    shortDescription: 'Core Web Vitals, Indexierung und technische Grundlagen für beste Rankings.',
+    shortDescription:
+      'Core Web Vitals, Crawlability, Indexierung und Seitengeschwindigkeit. Unsere SEO-Optimierung in München umfasst alles, was die technische Grundlage für Top-Rankings bildet.',
     icon: 'cog',
     color: 'violet',
   },
