@@ -182,7 +182,7 @@ export default function GoogleSearchAnimation() {
           showFooter ? 'opacity-100' : 'opacity-0'
         }`}
       >
-        So stellen wir Sie auf Platz 1.
+        So stellen wir dich auf Platz 1.
       </p>
     </div>
   )
