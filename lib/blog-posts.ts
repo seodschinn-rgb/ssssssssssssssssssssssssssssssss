@@ -453,3 +453,30 @@ export function getPostsByCategory(categorySlug: string): BlogPost[] {
 export function getAllPosts(): BlogPost[] {
   return [...POSTS]
 }
+
+/** Nur Metadaten für Startseiten-Slider — ohne schwere Content-Strings für andere Bundles duplizieren. */
+export interface BlogTeaserItem {
+  href: string
+  title: string
+  description: string
+  image: string
+  imageAlt: string
+}
+
+/** Startseiten-Slider: dieser Artikel zuerst (erste sichtbare Kachel). */
+const TEASER_FIRST_SLUG = 'onpage-seo-checkliste'
+
+export function getBlogTeaserItems(): BlogTeaserItem[] {
+  const withImage = POSTS.filter((p): p is BlogPost & { image: string } => Boolean(p.image))
+  const pinned = withImage.find((p) => p.slug === TEASER_FIRST_SLUG)
+  const rest = withImage.filter((p) => p.slug !== TEASER_FIRST_SLUG)
+  const ordered = pinned ? [pinned, ...rest] : withImage
+
+  return ordered.map((p) => ({
+    href: `/blog/${p.slug}`,
+    title: p.title,
+    description: p.metaDescription,
+    image: p.image,
+    imageAlt: p.imageAlt ?? p.title,
+  }))
+}
