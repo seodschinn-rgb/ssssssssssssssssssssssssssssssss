@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
 import Link from 'next/link'
 import Logo from './Logo'
 import LeistungIcons from './LeistungIcons'
@@ -27,6 +27,7 @@ const navLinks = [
 ]
 
 export default function Header() {
+  const reduceMotion = useReducedMotion()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [leistungenOpen, setLeistungenOpen] = useState(false)
   const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
@@ -45,9 +46,13 @@ export default function Header() {
 
   return (
     <motion.header
-      initial={false}
+      initial={reduceMotion ? false : { y: -14, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+      transition={
+        reduceMotion
+          ? { duration: 0 }
+          : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
+      }
       className={`fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-xl ${mobileMenuOpen ? 'z-[10000] border-b border-transparent' : 'z-50 border-b border-zinc-100'}`}
     >
       <nav

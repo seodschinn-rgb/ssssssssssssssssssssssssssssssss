@@ -32,24 +32,37 @@
     @apply antialiased text-zinc-900 bg-white;
     overflow-x: hidden;
     max-width: 100%;
+  }
+  /*
+   * Wortumbruch nur auf Text-Elemente — nicht auf body/section erben lassen,
+   * sonst skalieren manche Browser SVG-Icons (z. B. w-full/h-full in Flex) viel zu groß.
+   */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  td,
+  th,
+  blockquote,
+  figcaption {
     overflow-wrap: break-word;
     word-break: break-word;
   }
-  /* Lange Wörter und Text-Inhalte brechen innerhalb der Ränder */
   main,
   section,
   article,
   header,
-  footer,
-  p,
-  h1, h2, h3, h4, h5, h6,
-  li,
-  span {
+  footer {
+    min-width: 0;
+  }
+  /* Langer SEO-Artikel: auch Text in divs — ohne SVG, daher Vererbung ok */
+  .seo-article-section {
     overflow-wrap: break-word;
     word-break: break-word;
-  }
-  main, section, article, header, footer {
-    min-width: 0;
   }
   /* Startseite: Inhalte unter dem Hero zuverlässig stapeln (kein Flex-/Clip-Bug) */
   main.home-main {

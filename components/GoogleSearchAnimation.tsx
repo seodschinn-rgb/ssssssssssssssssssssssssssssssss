@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const FULL_QUERY = 'SEO Agentur München'
 
@@ -36,30 +36,36 @@ export default function GoogleSearchAnimation() {
   const [searchText, setSearchText] = useState('')
   const [phase, setPhase] = useState<Phase>('typing')
   const [displayResults, setDisplayResults] = useState(INITIAL_RESULTS)
+  /** Jeder Effect-Lauf (inkl. React 18 Strict Mode) bekommt eine eigene Sequenz-ID — verhindert, dass alte async-Schleifen den State überschreiben. */
+  const runSeqRef = useRef(0)
 
   useEffect(() => {
+    const seq = ++runSeqRef.current
     let cancelled = false
 
+    const stale = () => cancelled || runSeqRef.current !== seq
+
     ;(async () => {
+      if (stale()) return
       setPhase('typing')
       setDisplayResults(INITIAL_RESULTS)
       setSearchText('')
 
       for (let i = 0; i <= FULL_QUERY.length; i++) {
-        if (cancelled) return
+        if (stale()) return
         setSearchText(FULL_QUERY.slice(0, i))
         if (i < FULL_QUERY.length) await sleep(72)
       }
 
-      if (cancelled) return
+      if (stale()) return
       setPhase('searching')
       await sleep(550)
-      if (cancelled) return
+      if (stale()) return
 
       setDisplayResults(INITIAL_RESULTS)
       setPhase('results')
       await sleep(2400)
-      if (cancelled) return
+      if (stale()) return
 
       setDisplayResults(FINAL_RESULTS)
       setPhase('ranking')
