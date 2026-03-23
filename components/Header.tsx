@@ -50,9 +50,15 @@ export default function Header() {
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+    }
+  }, [])
 
   const handleLeistungenEnter = () => {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+    setBranchenOpen(false)
     setLeistungenOpen(true)
   }
   const handleLeistungenLeave = () => {
@@ -60,6 +66,7 @@ export default function Header() {
   }
   const handleBranchenEnter = () => {
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+    setLeistungenOpen(false)
     setBranchenOpen(true)
   }
   const handleBranchenLeave = () => {
@@ -76,7 +83,7 @@ export default function Header() {
       >
         <Logo />
 
-        <ul className="hidden lg:flex items-center gap-8">
+        <ul className="hidden lg:flex items-center gap-5 xl:gap-8">
           {navLinks.map((link) => (
             <li
               key={link.href}
@@ -94,7 +101,7 @@ export default function Header() {
                 <>
                   <Link
                     href={link.href}
-                    className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors flex items-center gap-1"
+                    className="whitespace-nowrap text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors flex items-center gap-1"
                   >
                     {link.label}
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -197,7 +204,7 @@ export default function Header() {
               ) : (
                 <Link
                   href={link.href}
-                  className="text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
+                  className="whitespace-nowrap text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
                 >
                   {link.label}
                 </Link>
