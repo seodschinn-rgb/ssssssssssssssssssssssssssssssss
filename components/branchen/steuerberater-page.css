@@ -1,0 +1,362 @@
+/* Eigenes Layout fuer /branchen/steuerberater */
+.branchen-page-steuer {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --bg-light: #eef2ff;
+  --bg-faq: #f0fdf4;
+  --bg-cta: #fffbeb;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.branchen-page-steuer h1 {
+  color: var(--text);
+  font-size: 2rem;
+  margin: 0 0 24px;
+  line-height: 1.3;
+}
+
+.branchen-page-steuer h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin: 48px 0 20px;
+}
+
+.branchen-page-steuer h3 {
+  color: var(--primary-dark);
+  font-size: 1.25rem;
+  margin: 32px 0 16px;
+}
+
+.branchen-page-steuer p {
+  margin: 0 0 16px;
+}
+
+.branchen-page-steuer a {
+  color: var(--primary);
+}
+
+.branchen-page-steuer .intro {
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary);
+  padding: 24px 28px;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+
+.branchen-page-steuer .steuer-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.branchen-page-steuer .steuer-breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+}
+
+.branchen-page-steuer .steuer-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.branchen-page-steuer .steuer-hero-figure,
+.branchen-page-steuer .steuer-intext-figure {
+  margin: 0 0 32px;
+}
+
+.branchen-page-steuer .steuer-hero-figure img,
+.branchen-page-steuer .steuer-intext-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+.branchen-page-steuer .steuer-intext-figure figcaption {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-top: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.branchen-page-steuer table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 28px;
+  font-size: 0.95rem;
+}
+
+.branchen-page-steuer th {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.branchen-page-steuer td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.branchen-page-steuer tr:nth-child(even) td {
+  background: #f9fafb;
+}
+
+.branchen-page-steuer tr:hover td {
+  background: var(--bg-light);
+}
+
+.branchen-page-steuer ul,
+.branchen-page-steuer ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+
+.branchen-page-steuer li {
+  margin-bottom: 8px;
+}
+
+.branchen-page-steuer .cta-box {
+  background: var(--bg-cta);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 1rem;
+}
+
+.branchen-page-steuer .cta-box a {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.branchen-page-steuer .red-flag-list,
+.branchen-page-steuer .checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.branchen-page-steuer .red-flag-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+}
+
+.branchen-page-steuer .red-flag-list li::before {
+  content: '\26A0';
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+  line-height: 1;
+  top: 8px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.branchen-page-steuer .checklist li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+}
+
+.branchen-page-steuer .checklist li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  top: 8px;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+.branchen-page-steuer .faq-section {
+  margin-top: 48px;
+}
+
+.branchen-page-steuer .faq-item {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.branchen-page-steuer .faq-q {
+  background: var(--bg-faq);
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.branchen-page-steuer .faq-a {
+  padding: 14px 18px;
+}
+
+.branchen-page-steuer .case-study {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 28px 0;
+}
+
+.branchen-page-steuer .case-study h3 {
+  margin-top: 0;
+}
+
+.branchen-page-steuer .case-metric {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 8px 8px 8px 0;
+  text-align: center;
+  min-width: 140px;
+}
+
+.branchen-page-steuer .case-metric .metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+}
+
+.branchen-page-steuer .case-metric .metric-label {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  display: block;
+  margin-top: 4px;
+}
+
+.branchen-page-steuer .timeline {
+  border-left: 3px solid var(--secondary);
+  padding-left: 24px;
+  margin: 20px 0 28px;
+}
+
+.branchen-page-steuer .timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.branchen-page-steuer .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+
+.branchen-page-steuer .timeline-item strong {
+  color: var(--primary-dark);
+}
+
+.branchen-page-steuer .cta-section {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  margin: 48px 0 16px;
+}
+
+.branchen-page-steuer .cta-section h2 {
+  color: #fff;
+  border: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.branchen-page-steuer .cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+.branchen-page-steuer .cta-btn {
+  display: inline-block;
+  background: var(--secondary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.branchen-page-steuer .cta-btn:hover {
+  background: #059669;
+}
+
+.branchen-page-steuer .legal-box {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 24px 28px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0 28px;
+}
+
+.branchen-page-steuer .legal-box strong {
+  color: #dc2626;
+}
+
+.branchen-page-steuer .footer-links-box {
+  margin-top: 32px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.branchen-page-steuer .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0 28px;
+}
+
+.branchen-page-steuer .table-scroll table {
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .branchen-page-steuer .table-scroll table {
+    width: max-content;
+    min-width: 760px;
+  }
+}
+
+@media (max-width: 640px) {
+  .branchen-page-steuer h1 {
+    font-size: 1.5rem;
+  }
+
+  .branchen-page-steuer .cta-section {
+    padding: 28px 20px;
+  }
+
+  .branchen-page-steuer .case-metric {
+    display: block;
+    min-width: unset;
+    margin: 8px 0;
+  }
+}

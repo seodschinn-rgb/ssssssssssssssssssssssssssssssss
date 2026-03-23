@@ -1,0 +1,341 @@
+/* /branchen/zahnaerzte — eigenes Layout (nicht .branchen-page für Ärzte überschreiben) */
+.branchen-page-dental {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --bg: #ffffff;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --bg-light: #eef2ff;
+  --bg-faq: #f0fdf4;
+  --bg-cta: #fffbeb;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+.branchen-page-dental h1 {
+  color: var(--text);
+  font-size: 2rem;
+  margin: 0 0 24px;
+  line-height: 1.3;
+}
+.branchen-page-dental h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin: 48px 0 20px;
+}
+.branchen-page-dental h3 {
+  color: var(--primary-dark);
+  font-size: 1.25rem;
+  margin: 32px 0 16px;
+}
+.branchen-page-dental p {
+  margin: 0 0 16px;
+}
+.branchen-page-dental a {
+  color: var(--primary);
+  font-weight: 500;
+}
+.branchen-page-dental a:hover {
+  text-decoration: underline;
+}
+.branchen-page-dental .intro {
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary);
+  padding: 24px 28px;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+.branchen-page-dental .dental-hero-figure,
+.branchen-page-dental .dental-intext-figure {
+  margin: 0 0 32px;
+}
+.branchen-page-dental .dental-hero-figure img,
+.branchen-page-dental .dental-intext-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+.branchen-page-dental .dental-intext-figure figcaption {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-top: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.branchen-page-dental table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 28px;
+  font-size: 0.95rem;
+}
+.branchen-page-dental th {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.branchen-page-dental td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.branchen-page-dental tr:nth-child(even) td {
+  background: #f9fafb;
+}
+.branchen-page-dental tr:hover td {
+  background: var(--bg-light);
+}
+.branchen-page-dental ul,
+.branchen-page-dental ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+.branchen-page-dental li {
+  margin-bottom: 8px;
+}
+.branchen-page-dental .cta-box {
+  background: var(--bg-cta);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 1rem;
+}
+.branchen-page-dental .cta-box a {
+  color: var(--primary);
+  font-weight: 700;
+}
+.branchen-page-dental .red-flag-list {
+  list-style: none;
+  padding-left: 0;
+}
+.branchen-page-dental .red-flag-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+}
+.branchen-page-dental .red-flag-list li::before {
+  content: '\26A0';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  font-size: 16px;
+  line-height: 1;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+.branchen-page-dental .checklist {
+  list-style: none;
+  padding-left: 0;
+}
+.branchen-page-dental .checklist li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+}
+.branchen-page-dental .checklist li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  color: var(--secondary);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+.branchen-page-dental .faq-section {
+  margin-top: 0;
+}
+.branchen-page-dental .faq-item {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.branchen-page-dental .faq-q {
+  background: var(--bg-faq);
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+}
+.branchen-page-dental .faq-a {
+  padding: 14px 18px;
+}
+.branchen-page-dental .faq-a p {
+  margin: 0;
+}
+.branchen-page-dental .faq-a p + p {
+  margin-top: 12px;
+}
+.branchen-page-dental .internal-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+.branchen-page-dental .case-study {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 28px 0;
+}
+.branchen-page-dental .case-study h3 {
+  margin-top: 0;
+}
+.branchen-page-dental .case-metric {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 8px 8px 8px 0;
+  text-align: center;
+  min-width: 140px;
+}
+.branchen-page-dental .case-metric .metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+}
+.branchen-page-dental .case-metric .metric-label {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  display: block;
+  margin-top: 4px;
+}
+.branchen-page-dental .timeline {
+  border-left: 3px solid var(--secondary);
+  padding-left: 24px;
+  margin: 20px 0 28px;
+}
+.branchen-page-dental .timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+.branchen-page-dental .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+.branchen-page-dental .timeline-item strong {
+  color: var(--primary-dark);
+}
+.branchen-page-dental .cta-section {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  margin: 48px 0 16px;
+}
+.branchen-page-dental .cta-section h2 {
+  color: #fff;
+  border: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+.branchen-page-dental .cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+.branchen-page-dental .cta-btn {
+  display: inline-block;
+  background: var(--secondary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.branchen-page-dental .cta-btn:hover {
+  background: #059669;
+  text-decoration: none;
+  color: #fff;
+}
+.branchen-page-dental .cta-section a.cta-btn {
+  color: #fff;
+}
+.branchen-page-dental .legal-box {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 24px 28px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0 28px;
+}
+.branchen-page-dental .legal-box strong {
+  color: #dc2626;
+}
+.branchen-page-dental .toc-nav {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.branchen-page-dental .toc-nav ol {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 2;
+}
+.branchen-page-dental .toc-nav a {
+  text-decoration: none;
+}
+.branchen-page-dental .toc-nav a:hover {
+  text-decoration: underline;
+}
+.branchen-page-dental .footer-links-box {
+  margin-top: 32px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+@media (max-width: 640px) {
+  .branchen-page-dental h1 {
+    font-size: 1.5rem;
+  }
+  .branchen-page-dental .cta-section {
+    padding: 28px 20px;
+  }
+  .branchen-page-dental .case-metric {
+    display: block;
+    min-width: unset;
+    margin: 8px 0;
+  }
+}
+
+
+.branchen-page-handwerk .table-scroll,
+.branchen-page-dental .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0 28px;
+}
+.branchen-page-handwerk .table-scroll table,
+.branchen-page-dental .table-scroll table {
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .branchen-page-handwerk .table-scroll table,
+  .branchen-page-dental .table-scroll table {
+    width: max-content;
+    min-width: 760px;
+  }
+}

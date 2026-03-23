@@ -2,6 +2,7 @@ import type { MetadataRoute } from 'next'
 import { LEISTUNGEN } from '@/lib/leistungen-data'
 import { CITIES } from '@/lib/seo-data'
 import { getAllPosts } from '@/lib/blog-posts'
+import { getAllBrancheSlugs } from '@/lib/branchen'
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
@@ -32,7 +33,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // 3. Standortseiten (aus seo-data.ts)
+  // 3. Branchen-SEO (Hub + Detailseiten)
+  const branchenSlugs = getAllBrancheSlugs()
+  const branchenPages: MetadataRoute.Sitemap = branchenSlugs.map((slug) => ({
+    url: `${BASE_URL}/branchen/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  // 4. Standortseiten (aus seo-data.ts)
   const standortePages: MetadataRoute.Sitemap = CITIES.map((c) => ({
     url: `${BASE_URL}/standorte/${c.slug}`,
     lastModified: now,
@@ -40,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  // 4. Blog-Artikel (aus blog-posts.ts), alphabetisch nach Slug für stabile Reihenfolge
+  // 5. Blog-Artikel (aus blog-posts.ts), alphabetisch nach Slug für stabile Reihenfolge
   const blogPages: MetadataRoute.Sitemap = getAllPosts()
     .slice()
     .sort((a, b) => a.slug.localeCompare(b.slug))
@@ -51,5 +61,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     }))
 
-  return [...staticPages, ...leistungenPages, ...standortePages, ...blogPages]
+  return [...staticPages, ...leistungenPages, ...branchenPages, ...standortePages, ...blogPages]
 }

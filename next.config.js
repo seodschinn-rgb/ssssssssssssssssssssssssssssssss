@@ -1,6 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      { source: '/branche', destination: '/branchen', permanent: true },
+      { source: '/branche/', destination: '/branchen', permanent: true },
+    ]
+  },
   // Performance
   compress: true,
   poweredByHeader: false,

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Logo from './Logo'
 import LeistungIcons from './LeistungIcons'
@@ -19,18 +19,33 @@ const iconColors: Record<string, string> = {
 }
 
 const navLinks = [
-  { href: '/leistungen', label: 'Leistungen', hasDropdown: true },
+  { href: '/leistungen', label: 'Leistungen', dropdown: 'leistungen' as const },
+  { href: '/branchen', label: 'Branchen', dropdown: 'branchen' as const },
   { href: '/preise', label: 'Preise', hasDropdown: false },
   { href: '/blog', label: 'Blog', hasDropdown: false },
   { href: '/standorte', label: 'Standorte', hasDropdown: false },
   { href: '/kontakt', label: 'Kontakt', hasDropdown: false },
 ]
 
+const BRANCHEN_LINKS = [
+  { slug: 'aerzte', label: 'Ärzte', emoji: '🏥', desc: 'Mehr Patientenanfragen', color: 'blue' },
+  { slug: 'zahnaerzte', label: 'Zahnärzte', emoji: '🦷', desc: 'Local SEO & Behandlungsseiten', color: 'emerald' },
+  { slug: 'handwerker', label: 'Handwerker', emoji: '🔧', desc: 'Mehr Aufträge über Google', color: 'amber' },
+  { slug: 'anwaelte', label: 'Anwälte', emoji: '⚖️', desc: 'Mehr qualifizierte Mandate', color: 'violet' },
+  { slug: 'steuerberater', label: 'Steuerberater', emoji: '📊', desc: 'Sichtbarkeit für Kanzleien', color: 'cyan' },
+  { slug: 'immobilienmakler', label: 'Immobilienmakler', emoji: '🏡', desc: 'Leads in deiner Region', color: 'rose' },
+  { slug: 'restaurants', label: 'Restaurants', emoji: '🍽️', desc: 'Mehr Reservierungen', color: 'indigo' },
+  { slug: 'physiotherapeuten', label: 'Physiotherapeuten', emoji: '🧘', desc: 'Mehr Terminbuchungen', color: 'emerald' },
+  { slug: 'hotels', label: 'Hotels', emoji: '🏨', desc: 'Direktbuchungen steigern', color: 'blue' },
+  { slug: 'kfz-werkstatt', label: 'Kfz-Werkstatt', emoji: '🚗', desc: 'Werkstattanfragen erhöhen', color: 'amber' },
+] as const
+
 export default function Header() {
-  const reduceMotion = useReducedMotion()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [leistungenOpen, setLeistungenOpen] = useState(false)
+  const [branchenOpen, setBranchenOpen] = useState(false)
   const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
+  const [mobileBranchenOpen, setMobileBranchenOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
@@ -43,16 +58,16 @@ export default function Header() {
   const handleLeistungenLeave = () => {
     closeTimeoutRef.current = setTimeout(() => setLeistungenOpen(false), 400)
   }
+  const handleBranchenEnter = () => {
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+    setBranchenOpen(true)
+  }
+  const handleBranchenLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => setBranchenOpen(false), 400)
+  }
 
   return (
-    <motion.header
-      initial={reduceMotion ? false : { y: -14, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={
-        reduceMotion
-          ? { duration: 0 }
-          : { duration: 0.45, ease: [0.22, 1, 0.36, 1] }
-      }
+    <header
       className={`fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-xl ${mobileMenuOpen ? 'z-[10000] border-b border-transparent' : 'z-50 border-b border-zinc-100'}`}
     >
       <nav
@@ -66,10 +81,16 @@ export default function Header() {
             <li
               key={link.href}
               className="relative"
-              onMouseEnter={() => link.hasDropdown && handleLeistungenEnter()}
-              onMouseLeave={() => link.hasDropdown && handleLeistungenLeave()}
+              onMouseEnter={() => {
+                if (link.dropdown === 'leistungen') handleLeistungenEnter()
+                if (link.dropdown === 'branchen') handleBranchenEnter()
+              }}
+              onMouseLeave={() => {
+                if (link.dropdown === 'leistungen') handleLeistungenLeave()
+                if (link.dropdown === 'branchen') handleBranchenLeave()
+              }}
             >
-              {link.hasDropdown ? (
+              {link.dropdown ? (
                 <>
                   <Link
                     href={link.href}
@@ -81,7 +102,7 @@ export default function Header() {
                     </svg>
                   </Link>
                   <AnimatePresence>
-                    {leistungenOpen && (
+                    {link.dropdown === 'leistungen' && leistungenOpen && (
                       <motion.div
                         initial={{ opacity: 0, y: -8 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -118,6 +139,53 @@ export default function Header() {
                                   <LeistungIcons icon={l.icon} className="w-4 h-4" />
                                 </span>
                                 <span className="font-medium leading-snug">{l.title}</span>
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                    {link.dropdown === 'branchen' && branchenOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute left-0 top-full pt-2"
+                      >
+                        <div className="min-w-[500px] rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
+                          <Link
+                            href="/branchen"
+                            className="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-indigo-50 to-violet-50 hover:from-indigo-100 hover:to-violet-100 transition-colors"
+                          >
+                            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500 text-white">
+                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5A1.5 1.5 0 014.5 6h15A1.5 1.5 0 0121 7.5v9A1.5 1.5 0 0119.5 18h-15A1.5 1.5 0 013 16.5v-9z" />
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 10.5h9M7.5 13.5h6" />
+                              </svg>
+                            </span>
+                            <div>
+                              <span className="block text-sm font-semibold text-zinc-900">Alle Branchen</span>
+                              <span className="block text-xs text-zinc-500">Branchen-Übersicht anzeigen</span>
+                            </div>
+                            <svg className="w-4 h-4 ml-auto text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                            </svg>
+                          </Link>
+                          <div className="p-2 grid grid-cols-2 gap-1.5">
+                            {BRANCHEN_LINKS.map((b) => (
+                              <Link
+                                key={b.slug}
+                                href={`/branchen/${b.slug}`}
+                                className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
+                              >
+                                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors ${iconColors[b.color] || iconColors.blue}`}>
+                                  <span className="text-base leading-none">{b.emoji}</span>
+                                </span>
+                                <span className="min-w-0">
+                                  <span className="block font-medium leading-snug">{b.label}</span>
+                                  <span className="block text-xs text-zinc-500 leading-snug">{b.desc}</span>
+                                </span>
                               </Link>
                             ))}
                           </div>
@@ -197,18 +265,18 @@ export default function Header() {
               >
                 {/* Menüpunkte + Unterpunkte – scrollbar, explizite Höhe damit Inhalt sichtbar ist */}
                 <div
-                  className="overflow-y-auto overscroll-contain px-4 pb-4 flex-1"
+                  className="overflow-y-auto overscroll-contain px-5 pb-5 flex-1"
                   style={{ minHeight: 0 }}
                 >
-                  <ul className="py-3 flex flex-col gap-0.5">
+                  <ul className="py-4 flex flex-col gap-1">
                     {navLinks.map((link) => (
                       <li key={link.href}>
-                        {link.hasDropdown ? (
+                        {link.dropdown === 'leistungen' ? (
                           <div className="py-1">
                             <button
                               type="button"
                               onClick={() => setMobileLeistungenOpen((v) => !v)}
-                              className="flex w-full items-center justify-between py-2.5 text-base font-medium text-zinc-700 hover:bg-zinc-50 -mx-2 px-2 rounded-lg transition-colors touch-manipulation"
+                              className="flex w-full items-center justify-between py-3.5 text-[17px] font-semibold text-zinc-800 hover:bg-zinc-50 -mx-2 px-3 rounded-xl transition-colors touch-manipulation"
                               aria-expanded={mobileLeistungenOpen}
                               aria-controls="mobile-leistungen-list"
                             >
@@ -231,13 +299,13 @@ export default function Header() {
                                   animate={{ opacity: 1 }}
                                   exit={{ opacity: 0 }}
                                   transition={{ duration: 0.2 }}
-                                  className="ml-4 mt-1 space-y-0.5 border-l-2 border-zinc-200 pl-3"
+                                  className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
                                 >
                                   <li>
                                     <Link
                                       href={link.href}
                                       onClick={() => setMobileMenuOpen(false)}
-                                      className="group flex items-center gap-3 py-2 px-3 rounded-lg text-sm font-medium text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"
+                                      className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] font-medium text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
                                     >
                                       Alle Leistungen
                                     </Link>
@@ -247,7 +315,7 @@ export default function Header() {
                                       <Link
                                         href={`/leistungen/${l.slug}`}
                                         onClick={() => setMobileMenuOpen(false)}
-                                        className="group flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900"
+                                        className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
                                       >
                                         <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${iconColors[l.color] || iconColors.blue}`}>
                                           <LeistungIcons icon={l.icon} className="w-4 h-4" />
@@ -260,11 +328,71 @@ export default function Header() {
                               )}
                             </AnimatePresence>
                           </div>
+                        ) : link.dropdown === 'branchen' ? (
+                          <div className="py-1">
+                            <button
+                              type="button"
+                              onClick={() => setMobileBranchenOpen((v) => !v)}
+                              className="flex w-full items-center justify-between py-3.5 text-[17px] font-semibold text-zinc-800 hover:bg-zinc-50 -mx-2 px-3 rounded-xl transition-colors touch-manipulation"
+                              aria-expanded={mobileBranchenOpen}
+                              aria-controls="mobile-branchen-list"
+                            >
+                              {link.label}
+                              <svg
+                                className={`w-5 h-5 text-zinc-400 transition-transform ${mobileBranchenOpen ? 'rotate-180' : ''}`}
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                            <AnimatePresence>
+                              {mobileBranchenOpen && (
+                                <motion.ul
+                                  id="mobile-branchen-list"
+                                  initial={{ opacity: 0 }}
+                                  animate={{ opacity: 1 }}
+                                  exit={{ opacity: 0 }}
+                                  transition={{ duration: 0.2 }}
+                                  className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
+                                >
+                                  <li>
+                                    <Link
+                                      href={link.href}
+                                      onClick={() => setMobileMenuOpen(false)}
+                                      className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] font-medium text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
+                                    >
+                                      Alle Branchen
+                                    </Link>
+                                  </li>
+                                  {BRANCHEN_LINKS.map((b) => (
+                                    <li key={b.slug}>
+                                      <Link
+                                        href={`/branchen/${b.slug}`}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                        className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
+                                      >
+                                        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${iconColors[b.color] || iconColors.blue}`}>
+                                          <span className="text-sm leading-none">{b.emoji}</span>
+                                        </span>
+                                        <span className="min-w-0">
+                                          <span className="block leading-snug">{b.label}</span>
+                                          <span className="block text-xs text-zinc-500 leading-snug">{b.desc}</span>
+                                        </span>
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </motion.ul>
+                              )}
+                            </AnimatePresence>
+                          </div>
                         ) : (
                           <Link
                             href={link.href}
                             onClick={() => setMobileMenuOpen(false)}
-                            className="block py-2.5 text-base font-medium text-zinc-700 hover:text-zinc-900 hover:bg-zinc-50 -mx-2 px-2 rounded-lg transition-colors"
+                            className="block py-3.5 text-[17px] font-semibold text-zinc-800 hover:text-zinc-900 hover:bg-zinc-50 -mx-2 px-3 rounded-xl transition-colors"
                           >
                             {link.label}
                           </Link>
@@ -275,12 +403,12 @@ export default function Header() {
                 </div>
                 {/* Jetzt anrufen + Termin buchen – fest unten */}
                 <div
-                  className="flex-shrink-0 px-4 pt-3 pb-4 bg-white border-t border-zinc-100 flex flex-col gap-2"
+                  className="flex-shrink-0 px-5 pt-3 pb-4 bg-white border-t border-zinc-100 flex flex-col gap-2.5"
                   style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
                 >
                   <a
                     href="tel:+4915565087694"
-                    className="flex items-center justify-center gap-2 py-3 rounded-xl border-2 border-indigo-200 text-indigo-600 font-semibold hover:bg-indigo-50 transition-colors"
+                    className="flex items-center justify-center gap-2.5 py-3.5 rounded-xl border-2 border-indigo-200 text-indigo-600 text-[15px] font-semibold hover:bg-indigo-50 transition-colors"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -291,7 +419,7 @@ export default function Header() {
                   <Link
                     href="/kontakt"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block py-3 text-center rounded-xl bg-accent text-white font-semibold hover:bg-accent-hover transition-colors"
+                    className="block py-3.5 text-center rounded-xl bg-accent text-white text-[15px] font-semibold hover:bg-accent-hover transition-colors"
                   >
                     Termin buchen
                   </Link>
@@ -301,6 +429,6 @@ export default function Header() {
           </>,
           document.body
         )}
-    </motion.header>
+    </header>
   )
 }

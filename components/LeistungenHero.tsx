@@ -49,6 +49,13 @@ export default function LeistungenHero() {
             Von der Keyword-Recherche bis zum technischen SEO: Wir bieten ganzheitliche Suchmaschinenoptimierung für
             Unternehmen in München und ganz Bayern.
           </p>
+          <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-500">
+            Branchenspezifische Anleitungen und FAQs:{' '}
+            <Link href="/branchen" className="font-semibold text-indigo-600 hover:underline">
+              SEO nach Branche in München
+            </Link>
+            .
+          </p>
           <Link
             href="/kontakt"
             className="mt-10 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-500 to-violet-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/40"

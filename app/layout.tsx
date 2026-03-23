@@ -5,7 +5,8 @@ import './globals.css'
 const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
-  display: 'optional', // Verhindert verzögerten Reflow: Schrift wechselt nicht mehr nach dem ersten Paint
+  /* swap: Text bleibt mit Fallback lesbar; optional kann in manchen Setups „leer“ wirken */
+  display: 'swap',
   weight: ['400', '500', '600', '700'],
   preload: true,
   adjustFontFallback: true,
@@ -55,10 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html
-      lang="de"
-      className={dmSans.variable}
-    >
+    <html lang="de" className={dmSans.variable} suppressHydrationWarning>
       <body className="font-sans">{children}</body>
     </html>
   )

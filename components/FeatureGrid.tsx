@@ -79,6 +79,13 @@ export default function FeatureGrid() {
             )
           })}
         </div>
+        <p className="mx-auto mt-10 max-w-2xl text-center text-sm leading-relaxed text-zinc-600">
+          Du suchst SEO genau für deine Branche — z. B. Praxis, Handwerk oder Kanzlei? In unserem{' '}
+          <Link href="/branchen" className="font-semibold text-indigo-600 hover:underline">
+            Branchen-SEO-Hub
+          </Link>{' '}
+          findest du Leitfäden, typische Fehler und Maßnahmen für München und Umgebung.
+        </p>
         <div className="mt-12 text-center">
           <Link
             href="/leistungen"

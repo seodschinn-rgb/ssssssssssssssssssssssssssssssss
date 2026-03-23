@@ -29,31 +29,11 @@ function useVisibleOnce(fallbackMs = 2500) {
 /** Dekorative Gradient-Blobs für moderne Hintergründe */
 export function GradientBlobs() {
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-        className="absolute -top-40 -right-40 w-[480px] h-[480px] rounded-full bg-gradient-to-br from-blue-400/25 via-violet-400/15 to-transparent blur-3xl"
-      />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.15, ease: 'easeOut' }}
-        className="absolute top-1/3 -left-40 w-80 h-80 rounded-full bg-gradient-to-tr from-emerald-400/20 to-cyan-400/10 blur-3xl"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.4 }}
-        className="absolute bottom-10 right-1/3 w-72 h-72 rounded-full bg-gradient-to-tl from-amber-400/15 via-orange-300/10 to-transparent blur-3xl"
-      />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, delay: 0.6 }}
-        className="absolute top-2/3 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-gradient-to-b from-violet-300/10 to-transparent blur-3xl"
-      />
+    <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+      <div className="absolute -top-40 -right-40 h-[480px] w-[480px] rounded-full bg-gradient-to-br from-blue-400/25 via-violet-400/15 to-transparent blur-3xl" />
+      <div className="absolute top-1/3 -left-40 h-80 w-80 rounded-full bg-gradient-to-tr from-emerald-400/20 to-cyan-400/10 blur-3xl" />
+      <div className="absolute bottom-10 right-1/3 h-72 w-72 rounded-full bg-gradient-to-tl from-amber-400/15 via-orange-300/10 to-transparent blur-3xl" />
+      <div className="absolute top-2/3 left-1/2 h-96 w-96 -translate-x-1/2 rounded-full bg-gradient-to-b from-violet-300/10 to-transparent blur-3xl" />
     </div>
   )
 }

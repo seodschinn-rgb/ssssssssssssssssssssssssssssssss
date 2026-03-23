@@ -1,0 +1,326 @@
+/* Ärzte-Branchenseite & ggf. weitere .branchen-page Inhalte */
+.branchen-page {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --primary-light: #eef2ff;
+  --secondary: #10b981;
+  --secondary-light: #ecfdf5;
+  --accent: #f59e0b;
+  --accent-light: #fffbeb;
+  --danger: #ef4444;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--text);
+  line-height: 1.8;
+}
+.branchen-page h1 {
+  color: var(--text);
+  font-size: 2rem;
+  margin: 0 0 24px;
+  line-height: 1.3;
+}
+.branchen-page h2 {
+  color: var(--primary-dark);
+  font-size: 1.5rem;
+  margin: 48px 0 16px;
+  border-left: 4px solid var(--primary);
+  padding-left: 16px;
+}
+.branchen-page h3 {
+  color: var(--text);
+  font-size: 1.2rem;
+  margin: 32px 0 12px;
+}
+.branchen-page p {
+  margin: 0 0 16px;
+}
+.branchen-page a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+.branchen-page a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+.branchen-page .intro {
+  font-size: 1.08rem;
+  color: var(--text-light);
+  border-left: 4px solid var(--primary);
+  padding: 16px 20px;
+  background: var(--primary-light);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 32px;
+}
+.branchen-page .toc {
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.branchen-page .toc p {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+.branchen-page .toc ol {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 2;
+}
+.branchen-page .toc a {
+  font-weight: 400;
+}
+.branchen-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 28px;
+  font-size: 0.95rem;
+}
+.branchen-page .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0 28px;
+}
+.branchen-page .table-scroll table {
+  margin: 0;
+}
+.branchen-page th {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.branchen-page td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.branchen-page tr:nth-child(even) td {
+  background: #f9fafb;
+}
+.branchen-page ul,
+.branchen-page ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+.branchen-page li {
+  margin-bottom: 8px;
+}
+.branchen-page .stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.branchen-page .stat-card {
+  background: var(--primary-light);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+.branchen-page .stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+}
+.branchen-page .stat-label {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+.branchen-page .tip-box {
+  background: var(--primary-light);
+  border: 1px solid #c7d2fe;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.branchen-page .tip-box strong {
+  color: var(--primary-dark);
+}
+.branchen-page .warning-box {
+  background: var(--accent-light);
+  border-left: 4px solid var(--accent);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+}
+.branchen-page .danger-box {
+  background: #fef2f2;
+  border-left: 4px solid var(--danger);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+}
+.branchen-page .cta-section {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 32px;
+  border-radius: 12px;
+  margin: 40px 0;
+  text-align: center;
+}
+.branchen-page .cta-section h2 {
+  color: white;
+  border: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+.branchen-page .cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+}
+.branchen-page .cta-section a {
+  color: white;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.branchen-page .cta-btn {
+  display: inline-block;
+  background: var(--secondary);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  margin: 8px;
+}
+.branchen-page .cta-btn:hover {
+  background: #059669;
+  text-decoration: none;
+}
+.branchen-page .faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+.branchen-page .faq-item:last-child {
+  border-bottom: none;
+}
+.branchen-page .faq-q {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  font-size: 1rem;
+}
+.branchen-page .faq-a {
+  color: var(--text-light);
+}
+.branchen-page .timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 24px 0;
+}
+.branchen-page .timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.branchen-page .timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.branchen-page .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: var(--primary);
+  border-radius: 50%;
+  border: 3px solid var(--primary-light);
+}
+.branchen-page .timeline-month {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.branchen-page .case-study {
+  background: var(--secondary-light);
+  border: 2px solid var(--secondary);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 24px 0;
+}
+.branchen-page .case-study h3 {
+  color: #065f46;
+  margin-top: 0;
+}
+.branchen-page .result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.branchen-page .result-card {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+.branchen-page .result-card .stat-number {
+  color: var(--secondary);
+}
+.branchen-page .mistake-item {
+  padding: 12px 0 12px 28px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.branchen-page .mistake-item:last-child {
+  border-bottom: none;
+}
+.branchen-page .mistake-item::before {
+  content: '\2716';
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: 700;
+}
+.branchen-page .legal-box {
+  background: #fdf4ff;
+  border-left: 4px solid #a855f7;
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 0 8px 8px 0;
+}
+@media (max-width: 768px) {
+  .branchen-page .table-scroll table {
+    width: max-content;
+    min-width: 760px;
+  }
+  .branchen-page h1 {
+    font-size: 1.5rem;
+  }
+  .branchen-page h2 {
+    font-size: 1.25rem;
+  }
+  .branchen-page .stat-grid,
+  .branchen-page .result-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .branchen-page .stat-grid,
+  .branchen-page .result-grid {
+    grid-template-columns: 1fr;
+  }
+}

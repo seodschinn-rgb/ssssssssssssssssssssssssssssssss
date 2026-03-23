@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hero-Überschriften: Fallback-Farbe, falls bg-clip:text in manchen Browsern/GPUs fehlschlägt (sonst „unsichtbarer“ Text) */
+.hero-text-gradient {
+  color: #2563eb;
+  background-image: linear-gradient(90deg, #2563eb, #4f46e5, #2563eb);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.hero-text-gradient-v2 {
+  color: #4f46e5;
+  background-image: linear-gradient(90deg, #4f46e5, #2563eb, #4338ca);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-text-gradient,
+  .hero-text-gradient-v2 {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

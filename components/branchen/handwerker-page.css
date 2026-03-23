@@ -1,0 +1,350 @@
+/* /branchen/zahnaerzte — eigenes Layout (nicht .branchen-page für Ärzte überschreiben) */
+.branchen-page-handwerk {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --bg: #ffffff;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --bg-light: #eef2ff;
+  --bg-faq: #f0fdf4;
+  --bg-cta: #fffbeb;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+.branchen-page-handwerk h1 {
+  color: var(--text);
+  font-size: 2rem;
+  margin: 0 0 24px;
+  line-height: 1.3;
+}
+.branchen-page-handwerk h2 {
+  color: var(--primary);
+  font-size: 1.6rem;
+  margin: 48px 0 20px;
+}
+.branchen-page-handwerk h3 {
+  color: var(--primary-dark);
+  font-size: 1.25rem;
+  margin: 32px 0 16px;
+}
+.branchen-page-handwerk p {
+  margin: 0 0 16px;
+}
+.branchen-page-handwerk a {
+  color: var(--primary);
+  font-weight: 500;
+}
+.branchen-page-handwerk a:hover {
+  text-decoration: underline;
+}
+.branchen-page-handwerk .intro {
+  background: var(--bg-light);
+  border-left: 4px solid var(--primary);
+  padding: 24px 28px;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+.branchen-page-handwerk .hw-breadcrumb {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.branchen-page-handwerk .hw-breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+}
+.branchen-page-handwerk .hw-breadcrumb a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+.branchen-page-handwerk .handwerk-hero-figure,
+.branchen-page-handwerk .handwerk-intext-figure {
+  margin: 0 0 32px;
+}
+.branchen-page-handwerk .handwerk-hero-figure img,
+.branchen-page-handwerk .handwerk-intext-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+.branchen-page-handwerk .handwerk-intext-figure figcaption {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  margin-top: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.branchen-page-handwerk table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 28px;
+  font-size: 0.95rem;
+}
+.branchen-page-handwerk th {
+  background: var(--primary);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.branchen-page-handwerk td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+.branchen-page-handwerk tr:nth-child(even) td {
+  background: #f9fafb;
+}
+.branchen-page-handwerk tr:hover td {
+  background: var(--bg-light);
+}
+.branchen-page-handwerk ul,
+.branchen-page-handwerk ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+.branchen-page-handwerk li {
+  margin-bottom: 8px;
+}
+.branchen-page-handwerk .cta-box {
+  background: var(--bg-cta);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 1rem;
+}
+.branchen-page-handwerk .cta-box a {
+  color: var(--primary);
+  font-weight: 700;
+}
+.branchen-page-handwerk .red-flag-list {
+  list-style: none;
+  padding-left: 0;
+}
+.branchen-page-handwerk .red-flag-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+}
+.branchen-page-handwerk .red-flag-list li::before {
+  content: '\26A0';
+  position: absolute;
+  left: 0;
+}
+.branchen-page-handwerk .checklist {
+  list-style: none;
+  padding-left: 0;
+}
+.branchen-page-handwerk .checklist li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+}
+.branchen-page-handwerk .checklist li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: 700;
+}
+.branchen-page-handwerk .faq-section {
+  margin-top: 0;
+}
+.branchen-page-handwerk .faq-item {
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.branchen-page-handwerk .faq-q {
+  background: var(--bg-faq);
+  padding: 14px 18px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+}
+.branchen-page-handwerk .faq-a {
+  padding: 14px 18px;
+}
+.branchen-page-handwerk .faq-a p {
+  margin: 0;
+}
+.branchen-page-handwerk .faq-a p + p {
+  margin-top: 12px;
+}
+.branchen-page-handwerk .internal-link {
+  color: var(--accent);
+  font-weight: 600;
+}
+.branchen-page-handwerk .case-study {
+  background: var(--bg-light);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 28px 0;
+}
+.branchen-page-handwerk .case-study h3 {
+  margin-top: 0;
+}
+.branchen-page-handwerk .case-metric {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 8px 8px 8px 0;
+  text-align: center;
+  min-width: 140px;
+}
+.branchen-page-handwerk .case-metric .metric-value {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  display: block;
+}
+.branchen-page-handwerk .case-metric .metric-label {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  display: block;
+  margin-top: 4px;
+}
+.branchen-page-handwerk .timeline {
+  border-left: 3px solid var(--secondary);
+  padding-left: 24px;
+  margin: 20px 0 28px;
+}
+.branchen-page-handwerk .timeline-item {
+  margin-bottom: 20px;
+  position: relative;
+}
+.branchen-page-handwerk .timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--secondary);
+}
+.branchen-page-handwerk .timeline-item strong {
+  color: var(--primary-dark);
+}
+.branchen-page-handwerk .timeline-item p {
+  margin: 0;
+}
+.branchen-page-handwerk .cta-section {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  margin: 48px 0 16px;
+}
+.branchen-page-handwerk .cta-section h2 {
+  color: #fff;
+  border: none;
+  margin: 0 0 16px;
+  padding: 0;
+}
+.branchen-page-handwerk .cta-section p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+.branchen-page-handwerk .cta-btn {
+  display: inline-block;
+  background: var(--secondary);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.branchen-page-handwerk .cta-btn:hover {
+  background: #059669;
+  text-decoration: none;
+  color: #fff;
+}
+.branchen-page-handwerk .cta-section a.cta-btn {
+  color: #fff;
+}
+.branchen-page-handwerk .legal-box {
+  background: #fef2f2;
+  border-left: 4px solid #ef4444;
+  padding: 24px 28px;
+  border-radius: 0 8px 8px 0;
+  margin: 20px 0 28px;
+}
+.branchen-page-handwerk .legal-box strong {
+  color: #dc2626;
+}
+.branchen-page-handwerk .toc-nav {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.branchen-page-handwerk .toc-nav ol {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 2;
+}
+.branchen-page-handwerk .toc-nav a {
+  text-decoration: none;
+}
+.branchen-page-handwerk .toc-nav a:hover {
+  text-decoration: underline;
+}
+.branchen-page-handwerk .footer-links-box {
+  margin-top: 32px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+@media (max-width: 640px) {
+  .branchen-page-handwerk h1 {
+    font-size: 1.5rem;
+  }
+  .branchen-page-handwerk .cta-section {
+    padding: 28px 20px;
+  }
+  .branchen-page-handwerk .case-metric {
+    display: block;
+    min-width: unset;
+    margin: 8px 0;
+  }
+}
+
+
+.branchen-page-handwerk .table-scroll,
+.branchen-page-dental .table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin: 20px 0 28px;
+}
+.branchen-page-handwerk .table-scroll table,
+.branchen-page-dental .table-scroll table {
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .branchen-page-handwerk .table-scroll table,
+  .branchen-page-dental .table-scroll table {
+    width: max-content;
+    min-width: 760px;
+  }
+}
