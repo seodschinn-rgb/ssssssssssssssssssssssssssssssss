@@ -630,11 +630,12 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     slug: 'kfz-werkstatt',
     name: 'KFZ-Werkstätten',
     hubTitle: 'KFZ-Werkstätten',
-    hubDescription: 'Mehr Werkstatt-Anfragen über Maps und lokale Suche.',
+    hubDescription: 'Mehr Anfragen über Maps, Leistungsseiten & Bewertungen — gegen Ketten und Portale.',
     hubEmoji: '🚗',
-    metaTitle: 'SEO für KFZ-Werkstätten in München | Autowerkstatt Google',
+    metaTitle: 'SEO für KFZ-Werkstätten München | Mehr Kunden über Google | SEO München',
     metaDescription:
-      'SEO für KFZ-Werkstätten in München: mehr Anfragen über Google Maps und lokale Suche. Werkstatt-Marketing — SEO München.',
+      'SEO für KFZ-Werkstätten in München: Google Business Profile, Leistungsseiten, Bewertungen. Fallstudie: Freie Werkstatt von Seite 5 auf Top 3. Ab 990 EUR/Monat. Jetzt beraten lassen.',
+    focusKeyword: 'seo für kfz-werkstätten münchen',
     h1: 'SEO für KFZ-Werkstätten in München — Mehr Kunden über Google',
     ctaNoun: 'Kunden',
     warumParagraphs: [
@@ -667,21 +668,28 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     kostenParagraphs: kostenStandard('Werkstätten'),
     faqs: [
       {
-        q: 'Ist Google Maps wichtiger als die Website?',
-        a: 'Beides zusammen: Maps für den schnellen Kontakt, Website für Vertrauen und Leistungsdetails.',
+        q: 'Wie lange dauert SEO für eine KFZ-Werkstatt, bis Ergebnisse sichtbar werden?',
+        a: 'Erste Verbesserungen über das Google Business Profile sind oft nach 4–6 Wochen sichtbar. Für organische Rankings bei Keywords wie „KFZ Werkstatt München“ solltest du mit 3–6 Monaten rechnen. Stadtteil-Keywords wie „TÜV Schwabing“ zeigen schneller Ergebnisse, da der Wettbewerb geringer ist.',
       },
       {
-        q: 'Wie bekomme ich mehr Bewertungen?',
-        a: 'Wir richten seriöse Prozesse nach erledigtem Auftrag ein — ohne gegen Richtlinien zu verstoßen.',
-      },
-      faqPaket(),
-      {
-        q: 'Mehrere Standorte?',
-        a: 'Eigene Profile und klar getrennte Seiten — wir vermeiden Kannibalisierung.',
+        q: 'Lohnt sich SEO für eine kleine freie Werkstatt?',
+        a: 'Gerade für freie Werkstätten ist SEO besonders wirkungsvoll. Du konkurrierst online mit Ketten wie ATU oder Euromaster, die große Budgets haben. Mit lokalem SEO kannst du genau die Kunden erreichen, die eine Werkstatt in ihrer Nähe suchen — und die bereit sind, für persönlichen Service zu zahlen. Schon 10 Neukunden pro Monat über Google decken die SEO-Kosten mehrfach.',
       },
       {
-        q: 'Was kostet SEO für eine Werkstatt?',
-        a: 'Oft Starter oder Growth — abhängig von Wettbewerb im Umkreis. Details auf der Preisseite.',
+        q: 'Was kostet SEO für KFZ-Werkstätten?',
+        a: 'Professionelle SEO-Betreuung für KFZ-Werkstätten beginnt bei 990 EUR pro Monat. Dafür erhältst du Google Business Profile Optimierung, lokale Keyword-Strategie, Leistungsseiten für jeden Service und Bewertungsmanagement. Gemessen am Kundenwert — eine Inspektion bringt 200–500 EUR, ein TÜV-Termin 100–150 EUR — amortisiert sich das schnell.',
+      },
+      {
+        q: 'Brauche ich als Werkstatt eine neue Website für SEO?',
+        a: 'Nicht unbedingt. In vielen Fällen lässt sich die bestehende Website optimieren — mit besserer Struktur, Leistungsseiten und mobiler Darstellung. Nur wenn die Seite technisch veraltet ist (kein responsives Design, extrem langsam), empfehlen wir einen Relaunch. Das klären wir im kostenlosen Erstgespräch.',
+      },
+      {
+        q: 'Ist Google Business Profile wirklich kostenlos?',
+        a: 'Ja, Google Business Profile ist komplett kostenlos. Du erstellst ein Profil, verifizierst deine Werkstatt und pflegst Fotos, Öffnungszeiten, Leistungen und Bewertungen. Es ist der wichtigste einzelne Hebel für lokale Sichtbarkeit — und trotzdem haben viele Werkstätten kein vollständig optimiertes Profil.',
+      },
+      {
+        q: 'Soll ich neben SEO auch Google Ads schalten?',
+        a: 'Google Ads kann sinnvoll sein, um die Zeit zu überbrücken, bis organische Rankings greifen — typischerweise die ersten 3–4 Monate. Langfristig ist SEO kosteneffizienter, weil du nicht für jeden Klick zahlst. Die ideale Strategie: SEO als Basis aufbauen, Ads kurzfristig ergänzen, dann schrittweise reduzieren.',
       },
     ],
     relatedSlugs: [...REL['kfz-werkstatt']],

@@ -14,7 +14,10 @@ import ImmobilienmaklerBrancheContent from '@/components/branchen/Immobilienmakl
 import RestaurantsBrancheContent from '@/components/branchen/RestaurantsBrancheContent'
 import PhysiotherapeutenBrancheContent from '@/components/branchen/PhysiotherapeutenBrancheContent'
 import HotelsBrancheContent from '@/components/branchen/HotelsBrancheContent'
+import KfzWerkstattBrancheContent from '@/components/branchen/KfzWerkstattBrancheContent'
 import { getAllBrancheSlugs, getBrancheBySlug } from '@/lib/branchen'
+
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
 interface PageProps {
   params: { slug: string }
@@ -35,6 +38,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,
+      ...(data.slug === 'kfz-werkstatt'
+        ? {
+            images: [
+              {
+                url: `${SITE_URL}/images/blog/kfz-werkstatt-thumbnail.webp`,
+                width: 1200,
+                height: 630,
+                alt: data.metaTitle,
+              },
+            ],
+          }
+        : {}),
     },
   }
 }
@@ -58,7 +73,7 @@ export default function BranchePage({ params }: PageProps) {
       <main className="pt-24">
         <div
           className={
-            data.slug === 'aerzte' || data.slug === 'zahnaerzte' || data.slug === 'handwerker' || data.slug === 'steuerberater' || data.slug === 'anwaelte' || data.slug === 'immobilienmakler' || data.slug === 'restaurants' || data.slug === 'physiotherapeuten' || data.slug === 'hotels'
+            data.slug === 'aerzte' || data.slug === 'zahnaerzte' || data.slug === 'handwerker' || data.slug === 'steuerberater' || data.slug === 'anwaelte' || data.slug === 'immobilienmakler' || data.slug === 'restaurants' || data.slug === 'physiotherapeuten' || data.slug === 'hotels' || data.slug === 'kfz-werkstatt'
               ? 'py-12 sm:py-16'
               : 'mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16'
           }
@@ -81,6 +96,8 @@ export default function BranchePage({ params }: PageProps) {
             <PhysiotherapeutenBrancheContent />
           ) : data.slug === 'hotels' ? (
             <HotelsBrancheContent />
+          ) : data.slug === 'kfz-werkstatt' ? (
+            <KfzWerkstattBrancheContent />
           ) : (
             <BrancheDetailContent data={data} />
           )}
