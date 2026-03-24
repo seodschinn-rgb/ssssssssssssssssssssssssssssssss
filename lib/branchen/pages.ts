@@ -428,9 +428,10 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     hubTitle: 'Restaurants & Gastronomie',
     hubDescription: 'Mehr Gäste über Google Maps, Speisekarten und Reservierungen.',
     hubEmoji: '🍽️',
-    metaTitle: 'SEO für Restaurants in München | Gastronomie Local SEO',
+    metaTitle: 'SEO für Restaurants München | Mehr Gäste über Google | SEO München',
     metaDescription:
-      'SEO für Restaurants in München: mehr Gäste über Google Maps, Speisekarte und Reservierung. Local SEO für Gastronomie — SEO München.',
+      'SEO für Restaurants in München: Google Maps Optimierung, Bewertungsmanagement & Speisekarten-SEO. 3.127 Gastro-Betriebe — so hebst du dich ab. Ab 990 EUR/Monat.',
+    focusKeyword: 'seo für restaurants münchen',
     h1: 'SEO für Restaurants & Gastronomie in München — Mehr Gäste über Google',
     ctaNoun: 'Gäste',
     warumParagraphs: [
@@ -463,21 +464,28 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     kostenParagraphs: kostenStandard('Restaurants'),
     faqs: [
       {
-        q: 'Brauche ich eine eigene Website als Restaurant?',
-        a: 'Empfohlen — für Reservierung, Events und SEO-Tiefe. Das Profil allein reicht selten für alle Suchanfragen.',
+        q: 'Braucht mein Restaurant wirklich eine eigene Website?',
+        a: 'Ja, unbedingt. Ohne eigene Website kontrollieren Plattformen wie Lieferando, TripAdvisor und Yelp deine Online-Präsenz. Eine eigene Website gibt dir Kontrolle über dein Branding, deine Speisekarte und vor allem über deine Google-Rankings. Sie ist auch Voraussetzung für viele Local-SEO-Maßnahmen und ermöglicht dir, Reservierungen und Bestellungen ohne Provision entgegenzunehmen.',
       },
       {
-        q: 'Wie wichtig sind Instagram und Google?',
-        a: 'Beides ergänzt sich. Google liefert die Entscheidung „jetzt essen gehen“ — wir synchronisieren Botschaften und Keywords.',
-      },
-      faqPaket(),
-      {
-        q: 'Kann ich mehrere Filialen optimieren?',
-        a: 'Ja — mit eigenen Profilen und konsistenten Daten pro Standort.',
+        q: 'Was kostet SEO für ein Restaurant?',
+        a: 'Professionelle SEO-Betreuung für Restaurants beginnt bei 990 EUR pro Monat. Dafür erhältst du Google Business Profile Optimierung, lokale Keyword-Strategie, Speisekarten-SEO und Bewertungsmanagement. Bei einem durchschnittlichen Abendessen-Umsatz von 45–65 EUR pro Gast rechnet sich die Investition bereits mit 10 zusätzlichen Gästen pro Woche.',
       },
       {
-        q: 'Was ist mit Lieferdiensten?',
-        a: 'Wir berücksichtigen Liefergebiete und Keywords, damit du nicht nur Vor-Ort-Gäste erreichst.',
+        q: 'Wie bekomme ich mehr Google-Bewertungen?',
+        a: 'Der effektivste Weg: Erstelle einen kurzen Bewertungslink oder QR-Code und platziere ihn auf dem Tisch, der Rechnung oder einer kleinen Karte. Bitte Gäste nach einem gelungenen Abend persönlich um eine Bewertung. Wichtig: Antworte auf jede Bewertung — positiv wie negativ. Das zeigt Engagement und verbessert dein Ranking. Gefälschte Bewertungen sind tabu, Google erkennt Muster und bestraft Manipulation.',
+      },
+      {
+        q: 'Kann ich mich gegen Lieferando-Schattenwebsites wehren?',
+        a: 'Ja, mit einer starken eigenen SEO-Präsenz. Lieferando erstellt für Restaurants automatisch Unterseiten, die oft für deinen eigenen Restaurantnamen ranken. Dagegen hilft: eine gut optimierte eigene Website, ein vollständiges Google Business Profile und konsistente NAP-Daten (Name, Adresse, Telefon) über alle Verzeichnisse hinweg. Der DEHOGA setzt sich zudem politisch für faire Wettbewerbsbedingungen ein.',
+      },
+      {
+        q: 'Wie wichtig ist die Speisekarte für SEO?',
+        a: 'Extrem wichtig. Die Speisekarte ist oft die meistbesuchte Seite einer Restaurant-Website. Entscheidend: Sie muss als HTML-Text vorliegen, nicht als PDF oder Bild. Nur so kann Google die Inhalte lesen und indexieren. Eine textbasierte Speisekarte mit Gerichten, Beschreibungen und Preisen erzeugt relevante Keywords und verbessert dein Ranking für Suchen wie „italienisches Restaurant München“ oder „Pizza Schwabing“.',
+      },
+      {
+        q: 'Lohnt sich SEO auch für kleine Cafés oder Imbisse?',
+        a: 'Absolut. Gerade kleinere Betriebe profitieren stark von Local SEO, weil der Wettbewerb auf Stadtteil-Ebene geringer ist. Ein Café in Haidhausen muss nicht gegen ganz München konkurrieren, sondern nur gegen die Cafés im gleichen Viertel. Ein optimiertes Google Business Profile mit guten Bewertungen kann hier schnell für deutlich mehr Laufkundschaft sorgen.',
       },
     ],
     relatedSlugs: [...REL.restaurants],
@@ -486,12 +494,13 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     slug: 'physiotherapeuten',
     name: 'Physiotherapeuten',
     hubTitle: 'Physiotherapeuten',
-    hubDescription: 'Mehr Patienten für Praxen — Local SEO & medizinnahe Inhalte.',
+    hubDescription: 'Mehr Patienten über Google — Selbstzahler, Local SEO & HWG-sichere Texte.',
     hubEmoji: '💆',
-    metaTitle: 'SEO für Physiotherapeuten | Praxis Google München',
+    metaTitle: 'SEO für Physiotherapeuten in München | Mehr Patienten über Google',
     metaDescription:
-      'SEO für Physiotherapeuten in München: mehr Patienten über Google und Maps. Local SEO, Praxis-Marketing, seriöse Inhalte — SEO München.',
-    h1: 'SEO für Physiotherapeuten in München — Mehr Patienten über Google',
+      'SEO für Physiotherapie-Praxen in München: Selbstzahler gewinnen, Google Business Profile optimieren & Top-Rankings für Behandlungs-Keywords erreichen.',
+    focusKeyword: 'SEO für Physiotherapeuten München',
+    h1: 'SEO für Physiotherapeuten in München — Mehr Patienten über Google gewinnen',
     ctaNoun: 'Patienten',
     warumParagraphs: [
       'Patienten suchen Therapieformen, Schmerzbilder und Praxen mit kurzen Wegen — lokal und vertrauenswürdig.',
@@ -523,21 +532,28 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     kostenParagraphs: kostenStandard('Physiopraxen'),
     faqs: [
       {
-        q: 'Darf ich Heilversprechen im Text?',
-        a: 'Nein — wir formulieren informativ und vorsichtig, ohne Heilsversprechen.',
+        q: 'Lohnt sich SEO für eine kleine Physiotherapie-Praxis?',
+        a: 'Gerade für kleinere Praxen mit 2–4 Therapeuten ist SEO besonders wirkungsvoll. Schon 5 zusätzliche Selbstzahler-Patienten pro Monat können bei durchschnittlich 6 Sitzungen à 80 EUR rund 2.400 EUR Zusatzumsatz bedeuten — deutlich mehr als die SEO-Investition. Anders als bei Arzt-Überweisungen bestimmst du selbst, welche Patienten und Behandlungen du anziehst.',
       },
       {
-        q: 'Ist Local SEO wichtig für Physio?',
-        a: 'Sehr — Patienten wählen Praxen in der Nähe. Maps und Bewertungen sind zentral.',
-      },
-      faqPaket(),
-      {
-        q: 'Brauche ich separate Seiten pro Therapieform?',
-        a: 'Oft ja — wenn Suchanfragen und Intentionen sich unterscheiden, helfen eigene Seiten.',
+        q: 'Wie lange dauert es, bis meine Physio-Praxis bei Google sichtbar wird?',
+        a: 'Erste Verbesserungen über das Google Business Profile sind oft nach 4–6 Wochen spürbar. Für organische Rankings bei „Physiotherapie München“ solltest du mit 3–6 Monaten rechnen. Stadtteil-Keywords wie „Physiotherapie Bogenhausen“ oder Nischen-Behandlungen wie „Osteopathie München“ zeigen oft schneller Ergebnisse, da der Wettbewerb geringer ist.',
       },
       {
-        q: 'Wie schnell wirkt SEO?',
-        a: 'Erste Local-Signale oft schnell; organische Themen brauchen typischerweise mehrere Monate.',
+        q: 'Was kostet SEO für Physiotherapeuten?',
+        a: 'Professionelle SEO-Betreuung für Physiotherapie-Praxen beginnt bei 990 EUR pro Monat. Dafür erhältst du Google Business Profile Optimierung, Behandlungsseiten, lokale Keyword-Strategie und Bewertungsmanagement. Gemessen am Umsatzpotenzial durch Selbstzahler — 5 Patienten à 6 Sitzungen à 80 EUR sind 2.400 EUR monatlich — amortisiert sich die Investition schnell.',
+      },
+      {
+        q: 'Darf ich als Physiotherapeut mit Heilungsversprechen werben?',
+        a: 'Nein. Das Heilmittelwerbegesetz (HWG) verbietet irreführende Werbung und Heilungsversprechen. Formulierungen wie „Wir heilen deinen Rücken“ sind nicht zulässig. Stattdessen darfst du über Behandlungsmethoden informieren, Abläufe beschreiben und Patientenerfahrungen (mit Einschränkungen) teilen. Wir achten bei allen SEO-Texten auf HWG-Konformität.',
+      },
+      {
+        q: 'Brauche ich als Physiotherapeut eine neue Website?',
+        a: 'Nicht zwingend. Viele Physio-Websites lassen sich mit besserer Struktur, eigenen Behandlungsseiten und mobiler Optimierung deutlich verbessern. Nur wenn die Seite technisch stark veraltet ist oder auf einem Billig-Baukasten ohne SEO-Möglichkeiten läuft, empfehlen wir einen Relaunch. Das klären wir im kostenlosen Erstgespräch.',
+      },
+      {
+        q: 'Kann SEO meine Abhängigkeit von Arzt-Überweisungen reduzieren?',
+        a: 'Ja, das ist einer der größten Vorteile. Viele Behandlungen — Osteopathie, Sportphysiotherapie, Präventionskurse, Massage — werden direkt von Patienten gesucht und gebucht, ohne Arzt-Überweisung. Mit gezieltem SEO erreichst du diese Selbstzahler direkt über Google und diversifizierst deine Patientenstruktur weg von der reinen Kassenabhängigkeit.',
       },
     ],
     relatedSlugs: [...REL.physiotherapeuten],
@@ -546,12 +562,13 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     slug: 'hotels',
     name: 'Hotels',
     hubTitle: 'Hotels',
-    hubDescription: 'Direktbuchungen und Sichtbarkeit für Hotels in München.',
+    hubDescription: 'Direktbuchungen steigern, OTA-Provision senken — Local SEO & Destination-Content.',
     hubEmoji: '🏨',
-    metaTitle: 'SEO für Hotels in München | Hotel Marketing Google',
+    metaTitle: 'SEO für Hotels München | Mehr Direktbuchungen, weniger OTA | SEO München',
     metaDescription:
-      'SEO für Hotels in München: mehr Direktbuchungen und Sichtbarkeit bei Google. Local SEO, Themen zu Lage & Anreise — SEO München.',
-    h1: 'SEO für Hotels in München — Mehr Gäste über Google',
+      'SEO für Hotels in München: Direktbuchungen steigern, OTA-Provisionen senken. Google Business Profile, Destination-Content & Buchungsoptimierung. Ab 1.590 EUR/Monat.',
+    focusKeyword: 'seo für hotels münchen',
+    h1: 'SEO für Hotels in München — Mehr Direktbuchungen, weniger OTA-Abhängigkeit',
     ctaNoun: 'Gäste',
     warumParagraphs: [
       'Reisende kombinieren „Hotel München“ mit Anlass, Lage und Preis — wer nicht in organischen Ergebnissen und Maps ist, zahlt höhere OTA-Provisionen.',
@@ -583,21 +600,28 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     kostenParagraphs: kostenStandard('Hotels'),
     faqs: [
       {
-        q: 'Lohnt sich SEO neben Booking & Co.?',
-        a: 'Ja — jede Direktbuchung spart Provision. SEO baut langfristig eine stabile Pipeline.',
+        q: 'Lohnt sich SEO wenn ich bei Booking.com bin?',
+        a: 'Gerade dann. Booking.com nimmt 15–25 % Provision pro Buchung. Jede Direktbuchung über deine eigene Website spart dir diese Provision und gibt dir Zugang zu den Gästedaten für Wiederbuchungs-Marketing. SEO ersetzt Booking.com nicht, aber es reduziert deine Abhängigkeit und verbessert deine Marge erheblich. Hotels, die gezielt in SEO investieren, steigern den Direktbuchungsanteil typischerweise um 20–35 Prozentpunkte innerhalb eines Jahres.',
       },
       {
-        q: 'Was ist mit Sterne-Snippets?',
-        a: 'Wo sinnvoll setzen wir strukturierte Daten und saubere Bewertungsintegration — ohne Spam-Risiko.',
-      },
-      faqPaket(),
-      {
-        q: 'Kann ich Event-Keywords besetzen?',
-        a: 'Ja — Messe, Oktoberfest, Konzerte: saisonale Inhalte und interne Links stärken Relevanz.',
+        q: 'Was kostet SEO für ein Hotel?',
+        a: 'Professionelle Hotel-SEO beginnt bei 1.590 EUR pro Monat (Growth-Paket). Hotels sind wettbewerbsintensiv — Booking.com, HRS und Google Hotel Ads dominieren viele Keywords. Das Growth-Paket umfasst lokale Keyword-Strategie, Google Business Profile Optimierung, Destination-Content, technisches SEO und Buchungsoptimierung. Bei durchschnittlich 100 EUR pro Nacht und 15 % eingesparter OTA-Provision rechnet sich die Investition ab 10–11 zusätzlichen Direktbuchungs-Nächten pro Monat.',
       },
       {
-        q: 'Brauche ich Blog-Inhalte?',
-        a: 'Gezielte Ratgeber zu München und Aufenthalt helfen — ohne Keyword-Stuffing.',
+        q: 'Wie lange dauert es bis zu mehr Direktbuchungen?',
+        a: 'Erste Verbesserungen bei Google Business Profile und lokalen Rankings sind nach 4–8 Wochen sichtbar. Spürbare Steigerungen bei Direktbuchungen setzen typischerweise nach 3–4 Monaten ein, wenn die technischen Optimierungen greifen und der Destination-Content indexiert ist. Nach 6 Monaten zeigen die meisten Hotels ein stabiles Wachstum von 20–40 % bei Direktbuchungen. SEO ist eine langfristige Investition — die Ergebnisse wachsen mit jedem Monat.',
+      },
+      {
+        q: 'Kann ich Booking.com komplett ersetzen?',
+        a: 'Das ist weder realistisch noch empfehlenswert. OTAs liefern nach wie vor internationale Reichweite und Sichtbarkeit für Gäste, die dein Hotel noch nicht kennen. Das Ziel ist ein gesundes Verhältnis: 50–65 % Direktbuchungen, der Rest über OTAs und andere Kanäle. So profitierst du von der Reichweite der Plattformen, ohne deine Marge zu ruinieren. Die erfolgreichsten Hotels nutzen OTAs als Schaufenster — und konvertieren Folgegäste über die eigene Website.',
+      },
+      {
+        q: 'Was bringt Destination-Content meinem Hotel?',
+        a: 'Destination-Content (Reiseführer, Stadtteil-Guides, Veranstaltungstipps) fängt Gäste in der Planungsphase ab — lange bevor sie auf Booking.com nach Preisen suchen. 81 % aller Reisenden beginnen ihre Planung mit einer Google-Suche. Wenn dein Hotel für „Sehenswürdigkeiten München“ oder „Oktoberfest Tipps“ rankt, bist du als Unterkunft bereits im Kopf des Gastes, noch bevor er einen Preisvergleich startet. Destination-Content baut zudem thematische Autorität auf, die dein gesamtes Domain-Ranking stärkt.',
+      },
+      {
+        q: 'Wie gehe ich mit negativen Google-Bewertungen um?',
+        a: 'Antworte sachlich, schnell und lösungsorientiert auf jede negative Bewertung. Bedanke dich für das Feedback, entschuldige dich für die schlechte Erfahrung und biete eine Lösung an (z. B. persönlichen Kontakt). Wichtig: Nie emotional oder defensiv reagieren. Potenzielle Gäste lesen deine Antworten und beurteilen danach, wie professionell du mit Kritik umgehst. Das Ziel ist nicht, die negative Bewertung zu entfernen, sondern durch deine Antwort und viele positive Bewertungen den Gesamteindruck zu stärken.',
       },
     ],
     relatedSlugs: [...REL.hotels],

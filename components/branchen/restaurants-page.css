@@ -1,0 +1,69 @@
+.branchen-page-restaurants {
+  --primary: #4f46e5;
+  --primary-dark: #3730a3;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --text: #1f2937;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --bg-light: #eef2ff;
+  --bg-faq: #f0fdf4;
+  --bg-cta: #fffbeb;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.branchen-page-restaurants h1 { color: var(--text); font-size: 2rem; margin: 0 0 24px; line-height: 1.3; }
+.branchen-page-restaurants h2 { color: var(--primary); font-size: 1.6rem; margin: 48px 0 20px; }
+.branchen-page-restaurants h3 { color: var(--primary-dark); font-size: 1.25rem; margin: 32px 0 16px; }
+.branchen-page-restaurants p { margin: 0 0 16px; }
+.branchen-page-restaurants a { color: var(--primary); }
+.branchen-page-restaurants .intro { background: var(--bg-light); border-left: 4px solid var(--primary); padding: 24px 28px; border-radius: 0 8px 8px 0; font-size: 1.05rem; margin-bottom: 32px; }
+.branchen-page-restaurants table { width: 100%; border-collapse: collapse; margin: 20px 0 28px; font-size: 0.95rem; }
+.branchen-page-restaurants th { background: var(--primary); color: #fff; padding: 12px 16px; text-align: left; font-weight: 600; }
+.branchen-page-restaurants td { padding: 10px 16px; border-bottom: 1px solid var(--border); }
+.branchen-page-restaurants tr:nth-child(even) td { background: #f9fafb; }
+.branchen-page-restaurants tr:hover td { background: var(--bg-light); }
+.branchen-page-restaurants ul, .branchen-page-restaurants ol { margin: 0 0 20px; padding-left: 24px; }
+.branchen-page-restaurants li { margin-bottom: 8px; }
+.branchen-page-restaurants .cta-box { background: var(--bg-cta); border: 2px solid var(--accent); border-radius: 8px; padding: 20px 24px; margin: 28px 0; font-size: 1rem; }
+.branchen-page-restaurants .cta-box a { color: var(--primary); font-weight: 700; }
+.branchen-page-restaurants .red-flag-list { list-style: none; padding-left: 0; }
+.branchen-page-restaurants .red-flag-list li { padding: 8px 0 8px 28px; position: relative; }
+.branchen-page-restaurants .red-flag-list li::before { content: '\26A0'; position: absolute; left: 0; font-size: 16px; line-height: 1; top: 8px; }
+.branchen-page-restaurants .checklist { list-style: none; padding-left: 0; }
+.branchen-page-restaurants .checklist li { padding: 6px 0 6px 28px; position: relative; }
+.branchen-page-restaurants .checklist li::before { content: '\2713'; position: absolute; left: 0; color: var(--secondary); font-weight: 700; font-size: 16px; line-height: 1; top: 8px; }
+.branchen-page-restaurants .faq-section { margin-top: 48px; }
+.branchen-page-restaurants .faq-item { margin-bottom: 24px; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; padding: 0; }
+.branchen-page-restaurants .faq-item:last-child { border-bottom: 1px solid var(--border); }
+.branchen-page-restaurants .faq-q { background: var(--bg-faq); padding: 14px 18px; font-weight: 600; font-size: 1rem; color: var(--text); }
+.branchen-page-restaurants .faq-a { padding: 14px 18px; color: var(--text-light); }
+.branchen-page-restaurants .faq-a p { margin: 0; }
+.branchen-page-restaurants .faq-a p + p { margin-top: 12px; }
+.branchen-page-restaurants .case-study { background: var(--bg-light); border-radius: 12px; padding: 28px; margin: 28px 0; }
+.branchen-page-restaurants .case-study h3 { margin-top: 0; }
+.branchen-page-restaurants .case-metric { display: inline-block; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 16px 20px; margin: 8px 8px 8px 0; text-align: center; min-width: 140px; }
+.branchen-page-restaurants .case-metric .metric-value { font-size: 1.5rem; font-weight: 800; color: var(--primary); display: block; }
+.branchen-page-restaurants .case-metric .metric-label { font-size: 0.82rem; color: var(--text-light); display: block; margin-top: 4px; }
+.branchen-page-restaurants .timeline { border-left: 3px solid var(--secondary); padding-left: 24px; margin: 20px 0 28px; }
+.branchen-page-restaurants .timeline::before { content: none; }
+.branchen-page-restaurants .timeline-item { margin-bottom: 20px; position: relative; }
+.branchen-page-restaurants .timeline-item::before { content: ''; position: absolute; left: -30px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--secondary); }
+.branchen-page-restaurants .timeline-item strong { color: var(--text); }
+.branchen-page-restaurants .cta-section { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 12px; padding: 40px; text-align: center; margin: 48px 0 16px; }
+.branchen-page-restaurants .cta-section h2 { color: #fff; border: none; margin: 0 0 16px; padding: 0; }
+.branchen-page-restaurants .cta-section p { color: rgba(255, 255, 255, 0.9); font-size: 1.05rem; margin-bottom: 24px; }
+.branchen-page-restaurants .cta-btn { display: inline-block; background: var(--secondary); color: #fff; font-weight: 700; font-size: 1.05rem; padding: 14px 36px; border-radius: 8px; text-decoration: none; transition: background 0.2s ease; }
+.branchen-page-restaurants .cta-btn:hover { background: #059669; }
+.branchen-page-restaurants .legal-box { background: #fef2f2; border-left: 4px solid #ef4444; padding: 24px 28px; border-radius: 0 8px 8px 0; margin: 20px 0 28px; }
+.branchen-page-restaurants .legal-box strong { color: #dc2626; }
+.branchen-page-restaurants .table-scroll { width: 100%; overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; margin: 20px 0 28px; }
+.branchen-page-restaurants .table-scroll table { margin: 0; }
+@media (max-width: 900px) { .branchen-page-restaurants .table-scroll table { width: max-content; min-width: 760px; } }
+@media (max-width: 640px) { .branchen-page-restaurants h1 { font-size: 1.5rem; } .branchen-page-restaurants .cta-section { padding: 28px 20px; } .branchen-page-restaurants .case-metric { display: block; min-width: unset; margin: 8px 0; } }

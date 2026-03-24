@@ -18,6 +18,8 @@ export interface BranchePageData {
   hubEmoji: string
   metaTitle: string
   metaDescription: string
+  /** Optional: für Meta keywords / SEO-Tools (z. B. Fokus-Keyword) */
+  focusKeyword?: string
   h1: string
   /** CTA: Patienten, Kunden, Mandanten … */
   ctaNoun: string

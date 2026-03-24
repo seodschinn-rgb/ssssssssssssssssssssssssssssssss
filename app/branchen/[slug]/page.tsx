@@ -11,6 +11,9 @@ import HandwerkerBrancheContent from '@/components/branchen/HandwerkerBrancheCon
 import SteuerberaterBrancheContent from '@/components/branchen/SteuerberaterBrancheContent'
 import AnwaelteBrancheContent from '@/components/branchen/AnwaelteBrancheContent'
 import ImmobilienmaklerBrancheContent from '@/components/branchen/ImmobilienmaklerBrancheContent'
+import RestaurantsBrancheContent from '@/components/branchen/RestaurantsBrancheContent'
+import PhysiotherapeutenBrancheContent from '@/components/branchen/PhysiotherapeutenBrancheContent'
+import HotelsBrancheContent from '@/components/branchen/HotelsBrancheContent'
 import { getAllBrancheSlugs, getBrancheBySlug } from '@/lib/branchen'
 
 interface PageProps {
@@ -28,6 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: { absolute: data.metaTitle },
     description: data.metaDescription,
+    ...(data.focusKeyword ? { keywords: data.focusKeyword } : {}),
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,
@@ -54,7 +58,7 @@ export default function BranchePage({ params }: PageProps) {
       <main className="pt-24">
         <div
           className={
-            data.slug === 'aerzte' || data.slug === 'zahnaerzte' || data.slug === 'handwerker' || data.slug === 'steuerberater' || data.slug === 'anwaelte' || data.slug === 'immobilienmakler'
+            data.slug === 'aerzte' || data.slug === 'zahnaerzte' || data.slug === 'handwerker' || data.slug === 'steuerberater' || data.slug === 'anwaelte' || data.slug === 'immobilienmakler' || data.slug === 'restaurants' || data.slug === 'physiotherapeuten' || data.slug === 'hotels'
               ? 'py-12 sm:py-16'
               : 'mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16'
           }
@@ -71,6 +75,12 @@ export default function BranchePage({ params }: PageProps) {
             <AnwaelteBrancheContent />
           ) : data.slug === 'immobilienmakler' ? (
             <ImmobilienmaklerBrancheContent />
+          ) : data.slug === 'restaurants' ? (
+            <RestaurantsBrancheContent />
+          ) : data.slug === 'physiotherapeuten' ? (
+            <PhysiotherapeutenBrancheContent />
+          ) : data.slug === 'hotels' ? (
+            <HotelsBrancheContent />
           ) : (
             <BrancheDetailContent data={data} />
           )}
