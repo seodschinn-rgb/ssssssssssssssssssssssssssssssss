@@ -392,6 +392,24 @@ article .entry-content img.wp-smiley {
 @media (max-width: 768px) {
   .blog-article .priority-grid { grid-template-columns: 1fr; }
   .blog-article .stat-grid { grid-template-columns: 1fr; }
+  .blog-article .article-wrapper .ranking-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .blog-article .article-wrapper .ranking-table thead,
+  .blog-article .article-wrapper .ranking-table tbody {
+    display: table;
+    width: max-content;
+    min-width: 760px;
+  }
+  .blog-article .article-wrapper .ranking-table th,
+  .blog-article .article-wrapper .ranking-table td {
+    white-space: nowrap;
+  }
 }
 
 /* SEO-Audit-Artikel & ähnliche „article-wrapper“-Layouts */
@@ -855,6 +873,10 @@ article .entry-content img.wp-smiley {
   }
   .blog-article .article-wrapper .tool-comparison {
     grid-template-columns: 1fr;
+  }
+  .blog-article .article-wrapper .ranking-table thead,
+  .blog-article .article-wrapper .ranking-table tbody {
+    min-width: 700px;
   }
 }
 `
