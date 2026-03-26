@@ -11,6 +11,7 @@ import { backlinkAufbauGrundlagenContent } from './blog-posts/backlink-aufbau-gr
 import { seoToolsAnfaengerContent } from './blog-posts/seo-tools-anfaenger-content'
 import { seoKosten2026Content } from './blog-posts/seo-kosten-2026-content'
 import { seoAuditChecklisteContent } from './blog-posts/seo-audit-checkliste-content'
+import { localSeoGuide2026Content } from './blog-posts/local-seo-guide-2026-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -22,6 +23,8 @@ export interface BlogPost {
   title: string
   metaTitle: string
   metaDescription: string
+  /** Optional: Fokus-Keyword für Meta keywords */
+  focusKeyword?: string
   category: string
   content: string
   /** Optional: Pfad zum Thumbnail (z. B. /images/blog/slug.png) */
@@ -33,6 +36,60 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'local-seo-guide',
+    title: 'Local SEO Guide 2026: So wirst du lokal bei Google gefunden',
+    metaTitle: 'Local SEO Guide 2026 – Lokal bei Google gefunden',
+    metaDescription:
+      'Local SEO Guide 2026: Google Business Profile, Bewertungen, Citations & KI-Suche optimieren. Mit Checkliste und Ranking-Faktoren. Jetzt lokal durchstarten!',
+    focusKeyword: 'Local SEO Guide 2026',
+    category: 'local-seo',
+    content: localSeoGuide2026Content,
+    image: '/images/blog/local-seo-guide-thumbnail.webp',
+    imageAlt: 'Local SEO Guide 2026: Lokal bei Google gefunden',
+    faqs: [
+      {
+        question: 'Was kostet Local SEO?',
+        answer:
+          'Die Kosten für Local SEO variieren je nach Umfang und Wettbewerb. Für kleine lokale Unternehmen beginnen professionelle Pakete ab ca. 500–1.000 EUR pro Monat. Mittelständler mit mehreren Standorten investieren typischerweise 1.500–3.000 EUR monatlich.',
+      },
+      {
+        question: 'Wie lange dauert es, bis Local SEO Ergebnisse zeigt?',
+        answer:
+          'Erste Verbesserungen im Local Pack sind oft schon nach 4–8 Wochen sichtbar, besonders durch GBP-Optimierung und Bewertungsaufbau. Nachhaltige Top-3-Platzierungen in umkämpften Märkten erfordern in der Regel 3–6 Monate systematischer Arbeit.',
+      },
+      {
+        question: 'Brauche ich Local SEO, wenn ich kein physisches Geschäft habe?',
+        answer:
+          "Ja, wenn du Kunden in einer bestimmten Region bedienst. Google bietet für Unternehmen ohne öffentlichen Standort die Option 'Einzugsgebiet' im GBP. Handwerker, Berater, mobile Dienstleister und Agenturen profitieren davon, auch ohne Laufkundschaft lokal sichtbar zu sein.",
+      },
+      {
+        question: 'Was ist der Unterschied zwischen Local SEO und normalem SEO?',
+        answer:
+          'Klassische SEO zielt auf landesweite oder internationale Rankings. Local SEO fokussiert sich auf Sichtbarkeit in einem bestimmten geografischen Gebiet – im Local Pack (Google Maps), in den lokalen organischen Ergebnissen und seit 2025 auch in KI-generierten lokalen Antworten.',
+      },
+      {
+        question: 'Wie wichtig sind Bewertungen für das lokale Ranking?',
+        answer:
+          'Bewertungen machen laut Whitespark 2026 rund 16 % des lokalen Rankings aus – der zweitstärkste Faktor nach dem GBP selbst. Dabei zählen nicht nur die Sternezahl, sondern auch die Anzahl, Aktualität, Antwortrate und der Inhalt der Bewertungen.',
+      },
+      {
+        question: 'Kann ich Local SEO selbst machen oder brauche ich eine Agentur?',
+        answer:
+          'Die Grundlagen (GBP-Profil pflegen, um Bewertungen bitten, NAP-Daten konsistent halten) kannst du selbst umsetzen. Sobald es um technische Optimierung, Wettbewerbsanalyse, strukturierte Daten oder die Skalierung auf mehrere Standorte geht, lohnt sich professionelle Unterstützung.',
+      },
+      {
+        question: 'Was ändert sich durch KI-Suche für lokale Unternehmen?',
+        answer:
+          'AI Local Packs zeigen nur noch 32 % so viele Unternehmen wie das traditionelle 3-Pack. Das bedeutet weniger Plätze und härterer Wettbewerb. Gleichzeitig werden Citations, strukturierte Daten und Bewertungsinhalte wichtiger, weil KI-Systeme diese als Vertrauensquellen nutzen.',
+      },
+      {
+        question: 'Welche Branchen profitieren am meisten von Local SEO?',
+        answer:
+          'Grundsätzlich profitiert jedes Unternehmen mit lokalem Kundenbezug. Besonders stark ist der Effekt bei Gastronomie, Handwerk, ärztlichen Praxen, Rechtsanwälten, Steuerberatern, Immobilienmaklern, Fitness-Studios, Einzelhandel und Dienstleistern aller Art.',
+      },
+    ],
+  },
   {
     slug: 'seo-audit-checkliste',
     title: 'SEO Audit 2026: Der komplette Leitfaden mit Checkliste',

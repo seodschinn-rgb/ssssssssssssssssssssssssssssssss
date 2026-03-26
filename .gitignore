@@ -8,6 +8,12 @@ out/
 # Env-Dateien (API-Keys nie committen!)
 .env
 .env*.local
+
+# DataForSEO – lokale Zugangsdaten (Python)
+# (Dashboard-Bereich „SEO Keyword Tool“ / API Access – Login + API-Passwort)
+scripts/dataforseo_config.py
+scripts/seo_keyword_tool_config.py
+scripts/dataforseo_last_response.json
 .env.development.local
 .env.test.local
 .env.production.local

@@ -453,6 +453,30 @@ article .entry-content img.wp-smiley {
   border-radius: 0 8px 8px 0;
   margin-bottom: 2rem;
 }
+.blog-article .article-wrapper .hero-intro {
+  background: linear-gradient(135deg, #eef2ff, #ecfdf5);
+  border-left: 5px solid var(--audit-primary);
+  border-radius: 12px;
+  padding: 1.6rem 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+}
+.blog-article .article-wrapper .toc-box {
+  background: #eef2ff;
+  border: 1px solid var(--audit-primary);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+.blog-article .article-wrapper .toc-box h2 {
+  margin-top: 0;
+  border-left: none;
+  padding-left: 0;
+}
+.blog-article .article-wrapper .toc-box ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
 .blog-article .article-wrapper .toc {
   background: #f9fafb;
   border: 1px solid var(--audit-border);
@@ -522,6 +546,46 @@ article .entry-content img.wp-smiley {
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
   border-radius: 0 8px 8px 0;
+}
+.blog-article .article-wrapper .info-box {
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+.blog-article .article-wrapper .info-box.tip {
+  background: #ecfdf5;
+  border-left: 5px solid #10b981;
+}
+.blog-article .article-wrapper .info-box.warning {
+  background: #fff7ed;
+  border-left: 5px solid #f59e0b;
+}
+.blog-article .article-wrapper .info-box.info {
+  background: #eef2ff;
+  border-left: 5px solid var(--audit-primary);
+}
+.blog-article .article-wrapper .ranking-table .bar {
+  display: inline-block;
+  height: 10px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, var(--audit-primary), var(--audit-secondary));
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+.blog-article .article-wrapper .checklist {
+  list-style: none;
+  padding-left: 0;
+}
+.blog-article .article-wrapper .checklist li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 2rem;
+  border-bottom: 1px solid var(--audit-border);
+}
+.blog-article .article-wrapper .checklist li::before {
+  content: '☐';
+  position: absolute;
+  left: 0;
+  color: var(--audit-primary);
 }
 .blog-article .article-wrapper .danger-box {
   background: #fef2f2;
@@ -616,6 +680,40 @@ article .entry-content img.wp-smiley {
 .blog-article .article-wrapper .cta-section a:hover {
   color: #e0e7ff;
 }
+.blog-article .article-wrapper .cta-box {
+  background: linear-gradient(135deg, var(--audit-primary), var(--audit-primary-dark));
+  color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  text-align: center;
+}
+.blog-article .article-wrapper .cta-box h2 {
+  color: #fff;
+  border: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+.blog-article .article-wrapper .cta-box p {
+  color: rgba(255, 255, 255, 0.92);
+}
+.blog-article .article-wrapper .cta-box a.cta-btn {
+  display: inline-block;
+  background: #10b981;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.85rem 2rem;
+  margin: 0.5rem 0.35rem;
+}
+.blog-article .article-wrapper .cta-box a.cta-btn:hover {
+  background: #34d399;
+}
+.blog-article .article-wrapper .cta-box .cta-contact {
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
 /* Statische FAQ (nicht Accordion) — überschreibt globales .faq-answer { display:none } */
 .blog-article .article-wrapper .faq-item {
   border-bottom: 1px solid var(--audit-border);
@@ -648,6 +746,27 @@ article .entry-content img.wp-smiley {
   display: block !important;
   padding: 0 !important;
   color: var(--audit-text-secondary);
+}
+.blog-article .article-wrapper details.faq-item {
+  border: 1px solid var(--audit-border);
+  border-radius: 10px;
+  padding: 0;
+  margin-bottom: 0.75rem;
+  background: #fff;
+}
+.blog-article .article-wrapper details.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.95rem 1.2rem;
+  font-weight: 700;
+  color: var(--audit-primary-dark);
+  background: #f9fafb;
+}
+.blog-article .article-wrapper details.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+.blog-article .article-wrapper details.faq-item .faq-answer {
+  padding: 0.9rem 1.2rem 1rem !important;
 }
 .blog-article .article-wrapper figure {
   margin: 1.5rem 0;
@@ -756,6 +875,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: { absolute: post.metaTitle },
       description: post.metaDescription,
+      ...(post.focusKeyword ? { keywords: post.focusKeyword } : {}),
       openGraph: {
         title: post.metaTitle,
         description: post.metaDescription,

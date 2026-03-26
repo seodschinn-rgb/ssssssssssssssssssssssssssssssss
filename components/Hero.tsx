@@ -133,22 +133,43 @@ export default function Hero({
                     </Link>
                   </div>
                 )}
-                <div className="mt-3 sm:mt-5 md:mt-6 lg:mt-8 grid grid-cols-2 md:grid-cols-2 lg:flex lg:flex-wrap gap-2 md:gap-3 lg:gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-zinc-100/90 md:bg-zinc-100/80 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-700 ring-1 ring-zinc-200/60 backdrop-blur-sm min-w-0">
+                <div className="mt-3 sm:mt-5 md:mt-6 lg:mt-8 grid grid-cols-2 gap-2 md:gap-3 lg:hidden">
+                  <span className="inline-flex items-center gap-2 rounded-xl bg-zinc-100/90 md:bg-zinc-100/80 px-3 py-2.5 md:py-3 md:px-4 text-xs sm:text-sm text-zinc-700 ring-1 ring-zinc-200/60 backdrop-blur-sm min-w-0">
                     <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-emerald-500 flex-shrink-0" />
                     <span className="break-words">47+ Unternehmen vertrauen uns</span>
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-accent/10 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-800 ring-1 ring-accent/20 min-w-0">
+                  <span className="inline-flex items-center gap-2 rounded-xl bg-accent/10 px-3 py-2.5 md:py-3 md:px-4 text-xs sm:text-sm text-zinc-800 ring-1 ring-accent/20 min-w-0">
                     <span className="font-bold text-accent flex-shrink-0">+312%</span>
                     <span className="break-words">mehr Traffic (Ø Kundenergebnis)</span>
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-amber-50 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-700 ring-1 ring-amber-200/60 min-w-0">
+                  <span className="inline-flex items-center gap-2 rounded-xl bg-amber-50 px-3 py-2.5 md:py-3 md:px-4 text-xs sm:text-sm text-zinc-700 ring-1 ring-amber-200/60 min-w-0">
                     <span className="font-semibold text-zinc-900 break-words">Erste Seite bei Google — 3–6 Mon.</span>
                   </span>
-                  <span className="inline-flex items-center gap-2 rounded-xl lg:rounded-full bg-zinc-100/90 md:bg-zinc-100/80 px-3 py-2.5 md:py-3 md:px-4 lg:py-2 text-xs sm:text-sm text-zinc-700 ring-1 ring-zinc-200/60 min-w-0">
+                  <span className="inline-flex items-center gap-2 rounded-xl bg-zinc-100/90 md:bg-zinc-100/80 px-3 py-2.5 md:py-3 md:px-4 text-xs sm:text-sm text-zinc-700 ring-1 ring-zinc-200/60 min-w-0">
                     <span className="font-bold text-accent flex-shrink-0">100+</span>
                     <span className="break-words">Projekte erfolgreich umgesetzt</span>
                   </span>
+                </div>
+                <div className="mt-8 hidden lg:grid lg:grid-cols-2 lg:gap-3">
+                  <div className="space-y-3">
+                    <span className="inline-flex w-full items-center gap-2 rounded-full bg-zinc-100/90 px-4 py-2 text-sm text-zinc-700 ring-1 ring-zinc-200/60 backdrop-blur-sm min-w-0">
+                      <span className="inline-flex h-2 w-2 shrink-0 rounded-full bg-emerald-500 flex-shrink-0" />
+                      <span className="break-words">47+ Unternehmen vertrauen uns</span>
+                    </span>
+                    <span className="inline-flex w-full items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm text-zinc-800 ring-1 ring-accent/20 min-w-0">
+                      <span className="font-bold text-accent flex-shrink-0">+312%</span>
+                      <span className="break-words">mehr Traffic (Ø Kundenergebnis)</span>
+                    </span>
+                  </div>
+                  <div className="space-y-3">
+                    <span className="inline-flex w-full items-center gap-2 rounded-full bg-amber-50 px-4 py-2 text-sm text-zinc-700 ring-1 ring-amber-200/60 min-w-0">
+                      <span className="font-semibold text-zinc-900 break-words">Erste Seite bei Google — 3–6 Mon.</span>
+                    </span>
+                    <span className="inline-flex w-full items-center gap-2 rounded-full bg-zinc-100/90 px-4 py-2 text-sm text-zinc-700 ring-1 ring-zinc-200/60 min-w-0">
+                      <span className="font-bold text-accent flex-shrink-0">100+</span>
+                      <span className="break-words">Projekte erfolgreich umgesetzt</span>
+                    </span>
+                  </div>
                 </div>
               </div>
               <div className="mt-10 sm:mt-8 md:mt-8 lg:mt-0 lg:shrink-0 w-full min-w-0 md:max-w-xl md:mx-auto lg:mx-0 lg:max-w-none lg:w-[420px] h-[480px] sm:h-[520px] md:h-[520px] lg:h-[560px]">
