@@ -348,7 +348,7 @@ export const googleBusinessProfileOptimieren2026Content = `
 
 <div class="info-box warning">
   <strong>Achtung: Kaufe niemals Bewertungen!</strong>
-  Google erkennt gek&auml;ngte Bewertungsmuster immer besser. Die Konsequenzen reichen vom L&ouml;schen aller gek&auml;uften Reviews &uuml;ber eine Profil-Suspendierung bis hin zu einem dauerhaften &bdquo;Betrugs-Badge&ldquo; auf deinem Profil.
+  Google erkennt gekaufte Bewertungsmuster immer besser. Die Konsequenzen reichen vom L&ouml;schen aller gekauften Reviews &uuml;ber eine Profil-Suspendierung bis hin zu einem dauerhaften &bdquo;Betrugs-Badge&ldquo; auf deinem Profil.
 </div>
 
 <h2 id="maps-ranking">Google Maps Ranking verbessern &mdash; Die Ranking-Faktoren 2026</h2>
@@ -424,7 +424,7 @@ export const googleBusinessProfileOptimieren2026Content = `
   <li><strong>Spam-Kategorien:</strong> Irrelevante Kategorien, die nur auf mehr Sichtbarkeit abzielen.</li>
   <li><strong>Keywords im Unternehmensnamen:</strong> Keyword-Stuffing wie &bdquo;Beste Pizzeria M&uuml;nchen Lieferservice 24h&ldquo;.</li>
   <li><strong>Virtuelle B&uuml;roadressen:</strong> Co-Working-Spaces oder Briefkastenb&uuml;ros ohne dauerhafte physische Pr&auml;senz.</li>
-  <li><strong>Gek&auml;ufte Bewertungen:</strong> Auffallende Bewertungsmuster, die auf Manipulation hindeuten.</li>
+  <li><strong>Gekaufte Bewertungen:</strong> Auffallende Bewertungsmuster, die auf Manipulation hindeuten.</li>
 </ul>
 
 <h3>So gehst du bei einer Suspendierung vor</h3>
