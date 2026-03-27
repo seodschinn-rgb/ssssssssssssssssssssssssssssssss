@@ -21,19 +21,22 @@ import ClientErrorBoundary from '@/components/ClientErrorBoundary'
 import { getReadingTimeMinutes } from '@/lib/reading-time'
 
 const BLOG_ARTICLE_STYLE = `
-article img.emoji,
-article img.wp-smiley,
-article .emoji,
-article .entry-content img.emoji,
-article .entry-content img.wp-smiley {
+/* Twemoji / WordPress-Emoji: nur echte img-Tags (kein .emoji auf div/span — sonst Layout-Crash) */
+.blog-article img.emoji,
+.blog-article img.wp-smiley,
+.blog-article img[src^="https://s.w.org/images/core/emoji/"],
+.blog-article img[src*="twemoji"] {
   width: 1em !important;
   height: 1em !important;
+  max-width: 1.25em !important;
+  min-width: 0 !important;
   display: inline !important;
-  vertical-align: -0.1em !important;
-  margin: 0 0.1em !important;
+  vertical-align: -0.125em !important;
+  margin: 0 0.08em !important;
   padding: 0 !important;
   border: none !important;
   box-shadow: none !important;
+  object-fit: contain !important;
 }
 /* Hierarchie wie im HTML: h1 = Titel, h2 = Hauptabschnitte, h3 = Unterabschnitte, h4 = z. B. Karten-Titel */
 .blog-article h1 {
@@ -410,6 +413,22 @@ article .entry-content img.wp-smiley {
   .blog-article .article-wrapper .ranking-table td {
     white-space: nowrap;
   }
+  .blog-article .article-wrapper .compare-table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .blog-article .article-wrapper .compare-table thead,
+  .blog-article .article-wrapper .compare-table tbody {
+    display: table;
+    width: max-content;
+    min-width: 520px;
+  }
+  .blog-article .article-wrapper .compare-table th,
+  .blog-article .article-wrapper .compare-table td {
+    white-space: nowrap;
+  }
 }
 
 /* SEO-Audit-Artikel & ähnliche „article-wrapper“-Layouts */
@@ -604,6 +623,8 @@ article .entry-content img.wp-smiley {
   position: absolute;
   left: 0;
   color: var(--audit-primary);
+  font-size: 1rem;
+  line-height: 1;
 }
 .blog-article .article-wrapper .danger-box {
   background: #fef2f2;
@@ -731,6 +752,42 @@ article .entry-content img.wp-smiley {
 .blog-article .article-wrapper .cta-box .cta-contact {
   margin-top: 1rem;
   color: rgba(255, 255, 255, 0.85);
+}
+.blog-article .article-wrapper .cta-box a.cta-btn--secondary {
+  background: rgba(255, 255, 255, 0.15);
+}
+.blog-article .article-wrapper .cta-box a.cta-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+.blog-article .article-wrapper .update-badge {
+  display: inline-block;
+  background: #10b981;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.blog-article .article-wrapper .template-box {
+  background: #f9fafb;
+  border: 1px solid var(--audit-border);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.25rem 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+.blog-article .article-wrapper .template-box strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--audit-primary);
+}
+.blog-article .article-wrapper .compare-table {
+  width: 100%;
+  border-collapse: collapse;
 }
 /* Statische FAQ (nicht Accordion) — überschreibt globales .faq-answer { display:none } */
 .blog-article .article-wrapper .faq-item {

@@ -12,6 +12,7 @@ import { seoToolsAnfaengerContent } from './blog-posts/seo-tools-anfaenger-conte
 import { seoKosten2026Content } from './blog-posts/seo-kosten-2026-content'
 import { seoAuditChecklisteContent } from './blog-posts/seo-audit-checkliste-content'
 import { localSeoGuide2026Content } from './blog-posts/local-seo-guide-2026-content'
+import { googleBusinessProfileOptimieren2026Content } from './blog-posts/google-business-profile-optimieren-2026-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -36,6 +37,60 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'google-business-profile-optimieren',
+    title: 'Google Business Profile optimieren 2026: Der komplette Leitfaden',
+    metaTitle: 'Google Business Profile optimieren 2026 | Kompletter Leitfaden',
+    metaDescription:
+      'Google Business Profile optimieren 2026: Einrichtung, 10 Profi-Tipps, Bewertungsstrategie (DSGVO), Ranking-Faktoren & KI-Suche. Jetzt GBP perfekt aufstellen!',
+    focusKeyword: 'Google Business Profile optimieren',
+    category: 'local-seo',
+    content: googleBusinessProfileOptimieren2026Content,
+    image: '/images/blog/gbp-guide-thumbnail.webp',
+    imageAlt: 'Google Business Profile optimieren 2026: Leitfaden und Tipps',
+    faqs: [
+      {
+        question: 'Was kostet Google Business Profile?',
+        answer:
+          'Google Business Profile ist komplett kostenlos. Du zahlst nichts für die Erstellung, Verwaltung oder Optimierung deines Profils. Kosten entstehen nur, wenn du zusätzlich Google Ads oder professionelle Optimierungshilfe durch eine Local-SEO-Agentur in Anspruch nimmst.',
+      },
+      {
+        question: 'Wie lange dauert es, bis GBP-Optimierungen wirken?',
+        answer:
+          'Erste Verbesserungen sind häufig schon nach 2–4 Wochen sichtbar, besonders bei Grundlagen wie Kategorieanpassung und vollständigem Profil. Nachhaltige Ranking-Verbesserungen durch Bewertungsaufbau und lokale Backlinks benötigen typischerweise 3–6 Monate.',
+      },
+      {
+        question: 'Wie wichtig sind Bewertungen für das Google-Maps-Ranking?',
+        answer:
+          'Bewertungen machen laut Whitespark 2026 rund 20 % des lokalen Rankings aus — der zweitstärkste Faktor nach dem GBP selbst. Entscheidend sind Anzahl, Durchschnittsbewertung, Aktualität, Antwortrate und der inhaltliche Kontext.',
+      },
+      {
+        question: 'Was ist der Unterschied zwischen Google Business Profile und Google My Business?',
+        answer:
+          'Es gibt keinen inhaltlichen Unterschied — Google hat den Dienst 2022 von „Google My Business“ in „Google Business Profile“ umbenannt. Die Funktionen sind identisch, nur der Name und die Verwaltungsoberfläche haben sich geändert.',
+      },
+      {
+        question: 'Kann ich Google Business Profile ohne physischen Standort nutzen?',
+        answer:
+          'Ja, über die Option „Einzugsgebiet“ (Service Area Business). Du definierst die Regionen, die du bedienst, ohne eine öffentliche Adresse anzuzeigen. Allerdings haben SABs einen strukturellen Ranking-Nachteil gegenüber Geschäften mit physischem Standort.',
+      },
+      {
+        question: 'Wie kann ich Fake-Bewertungen entfernen lassen?',
+        answer:
+          'Melde die Bewertung über die drei Punkte neben dem Eintrag als „unangemessen“. Bei eindeutig falschen Bewertungen kontaktiere den Google-Support direkt. Google prüft den Fall und entfernt die Bewertung innerhalb von ca. 5–20 Werktagen, wenn ein Verstoß vorliegt.',
+      },
+      {
+        question: 'Wie oft sollte ich mein GBP aktualisieren?',
+        answer:
+          'Mindestens wöchentlich durch neue Posts und Fotos. Öffnungszeiten und Stammdaten solltest du sofort aktualisieren, wenn sich etwas ändert. Sonderöffnungszeiten für Feiertage trägst du idealerweise quartalsweise im Voraus ein.',
+      },
+      {
+        question: 'Was bringt GBP-Optimierung für meine Branche konkret?',
+        answer:
+          'Das hängt von deiner Branche und dem lokalen Wettbewerb ab. In den meisten Fällen ist GBP-Optimierung die effizienteste Local-SEO-Maßnahme mit dem besten Kosten-Nutzen-Verhältnis. Spezifische Strategien gibt es für Zahnärzte, Ärzte, Handwerker, Anwälte, Steuerberater, Immobilienmakler, Restaurants, Physiotherapeuten, Hotels und Kfz-Werkstätten.',
+      },
+    ],
+  },
   {
     slug: 'local-seo-guide',
     title: 'Local SEO Guide 2026: So wirst du lokal bei Google gefunden',

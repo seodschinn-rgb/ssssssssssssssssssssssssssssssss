@@ -73,6 +73,16 @@
     overflow-wrap: break-word;
     word-break: break-word;
   }
+  /*
+   * Header/Footer-Navigation: kein erzwungener Wortumbruch auf Listeneinträgen.
+   * Sonst können Flex-Zeilen mit SVG-Icons (w-full/h-full) und Dropdowns falsch skalieren —
+   * typisch: „riesige“ Icons oder zerrissenes Layout.
+   */
+  header li,
+  footer li {
+    overflow-wrap: normal;
+    word-break: normal;
+  }
   main,
   section,
   article,
