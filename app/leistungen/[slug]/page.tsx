@@ -23,6 +23,13 @@ const heroIconGradients: Record<Leistung['color'], string> = {
 }
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import ServiceSchema from '@/components/ServiceSchema'
+import GeoAgenturLeistungPage from '@/components/GeoAgenturLeistungPage'
+
+const GEO_AGENTUR_META = {
+  title: 'GEO Agentur',
+  description:
+    'GEO-Agentur in München: Sichtbarkeit in KI-Suche, ChatGPT, Google AI Overviews & Perplexity. Audit, Content für Zitate, Entity-Optimierung, technisches GEO & Monitoring.',
+} as const
 
 interface PageProps {
   params: { slug: string }
@@ -33,6 +40,17 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  if (params.slug === 'geo-agentur') {
+    const fullTitle = `${GEO_AGENTUR_META.title} | SEO Agentur München`
+    return {
+      title: { absolute: fullTitle },
+      description: GEO_AGENTUR_META.description,
+      openGraph: {
+        title: fullTitle,
+        description: GEO_AGENTUR_META.description,
+      },
+    }
+  }
   const content = getLeistungContent(params.slug)
   if (!content) return { title: 'Leistung' }
   return {
@@ -46,6 +64,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default function LeistungPage({ params }: PageProps) {
+  if (params.slug === 'geo-agentur') {
+    return <GeoAgenturLeistungPage />
+  }
+
   const leistung = getLeistungBySlug(params.slug)
   const content = getLeistungContent(params.slug)
 

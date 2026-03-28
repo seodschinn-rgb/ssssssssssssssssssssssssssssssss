@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    // Reduziert kaputte vendor-chunks für framer-motion (Header) bei Dev/OneDrive.
+    serverComponentsExternalPackages: ['framer-motion'],
+  },
   async redirects() {
     return [
       { source: '/branche', destination: '/branchen', permanent: true },

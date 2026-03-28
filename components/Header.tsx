@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
-import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import Logo from './Logo'
 import LeistungIcons from './LeistungIcons'
@@ -108,15 +107,8 @@ export default function Header() {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </Link>
-                  <AnimatePresence>
                     {link.dropdown === 'leistungen' && leistungenOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute left-0 top-full pt-2"
-                      >
+                      <div className="absolute left-0 top-full pt-2">
                         <div className="min-w-[420px] rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
                           <Link
                             href="/leistungen"
@@ -150,16 +142,10 @@ export default function Header() {
                             ))}
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     )}
                     {link.dropdown === 'branchen' && branchenOpen && (
-                      <motion.div
-                        initial={{ opacity: 0, y: -8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -8 }}
-                        transition={{ duration: 0.15 }}
-                        className="absolute left-0 top-full pt-2"
-                      >
+                      <div className="absolute left-0 top-full pt-2">
                         <div className="min-w-[500px] rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
                           <Link
                             href="/branchen"
@@ -197,9 +183,8 @@ export default function Header() {
                             ))}
                           </div>
                         </div>
-                      </motion.div>
+                      </div>
                     )}
-                  </AnimatePresence>
                 </>
               ) : (
                 <Link
@@ -261,13 +246,8 @@ export default function Header() {
               style={{ zIndex: 9998 }}
               aria-hidden="true"
             />
-            <AnimatePresence>
-              <motion.div
+              <div
                 id="mobile-menu"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2 }}
                 className="lg:hidden fixed left-0 right-0 top-16 bottom-0 z-[9999] flex flex-col bg-white"
               >
                 {/* Menüpunkte + Unterpunkte – scrollbar, explizite Höhe damit Inhalt sichtbar ist */}
@@ -298,16 +278,11 @@ export default function Header() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                               </svg>
                             </button>
-                            <AnimatePresence>
-                              {mobileLeistungenOpen && (
-                                <motion.ul
-                                  id="mobile-leistungen-list"
-                                  initial={{ opacity: 0 }}
-                                  animate={{ opacity: 1 }}
-                                  exit={{ opacity: 0 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
-                                >
+                            {mobileLeistungenOpen && (
+                              <ul
+                                id="mobile-leistungen-list"
+                                className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
+                              >
                                   <li>
                                     <Link
                                       href={link.href}
@@ -331,9 +306,8 @@ export default function Header() {
                                       </Link>
                                     </li>
                                   ))}
-                                </motion.ul>
-                              )}
-                            </AnimatePresence>
+                              </ul>
+                            )}
                           </div>
                         ) : link.dropdown === 'branchen' ? (
                           <div className="py-1">
@@ -355,16 +329,11 @@ export default function Header() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                               </svg>
                             </button>
-                            <AnimatePresence>
-                              {mobileBranchenOpen && (
-                                <motion.ul
-                                  id="mobile-branchen-list"
-                                  initial={{ opacity: 0 }}
-                                  animate={{ opacity: 1 }}
-                                  exit={{ opacity: 0 }}
-                                  transition={{ duration: 0.2 }}
-                                  className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
-                                >
+                            {mobileBranchenOpen && (
+                              <ul
+                                id="mobile-branchen-list"
+                                className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
+                              >
                                   <li>
                                     <Link
                                       href={link.href}
@@ -391,9 +360,8 @@ export default function Header() {
                                       </Link>
                                     </li>
                                   ))}
-                                </motion.ul>
-                              )}
-                            </AnimatePresence>
+                              </ul>
+                            )}
                           </div>
                         ) : (
                           <Link
@@ -431,8 +399,7 @@ export default function Header() {
                     Termin buchen
                   </Link>
                 </div>
-              </motion.div>
-            </AnimatePresence>
+              </div>
           </>,
           document.body
         )}

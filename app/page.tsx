@@ -12,6 +12,7 @@ import HomePricingSection from '@/components/HomePricingSection'
 import HomeBlogTeaser from '@/components/HomeBlogTeaser'
 import CityLinks from '@/components/CityLinks'
 import HomeFAQSection from '@/components/HomeFAQSection'
+import HomeSeoTextSection from '@/components/HomeSeoTextSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import HomePageSchema from '@/components/HomePageSchema'
@@ -52,6 +53,7 @@ export default function Home() {
         <HomeBlogTeaser />
         <CityLinks />
         <HomeFAQSection />
+        <HomeSeoTextSection />
         <ContactSection />
       </main>
       <Footer />

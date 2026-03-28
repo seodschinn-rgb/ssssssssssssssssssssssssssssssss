@@ -101,6 +101,15 @@ export default function KontaktPageContent() {
           </a>
         </div>
 
+        <div className="mb-14 text-center text-sm text-zinc-500">
+          <p>
+            Alternativ erreichen Sie uns per E-Mail:{' '}
+            <a href="mailto:info@seomuenchen.com" className="font-medium text-indigo-600 hover:underline">
+              info@seomuenchen.com
+            </a>
+          </p>
+        </div>
+
         <div className="mb-14">
           <BookingCalendar
             selectedDate={selectedDate}
@@ -180,15 +189,6 @@ export default function KontaktPageContent() {
               {status === 'sending' ? 'Wird gesendet…' : 'Termin anfragen'}
             </button>
           </form>
-        </div>
-
-        <div className="mt-12 text-center text-sm text-zinc-500">
-          <p>
-            Alternativ erreichen Sie uns per E-Mail:{' '}
-            <a href="mailto:info@seomuenchen.com" className="font-medium text-indigo-600 hover:underline">
-              info@seomuenchen.com
-            </a>
-          </p>
         </div>
       </div>
     </section>

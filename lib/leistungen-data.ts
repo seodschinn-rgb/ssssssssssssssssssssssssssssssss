@@ -76,6 +76,14 @@ export const LEISTUNGEN: Leistung[] = [
     icon: 'document',
     color: 'cyan',
   },
+  {
+    slug: 'geo-agentur',
+    title: 'GEO Agentur',
+    shortDescription:
+      'Generative Engine Optimization: Sichtbarkeit in ChatGPT, Google AI Overviews, Perplexity und Co. — zitiert und empfohlen werden, nicht nur in den blauen Links.',
+    icon: 'search',
+    color: 'violet',
+  },
 ]
 
 export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
