@@ -936,6 +936,263 @@ const BLOG_ARTICLE_STYLE = `
     min-width: 700px;
   }
 }
+
+/* „SEO für kleine Unternehmen“ — sm-article (überarbeiteter Stand-alone-Look) */
+.blog-article .sm-article {
+  --sm-primary: #4f46e5;
+  --sm-primary-dark: #3730a3;
+  --sm-secondary: #10b981;
+  --sm-accent: #f59e0b;
+  --sm-text: #1f2937;
+  --sm-text-light: #6b7280;
+  --sm-border: #e5e7eb;
+  --sm-bg-light: #eef2ff;
+  --sm-bg-faq: #f0fdf4;
+  --sm-bg-cta: #fffbeb;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  color: var(--sm-text);
+  line-height: 1.7;
+}
+.blog-article .sm-article h1 {
+  color: var(--sm-text);
+  font-size: 2rem;
+  margin: 0 0 24px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+.blog-article .sm-article h2 {
+  color: var(--sm-primary);
+  font-size: 1.6rem;
+  margin: 48px 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--sm-primary);
+  border-left: none;
+  padding-left: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+.blog-article .sm-article h2#warum-seo-lohnt {
+  margin-top: 0;
+}
+.blog-article .sm-article .fazit h2 {
+  margin-top: 0;
+}
+.blog-article .sm-article h3 {
+  color: var(--sm-primary-dark);
+  font-size: 1.25rem;
+  margin: 32px 0 16px;
+  font-weight: 700;
+}
+.blog-article .sm-article p {
+  margin: 0 0 16px;
+  line-height: 1.7;
+}
+.blog-article .sm-article .intro {
+  background: var(--sm-bg-light);
+  border-left: 4px solid var(--sm-primary);
+  padding: 24px 28px;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.05rem;
+  margin-bottom: 32px;
+}
+.blog-article .sm-article .intro p:last-child {
+  margin-bottom: 0;
+}
+.blog-article .sm-meta {
+  color: var(--sm-text-light);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+.blog-article .sm-toc {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 36px;
+}
+.blog-article .sm-toc-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+  color: var(--sm-primary);
+}
+.blog-article .sm-toc ol {
+  margin: 0;
+  padding-left: 20px;
+  line-height: 2;
+}
+.blog-article .sm-toc a {
+  text-decoration: none;
+  color: var(--sm-primary);
+  font-weight: 500;
+}
+.blog-article .sm-toc a:hover {
+  text-decoration: underline;
+}
+/* Desktop: gleiches TOC nur noch links (BlogTocDesktopWrapper); Inline-TOC ausblenden */
+@media (min-width: 1024px) {
+  .blog-article .sm-toc {
+    display: none;
+  }
+}
+.blog-article .sm-article .sm-table-wrap {
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  -webkit-overflow-scrolling: touch;
+}
+.blog-article .sm-article .sm-table-wrap table {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.blog-article .sm-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0 28px;
+  font-size: 0.95rem;
+}
+.blog-article .sm-article th {
+  background: var(--sm-primary);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 600;
+}
+.blog-article .sm-article td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--sm-border);
+}
+.blog-article .sm-article tbody tr:nth-child(even) td {
+  background: #f9fafb;
+}
+.blog-article .sm-article tbody tr:hover td {
+  background: var(--sm-bg-light);
+}
+.blog-article .sm-article ul,
+.blog-article .sm-article ol {
+  margin: 0 0 20px;
+  padding-left: 24px;
+}
+.blog-article .sm-article li {
+  margin-bottom: 8px;
+}
+.blog-article .sm-article .cta-box {
+  background: var(--sm-bg-cta) !important;
+  border: 2px solid var(--sm-accent) !important;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 1rem;
+  text-align: left;
+  color: var(--sm-text) !important;
+}
+.blog-article .sm-article .cta-box a {
+  color: var(--sm-primary);
+  font-weight: 700;
+}
+.blog-article .sm-article ul.red-flag-list {
+  list-style: none;
+  padding-left: 0;
+}
+.blog-article .sm-article ul.red-flag-list li {
+  padding: 8px 0 8px 28px;
+  position: relative;
+  list-style: none;
+}
+.blog-article .sm-article ul.red-flag-list li::before {
+  content: '⚠';
+  position: absolute;
+  left: 0;
+}
+.blog-article .sm-article ul.checklist {
+  list-style: none;
+  padding-left: 0;
+  background: transparent;
+  border: none;
+  margin: 0 0 20px;
+}
+.blog-article .sm-article ul.checklist li {
+  padding: 6px 0 6px 28px;
+  position: relative;
+  border: none;
+  list-style: none;
+}
+.blog-article .sm-article ul.checklist li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--sm-secondary);
+  font-weight: 700;
+}
+.blog-article .sm-article .faq-section {
+  margin-top: 48px;
+}
+.blog-article .sm-article .faq-item {
+  margin-bottom: 24px;
+  border: 1px solid var(--sm-border);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+.blog-article .sm-article .faq-q {
+  background: var(--sm-bg-faq);
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--sm-text);
+}
+.blog-article .sm-article .faq-a {
+  padding: 16px 20px;
+  display: block !important;
+  color: var(--sm-text-light);
+  line-height: 1.7;
+}
+.blog-article .sm-article .fazit {
+  background: var(--sm-bg-light);
+  border-radius: 8px;
+  padding: 28px;
+  margin-top: 40px;
+}
+.blog-article .sm-article .fazit ol {
+  padding-left: 20px;
+}
+.blog-article .sm-article .fazit li {
+  margin-bottom: 12px;
+}
+.blog-article .sm-article .internal-link {
+  color: var(--sm-accent);
+  font-weight: 600;
+}
+.blog-article .sm-article .internal-link:hover {
+  color: var(--sm-primary-dark);
+}
+.blog-article .sm-article img {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+  margin: 24px auto;
+  border-radius: 8px;
+}
+.blog-article .sm-author-box {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 40px 0 32px;
+  border-left: 4px solid var(--sm-primary);
+}
+.blog-article .sm-author-box-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--sm-primary);
+}
+.blog-article .sm-author-box-text {
+  font-size: 0.95rem;
+  margin: 0;
+  color: var(--sm-text);
+  line-height: 1.65;
+}
 `
 
 interface PageProps {
