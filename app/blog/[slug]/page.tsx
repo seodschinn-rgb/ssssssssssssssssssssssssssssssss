@@ -949,9 +949,10 @@ const BLOG_ARTICLE_STYLE = `
   --sm-bg-light: #eef2ff;
   --sm-bg-faq: #f0fdf4;
   --sm-bg-cta: #fffbeb;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  /* Wie .article-wrapper: volle Breite der Blog-Spalte, kein extra Innenabstand (sonst schmaler als andere Artikel) */
+  max-width: none;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   color: var(--sm-text);
   line-height: 1.7;
