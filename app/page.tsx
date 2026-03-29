@@ -19,14 +19,14 @@ import HomePageSchema from '@/components/HomePageSchema'
 
 export const metadata: Metadata = {
   title: {
-    absolute: 'SEO Agentur München — +312% mehr Traffic | SEO München',
+    absolute: 'SEO Agentur München | Sichtbarkeit bei Google & KI-Suche',
   },
   description:
-    'SEO Agentur in München: Datengetriebene SEO-Optimierung ab 990 EUR/Monat. +312% mehr Traffic für unsere Kunden. Kostenloses Erstgespräch vereinbaren.',
+    'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
   openGraph: {
-    title: 'SEO Agentur München — +312% mehr Traffic | SEO München',
+    title: 'SEO Agentur München | Sichtbarkeit bei Google & KI-Suche',
     description:
-      'SEO Agentur in München: Datengetriebene SEO-Optimierung ab 990 EUR/Monat. +312% mehr Traffic für unsere Kunden. Kostenloses Erstgespräch vereinbaren.',
+      'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
   },
 }
 

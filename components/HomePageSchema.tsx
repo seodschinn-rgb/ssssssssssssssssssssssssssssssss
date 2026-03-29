@@ -19,7 +19,7 @@ export default function HomePageSchema() {
         telephone: '+4915565087694',
         email: 'info@seomuenchen.com',
         description:
-          'SEO Agentur in München: Datengetriebene SEO-Optimierung ab 990 EUR/Monat. +312% mehr Traffic für unsere Kunden.',
+          'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
         founder: {
           '@type': 'Person',
           name: 'Julian Schäfer',
