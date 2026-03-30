@@ -1194,6 +1194,32 @@ const BLOG_ARTICLE_STYLE = `
   color: var(--sm-text);
   line-height: 1.65;
 }
+.blog-article .sm-related {
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--sm-border);
+}
+.blog-article .sm-related-title {
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--sm-primary);
+}
+.blog-article .sm-related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.blog-article .sm-related-chip {
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid var(--sm-border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.blog-article .sm-related-chip:hover {
+  border-color: var(--sm-primary);
+  background: var(--sm-bg-light);
+}
 `
 
 interface PageProps {
