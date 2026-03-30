@@ -36,6 +36,8 @@ export interface BlogPost {
   imageAlt?: string
   /** Optional: FAQs für FAQPage-Schema (Rich Snippets) */
   faqs?: BlogPostFAQ[]
+  /** Optional: Anzeigename in der BlogAuthorBox (Standard: Joel Siebert) */
+  authorName?: string
 }
 
 const POSTS: BlogPost[] = [
@@ -46,6 +48,7 @@ const POSTS: BlogPost[] = [
     metaDescription:
       'SEO für kleine Unternehmen: Leitfaden mit Strategie, Budget-Tipps, Checkliste und Local SEO. So positionierst du dein KMU sichtbar bei Google.',
     focusKeyword: 'SEO für kleine Unternehmen',
+    authorName: 'Julian Schäfer',
     category: 'seo-grundlagen',
     content: seoFuerKleineUnternehmen2026Content,
     image: '/images/blog/seo-fuer-kleine-unternehmen-thumbnail.webp',
@@ -111,6 +114,7 @@ const POSTS: BlogPost[] = [
     metaDescription:
       'Google Ranking verbessern mit 15 praxiserprobten Tipps für 2026. Von Quick Wins bis Profi-Strategien für Münchner Unternehmen. Jetzt Sichtbarkeit steigern.',
     focusKeyword: 'Google Ranking verbessern',
+    authorName: 'Julian Schäfer',
     category: 'seo-grundlagen',
     content: googleRankingVerbessern2026Content,
     image: '/images/blog/google-ranking-verbessern-thumbnail.webp',

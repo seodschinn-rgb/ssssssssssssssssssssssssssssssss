@@ -1368,7 +1368,7 @@ export default function BlogSlugPage({ params }: PageProps) {
               )}
               {/* Autorenbox auf jeder Artikel-Seite: unter Thumbnail, über Titel/Artikel */}
               <BlogAuthorBox
-                authorName="Joel Siebert"
+                authorName={post.authorName ?? 'Joel Siebert'}
                 readingMinutes={getReadingTimeMinutes(post.content)}
               />
               <article
