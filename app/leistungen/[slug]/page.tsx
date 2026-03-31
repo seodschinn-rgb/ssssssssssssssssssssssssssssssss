@@ -26,9 +26,10 @@ import ServiceSchema from '@/components/ServiceSchema'
 import GeoAgenturLeistungPage from '@/components/GeoAgenturLeistungPage'
 
 const GEO_AGENTUR_META = {
-  title: 'GEO Agentur',
+  title: 'GEO Agentur München — Generative Engine Optimization | SEO München',
   description:
-    'GEO-Agentur in München: Sichtbarkeit in KI-Suche, ChatGPT, Google AI Overviews & Perplexity. Audit, Content für Zitate, Entity-Optimierung, technisches GEO & Monitoring.',
+    'GEO Agentur München: Sichtbar in ChatGPT, Google AI Overviews & Perplexity. Generative Engine Optimization vom Spezialisten. Kostenloses Erstgespräch.',
+  focusKeyword: 'GEO Agentur München',
 } as const
 
 interface PageProps {
@@ -41,12 +42,12 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   if (params.slug === 'geo-agentur') {
-    const fullTitle = `${GEO_AGENTUR_META.title} | SEO Agentur München`
     return {
-      title: { absolute: fullTitle },
+      title: { absolute: GEO_AGENTUR_META.title },
       description: GEO_AGENTUR_META.description,
+      keywords: GEO_AGENTUR_META.focusKeyword,
       openGraph: {
-        title: fullTitle,
+        title: GEO_AGENTUR_META.title,
         description: GEO_AGENTUR_META.description,
       },
     }
