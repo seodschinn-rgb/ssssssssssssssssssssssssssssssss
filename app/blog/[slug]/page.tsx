@@ -1047,6 +1047,16 @@ const BLOG_ARTICLE_STYLE = `
   margin-top: 0;
   margin-bottom: 0;
 }
+@media (max-width: 768px) {
+  /* Mobile: Tabellen innerhalb .sm-table-wrap horizontal scrollbar halten */
+  .blog-article .sm-article .sm-table-wrap table {
+    min-width: 720px;
+  }
+  .blog-article .sm-article .sm-table-wrap th,
+  .blog-article .sm-article .sm-table-wrap td {
+    white-space: nowrap;
+  }
+}
 .blog-article .sm-article table {
   width: 100%;
   border-collapse: collapse;
