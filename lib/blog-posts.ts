@@ -15,6 +15,7 @@ import { localSeoGuide2026Content } from './blog-posts/local-seo-guide-2026-cont
 import { googleBusinessProfileOptimieren2026Content } from './blog-posts/google-business-profile-optimieren-2026-content'
 import { seoFuerKleineUnternehmen2026Content } from './blog-posts/seo-fuer-kleine-unternehmen-2026-content'
 import { googleRankingVerbessern2026Content } from './blog-posts/google-ranking-verbessern-2026-content'
+import { googlePenalty2026Content } from './blog-posts/google-penalty-2026-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -104,6 +105,62 @@ const POSTS: BlogPost[] = [
         question: 'Was ist der schnellste SEO-Erfolg für kleine Unternehmen?',
         answer:
           'Der schnellste und gleichzeitig wirkungsvollste Einstieg ist die Optimierung deines Google Business Profiles. Ein vollständig ausgefülltes Profil mit Fotos, korrekten Öffnungszeiten, der richtigen Kategorie und einigen positiven Bewertungen kann die lokale Sichtbarkeit innerhalb weniger Wochen deutlich verbessern. Als zweiten Schritt empfehlen wir die Optimierung der Title Tags und Meta Descriptions auf deinen wichtigsten Seiten, da Google diese Änderungen relativ schnell verarbeitet.',
+      },
+    ],
+  },
+  {
+    slug: 'google-penalty-erkennen-beheben',
+    title: 'Google Penalty erkennen und beheben: Der komplette Leitfaden (2026)',
+    metaTitle: 'Google Penalty erkennen und beheben: Kompletter Leitfaden 2026',
+    metaDescription:
+      'Google Penalty erkennen und beheben: Manuelle Maßnahmen, algorithmische Abstufungen und Recovery-Prozess. Schritt-für-Schritt für KMU in München.',
+    focusKeyword: 'Google Penalty erkennen',
+    authorName: 'Julian Schäfer',
+    category: 'seo-grundlagen',
+    content: googlePenalty2026Content,
+    image: '/images/blog/google-penalty-thumbnail.webp',
+    imageAlt:
+      'Google Penalty erkennen und beheben: Leitfaden mit Ursachen, Diagnose und Recovery-Prozess',
+    faqs: [
+      {
+        question: 'Was ist eine Google Penalty?',
+        answer:
+          'Eine Google Penalty ist eine Herabstufung deiner Website in den Suchergebnissen. Sie kann als manuelle Maßnahme (durch einen Google-Mitarbeiter) oder als algorithmische Abstufung (durch ein Algorithmus-Update) erfolgen. Die Folge ist in beiden Fällen ein Verlust von Rankings und organischem Traffic.',
+      },
+      {
+        question: 'Wie erkenne ich, ob meine Website abgestraft wurde?',
+        answer:
+          'Prüfe zuerst die Google Search Console unter Sicherheit & manuelle Maßnahmen auf direkte Benachrichtigungen. Analysiere dann deine Traffic-Daten in Google Analytics 4 auf plötzliche Einbrüche. Vergleiche den Zeitpunkt eines Einbruchs mit bekannten Google Updates.',
+      },
+      {
+        question: 'Wie lange dauert die Recovery?',
+        answer:
+          'Bei manuellen Maßnahmen dauert die Behebung erfahrungsgemäß mehrere Wochen bis einige Monate nach Einreichung des Überprüfungsantrags. Algorithmische Recoveries benötigen typischerweise 4 bis 6 Monate. In schweren Fällen kann es bis zu zwei Jahre dauern.',
+      },
+      {
+        question: 'Kann KI-generierter Content zu einer Penalty führen?',
+        answer:
+          'Ja. Google geht seit 2025 verstärkt gegen Scaled Content Abuse vor. Das betrifft massenhaft veröffentlichte KI-Texte ohne redaktionellen Mehrwert. KI als Schreibwerkzeug ist nicht das Problem — fehlende Qualitätskontrolle und das Veröffentlichen ohne menschliche Überarbeitung sind das Risiko.',
+      },
+      {
+        question: 'Kostet eine Penalty Recovery extra?',
+        answer:
+          'Das hängt vom Umfang ab. Eine einfache manuelle Maßnahme lässt sich oft im Rahmen einer normalen SEO-Betreuung lösen. Komplexe Fälle mit umfangreicher Backlink-Bereinigung oder Content-Überarbeitung erfordern zusätzlichen Aufwand.',
+      },
+      {
+        question: 'Was ist der Unterschied zwischen manueller Maßnahme und Algorithmus-Update?',
+        answer:
+          'Eine manuelle Maßnahme wird von einem Google-Mitarbeiter verhängt und in der Search Console angezeigt. Du musst das Problem beheben und einen Überprüfungsantrag stellen. Eine algorithmische Abstufung erfolgt automatisch durch ein Update, ohne Benachrichtigung.',
+      },
+      {
+        question: 'Kann ich eine Google Penalty selbst beheben?',
+        answer:
+          'Bei einfachen Fällen ja. Spam-Kommentare, einzelne schlechte Links oder offensichtliche Content-Probleme lassen sich eigenständig lösen. Bei komplexen Link-Profilen oder algorithmischen Abstufungen ist professionelle Hilfe erfahrungsgemäß deutlich effektiver.',
+      },
+      {
+        question: 'Wie verhindere ich zukünftige Penalties?',
+        answer:
+          'Befolge die Google Search Essentials, kaufe keine Links, veröffentliche nur qualitativ hochwertigen Content, führe regelmäßig technische SEO-Audits durch und arbeite mit seriösen SEO-Partnern. Prävention ist deutlich günstiger und effektiver als Recovery.',
       },
     ],
   },
