@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import '@/components/branchen/hotels-page.css'
+import '@/components/branchen/branchen-img-cls.css'
 import { hotelsPageInnerHtml } from '@/lib/branchen/hotels-page-html'
 import { getBrancheBySlug } from '@/lib/branchen'
 import type { BranchePageData } from '@/lib/branchen'

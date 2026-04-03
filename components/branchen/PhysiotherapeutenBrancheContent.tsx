@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import '@/components/branchen/physiotherapeuten-page.css'
+import '@/components/branchen/branchen-img-cls.css'
 import { physiotherapeutenPageInnerHtml } from '@/lib/branchen/physiotherapeuten-page-html'
 import { getBrancheBySlug } from '@/lib/branchen'
 import type { BranchePageData } from '@/lib/branchen'

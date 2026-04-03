@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import '@/components/branchen/steuerberater-page.css'
+import '@/components/branchen/branchen-img-cls.css'
 import { steuerberaterPageInnerHtml } from '@/lib/branchen/steuerberater-page-html'
 import { getBrancheBySlug } from '@/lib/branchen'
 import type { BranchePageData } from '@/lib/branchen'

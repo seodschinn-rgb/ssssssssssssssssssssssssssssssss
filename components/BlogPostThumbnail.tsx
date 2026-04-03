@@ -13,7 +13,7 @@ export default function BlogPostThumbnail({
 }) {
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-xl bg-zinc-100 aspect-[16/10] ${className}`.trim()}
+      className={`relative w-full overflow-hidden rounded-xl bg-transparent aspect-[16/10] ${className}`.trim()}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
@@ -24,7 +24,7 @@ export default function BlogPostThumbnail({
         loading="eager"
         decoding="async"
         fetchPriority="high"
-        className="absolute inset-0 h-full w-full object-contain"
+        className="absolute inset-0 h-full w-full object-contain object-center"
       />
     </div>
   )

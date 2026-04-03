@@ -19,6 +19,9 @@ const z1 = `
     <img
       src="/images/blog/zahnaerzte-thumbnail.webp"
       alt="SEO für Zahnärzte in München: Praxis-Sichtbarkeit bei Google und Maps"
+      width="1200"
+      height="630"
+      loading="eager"
       decoding="async"
       fetchpriority="high"
     />

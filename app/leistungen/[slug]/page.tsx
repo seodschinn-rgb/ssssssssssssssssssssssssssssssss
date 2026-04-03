@@ -24,6 +24,7 @@ const heroIconGradients: Record<Leistung['color'], string> = {
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import ServiceSchema from '@/components/ServiceSchema'
 import GeoAgenturLeistungPage from '@/components/GeoAgenturLeistungPage'
+import BlogPostThumbnail from '@/components/BlogPostThumbnail'
 
 const GEO_AGENTUR_META = {
   title: 'GEO Agentur München — Generative Engine Optimization | SEO München',
@@ -96,6 +97,14 @@ export default function LeistungPage({ params }: PageProps) {
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent/10 to-transparent opacity-50" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
           <div className="relative mx-auto max-w-4xl text-center">
+            {content.heroImage && (
+              <div className="mb-10 px-4 sm:px-0">
+                <BlogPostThumbnail
+                  src={content.heroImage}
+                  alt={content.heroImageAlt ?? content.title}
+                />
+              </div>
+            )}
             <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br ${heroIconGradients[leistung.color]} text-white shadow-xl mb-8`}>
               <LeistungIcons icon={leistung.icon} className="w-8 h-8" />
             </div>

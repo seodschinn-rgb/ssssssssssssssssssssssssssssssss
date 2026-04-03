@@ -70,7 +70,7 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
                     className="group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 hover:border-indigo-200 hover:shadow-lg"
                   >
                     {post.image && (
-                      <div className="flex aspect-[16/10] w-full shrink-0 items-center justify-center bg-zinc-50/50 p-2">
+                      <div className="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-transparent">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={post.image}
@@ -79,7 +79,7 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
                           height={400}
                           loading="lazy"
                           decoding="async"
-                          className="h-full w-full object-contain object-center"
+                          className="absolute inset-0 h-full w-full object-contain object-center"
                         />
                       </div>
                     )}

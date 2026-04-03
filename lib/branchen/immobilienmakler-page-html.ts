@@ -7,7 +7,7 @@ export const immobilienmaklerPageInnerHtml = `
   <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:8px;"><a href="/" style="color:var(--text-light); text-decoration:none;">Start</a> &rsaquo; <a href="/branchen/" style="color:var(--text-light); text-decoration:none;">Branchen</a> &rsaquo; Immobilienmakler</p>
 
   <h1>SEO f&uuml;r Immobilienmakler in M&uuml;nchen &mdash; Mehr Auftr&auml;ge ohne Portalabh&auml;ngigkeit</h1>
-  <img src="/images/blog/immobilienmakler-thumbnail.webp" alt="SEO f&uuml;r Immobilienmakler in M&uuml;nchen" loading="lazy" decoding="async" style="width:100%; max-width:920px; height:auto; border-radius:12px; margin:8px 0 24px;" />
+  <img src="/images/blog/immobilienmakler-thumbnail.webp" alt="SEO f&uuml;r Immobilienmakler in M&uuml;nchen" width="1200" height="630" loading="lazy" decoding="async" style="width:100%; max-width:920px; height:auto; border-radius:12px; margin:8px 0 24px;" />
 
   <div class="intro">
     <p>M&uuml;nchen hat mit 86&nbsp;% die h&ouml;chste Maklerquote Deutschlands. Die Konkurrenz ist brutal &mdash; und wer nicht bei Google sichtbar ist, verliert Verkaufsauftr&auml;ge an die gro&szlig;en Ketten. Gleichzeitig verbietet das Gesetz Kaltakquise mit Bu&szlig;geldern bis 300.000&nbsp;EUR. Online-Sichtbarkeit ist damit nicht optional, sondern existenziell. Wir zeigen dir, wie du als Makler in M&uuml;nchen &uuml;ber Google eigene Eigent&uuml;mer-Leads gewinnst &mdash; ohne monatlich Tausende an <a href="https://www.immobilienscout24.de/" target="_blank" rel="noopener">ImmoScout24</a> zu &uuml;berweisen.</p>
@@ -83,7 +83,7 @@ export const immobilienmaklerPageInnerHtml = `
   <!-- ====================================================================== -->
 
   <p>Viele Makler investieren monatlich vierstellige Betr&auml;ge in Portale und Anzeigen, ohne die Alternativen zu kennen. Die folgende Gegen&uuml;berstellung zeigt, wo dein Budget den h&ouml;chsten Return liefert.</p>
-  <img src="/images/blog/immobilienmakler-kostenvergleich.webp" alt="Kostenvergleich von SEO, ImmoScout24 und Google Ads f&uuml;r Makler" loading="lazy" decoding="async" style="width:100%; max-width:920px; height:auto; border-radius:12px; margin:8px 0 20px;" />
+  <img src="/images/blog/immobilienmakler-kostenvergleich.webp" alt="Kostenvergleich von SEO, ImmoScout24 und Google Ads f&uuml;r Makler" width="1200" height="630" loading="lazy" decoding="async" style="width:100%; max-width:920px; height:auto; border-radius:12px; margin:8px 0 20px;" />
 
   <div class="table-scroll"><table>
     <thead>
@@ -221,7 +221,7 @@ export const immobilienmaklerPageInnerHtml = `
   </ul>
 
   <h3>Die ROI-Rechnung</h3>
-  <img src="/images/blog/immobilienmakler-provision-roi.webp" alt="Provision und ROI-Berechnung f&uuml;r Immobilienmakler-SEO" loading="lazy" decoding="async" style="width:100%; max-width:920px; height:auto; border-radius:12px; margin:8px 0 20px;" />
+  <img src="/images/blog/immobilienmakler-provision-roi.webp" alt="Provision und ROI-Berechnung f&uuml;r Immobilienmakler-SEO" width="1200" height="630" loading="lazy" decoding="async" style="width:100%; max-width:920px; height:auto; border-radius:12px; margin:8px 0 20px;" />
 
   <div class="table-scroll"><table>
     <thead>

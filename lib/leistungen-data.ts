@@ -7,6 +7,9 @@ export interface LeistungContent {
   metaDescription: string
   shortDescription: string
   heroSubline: string
+  /** Optional: Hero-Bild (z. B. /images/blog/…-thumbnail.webp), stabil ohne CLS */
+  heroImage?: string
+  heroImageAlt?: string
   intro: string
   benefits: { title: string; text: string }[]
   process: { step: number; title: string; description: string }[]

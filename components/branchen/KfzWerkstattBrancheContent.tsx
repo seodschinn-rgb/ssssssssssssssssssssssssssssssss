@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import '@/components/branchen/kfz-werkstatt-page.css'
+import '@/components/branchen/branchen-img-cls.css'
 import { kfzWerkstattPageInnerHtml } from '@/lib/branchen/kfz-werkstatt-page-html'
 import { getBrancheBySlug } from '@/lib/branchen'
 import type { BranchePageData } from '@/lib/branchen'

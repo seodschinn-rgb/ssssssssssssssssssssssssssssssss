@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import '@/components/branchen/anwaelte-page.css'
+import '@/components/branchen/branchen-img-cls.css'
 import { anwaeltePageInnerHtml } from '@/lib/branchen/anwaelte-page-html'
 import { getBrancheBySlug } from '@/lib/branchen'
 import type { BranchePageData } from '@/lib/branchen'

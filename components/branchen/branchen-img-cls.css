@@ -1,0 +1,17 @@
+/**
+ * Verhindert CLS bei Branchen-Thumbnails und Intext-Bildern:
+ * feste Seitenverhältnis-Reserve, wenn width/height im HTML fehlen.
+ */
+[class*='branchen-page'] img {
+  box-sizing: border-box;
+  display: block;
+  max-width: 920px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+[class*='branchen-page'] img:not([width]) {
+  aspect-ratio: 1200 / 630;
+  background: #f4f4f5;
+}
