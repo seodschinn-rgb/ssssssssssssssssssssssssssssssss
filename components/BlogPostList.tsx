@@ -75,6 +75,10 @@ export default function BlogPostList({ posts, categories }: BlogPostListProps) {
                         <img
                           src={post.image}
                           alt={post.imageAlt ?? post.title}
+                          width={640}
+                          height={400}
+                          loading="lazy"
+                          decoding="async"
                           className="h-full w-full object-contain object-center"
                         />
                       </div>

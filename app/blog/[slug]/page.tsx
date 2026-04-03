@@ -17,6 +17,7 @@ import BlogTocDesktopWrapper from '@/components/BlogTocDesktopWrapper'
 import BlogAuthorBox from '@/components/BlogAuthorBox'
 import BlogReadingProgressBar from '@/components/BlogReadingProgressBar'
 import BlogTocMobileCollapsible from '@/components/BlogTocMobileCollapsible'
+import BlogPostThumbnail from '@/components/BlogPostThumbnail'
 import ClientErrorBoundary from '@/components/ClientErrorBoundary'
 import { getReadingTimeMinutes } from '@/lib/reading-time'
 
@@ -1344,15 +1345,8 @@ export default function BlogSlugPage({ params }: PageProps) {
           </ClientErrorBoundary>
           {/* Thumbnail nur auf Mobile/Tablet oben (auf Desktop in der rechten Spalte) */}
           {post.image && (
-            <div className="lg:hidden w-full px-4 sm:px-6 mb-8">
-              <div className="relative w-full rounded-xl overflow-hidden bg-zinc-100">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={post.image}
-                  alt={post.imageAlt ?? post.title}
-                  className="w-full h-auto object-contain"
-                />
-              </div>
+            <div className="mb-8 w-full px-4 sm:px-6 lg:hidden">
+              <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} />
             </div>
           )}
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:items-start overflow-visible">
@@ -1366,15 +1360,8 @@ export default function BlogSlugPage({ params }: PageProps) {
             <div className="lg:col-start-2 min-w-0 lg:px-0">
               {/* Thumbnail auf Desktop in rechter Spalte */}
               {post.image && (
-                <div className="hidden lg:block mb-8">
-                  <div className="relative w-full rounded-xl overflow-hidden bg-zinc-100">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={post.image}
-                      alt={post.imageAlt ?? post.title}
-                      className="w-full h-auto object-contain"
-                    />
-                  </div>
+                <div className="mb-8 hidden lg:block">
+                  <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} />
                 </div>
               )}
               {/* Autorenbox auf jeder Artikel-Seite: unter Thumbnail, über Titel/Artikel */}
