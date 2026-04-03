@@ -975,7 +975,8 @@ const BLOG_ARTICLE_STYLE = `
   font-weight: 700;
   line-height: 1.3;
 }
-.blog-article .sm-article h2#warum-seo-lohnt {
+.blog-article .sm-article h2#warum-seo-lohnt,
+.blog-article .sm-article h2#grundlagen {
   margin-top: 0;
 }
 .blog-article .sm-article .fazit h2 {
