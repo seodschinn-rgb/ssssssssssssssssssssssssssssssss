@@ -17,6 +17,7 @@ import { seoFuerKleineUnternehmen2026Content } from './blog-posts/seo-fuer-klein
 import { googleRankingVerbessern2026Content } from './blog-posts/google-ranking-verbessern-2026-content'
 import { googlePenalty2026Content } from './blog-posts/google-penalty-2026-content'
 import { seoVsSea2026Content } from './blog-posts/seo-vs-sea-2026-content'
+import { websiteNichtGefunden2026Content } from './blog-posts/website-nicht-gefunden-2026-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -43,6 +44,62 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'website-nicht-gefunden',
+    title: 'Website wird nicht bei Google gefunden? 12 Ursachen und Lösungen (2026)',
+    metaTitle: 'Website nicht bei Google gefunden? Diagnose + Soforthilfe (2026)',
+    metaDescription:
+      'Deine Website wird nicht bei Google gefunden? Erfahre die 12 häufigsten Ursachen und Lösungen. Inkl. Schnell-Check, GSC-Statusmeldungen und Schritt-für-Schritt Diagnose.',
+    focusKeyword: 'website wird nicht gefunden google',
+    authorName: 'Julian Schäfer',
+    category: 'technisches-seo',
+    content: websiteNichtGefunden2026Content,
+    image: '/images/blog/website-nicht-gefunden-thumbnail.webp',
+    imageAlt:
+      'Warum Websites bei Google nicht gefunden werden: Die häufigsten Ursachen im Überblick',
+    faqs: [
+      {
+        question: 'Warum wird meine Website bei Google nicht angezeigt?',
+        answer:
+          'Die zwei Hauptursachen sind: Entweder ist deine Website nicht indexiert (Google kennt sie nicht), oder sie ist indexiert, rankt aber schlecht. Häufige Gründe für fehlende Indexierung sind eine blockierende robots.txt, noindex-Tags oder die aktivierte WordPress-Option "Suchmaschinen davon abhalten". Bei schlechtem Ranking fehlt es meistens an qualitativem Content, relevanten Keywords oder Backlinks.',
+      },
+      {
+        question: 'Wie lange dauert es, bis Google meine neue Website findet?',
+        answer:
+          'Erfahrungsgemäß dauert es bei einer neuen Website 2 bis 3 Wochen, bis die ersten Seiten im Google-Index erscheinen, sofern du eine Sitemap einreichst und die Google Search Console nutzt. Insgesamt werden 93,2 % aller indexierbaren Seiten innerhalb von 6 Monaten aufgenommen.',
+      },
+      {
+        question: 'Was bedeutet "Gecrawlt, zurzeit nicht indexiert"?',
+        answer:
+          'Diese GSC-Statusmeldung bedeutet, dass Google deine Seite besucht und den Inhalt gelesen hat, sich aber entschieden hat, sie nicht in den Index aufzunehmen. Google hält den Inhalt für nicht wertvoll oder relevant genug. Die Lösung: Verbessere den Content mit Mehrwert, einzigartigen Informationen und stärkerer interner Verlinkung.',
+      },
+      {
+        question: 'Kann ich Google bitten, meine Seite schneller zu indexieren?',
+        answer:
+          'Ja. Über das URL-Prüftool in der Google Search Console kannst du die Indexierung einzelner URLs anfordern. Reiche zudem eine aktuelle XML-Sitemap ein. Hochwertige interne und externe Links beschleunigen den Prozess zusätzlich.',
+      },
+      {
+        question: 'Warum ist meine Website plötzlich aus Google verschwunden?',
+        answer:
+          'Mögliche Ursachen sind: ein Google-Algorithmus-Update, eine manuelle Maßnahme wegen Richtlinienverstoß, versehentlich gesetzte noindex-Tags nach einem Website-Relaunch, Server-Probleme oder abgelaufene Domains. Prüfe zuerst die Google Search Console auf Fehlermeldungen und manuelle Maßnahmen.',
+      },
+      {
+        question: 'Hilft eine Sitemap bei der Indexierung?',
+        answer:
+          'Ja, eine XML-Sitemap hilft Google erheblich dabei, alle relevanten Seiten deiner Website zu finden. Sie ist besonders wichtig für neue Websites, große Websites mit vielen Seiten und Seiten, die wenig intern verlinkt sind.',
+      },
+      {
+        question: 'Was kostet es, meine Website bei Google sichtbar zu machen?',
+        answer:
+          'Die Kosten hängen stark von der Ursache ab. Einfache technische Probleme kannst du kostenlos selbst beheben. Professionelle SEO-Betreuung beginnt bei einigen hundert EUR pro Monat. Langfristige SEO-Betreuung kostet je nach Umfang zwischen 1.000 und 5.000 EUR monatlich.',
+      },
+      {
+        question: 'Muss ich für Google bezahlen, um gefunden zu werden?',
+        answer:
+          'Nein. Die organische Suche bei Google ist kostenlos. Google Ads sind eine separate Option für sofortige Sichtbarkeit, aber nicht notwendig. Nachhaltige Sichtbarkeit erreichst du durch SEO.',
+      },
+    ],
+  },
   {
     slug: 'seo-fuer-kleine-unternehmen',
     title: 'SEO für kleine Unternehmen: Der komplette Leitfaden (2026)',
