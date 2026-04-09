@@ -92,7 +92,8 @@ export const LEISTUNGEN: Leistung[] = [
 export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
   'seo-audit': {
     title: 'SEO-Audit',
-    metaDescription: 'Professioneller SEO-Audit in München. Analyse Ihrer Website – OnPage, Technik, Content. Konkrete Handlungsempfehlungen für bessere Rankings.',
+    metaDescription:
+      'SEO-Audit München: Technik, Content, Backlinks, Local SEO & AI-Readiness. 6 Analysebereiche, priorisierter Maßnahmenplan. Kostenloses Erstgespräch.',
     shortDescription: 'Umfassende Analyse mit konkreten Handlungsempfehlungen.',
     heroSubline: 'Der erste Schritt zu mehr Sichtbarkeit',
     intro:
