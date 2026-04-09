@@ -208,7 +208,7 @@ export default function LeistungPage({ params }: PageProps) {
         <section className="py-24 px-6 bg-zinc-50/50">
           <div className="mx-auto max-w-6xl">
             <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 text-center mb-16">
-              Was Sie davon haben
+              {params.slug === 'seo-audit' ? 'Was du davon hast' : 'Was Sie davon haben'}
             </h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {content.benefits.map((benefit, i) => (
@@ -259,7 +259,9 @@ export default function LeistungPage({ params }: PageProps) {
               {content.ctaHeadline}
             </h2>
             <p className="mt-4 text-zinc-400">
-              Wir melden uns innerhalb von 24 Stunden und besprechen mit Ihnen die nächsten Schritte.
+              {params.slug === 'seo-audit'
+                ? 'Wir melden uns innerhalb von 24 Stunden und besprechen mit dir die nächsten Schritte.'
+                : 'Wir melden uns innerhalb von 24 Stunden und besprechen mit Ihnen die nächsten Schritte.'}
             </p>
             <Link
               href="/#kontakt"
@@ -598,7 +600,7 @@ export default function LeistungPage({ params }: PageProps) {
     </div>
     <div class="faq-item">
       <div class="faq-q">Kann ich die Empfehlungen auch intern umsetzen?</div>
-      <div class="faq-a">Selbstverständlich. Der Audit-Report ist so aufgebaut, dass auch dein internes Team oder eine andere Agentur die Maßnahmen umsetzen kann. Jede Empfehlung enthält eine klare Priorität, den erwarteten Aufwand und den geschätzten Impact. Du suchst eine <a href="/seo-audit-checkliste/">SEO-Audit-Checkliste zum Selbermachen</a>? Auch die haben wir für dich erstellt.</div>
+      <div class="faq-a">Selbstverständlich. Der Audit-Report ist so aufgebaut, dass auch dein internes Team oder eine andere Agentur die Maßnahmen umsetzen kann. Jede Empfehlung enthält eine klare Priorität, den erwarteten Aufwand und den geschätzten Impact. Du suchst eine <a href="/blog/seo-audit-checkliste">SEO-Audit-Checkliste zum Selbermachen</a>? Auch die haben wir für dich erstellt.</div>
     </div>
   </div>
 

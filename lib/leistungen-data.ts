@@ -97,7 +97,7 @@ export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
     shortDescription: 'Umfassende Analyse mit konkreten Handlungsempfehlungen.',
     heroSubline: 'Der erste Schritt zu mehr Sichtbarkeit',
     intro:
-      'Ein SEO-Audit ist die systematische Analyse Ihrer Website aus Sicht von Suchmaschinen und Nutzern. Wir prüfen OnPage-Optimierung, technisches SEO, Content-Struktur und Wettbewerbsposition. Am Ende erhalten Sie einen klaren Report mit priorisierten Maßnahmen – keine Theorie, sondern konkrete nächste Schritte. Ideal als Einstieg vor einer längerfristigen Zusammenarbeit oder als jährliche Bestandsaufnahme.',
+      'Ein SEO-Audit ist die systematische Analyse deiner Website aus Sicht von Suchmaschinen und Nutzern. Wir prüfen OnPage-Optimierung, technisches SEO, Content-Struktur und Wettbewerbsposition. Am Ende erhältst du einen klaren Report mit priorisierten Maßnahmen – keine Theorie, sondern konkrete nächste Schritte. Ideal als Einstieg vor einer längerfristigen Zusammenarbeit oder als jährliche Bestandsaufnahme.',
     benefits: [
       {
         title: 'OnPage-Analyse',
@@ -109,18 +109,18 @@ export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
       },
       {
         title: 'Content & Keywords',
-        text: 'Welche Keywords bedienen Sie? Wo fehlen Inhalte? Wir analysieren Ihre Content-Struktur im Vergleich zum Wettbewerb.',
+        text: 'Welche Keywords deckst du ab? Wo fehlen Inhalte? Wir analysieren deine Content-Struktur im Vergleich zum Wettbewerb.',
       },
       {
         title: 'Priorisierter Maßnahmenkatalog',
-        text: 'Kein 100-Seiten-Report ohne Handlungsfolge. Sie erhalten eine klare Reihenfolge: was zuerst angehen, was langfristig planen.',
+        text: 'Kein 100-Seiten-Report ohne Handlungsfolge. Du erhältst eine klare Reihenfolge: was zuerst angehen, was langfristig planen.',
       },
     ],
     process: [
       {
         step: 1,
         title: 'Crawl & Datenerfassung',
-        description: 'Wir erfassen Ihre Website-Struktur, technische Daten und bestehende Rankings mit professionellen Tools.',
+        description: 'Wir erfassen deine Website-Struktur, technische Daten und bestehende Rankings mit professionellen Tools.',
       },
       {
         step: 2,
@@ -130,15 +130,15 @@ export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
       {
         step: 3,
         title: 'Wettbewerbsvergleich',
-        description: 'Wo steht Ihre Domain im Vergleich zu Mitbewerbern? Welche Lücken können Sie schließen?',
+        description: 'Wo steht deine Domain im Vergleich zu Mitbewerbern? Welche Lücken kannst du schließen?',
       },
       {
         step: 4,
         title: 'Audit-Report & Präsentation',
-        description: 'Sie erhalten einen verständlichen Report mit priorisierten Empfehlungen und optionaler Besprechung der Ergebnisse.',
+        description: 'Du erhältst einen verständlichen Report mit priorisierten Empfehlungen und optionaler Besprechung der Ergebnisse.',
       },
     ],
-    ctaHeadline: 'Wissen, wo Sie stehen – und wohin Sie gehen',
+    ctaHeadline: 'Wissen, wo du stehst – und wohin du gehst',
     ctaText: 'SEO-Audit anfragen',
   },
 
