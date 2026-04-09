@@ -26,6 +26,7 @@ import ServiceSchema from '@/components/ServiceSchema'
 import GeoAgenturLeistungPage from '@/components/GeoAgenturLeistungPage'
 import BlogPostThumbnail from '@/components/BlogPostThumbnail'
 import { jsonLdStringify } from '@/lib/safe-json-ld'
+import SeoAuditHeroVisual from '@/components/SeoAuditHeroVisual'
 
 const GEO_AGENTUR_META = {
   title: 'GEO Agentur München — Generative Engine Optimization | SEO München',
@@ -194,6 +195,7 @@ export default function LeistungPage({ params }: PageProps) {
             <p className="mt-6 text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
               {content.intro}
             </p>
+            {params.slug === 'seo-audit' && <SeoAuditHeroVisual />}
             <Link
               href="/leistungen"
               className="mt-10 inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-accent transition-colors"
