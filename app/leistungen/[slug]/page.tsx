@@ -186,7 +186,9 @@ export default function LeistungPage({ params }: PageProps) {
               <LeistungIcons icon={leistung.icon} className="w-8 h-8" />
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
-              {content.title}
+              {params.slug === 'seo-audit'
+                ? 'SEO-Audit München: Deine Website auf dem Prüfstand'
+                : content.title}
             </h1>
             <p className="mt-4 text-xl text-accent font-semibold">{content.heroSubline}</p>
             <p className="mt-6 text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
