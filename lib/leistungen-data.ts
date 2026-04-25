@@ -247,7 +247,8 @@ export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
 
   'technisches-seo': {
     title: 'Technisches SEO',
-    metaDescription: 'Technisches SEO München: Core Web Vitals, Indexierung, Ladegeschwindigkeit. Solide technische Grundlagen für bessere Rankings.',
+    metaDescription:
+      'Technisches SEO Agentur München: Core Web Vitals, JavaScript-SEO, Migration & AI-Crawler-Setup. Ab 990 EUR/Monat. Kostenloses Erstgespräch ohne Bindung.',
     shortDescription: 'Solide technische Grundlagen für beste Rankings.',
     heroSubline: 'Die unsichtbare Basis für Top-Rankings',
     intro:

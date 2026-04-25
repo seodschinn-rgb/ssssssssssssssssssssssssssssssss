@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import Header from '@/components/Header'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
@@ -29,6 +30,10 @@ import { jsonLdStringify } from '@/lib/safe-json-ld'
 import SeoAuditHeroVisual from '@/components/SeoAuditHeroVisual'
 import LocalSeoHeroVisual from '@/components/LocalSeoHeroVisual'
 
+const TechnischesSeoHeroVisual = dynamic(() => import('@/components/TechnischesSeoHeroVisual'), {
+  ssr: false,
+})
+
 const GEO_AGENTUR_META = {
   title: 'GEO Agentur München — Generative Engine Optimization | SEO München',
   description:
@@ -48,6 +53,13 @@ const LOCAL_SEO_META = {
   description:
     'Local SEO Agentur München: Google Business Profile, Map Pack, NAP & AI-Readiness. Top-3 in 6 Monaten. Ab 990 EUR/Monat. Kostenloses Erstgespräch.',
   focusKeyword: 'Local SEO München',
+} as const
+
+const TECHNISCHES_SEO_META = {
+  title: 'Technisches SEO München: Core Web Vitals & JS-SEO Agentur',
+  description:
+    'Technisches SEO Agentur München: Core Web Vitals, JavaScript-SEO, Migration & AI-Crawler-Setup. Ab 990 EUR/Monat. Kostenloses Erstgespräch ohne Bindung.',
+  focusKeyword: 'Technisches SEO München',
 } as const
 
 interface PageProps {
@@ -89,6 +101,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       openGraph: {
         title: LOCAL_SEO_META.title,
         description: LOCAL_SEO_META.description,
+      },
+    }
+  }
+  if (params.slug === 'technisches-seo') {
+    return {
+      title: { absolute: TECHNISCHES_SEO_META.title },
+      description: TECHNISCHES_SEO_META.description,
+      keywords: TECHNISCHES_SEO_META.focusKeyword,
+      openGraph: {
+        title: TECHNISCHES_SEO_META.title,
+        description: TECHNISCHES_SEO_META.description,
       },
     }
   }
@@ -238,6 +261,72 @@ export default function LeistungPage({ params }: PageProps) {
         }
       : null
 
+  const technischesSeoFaqSchema =
+    params.slug === 'technisches-seo'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'Was unterscheidet Technisches SEO von OnPage-SEO?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Tech-SEO betrifft die Infrastruktur deiner Site: Crawling, Rendering, Performance, Indexierung. OnPage-SEO betrifft Inhalt und Struktur einzelner Seiten: Headings, Keywords, interne Links. Beides greift ineinander, ist aber methodisch getrennt.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Wie lange dauert Tech-SEO bis zu ersten Ergebnissen?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Erste Effekte (Indexierung, Core Web Vitals) erfahrungsgemäß nach 30 bis 90 Tagen. Ranking-Effekte typischerweise nach 3 bis 6 Monaten, abhängig von Crawl-Frequenz und Wettbewerb.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Brauche ich Tech-SEO, obwohl meine Website neu ist?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Gerade dann. Neue Sites haben oft Default-Konfigurationen, die kontraproduktiv sind: offene Staging-Umgebungen, falsche Canonicals, fehlende Sitemap-Submission, leere Schema-Outputs.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Funktioniert Tech-SEO bei Shopify, Webflow, Wix oder WordPress?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Ja, mit plattformspezifischen Limitierungen. Bei Wix und Webflow gibt es Grenzen bei robots.txt und Server-Headers. Bei WordPress und Shopify ist deutlich mehr möglich. Custom-Stacks (z. B. Next.js) bieten die volle Kontrolle.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Was passiert bei Website-Relaunch ohne Tech-SEO-Begleitung?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Ohne saubere Redirect-Strategie sind 40 bis 80 % Sichtbarkeitsverlust realistisch. Mit Begleitung halten wir den Verlust erfahrungsgemäß unter 10 %, durch lückenloses 1:1-Mapping und Indexierungs-Monitoring.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Werden meine Inhalte von ChatGPT, Claude und Perplexity gefunden?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Nur, wenn deren Crawler (z. B. GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot) Zugriff haben und die Inhalte technisch verfügbar sind (keine Blocker in robots.txt, saubere Indexierung und verlässliches Rendering). Wir prüfen und konfigurieren robots.txt und llms.txt entsprechend.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Wie wird Tech-SEO mit Local SEO kombiniert?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "LocalBusiness-Schema, Mobile-CWV für 'in der Nähe'-Suchen und schnelle Ladezeiten auf Mobilgeräten sind die Brücke. Dadurch steigen sowohl lokale Map-Pack-Signale als auch die organische Performance.",
+              },
+            },
+          ],
+        }
+      : null
+
   const breadcrumbItems = [
     { name: 'Startseite', url: '/' },
     { name: 'Leistungen', url: '/leistungen' },
@@ -284,6 +373,7 @@ export default function LeistungPage({ params }: PageProps) {
             </p>
             {params.slug === 'seo-audit' && <SeoAuditHeroVisual />}
             {params.slug === 'local-seo' && <LocalSeoHeroVisual />}
+            {params.slug === 'technisches-seo' && <TechnischesSeoHeroVisual />}
             <Link
               href="/leistungen"
               className="mt-10 inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-accent transition-colors"
@@ -1248,6 +1338,558 @@ export default function LeistungPage({ params }: PageProps) {
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: jsonLdStringify(localSeoFaqSchema) }}
+              />
+            )}
+          </section>
+        )}
+
+        {params.slug === 'technisches-seo' && (
+          <section
+            aria-label="Technisches SEO Leistungsseite Zusatzinhalt"
+            className="bg-white"
+          >
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `
+  .tech-seo-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    font-family: inherit;
+    color: #1F2937;
+    line-height: 1.75;
+    font-size: 17px;
+  }
+  .tech-seo-content h2 {
+    color: #4F46E5;
+    font-size: 1.65rem;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .tech-seo-content h3 {
+    color: #1F2937;
+    font-size: 1.15rem;
+    margin-top: 28px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .tech-seo-content p { margin-bottom: 16px; }
+  .tech-seo-content a {
+    color: #4F46E5;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .tech-seo-content a:hover { color: #3730A3; }
+  .tech-seo-content strong { font-weight: 600; }
+  .tech-seo-content ul, .tech-seo-content ol { padding-left: 22px; margin: 12px 0 18px; }
+  .tech-seo-content li { margin-bottom: 10px; }
+
+  /* Featured Snippet Box */
+  .snippet-box {
+    background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+    border-left: 5px solid #4F46E5;
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin: 24px 0 32px;
+  }
+  .snippet-box p { margin-bottom: 0; font-size: 1.02rem; line-height: 1.7; }
+  .snippet-box strong { color: #3730A3; }
+
+  /* Fact Grid */
+  .fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0 32px;
+  }
+  .fact-card {
+    background: #F9FAFB;
+    border-top: 4px solid #4F46E5;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .fact-card .fact-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4F46E5;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .fact-card .fact-label {
+    font-size: 0.95rem;
+    color: #4B5563;
+    line-height: 1.5;
+  }
+
+  /* Service Bausteine Grid */
+  .bausteine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin: 20px 0 28px;
+  }
+  .baustein-card {
+    background: #F9FAFB;
+    border-left: 4px solid #4F46E5;
+    border-radius: 8px;
+    padding: 18px 22px;
+  }
+  .baustein-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #4F46E5;
+    font-size: 1.05rem;
+  }
+  .baustein-card p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .baustein-number {
+    display: inline-block;
+    background: #4F46E5;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-right: 8px;
+    line-height: 26px;
+  }
+
+  /* Problem Table */
+  .tech-seo-content .problem-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 16px 0 24px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    background: #fff;
+  }
+  .tech-seo-content .problem-wrapper::-webkit-scrollbar { height: 8px; }
+  .tech-seo-content .problem-wrapper::-webkit-scrollbar-thumb { background: #4F46E5; border-radius: 4px; }
+  .tech-seo-content .problem-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 0.92rem;
+  }
+  .tech-seo-content .problem-table th,
+  .tech-seo-content .problem-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+    vertical-align: top;
+  }
+  .tech-seo-content .problem-table thead th {
+    background: #4F46E5;
+    color: #fff;
+    font-weight: 700;
+    border-bottom: none;
+  }
+  .tech-seo-content .problem-table tbody td:first-child {
+    background: #FEF2F2;
+    font-weight: 600;
+    color: #991B1B;
+  }
+  .scroll-hint {
+    display: none;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: #4F46E5;
+    background: #EEF2FF;
+    border: 1px dashed #4F46E5;
+    border-radius: 6px;
+    margin: 12px 0;
+    font-weight: 600;
+  }
+
+  /* Plattform List */
+  .platform-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 24px;
+  }
+  .platform-list li {
+    background: #F9FAFB;
+    border-left: 3px solid #4F46E5;
+    padding: 14px 18px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  .platform-list li strong {
+    color: #4F46E5;
+    margin-right: 6px;
+  }
+
+  /* USPs */
+  .usp-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 28px;
+  }
+  .usp-list li {
+    background: #F9FAFB;
+    border-left: 4px solid #10B981;
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .usp-list strong {
+    color: #10B981;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.02rem;
+  }
+
+  /* Timeline */
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 28px;
+  }
+  .timeline li {
+    position: relative;
+    padding: 18px 22px 18px 80px;
+    margin-bottom: 14px;
+    background: #F9FAFB;
+    border-radius: 8px;
+  }
+  .timeline li::before {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #4F46E5, #3730A3);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .timeline li[data-label="30"]::before { content: "30 T."; }
+  .timeline li[data-label="90"]::before { content: "90 T."; }
+  .timeline li[data-label="180"]::before { content: "180 T."; }
+  .timeline strong { display: block; margin-bottom: 4px; color: #1F2937; }
+
+  /* Pricing Overview */
+  .pricing-overview {
+    background: #F9FAFB;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+    overflow-x: auto;
+  }
+  .pricing-overview table { width: 100%; border-collapse: collapse; min-width: 500px; }
+  .pricing-overview th, .pricing-overview td {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  .pricing-overview th {
+    color: #4F46E5;
+    font-weight: 600;
+    border-bottom: 2px solid #E5E7EB;
+  }
+  .pricing-overview td { border-bottom: 1px solid #E5E7EB; }
+  .pricing-overview tr:last-child td { border-bottom: none; }
+
+  /* CTA Box */
+  .tech-cta {
+    background: linear-gradient(135deg, #4F46E5, #3730A3);
+    color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .tech-cta p {
+    color: #E0E7FF;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  .tech-cta a.cta-btn {
+    display: inline-block;
+    background: #10B981;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .tech-cta a.cta-btn:hover { background: #059669; color: #fff; }
+  .tech-cta .phone {
+    display: block;
+    margin-top: 12px;
+    color: #E0E7FF;
+    font-size: 0.95rem;
+  }
+  .tech-cta .phone a { color: #fff; text-decoration: underline; }
+
+  /* FAQ */
+  .tech-faq { margin-top: 24px; }
+  .faq-item { border-bottom: 1px solid #E5E7EB; padding: 20px 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q { font-weight: 700; color: #1F2937; font-size: 1.05rem; margin-bottom: 8px; }
+  .faq-a { color: #374151; font-size: 0.95rem; line-height: 1.7; }
+
+  .closing-note {
+    font-size: 0.9rem;
+    color: #6B7280;
+    text-align: center;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+  .closing-note a { color: #4F46E5; }
+
+  @media (max-width: 768px) {
+    .scroll-hint { display: block; }
+  }
+  @media (max-width: 640px) {
+    .tech-seo-content { padding: 40px 12px; font-size: 16px; }
+    .tech-seo-content h2 { font-size: 1.35rem; }
+    .bausteine-grid, .fact-grid { grid-template-columns: 1fr; }
+    .tech-cta { padding: 22px 16px; }
+    .timeline li { padding: 16px 16px 16px 72px; }
+    .tech-seo-content .problem-table {
+      min-width: 600px;
+      font-size: 0.85rem;
+    }
+  }
+`,
+              }}
+            />
+
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+<div class="tech-seo-content">
+
+  <h2>Warum Technisches SEO 2026 unverzichtbar ist</h2>
+  <p>Drei Zahlen zeigen, warum Tech-SEO keine Kür mehr ist, sondern Pflicht:</p>
+
+  <div class="fact-grid">
+    <div class="fact-card">
+      <span class="fact-number">46,6 %</span>
+      <span class="fact-label">der Mobile-Origins bestehen alle Core Web Vitals (httparchive.org, 09/2024)</span>
+    </div>
+    <div class="fact-card">
+      <span class="fact-number">−7 %</span>
+      <span class="fact-label">Conversion bei nur 100 ms Verzögerung in der Ladezeit (Akamai 2017)</span>
+    </div>
+    <div class="fact-card">
+      <span class="fact-number">INP</span>
+      <span class="fact-label">ist seit März 2024 offizielle Core Web Vital und hat FID abgelöst</span>
+    </div>
+  </div>
+
+  <p>Gerade der Münchner Mittelstand, also Ärzte, Anwälte, Handwerker und Tech-Startups, hat hier oft massiven Nachholbedarf. Inhouse-Entwickler kennen die Tech-Seite, übersehen aber SEO-Implikationen. Reine SEO-Freelancer wiederum scheitern an JavaScript-Rendering, Server-Konfiguration oder komplexen Page-Buildern. Beides muss zusammenkommen.</p>
+
+  <h2>Was wir bei seomuenchen.com für dich tun</h2>
+  <p>Konkrete Bausteine. Keine Theorie, keine Selbstmach-Anleitungen:</p>
+
+  <div class="bausteine-grid">
+    <div class="baustein-card">
+      <h3><span class="baustein-number">1</span>Tech-SEO Audit</h3>
+      <p>Crawling-Verhalten, Indexierungsstatus, robots.txt, XML-Sitemap, Render-Test mit echten Browser-Engines, Server-Logs.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">2</span>Core Web Vitals</h3>
+      <p>LCP, INP und CLS auf grüne Werte (75. Perzentil im Field-Data, nicht nur im Lab-Test).</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">3</span>JavaScript-SEO</h3>
+      <p>Server-Side-Rendering und Pre-Rendering für React, Next.js, Vue und Angular. Google rendert JS, aber nicht zuverlässig.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">4</span>Schema-Markup</h3>
+      <p>LocalBusiness, FAQPage, Product, BreadcrumbList, Article. Sauber validiert, nicht aus Plugins zusammengeklickt.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">5</span>Migration-Begleitung</h3>
+      <p>301-Redirect-Mapping, Sitemap-Sync, Indexierungs-Monitoring vor, während und nach dem Relaunch.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">6</span>AI-Crawler-Setup</h3>
+      <p>robots.txt und llms.txt für GPTBot, ClaudeBot, PerplexityBot und OAI-SearchBot, damit du in KI-Antworten zitiert wirst.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">7</span>Mobile-Performance</h3>
+      <p>Mobile-First-Indexing, kritisches CSS, Lazy-Loading, moderne Bildformate (WebP, AVIF).</p>
+    </div>
+  </div>
+
+  <p>Eine ausführliche <a href="/blog/onpage-seo-checkliste">OnPage-SEO-Checkliste</a> findest du in unserem Blog. Den initialen <a href="/leistungen/seo-audit/">SEO-Audit</a> bieten wir als separaten Service an.</p>
+
+  <h2>Tech-SEO-Probleme die wir typischerweise lösen</h2>
+
+  <div class="scroll-hint">← Zum Vergleichen horizontal scrollen →</div>
+  <div class="problem-wrapper">
+    <table class="problem-table">
+      <thead>
+        <tr>
+          <th>Problem</th>
+          <th>Symptom</th>
+          <th>Auswirkung</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Relaunch zerstört Rankings</td><td>Sichtbarkeitsindex bricht ein</td><td>40 bis 80 % Traffic-Verlust</td></tr>
+        <tr><td>"Discovered, currently not indexed"</td><td>Seiten in GSC nicht im Index</td><td>Kein organischer Traffic</td></tr>
+        <tr><td>LCP über 4 Sekunden auf Mobile</td><td>Roter Core Web Vital</td><td>Ranking-Abwertung</td></tr>
+        <tr><td>Schema-Errors in Search Console</td><td>FAQPage, LocalBusiness, Product</td><td>Verlust von Rich-Snippets</td></tr>
+        <tr><td>Render-Blocking-JavaScript</td><td>Elementor, Divi, WPBakery</td><td>Schlechte CWV</td></tr>
+        <tr><td>robots.txt blockiert wichtige Pages</td><td>Disallow falsch gesetzt</td><td>Komplette Bereiche unsichtbar</td></tr>
+        <tr><td>React/Next.js-Inhalte nicht indexiert</td><td>Leere DOM für Crawler</td><td>Content existiert für Google nicht</td></tr>
+        <tr><td>Hreflang-Fehler bei DACH-Sites</td><td>DE/AT/CH-Versionen kannibalisieren</td><td>Falsche Länder-Rankings</td></tr>
+        <tr><td>AI-Crawler werden geblockt</td><td>GPTBot, ClaudeBot, PerplexityBot 403</td><td>Keine Zitationen in KI-Antworten</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Plattform-Erfahrung: wir kennen die Stolpersteine</h2>
+  <p>Jede Plattform hat eigene Tech-SEO-Fallen. Wir haben sie alle gesehen:</p>
+
+  <ul class="platform-list">
+    <li><strong>WordPress:</strong> Plugin-Konflikte, Page-Builder-Bloat, schlechte LCP durch Elementor und Divi, doppelte Schema-Outputs.</li>
+    <li><strong>Shopify:</strong> App-Stack-Overhead, Liquid-Limitierungen, Render-Blocking durch Third-Party-Scripts.</li>
+    <li><strong>Webflow:</strong> limitierte robots.txt-Anpassungen, schwierige CMS-Item-SEO, fehlende Server-Logs.</li>
+    <li><strong>Wix:</strong> historisch Performance-Bottleneck, eingeschränkte Indexierungs-Steuerung.</li>
+    <li><strong>Next.js / React:</strong> SSR/SSG-Setup, dynamic routing, Hydration-Probleme, App-Router-Fallstricke.</li>
+    <li><strong>Custom Stacks:</strong> auf Anfrage, inklusive Headless-CMS und Jamstack-Architekturen.</li>
+  </ul>
+
+  <div class="tech-cta">
+    <p>Du willst wissen, wo deine Website technisch steht?</p>
+    <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch vereinbaren</a>
+    <span class="phone">Oder ruf uns an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+  </div>
+
+  <h2>Was uns von anderen Tech-SEO-Agenturen unterscheidet</h2>
+  <ul class="usp-list">
+    <li>
+      <strong>Tech-SEO und AI-Crawler-Setup als Pflicht-Kombo</strong>
+      Wenn ChatGPT, Claude oder Perplexity deine Site nicht crawlen können, wirst du in KI-Antworten nicht zitiert. Die meisten Wettbewerber trennen klassisches Tech-SEO und AI-Sichtbarkeit in zwei Projekte. Wir kombinieren das standardmäßig, denn die Infrastruktur (robots.txt, Sitemap, Server-Headers) ist dieselbe.
+    </li>
+    <li>
+      <strong>Münchner Mittelstands-Fokus</strong>
+      Wir kennen die typischen Probleme von Münchner <a href="/branchen/aerzte/">Ärzten</a>, <a href="/branchen/anwaelte/">Anwälten</a>, <a href="/branchen/handwerker/">Handwerkern</a> und Tech-Startups. Bei einer Praxis-Website ist Mobile-LCP für "Hausarzt München Schwabing" wichtiger als bei einem B2B-SaaS, wo App-Performance und API-Indexierung im Vordergrund stehen.
+    </li>
+    <li>
+      <strong>Website-Migration ohne Sichtbarkeitsverlust</strong>
+      Bei Relaunches sind 40 bis 80 % Sichtbarkeitsverlust ohne saubere Redirect-Strategie normal. Unsere Migrationsbegleitung hält die Verluste erfahrungsgemäß unter 10 %, durch lückenloses 1:1-Mapping, gestaffeltes Sitemap-Switching und Live-Monitoring der Indexierung.
+    </li>
+    <li>
+      <strong>Tech, Local und Content vereint</strong>
+      Andere Agenturen trennen Tech-SEO und Local SEO in separate Pakete. Bei uns laufen LocalBusiness-Schema, Mobile-CWV für "in der Nähe"-Suchen und Performance-Tuning in einem System. Gerade für lokale Münchner Anbieter ein entscheidender Hebel.
+    </li>
+  </ul>
+
+  <h2>Was kostet Technisches SEO?</h2>
+
+  <div class="snippet-box">
+    <p><strong>Kurz gesagt:</strong> Bei seriösen Tech-SEO-Agenturen liegen die Monatsraten in der Regel zwischen 2.000 und 5.000 EUR. Bei seomuenchen.com ist Technisches SEO Bestandteil aller Pakete ab 990 EUR pro Monat. Migrations-Begleitung als separates Projekt typischerweise 2.500 bis 7.500 EUR einmalig.</p>
+  </div>
+
+  <div class="pricing-overview">
+    <table>
+      <thead>
+        <tr>
+          <th>Paket</th>
+          <th>Preis</th>
+          <th>Tech-SEO-Anteil</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Starter</td><td>ab 990 EUR / Monat</td><td>Audit + Basis-Fixes</td></tr>
+        <tr><td>Growth</td><td>ab 1.590 EUR / Monat</td><td>+ CWV-Optimierung</td></tr>
+        <tr><td>Business</td><td>ab 2.390 EUR / Monat</td><td>+ Schema + JS-SEO</td></tr>
+        <tr><td>Professional</td><td>ab 2.590 EUR / Monat</td><td>+ AI-Crawler + Mobile-Tuning</td></tr>
+        <tr><td>Enterprise</td><td>ab 2.990 EUR / Monat</td><td>Volle Tech-Tiefe + Custom Stack</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Vollständige Übersicht auf der <a href="/preise/">Preisseite</a>.</p>
+
+  <h2>Welche Ergebnisse du erwarten kannst</h2>
+  <p>Realistische Zeitfenster, keine Versprechen:</p>
+
+  <ol class="timeline">
+    <li data-label="30"><strong>Nach 30 Tagen</strong>Tech-Audit abgeschlossen, kritische Fehler behoben (robots.txt, Sitemap, Indexierungs-Blocker, falsche Canonicals).</li>
+    <li data-label="90"><strong>Nach 90 Tagen</strong>Core Web Vitals typischerweise auf grün (LCP unter 2,5 Sekunden, INP unter 200 ms, CLS unter 0,1), Schema-Markup vollständig implementiert und validiert.</li>
+    <li data-label="180"><strong>Nach 180 Tagen</strong>Stabile Indexierung, messbare AI-Crawler-Sichtbarkeit (Zitationen in ChatGPT und Perplexity), deutliche Performance-Verbesserung in GSC-Impressionen und -Klicks.</li>
+  </ol>
+
+  <p><strong>Wichtig:</strong> Tatsächliche Ergebnisse hängen von Plattform, Ausgangslage, Tech-Stack und Wettbewerbsumfeld ab. Wir geben keine Ranking-Garantien, wer das tut, ist unseriös.</p>
+
+  <h2>Häufige Fragen zu Technischem SEO</h2>
+  <div class="tech-faq">
+    <div class="faq-item">
+      <div class="faq-q">Was unterscheidet Technisches SEO von OnPage-SEO?</div>
+      <div class="faq-a">Tech-SEO betrifft die Infrastruktur deiner Site: Crawling, Rendering, Performance, Indexierung. OnPage-SEO betrifft Inhalt und Struktur einzelner Seiten: Headings, Keywords, interne Links. Beides greift ineinander, ist aber methodisch getrennt.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie lange dauert Tech-SEO bis zu ersten Ergebnissen?</div>
+      <div class="faq-a">Erste Effekte (Indexierung, Core Web Vitals) erfahrungsgemäß nach 30 bis 90 Tagen. Ranking-Effekte typischerweise nach 3 bis 6 Monaten, abhängig von Crawl-Frequenz und Wettbewerb.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Brauche ich Tech-SEO, obwohl meine Website neu ist?</div>
+      <div class="faq-a">Gerade dann. Neue Sites haben oft Default-Konfigurationen, die kontraproduktiv sind: offene Staging-Umgebungen, falsche Canonicals, fehlende Sitemap-Submission, leere Schema-Outputs.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Funktioniert Tech-SEO bei Shopify, Webflow, Wix oder WordPress?</div>
+      <div class="faq-a">Ja, mit plattformspezifischen Limitierungen. Bei Wix und Webflow gibt es Grenzen bei robots.txt und Server-Headers. Bei WordPress und Shopify ist deutlich mehr möglich. Custom-Stacks (Next.js, Nuxt, Astro) bieten die volle Kontrolle.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was passiert bei Website-Relaunch ohne Tech-SEO-Begleitung?</div>
+      <div class="faq-a">Ohne saubere Redirect-Strategie sind 40 bis 80 % Sichtbarkeitsverlust realistisch. Mit Begleitung halten wir den Verlust typischerweise unter 10 % durch lückenloses URL-Mapping und Live-Monitoring während und nach dem Go-Live.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Werden meine Inhalte von ChatGPT, Claude und Perplexity gefunden?</div>
+      <div class="faq-a">Nur, wenn deren Crawler (GPTBot, ClaudeBot, PerplexityBot, OAI-SearchBot) Zugriff haben und die Inhalte technisch verfügbar sind (kein blockierendes JavaScript-Rendering). Wir prüfen und konfigurieren robots.txt und llms.txt entsprechend.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie wird Tech-SEO mit Local SEO kombiniert?</div>
+      <div class="faq-a">LocalBusiness-Schema, Mobile-CWV für "in der Nähe"-Suchen und schnelle Ladezeiten auf Mobilgeräten sind die Brücke. Details findest du auf unserer <a href="/leistungen/local-seo/">Local-SEO-Seite</a>.</div>
+    </div>
+  </div>
+
+  <div class="tech-cta">
+    <p>Bereit für saubere Tech-SEO-Grundlagen?</p>
+    <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch sichern</a>
+    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+  </div>
+
+  <p class="closing-note">
+    Wir betreuen Unternehmen in München und ganz Bayern. Mehr in unseren <a href="/leistungen/">SEO-Leistungen</a> oder im <a href="/blog/">Blog</a>.
+  </p>
+
+</div>
+`,
+              }}
+            />
+
+            {technischesSeoFaqSchema && (
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: jsonLdStringify(technischesSeoFaqSchema) }}
               />
             )}
           </section>
