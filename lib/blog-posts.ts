@@ -18,6 +18,7 @@ import { googleRankingVerbessern2026Content } from './blog-posts/google-ranking-
 import { googlePenalty2026Content } from './blog-posts/google-penalty-2026-content'
 import { seoVsSea2026Content } from './blog-posts/seo-vs-sea-2026-content'
 import { websiteNichtGefunden2026Content } from './blog-posts/website-nicht-gefunden-2026-content'
+import { aiSeo2026Content } from './blog-posts/ai-seo-2026-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -37,6 +38,8 @@ export interface BlogPost {
   image?: string
   /** Alt-Text für das Thumbnail (für Barrierefreiheit & SEO) */
   imageAlt?: string
+  /** Optional: Hero-Thumbnail auf der Post-Seite ausblenden (Liste/Teaser bleibt über `image`) */
+  showHeroImage?: boolean
   /** Optional: FAQs für FAQPage-Schema (Rich Snippets) */
   faqs?: BlogPostFAQ[]
   /** Optional: Anzeigename in der BlogAuthorBox (Standard: Joel Siebert) */
@@ -44,6 +47,71 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'ai-seo-2026',
+    title: 'AI SEO 2026: So rankst du in ChatGPT, Claude und Perplexity',
+    metaTitle: 'AI SEO 2026: ChatGPT, Claude & Perplexity ranken | Guide',
+    metaDescription:
+      'AI SEO 2026 Anleitung für KMU: So rankst du in ChatGPT, Perplexity & AI Overviews. Mit robots.txt, Schema, llms.txt und Brand-Hebeln. 22 Min. Lesezeit.',
+    focusKeyword: 'AI SEO 2026',
+    authorName: 'Julian Schäfer',
+    category: 'technisches-seo',
+    content: aiSeo2026Content,
+    image: '/images/blog/ai-seo-2026-thumbnail.webp',
+    imageAlt: 'AI SEO 2026: So rankst du in ChatGPT, Claude und Perplexity — Tutorial für KMU',
+    faqs: [
+      {
+        question: 'Was ist der Unterschied zwischen AI SEO und klassischem SEO?',
+        answer:
+          'Klassisches SEO optimiert für die zehn blauen Links der Google-SERP. AI SEO optimiert dafür, in generativen Antworten von ChatGPT, Perplexity, Gemini und in Google AI Overviews zitiert oder erwähnt zu werden. Die Grundlagen (Crawlability, Schema, Content-Qualität) überlappen stark. Die Akzente verschieben sich Richtung strukturierter Antworten, Brand-Entity-Building und Drittquellen-Präsenz.',
+      },
+      {
+        question: 'Funktioniert klassisches SEO noch mit AI Overviews?',
+        answer:
+          'Ja, aber mit reduziertem Output. Position-1-Klicks gehen laut Sistrix-Studie 02/2026 um rund 59 Prozent zurück, wenn eine AI Overview erscheint. Klassisches SEO bleibt notwendig, denn ohne klassische Sichtbarkeit landest du auch nicht in den AIO-Quellen.',
+      },
+      {
+        question: 'Sollte ich AI-Bots in robots.txt blockieren oder zulassen?',
+        answer:
+          'Für die meisten KMU: zulassen. Du willst zitiert werden, du willst Brand-Sichtbarkeit, du willst in den Trainingsdaten landen. Blockieren ist nur sinnvoll für Premium-Publisher mit eigenem Geschäftsmodell rund um Content-Lizenzierung.',
+      },
+      {
+        question: 'Wie erkenne ich, ob meine Site in ChatGPT oder Perplexity erscheint?',
+        answer:
+          'Manuelle Test-Queries sind der schnellste Weg. Erstelle eine Liste von 10 bis 15 Brand-, Service- und Themen-Queries, teste sie monatlich. Tools wie Otterly.AI, Peec AI oder Semrush AI Toolkit automatisieren das.',
+      },
+      {
+        question: 'Was kostet AI SEO?',
+        answer:
+          'Selbst gemacht: 0 bis 500 EUR pro Monat. Freelancer: 800 bis 2.500 EUR pro Monat. Agentur: 1.500 bis 8.000 EUR pro Monat, je nach Umfang. Faustregel: 20 bis 25 Prozent des bestehenden SEO-Budgets.',
+      },
+      {
+        question: 'Kann ich AI SEO selber machen?',
+        answer:
+          'Die Hygiene-Hebel wie robots.txt, Schema, FAQ-Sektionen, Bing Webmaster Tools, llms.txt und Google Business Profile kann jeder KMU-Inhaber an einem Wochenende umsetzen. Komplex wird es bei Brand-Building, Wikipedia, Originaldaten und systematischer Drittquellen-Präsenz. Hier lohnt sich oft externe Begleitung.',
+      },
+      {
+        question: 'Wirkt AI SEO auch lokal für Münchner Geschäfte?',
+        answer:
+          'Sehr stark sogar. ChatGPT Search und Perplexity ziehen für lokale Queries Google-Maps-Reviews, Google Business Profile und Stadtportale. Wer in München sichtbar sein will, braucht ein vollständiges Google Business Profile, echte Reviews, LocalBusiness-Schema mit areaServed und Erwähnungen in Münchner Branchenportalen.',
+      },
+      {
+        question: 'Was ist llms.txt und brauche ich das?',
+        answer:
+          'Eine vorgeschlagene Markdown-Datei im Root, die LLMs eine kuratierte Inhaltsübersicht gibt. Vorgeschlagen von Jeremy Howard (fast.ai) im September 2024. Aktuell von keiner großen Plattform offiziell genutzt. Aufwand 15 Minuten, Schaden null. Mach es, aber erwarte keinen Game-Changer.',
+      },
+      {
+        question: 'Wie schnell sieht man Ergebnisse bei AI SEO?',
+        answer:
+          'Erste Citations ab Woche 4 bis 8 bei sauberer Umsetzung. Spürbarer AI-Referral-Traffic im Monat 3 bis 4. Stabile AI-Inclusion mit messbaren Conversions im Monat 6 bis 12. AI SEO ist in den ersten 60 Tagen langsamer als klassisches SEO und schneller danach.',
+      },
+      {
+        question: 'Was passiert mit meinem klassischen Google-Ranking durch AI SEO?',
+        answer:
+          'AI-SEO-Maßnahmen wirken in der Regel positiv auf klassisches Ranking. Bessere Struktur, bessere Schema-Implementierung, bessere Brand-Signale stärken auch klassisches SEO. Direkter Klick-Verlust kommt nicht von deiner Optimierung, sondern von der AI Overview selbst.',
+      },
+    ],
+  },
   {
     slug: 'website-nicht-gefunden',
     title: 'Website wird nicht bei Google gefunden? 12 Ursachen und Lösungen (2026)',

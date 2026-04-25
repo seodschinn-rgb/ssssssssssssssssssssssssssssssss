@@ -1188,6 +1188,140 @@ const BLOG_ARTICLE_STYLE = `
   margin: 24px auto;
   border-radius: 8px;
 }
+
+/* AI SEO Artikel: zusätzliche sm-article Utility-Klassen */
+.blog-article .sm-article .meta-info {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  color: var(--sm-text-light);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--sm-border);
+}
+.blog-article .sm-article .meta-info span::before {
+  content: '·';
+  margin-right: 8px;
+  color: var(--sm-primary);
+}
+.blog-article .sm-article .meta-info span:first-child::before {
+  content: '';
+  margin-right: 0;
+}
+.blog-article .sm-article .lead-stat {
+  background: linear-gradient(135deg, var(--sm-bg-light), #e0e7ff);
+  border-left: 5px solid var(--sm-primary);
+  padding: 24px 28px;
+  border-radius: 8px;
+  margin: 24px 0 32px;
+}
+.blog-article .sm-article .lead-stat .big-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--sm-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.blog-article .sm-article .lead-stat p {
+  margin-bottom: 0;
+}
+.blog-article .sm-article .table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0 24px;
+  border-radius: 8px;
+  border: 1px solid var(--sm-border);
+  background: #fff;
+}
+.blog-article .sm-article .table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+.blog-article .sm-article .table-wrapper::-webkit-scrollbar-thumb {
+  background: var(--sm-primary);
+  border-radius: 4px;
+}
+.blog-article .sm-article .table-wrapper table {
+  width: 100%;
+  min-width: 580px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.blog-article .sm-article .table-wrapper th {
+  background: var(--sm-primary);
+  color: #fff;
+  text-align: left;
+  padding: 12px 14px;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.blog-article .sm-article .table-wrapper td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--sm-border);
+  vertical-align: top;
+}
+.blog-article .sm-article .table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+.blog-article .sm-article .table-wrapper tbody tr:hover {
+  background: #f9fafb;
+}
+.blog-article .sm-article .code-block {
+  background: #1f2937;
+  color: #f9fafb;
+  padding: 18px 22px;
+  border-radius: 8px;
+  margin: 16px 0 24px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.blog-article .sm-article .code-block .comment {
+  color: #9ca3af;
+}
+.blog-article .sm-article .code-block .keyword {
+  color: #a5f3fc;
+}
+.blog-article .sm-article .code-block .value {
+  color: #fca5a5;
+}
+.blog-article .sm-article .info-box {
+  background: #fff7ed;
+  border-left: 4px solid var(--sm-accent);
+  padding: 16px 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+.blog-article .sm-article .info-box p:last-child {
+  margin-bottom: 0;
+}
+.blog-article .sm-article .quick-start {
+  background: var(--sm-bg-faq);
+  border-left: 4px solid var(--sm-secondary);
+  padding: 24px 28px;
+  border-radius: 8px;
+  margin: 24px 0;
+}
+.blog-article .sm-article .quick-start h3 {
+  color: #047857;
+  margin-top: 0;
+}
+@media (max-width: 640px) {
+  .blog-article .sm-article .lead-stat {
+    padding: 18px 18px;
+  }
+  .blog-article .sm-article .lead-stat .big-number {
+    font-size: 1.9rem;
+  }
+  .blog-article .sm-article .code-block {
+    font-size: 0.78rem;
+    padding: 14px 16px;
+  }
+}
 .blog-article .sm-author-box {
   background: #f9fafb;
   border-radius: 8px;
@@ -1344,7 +1478,7 @@ export default function BlogSlugPage({ params }: PageProps) {
             <BlogTocMobileCollapsible />
           </ClientErrorBoundary>
           {/* Thumbnail nur auf Mobile/Tablet oben (auf Desktop in der rechten Spalte) */}
-          {post.image && (
+          {post.image && post.showHeroImage !== false && (
             <div className="mb-8 w-full px-4 sm:px-6 lg:hidden">
               <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} />
             </div>
@@ -1359,7 +1493,7 @@ export default function BlogSlugPage({ params }: PageProps) {
             </div>
             <div className="lg:col-start-2 min-w-0 lg:px-0">
               {/* Thumbnail auf Desktop in rechter Spalte */}
-              {post.image && (
+              {post.image && post.showHeroImage !== false && (
                 <div className="mb-8 hidden lg:block">
                   <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} />
                 </div>
