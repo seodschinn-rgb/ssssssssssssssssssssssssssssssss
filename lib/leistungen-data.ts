@@ -195,7 +195,8 @@ export const LEISTUNGEN_CONTENT: Record<string, LeistungContent> = {
 
   'local-seo': {
     title: 'Local SEO',
-    metaDescription: 'Local SEO München & Bayern: Google Business Profile optimieren, lokale Suchergebnisse dominieren. Mehr Sichtbarkeit in Maps und lokalen Suchen.',
+    metaDescription:
+      'Local SEO Agentur München: Google Business Profile, Map Pack, NAP & AI-Readiness. Top-3 in 6 Monaten. Ab 990 EUR/Monat. Kostenloses Erstgespräch.',
     shortDescription: 'Dominieren Sie lokale Suchergebnisse in München und Bayern.',
     heroSubline: 'Sichtbar sein, wenn Kunden vor Ort suchen',
     intro:

@@ -27,6 +27,7 @@ import GeoAgenturLeistungPage from '@/components/GeoAgenturLeistungPage'
 import BlogPostThumbnail from '@/components/BlogPostThumbnail'
 import { jsonLdStringify } from '@/lib/safe-json-ld'
 import SeoAuditHeroVisual from '@/components/SeoAuditHeroVisual'
+import LocalSeoHeroVisual from '@/components/LocalSeoHeroVisual'
 
 const GEO_AGENTUR_META = {
   title: 'GEO Agentur München — Generative Engine Optimization | SEO München',
@@ -40,6 +41,13 @@ const SEO_AUDIT_META = {
   description:
     'SEO-Audit München: Technik, Content, Backlinks, Local SEO & AI-Readiness. 6 Analysebereiche, priorisierter Maßnahmenplan. Kostenloses Erstgespräch.',
   focusKeyword: 'SEO-Audit München',
+} as const
+
+const LOCAL_SEO_META = {
+  title: 'Local SEO München: Google Maps & GBP Agentur 2026',
+  description:
+    'Local SEO Agentur München: Google Business Profile, Map Pack, NAP & AI-Readiness. Top-3 in 6 Monaten. Ab 990 EUR/Monat. Kostenloses Erstgespräch.',
+  focusKeyword: 'Local SEO München',
 } as const
 
 interface PageProps {
@@ -70,6 +78,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       openGraph: {
         title: SEO_AUDIT_META.title,
         description: SEO_AUDIT_META.description,
+      },
+    }
+  }
+  if (params.slug === 'local-seo') {
+    return {
+      title: { absolute: LOCAL_SEO_META.title },
+      description: LOCAL_SEO_META.description,
+      keywords: LOCAL_SEO_META.focusKeyword,
+      openGraph: {
+        title: LOCAL_SEO_META.title,
+        description: LOCAL_SEO_META.description,
       },
     }
   }
@@ -153,6 +172,72 @@ export default function LeistungPage({ params }: PageProps) {
         }
       : null
 
+  const localSeoFaqSchema =
+    params.slug === 'local-seo'
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: [
+            {
+              '@type': 'Question',
+              name: 'Wie lange dauert Local SEO in München bis zu ersten Ergebnissen?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Erste messbare Effekte (GBP-Aufrufe, Map-Pack-Impressionen) zeigen sich erfahrungsgemäß nach 60 bis 90 Tagen. Stabile Top-3-Rankings für kompetitive Münchner Keywords typischerweise nach 4 bis 6 Monaten.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Was kostet Local SEO für ein Münchner Unternehmen?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Seriöse Agenturen liegen bei 500 bis 1.500 EUR pro Monat, in München mit 10 bis 40 Prozent Aufschlag wegen der hohen Wettbewerbsdichte. Unsere Pakete starten bei 990 EUR pro Monat.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Was ist wichtiger, Google Business Profile oder Website?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Beides zusammen. Das GBP dominiert das Map Pack und bringt schneller lokale Sichtbarkeit, die Website sichert organische Rankings und Vertrauen.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Wie optimiert ihr mehrere Standorte in München und Umland?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Pro Standort ein separates GBP plus eigene Landingpage mit lokalem Content, LocalBusiness-Schema und sauberer interner Verlinkung. Keine Duplicate-Content-Fallen.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Können kleine Unternehmen gegen große Ketten in München ranken?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: "Ja. Im Map Pack schlägt lokale Relevanz fast immer Markenbekanntheit. Nischen-Keywords wie 'Bäcker Schwabing' sind gewinnbar, auch gegen Filialisten.",
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Wie geht ihr mit unberechtigten oder gefälschten Bewertungen um?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Wir prüfen, dokumentieren und melden Verstöße nach den Google-Richtlinien. Parallel bauen wir über Review-Kampagnen neue positive Bewertungen auf.',
+              },
+            },
+            {
+              '@type': 'Question',
+              name: 'Warum eine Agentur statt Local SEO selbst zu machen?',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: 'Zeit, Tool-Kosten, Risiko und Marktkenntnis. DIY dauert typischerweise doppelt so lange und birgt Risiken wie GBP-Sperren durch Regelverstöße.',
+              },
+            },
+          ],
+        }
+      : null
+
   const breadcrumbItems = [
     { name: 'Startseite', url: '/' },
     { name: 'Leistungen', url: '/leistungen' },
@@ -189,13 +274,16 @@ export default function LeistungPage({ params }: PageProps) {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-zinc-900">
               {params.slug === 'seo-audit'
                 ? 'SEO-Audit München: Deine Website auf dem Prüfstand'
-                : content.title}
+                : params.slug === 'local-seo'
+                  ? 'Local SEO München: Sichtbar bei Kunden in deiner Nähe'
+                  : content.title}
             </h1>
             <p className="mt-4 text-xl text-accent font-semibold">{content.heroSubline}</p>
             <p className="mt-6 text-lg text-zinc-600 max-w-2xl mx-auto leading-relaxed">
               {content.intro}
             </p>
             {params.slug === 'seo-audit' && <SeoAuditHeroVisual />}
+            {params.slug === 'local-seo' && <LocalSeoHeroVisual />}
             <Link
               href="/leistungen"
               className="mt-10 inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-accent transition-colors"
@@ -627,6 +715,539 @@ export default function LeistungPage({ params }: PageProps) {
               <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: jsonLdStringify(seoAuditFaqSchema) }}
+              />
+            )}
+          </section>
+        )}
+
+        {params.slug === 'local-seo' && (
+          <section aria-label="Local SEO Leistungsseite Zusatzinhalt" className="bg-white">
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `
+  .local-seo-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 24px;
+    font-family: inherit;
+    color: #1F2937;
+    line-height: 1.75;
+    font-size: 17px;
+  }
+  .local-seo-content h2 {
+    color: #4F46E5;
+    font-size: 1.65rem;
+    margin-top: 48px;
+    margin-bottom: 16px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .local-seo-content h3 {
+    color: #1F2937;
+    font-size: 1.15rem;
+    margin-top: 28px;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .local-seo-content p { margin-bottom: 16px; }
+  .local-seo-content a {
+    color: #4F46E5;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .local-seo-content a:hover { color: #3730A3; }
+  .local-seo-content strong { font-weight: 600; }
+  .local-seo-content ul, .local-seo-content ol { padding-left: 22px; margin: 12px 0 18px; }
+  .local-seo-content li { margin-bottom: 10px; }
+
+  .local-seo-content .snippet-box {
+    background: linear-gradient(135deg, #EEF2FF, #E0E7FF);
+    border-left: 5px solid #4F46E5;
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin: 24px 0 32px;
+  }
+  .local-seo-content .snippet-box p { margin-bottom: 0; font-size: 1.02rem; line-height: 1.7; }
+  .local-seo-content .snippet-box strong { color: #3730A3; }
+
+  .local-seo-content .fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin: 24px 0 32px;
+  }
+  .local-seo-content .fact-card {
+    background: #F9FAFB;
+    border-top: 4px solid #4F46E5;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+  }
+  .local-seo-content .fact-card .fact-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: #4F46E5;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .local-seo-content .fact-card .fact-label {
+    font-size: 0.95rem;
+    color: #4B5563;
+    line-height: 1.5;
+  }
+
+  .local-seo-content .bausteine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+    margin: 20px 0 28px;
+  }
+  .local-seo-content .baustein-card {
+    background: #F9FAFB;
+    border-left: 4px solid #4F46E5;
+    border-radius: 8px;
+    padding: 18px 22px;
+  }
+  .local-seo-content .baustein-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #4F46E5;
+    font-size: 1.05rem;
+  }
+  .local-seo-content .baustein-card p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .local-seo-content .baustein-number {
+    display: inline-block;
+    background: #4F46E5;
+    color: #fff;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-right: 8px;
+    line-height: 26px;
+  }
+
+  .local-seo-content .comparison-wrapper {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-x;
+    margin: 16px 0 8px;
+    border-radius: 8px;
+    border: 1px solid #E5E7EB;
+    background: #fff;
+    box-sizing: border-box;
+  }
+  .local-seo-content .comparison-wrapper::-webkit-scrollbar { height: 8px; }
+  .local-seo-content .comparison-wrapper::-webkit-scrollbar-thumb { background: #4F46E5; border-radius: 4px; }
+  .local-seo-content .comparison-wrapper::-webkit-scrollbar-track { background: #F3F4F6; }
+  .local-seo-content .comparison-table {
+    width: 680px;
+    min-width: 680px;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: 0.92rem;
+  }
+  .local-seo-content .comparison-table th,
+  .local-seo-content .comparison-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #E5E7EB;
+    vertical-align: top;
+  }
+  .local-seo-content .comparison-table thead th {
+    background: #4F46E5;
+    color: #fff;
+    font-weight: 700;
+    border-bottom: none;
+  }
+  .local-seo-content .comparison-table thead th:first-child { background: #1F2937; }
+  .local-seo-content .comparison-table tbody td:first-child {
+    background: #F9FAFB;
+    font-weight: 600;
+  }
+  .local-seo-content .comparison-table .highlight { color: #10B981; font-weight: 700; }
+  .local-seo-content .scroll-hint {
+    display: none;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.85rem;
+    color: #4F46E5;
+    background: #EEF2FF;
+    border: 1px dashed #4F46E5;
+    border-radius: 6px;
+    margin: 12px 0;
+    font-weight: 600;
+  }
+
+  .local-seo-content .usp-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 28px;
+  }
+  .local-seo-content .usp-list li {
+    background: #F9FAFB;
+    border-left: 4px solid #10B981;
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  .local-seo-content .usp-list strong { color: #10B981; display: block; margin-bottom: 6px; font-size: 1.02rem; }
+
+  .local-seo-content .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0 28px;
+    counter-reset: timeline;
+  }
+  .local-seo-content .timeline li {
+    counter-increment: timeline;
+    position: relative;
+    padding: 18px 22px 18px 80px;
+    margin-bottom: 14px;
+    background: #F9FAFB;
+    border-radius: 8px;
+  }
+  .local-seo-content .timeline li::before {
+    content: counter(timeline);
+    position: absolute;
+    left: 20px;
+    top: 16px;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #4F46E5, #3730A3);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  .local-seo-content .timeline li[data-label="30"]::before { content: "30 T."; }
+  .local-seo-content .timeline li[data-label="90"]::before { content: "90 T."; }
+  .local-seo-content .timeline li[data-label="180"]::before { content: "180 T."; }
+  .local-seo-content .timeline strong { display: block; margin-bottom: 4px; color: #1F2937; }
+
+  .local-seo-content .local-cta {
+    background: linear-gradient(135deg, #4F46E5, #3730A3);
+    color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    margin: 40px 0;
+  }
+  .local-seo-content .local-cta p {
+    color: #E0E7FF;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+  .local-seo-content .local-cta a.cta-btn {
+    display: inline-block;
+    background: #10B981;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .local-seo-content .local-cta a.cta-btn:hover { background: #059669; color: #fff; }
+  .local-seo-content .local-cta .phone {
+    display: block;
+    margin-top: 12px;
+    color: #E0E7FF;
+    font-size: 0.95rem;
+  }
+  .local-seo-content .local-cta .phone a { color: #fff; text-decoration: underline; }
+
+  .local-seo-content .cost-overview {
+    background: #F9FAFB;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0 24px;
+  }
+  .local-seo-content .cost-overview table { width: 100%; border-collapse: collapse; }
+  .local-seo-content .cost-overview th, .local-seo-content .cost-overview td {
+    text-align: left;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+  .local-seo-content .cost-overview th {
+    color: #4F46E5;
+    font-weight: 600;
+    border-bottom: 2px solid #E5E7EB;
+  }
+  .local-seo-content .cost-overview td { border-bottom: 1px solid #E5E7EB; }
+  .local-seo-content .cost-overview tr:last-child td { border-bottom: none; }
+
+  .local-seo-content .local-faq { margin-top: 24px; }
+  .local-seo-content .faq-item { border-bottom: 1px solid #E5E7EB; padding: 20px 0; }
+  .local-seo-content .faq-item:last-child { border-bottom: none; }
+  .local-seo-content .faq-q { font-weight: 700; color: #1F2937; font-size: 1.05rem; margin-bottom: 8px; }
+  .local-seo-content .faq-a { color: #374151; font-size: 0.95rem; line-height: 1.7; }
+
+  .local-seo-content .closing-note {
+    font-size: 0.9rem;
+    color: #6B7280;
+    text-align: center;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+  .local-seo-content .closing-note a { color: #4F46E5; }
+
+  @media (max-width: 768px) {
+    .local-seo-content .comparison-wrapper {
+      width: calc(100vw - 32px) !important;
+      max-width: calc(100vw - 32px) !important;
+    }
+    .local-seo-content .scroll-hint { display: block; }
+  }
+  @media (max-width: 640px) {
+    .local-seo-content { padding: 40px 12px; font-size: 16px; }
+    .local-seo-content h2 { font-size: 1.35rem; }
+    .local-seo-content .bausteine-grid, .local-seo-content .fact-grid { grid-template-columns: 1fr; }
+    .local-seo-content .local-cta { padding: 22px 16px; }
+    .local-seo-content .timeline li { padding: 16px 16px 16px 72px; }
+    .local-seo-content .comparison-wrapper {
+      width: calc(100vw - 16px) !important;
+      max-width: calc(100vw - 16px) !important;
+    }
+    .local-seo-content .comparison-table {
+      min-width: 620px;
+      width: 620px;
+      font-size: 0.85rem;
+    }
+  }
+`,
+              }}
+            />
+
+            <div
+              dangerouslySetInnerHTML={{
+                __html: `
+<div class="local-seo-content">
+
+  <h2>Warum Local SEO für Münchner Unternehmen 2026 entscheidend ist</h2>
+  <p>Wer in München lokal gefunden werden will, kommt an Local SEO nicht vorbei. Die Zahlen sind eindeutig:</p>
+
+  <div class="fact-grid">
+    <div class="fact-card">
+      <span class="fact-number">46 %</span>
+      <span class="fact-label">aller Google-Suchen haben lokalen Intent (Google)</span>
+    </div>
+    <div class="fact-card">
+      <span class="fact-number">76 %</span>
+      <span class="fact-label">der mobilen Suchenden besuchen ein lokales Geschäft innerhalb 24 Stunden (Google)</span>
+    </div>
+    <div class="fact-card">
+      <span class="fact-number">+15–46 %</span>
+      <span class="fact-label">CTR-Verlust durch AI Overviews bei informationalen Queries (Stackmatix 2026)</span>
+    </div>
+  </div>
+
+  <p>Dazu kommt die Münchner Realität: Der hiesige Markt ist einer der wettbewerbsintensivsten in Deutschland. SEO-Kosten liegen typischerweise 10 bis 40 Prozent über dem bundesweiten Durchschnitt, weil jede zweite Branche mehrfach besetzt ist, von Zahnärzten in Schwabing bis zu Handwerkern in Bogenhausen. Wer hier ohne Strategie antritt, verbrennt Budget.</p>
+
+  <h2>Was du mit Local SEO bei uns bekommst</h2>
+  <p>Unsere Local-SEO-Betreuung besteht aus sechs Bausteinen, die wir für jeden Kunden individuell kombinieren. Keine Tutorials, sondern konkrete Umsetzung:</p>
+
+  <div class="bausteine-grid">
+    <div class="baustein-card">
+      <h3><span class="baustein-number">1</span>Google Business Profile</h3>
+      <p>Primärkategorie-Strategie, Posts, Bilder-Pipeline, Q&amp;A-Pflege und laufende Optimierung. Kein einmaliges Setup, sondern kontinuierliche Arbeit.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">2</span>Lokale Landingpages</h3>
+      <p>SEO-optimierte Seiten für Münchner Stadtteile oder deine Servicegebiete im Umland. Schwabing ≠ Bogenhausen ≠ Freising.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">3</span>Review-Strategie</h3>
+      <p>Systematische Gewinnungskampagnen und professionelles Reaktionsmanagement. Keine Copy-Paste-Antworten, sondern auf die Branche abgestimmte Kommunikation.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">4</span>NAP-Konsistenz</h3>
+      <p>Citations in 40+ relevanten Verzeichnissen (Yelp, Gelbe Seiten, Das Örtliche, lokale Münchner Portale).</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">5</span>Technical Local SEO</h3>
+      <p>LocalBusiness Schema Markup, Core Web Vitals, Mobile-First-Optimierung. Technische Signale, die Google direkt auf deinen Standort referenziert.</p>
+    </div>
+    <div class="baustein-card">
+      <h3><span class="baustein-number">6</span>AI/GEO-Readiness</h3>
+      <p>Sichtbarkeit in ChatGPT, Perplexity und Google AI Overviews. Fester Bestandteil jeder Betreuung, nicht Extra-Paket.</p>
+    </div>
+  </div>
+
+  <p>Wie Local SEO grundsätzlich funktioniert, erklären wir Schritt für Schritt in unserem <a href="/blog/local-seo-guide" class="internal-link">Local SEO Guide</a>. Für GBP-Tutorials siehe unseren <a href="/blog/google-business-profile-optimieren" class="internal-link">Google Business Profile Guide</a>.</p>
+
+  <h2>Warum eine Agentur statt DIY?</h2>
+  <p>Der Unterschied ist nicht nur Zeit, sondern Risiko. Ein gesperrtes Google Business Profile kann einen Münchner Handwerksbetrieb über Nacht die Hälfte seiner Leads kosten, und die Reaktivierung dauert Wochen.</p>
+
+  <div class="scroll-hint">← Zum Vergleichen horizontal scrollen →</div>
+  <div class="comparison-wrapper" style="overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;max-width:100%;">
+    <table class="comparison-table" style="min-width:640px;width:max-content;">
+      <thead>
+        <tr>
+          <th>Kriterium</th>
+          <th>DIY</th>
+          <th>Agentur seomuenchen.com</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Time-to-Top-3</td>
+          <td>12 bis 18 Monate</td>
+          <td><span class="highlight">ca. 6 Monate (erfahrungsgemäß)</span></td>
+        </tr>
+        <tr>
+          <td>Tool-Kosten</td>
+          <td>300 bis 500 EUR/Monat separate Lizenzen</td>
+          <td><span class="highlight">inkl. im Paket</span></td>
+        </tr>
+        <tr>
+          <td>Review-Gewinnung</td>
+          <td>manuelle Nachfrage</td>
+          <td>systematische Kampagne</td>
+        </tr>
+        <tr>
+          <td>Risiko GBP-Sperre</td>
+          <td>hoch bei Fehlern</td>
+          <td>mit Best-Practices minimiert</td>
+        </tr>
+        <tr>
+          <td>Münchner Marktkenntnis</td>
+          <td>generisch</td>
+          <td><span class="highlight">Stadtteil-Level</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="local-cta">
+    <p>Du willst wissen, wo dein lokales Ranking aktuell steht?</p>
+    <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch vereinbaren</a>
+    <span class="phone">Oder ruf uns an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+  </div>
+
+  <h2>Was uns von anderen Agenturen unterscheidet</h2>
+  <ul class="usp-list">
+    <li>
+      <strong>Münchner Stadtteil-Kompetenz</strong>
+      Wir kennen die Unterschiede zwischen Schwabing, Maxvorstadt, Bogenhausen, Haidhausen und Sendling. "Zahnarzt in Schwabing" rankt nach anderen Signalen als "Zahnarzt in Sendling", andere Konkurrenz, andere Suchvolumina, andere Nutzer-Erwartungen. Das fließt in jede Landingpage und jede GBP-Kategorie ein.
+    </li>
+    <li>
+      <strong>10 Branchen-Case-Studies</strong>
+      Wir haben dedizierte Strategien für <a href="/branchen/aerzte/">Ärzte</a>, <a href="/branchen/handwerker/">Handwerker</a>, <a href="/branchen/restaurants/">Restaurants</a>, <a href="/branchen/anwaelte/">Anwälte</a> und weitere. Kein Standard-Paket, das über jede Branche gestülpt wird.
+    </li>
+    <li>
+      <strong>AI/GEO integriert, nicht als Zusatzpaket</strong>
+      Während andere Agenturen AI-SEO separat verkaufen, ist AI-Readiness bei uns Teil jeder Local-SEO-Betreuung. 45 Prozent der Nutzer verwenden bereits ChatGPT für lokale Empfehlungen (BrightLocal 2026). Wer dort nicht auftaucht, verliert in den nächsten zwei Jahren spürbar Reichweite.
+    </li>
+    <li>
+      <strong>Technical plus Local vereint</strong>
+      Core Web Vitals, Schema Markup und lokale Signale laufen bei uns in einem System. Nicht in getrennten Silos zwischen Technical-Team und Content-Team.
+    </li>
+  </ul>
+
+  <h2>Welche Ergebnisse du erwarten kannst</h2>
+  <p>Wir arbeiten mit realistischen Zeitfenstern, nicht mit Versprechen. Typische Meilensteine für Münchner KMU:</p>
+
+  <ol class="timeline">
+    <li data-label="30"><strong>Nach 30 Tagen</strong>Vollständig optimiertes Google Business Profile, NAP-Konsistenz hergestellt, erste Review-Kampagne läuft.</li>
+    <li data-label="90"><strong>Nach 90 Tagen</strong>Sichtbarkeit in Bezirks-Keywords, erste Map-Pack-Impressionen, Steigerung der GBP-Aufrufe typischerweise +30 bis 60 Prozent.</li>
+    <li data-label="180"><strong>Nach 180 Tagen</strong>Top-3 Map Pack für Haupt-Keywords erfahrungsgemäß erreichbar, Bewertungsschnitt Richtung 4,5 Sterne, messbar mehr Anrufe und Website-Besuche.</li>
+  </ol>
+
+  <p><strong>Wichtig:</strong> Ergebnisse hängen von Wettbewerb, Ausgangslage und Branche ab. Wir geben keine Ranking-Garantien, sondern realistische Prognosen nach einem initialen <a href="/leistungen/seo-audit/" class="internal-link">SEO-Audit</a>.</p>
+
+  <h2>Was kostet Local SEO für Münchner Unternehmen?</h2>
+
+  <div class="snippet-box">
+    <p><strong>Kurz gesagt:</strong> Local SEO in München kostet bei seriösen Agenturen zwischen 500 und 1.500 EUR pro Monat. In München liegt der Aufschlag typischerweise 10 bis 40 Prozent über dem bundesweiten Durchschnitt. Bei seomuenchen.com ist Local SEO Bestandteil aller Pakete ab 990 EUR pro Monat.</p>
+  </div>
+
+  <div class="cost-overview">
+    <table>
+      <thead>
+        <tr>
+          <th>Paket</th>
+          <th>Preis</th>
+          <th>Einsatz</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Starter</td><td>ab 990 EUR / Monat</td><td>Einzelstandort, lokale Grundoptimierung</td></tr>
+        <tr><td>Growth</td><td>ab 1.590 EUR / Monat</td><td>Einzelstandort, Münchner Wettbewerb</td></tr>
+        <tr><td>Business</td><td>ab 2.390 EUR / Monat</td><td>2 bis 3 Standorte, kompetitive Branchen</td></tr>
+        <tr><td>Professional</td><td>ab 2.590 EUR / Monat</td><td>Mehrere Standorte, München + Umland</td></tr>
+        <tr><td>Enterprise</td><td>ab 2.990 EUR / Monat</td><td>Ketten, Filialnetze, Bayern-weit</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>Alle Leistungen im Detail findest du auf der <a href="/preise/" class="internal-link">Preisseite</a>.</p>
+
+  <h2>Häufige Fragen zu Local SEO in München</h2>
+  <div class="local-faq">
+    <div class="faq-item">
+      <div class="faq-q">Wie lange dauert Local SEO in München bis zu ersten Ergebnissen?</div>
+      <div class="faq-a">Erste messbare Effekte (GBP-Aufrufe, Map-Pack-Impressionen) zeigen sich erfahrungsgemäß nach 60 bis 90 Tagen. Stabile Top-3-Rankings für kompetitive Münchner Keywords typischerweise nach 4 bis 6 Monaten. Die Dauer hängt stark von Branche und Wettbewerb im jeweiligen Münchner Stadtteil ab.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was kostet Local SEO für ein Münchner Unternehmen?</div>
+      <div class="faq-a">Seriöse Agenturen liegen bei 500 bis 1.500 EUR pro Monat, in München mit 10 bis 40 Prozent Aufschlag wegen der hohen Wettbewerbsdichte. Unsere Pakete starten bei 990 EUR pro Monat und beinhalten Local SEO, Technical SEO und AI-Readiness.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Was ist wichtiger, Google Business Profile oder Website?</div>
+      <div class="faq-a">Beides zusammen. Das GBP dominiert das Map Pack und bringt schneller lokale Sichtbarkeit, die Website sichert organische Rankings und Vertrauen. Ein optimiertes GBP ohne saubere Website konvertiert schlechter, und umgekehrt.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie optimiert ihr mehrere Standorte in München und Umland?</div>
+      <div class="faq-a">Pro Standort ein separates GBP plus eigene Landingpage mit lokalem Content, LocalBusiness-Schema und sauberer interner Verlinkung. Keine Duplicate-Content-Fallen. Für München-Mitte plus Umland (z. B. Freising, Erding, Dachau) arbeiten wir mit differenzierten Keyword-Strategien pro Standort.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Können kleine Unternehmen gegen große Ketten in München ranken?</div>
+      <div class="faq-a">Ja. Im Map Pack schlägt lokale Relevanz fast immer Markenbekanntheit. Ein gut gepflegtes GBP mit 80 echten Bewertungen rankt oft besser als eine Kette mit 300 generischen Reviews. Nischen-Keywords wie "Bäcker Schwabing" sind gewinnbar, auch gegen Filialisten.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Wie geht ihr mit unberechtigten oder gefälschten Bewertungen um?</div>
+      <div class="faq-a">Wir prüfen, dokumentieren und melden Verstöße nach den Google-Richtlinien. Bei berechtigter Kritik coachen wir dich durch die Antwort, professionell und nicht defensiv. Parallel bauen wir über Review-Kampagnen neue positive Bewertungen auf, die den Schnitt verbessern.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Warum eine Agentur statt Local SEO selbst zu machen?</div>
+      <div class="faq-a">Zeit, Tool-Kosten, Risiko und Marktkenntnis. DIY kann funktionieren, dauert aber typischerweise doppelt so lange und birgt echte Risiken wie GBP-Sperren durch unbeabsichtigte Regelverstöße. Agentur-Tool-Stacks (DataForSEO, BrightLocal, Local Falcon) kosten einzeln mehr als ein Starter-Paket.</div>
+    </div>
+  </div>
+
+  <div class="local-cta">
+    <p>Bereit für mehr Sichtbarkeit in München?</p>
+    <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch sichern</a>
+    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+  </div>
+
+  <p class="closing-note">
+    Wir betreuen Unternehmen in München und ganz Bayern. Weitere Infos findest du in unseren <a href="/leistungen/" class="internal-link">SEO-Leistungen</a> oder in unserem <a href="/blog/" class="internal-link">Blog</a>.
+  </p>
+
+</div>
+`,
+              }}
+            />
+
+            {localSeoFaqSchema && (
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: jsonLdStringify(localSeoFaqSchema) }}
               />
             )}
           </section>
