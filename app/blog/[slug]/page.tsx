@@ -1310,6 +1310,48 @@ const BLOG_ARTICLE_STYLE = `
   color: #047857;
   margin-top: 0;
 }
+.blog-article .sm-article .definition-box {
+  background: #eef2ff;
+  border-left: 4px solid var(--sm-primary);
+  padding: 16px 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+.blog-article .sm-article .definition-box p:last-child {
+  margin-bottom: 0;
+}
+.blog-article .sm-article .myth-verdict {
+  display: inline-block;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.blog-article .sm-article .myth-verdict.green {
+  background: #d1fae5;
+  color: #047857;
+}
+.blog-article .sm-article .cta-box h3 {
+  margin-top: 0;
+  color: var(--sm-text);
+}
+.blog-article .sm-article .cta-box a.cta-btn {
+  display: inline-block;
+  background: var(--sm-secondary);
+  color: #fff !important;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.blog-article .sm-article .cta-box a.cta-btn:hover {
+  background: #059669;
+  color: #fff !important;
+}
 @media (max-width: 640px) {
   .blog-article .sm-article .lead-stat {
     padding: 18px 18px;

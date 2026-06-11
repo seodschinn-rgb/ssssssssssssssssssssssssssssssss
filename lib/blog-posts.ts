@@ -19,6 +19,7 @@ import { googlePenalty2026Content } from './blog-posts/google-penalty-2026-conte
 import { seoVsSea2026Content } from './blog-posts/seo-vs-sea-2026-content'
 import { websiteNichtGefunden2026Content } from './blog-posts/website-nicht-gefunden-2026-content'
 import { aiSeo2026Content } from './blog-posts/ai-seo-2026-content'
+import { wasIstGeoContent } from './blog-posts/was-ist-geo-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -47,6 +48,72 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'was-ist-geo',
+    title: 'Was ist GEO? Generative Engine Optimization einfach erklärt',
+    metaTitle: 'Was ist GEO? So funktioniert Generative Engine Optimization',
+    metaDescription:
+      'GEO einfach erklärt: Wie KI-Suchsysteme wie ChatGPT und Google AI Overviews Quellen auswählen, was GEO von SEO unterscheidet und ob sich das für KMU lohnt.',
+    focusKeyword: 'Was ist GEO',
+    authorName: 'Julian Schäfer',
+    category: 'seo-grundlagen',
+    content: wasIstGeoContent,
+    image: '/images/blog/was-ist-geo-thumbnail.webp',
+    imageAlt:
+      'Was ist GEO? Generative Engine Optimization einfach erklärt: KI-Chat-Mockup, in dem eine Website als Quelle zitiert wird',
+    faqs: [
+      {
+        question: 'Wofür steht GEO im Online-Marketing?',
+        answer:
+          'GEO steht für Generative Engine Optimization: die Optimierung von Inhalten für KI-Suchsysteme wie ChatGPT, Google AI Overviews und Perplexity. Ziel ist, in KI-generierten Antworten als Quelle zitiert oder als Anbieter empfohlen zu werden.',
+      },
+      {
+        question: 'Was ist der Unterschied zwischen GEO und Geomarketing?',
+        answer:
+          'Geomarketing arbeitet mit geografischen Daten, etwa für Standortanalysen oder regional ausgespielte Werbung. GEO im SEO-Kontext meint dagegen Generative Engine Optimization, also die Optimierung für KI-Suchsysteme. Die Abkürzung ist dieselbe, die Disziplinen haben nichts miteinander zu tun.',
+      },
+      {
+        question: 'Ist GEO dasselbe wie AI SEO, AEO oder LLMO?',
+        answer:
+          'Im Alltag werden die Begriffe weitgehend synonym verwendet. GEO betont die generativen Suchmaschinen, AEO die direkte Antwort, LLMO die Sprachmodelle. Gemeint ist immer dasselbe Ziel: Sichtbarkeit in KI-Antworten. AI SEO hat sich als deutscher Sammelbegriff etabliert.',
+      },
+      {
+        question: 'Ersetzt GEO das klassische SEO?',
+        answer:
+          'Nein. GEO ergänzt SEO, ersetzt es aber nicht. KI-Suchsysteme nutzen klassische Suchindizes als Grundlage, und Google hält in Deutschland weiterhin rund 80 Prozent des Suchmarkts (Statcounter, März 2026). Wer in der klassischen Suche unsichtbar ist, wird auch in KI-Antworten selten zitiert.',
+      },
+      {
+        question: 'Was kostet GEO?',
+        answer:
+          'In Eigenregie: 0 bis 500 EUR pro Monat, vor allem Arbeitszeit. Mit externer Unterstützung beginnen Freelancer-Budgets bei etwa 800 EUR pro Monat, spezialisierte Dienstleister liegen je nach Umfang bei 1.500 bis 8.000 EUR pro Monat. Als Faustregel gelten 20 bis 25 Prozent des bestehenden SEO-Budgets für KI-spezifische Maßnahmen.',
+      },
+      {
+        question: 'Wie lange dauert es, bis GEO wirkt?',
+        answer:
+          'Erfahrungsgemäß zeigen sich erste Erwähnungen nach vier bis acht Wochen sauberer Umsetzung, spürbarer Referral-Traffic aus KI-Tools eher ab Monat drei bis vier. Garantieren lässt sich das nicht, die Systeme entscheiden selbst, welche Quellen sie zitieren.',
+      },
+      {
+        question: 'Kann ich GEO selbst umsetzen?',
+        answer:
+          'Die Grundlagen ja: Antwort-Struktur, FAQ-Bereiche, gepflegte Firmendaten, Bewertungen und ein vollständiges Google Business Profile kann jeder Unternehmer selbst angehen. Anspruchsvoller wird es bei strukturierten Daten, Markenaufbau über Drittquellen und systematischem Monitoring.',
+      },
+      {
+        question: 'Welche KI-Suchsysteme sind für Deutschland relevant?',
+        answer:
+          'An erster Stelle ChatGPT mit 71,13 Prozent Marktanteil unter den KI-Tools (Statcounter, März 2026) sowie Google AI Overviews, weil Google die deutsche Suche mit rund 80 Prozent dominiert. Danach folgen Perplexity, Gemini und Copilot. Wer für ChatGPT und Google optimiert, deckt den Großteil des Markts ab.',
+      },
+      {
+        question: 'Wie finde ich heraus, ob meine Website in KI-Antworten auftaucht?',
+        answer:
+          'Am schnellsten mit manuellen Test-Fragen: Stelle in ChatGPT, Perplexity und Gemini monatlich dieselben 10 bis 15 Fragen zu deinen Leistungen und deiner Marke. Ergänzend zeigt GA4 Besucher aus KI-Tools wie chatgpt.com oder perplexity.ai als Referral-Quellen.',
+      },
+      {
+        question: 'Lohnt sich GEO für lokale Unternehmen in München?',
+        answer:
+          'Perspektivisch ja, denn lokale Empfehlungs-Fragen wandern zunehmend in KI-Chats. Die Reihenfolge zählt: erst SEO- und Local-Basics wie Google Business Profile und Bewertungen, dann gezielte KI-Optimierung. Vieles davon wirkt auf Google und KI-Antworten gleichzeitig.',
+      },
+    ],
+  },
   {
     slug: 'ai-seo-2026',
     title: 'AI SEO 2026: So rankst du in ChatGPT, Claude und Perplexity',
