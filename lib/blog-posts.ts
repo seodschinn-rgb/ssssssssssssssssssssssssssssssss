@@ -719,44 +719,62 @@ const POSTS: BlogPost[] = [
   },
   {
     slug: 'backlink-aufbau-grundlagen',
-    title: 'Backlink-Aufbau Grundlagen: Der Guide für Top-Rankings 2026',
-    metaTitle: 'Backlink Aufbau Grundlagen: Der Guide für bessere Rankings 2026',
+    title: 'Backlinks aufbauen 2026: Strategien, Methoden & Checkliste für Top-Rankings',
+    metaTitle: 'Backlink Aufbau 2026: 10 Methoden für starke Backlinks',
     metaDescription:
-      'Backlink-Aufbau-Grundlagen für Unternehmen in München: Erfahre alles über hochwertige Links, Linkbuilding-Strategien und wie du deine Google-Rankings verbesserst.',
+      'Backlinks aufbauen leicht gemacht: 10 erprobte Methoden, die besten Tools und eine Checkliste für nachhaltigen Linkaufbau. Vom SEO-Team aus München.',
+    focusKeyword: 'Backlink Aufbau',
+    authorName: 'Julian Schäfer',
     category: 'linkaufbau',
     content: backlinkAufbauGrundlagenContent,
-    image: '/images/blog/backlink%20aufbau.webp',
-    imageAlt: 'Backlink Aufbau Grundlagen: Guide für bessere Rankings 2026',
+    image: '/images/blog/backlink-aufbau-thumbnail.webp',
+    imageAlt:
+      'Backlink-Profil-Dashboard mit Domain Rating, Referring Domains und Toxic-Link-Quote – Backlinks aufbauen 2026',
     faqs: [
       {
-        question: 'Wie lange dauert es, bis neu aufgebaute Backlinks Wirkung zeigen?',
+        question: 'Wie lange dauert es, bis Backlinks wirken?',
         answer:
-          'Die Indexierung neuer Links dauert typischerweise 5–15 Tage, erste leichte Effekte zeigen sich nach 2–6 Wochen, signifikante Verbesserungen oft nach etwa 10 Wochen. Die Dauer hängt von der Autorität der verlinkenden Seite, dem Wettbewerb und der Verarbeitungsgeschwindigkeit des Google-Algorithmus ab.',
+          'Bis Google einen neuen Backlink überhaupt findet und in die Bewertung aufnimmt, vergehen erfahrungsgemäß etwa 5 bis 15 Tage. Eine spürbare Ranking-Wirkung stellt sich meist nach 2 bis 6 Wochen ein. Eine signifikante Verbesserung durch einen starken Link zeigt sich häufig erst nach rund 10 Wochen. Linkaufbau ist also eine mittel- bis langfristige Investition, kein Sofort-Hebel.',
       },
       {
-        question: 'Warum sollte man Backlinks auf keinen Fall kaufen?',
+        question: 'Sollte ich Backlinks kaufen?',
         answer:
-          'Gekaufte Links bzw. Linksysteme, die PageRank künstlich manipulieren, verstoßen gegen die Google-Richtlinien und werden als Spam eingestuft. Sie können zu empfindlichen Abstrafungen, algorithmischen Herabstufungen oder bis zur vollständigen Deindexierung führen.',
+          'Nein. Der Kauf von Dofollow-Backlinks verstößt gegen die Google-Richtlinien und kann zu einer manuellen Maßnahme führen, die deine Rankings einbrechen lässt. Bezahlte Links sind nur erlaubt, wenn sie als gesponsert gekennzeichnet sind, dann geben sie aber keinen Linkjuice weiter. Setze stattdessen auf verdiente, redaktionelle Links.',
       },
       {
-        question: 'Was ist der Unterschied zwischen Domain-Autorität und Seiten-Autorität?',
+        question: 'Wie viele Backlinks brauche ich, um zu ranken?',
         answer:
-          'Domain-Autorität (DA) beschreibt die Stärke der gesamten Website (Skala 1–100), aufgebaut über die Zeit. Seiten-Autorität (PA) ist die Stärke einer einzelnen Unterseite – beides sind Moz-Metriken und dienen als Proxys für die Bewertung der Linkkraft, werden aber nicht direkt von Google verwendet.',
+          'Es gibt keine feste Zahl. Entscheidend ist nicht die Menge, sondern die Qualität und Relevanz der verweisenden Domains sowie der Wettbewerb in deiner Nische. Für ein lokales Keyword in München reichen oft wenige starke, themenrelevante Links. Für stark umkämpfte Begriffe brauchst du deutlich mehr. Orientiere dich am Backlinkprofil der aktuell rankenden Konkurrenz, statt eine willkürliche Zielzahl anzustreben.',
       },
       {
-        question: 'Wie erkenne ich, ob eine Linkquelle von einem Spam-Update abgestraft wurde?',
+        question: 'Was kostet professioneller Backlink-Aufbau?',
         answer:
-          'Typische Anzeichen: drastischer, plötzlicher Abfall des organischen Traffics, Verlust von Top-Rankings, Wegfall der Indexierung oder Warnungen in der Google Search Console unter „Manuelle Maßnahmen". Ein starker Rückgang über mehrere Tage oder das Verschwinden des Markennamens aus den Top-Ergebnissen sind deutliche Hinweise.',
+          'Die Kosten hängen stark von Methode und Qualität ab. Ein einzelner hochwertiger, redaktioneller Backlink kann je nach Quelle dreistellig kosten, eine laufende Linkaufbau-Betreuung ist meist Teil eines monatlichen SEO-Pakets. Wichtig: Sehr günstige Linkpakete sind fast immer Spam und ein Risiko. Eine realistische Einordnung üblicher Preise findest du in unserem Ratgeber zu SEO-Kosten.',
       },
       {
-        question: 'Gibt es einen Unterschied in der Linkkraft zwischen Text- und Bildlinks?',
+        question: 'Was ist Off-Page SEO?',
         answer:
-          'Textlinks liefern über den Ankertext direkte, relevante Informationen über das Linkziel und werden von Google in der Regel stärker gewichtet. Bei Bildlinks nutzt Google das alt-Attribut als Ankertext-Ersatz; Tests zeigen, dass Textlinks bei gleicher Zielseite bevorzugt werden.',
+          'Off-Page SEO umfasst alle Maßnahmen außerhalb deiner eigenen Website, die deine Sichtbarkeit bei Google verbessern. Der wichtigste Teil davon ist der Backlink Aufbau. Dazu zählen aber auch unverlinkte Markennennungen, Bewertungen und Einträge in Branchenverzeichnissen. Das Gegenstück ist das OnPage SEO, das sich auf Optimierungen direkt auf deiner Seite konzentriert.',
       },
       {
-        question: 'Welche kostenlosen Tools bieten verlässliche Backlink-Daten?',
+        question: 'Was ist der Unterschied zwischen DA und PA?',
         answer:
-          'Google Search Console (direkt von Google, unerlässlich), Ahrefs Free Checker für grundlegende Backlink-Profile, Moz Link Explorer für DA/PA-Metriken und Ubersuggest für die Konkurrenz-Analyse.',
+          'DA (Domain Authority) und PA (Page Authority) sind Kennzahlen von Moz, die die Stärke einer Website beziehungsweise einer einzelnen Seite auf einer Skala von 0 bis 100 schätzen. DA bewertet die gesamte Domain, PA eine konkrete URL. Beide sind keine offiziellen Google-Werte, sondern Orientierungshilfen. Vergleichbare Metriken sind das Domain Rating (DR) von Ahrefs oder der Sichtbarkeitsindex von SISTRIX.',
+      },
+      {
+        question: 'Wie erkenne ich eine Spam-Linkquelle?',
+        answer:
+          'Typische Warnsignale sind: kaum echter Traffic, thematisch völlig unpassende Inhalte, eine unüberschaubare Menge ausgehender Links, viele fragwürdige Werbeanzeigen und ein sehr niedriger oder künstlich aufgeblähter Autoritätswert. Solche Seiten existieren oft nur, um Links zu verkaufen. Im Zweifel gilt: Wenn du den Link auch ohne SEO-Effekt nicht haben wolltest, lass die Finger davon.',
+      },
+      {
+        question: 'Zählen Text-Links mehr als Bild-Links?',
+        answer:
+          'Grundsätzlich zählen beide. Bei einem Text-Link liefert der Ankertext Google einen inhaltlichen Hinweis auf das Linkziel. Bei einem Bild-Link übernimmt der Alt-Text diese Rolle. Ein Bild-Link ohne aussagekräftigen Alt-Text verschenkt deshalb Potenzial. Für ein natürliches Profil ist eine Mischung aus beiden Linkarten völlig in Ordnung.',
+      },
+      {
+        question: 'Gibt es gute kostenlose Backlink-Tools?',
+        answer:
+          'Ja. Die Google Search Console ist kostenlos und zeigt dir die wichtigsten Backlinks auf deine Seite sowie eventuelle manuelle Maßnahmen. Zusätzlich bieten Ahrefs, Semrush und andere Anbieter kostenlose Basis-Versionen ihrer Backlink-Checker an, mit denen du erste Analysen ohne Abo durchführen kannst. Für tiefe Konkurrenzanalysen brauchst du allerdings ein kostenpflichtiges Tool.',
       },
     ],
   },

@@ -1311,14 +1311,45 @@ const BLOG_ARTICLE_STYLE = `
   margin-top: 0;
 }
 .blog-article .sm-article .definition-box {
-  background: #eef2ff;
-  border-left: 4px solid var(--sm-primary);
-  padding: 16px 20px;
-  border-radius: 6px;
-  margin: 20px 0;
+  background: #f0fdf4;
+  border: 2px solid var(--sm-secondary);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-size: 1.05rem;
+}
+.blog-article .sm-article .definition-box strong {
+  color: #3730a3;
 }
 .blog-article .sm-article .definition-box p:last-child {
   margin-bottom: 0;
+}
+.blog-article .sm-article .snippet-box {
+  background: var(--sm-bg-light);
+  border-left: 4px solid var(--sm-primary);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 24px;
+  margin: 24px 0;
+}
+.blog-article .sm-article .snippet-box p:last-child {
+  margin-bottom: 0;
+}
+.blog-article .sm-article .methods-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: method;
+}
+.blog-article .sm-article .methods-list > li {
+  position: relative;
+  padding: 0 0 4px 0;
+  margin-bottom: 28px;
+}
+.blog-article .sm-article .methods-list > li h3 {
+  margin-top: 0;
+}
+.blog-article .sm-article .internal-link {
+  color: var(--sm-accent);
+  font-weight: 600;
 }
 .blog-article .sm-article .myth-verdict {
   display: inline-block;
