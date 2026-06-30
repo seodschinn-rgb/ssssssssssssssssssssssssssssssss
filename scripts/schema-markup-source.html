@@ -1,39 +1,30 @@
-/**
- * Blog: Schema Markup Anleitung — sm-article Layout.
- *
- * Hinweis: Styles + Schema kommen zentral aus app/blog/[slug]/page.tsx
- * (BLOG_ARTICLE_STYLE + ArticleSchema + BlogFAQSchema).
- */
-export const schemaMarkupAnleitungContent =
-  '<div class="sm-article">' +
-  `
 <h1>Schema Markup &amp; strukturierte Daten: Die praktische Anleitung mit Code-Beispielen</h1>
 
-  <div class="meta-info">
-    <span>Veröffentlicht: 27. Juni 2026</span>
-    <span>Lesezeit: ca. 16 Min.</span>
-    <span>Ratgeber</span>
-  </div>
+  <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Von Julian Sch&auml;fer, SEO M&uuml;nchen | Aktualisiert: 27. Juni 2026 | Lesezeit: ca. 16 Minuten</p>
+
+  <figure>
+    <img src="../images/schema-markup-thumbnail.png" alt="Schema Markup Anleitung: dunkler Code-Editor mit JSON-LD-Snippet f&uuml;r ein Product-Schema und Vorschau eines Google-Rich-Results mit Sterne-Bewertung." />
+  </figure>
 
   <div class="intro">
     <p>Du willst Schema Markup auf deiner Website einbauen, findest aber nur theoretische Erkl&auml;rungen ohne brauchbaren Code? Genau das &auml;ndert dieser Leitfaden. Hier bekommst du f&uuml;r jeden wichtigen Schema-Typ ein vollst&auml;ndiges, g&uuml;ltiges JSON-LD-Snippet zum Kopieren, das den Rich Results Test besteht.</p>
     <p>Du lernst, was strukturierte Daten sind, warum du JSON-LD nutzen solltest, wie du Schema in WordPress oder manuell einbaust, wie du alles testest und welche Rich Results Google 2026 wirklich noch anzeigt. Praxisnah, ehrlich und vom technischen SEO-Team aus M&uuml;nchen.</p>
   </div>
 
-  <nav class="sm-toc" aria-label="Inhaltsverzeichnis">
-    <p class="sm-toc-title">Inhaltsverzeichnis</p>
-    <ol>
-      <li><a href="#was-ist-schema">Was ist Schema Markup? Strukturierte Daten einfach erklärt</a></li>
-      <li><a href="#format">JSON-LD, Microdata oder RDFa? Das richtige Format</a></li>
-      <li><a href="#erstellen">Schema Markup erstellen: dein erstes JSON-LD in 4 Schritten</a></li>
-      <li><a href="#typen">Die wichtigsten Schema-Typen mit Code-Beispielen</a></li>
-      <li><a href="#einbauen">Schema Markup einbauen: WordPress, manuell &amp; via GTM</a></li>
-      <li><a href="#testen">Schema Markup testen &amp; validieren</a></li>
-      <li><a href="#fehler">Häufige Fehler &amp; Troubleshooting</a></li>
-      <li><a href="#rich-results-2026">Schema &amp; Rich Results 2026: Was Google wirklich anzeigt</a></li>
-      <li><a href="#lokal-muenchen">Schema für lokale Sichtbarkeit in München &amp; Bayern</a></li>
-      <li><a href="#faq">Häufig gestellte Fragen</a></li>
-      <li><a href="#fazit">Fazit</a></li>
+  <nav aria-label="Inhaltsverzeichnis" style="background:#F9FAFB; border-radius:8px; padding:20px 24px; margin-bottom:36px;">
+    <p style="font-weight:700; font-size:1.05rem; margin-bottom:12px; color:var(--primary);">Inhaltsverzeichnis</p>
+    <ol style="margin:0; padding-left:20px; line-height:2;">
+      <li><a href="#was-ist-schema" style="text-decoration:none;">Was ist Schema Markup? Strukturierte Daten einfach erkl&auml;rt</a></li>
+      <li><a href="#format" style="text-decoration:none;">JSON-LD, Microdata oder RDFa? Das richtige Format</a></li>
+      <li><a href="#erstellen" style="text-decoration:none;">Schema Markup erstellen: dein erstes JSON-LD in 4 Schritten</a></li>
+      <li><a href="#typen" style="text-decoration:none;">Die wichtigsten Schema-Typen mit Code-Beispielen</a></li>
+      <li><a href="#einbauen" style="text-decoration:none;">Schema Markup einbauen: WordPress, manuell &amp; via GTM</a></li>
+      <li><a href="#testen" style="text-decoration:none;">Schema Markup testen &amp; validieren</a></li>
+      <li><a href="#fehler" style="text-decoration:none;">H&auml;ufige Fehler &amp; Troubleshooting</a></li>
+      <li><a href="#rich-results-2026" style="text-decoration:none;">Schema &amp; Rich Results 2026: Was Google wirklich anzeigt</a></li>
+      <li><a href="#lokal-muenchen" style="text-decoration:none;">Schema f&uuml;r lokale Sichtbarkeit in M&uuml;nchen &amp; Bayern</a></li>
+      <li><a href="#faq" style="text-decoration:none;">H&auml;ufig gestellte Fragen</a></li>
+      <li><a href="#fazit" style="text-decoration:none;">Fazit</a></li>
     </ol>
   </nav>
 
@@ -47,7 +38,7 @@ export const schemaMarkupAnleitungContent =
 
   <p>Vier Begriffe werden st&auml;ndig durcheinandergeworfen. Hier die klare Abgrenzung, damit du im Rest des Artikels nicht ins Stolpern ger&auml;tst:</p>
 
-  <div class="table-wrapper">
+  <div class="table-wrap">
   <table>
     <thead>
       <tr><th>Begriff</th><th>Was es bedeutet</th></tr>
@@ -67,7 +58,7 @@ export const schemaMarkupAnleitungContent =
 
   <p>Strukturierte Daten lassen sich in drei Formaten schreiben. Du musst sie nicht alle beherrschen, aber den Unterschied kurz kennen, um die richtige Wahl zu treffen.</p>
 
-  <div class="table-wrapper">
+  <div class="table-wrap">
   <table>
     <thead>
       <tr><th>Format</th><th>Funktionsweise</th><th>Empfehlung</th></tr>
@@ -91,7 +82,7 @@ export const schemaMarkupAnleitungContent =
   <p>Bevor wir die einzelnen Typen durchgehen, baust du dein erstes Schema. Jedes JSON-LD folgt demselben Grundger&uuml;st. Hast du es einmal verstanden, sind alle weiteren Typen nur Variationen davon.</p>
 
   <figure>
-    <img src="/images/blog/schema-markup-einbauen-schritte.webp" alt="Schema Markup in 4 Schritten einbauen: Schema-Typ w&auml;hlen, JSON-LD-Code erstellen, in den head einbauen und mit dem Rich Results Test pr&uuml;fen." />
+    <img src="../images/schema-markup-einbauen-schritte.png" alt="Schema Markup in 4 Schritten einbauen: Schema-Typ w&auml;hlen, JSON-LD-Code erstellen, in den head einbauen und mit dem Rich Results Test pr&uuml;fen." />
     <figcaption>Der Schema-Workflow im &Uuml;berblick: vom passenden Typ &uuml;ber den JSON-LD-Code bis zum abschlie&szlig;enden Test.</figcaption>
   </figure>
 
@@ -111,8 +102,8 @@ export const schemaMarkupAnleitungContent =
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "SEO M&uuml;nchen",
-  "url": "",
-  "logo": "/logo.png",
+  "url": "https://seomuenchen.com",
+  "logo": "https://seomuenchen.com/logo.png",
   "description": "SEO-Agentur f&uuml;r Unternehmen in M&uuml;nchen und Bayern.",
   "sameAs": [
     "https://www.linkedin.com/company/seomuenchen",
@@ -128,7 +119,7 @@ export const schemaMarkupAnleitungContent =
 
   <p>Das ist das Herzst&uuml;ck dieser Anleitung. F&uuml;r jeden relevanten Schema-Typ bekommst du hier ein g&uuml;ltiges JSON-LD-Snippet zum Kopieren. Alle Beispiele bestehen den Rich Results Test beziehungsweise den Schema Markup Validator. Du musst nicht jeden Typ einsetzen, sondern nur die, die zu deinen Seiten passen. Welcher das ist, zeigt dir diese Entscheidungstabelle:</p>
 
-  <div class="table-wrapper">
+  <div class="table-wrap">
   <table>
     <thead>
       <tr><th>Seitentyp</th><th>Passender Schema-Typ</th><th>Visuelles Rich Result m&ouml;glich?</th></tr>
@@ -156,7 +147,7 @@ export const schemaMarkupAnleitungContent =
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Schema Markup &amp; strukturierte Daten: Die praktische Anleitung",
-  "image": "/blog/schema-markup-anleitung/thumbnail.png",
+  "image": "https://seomuenchen.com/blog/schema-markup-anleitung/thumbnail.png",
   "author": {
     "@type": "Person",
     "name": "Julian Sch&auml;fer"
@@ -166,14 +157,14 @@ export const schemaMarkupAnleitungContent =
     "name": "SEO M&uuml;nchen",
     "logo": {
       "@type": "ImageObject",
-      "url": "/logo.png"
+      "url": "https://seomuenchen.com/logo.png"
     }
   },
   "datePublished": "2026-01-20",
   "dateModified": "2026-06-27",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/blog/schema-markup-anleitung"
+    "@id": "https://seomuenchen.com/blog/schema-markup-anleitung"
   }
 }
 &lt;/script&gt;</code></pre>
@@ -189,8 +180,8 @@ export const schemaMarkupAnleitungContent =
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "SEO M&uuml;nchen",
-  "image": "/logo.png",
-  "url": "",
+  "image": "https://seomuenchen.com/logo.png",
+  "url": "https://seomuenchen.com",
   "telephone": "+49-89-12345678",
   "priceRange": "EUR",
   "address": {
@@ -260,19 +251,19 @@ export const schemaMarkupAnleitungContent =
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": ""
+      "item": "https://seomuenchen.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "/blog"
+      "item": "https://seomuenchen.com/blog"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Schema Markup Anleitung",
-      "item": "/blog/schema-markup-anleitung"
+      "item": "https://seomuenchen.com/blog/schema-markup-anleitung"
     }
   ]
 }
@@ -373,7 +364,7 @@ export const schemaMarkupAnleitungContent =
   <p>Die Basis-Auszeichnung deines Unternehmens, ideal f&uuml;r die Startseite. <code>Organization</code> b&uuml;ndelt Name, Logo, URL und deine Profile auf anderen Plattformen (<code>sameAs</code>). Das vollst&auml;ndige Beispiel findest du oben im 4-Schritte-Abschnitt. Es st&uuml;tzt dein Knowledge Panel und hilft Google, deine Marke als Entit&auml;t zu erkennen.</p>
 
   <div class="cta-box">
-    Klingt nach viel Code f&uuml;r dein Team? Wir richten Schema Markup f&uuml;r deine Website sauber und vollst&auml;ndig ein, vom LocalBusiness bis zur Produktauszeichnung. <a href="/leistungen/technisches-seo" class="internal-link">Mehr zu unserem technischen SEO</a> oder direkt ein <a href="/kontakt" class="internal-link">kostenloses Erstgespr&auml;ch vereinbaren</a>. Wir melden uns innerhalb von 24 Stunden.
+    Klingt nach viel Code f&uuml;r dein Team? Wir richten Schema Markup f&uuml;r deine Website sauber und vollst&auml;ndig ein, vom LocalBusiness bis zur Produktauszeichnung. <a href="https://seomuenchen.com/leistungen/technisches-seo" class="internal-link">Mehr zu unserem technischen SEO</a> oder direkt ein <a href="https://seomuenchen.com/kontakt" class="internal-link">kostenloses Erstgespr&auml;ch vereinbaren</a>. Wir melden uns innerhalb von 24 Stunden.
   </div>
 
   <h2 id="einbauen">Schema Markup einbauen: WordPress, manuell &amp; via GTM</h2>
@@ -386,7 +377,7 @@ export const schemaMarkupAnleitungContent =
     <li><strong>Rank Math:</strong> bringt einen umfangreichen Schema-Generator mit. Unter &bdquo;Schema&ldquo; w&auml;hlst du pro Beitrag oder Seite den Typ (Article, Product, FAQ und viele mehr), f&uuml;llst die Felder aus und das Plugin gibt valides JSON-LD aus.</li>
     <li><strong>Yoast SEO:</strong> baut von Haus aus ein zusammenh&auml;ngendes Schema-@graph f&uuml;r jede Seite (Organization, WebPage, Breadcrumb). F&uuml;r FAQ und HowTo nutzt du die passenden Gutenberg-Bl&ouml;cke, die das Markup automatisch erg&auml;nzen.</li>
   </ul>
-  <p>Wer ohnehin schon mit einem dieser Plugins arbeitet, sollte dort starten. Wichtig: Lass nicht zwei Plugins gleichzeitig dasselbe Schema ausgeben, das f&uuml;hrt zu Duplikaten. Eine saubere technische Basis ist ohnehin Pflicht; was sonst noch dazugeh&ouml;rt, zeigt unsere <a href="/blog/onpage-seo-checkliste" class="internal-link">OnPage-SEO-Checkliste</a>.</p>
+  <p>Wer ohnehin schon mit einem dieser Plugins arbeitet, sollte dort starten. Wichtig: Lass nicht zwei Plugins gleichzeitig dasselbe Schema ausgeben, das f&uuml;hrt zu Duplikaten. Eine saubere technische Basis ist ohnehin Pflicht; was sonst noch dazugeh&ouml;rt, zeigt unsere <a href="https://seomuenchen.com/blog/onpage-seo-checkliste" class="internal-link">OnPage-SEO-Checkliste</a>.</p>
 
   <h3>Manuell im &lt;head&gt;</h3>
   <p>Hast du keine Plugin-L&ouml;sung oder volle Kontrolle &uuml;ber den Quellcode, f&uuml;gst du den JSON-LD-Block direkt in deine Seite ein. Am sichersten platzierst du ihn im <code>&lt;head&gt;</code>, technisch erlaubt ist aber auch der <code>&lt;body&gt;</code>. So sieht der Einbau im Seitenkopf aus:</p>
@@ -402,7 +393,7 @@ export const schemaMarkupAnleitungContent =
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "SEO M&uuml;nchen",
-    "url": ""
+    "url": "https://seomuenchen.com"
   }
   &lt;/script&gt;
 &lt;/head&gt;</code></pre>
@@ -417,7 +408,7 @@ export const schemaMarkupAnleitungContent =
 
   <p>Niemals Schema ungetestet live schalten. Ein einziger Tippfehler kann das ganze Markup ung&uuml;ltig machen. Zum Gl&uuml;ck dauert die Pr&uuml;fung nur Sekunden. Diese vier Werkzeuge brauchst du:</p>
 
-  <div class="table-wrapper">
+  <div class="table-wrap">
   <table>
     <thead>
       <tr><th>Tool</th><th>URL</th><th>Wof&uuml;r</th></tr>
@@ -468,7 +459,7 @@ export const schemaMarkupAnleitungContent =
 
   <p>Hier wird es ehrlich, denn an dieser Stelle versprechen viele Anleitungen mehr, als Google liefert. Du musst zwei Dinge klar trennen: Schema, das ein <em>sichtbares</em> Rich Result ausl&ouml;sen kann, und Schema, das Google &bdquo;nur&ldquo; beim <em>Verstehen</em> deiner Seite hilft. Beides ist wertvoll, aber es ist nicht dasselbe.</p>
 
-  <div class="table-wrapper">
+  <div class="table-wrap">
   <table>
     <thead>
       <tr><th>Schema-Typ</th><th>Visuelles Rich Result 2026?</th><th>Realit&auml;t</th></tr>
@@ -489,10 +480,10 @@ export const schemaMarkupAnleitungContent =
     <p style="margin:0;"><strong>Ehrliche Einordnung zu FAQ &amp; HowTo:</strong> Google hat die sichtbaren Rich Results f&uuml;r diese beiden Typen massiv eingeschr&auml;nkt. FAQ-Snippets erscheinen nur noch bei wenigen, beh&ouml;rdlichen oder stark autoritativen Seiten, das bebilderte HowTo-Result ist in der normalen Suche faktisch verschwunden. Versprich dir oder deinen Kunden also <em>kein</em> sichtbares FAQ- oder HowTo-Snippet mehr. Das Markup bleibt dennoch sinnvoll, weil es Google und KI-Systemen hilft, deine Inhalte korrekt zu erfassen.</p>
   </div>
 
-  <p>Und genau hier liegt die zweite, oft &uuml;bersehene Funktion strukturierter Daten: Maschinenlesbarkeit f&uuml;r KI und LLM-Antworten. Suchmaschinen und generative KI-Systeme nutzen Schema, um Entit&auml;ten, Beziehungen und Fakten einer Seite eindeutig zu erfassen. Eine klar ausgezeichnete Seite ist leichter zu verstehen und damit eher als verl&auml;ssliche Quelle zu zitieren. Wer fr&uuml;h auf saubere strukturierte Daten setzt, arbeitet schon heute f&uuml;r die KI-gest&uuml;tzte Suche von morgen. Wie diese Optimierung f&uuml;r generative Systeme funktioniert, erkl&auml;rt unser Leitfaden zu <a href="/blog/was-ist-geo" class="internal-link">Generative Engine Optimization (GEO)</a>, vertiefend dazu auch unser Beitrag zu <a href="/blog/ai-seo-2026" class="internal-link">AI SEO 2026</a>.</p>
+  <p>Und genau hier liegt die zweite, oft &uuml;bersehene Funktion strukturierter Daten: Maschinenlesbarkeit f&uuml;r KI und LLM-Antworten. Suchmaschinen und generative KI-Systeme nutzen Schema, um Entit&auml;ten, Beziehungen und Fakten einer Seite eindeutig zu erfassen. Eine klar ausgezeichnete Seite ist leichter zu verstehen und damit eher als verl&auml;ssliche Quelle zu zitieren. Wer fr&uuml;h auf saubere strukturierte Daten setzt, arbeitet schon heute f&uuml;r die KI-gest&uuml;tzte Suche von morgen. Wie diese Optimierung f&uuml;r generative Systeme funktioniert, erkl&auml;rt unser Leitfaden zu <a href="https://seomuenchen.com/blog/was-ist-geo" class="internal-link">Generative Engine Optimization (GEO)</a>, vertiefend dazu auch unser Beitrag zu <a href="https://seomuenchen.com/blog/ai-seo-2026" class="internal-link">AI SEO 2026</a>.</p>
 
   <figure>
-    <img src="/images/blog/schema-markup-typen-rich-results.webp" alt="&Uuml;bersicht der Schema-Typen und ihrer Rich Results 2026: Product, Review und BreadcrumbList liefern sichtbare Resultate, FAQPage und HowTo kaum noch, Article hilft beim Maschinen-Verst&auml;ndnis." />
+    <img src="../images/schema-markup-typen-rich-results.png" alt="&Uuml;bersicht der Schema-Typen und ihrer Rich Results 2026: Product, Review und BreadcrumbList liefern sichtbare Resultate, FAQPage und HowTo kaum noch, Article hilft beim Maschinen-Verst&auml;ndnis." />
     <figcaption>Welcher Schema-Typ 2026 noch ein sichtbares Rich Result bringt und welcher vor allem dem maschinellen Verst&auml;ndnis dient.</figcaption>
   </figure>
 
@@ -500,12 +491,12 @@ export const schemaMarkupAnleitungContent =
 
   <p>F&uuml;r lokale Unternehmen ist Schema Markup besonders wertvoll. Wenn du als Handwerker, Arzt, Anwalt oder Dienstleister in M&uuml;nchen und Bayern gefunden werden willst, ist das <code>LocalBusiness</code>-Schema ein echter Hebel. Es liefert Google die Fakten, die &uuml;ber deine lokale Sichtbarkeit entscheiden: deinen exakten Standort, deine &Ouml;ffnungszeiten und deine Kontaktdaten.</p>
 
-  <p>Damit das wirkt, m&uuml;ssen drei Dinge zusammenpassen: deine Angaben im <code>LocalBusiness</code>-Schema, dein Google-Unternehmensprofil und die Angaben auf deiner Website. Diese NAP-Daten (Name, Adresse, Telefon) sollten &uuml;berall identisch sein. Widerspr&uuml;che verwirren Google und schw&auml;chen dein lokales Ranking. Das Schema ist dabei nur ein Baustein. Wie du dein Google-Unternehmensprofil optimal aufsetzt, zeigt unsere Anleitung zum <a href="/blog/google-business-profile-optimieren" class="internal-link">Google Business Profile optimieren</a>.</p>
+  <p>Damit das wirkt, m&uuml;ssen drei Dinge zusammenpassen: deine Angaben im <code>LocalBusiness</code>-Schema, dein Google-Unternehmensprofil und die Angaben auf deiner Website. Diese NAP-Daten (Name, Adresse, Telefon) sollten &uuml;berall identisch sein. Widerspr&uuml;che verwirren Google und schw&auml;chen dein lokales Ranking. Das Schema ist dabei nur ein Baustein. Wie du dein Google-Unternehmensprofil optimal aufsetzt, zeigt unsere Anleitung zum <a href="https://seomuenchen.com/blog/google-business-profile-optimieren" class="internal-link">Google Business Profile optimieren</a>.</p>
 
-  <p>Gerade in einem umk&auml;mpften Markt wie M&uuml;nchen verschafft dir eine saubere lokale Auszeichnung einen Vorsprung, weil viele lokale Wettbewerber ihr Schema gar nicht oder fehlerhaft pflegen. Den kompletten Fahrplan f&uuml;r mehr lokale Sichtbarkeit findest du in unserem <a href="/blog/local-seo-guide" class="internal-link">Local SEO Guide f&uuml;r M&uuml;nchen</a>. Wenn du die technische Basis lieber abgeben m&ouml;chtest, &uuml;bernehmen wir das im Rahmen unseres <a href="/leistungen/local-seo" class="internal-link">Local-SEO-Service</a>. Eine vollst&auml;ndige Bestandsaufnahme deiner Seite, inklusive Schema-Pr&uuml;fung, liefert dir au&szlig;erdem unsere <a href="/blog/seo-audit-checkliste" class="internal-link">SEO-Audit-Checkliste</a>.</p>
+  <p>Gerade in einem umk&auml;mpften Markt wie M&uuml;nchen verschafft dir eine saubere lokale Auszeichnung einen Vorsprung, weil viele lokale Wettbewerber ihr Schema gar nicht oder fehlerhaft pflegen. Den kompletten Fahrplan f&uuml;r mehr lokale Sichtbarkeit findest du in unserem <a href="https://seomuenchen.com/blog/local-seo-guide" class="internal-link">Local SEO Guide f&uuml;r M&uuml;nchen</a>. Wenn du die technische Basis lieber abgeben m&ouml;chtest, &uuml;bernehmen wir das im Rahmen unseres <a href="https://seomuenchen.com/leistungen/local-seo" class="internal-link">Local-SEO-Service</a>. Eine vollst&auml;ndige Bestandsaufnahme deiner Seite, inklusive Schema-Pr&uuml;fung, liefert dir au&szlig;erdem unsere <a href="https://seomuenchen.com/blog/seo-audit-checkliste" class="internal-link">SEO-Audit-Checkliste</a>.</p>
 
   <div class="cta-box">
-    <strong>Lokal gefunden werden in M&uuml;nchen?</strong> Vereinbare ein kostenloses Erstgespr&auml;ch ohne Bindung. Wir pr&uuml;fen dein bestehendes Schema, deine lokale Sichtbarkeit und zeigen dir die n&auml;chsten Schritte f&uuml;r dein Unternehmen in M&uuml;nchen und Bayern. Antwort innerhalb von 24 Stunden. <a href="/kontakt" class="internal-link">Jetzt kostenloses Erstgespr&auml;ch buchen.</a>
+    <strong>Lokal gefunden werden in M&uuml;nchen?</strong> Vereinbare ein kostenloses Erstgespr&auml;ch ohne Bindung. Wir pr&uuml;fen dein bestehendes Schema, deine lokale Sichtbarkeit und zeigen dir die n&auml;chsten Schritte f&uuml;r dein Unternehmen in M&uuml;nchen und Bayern. Antwort innerhalb von 24 Stunden. <a href="https://seomuenchen.com/kontakt" class="internal-link">Jetzt kostenloses Erstgespr&auml;ch buchen.</a>
   </div>
 
   <div class="faq-section">
@@ -552,6 +543,11 @@ export const schemaMarkupAnleitungContent =
     </div>
   </div>
 
+  <div style="background:#F9FAFB; border-radius:8px; padding:20px 24px; margin:40px 0 32px; border-left:4px solid var(--primary);">
+    <p style="font-weight:700; margin-bottom:8px; color:var(--primary);">&Uuml;ber den Autor</p>
+    <p style="font-size:0.95rem; margin:0;">Dieser Artikel wurde von <strong>Julian Sch&auml;fer</strong>, SEO-Berater bei <strong>SEO M&uuml;nchen</strong>, erstellt. Als spezialisierte SEO-Agentur in M&uuml;nchen betreuen wir Unternehmen aus der Region seit mehreren Jahren beim technischen SEO, von der sauberen Schema-Implementierung bis zur lokalen Sichtbarkeit. Unsere Arbeit basiert auf datengetriebener Analyse, transparentem Reporting und pers&ouml;nlicher Betreuung mit festem Ansprechpartner.</p>
+  </div>
+
   <div class="fazit">
     <h2 id="fazit">Fazit: Schema Markup richtig nutzen</h2>
 
@@ -563,7 +559,20 @@ export const schemaMarkupAnleitungContent =
       <li><strong>Teste, bevor du live gehst.</strong> Rich Results Test, Schema Markup Validator und die Search Console verhindern, dass ein Tippfehler dein Markup unbrauchbar macht.</li>
     </ol>
 
-    <p>Du willst Schema Markup nicht selbst pflegen oder unsicher sein, ob es korrekt eingebaut ist? Vereinbare ein <a href="/kontakt" class="internal-link">kostenloses Erstgespr&auml;ch</a> (ohne Bindung). Wir pr&uuml;fen deine technische Basis und zeigen dir, welche Auszeichnungen sich f&uuml;r dein Unternehmen in M&uuml;nchen wirklich lohnen. Mehr dazu auf unserer Seite zum <a href="/leistungen/technisches-seo" class="internal-link">technischen SEO</a>. Antwort innerhalb von 24 Stunden.</p>
+    <p>Du willst Schema Markup nicht selbst pflegen oder unsicher sein, ob es korrekt eingebaut ist? Vereinbare ein <a href="https://seomuenchen.com/kontakt" class="internal-link">kostenloses Erstgespr&auml;ch</a> (ohne Bindung). Wir pr&uuml;fen deine technische Basis und zeigen dir, welche Auszeichnungen sich f&uuml;r dein Unternehmen in M&uuml;nchen wirklich lohnen. Mehr dazu auf unserer Seite zum <a href="https://seomuenchen.com/leistungen/technisches-seo" class="internal-link">technischen SEO</a>. Antwort innerhalb von 24 Stunden.</p>
   </div>
-` +
-  '</div>'
+
+  <nav aria-label="Verwandte Artikel" style="display:flex; flex-wrap:wrap; gap:16px; margin:40px 0 20px;">
+    <a href="https://seomuenchen.com/blog/onpage-seo-checkliste" style="flex:1; min-width:220px; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; padding:16px 20px; text-decoration:none; color:var(--text);">
+      <span style="font-size:0.8rem; color:var(--text-light); display:block; margin-bottom:4px;">Verwandter Artikel</span>
+      <span style="font-weight:700; color:var(--primary);">OnPage-SEO-Checkliste f&uuml;r 2026</span>
+    </a>
+    <a href="https://seomuenchen.com/blog/was-ist-geo" style="flex:1; min-width:220px; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; padding:16px 20px; text-decoration:none; color:var(--text);">
+      <span style="font-size:0.8rem; color:var(--text-light); display:block; margin-bottom:4px;">Verwandter Artikel</span>
+      <span style="font-weight:700; color:var(--primary);">Was ist GEO? Schema f&uuml;r die KI-Suche</span>
+    </a>
+    <a href="https://seomuenchen.com/leistungen/technisches-seo" style="flex:1; min-width:220px; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; padding:16px 20px; text-decoration:none; color:var(--text);">
+      <span style="font-size:0.8rem; color:var(--text-light); display:block; margin-bottom:4px;">Unsere Leistung</span>
+      <span style="font-weight:700; color:var(--primary);">Technisches SEO &amp; Schema</span>
+    </a>
+  </nav>

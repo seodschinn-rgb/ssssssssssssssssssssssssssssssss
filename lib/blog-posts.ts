@@ -919,39 +919,57 @@ const POSTS: BlogPost[] = [
   },
   {
     slug: 'schema-markup-anleitung',
-    title: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
-    metaTitle: 'Schema Markup Anleitung: Strukturierte Daten für bessere Google Rankings',
+    title: 'Schema Markup & strukturierte Daten: Die praktische Anleitung mit Code-Beispielen',
+    metaTitle: 'Schema Markup 2026: Anleitung + JSON-LD Code zum Kopieren',
     metaDescription:
-      'Umfassende Schema-Markup-Anleitung: Lerne, wie du strukturierte Daten implementierst, testest und optimierst, um Rich Snippets zu erzielen und deine Google-Rankings zu verbessern. Für Unternehmen in München & Bayern.',
+      'Schema Markup & strukturierte Daten einbauen: JSON-LD-Code zum Kopieren für jeden Typ, Anleitung für WordPress & manuell, Tests und die ehrliche Rich-Results-Realität 2026. Vom SEO-Team aus München.',
+    focusKeyword: 'Schema Markup',
+    authorName: 'Julian Schäfer',
     category: 'technisches-seo',
     content: schemaMarkupAnleitungContent,
-    image: '/images/blog/schema%20markup%20anleitung%20(1).webp',
-    imageAlt: 'Schema Markup Anleitung: Strukturierte Daten und JSON-LD für bessere Google Rankings',
+    image: '/images/blog/schema-markup-thumbnail.webp',
+    imageAlt:
+      'Schema Markup Anleitung: dunkler Code-Editor mit JSON-LD-Snippet für ein Product-Schema und Vorschau eines Google-Rich-Results mit Sterne-Bewertung',
     faqs: [
       {
-        question: 'Was ist der Unterschied zwischen strukturierten Daten und unstrukturierten Daten?',
+        question: 'JSON-LD oder Microdata: Was ist besser?',
         answer:
-          'Strukturierte Daten folgen einem vordefinierten Datenmodell und sind leicht maschinenlesbar (z. B. Datenbanken, Tabellen, Schema Markup). Unstrukturierte Daten bestehen aus Rohdaten wie Textdokumenten, Bildern oder Videos – etwa 80 % der Unternehmensdaten.',
+          'JSON-LD. Google empfiehlt das Format ausdrücklich, weil der Code als abgekapselter Skriptblock sauber vom sichtbaren HTML getrennt liegt. Das macht ihn einfacher zu schreiben, leichter zu pflegen und unkompliziert per Plugin oder Tag Manager einzubinden. Microdata verteilt die Auszeichnung quer durch dein HTML und wird dadurch schnell unübersichtlich und fehleranfällig. Microdata funktioniert weiterhin, für neue Projekte gibt es aber kaum einen Grund, es JSON-LD vorzuziehen.',
       },
       {
-        question: 'Kann Schema Markup auch für Bilder und Videos verwendet werden?',
+        question: 'Brauche ich Schema Markup für jede Seite?',
         answer:
-          'Ja. Für Videos wird das VideoObject-Schema empfohlen (Titel, Beschreibung, Thumbnail-URL, Upload-Datum, Video-URL), um in Google-Videokarussells und als Rich Snippets zu erscheinen. ImageObject-Markup definiert Bilder präziser für Suchmaschinen.',
+          'Nein. Du zeichnest die Seiten aus, bei denen ein Schema-Typ wirklich passt. Eine Produktseite bekommt Product, ein Blogartikel Article oder BlogPosting, dein lokaler Standort LocalBusiness. Sinnvolle Basis-Auszeichnungen wie Organization auf der Startseite und BreadcrumbList in der Navigation lohnen sich fast immer. Eine reine Kontakt- oder Impressumsseite braucht dagegen oft kein eigenes Markup. Wichtiger als Vollständigkeit ist, dass das eingesetzte Schema korrekt und zum Inhalt passend ist.',
       },
       {
-        question: 'Wie aktuell muss Schema Markup gehalten werden, um wirksam zu sein?',
+        question: 'Kann ich Schema Markup kostenlos erstellen?',
         answer:
-          'Die Aktualität ist entscheidend. Google nutzt strukturierte Daten für aktuelle Infos zu Preisen, Verfügbarkeit oder Bewertungen. Veraltete Daten können dazu führen, dass Rich Snippets nicht angezeigt werden. Schema Markup regelmäßig prüfen und bei Änderungen anpassen; dateModified für präzise Datumsangaben nutzen.',
+          'Ja. Du brauchst keine kostenpflichtige Software. Du kannst JSON-LD von Hand schreiben (die Beispiele in diesem Artikel sind kopierbar), einen kostenlosen Schema-Generator nutzen oder in WordPress ein Plugin wie Rank Math oder Yoast einsetzen. Auch das Testen ist gratis: Der Rich Results Test und der Schema Markup Validator von schema.org kosten nichts.',
       },
       {
-        question: 'Verringert Schema Markup die Ladezeit meiner Website?',
+        question: 'Verbessert Schema Markup direkt das Ranking?',
         answer:
-          'Nein. JSON-LD ist sehr leichtgewichtig und wird oft asynchron geladen, sodass es den Aufbau der Seite nicht blockiert. Schema Markup kann durch bessere Rich Snippets und höhere Klickrate indirekt zur SEO-Leistung beitragen.',
+          'Schema ist kein direkter Rankingfaktor. Es bringt deine Seite nicht automatisch nach oben. Der Nutzen ist indirekt, aber real: Schema hilft Google, deinen Inhalt besser zu verstehen, und kann Rich Results auslösen. Diese erweiterten Treffer fallen in der Suche stärker auf und verbessern erfahrungsgemäß die Klickrate. Mehr Klicks und ein klareres Verständnis deiner Inhalte wirken sich langfristig positiv aus, der Effekt läuft also über den Umweg Sichtbarkeit und CTR.',
       },
       {
-        question: 'Ist es möglich, Schema Markup manuell zu erstellen, oder brauche ich immer ein Tool?',
+        question: 'Was ist der Unterschied zwischen strukturierten und unstrukturierten Daten?',
         answer:
-          'Schema Markup lässt sich manuell erstellen, besonders mit JSON-LD – das bietet maximale Flexibilität für individuelle oder dynamische Strukturen. Tools wie der Merkle Generator oder Googles Markup-Hilfe sind effizienter und fehlerärmer, besonders für Einsteiger.',
+          'Unstrukturierte Daten sind ganz normaler Inhalt: Fließtext, Bilder und Videos, die ein Mensch versteht, eine Maschine aber nur teilweise einordnen kann. Strukturierte Daten ergänzen diesen Inhalt um eine maschinenlesbare Ebene nach einem festen Schema. Sie sagen der Suchmaschine eindeutig, was eine Information bedeutet: dass „19,99" ein Preis in Euro ist oder „4,8" eine Bewertung. Schema Markup ist genau diese strukturierte Ebene.',
+      },
+      {
+        question: 'Bringt FAQ-Schema noch ein Rich Snippet?',
+        answer:
+          'In der Regel nein. Google hat die sichtbaren FAQ-Rich-Results stark eingeschränkt und zeigt sie nur noch für wenige, autoritative Websites an. Für die meisten Seiten erscheint kein aufklappbares FAQ mehr im Suchergebnis. Das Markup ist trotzdem nicht nutzlos: Es hilft Google und KI-Systemen, deine Fragen und Antworten korrekt zu erfassen. Versprich dir aber kein sichtbares FAQ-Snippet mehr, das ist mit der aktuellen Google-Realität nicht vereinbar.',
+      },
+      {
+        question: 'Wo muss der JSON-LD-Code platziert werden?',
+        answer:
+          'Am sichersten im <head> deiner Seite, technisch akzeptiert Google das Markup aber auch im <body>. Entscheidend ist nur, dass der <script type="application/ld+json">-Block im ausgelieferten HTML steht und gültig ist. Bei JavaScript-Frameworks solltest du das Schema serverseitig rendern, damit Google es zuverlässig findet. Nutzt du ein Plugin oder den Tag Manager, übernimmt das Tool die Platzierung automatisch.',
+      },
+      {
+        question: 'Wie teste ich, ob mein Schema funktioniert?',
+        answer:
+          'Mit zwei kostenlosen Tools. Der Rich Results Test (search.google.com/test/rich-results) zeigt dir, ob deine Seite für ein Google-Rich-Result infrage kommt und ob Fehler vorliegen. Der Schema Markup Validator (validator.schema.org) prüft die reine Gültigkeit deines Codes gegen das schema.org-Vokabular. Für die Live-Website nutzt du zusätzlich den Bericht „Verbesserungen" in der Google Search Console, der dir Fehler und Warnungen seitenweit anzeigt.',
       },
     ],
   },
