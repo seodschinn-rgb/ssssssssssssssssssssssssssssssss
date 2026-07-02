@@ -1,40 +1,32 @@
-/**
- * Blog: SEO-Tools für Anfänger — sm-article Layout.
- *
- * Hinweis: Styles + Schema kommen zentral aus app/blog/[slug]/page.tsx
- * (BLOG_ARTICLE_STYLE + ArticleSchema + BlogFAQSchema).
- */
-export const seoToolsAnfaengerContent =
-  '<div class="sm-article">' +
-  `
-<h1>SEO-Tools f&uuml;r Anf&auml;nger: Welche du 2026 wirklich brauchst</h1>
 
-  <div class="meta-info">
-    <span>Veröffentlicht: 2. Juli 2026</span>
-    <span>Lesezeit: ca. 12 Min.</span>
-    <span>Ratgeber</span>
-  </div>
+  <h1>SEO-Tools f&uuml;r Anf&auml;nger: Welche du 2026 wirklich brauchst</h1>
+
+  <p style="color:var(--text-light); font-size:0.9rem; margin-bottom:24px;">Von Julian Sch&auml;fer, SEO M&uuml;nchen | Aktualisiert: 2. Juli 2026 | Lesezeit: ca. 12 Minuten</p>
+
+  <figure>
+    <img src="../images/seo-tools-anfaenger-thumbnail.png" alt="SEO-Tools f&uuml;r Anf&auml;nger 2026: Dashboard-Mockup mit steigender Ranking-Kurve und Keyword-Zeilen mit gr&uuml;nen Auf-Pfeilen." />
+  </figure>
 
   <div class="intro">
     <p>Du suchst SEO-Tools, die dir als Anf&auml;nger wirklich weiterhelfen, ohne 50 Programme zu vergleichen oder ein Agentur-Budget auszugeben? Dann bist du hier richtig. Dieser Guide zeigt dir die Tools, mit denen kleine Unternehmen in M&uuml;nchen und Bayern in der Praxis arbeiten: die kostenlose Basis von Google, deutsche Tools wie Seobility und Sistrix ehrlich eingeordnet und ein klarer Fahrplan, womit du startest.</p>
     <p>Vorweg die gute Nachricht: F&uuml;r deine ersten Monate brauchst du genau 0 EUR Tool-Budget. Wann sich Bezahlen sp&auml;ter lohnt (und wann nicht), liest du ebenfalls hier.</p>
   </div>
 
-  <nav class="sm-toc" aria-label="Inhaltsverzeichnis">
-    <p class="sm-toc-title">Inhaltsverzeichnis</p>
-    <ol>
-      <li><a href="#warum">Warum du SEO-Tools brauchst (aber weniger, als du denkst)</a></li>
-      <li><a href="#kostenlose-basis">Die kostenlose Basis: 5 Tools, die du zuerst einrichtest</a></li>
-      <li><a href="#deutsche-tools">Deutsche SEO-Tools: Seobility, Sistrix &amp; SEORCH im Check</a></li>
-      <li><a href="#internationale-tools">Ahrefs, Semrush &amp; Mangools: der Realitäts-Check</a></li>
-      <li><a href="#technik">Technik-Check: Screaming Frog und die 500-URL-Grenze</a></li>
-      <li><a href="#aufgaben">Welches Tool für welche Aufgabe? Die Übersicht</a></li>
-      <li><a href="#starter-stack">Dein Starter-Stack in 4 Schritten</a></li>
-      <li><a href="#ki-tools">ChatGPT, Claude &amp; AI Overviews: Was KI-Tools taugen</a></li>
-      <li><a href="#kosten">Die Kosten-Wahrheit: kostenlos vs. bezahlt</a></li>
-      <li><a href="#fehler">Häufige Anfängerfehler mit SEO-Tools</a></li>
-      <li><a href="#faq">Häufig gestellte Fragen</a></li>
-      <li><a href="#fazit">Fazit</a></li>
+  <nav aria-label="Inhaltsverzeichnis" style="background:#F9FAFB; border-radius:8px; padding:20px 24px; margin-bottom:36px;">
+    <p style="font-weight:700; font-size:1.05rem; margin-bottom:12px; color:var(--primary);">Inhaltsverzeichnis</p>
+    <ol style="margin:0; padding-left:20px; line-height:2;">
+      <li><a href="#warum" style="text-decoration:none;">Warum du SEO-Tools brauchst (aber weniger, als du denkst)</a></li>
+      <li><a href="#kostenlose-basis" style="text-decoration:none;">Die kostenlose Basis: 5 Tools, die du zuerst einrichtest</a></li>
+      <li><a href="#deutsche-tools" style="text-decoration:none;">Deutsche SEO-Tools: Seobility, Sistrix &amp; SEORCH im Check</a></li>
+      <li><a href="#internationale-tools" style="text-decoration:none;">Ahrefs, Semrush &amp; Mangools: der Realit&auml;ts-Check</a></li>
+      <li><a href="#technik" style="text-decoration:none;">Technik-Check: Screaming Frog und die 500-URL-Grenze</a></li>
+      <li><a href="#aufgaben" style="text-decoration:none;">Welches Tool f&uuml;r welche Aufgabe? Die &Uuml;bersicht</a></li>
+      <li><a href="#starter-stack" style="text-decoration:none;">Dein Starter-Stack in 4 Schritten</a></li>
+      <li><a href="#ki-tools" style="text-decoration:none;">ChatGPT, Claude &amp; AI Overviews: Was KI-Tools taugen</a></li>
+      <li><a href="#kosten" style="text-decoration:none;">Die Kosten-Wahrheit: kostenlos vs. bezahlt</a></li>
+      <li><a href="#fehler" style="text-decoration:none;">H&auml;ufige Anf&auml;ngerfehler mit SEO-Tools</a></li>
+      <li><a href="#faq" style="text-decoration:none;">H&auml;ufig gestellte Fragen</a></li>
+      <li><a href="#fazit" style="text-decoration:none;">Fazit</a></li>
     </ol>
   </nav>
 
@@ -52,7 +44,7 @@ export const seoToolsAnfaengerContent =
 
   <p>Diese f&uuml;nf Tools sind dauerhaft kostenlos, stammen direkt von Google beziehungsweise Microsoft und bilden das Fundament f&uuml;r alles Weitere:</p>
 
-  <div class="table-wrapper">
+  <div class="table-wrap">
   <table>
     <thead>
       <tr><th>Tool</th><th>Wof&uuml;r du es brauchst</th><th>Kosten</th></tr>
@@ -73,11 +65,11 @@ export const seoToolsAnfaengerContent =
 
   <p><strong>PageSpeed Insights</strong> pr&uuml;ft die Ladezeit und die Core Web Vitals jeder URL und listet die gr&ouml;&szlig;ten Bremsen konkret auf. Dasselbe liefert dir lokal der Lighthouse-Tab in den Chrome-Entwicklertools.</p>
 
-  <p><strong>Der Google Keyword Planner</strong> liefert dir Keyword-Ideen samt Suchvolumen. Wichtig zu wissen: Ohne laufende Anzeigen zeigt er nur Spannen wie &bdquo;100 bis 1.000 Suchanfragen&ldquo; statt exakter Werte. F&uuml;r den Einstieg reicht das v&ouml;llig, denn du willst zun&auml;chst Gr&ouml;&szlig;enordnungen und Ideen, keine Nachkommastellen. Wie du daraus eine Strategie machst, zeigt unsere <a href="/blog/keyword-recherche-anleitung" class="internal-link">Anleitung zur Keyword-Recherche</a>; wenn du den Schritt lieber abgibst, &uuml;bernehmen wir ihn als <a href="/leistungen/keyword-recherche" class="internal-link">Keyword-Recherche-Leistung</a>.</p>
+  <p><strong>Der Google Keyword Planner</strong> liefert dir Keyword-Ideen samt Suchvolumen. Wichtig zu wissen: Ohne laufende Anzeigen zeigt er nur Spannen wie &bdquo;100 bis 1.000 Suchanfragen&ldquo; statt exakter Werte. F&uuml;r den Einstieg reicht das v&ouml;llig, denn du willst zun&auml;chst Gr&ouml;&szlig;enordnungen und Ideen, keine Nachkommastellen. Wie du daraus eine Strategie machst, zeigt unsere <a href="https://seomuenchen.com/blog/keyword-recherche-anleitung" class="internal-link">Anleitung zur Keyword-Recherche</a>; wenn du den Schritt lieber abgibst, &uuml;bernehmen wir ihn als <a href="https://seomuenchen.com/leistungen/keyword-recherche" class="internal-link">Keyword-Recherche-Leistung</a>.</p>
 
   <p><strong>Bing Webmaster Tools</strong> wird gern vergessen, ist aber in Zeiten von Copilot und KI-Suche einen Blick wert. Praktisch: Die Einrichtung per Import aus der Search Console dauert nur Minuten.</p>
 
-  <p>F&uuml;r lokale Unternehmen kommt ein sechstes kostenloses &bdquo;Tool&ldquo; dazu: dein <strong>Google Business Profile</strong>. F&uuml;r die Sichtbarkeit in Google Maps ist es in M&uuml;nchen wichtiger als jedes Bezahl-Tool. Wie du es aufsetzt, erkl&auml;rt unser Guide zum <a href="/blog/google-business-profile-optimieren" class="internal-link">Google Business Profile optimieren</a>.</p>
+  <p>F&uuml;r lokale Unternehmen kommt ein sechstes kostenloses &bdquo;Tool&ldquo; dazu: dein <strong>Google Business Profile</strong>. F&uuml;r die Sichtbarkeit in Google Maps ist es in M&uuml;nchen wichtiger als jedes Bezahl-Tool. Wie du es aufsetzt, erkl&auml;rt unser Guide zum <a href="https://seomuenchen.com/blog/google-business-profile-optimieren" class="internal-link">Google Business Profile optimieren</a>.</p>
 
   <h2 id="deutsche-tools">Deutsche SEO-Tools: Seobility, Sistrix &amp; SEORCH im Check</h2>
 
@@ -85,7 +77,7 @@ export const seoToolsAnfaengerContent =
 
   <h3>Seobility: der beste deutsche Einstieg</h3>
 
-  <p><strong>Seobility</strong> (entwickelt in N&uuml;rnberg, also quasi vor unserer Haust&uuml;r) ist aus unserer Sicht das beste SEO-Tool f&uuml;r Anf&auml;nger im deutschsprachigen Raum. Es crawlt deine Website, findet OnPage-Fehler wie fehlende Titles, kaputte Links oder zu d&uuml;nne Inhalte und erkl&auml;rt jeden Punkt verst&auml;ndlich. Der kostenlose Tarif umfasst 1 Projekt mit bis zu 1.000 Unterseiten und Rank-Tracking f&uuml;r 10 Keywords. F&uuml;r die meisten kleinen Unternehmenswebsites in M&uuml;nchen ist das komplett ausreichend. Der Premium-Tarif f&uuml;r 49,90 EUR pro Monat erweitert das auf 3 Projekte, 25.000 Unterseiten und 300 Keywords. Welche OnPage-Punkte du damit priorisieren solltest, findest du in unserer <a href="/blog/onpage-seo-checkliste" class="internal-link">OnPage-SEO-Checkliste</a>.</p>
+  <p><strong>Seobility</strong> (entwickelt in N&uuml;rnberg, also quasi vor unserer Haust&uuml;r) ist aus unserer Sicht das beste SEO-Tool f&uuml;r Anf&auml;nger im deutschsprachigen Raum. Es crawlt deine Website, findet OnPage-Fehler wie fehlende Titles, kaputte Links oder zu d&uuml;nne Inhalte und erkl&auml;rt jeden Punkt verst&auml;ndlich. Der kostenlose Tarif umfasst 1 Projekt mit bis zu 1.000 Unterseiten und Rank-Tracking f&uuml;r 10 Keywords. F&uuml;r die meisten kleinen Unternehmenswebsites in M&uuml;nchen ist das komplett ausreichend. Der Premium-Tarif f&uuml;r 49,90 EUR pro Monat erweitert das auf 3 Projekte, 25.000 Unterseiten und 300 Keywords. Welche OnPage-Punkte du damit priorisieren solltest, findest du in unserer <a href="https://seomuenchen.com/blog/onpage-seo-checkliste" class="internal-link">OnPage-SEO-Checkliste</a>.</p>
 
   <h3>Sistrix: der Profi-Standard (noch nicht f&uuml;r dich)</h3>
 
@@ -113,18 +105,18 @@ export const seoToolsAnfaengerContent =
 
   <p>Die kostenlose Version crawlt bis zu 500 URLs pro Durchlauf. Eine typische KMU-Website in M&uuml;nchen hat zwischen 10 und 300 Seiten, du bleibst also meist deutlich unter dem Limit. Die Vollversion kostet 199 GBP pro Jahr (umgerechnet rund 230 EUR) und lohnt sich erst bei gro&szlig;en Websites oder wenn du regelm&auml;&szlig;ig tiefe Crawl-Analysen brauchst.</p>
 
-  <p>Wie du die Ergebnisse priorisierst, zeigt unsere <a href="/blog/seo-audit-checkliste" class="internal-link">SEO-Audit-Checkliste</a>. Faustregel: erst Indexierung und kaputte Links, dann Titles und Descriptions, dann Ladezeit.</p>
+  <p>Wie du die Ergebnisse priorisierst, zeigt unsere <a href="https://seomuenchen.com/blog/seo-audit-checkliste" class="internal-link">SEO-Audit-Checkliste</a>. Faustregel: erst Indexierung und kaputte Links, dann Titles und Descriptions, dann Ladezeit.</p>
 
   <h2 id="aufgaben">Welches Tool f&uuml;r welche Aufgabe? Die &Uuml;bersicht</h2>
 
   <p>Der h&auml;ufigste Denkfehler bei der Tool-Wahl: erst das Tool kaufen, dann &uuml;berlegen, wof&uuml;r. Richtig herum: erst die Aufgabe kl&auml;ren, dann das Werkzeug w&auml;hlen. Diese &Uuml;bersicht fasst unsere Empfehlungen zusammen:</p>
 
   <figure>
-    <img src="/images/blog/seo-tools-vergleich.webp" alt="&Uuml;bersichtstabelle: Welches SEO-Tool f&uuml;r welche Aufgabe? Kostenlose Empfehlung und Bezahl-Option f&uuml;r Keyword-Recherche, OnPage-Check, Technik, Rankings, Backlinks und Local SEO." />
+    <img src="../images/seo-tools-vergleich.png" alt="&Uuml;bersichtstabelle: Welches SEO-Tool f&uuml;r welche Aufgabe? Kostenlose Empfehlung und Bezahl-Option f&uuml;r Keyword-Recherche, OnPage-Check, Technik, Rankings, Backlinks und Local SEO." />
     <figcaption>Welches Tool f&uuml;r welche Aufgabe: F&uuml;r jede SEO-Grundaufgabe gibt es eine brauchbare kostenlose L&ouml;sung.</figcaption>
   </figure>
 
-  <div class="table-wrapper">
+  <div class="table-wrap">
   <table>
     <thead>
       <tr><th>Aufgabe</th><th>Kostenlose Empfehlung</th><th>Bezahl-Option (wenn n&ouml;tig)</th></tr>
@@ -143,7 +135,7 @@ export const seoToolsAnfaengerContent =
   <p>Auff&auml;llig, aber kein Zufall: In jeder Zeile steht links eine brauchbare kostenlose L&ouml;sung. Genau deshalb raten wir M&uuml;nchner Gr&uuml;ndern und KMU, das Tool-Budget in den ersten Monaten bei 0 EUR zu lassen und die Zeit stattdessen in Inhalte und Technik zu stecken.</p>
 
   <div class="cta-box">
-    <strong>Unsicher, welche Aufgabe bei deiner Website Priorit&auml;t hat?</strong> Genau daf&uuml;r gibt es unser <a href="/leistungen/seo-audit" class="internal-link">SEO-Audit</a>: Wir pr&uuml;fen Technik, Inhalte und Rankings und zeigen dir, welche Baustelle zuerst Ergebnisse bringt. <a href="/kontakt" class="internal-link">Jetzt kostenloses Erstgespr&auml;ch vereinbaren</a> (ohne Bindung). Antwort innerhalb von 24 Stunden.
+    <strong>Unsicher, welche Aufgabe bei deiner Website Priorit&auml;t hat?</strong> Genau daf&uuml;r gibt es unser <a href="https://seomuenchen.com/leistungen/seo-audit" class="internal-link">SEO-Audit</a>: Wir pr&uuml;fen Technik, Inhalte und Rankings und zeigen dir, welche Baustelle zuerst Ergebnisse bringt. <a href="https://seomuenchen.com/kontakt" class="internal-link">Jetzt kostenloses Erstgespr&auml;ch vereinbaren</a> (ohne Bindung). Antwort innerhalb von 24 Stunden.
   </div>
 
   <h2 id="starter-stack">Dein Starter-Stack: In 4 Schritten zum fertigen Tool-Setup</h2>
@@ -151,7 +143,7 @@ export const seoToolsAnfaengerContent =
   <p>Hier der Starter-Stack, den wir Einsteigern in M&uuml;nchen empfehlen. Alle vier Schritte zusammen kosten dich einen Nachmittag und 0 EUR:</p>
 
   <figure>
-    <img src="/images/blog/seo-tools-starter-stack.webp" alt="Dein SEO-Tool-Stack in 4 Schritten: Google Search Console einrichten, GA4 und PageSpeed Insights erg&auml;nzen, Seobility Free und Keyword Planner verbinden, erst bei Bedarf aufr&uuml;sten." />
+    <img src="../images/seo-tools-starter-stack.png" alt="Dein SEO-Tool-Stack in 4 Schritten: Google Search Console einrichten, GA4 und PageSpeed Insights erg&auml;nzen, Seobility Free und Keyword Planner verbinden, erst bei Bedarf aufr&uuml;sten." />
     <figcaption>Der Starter-Stack f&uuml;r Einsteiger: vier Schritte, ein Nachmittag, 0 EUR Tool-Budget.</figcaption>
   </figure>
 
@@ -162,7 +154,7 @@ export const seoToolsAnfaengerContent =
     <li><strong>Erst bei Bedarf aufr&uuml;sten.</strong> Wenn du nach drei bis sechs Monaten regelm&auml;&szlig;ig an Limits st&ouml;&szlig;t, buchst du gezielt ein einziges Bezahl-Tool, das deine gr&ouml;&szlig;te L&uuml;cke schlie&szlig;t, zum Beispiel Seobility Premium.</li>
   </ol>
 
-  <p>Wichtiger als jedes einzelne Tool ist der Rhythmus: einmal pro Woche 30 Minuten in Search Console und Seobility schauen, eine Ma&szlig;nahme ableiten, umsetzen. Welche Stellschrauben deine Positionen typischerweise am st&auml;rksten bewegen, liest du in unserem Guide <a href="/blog/google-ranking-verbessern" class="internal-link">Google-Ranking verbessern</a>.</p>
+  <p>Wichtiger als jedes einzelne Tool ist der Rhythmus: einmal pro Woche 30 Minuten in Search Console und Seobility schauen, eine Ma&szlig;nahme ableiten, umsetzen. Welche Stellschrauben deine Positionen typischerweise am st&auml;rksten bewegen, liest du in unserem Guide <a href="https://seomuenchen.com/blog/google-ranking-verbessern" class="internal-link">Google-Ranking verbessern</a>.</p>
 
   <h2 id="ki-tools">ChatGPT, Claude &amp; AI Overviews: Was KI-Tools f&uuml;r SEO taugen</h2>
 
@@ -174,7 +166,7 @@ export const seoToolsAnfaengerContent =
     <p style="margin:0;"><strong>Was KI-Chatbots nicht k&ouml;nnen:</strong> Sie haben keinen Zugriff auf echte Suchvolumina, aktuelle Rankings oder deine Search-Console-Daten. Fragst du ChatGPT nach dem Suchvolumen eines Keywords, bekommst du eine plausibel klingende, aber h&auml;ufig erfundene Zahl. Nutze KI-Chatbots deshalb nie als Datenquelle, sondern nur als Assistenz. Die Daten kommen weiterhin aus Search Console, Keyword Planner und Co.</p>
   </div>
 
-  <p>Dazu kommt: Google beantwortet mit den <strong>AI Overviews</strong> immer mehr Fragen direkt in der Suche. F&uuml;r reine Info-Inhalte hei&szlig;t das typischerweise weniger Klicks, selbst bei guten Positionen. Umso wichtiger, dass deine Inhalte in den KI-Antworten als Quelle auftauchen. Wie das funktioniert, erkl&auml;rt unser Beitrag <a href="/blog/was-ist-geo" class="internal-link">Was ist GEO?</a></p>
+  <p>Dazu kommt: Google beantwortet mit den <strong>AI Overviews</strong> immer mehr Fragen direkt in der Suche. F&uuml;r reine Info-Inhalte hei&szlig;t das typischerweise weniger Klicks, selbst bei guten Positionen. Umso wichtiger, dass deine Inhalte in den KI-Antworten als Quelle auftauchen. Wie das funktioniert, erkl&auml;rt unser Beitrag <a href="https://seomuenchen.com/blog/was-ist-geo" class="internal-link">Was ist GEO?</a></p>
 
   <h2 id="kosten">Die Kosten-Wahrheit: Was kostenlos reicht und wann sich Bezahlen lohnt</h2>
 
@@ -188,7 +180,7 @@ export const seoToolsAnfaengerContent =
 
   <p>Bezahlen lohnt sich erfahrungsgem&auml;&szlig; erst, wenn drei Signale zusammenkommen: Du st&ouml;&szlig;t w&ouml;chentlich an die Grenzen der Gratis-Tools, du brauchst Wettbewerber-Daten, und SEO bringt dir nachweislich Anfragen. Vorher ist jedes Abo verbranntes Geld.</p>
 
-  <p>Und falls du dich fragst, wie sich Tool-Kosten zu den Kosten professioneller Unterst&uuml;tzung verhalten: In unserem Beitrag zu den <a href="/blog/seo-kosten" class="internal-link">SEO-Kosten</a> rechnen wir transparent vor, was SEO in M&uuml;nchen realistisch kostet, von Do-it-yourself bis Agentur.</p>
+  <p>Und falls du dich fragst, wie sich Tool-Kosten zu den Kosten professioneller Unterst&uuml;tzung verhalten: In unserem Beitrag zu den <a href="https://seomuenchen.com/blog/seo-kosten" class="internal-link">SEO-Kosten</a> rechnen wir transparent vor, was SEO in M&uuml;nchen realistisch kostet, von Do-it-yourself bis Agentur.</p>
 
   <h2 id="fehler">H&auml;ufige Anf&auml;ngerfehler mit SEO-Tools (und wie du sie vermeidest)</h2>
 
@@ -204,7 +196,7 @@ export const seoToolsAnfaengerContent =
   </ol>
 
   <div class="cta-box">
-    <strong>Du willst dir die Lernkurve sparen?</strong> Wir arbeiten t&auml;glich mit diesen Tools und &uuml;bersetzen die Daten deiner Website in einen konkreten Ma&szlig;nahmenplan. Vereinbare ein kostenloses Erstgespr&auml;ch ohne Bindung, per Telefon oder E-Mail: <a href="/kontakt" class="internal-link">jetzt Kontakt aufnehmen</a>. Du bekommst innerhalb von 24 Stunden eine Antwort.
+    <strong>Du willst dir die Lernkurve sparen?</strong> Wir arbeiten t&auml;glich mit diesen Tools und &uuml;bersetzen die Daten deiner Website in einen konkreten Ma&szlig;nahmenplan. Vereinbare ein kostenloses Erstgespr&auml;ch ohne Bindung, per Telefon oder E-Mail: <a href="https://seomuenchen.com/kontakt" class="internal-link">jetzt Kontakt aufnehmen</a>. Du bekommst innerhalb von 24 Stunden eine Antwort.
   </div>
 
   <div class="faq-section">
@@ -251,6 +243,11 @@ export const seoToolsAnfaengerContent =
     </div>
   </div>
 
+  <div style="background:#F9FAFB; border-radius:8px; padding:20px 24px; margin:40px 0 32px; border-left:4px solid var(--primary);">
+    <p style="font-weight:700; margin-bottom:8px; color:var(--primary);">&Uuml;ber den Autor</p>
+    <p style="font-size:0.95rem; margin:0;">Dieser Artikel wurde von <strong>Julian Sch&auml;fer</strong>, SEO-Berater bei <strong>SEO M&uuml;nchen</strong>, erstellt. Als spezialisierte SEO-Agentur in M&uuml;nchen betreuen wir Unternehmen aus der Region von der ersten Tool-Einrichtung bis zur laufenden Optimierung. Unsere Arbeit basiert auf datengetriebener Analyse, transparentem Reporting und pers&ouml;nlicher Betreuung mit festem Ansprechpartner.</p>
+  </div>
+
   <div class="fazit">
     <h2 id="fazit">Fazit: Klein starten, konsequent nutzen</h2>
 
@@ -262,7 +259,21 @@ export const seoToolsAnfaengerContent =
       <li><strong>Umsetzung schl&auml;gt Analyse.</strong> 30 Minuten Daten pro Woche reichen, wenn daraus jede Woche eine umgesetzte Ma&szlig;nahme entsteht. KI-Chatbots helfen bei Texten und Ideen, ersetzen aber keine echten Daten.</li>
     </ol>
 
-    <p>Du willst gleich mit klaren Priorit&auml;ten starten? Vereinbare ein <a href="/kontakt" class="internal-link">kostenloses Erstgespr&auml;ch</a> (ohne Bindung): Wir schauen uns deine Website an und sagen dir ehrlich, welche Tools und Ma&szlig;nahmen sich f&uuml;r dein Unternehmen in M&uuml;nchen lohnen. Antwort innerhalb von 24 Stunden.</p>
+    <p>Du willst gleich mit klaren Priorit&auml;ten starten? Vereinbare ein <a href="https://seomuenchen.com/kontakt" class="internal-link">kostenloses Erstgespr&auml;ch</a> (ohne Bindung): Wir schauen uns deine Website an und sagen dir ehrlich, welche Tools und Ma&szlig;nahmen sich f&uuml;r dein Unternehmen in M&uuml;nchen lohnen. Antwort innerhalb von 24 Stunden.</p>
   </div>
-` +
-  '</div>'
+
+  <nav aria-label="Verwandte Artikel" style="display:flex; flex-wrap:wrap; gap:16px; margin:40px 0 20px;">
+    <a href="https://seomuenchen.com/blog/keyword-recherche-anleitung" style="flex:1; min-width:220px; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; padding:16px 20px; text-decoration:none; color:var(--text);">
+      <span style="font-size:0.8rem; color:var(--text-light); display:block; margin-bottom:4px;">Verwandter Artikel</span>
+      <span style="font-weight:700; color:var(--primary);">Keyword-Recherche: Die Anleitung</span>
+    </a>
+    <a href="https://seomuenchen.com/blog/onpage-seo-checkliste" style="flex:1; min-width:220px; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; padding:16px 20px; text-decoration:none; color:var(--text);">
+      <span style="font-size:0.8rem; color:var(--text-light); display:block; margin-bottom:4px;">Verwandter Artikel</span>
+      <span style="font-weight:700; color:var(--primary);">OnPage-SEO-Checkliste f&uuml;r 2026</span>
+    </a>
+    <a href="https://seomuenchen.com/leistungen/seo-audit" style="flex:1; min-width:220px; background:#F9FAFB; border:1px solid var(--border); border-radius:8px; padding:16px 20px; text-decoration:none; color:var(--text);">
+      <span style="font-size:0.8rem; color:var(--text-light); display:block; margin-bottom:4px;">Unsere Leistung</span>
+      <span style="font-weight:700; color:var(--primary);">SEO-Audit f&uuml;r deine Website</span>
+    </a>
+  </nav>
+

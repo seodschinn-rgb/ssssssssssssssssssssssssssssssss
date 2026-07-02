@@ -676,44 +676,57 @@ const POSTS: BlogPost[] = [
   },
   {
     slug: 'seo-tools-anfaenger',
-    title: 'SEO-Tools für Anfänger: Die besten Lösungen für Einsteiger (2026)',
-    metaTitle: 'SEO-Tools für Anfänger: Die besten Lösungen für Einsteiger (2026)',
+    title: 'SEO-Tools für Anfänger: Welche du 2026 wirklich brauchst',
+    metaTitle: 'SEO-Tools für Anfänger 2026: Was du wirklich brauchst',
     metaDescription:
-      'Die besten SEO-Tools für Anfänger: Von kostenlosen Essentials wie Google Search Console bis zu All-in-One Lösungen. Jetzt Sichtbarkeit in München steigern!',
+      'Welche SEO-Tools brauchst du als Anfänger wirklich? Die ehrliche Übersicht: kostenlose Basis von Google, Seobility & Co., echte Preise und dein Starter-Stack in 4 Schritten.',
+    focusKeyword: 'SEO Tools für Anfänger',
+    authorName: 'Julian Schäfer',
     category: 'tipps-tools',
     content: seoToolsAnfaengerContent,
-    image: '/images/blog/seo%20tools%20anf%C3%A4nger%20(1).webp',
-    imageAlt: 'SEO-Tools für Anfänger: Die besten Lösungen für Einsteiger – Sichtbarkeit in München steigern',
+    image: '/images/blog/seo-tools-anfaenger-thumbnail.webp',
+    imageAlt:
+      'SEO-Tools für Anfänger 2026: Dashboard-Mockup mit steigender Ranking-Kurve und Keyword-Zeilen mit grünen Auf-Pfeilen',
     faqs: [
       {
-        question: 'Was sind die besten kostenlosen SEO-Tools für den Einstieg?',
+        question: 'Was sind die besten SEO-Tools für Anfänger?',
         answer:
-          'Google Search Console (Indexierung & Leistung), Google Analytics (Traffic & Nutzerverhalten), Keyword Planner (Keyword-Recherche), Ubersuggest (Keyword- und Content-Ideen) und Seobility (technische Analyse) sind empfehlenswerte kostenlose Einstiegs-Tools.',
+          'Für den Start reichen vier kostenlose Tools: Google Search Console (echte Suchdaten deiner Website), Google Analytics 4 (Besucherverhalten), PageSpeed Insights (Technik) und der Google Keyword Planner (Keyword-Ideen). Dazu ein OnPage-Checker wie Seobility, dessen Free-Tarif für kleine Websites genügt. Diese Kombination deckt Rankings, Technik und Inhalte ab, ohne dass du etwas bezahlst.',
       },
       {
-        question: 'Muss ich als Anfänger mehrere SEO-Tools gleichzeitig nutzen?',
+        question: 'Welche SEO-Tools sind komplett kostenlos?',
         answer:
-          'Als Anfänger ist eine Kombination sinnvoll, da jedes Tool andere Aspekte abdeckt. Die Google Search Console für technische Grundlagen und der Google Keyword Planner für die Keyword-Analyse sind oft unersetzlich. Konzentrieren Sie sich auf die wichtigsten Kennzahlen und nur auf Tools, die spezifische Fragen beantworten.',
+          'Dauerhaft kostenlos sind Google Search Console, Google Analytics 4, PageSpeed Insights, Bing Webmaster Tools, das Google Business Profile und SEORCH. Mit Einschränkungen kostenlos nutzbar sind Seobility (1 Projekt, 1.000 Unterseiten), Screaming Frog (500 URLs pro Crawl), die Ahrefs Webmaster Tools (nur für die eigene Website) und das Semrush-Free-Konto (10 Abfragen pro Tag).',
       },
       {
-        question: 'Wie erkenne ich, ob ein SEO-Tool-Vergleich neutral ist?',
+        question: 'Reichen kostenlose SEO-Tools für ein kleines Unternehmen?',
         answer:
-          'Neutrale Vergleiche zeichnen sich durch ausgewogene Vor- und Nachteile, transparente Preise und die Nennung von Alternativen aus. Seriöse Tests legen die Methodik offen. Affiliate-Hinweise können URL-Parameter wie ?ref=, ?aff= oder ?tag= beim Klick auf Tool-Links sein.',
+          'In den meisten Fällen ja, gerade am Anfang. Erfahrungsgemäß decken Search Console, GA4, Seobility Free und der Keyword Planner die ersten sechs Monate vollständig ab. Bezahl-Tools lohnen sich erst, wenn du regelmäßig an Limits stößt, Wettbewerber-Daten brauchst oder viele Keywords systematisch verfolgen willst.',
       },
       {
-        question: 'Kann ich KI-Tools als Ersatz für klassische SEO-Software nutzen?',
+        question: 'Was kostet ein gutes SEO-Tool im Monat?',
         answer:
-          'KI-Tools eignen sich ergänzend für Content-Erstellung und Ideenfindung. Für präzises Local SEO, Echtzeitdaten, Backlink-Analyse und technische Audits bleiben klassische SEO-Tools unerlässlich. Ein kombinierter Ansatz ist am effektivsten.',
+          'Sinnvolle Einstiegs-Tarife starten bei knapp 20 EUR pro Monat (Mangools im Jahresabo) bis 49,90 EUR pro Monat (Seobility Premium). Profi-Tools wie Sistrix beginnen bei 119 EUR pro Monat, Ahrefs Lite und Semrush Pro liegen umgerechnet ebenfalls im dreistelligen Bereich. Als Anfänger brauchst du diese Preisklasse in der Regel nicht.',
       },
       {
-        question: 'Wie tracke ich Keyword-Rankings auf lokaler Ebene für München?',
+        question: 'Ist Seobility oder Sistrix besser für Einsteiger?',
         answer:
-          'Dafür brauchen Sie Tools mit lokalem Ranking-Tracking. Das Google Unternehmensprofil ist für die lokale Sichtbarkeit zentral. Manuelle Prüfungen im Inkognito-Modus mit Standort können erste Eindrücke liefern, für umfassendes Monitoring reichen sie nicht aus.',
+          'Für Einsteiger klar Seobility: deutsche Oberfläche, verständliche Erklärungen, ein brauchbarer Gratis-Tarif und mit 49,90 EUR pro Monat ein faires Premium-Upgrade. Sistrix ist der Profi-Standard der deutschen SEO-Szene mit dem bekannten Sichtbarkeitsindex, startet bei 119 EUR pro Monat und lohnt sich vor allem für Agenturen und Unternehmen, bei denen SEO ein zentraler Kanal ist.',
       },
       {
-        question: 'Wie viel Zeit pro Woche sollte ein Anfänger einplanen?',
+        question: 'Kann ich ChatGPT oder Claude als SEO-Tool nutzen?',
         answer:
-          'Empfohlen sind etwa 5–10 Stunden pro Woche. Erste Fortschritte zeigen sich typischerweise nach 3–6 Monaten, signifikante Ergebnisse nach 6–12 Monaten. Diese Zeitinvestition legt den Grundstein für nachhaltige Sichtbarkeit und gute Rankings.',
+          'Als Assistent ja, als Datenquelle nein. KI-Chatbots helfen beim Brainstorming von Keyword-Ideen, bei Title- und Meta-Entwürfen und beim Vereinfachen technischer Themen. Suchvolumina, Rankings oder Backlink-Zahlen erfinden sie dagegen häufig. Für echte Daten brauchst du weiterhin die Search Console und klassische SEO-Tools.',
+      },
+      {
+        question: 'Wie viele SEO-Tools brauche ich gleichzeitig?',
+        answer:
+          'Weniger, als du denkst: Ein Setup aus Search Console, GA4 und einem OnPage-Tool wie Seobility reicht für den Anfang. Mehr Tools bedeuten mehr Einarbeitung und weniger Zeit für die Umsetzung. Erst wenn eine konkrete Aufgabe wie die Backlink-Analyse nicht abgedeckt ist, ergänzt du gezielt ein weiteres Tool.',
+      },
+      {
+        question: 'Wie verfolge ich Google-Rankings für München?',
+        answer:
+          'Die Search Console zeigt dir kostenlos, für welche Suchanfragen du in Deutschland erscheinst, kann aber nicht nach Stadt filtern. Lokale Positionen für München verfolgst du mit einem Rank-Tracker mit Standort-Einstellung, zum Beispiel in Seobility (10 Keywords kostenlos). Für die Sichtbarkeit in Google Maps ist zusätzlich dein Google Business Profile entscheidend.',
       },
     ],
   },
