@@ -677,9 +677,9 @@ const POSTS: BlogPost[] = [
   {
     slug: 'seo-tools-anfaenger',
     title: 'SEO-Tools für Anfänger: Welche du 2026 wirklich brauchst',
-    metaTitle: 'SEO-Tools für Anfänger 2026: Was du wirklich brauchst',
+    metaTitle: 'SEO Tools für Anfänger 2026: kostenlos starten + Vergleich',
     metaDescription:
-      'Welche SEO-Tools brauchst du als Anfänger wirklich? Die ehrliche Übersicht: kostenlose Basis von Google, Seobility & Co., echte Preise und dein Starter-Stack in 4 Schritten.',
+      'Welche SEO-Tools brauchst du als Anfänger wirklich? Die ehrliche Übersicht: kostenlose Basis, Seobility & Co., echte Preise und dein Starter-Stack.',
     focusKeyword: 'SEO Tools für Anfänger',
     authorName: 'Julian Schäfer',
     category: 'tipps-tools',
