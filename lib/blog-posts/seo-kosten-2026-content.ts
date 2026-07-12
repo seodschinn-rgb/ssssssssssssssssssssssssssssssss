@@ -11,6 +11,13 @@ export const seoKosten2026Content = `
             <p style="margin: 0;">Ob lokaler Dienstleister, der bei Google nicht gefunden wird, KMU-Geschäftsführer mit knappem Marketingbudget oder B2B-Unternehmen, das von Google Ads unabhängiger werden will: Am Ende dieses Artikels weißt du, welches SEO-Budget für dein Unternehmen realistisch ist — und worauf du bei Angeboten achten musst, um keine schlechten Agentur-Erfahrungen zu machen.</p>
         </div>
 
+        <div style="background:#EEF2FF; border-left:5px solid #4F46E5; border-radius:8px; padding:18px 22px; margin:24px 0;">
+          <p style="margin:0; line-height:1.7;"><strong style="color:#4F46E5;">Direkt zu den Zahlen:</strong>
+          Alle fünf SEO-Pakete mit festen Monatspreisen von 990 bis 2.990 EUR findest du transparent auf unserer Preisseite,
+          inklusive Leistungsumfang je Paket und Antworten auf die häufigsten Fragen.
+          <a href="/preise" style="color:#4F46E5; font-weight:600;">Alle SEO-Pakete &amp; Preise ansehen</a></p>
+        </div>
+
         <nav aria-label="Inhaltsverzeichnis" style="background: #F9FAFB; border-radius: 8px; padding: 20px 24px; margin-bottom: 36px;">
             <p style="font-weight: 700; font-size: 1.05rem; margin-bottom: 12px; color: #4F46E5;">Inhaltsverzeichnis</p>
             <ol style="margin: 0; padding-left: 20px; line-height: 2;">
