@@ -2,25 +2,33 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
+import BlogFAQSchema from '@/components/BlogFAQSchema'
+import PreiseServiceSchema from '@/components/PreiseServiceSchema'
 import PreisePageContent from '@/components/PreisePageContent'
+import { PREISE_FAQS } from '@/lib/preise-data'
 
 export const metadata: Metadata = {
-  title: { absolute: 'SEO Preise & Pakete | Transparente Preise München' },
+  title: { absolute: 'SEO Pakete & Preise 2026: Betreuung ab 990 EUR im Monat' },
   description:
-    'Transparente SEO-Pakete für jedes Budget: vom Starter bis Enterprise. Monatliche Retainer ohne versteckte Kosten. SEO Agentur München – faire Preise, messbare Erfolge.',
+    'SEO-Preise ohne Blackbox: 5 Pakete von 990 bis 2.990 EUR im Monat, fester Ansprechpartner, monatliches Reporting. Hol dir dein kostenloses Erstgespräch.',
   openGraph: {
-    title: 'SEO Preise & Pakete | Transparente Preise München',
-    description: 'Starter, Growth, Business, Professional, Enterprise – wählen Sie Ihr SEO-Paket.',
+    title: 'SEO Pakete & Preise 2026: Betreuung ab 990 EUR im Monat',
+    description:
+      'SEO-Preise ohne Blackbox: 5 Pakete von 990 bis 2.990 EUR im Monat, fester Ansprechpartner, monatliches Reporting. Hol dir dein kostenloses Erstgespräch.',
   },
 }
 
 export default function PreisePage() {
   return (
     <>
-      <BreadcrumbSchema items={[
-        { name: 'Startseite', url: '/' },
-        { name: 'Preise', url: '/preise' },
-      ]} />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Startseite', url: '/' },
+          { name: 'Preise', url: '/preise' },
+        ]}
+      />
+      <PreiseServiceSchema />
+      <BlogFAQSchema faqs={[...PREISE_FAQS]} />
       <Header />
       <main>
         <PreisePageContent />
