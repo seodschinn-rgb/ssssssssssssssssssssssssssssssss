@@ -793,39 +793,57 @@ const POSTS: BlogPost[] = [
   },
   {
     slug: 'keyword-recherche-anleitung',
-    title: 'Keyword-Recherche Anleitung: Strategien für Top-Rankings und regionale Sichtbarkeit',
-    metaTitle: 'Keyword-Recherche Anleitung: Schritt für Schritt zum richtigen Suchbegriff',
+    title: 'Keyword-Recherche-Anleitung: So findest du 2026 die richtigen Keywords',
+    metaTitle: 'Keyword Recherche Anleitung 2026: kostenlos in 7 Schritten',
     metaDescription:
-      'Keyword-Recherche Anleitung: Lerne Schritt für Schritt, wie du die richtigen Keywords findest, Tools nutzt & deine Google-Rankings in München nachhaltig steigerst.',
+      'Wie macht man eine Keyword-Recherche? Die praktische Schritt-für-Schritt-Anleitung mit kostenlosen Tools, Long-Tail-Strategie und Beispielen aus München.',
+    focusKeyword: 'Keyword-Recherche Anleitung',
+    authorName: 'Julian Schäfer',
     category: 'content-keywords',
     content: keywordRechercheAnleitungContent,
-    image: '/images/blog/keyword%20recherche%20anleitung%20(1).webp',
-    imageAlt: 'Keyword-Recherche Anleitung: Schritt für Schritt zum richtigen Suchbegriff für bessere Google-Rankings in München',
+    image: '/images/blog/keyword-recherche-thumbnail.webp',
+    imageAlt:
+      'Keyword-Recherche-Anleitung 2026: Keyword-Tool-Mockup mit Suchfeld, Keyword-Liste mit Suchvolumen und grün markierten Chancen-Keywords.',
     faqs: [
       {
-        question: 'Wie lange dauert eine professionelle Keyword-Recherche?',
+        question: 'Wie macht man eine Keyword-Recherche?',
         answer:
-          'Die Dauer hängt stark vom Umfang ab: kleine Projekte oft Tage bis eine Woche, mittelgroße Websites mehrere Wochen, internationale Projekte mehrere Monate. Entscheidend ist, ausreichend Zeit für eine gründliche Analyse einzuplanen.',
+          'Der bewährte Ablauf in Kurzform: Suchintention deiner Zielgruppe klären, 10 bis 20 Seed-Keywords aus Leistungen und Kundenfragen sammeln, die Liste mit Google Suggest, Search Console und Keyword Planner kostenlos erweitern, bei Bedarf mit einem Tool vertiefen, dann Suchvolumen und Wettbewerb bewerten, Long-Tail-Keywords priorisieren und jedes Keyword einer konkreten Seite zuordnen. Die ausführliche Anleitung mit Beispielen findest du oben in diesem Guide.',
       },
       {
-        question: 'Was kostet eine Keyword-Recherche von einer Agentur?',
+        question: 'Wie lange dauert eine Keyword-Recherche?',
         answer:
-          'Die Kosten variieren je nach Projektumfang: kleine Projekte ca. 599 €–800 €, Stundensätze typisch 90 €–200 €, monatliche SEO-Betreuung oft 1.000 €–5.000 €. Wettbewerbsintensität und Detailtiefe beeinflussen den Preis.',
+          'Für eine kleine Unternehmenswebsite mit 10 bis 30 Seiten brauchst du erfahrungsgemäß einen bis zwei Arbeitstage, gern verteilt auf mehrere Sitzungen. Professionelle Recherchen für größere Websites dauern in der Regel ein bis zwei Wochen, weil SERP-Analysen, Wettbewerbsvergleich und Keyword-Mapping dazukommen. Wichtiger als Tempo ist, die Recherche einmal sauber zu machen und danach quartalsweise zu aktualisieren.',
       },
       {
-        question: 'Wie oft sollte eine Keyword-Map aktualisiert werden?',
+        question: 'Was kostet eine Keyword-Recherche?',
         answer:
-          'Mindestens einmal jährlich eine umfassende Überprüfung. Zusätzlich bei Google-Updates, Änderungen im Suchverhalten, neuen Produkten oder Märkten sowie Verschiebungen im Wettbewerb. Kontinuierliche SERP- und Leistungsbeobachtung ist wichtig.',
+          'Selbst gemacht kostet dich die Keyword-Recherche nur Zeit, denn alle Grundlagen-Werkzeuge wie Search Console, Google Suggest und Keyword Planner sind kostenlos. Bei Agenturen ist die Recherche üblicherweise Teil der laufenden SEO-Betreuung; bei uns in München ist sie in allen Paketen enthalten, die bei 990 EUR pro Monat starten. Einzelne Recherche-Projekte rechnen viele Agenturen nach Stundensätzen zwischen 90 und 200 EUR ab.',
       },
       {
-        question: "Wie erkennt man 'Fake'-Suchvolumen durch Bots oder saisonale Anomalien?",
+        question: 'Welche kostenlosen Tools reichen für die Keyword-Recherche?',
         answer:
-          'Bot-Traffic zeigt sich durch unnatürlich hohe Spitzen, untypische Regionen und extrem kurze Verweildauer. Saisonale Muster sind vorhersehbar – Google Trends hilft. Daten über mehrere Jahre vergleichen und verschiedene Keyword-Tools cross-referenzieren.',
+          'Für die ersten Monate reichen die Google Search Console (echte Suchanfragen deiner Website), Google Suggest samt der Boxen „Ähnliche Fragen“ und „Ähnliche Suchanfragen“, der Google Keyword Planner für Ideen mit Volumen-Spannen und Google Trends für Saisonalität. Ergänzend liefert das kostenlose Seobility-Keyword-Tool Schätzwerte mit Tageslimit. Ein Bezahl-Tool brauchst du erst, wenn du regelmäßig an diese Grenzen stößt.',
       },
       {
-        question: 'Wie führt man eine Keyword-Recherche für internationale Märkte durch?',
+        question: 'Was sind Long-Tail-Keywords?',
         answer:
-          'Lokale Sprachen und Dialekte berücksichtigen, idealerweise mit Muttersprachlern arbeiten. Lokale Suchgewohnheiten und kulturelle Nuancen einbeziehen, länderspezifische Tool-Versionen nutzen und Wettbewerber in den Zielländern analysieren.',
+          'Long-Tail-Keywords sind längere, spezifische Suchanfragen mit niedrigem Suchvolumen, aber klar erkennbarer Absicht, zum Beispiel „sanitär notdienst münchen sendling“ statt „sanitär“. Sie sind deutlich weniger umkämpft, konvertieren besser und sind für kleine Websites in der Regel der schnellste Weg zu ersten Rankings und Anfragen.',
+      },
+      {
+        question: 'Wie finde ich das Suchvolumen eines Keywords heraus?',
+        answer:
+          'Der Google Keyword Planner zeigt dir kostenlos Suchvolumen-Spannen wie „100 bis 1.000 pro Monat“. Konkretere Schätzwerte liefern Tools wie Seobility oder KWFinder. Die einzigen echten Zahlen deiner Website stehen in der Google Search Console: Impressionen zeigen dir, wie oft eine Suchanfrage deine Seiten wirklich eingeblendet hat. Beachte, dass lokale Suchanfragen in allen Tools häufig unterschätzt werden.',
+      },
+      {
+        question: 'Wie viele Keywords pro Seite sind sinnvoll?',
+        answer:
+          'Pro Seite planst du ein Fokus-Keyword plus zwei bis fünf eng verwandte Varianten und Synonyme, die dieselbe Suchintention bedienen. Mehrere Seiten für fast identische Begriffe anzulegen, führt zu Keyword-Kannibalisierung: Deine Seiten konkurrieren dann gegeneinander und keine rankt richtig. Die Zuordnung hältst du am besten in einer Keyword-Map fest.',
+      },
+      {
+        question: 'Was ist eine Keyword-Strategie?',
+        answer:
+          'Eine Keyword-Strategie ist der Plan, welche Suchbegriffe dein Unternehmen mit welchen Seiten und in welcher Reihenfolge angehen soll. Sie wiegt Suchintention, Suchvolumen, Wettbewerb und Geschäftswert gegeneinander ab. Für kleine Websites in München heißt das in der Regel: zuerst lokale und Long-Tail-Keywords mit klarer Absicht besetzen, Erfolge messen und sich dann Schritt für Schritt an größere Begriffe herantasten.',
       },
     ],
   },
