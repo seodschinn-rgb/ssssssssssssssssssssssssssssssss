@@ -7,11 +7,13 @@ import Link from 'next/link'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import ItemListSchema from '@/components/ItemListSchema'
+import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
   title: { absolute: 'SEO Leistungen | Suchmaschinenoptimierung München & Bayern' },
   description:
     'Unsere SEO-Leistungen: Keyword-Recherche, Local SEO, Technisches SEO, Linkaufbau, OnPage-Optimierung und Reporting. Professionelle Suchmaschinenoptimierung für Unternehmen in München und Bayern.',
+  alternates: { canonical: absoluteCanonical('/leistungen') },
   openGraph: {
     title: 'SEO Leistungen | Suchmaschinenoptimierung München & Bayern',
     description:

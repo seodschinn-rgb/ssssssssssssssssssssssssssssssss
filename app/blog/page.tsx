@@ -5,10 +5,12 @@ import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import BlogPostList from '@/components/BlogPostList'
 import { BLOG_CATEGORIES } from '@/lib/blog-categories'
 import { getAllPosts } from '@/lib/blog-posts'
+import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
   title: { absolute: 'Blog | SEO Agentur München' },
   description: 'SEO-Tipps, Branchen-Insights und Best Practices für Suchmaschinenoptimierung. Themen: Local SEO, Technisches SEO, Content, Linkaufbau, München & Bayern.',
+  alternates: { canonical: absoluteCanonical('/blog') },
 }
 
 export default function BlogPage() {

@@ -3,6 +3,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BranchenHubContent from '@/components/BranchenHubContent'
 import ContactSection from '@/components/ContactSection'
+import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
   title: {
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     'Local SEO München Branchen',
     'SEO Agentur München kleine Unternehmen',
   ],
+  alternates: { canonical: absoluteCanonical('/branchen') },
   openGraph: {
     title: 'SEO für Unternehmen in München | Branchenspezifisch | SEO München',
     description:

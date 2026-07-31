@@ -1,5 +1,12 @@
 /** GEO-Leistungsseite — HTML-Teil 4 (CTA & Footer-Zeilen) */
 export const geoAgenturHtmlPart4 = `
+  <div style="background:#EEF2FF; border-left:5px solid #4F46E5; border-radius:8px; padding:18px 22px; margin:32px 0 0;">
+    <p style="margin:0; line-height:1.7;"><strong style="color:#4F46E5;">Transparent kalkuliert:</strong>
+    Sichtbarkeit in KI-Suchen denken wir in der SEO-Betreuung direkt mit. Unsere Pakete kosten
+    feste Monatspreise von 990 bis 2.990 EUR, ohne versteckte Extras.
+    <a href="/preise" style="color:#4F46E5; font-weight:600;">Zur Preis&uuml;bersicht mit allen Paketen</a></p>
+  </div>
+
   <div class="geo-final-cta">
     <h2>Die KI-Suche wartet nicht. Dein Wettbewerb auch nicht.</h2>
 

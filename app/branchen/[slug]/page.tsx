@@ -16,6 +16,7 @@ import PhysiotherapeutenBrancheContent from '@/components/branchen/Physiotherape
 import HotelsBrancheContent from '@/components/branchen/HotelsBrancheContent'
 import KfzWerkstattBrancheContent from '@/components/branchen/KfzWerkstattBrancheContent'
 import { getAllBrancheSlugs, getBrancheBySlug } from '@/lib/branchen'
+import { absoluteCanonical } from '@/lib/canonical'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
@@ -35,6 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: { absolute: data.metaTitle },
     description: data.metaDescription,
     ...(data.focusKeyword ? { keywords: data.focusKeyword } : {}),
+    alternates: { canonical: absoluteCanonical(`/branchen/${params.slug}`) },
     openGraph: {
       title: data.metaTitle,
       description: data.metaDescription,

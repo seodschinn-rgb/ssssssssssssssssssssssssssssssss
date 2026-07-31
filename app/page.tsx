@@ -16,6 +16,7 @@ import HomeSeoTextSection from '@/components/HomeSeoTextSection'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import HomePageSchema from '@/components/HomePageSchema'
+import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
   },
   description:
     'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
+  alternates: { canonical: absoluteCanonical('/') },
   openGraph: {
     title: 'SEO Agentur München | Sichtbarkeit bei Google & KI-Suche',
     description:

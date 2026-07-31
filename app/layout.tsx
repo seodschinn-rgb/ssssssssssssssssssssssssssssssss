@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'),
+  metadataBase: new URL('https://seomuenchen.com'),
   title: {
     default: 'SEO Agentur München | Sichtbarkeit bei Google & KI-Suche',
     template: '%s | SEO Agentur München',

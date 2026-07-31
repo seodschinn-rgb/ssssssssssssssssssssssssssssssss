@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
+import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
   title: { absolute: 'AGB | SEO Agentur München' },
   description: 'Allgemeine Geschäftsbedingungen der SEO Agentur München.',
+  alternates: { canonical: absoluteCanonical('/agb') },
 }
 
 export default function AGBPage() {

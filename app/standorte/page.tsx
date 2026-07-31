@@ -4,11 +4,13 @@ import StandorteList from '@/components/StandorteList'
 import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
+import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
   title: { absolute: 'Standorte | SEO aus München für ganz Bayern' },
   description:
     'Unsere Standorte: Von München aus betreuen wir Unternehmen in Garching, Starnberg, Freising, Augsburg, Regensburg und vielen weiteren Städten in Bayern. SEO und Local SEO für ganz Bayern.',
+  alternates: { canonical: absoluteCanonical('/standorte') },
   openGraph: {
     title: 'Standorte | SEO aus München für ganz Bayern',
     description:

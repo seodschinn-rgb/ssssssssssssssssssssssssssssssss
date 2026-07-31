@@ -20,6 +20,7 @@ import BlogTocMobileCollapsible from '@/components/BlogTocMobileCollapsible'
 import BlogPostThumbnail from '@/components/BlogPostThumbnail'
 import ClientErrorBoundary from '@/components/ClientErrorBoundary'
 import { getReadingTimeMinutes } from '@/lib/reading-time'
+import { absoluteCanonical } from '@/lib/canonical'
 
 const BLOG_ARTICLE_STYLE = `
 /* Twemoji / WordPress-Emoji: nur echte img-Tags (kein .emoji auf div/span — sonst Layout-Crash) */
@@ -1544,6 +1545,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: { absolute: post.metaTitle },
       description: post.metaDescription,
       ...(post.focusKeyword ? { keywords: post.focusKeyword } : {}),
+      alternates: { canonical: absoluteCanonical(`/blog/${params.slug}`) },
       openGraph: {
         title: post.metaTitle,
         description: post.metaDescription,
@@ -1555,13 +1557,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: { absolute: `${category.title} | Blog | SEO Agentur München` },
       description: category.shortDescription,
+      alternates: { canonical: absoluteCanonical(`/blog/${params.slug}`) },
       openGraph: {
         title: `${category.title} | Blog | SEO Agentur München`,
         description: category.shortDescription,
       },
     }
   }
-  return { title: 'Blog' }
+  return {
+    title: 'Blog',
+    alternates: { canonical: absoluteCanonical(`/blog/${params.slug}`) },
+  }
 }
 
 export default function BlogSlugPage({ params }: PageProps) {

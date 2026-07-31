@@ -11,6 +11,7 @@ import CityPageSchema from '@/components/CityPageSchema'
 import CityFAQ from '@/components/CityFAQ'
 import AppointmentCalendar from '@/components/AppointmentCalendar'
 import type { Metadata } from 'next'
+import { absoluteCanonical } from '@/lib/canonical'
 
 interface PageProps {
   params: { stadt: string }
@@ -36,6 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       `Suchmaschinenoptimierung ${city.name}`,
       'SEO Agentur München',
     ],
+    alternates: { canonical: absoluteCanonical(`/standorte/${params.stadt}`) },
     openGraph: {
       title,
       description,

@@ -29,6 +29,9 @@ import BlogPostThumbnail from '@/components/BlogPostThumbnail'
 import { jsonLdStringify } from '@/lib/safe-json-ld'
 import SeoAuditHeroVisual from '@/components/SeoAuditHeroVisual'
 import LocalSeoHeroVisual from '@/components/LocalSeoHeroVisual'
+import PreiseTeaserBox from '@/components/PreiseTeaserBox'
+import { LEISTUNG_PREISE_TEASER } from '@/lib/preise-teaser-data'
+import { absoluteCanonical } from '@/lib/canonical'
 
 const TechnischesSeoHeroVisual = dynamic(() => import('@/components/TechnischesSeoHeroVisual'), {
   ssr: false,
@@ -71,11 +74,14 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const alternates = { canonical: absoluteCanonical(`/leistungen/${params.slug}`) }
+
   if (params.slug === 'geo-agentur') {
     return {
       title: { absolute: GEO_AGENTUR_META.title },
       description: GEO_AGENTUR_META.description,
       keywords: GEO_AGENTUR_META.focusKeyword,
+      alternates,
       openGraph: {
         title: GEO_AGENTUR_META.title,
         description: GEO_AGENTUR_META.description,
@@ -87,6 +93,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: { absolute: SEO_AUDIT_META.title },
       description: SEO_AUDIT_META.description,
       keywords: SEO_AUDIT_META.focusKeyword,
+      alternates,
       openGraph: {
         title: SEO_AUDIT_META.title,
         description: SEO_AUDIT_META.description,
@@ -98,6 +105,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: { absolute: LOCAL_SEO_META.title },
       description: LOCAL_SEO_META.description,
       keywords: LOCAL_SEO_META.focusKeyword,
+      alternates,
       openGraph: {
         title: LOCAL_SEO_META.title,
         description: LOCAL_SEO_META.description,
@@ -109,6 +117,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: { absolute: TECHNISCHES_SEO_META.title },
       description: TECHNISCHES_SEO_META.description,
       keywords: TECHNISCHES_SEO_META.focusKeyword,
+      alternates,
       openGraph: {
         title: TECHNISCHES_SEO_META.title,
         description: TECHNISCHES_SEO_META.description,
@@ -116,10 +125,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
   }
   const content = getLeistungContent(params.slug)
-  if (!content) return { title: 'Leistung' }
+  if (!content) return { title: 'Leistung', alternates }
   return {
     title: { absolute: `${content.title} | SEO Agentur München` },
     description: content.metaDescription,
+    alternates,
     openGraph: {
       title: `${content.title} | SEO Agentur München`,
       description: content.metaDescription,
@@ -431,6 +441,9 @@ export default function LeistungPage({ params }: PageProps) {
                 </div>
               ))}
             </div>
+            {LEISTUNG_PREISE_TEASER[params.slug] && (
+              <PreiseTeaserBox {...LEISTUNG_PREISE_TEASER[params.slug]} />
+            )}
           </div>
         </section>
 

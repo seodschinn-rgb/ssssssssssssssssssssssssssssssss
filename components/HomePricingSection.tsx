@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import HomeSectionLabel from '@/components/HomeSectionLabel'
+import PreiseTeaserBox from '@/components/PreiseTeaserBox'
 
 const packages = [
   { name: 'Starter', price: '990 EUR', ideal: 'Lokale Unternehmen & Startups' },
@@ -54,6 +55,12 @@ export default function HomePricingSection() {
             </tbody>
           </table>
         </div>
+
+        <PreiseTeaserBox
+          lead="Alle Details zu den Paketen:"
+          text="5 SEO-Pakete mit festen Monatspreisen von 990 bis 2.990 EUR, inklusive Leistungsumfang je Paket, Vergleichstabelle und FAQ. Du siehst schon vor dem Erstgespräch, was du bekommst und was es kostet."
+          anchor="Alle SEO-Pakete und Preise im Detail"
+        />
 
         <div className="mt-8 space-y-4 leading-relaxed text-zinc-600">
           <p>

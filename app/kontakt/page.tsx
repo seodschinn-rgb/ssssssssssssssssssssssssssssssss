@@ -3,11 +3,13 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import KontaktPageContent from '@/components/KontaktPageContent'
+import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
   title: { absolute: 'Kontakt & Termin buchen | SEO Agentur München' },
   description:
     'Vereinbaren Sie ein kostenloses SEO-Beratungsgespräch. Wählen Sie Ihren Wunschtermin und -uhrzeit. Wir freuen uns auf Ihre Anfrage aus München und Bayern.',
+  alternates: { canonical: absoluteCanonical('/kontakt') },
   openGraph: {
     title: 'Kontakt & Termin buchen | SEO Agentur München',
     description: 'Kostenloses Erstgespräch vereinbaren. Termin und Uhrzeit online auswählen.',
