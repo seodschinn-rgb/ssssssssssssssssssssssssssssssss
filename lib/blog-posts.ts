@@ -19,6 +19,7 @@ import { googlePenalty2026Content } from './blog-posts/google-penalty-2026-conte
 import { seoVsSea2026Content } from './blog-posts/seo-vs-sea-2026-content'
 import { websiteNichtGefunden2026Content } from './blog-posts/website-nicht-gefunden-2026-content'
 import { aiSeo2026Content } from './blog-posts/ai-seo-2026-content'
+import { aiOverviewsOptimierenContent } from './blog-posts/ai-overviews-optimieren-content'
 import { wasIstGeoContent } from './blog-posts/was-ist-geo-content'
 
 export interface BlogPostFAQ {
@@ -48,6 +49,57 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'ai-overviews-optimieren',
+    title: 'Google AI Overviews: wie du deine Inhalte dafür optimierst',
+    metaTitle: 'AI Overviews 2026: so kommt deine Website in die KI-Antwort',
+    metaDescription:
+      'Was AI Overviews („Übersicht mit KI“) sind, wie Google Quellen auswählt und wie du mit 7 Hebeln deine Zitat-Chance erhöhst. Mit Zahlen für Deutschland.',
+    focusKeyword: 'AI Overviews',
+    authorName: 'Julian Schäfer',
+    category: 'technisches-seo',
+    content: aiOverviewsOptimierenContent,
+    image: '/images/blog/ai-overviews-thumbnail.webp',
+    imageAlt:
+      'Google AI Overviews 2026: SERP-Mockup mit „Übersicht mit KI“, Quellen-Links und der eigenen Website als markierter zitierter Quelle.',
+    faqs: [
+      {
+        question: 'Was sind Google AI Overviews?',
+        answer:
+          'AI Overviews sind KI-generierte Antwortblöcke, die Google bei vielen Suchanfragen oberhalb der klassischen Ergebnisse anzeigt, in Deutschland unter dem Namen „Übersicht mit KI“. Sie fassen Inhalte aus mehreren Quellen zusammen und verlinken diese als Quellen-Liste. Erstellt werden sie laut Google mit generativer KI auf Basis derselben Ranking-Systeme wie die klassische Suche.',
+      },
+      {
+        question: 'Warum heißt es bei mir „Übersicht mit KI“ und nicht AI Overview?',
+        answer:
+          '„Übersicht mit KI“ ist schlicht der deutsche Interface-Name des Features: Google übersetzt AI Overviews in der deutschen Suche so. Gemeint ist exakt dasselbe Feature. In SEO-Texten und Tools hat sich der englische Begriff durchgesetzt, deine Kunden sehen in der Suche aber die deutsche Bezeichnung.',
+      },
+      {
+        question: 'Wie kommt meine Website in die AI Overviews?',
+        answer:
+          'Einen Aufnahme-Knopf gibt es nicht. Laut Google gelten keine Zusatzanforderungen: Deine Seiten müssen crawlbar und indexierbar sein, Inhalte in Textform bieten und die normalen Qualitätsstandards erfüllen. Deine Chance erhöhst du mit direkten Antwort-Absätzen, abgedeckten Unterfragen, konsistenten strukturierten Daten und einer klar erkennbaren Entität. Eine Garantie kann dir seriös niemand geben.',
+      },
+      {
+        question: 'Kann ich AI Overviews ausschalten?',
+        answer:
+          'Als Nutzer kannst du die Übersicht nicht dauerhaft deaktivieren, aber ausweichen: Der Ergebnisfilter „Web“ zeigt dir die klassische Linkliste ohne KI-Block. Als Websitebetreiber steuerst du über nosnippet, data-nosnippet oder max-snippet, was Google aus deiner Seite zitieren darf. Vorsicht: Diese Regeln begrenzen auch deine normalen Snippets.',
+      },
+      {
+        question: 'Wie oft erscheinen AI Overviews in Deutschland?',
+        answer:
+          'Eine Sistrix-Analyse über 100 Millionen deutsche Keywords zählte im Februar 2026 bei rund 20 Prozent der Keywords eine AI Overview, bei Gesundheitsthemen bis zu 82 Prozent. In 78,6 Prozent der Fälle steht die Übersicht ganz oben auf der Ergebnisseite. Frage-Suchen sind deutlich häufiger betroffen als lokale oder transaktionale Suchen.',
+      },
+      {
+        question: 'Wie erkenne ich in der Search Console, ob ich in AI Overviews zitiert werde?',
+        answer:
+          'Direkt gar nicht: Die Search Console weist AI Overviews nicht separat aus, Klicks und Impressionen laufen im Suchtyp „Web“ mit. Eine Übersicht belegt eine einzige Position, die alle zitierten Links erben. Achte deshalb auf das Muster steigender Impressionen bei flachen Klicks und prüfe deine wichtigsten Frage-Queries regelmäßig von Hand in der Suche.',
+      },
+      {
+        question: 'Was ist der Unterschied zwischen AI Overviews und dem KI-Modus (AI Mode)?',
+        answer:
+          'AI Overviews sind ein Antwortblock oberhalb der normalen Suchergebnisse. Der KI-Modus ist ein eigener Tab in der Google-Suche, der wie ein Chat funktioniert: mit Rückfragen, Dialog und deutlich weniger klassischen Links. Laut Google ist der KI-Modus seit dem 7. Oktober 2025 auch in Deutschland verfügbar. Die Optimierungs-Grundlagen aus diesem Guide zahlen auf beide Oberflächen ein.',
+      },
+    ],
+  },
   {
     slug: 'was-ist-geo',
     title: 'Was ist GEO? Generative Engine Optimization einfach erklärt',
