@@ -148,9 +148,10 @@
 .home-v2 .hero .eyebrow{color:rgba(232,237,248,.85)}
 .home-v2 .hero .eyebrow .rail{background:rgba(232,237,248,.4)}
 .home-v2 .hero .eyebrow .rail::after{background:#93C5FD}
-.home-v2 .hero h1{font-size:var(--fs-h1);letter-spacing:-.03em;margin-bottom:1.2rem;max-width:18ch}
+.home-v2 .hero h1{font-size:var(--fs-h1);letter-spacing:-.03em;margin-bottom:1.2rem;max-width:18ch;line-height:1.18}
 .home-v2 .h1-main{display:block;color:#fff}
-.home-v2 .h1-sub{display:block;margin-top:.1em;background:linear-gradient(92deg,#BFDBFE,#60A5FA);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* padding-bottom: Descender (z. B. „g“ in „bringt“) bei background-clip:text nicht abschneiden */
+.home-v2 .h1-sub{display:block;margin-top:.1em;padding-bottom:.12em;line-height:1.2;background:linear-gradient(92deg,#BFDBFE,#60A5FA);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .home-v2 .hero .sub{color:rgba(232,237,248,.92);font-size:var(--fs-lead);max-width:38rem;margin-bottom:1.9rem}
 .home-v2 .cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem;margin-bottom:.6rem}
 .home-v2 .hero .btn-ghost{border-color:rgba(255,255,255,.45);color:#fff;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);background:rgba(255,255,255,.08)}
