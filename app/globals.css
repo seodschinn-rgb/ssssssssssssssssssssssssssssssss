@@ -26,7 +26,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
+    /* clip statt hidden: kein Horizontal-Scroll, Sticky (z. B. TOC) bleibt intakt */
+    overflow-x: clip;
     max-width: 100%;
   }
   /* iOS/Mobile: stabile Viewport-Höhe, kein Doppel-Scroll/Flackern */
@@ -51,7 +52,7 @@
   }
   body {
     @apply antialiased text-zinc-900 bg-white;
-    overflow-x: hidden;
+    overflow-x: clip;
     max-width: 100%;
   }
   /*

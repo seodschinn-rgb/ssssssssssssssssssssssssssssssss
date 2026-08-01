@@ -1,15 +1,12 @@
 /* Homepage v2 — scoped under .home-v2 (from html-neu redesign) */
-.home-v2 .home-html-slot {
-  display: block;
-}
-
 .home-v2{
   background:var(--bg);
   color:var(--ink);
   font-family:var(--sans);
   font-size:var(--fs-body);
   line-height:1.7;
-  overflow-x:hidden;
+  /* clip statt hidden: verhindert Horizontal-Scroll, ohne Sticky (TOC) zu killen */
+  overflow-x:clip;
   -webkit-text-size-adjust:100%;
 }
 
@@ -61,7 +58,7 @@
 .home-v2 *, .home-v2 *::before, .home-v2 *::after{box-sizing:border-box}
 .home-v2{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){.home-v2{scroll-behavior:auto}}
-.home-v2{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:var(--fs-body);line-height:1.7;overflow-x:hidden}
+.home-v2{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:var(--fs-body);line-height:1.7;overflow-x:clip}
 .home-v2 img{max-width:100%;height:auto;display:block}
 .home-v2 a{color:var(--acc);text-decoration:none}
 .home-v2 a:hover{color:var(--acc2)}
