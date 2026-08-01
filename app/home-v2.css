@@ -371,7 +371,8 @@
 .home-v2 .form-card{background:var(--bg1);border:1px solid var(--line);border-radius:var(--radius);padding:var(--pad)}
 .home-v2 .form-card label{display:block;font-size:var(--fs-small);font-weight:600;color:var(--ink);margin:0 0 .35rem}
 .home-v2 .form-card .field{margin-bottom:1rem}
-.home-v2 .form-card input, .home-v2 .form-card textarea{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:10px;color:var(--ink);padding:.75rem .9rem;font:inherit;font-size:.95rem}
+/* 16px: verhindert iOS-Auto-Zoom beim Fokussieren von Inputs */
+.home-v2 .form-card input, .home-v2 .form-card textarea{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:10px;color:var(--ink);padding:.75rem .9rem;font:inherit;font-size:16px}
 .home-v2 .form-card input:focus, .home-v2 .form-card textarea:focus{outline:2px solid var(--acc2);outline-offset:1px;border-color:var(--acc)}
 .home-v2 .form-card textarea{min-height:7rem;resize:vertical}
 .home-v2 .form-card .btn{width:100%}
