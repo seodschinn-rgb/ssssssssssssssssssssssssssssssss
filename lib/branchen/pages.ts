@@ -704,22 +704,5 @@ export function getAllBrancheSlugs(): string[] {
   return BRANCHE_PAGES.map((p) => p.slug)
 }
 
-/** FAQs Hub /branchen — Texte = FAQPage JSON-LD (BranchenHubContent) */
-export const BRANCHEN_HUB_FAQS: BrancheFaq[] = [
-  {
-    q: 'Was bringt branchenspezifisches SEO im Vergleich zu allgemeinem SEO?',
-    a: 'Branchenspezifisches SEO zielt auf die exakten Suchbegriffe, die potenzielle Kunden in deiner Branche verwenden. Ein Zahnarzt wird mit anderen Keywords gesucht als ein Handwerker. Durch die gezielte Optimierung auf branchenrelevante Begriffe und lokale Suchintentionen erreichst du qualifiziertere Besucher, die tatsächlich nach deiner Dienstleistung suchen.',
-  },
-  {
-    q: 'Wie lange dauert es, bis SEO-Maßnahmen für meine Branche wirken?',
-    a: 'Erfahrungsgemäß zeigen sich erste Ranking-Verbesserungen nach 4 bis 8 Wochen. Stabile Platzierungen auf der ersten Google-Seite erreichst du typischerweise in 3 bis 6 Monaten. Die genaue Dauer hängt vom Wettbewerb in deiner Branche und dem aktuellen Zustand deiner Website ab.',
-  },
-  {
-    q: 'Was kostet SEO für meine Branche in München?',
-    a: 'Die Kosten richten sich nach Branche und Wettbewerbssituation. Für lokale Dienstleister wie Ärzte, Anwälte oder Handwerker starten unsere Pakete bei 990 EUR pro Monat (Starter). Branchen mit stärkerem Online-Wettbewerb wie Immobilien oder Hotels benötigen in der Regel ein höheres Budget. In einem kostenlosen Erstgespräch analysieren wir deine Situation und geben dir eine konkrete Einschätzung.',
-  },
-  {
-    q: 'Funktioniert SEO auch für Branchen mit wenig Online-Präsenz?',
-    a: 'Gerade in Branchen mit geringer Online-Konkurrenz bietet SEO enormes Potenzial. Wenn deine Mitbewerber noch nicht in SEO investieren, kannst du dir schneller Top-Positionen sichern. Viele Handwerksbetriebe und lokale Dienstleister in München profitieren genau davon — sie erreichen die erste Google-Seite oft schon innerhalb weniger Wochen.',
-  },
-]
+/** FAQs Hub /branchen — Texte = FAQPage JSON-LD (Branchen-Hub v2) */
+export { BRANCHEN_HUB_V2_FAQS as BRANCHEN_HUB_FAQS } from './hub-v2'
