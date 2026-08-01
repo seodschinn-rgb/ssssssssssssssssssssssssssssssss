@@ -49,7 +49,7 @@ export default function BlogReadingProgressBar() {
     <>
       {progress > 0 && (
         <div
-          className="fixed left-0 right-0 top-[4.5rem] h-1 bg-accent/20 z-[60]"
+          className="fixed left-0 right-0 top-[4.25rem] h-1 bg-accent/20 z-[60]"
           aria-hidden
           role="presentation"
         >
