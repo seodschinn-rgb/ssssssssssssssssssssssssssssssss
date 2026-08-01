@@ -268,6 +268,7 @@
 .home-v2 .person-grid{display:grid;gap:2.5rem;align-items:center}
 @media (min-width:900px){.home-v2 .person-grid{grid-template-columns:.85fr 1.15fr;gap:4rem}}
 .home-v2 .person-visual{position:relative;border-radius:var(--radius);overflow:hidden;background:linear-gradient(160deg,#DBEAFE,#F3F5F9);border:1px solid #D6E2FB;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center}
+.home-v2 .person-visual img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block}
 .home-v2 .person-visual .monogram{font-family:var(--mono);font-size:clamp(3rem,8vw,5rem);font-weight:700;color:var(--acc2);letter-spacing:.05em}
 .home-v2 .person-visual .ph-note{position:absolute;bottom:.9rem;left:0;right:0;text-align:center;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
 .home-v2 .person-name{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin:0 0 .2em;color:var(--ink)}
