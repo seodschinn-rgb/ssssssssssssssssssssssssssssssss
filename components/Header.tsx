@@ -27,26 +27,12 @@ const BRANCHE_NAV = BRANCHE_PAGES.map((b) => ({
 
 function BrandMark() {
   return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-      <path
-        d="M3 20 L10 20 L16 14 L23 14"
-        stroke="#2563EB"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M3 8 L8 8 L13 13"
-        stroke="#D97706"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity={0.85}
-      />
-      <circle cx="10" cy="20" r="2.4" fill="#FFFFFF" stroke="#2563EB" strokeWidth="1.6" />
-      <circle cx="16" cy="14" r="2.4" fill="#FFFFFF" stroke="#2563EB" strokeWidth="1.6" />
-      <circle cx="8" cy="8" r="2.4" fill="#FFFFFF" stroke="#D97706" strokeWidth="1.6" />
-    </svg>
+    <span className="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.35-4.35" />
+      </svg>
+    </span>
   )
 }
 

@@ -2,26 +2,12 @@ import Link from 'next/link'
 
 function BrandMarkDark() {
   return (
-    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-      <path
-        d="M3 20 L10 20 L16 14 L23 14"
-        stroke="#60A5FA"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M3 8 L8 8 L13 13"
-        stroke="#FBBF24"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity=".8"
-      />
-      <circle cx="10" cy="20" r="2.4" fill="#05080F" stroke="#60A5FA" strokeWidth="1.6" />
-      <circle cx="16" cy="14" r="2.4" fill="#05080F" stroke="#60A5FA" strokeWidth="1.6" />
-      <circle cx="8" cy="8" r="2.4" fill="#05080F" stroke="#FBBF24" strokeWidth="1.6" />
-    </svg>
+    <span className="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="11" cy="11" r="8" />
+        <path d="m21 21-4.35-4.35" />
+      </svg>
+    </span>
   )
 }
 

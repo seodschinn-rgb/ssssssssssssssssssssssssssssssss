@@ -109,6 +109,26 @@
 .site-chrome .brand svg {
   flex: none;
 }
+.site-chrome .brand-mark {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--acc), var(--accbtn-h));
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.28);
+}
+.site-chrome .brand-mark svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.site-chrome.dark .brand-mark {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.22);
+}
 .site-chrome .brand .muc {
   color: var(--acc);
 }
