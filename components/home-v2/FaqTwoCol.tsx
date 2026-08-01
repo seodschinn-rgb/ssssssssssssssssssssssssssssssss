@@ -1,4 +1,26 @@
-import { HOME_PAGE_FAQ_ANSWER_HTML, HOME_PAGE_FAQ_ITEMS } from '@/lib/home-page-faqs'
+import type { ReactNode } from 'react'
+import Link from 'next/link'
+import { HOME_PAGE_FAQ_ITEMS } from '@/lib/home-page-faqs'
+
+const FAQ_ANSWER_NODES: Record<string, ReactNode> = {
+  'Bietet ihr auch Einmal-Leistungen an?': (
+    <>
+      Ja. Neben den monatlichen Paketen bieten wir Einmal-Leistungen wie ein{' '}
+      <Link href="/leistungen/seo-audit">SEO-Audit</Link> oder eine{' '}
+      <Link href="/leistungen/keyword-recherche">Keyword-Recherche</Link> an. Sprich uns im
+      Erstgespräch darauf an.
+    </>
+  ),
+  'Welche Erfahrungen haben Kunden mit eurer SEO-Agentur in München gemacht?': (
+    <>
+      Am besten siehst du das an konkreten Projekten: Im{' '}
+      <a href="#referenzen">Referenzen-Bereich</a> findest du Stimmen aus einer Schreinerei, einer
+      Zahnarztpraxis und einem IT-Unternehmen in München, weitere Bewertungen kannst du direkt bei
+      Google nachlesen. Im kostenlosen Erstgespräch zeigen wir dir gerne Beispiele aus deiner
+      Branche.
+    </>
+  ),
+}
 
 export default function FaqTwoCol() {
   const left = HOME_PAGE_FAQ_ITEMS.slice(0, 4)
@@ -33,7 +55,6 @@ export default function FaqTwoCol() {
 }
 
 function FaqItem({ question, answer }: { question: string; answer: string }) {
-  const html = HOME_PAGE_FAQ_ANSWER_HTML[question] ?? answer
   return (
     <details className="faq-item">
       {/* Kein <h3> in <summary>: manche Browser verschieben Headings im DOM → Hydration-Mismatch */}
@@ -42,7 +63,7 @@ function FaqItem({ question, answer }: { question: string; answer: string }) {
         <span className="fx" aria-hidden="true" />
       </summary>
       <div className="faq-answer">
-        <p dangerouslySetInnerHTML={{ __html: html }} />
+        <p>{FAQ_ANSWER_NODES[question] ?? answer}</p>
       </div>
     </details>
   )

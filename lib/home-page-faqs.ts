@@ -36,11 +36,3 @@ export const HOME_PAGE_FAQ_ITEMS = [
     a: 'Am besten siehst du das an konkreten Projekten: Im Referenzen-Bereich findest du Stimmen aus einer Schreinerei, einer Zahnarztpraxis und einem IT-Unternehmen in München, weitere Bewertungen kannst du direkt bei Google nachlesen. Im kostenlosen Erstgespräch zeigen wir dir gerne Beispiele aus deiner Branche.',
   },
 ] as const
-
-/** Sichtbare Antwort-HTML (Links), textContent muss == a bleiben. */
-export const HOME_PAGE_FAQ_ANSWER_HTML: Record<string, string> = {
-  'Bietet ihr auch Einmal-Leistungen an?':
-    'Ja. Neben den monatlichen Paketen bieten wir Einmal-Leistungen wie ein <a href="/leistungen/seo-audit">SEO-Audit</a> oder eine <a href="/leistungen/keyword-recherche">Keyword-Recherche</a> an. Sprich uns im Erstgespräch darauf an.',
-  'Welche Erfahrungen haben Kunden mit eurer SEO-Agentur in München gemacht?':
-    'Am besten siehst du das an konkreten Projekten: Im <a href="#referenzen">Referenzen-Bereich</a> findest du Stimmen aus einer Schreinerei, einer Zahnarztpraxis und einem IT-Unternehmen in München, weitere Bewertungen kannst du direkt bei Google nachlesen. Im kostenlosen Erstgespräch zeigen wir dir gerne Beispiele aus deiner Branche.',
-}
