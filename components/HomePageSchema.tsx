@@ -4,7 +4,7 @@ import { HOME_PAGE_FAQ_ITEMS } from '@/lib/home-page-faqs'
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
 /**
- * Ein JSON-LD mit @graph: LocalBusiness (+ ProfessionalService, Pakete), FAQPage, WebSite.
+ * JSON-LD @graph: ProfessionalService (NAP city-level), FAQPage, WebSite (ohne SearchAction).
  * FAQPage entspricht den sichtbaren FAQs (lib/home-page-faqs.ts).
  */
 export default function HomePageSchema() {
@@ -12,8 +12,7 @@ export default function HomePageSchema() {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'LocalBusiness',
-        additionalType: 'https://schema.org/ProfessionalService',
+        '@type': 'ProfessionalService',
         name: 'SEO München',
         url: SITE_URL,
         telephone: '+4915565087694',
@@ -142,11 +141,6 @@ export default function HomePageSchema() {
         '@type': 'WebSite',
         name: 'SEO München',
         url: SITE_URL,
-        potentialAction: {
-          '@type': 'SearchAction',
-          target: `${SITE_URL}/?s={search_term_string}`,
-          'query-input': 'required name=search_term_string',
-        },
       },
     ],
   }

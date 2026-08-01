@@ -1,408 +1,397 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
-import { createPortal } from 'react-dom'
+import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import Logo from './Logo'
-import LeistungIcons from './LeistungIcons'
+import { usePathname } from 'next/navigation'
 import { LEISTUNGEN } from '@/lib/leistungen-data'
+import { BRANCHE_PAGES } from '@/lib/branchen/pages'
 
-const iconColors: Record<string, string> = {
-  blue: 'bg-blue-500/15 text-blue-600 group-hover:bg-blue-500 group-hover:text-white',
-  emerald: 'bg-emerald-500/15 text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white',
-  violet: 'bg-violet-500/15 text-violet-600 group-hover:bg-violet-500 group-hover:text-white',
-  amber: 'bg-amber-500/15 text-amber-600 group-hover:bg-amber-500 group-hover:text-white',
-  rose: 'bg-rose-500/15 text-rose-600 group-hover:bg-rose-500 group-hover:text-white',
-  cyan: 'bg-cyan-500/15 text-cyan-600 group-hover:bg-cyan-500 group-hover:text-white',
-  indigo: 'bg-indigo-500/15 text-indigo-600 group-hover:bg-indigo-500 group-hover:text-white',
-}
-
-const navLinks = [
-  { href: '/leistungen', label: 'Leistungen', dropdown: 'leistungen' as const },
-  { href: '/branchen', label: 'Branchen', dropdown: 'branchen' as const },
-  { href: '/preise', label: 'Preise', hasDropdown: false },
-  { href: '/blog', label: 'Blog', hasDropdown: false },
-  { href: '/standorte', label: 'Standorte', hasDropdown: false },
-  { href: '/kontakt', label: 'Kontakt', hasDropdown: false },
-]
-
-const BRANCHEN_LINKS = [
-  { slug: 'aerzte', label: 'Ärzte', emoji: '🏥', desc: 'Mehr Patientenanfragen', color: 'blue' },
-  { slug: 'zahnaerzte', label: 'Zahnärzte', emoji: '🦷', desc: 'Local SEO & Behandlungsseiten', color: 'emerald' },
-  { slug: 'handwerker', label: 'Handwerker', emoji: '🔧', desc: 'Mehr Aufträge über Google', color: 'amber' },
-  { slug: 'anwaelte', label: 'Anwälte', emoji: '⚖️', desc: 'Mehr qualifizierte Mandate', color: 'violet' },
-  { slug: 'steuerberater', label: 'Steuerberater', emoji: '📊', desc: 'Sichtbarkeit für Kanzleien', color: 'cyan' },
-  { slug: 'immobilienmakler', label: 'Immobilienmakler', emoji: '🏡', desc: 'Leads in deiner Region', color: 'rose' },
-  { slug: 'restaurants', label: 'Restaurants', emoji: '🍽️', desc: 'Mehr Reservierungen', color: 'indigo' },
-  { slug: 'physiotherapeuten', label: 'Physiotherapeuten', emoji: '🧘', desc: 'Mehr Terminbuchungen', color: 'emerald' },
-  { slug: 'hotels', label: 'Hotels', emoji: '🏨', desc: 'Direktbuchungen steigern', color: 'blue' },
-  { slug: 'kfz-werkstatt', label: 'Kfz-Werkstatt', emoji: '🚗', desc: 'Werkstattanfragen erhöhen', color: 'amber' },
+const SIMPLE_LINKS = [
+  { href: '/preise', label: 'Preise' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/standorte', label: 'Standorte' },
+  { href: '/kontakt', label: 'Kontakt' },
 ] as const
 
-export default function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [leistungenOpen, setLeistungenOpen] = useState(false)
-  const [branchenOpen, setBranchenOpen] = useState(false)
-  const [mobileLeistungenOpen, setMobileLeistungenOpen] = useState(false)
-  const [mobileBranchenOpen, setMobileBranchenOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+const LEISTUNG_NAV = LEISTUNGEN.map((l) => ({
+  href: `/leistungen/${l.slug}`,
+  label: l.title,
+  desc: l.shortDescription,
+}))
 
-  useEffect(() => setMounted(true), [])
+const BRANCHE_NAV = BRANCHE_PAGES.map((b) => ({
+  href: `/branchen/${b.slug}`,
+  label: b.name,
+  desc: b.hubDescription,
+}))
+
+function BrandMark() {
+  return (
+    <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+      <path
+        d="M3 20 L10 20 L16 14 L23 14"
+        stroke="#2563EB"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3 8 L8 8 L13 13"
+        stroke="#D97706"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        opacity={0.85}
+      />
+      <circle cx="10" cy="20" r="2.4" fill="#FFFFFF" stroke="#2563EB" strokeWidth="1.6" />
+      <circle cx="16" cy="14" r="2.4" fill="#FFFFFF" stroke="#2563EB" strokeWidth="1.6" />
+      <circle cx="8" cy="8" r="2.4" fill="#FFFFFF" stroke="#D97706" strokeWidth="1.6" />
+    </svg>
+  )
+}
+
+function Chevron({ open }: { open?: boolean }) {
+  return (
+    <svg
+      className={`nav-chevron${open ? ' is-open' : ''}`}
+      width="12"
+      height="12"
+      viewBox="0 0 12 12"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        d="M3 4.5 L6 7.5 L9 4.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+}
+
+function BrandLink() {
+  return (
+    <Link className="brand" href="/" aria-label="SEO München, zur Startseite">
+      <BrandMark />
+      <span>
+        SEO<span className="muc">{'\u00a0'}München</span>
+      </span>
+    </Link>
+  )
+}
+
+function isActivePath(pathname: string, href: string) {
+  if (!pathname) return false
+  if (href === '/') return pathname === '/'
+  return pathname === href || pathname.startsWith(`${href}/`)
+}
+
+type PanelKey = 'leistungen' | 'branchen' | null
+
+export default function Header() {
+  const pathname = usePathname() || '/'
+  const [mounted, setMounted] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [desktopPanel, setDesktopPanel] = useState<PanelKey>(null)
+  const [mobilePanel, setMobilePanel] = useState<PanelKey>(null)
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [mounted])
+
+  useEffect(() => {
+    if (!mounted) return
+    setMenuOpen(false)
+    setDesktopPanel(null)
+    setMobilePanel(null)
+  }, [pathname, mounted])
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = prev
+      window.removeEventListener('keydown', onKey)
+    }
+  }, [menuOpen])
+
   useEffect(() => {
     return () => {
-      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+      if (closeTimer.current) clearTimeout(closeTimer.current)
     }
   }, [])
 
-  const handleLeistungenEnter = () => {
-    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
-    setBranchenOpen(false)
-    setLeistungenOpen(true)
+  const openDesktop = (key: PanelKey) => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    setDesktopPanel(key)
   }
-  const handleLeistungenLeave = () => {
-    closeTimeoutRef.current = setTimeout(() => setLeistungenOpen(false), 400)
+  const scheduleCloseDesktop = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current)
+    closeTimer.current = setTimeout(() => setDesktopPanel(null), 180)
   }
-  const handleBranchenEnter = () => {
-    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
-    setLeistungenOpen(false)
-    setBranchenOpen(true)
+  const toggleMobilePanel = (key: Exclude<PanelKey, null>) => {
+    setMobilePanel((prev) => (prev === key ? null : key))
   }
-  const handleBranchenLeave = () => {
-    closeTimeoutRef.current = setTimeout(() => setBranchenOpen(false), 400)
-  }
+
+  // Bis zum Mount: identisches SSR/Client-Markup ohne Active-/Open-States
+  const pathForActive = mounted ? pathname : ''
+  const showScrolled = mounted && (scrolled || menuOpen)
+  const showDesktopLeistungen = mounted && desktopPanel === 'leistungen'
+  const showDesktopBranchen = mounted && desktopPanel === 'branchen'
+  const showMenu = mounted && menuOpen
+  const showMobileLeistungen = mounted && mobilePanel === 'leistungen'
+  const showMobileBranchen = mounted && mobilePanel === 'branchen'
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-xl ${mobileMenuOpen ? 'z-[10000] border-b border-transparent' : 'z-50 border-b border-zinc-100'}`}
-    >
-      <nav
-        className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-4"
-        aria-label="Hauptnavigation"
-      >
-        <Logo />
+    <header className={`site-chrome nav${showScrolled ? ' scrolled' : ''}`} id="top">
+      <div className="wrap nav-inner">
+        <BrandLink />
 
-        <ul className="hidden lg:flex items-center gap-5 xl:gap-8">
-          {navLinks.map((link) => (
+        <nav className="nav-desktop" aria-label="Hauptnavigation">
+          <ul className="nav-links">
             <li
-              key={link.href}
-              className="relative"
-              onMouseEnter={() => {
-                if (link.dropdown === 'leistungen') handleLeistungenEnter()
-                if (link.dropdown === 'branchen') handleBranchenEnter()
-              }}
-              onMouseLeave={() => {
-                if (link.dropdown === 'leistungen') handleLeistungenLeave()
-                if (link.dropdown === 'branchen') handleBranchenLeave()
-              }}
+              className="nav-item has-panel"
+              onMouseEnter={() => mounted && openDesktop('leistungen')}
+              onMouseLeave={() => mounted && scheduleCloseDesktop()}
             >
-              {link.dropdown ? (
-                <>
-                  <Link
-                    href={link.href}
-                    className="whitespace-nowrap text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors flex items-center gap-1"
-                  >
-                    {link.label}
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </Link>
-                    {link.dropdown === 'leistungen' && leistungenOpen && (
-                      <div className="absolute left-0 top-full pt-2">
-                        <div className="min-w-[420px] rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
-                          <Link
-                            href="/leistungen"
-                            className="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 transition-colors"
-                          >
-                            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500 text-white">
-                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-                              </svg>
-                            </span>
-                            <div>
-                              <span className="block text-sm font-semibold text-zinc-900">Alle Leistungen</span>
-                              <span className="block text-xs text-zinc-500">Übersicht anzeigen</span>
-                            </div>
-                            <svg className="w-4 h-4 ml-auto text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                          <div className="p-2 grid grid-cols-2 gap-1">
-                            {LEISTUNGEN.map((l) => (
-                              <Link
-                                key={l.slug}
-                                href={`/leistungen/${l.slug}`}
-                                className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
-                              >
-                                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors ${iconColors[l.color] || iconColors.blue}`}>
-                                  <LeistungIcons icon={l.icon} className="w-4 h-4" />
-                                </span>
-                                <span className="font-medium leading-snug">{l.title}</span>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                    {link.dropdown === 'branchen' && branchenOpen && (
-                      <div className="absolute left-0 top-full pt-2">
-                        <div className="min-w-[500px] rounded-2xl bg-white border border-zinc-200 shadow-xl overflow-hidden">
-                          <Link
-                            href="/branchen"
-                            className="flex items-center gap-3 px-5 py-3.5 bg-gradient-to-r from-indigo-50 to-violet-50 hover:from-indigo-100 hover:to-violet-100 transition-colors"
-                          >
-                            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500 text-white">
-                              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M3 7.5A1.5 1.5 0 014.5 6h15A1.5 1.5 0 0121 7.5v9A1.5 1.5 0 0119.5 18h-15A1.5 1.5 0 013 16.5v-9z" />
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 10.5h9M7.5 13.5h6" />
-                              </svg>
-                            </span>
-                            <div>
-                              <span className="block text-sm font-semibold text-zinc-900">Alle Branchen</span>
-                              <span className="block text-xs text-zinc-500">Branchen-Übersicht anzeigen</span>
-                            </div>
-                            <svg className="w-4 h-4 ml-auto text-zinc-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                          </Link>
-                          <div className="p-2 grid grid-cols-2 gap-1.5">
-                            {BRANCHEN_LINKS.map((b) => (
-                              <Link
-                                key={b.slug}
-                                href={`/branchen/${b.slug}`}
-                                className="group flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900 transition-colors"
-                              >
-                                <span className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-lg transition-colors ${iconColors[b.color] || iconColors.blue}`}>
-                                  <span className="text-base leading-none">{b.emoji}</span>
-                                </span>
-                                <span className="min-w-0">
-                                  <span className="block font-medium leading-snug">{b.label}</span>
-                                  <span className="block text-xs text-zinc-500 leading-snug">{b.desc}</span>
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                </>
-              ) : (
-                <Link
-                  href={link.href}
-                  className="whitespace-nowrap text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
-                >
-                  {link.label}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href="tel:+4915565087694"
-            className="hidden sm:inline-flex items-center gap-2 rounded-lg border-2 border-zinc-200 px-4 py-2.5 text-sm font-semibold text-zinc-700 hover:border-indigo-300 hover:bg-indigo-50 hover:text-indigo-700 transition-all duration-200"
-          >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-            </svg>
-            Jetzt anrufen
-          </a>
-          <Link
-            href="/kontakt"
-            className="hidden sm:inline-flex rounded-lg bg-accent px-5 py-2.5 text-sm font-semibold text-white hover:bg-accent-hover transition-all duration-200 shadow-card"
-          >
-            Termin buchen
-          </Link>
-
-          <button
-            type="button"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 transition-colors"
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label="Menü öffnen"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
-        </div>
-      </nav>
-
-      {/* Komplettes Mobile-Menü per Portal in document.body → volle Höhe, alle Punkte sichtbar */}
-      {mounted &&
-        mobileMenuOpen &&
-        createPortal(
-          <>
-            <div
-              className="lg:hidden fixed inset-0 w-full bg-white"
-              style={{ zIndex: 9998 }}
-              aria-hidden="true"
-            />
-              <div
-                id="mobile-menu"
-                className="lg:hidden fixed left-0 right-0 top-16 bottom-0 z-[9999] flex flex-col bg-white"
+              <button
+                type="button"
+                className={`nav-trigger${isActivePath(pathForActive, '/leistungen') ? ' is-active' : ''}${showDesktopLeistungen ? ' is-open' : ''}`}
+                aria-expanded={showDesktopLeistungen}
+                aria-controls="nav-panel-leistungen"
+                onClick={() =>
+                  mounted && setDesktopPanel((p) => (p === 'leistungen' ? null : 'leistungen'))
+                }
               >
-                {/* Menüpunkte + Unterpunkte – scrollbar, explizite Höhe damit Inhalt sichtbar ist */}
-                <div
-                  className="overflow-y-auto overscroll-contain px-5 pb-5 flex-1"
-                  style={{ minHeight: 0 }}
-                >
-                  <ul className="py-4 flex flex-col gap-1">
-                    {navLinks.map((link) => (
-                      <li key={link.href}>
-                        {link.dropdown === 'leistungen' ? (
-                          <div className="py-1">
-                            <button
-                              type="button"
-                              onClick={() => setMobileLeistungenOpen((v) => !v)}
-                              className="flex w-full items-center justify-between py-3.5 text-[17px] font-semibold text-zinc-800 hover:bg-zinc-50 -mx-2 px-3 rounded-xl transition-colors touch-manipulation"
-                              aria-expanded={mobileLeistungenOpen}
-                              aria-controls="mobile-leistungen-list"
-                            >
-                              {link.label}
-                              <svg
-                                className={`w-5 h-5 text-zinc-400 transition-transform ${mobileLeistungenOpen ? 'rotate-180' : ''}`}
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                              </svg>
-                            </button>
-                            {mobileLeistungenOpen && (
-                              <ul
-                                id="mobile-leistungen-list"
-                                className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
-                              >
-                                  <li>
-                                    <Link
-                                      href={link.href}
-                                      onClick={() => setMobileMenuOpen(false)}
-                                      className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] font-medium text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
-                                    >
-                                      Alle Leistungen
-                                    </Link>
-                                  </li>
-                                  {LEISTUNGEN.map((l) => (
-                                    <li key={l.slug}>
-                                      <Link
-                                        href={`/leistungen/${l.slug}`}
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
-                                      >
-                                        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${iconColors[l.color] || iconColors.blue}`}>
-                                          <LeistungIcons icon={l.icon} className="w-4 h-4" />
-                                        </span>
-                                        {l.title}
-                                      </Link>
-                                    </li>
-                                  ))}
-                              </ul>
-                            )}
-                          </div>
-                        ) : link.dropdown === 'branchen' ? (
-                          <div className="py-1">
-                            <button
-                              type="button"
-                              onClick={() => setMobileBranchenOpen((v) => !v)}
-                              className="flex w-full items-center justify-between py-3.5 text-[17px] font-semibold text-zinc-800 hover:bg-zinc-50 -mx-2 px-3 rounded-xl transition-colors touch-manipulation"
-                              aria-expanded={mobileBranchenOpen}
-                              aria-controls="mobile-branchen-list"
-                            >
-                              {link.label}
-                              <svg
-                                className={`w-5 h-5 text-zinc-400 transition-transform ${mobileBranchenOpen ? 'rotate-180' : ''}`}
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                                strokeWidth={2}
-                              >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                              </svg>
-                            </button>
-                            {mobileBranchenOpen && (
-                              <ul
-                                id="mobile-branchen-list"
-                                className="ml-2 mt-1.5 space-y-1 border-l-2 border-zinc-200 pl-3"
-                              >
-                                  <li>
-                                    <Link
-                                      href={link.href}
-                                      onClick={() => setMobileMenuOpen(false)}
-                                      className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] font-medium text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
-                                    >
-                                      Alle Branchen
-                                    </Link>
-                                  </li>
-                                  {BRANCHEN_LINKS.map((b) => (
-                                    <li key={b.slug}>
-                                      <Link
-                                        href={`/branchen/${b.slug}`}
-                                        onClick={() => setMobileMenuOpen(false)}
-                                        className="group flex items-center gap-3 py-2.5 px-3 rounded-lg text-[15px] text-zinc-700 hover:bg-zinc-50 hover:text-zinc-900"
-                                      >
-                                        <span className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${iconColors[b.color] || iconColors.blue}`}>
-                                          <span className="text-sm leading-none">{b.emoji}</span>
-                                        </span>
-                                        <span className="min-w-0">
-                                          <span className="block leading-snug">{b.label}</span>
-                                          <span className="block text-xs text-zinc-500 leading-snug">{b.desc}</span>
-                                        </span>
-                                      </Link>
-                                    </li>
-                                  ))}
-                              </ul>
-                            )}
-                          </div>
-                        ) : (
-                          <Link
-                            href={link.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="block py-3.5 text-[17px] font-semibold text-zinc-800 hover:text-zinc-900 hover:bg-zinc-50 -mx-2 px-3 rounded-xl transition-colors"
-                          >
-                            {link.label}
-                          </Link>
-                        )}
+                Leistungen
+                <Chevron open={showDesktopLeistungen} />
+              </button>
+              <div
+                id="nav-panel-leistungen"
+                className={`nav-panel${showDesktopLeistungen ? ' is-open' : ''}`}
+                onMouseEnter={() => mounted && openDesktop('leistungen')}
+                onMouseLeave={() => mounted && scheduleCloseDesktop()}
+              >
+                <div className="nav-panel-inner">
+                  <div className="nav-panel-head">
+                    <p className="nav-panel-kicker">Leistungen</p>
+                    <Link
+                      href="/leistungen"
+                      className="nav-panel-all"
+                      onClick={() => setDesktopPanel(null)}
+                    >
+                      Alle Leistungen
+                    </Link>
+                  </div>
+                  <ul className="nav-panel-grid">
+                    {LEISTUNG_NAV.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className={`nav-panel-link${isActivePath(pathForActive, item.href) ? ' is-active' : ''}`}
+                          onClick={() => setDesktopPanel(null)}
+                        >
+                          <span className="nav-panel-title">{item.label}</span>
+                          <span className="nav-panel-desc">{item.desc}</span>
+                        </Link>
                       </li>
                     ))}
                   </ul>
                 </div>
-                {/* Jetzt anrufen + Termin buchen – fest unten */}
-                <div
-                  className="flex-shrink-0 px-5 pt-3 pb-4 bg-white border-t border-zinc-100 flex flex-col gap-2.5"
-                  style={{ paddingBottom: 'max(1rem, env(safe-area-inset-bottom))' }}
-                >
-                  <a
-                    href="tel:+4915565087694"
-                    className="flex items-center justify-center gap-2.5 py-3.5 rounded-xl border-2 border-indigo-200 text-indigo-600 text-[15px] font-semibold hover:bg-indigo-50 transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    Jetzt anrufen
-                  </a>
-                  <Link
-                    href="/kontakt"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block py-3.5 text-center rounded-xl bg-accent text-white text-[15px] font-semibold hover:bg-accent-hover transition-colors"
-                  >
-                    Termin buchen
-                  </Link>
+              </div>
+            </li>
+
+            <li
+              className="nav-item has-panel"
+              onMouseEnter={() => mounted && openDesktop('branchen')}
+              onMouseLeave={() => mounted && scheduleCloseDesktop()}
+            >
+              <button
+                type="button"
+                className={`nav-trigger${isActivePath(pathForActive, '/branchen') ? ' is-active' : ''}${showDesktopBranchen ? ' is-open' : ''}`}
+                aria-expanded={showDesktopBranchen}
+                aria-controls="nav-panel-branchen"
+                onClick={() =>
+                  mounted && setDesktopPanel((p) => (p === 'branchen' ? null : 'branchen'))
+                }
+              >
+                Branchen
+                <Chevron open={showDesktopBranchen} />
+              </button>
+              <div
+                id="nav-panel-branchen"
+                className={`nav-panel nav-panel--branchen${showDesktopBranchen ? ' is-open' : ''}`}
+                onMouseEnter={() => mounted && openDesktop('branchen')}
+                onMouseLeave={() => mounted && scheduleCloseDesktop()}
+              >
+                <div className="nav-panel-inner">
+                  <div className="nav-panel-head">
+                    <p className="nav-panel-kicker">Branchen</p>
+                    <Link
+                      href="/branchen"
+                      className="nav-panel-all"
+                      onClick={() => setDesktopPanel(null)}
+                    >
+                      Alle Branchen
+                    </Link>
+                  </div>
+                  <ul className="nav-panel-grid nav-panel-grid--compact">
+                    {BRANCHE_NAV.map((item) => (
+                      <li key={item.href}>
+                        <Link
+                          href={item.href}
+                          className={`nav-panel-link${isActivePath(pathForActive, item.href) ? ' is-active' : ''}`}
+                          onClick={() => setDesktopPanel(null)}
+                        >
+                          <span className="nav-panel-title">{item.label}</span>
+                          <span className="nav-panel-desc">{item.desc}</span>
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-          </>,
-          document.body
-        )}
+            </li>
+
+            {SIMPLE_LINKS.map((link) => (
+              <li key={link.href} className="nav-item">
+                <Link
+                  href={link.href}
+                  className={`nav-link${isActivePath(pathForActive, link.href) ? ' is-active' : ''}`}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <Link className="btn btn-primary nav-cta" href="/kontakt">
+          Erstgespräch sichern
+        </Link>
+
+        <button
+          className="nav-toggle"
+          type="button"
+          aria-expanded={showMenu}
+          aria-controls="mobile-menu"
+          aria-label={showMenu ? 'Menü schließen' : 'Menü öffnen'}
+          onClick={() => mounted && setMenuOpen((o) => !o)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+
+      {showMenu ? (
+        <button
+          type="button"
+          className="nav-backdrop"
+          aria-label="Menü schließen"
+          onClick={() => setMenuOpen(false)}
+        />
+      ) : null}
+
+      <div className={`nav-mobile${showMenu ? ' open' : ''}`} id="mobile-menu">
+        <div className="nav-mobile-scroll">
+          <ul className="nav-mobile-list">
+            <li>
+              <button
+                type="button"
+                className={`nav-mobile-row${showMobileLeistungen ? ' is-open' : ''}`}
+                aria-expanded={showMobileLeistungen}
+                onClick={() => mounted && toggleMobilePanel('leistungen')}
+              >
+                <span>Leistungen</span>
+                <Chevron open={showMobileLeistungen} />
+              </button>
+              {showMobileLeistungen ? (
+                <ul className="nav-mobile-sub">
+                  <li>
+                    <Link href="/leistungen" onClick={() => setMenuOpen(false)}>
+                      Alle Leistungen
+                    </Link>
+                  </li>
+                  {LEISTUNG_NAV.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} onClick={() => setMenuOpen(false)}>
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </li>
+
+            <li>
+              <button
+                type="button"
+                className={`nav-mobile-row${showMobileBranchen ? ' is-open' : ''}`}
+                aria-expanded={showMobileBranchen}
+                onClick={() => mounted && toggleMobilePanel('branchen')}
+              >
+                <span>Branchen</span>
+                <Chevron open={showMobileBranchen} />
+              </button>
+              {showMobileBranchen ? (
+                <ul className="nav-mobile-sub">
+                  <li>
+                    <Link href="/branchen" onClick={() => setMenuOpen(false)}>
+                      Alle Branchen
+                    </Link>
+                  </li>
+                  {BRANCHE_NAV.map((item) => (
+                    <li key={item.href}>
+                      <Link href={item.href} onClick={() => setMenuOpen(false)}>
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+            </li>
+
+            {SIMPLE_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`nav-mobile-row link${isActivePath(pathForActive, link.href) ? ' is-active' : ''}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="nav-mobile-actions">
+          <a className="nav-mobile-phone" href="tel:+4915565087694">
+            Anrufen: +49 155 65087694
+          </a>
+          <Link className="btn btn-primary" href="/kontakt" onClick={() => setMenuOpen(false)}>
+            Kostenloses Erstgespräch
+          </Link>
+        </div>
+      </div>
     </header>
   )
 }

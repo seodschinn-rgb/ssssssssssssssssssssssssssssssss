@@ -1,21 +1,21 @@
 import type { Metadata } from 'next'
+import './home-v2.css'
 import Header from '@/components/Header'
-import Hero from '@/components/Hero'
-import PainPointsSection from '@/components/PainPointsSection'
-import FeatureGrid from '@/components/FeatureGrid'
-import WhySeoSection from '@/components/WhySeoSection'
-import ContactPersonSection from '@/components/ContactPersonSection'
-import ScreenshotsSection from '@/components/ScreenshotsSection'
-import TestimonialSlider from '@/components/TestimonialSlider'
-import ProcessSection from '@/components/ProcessSection'
-import HomePricingSection from '@/components/HomePricingSection'
-import HomeBlogTeaser from '@/components/HomeBlogTeaser'
-import CityLinks from '@/components/CityLinks'
-import HomeFAQSection from '@/components/HomeFAQSection'
-import HomeSeoTextSection from '@/components/HomeSeoTextSection'
-import ContactSection from '@/components/ContactSection'
 import Footer from '@/components/Footer'
 import HomePageSchema from '@/components/HomePageSchema'
+import HomeInteractions from '@/components/home-v2/HomeInteractions'
+import HeroMunich from '@/components/home-v2/HeroMunich'
+import TrustMarquee from '@/components/home-v2/TrustMarquee'
+import VisibilityRoute from '@/components/home-v2/VisibilityRoute'
+import ServicesBento from '@/components/home-v2/ServicesBento'
+import ProofModule from '@/components/home-v2/ProofModule'
+import FounderSpotlight from '@/components/home-v2/FounderSpotlight'
+import PricingCards from '@/components/home-v2/PricingCards'
+import KnowledgeList from '@/components/home-v2/KnowledgeList'
+import CityNetwork from '@/components/home-v2/CityNetwork'
+import SeoTextBlock from '@/components/home-v2/SeoTextBlock'
+import FaqTwoCol from '@/components/home-v2/FaqTwoCol'
+import ContactCta from '@/components/home-v2/ContactCta'
 import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     absolute: 'SEO Agentur München | Sichtbarkeit bei Google & KI-Suche',
   },
   description:
-    'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
+    'SEO Agentur München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Preise. Jetzt kostenlos beraten lassen.',
   alternates: { canonical: absoluteCanonical('/') },
   openGraph: {
     title: 'SEO Agentur München | Sichtbarkeit bei Google & KI-Suche',
     description:
-      'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
+      'SEO Agentur München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Preise. Jetzt kostenlos beraten lassen.',
   },
 }
 
@@ -37,27 +37,26 @@ export default function Home() {
     <>
       <HomePageSchema />
       <Header />
-      <main className="home-main">
-        <Hero
-          headline="SEO Agentur München Dein Weg von unsichtbar zu Seite 1"
-          headlineAccentPrefix="SEO Agentur München"
-          subheadline="Du investierst in eine Website, aber Google schickt dir keine Kunden? Wir ändern das. Mit einer datengetriebenen SEO-Strategie, die Rankings liefert — nicht nur Reports. Durchschnittlich +312 % mehr organischer Traffic für Unternehmen in München und Bayern."
-          showSearchAnimation
-        />
-        <PainPointsSection />
-        <FeatureGrid />
-        <WhySeoSection />
-        <ContactPersonSection />
-        <ScreenshotsSection />
-        <TestimonialSlider />
-        <ProcessSection />
-        <HomePricingSection />
-        <HomeBlogTeaser />
-        <CityLinks />
-        <HomeFAQSection />
-        <HomeSeoTextSection />
-        <ContactSection />
-      </main>
+      <div className="home-v2">
+        <a className="skip" href="#main">
+          Zum Inhalt springen
+        </a>
+        <main id="main">
+          <HeroMunich />
+          <TrustMarquee />
+          <VisibilityRoute />
+          <ServicesBento />
+          <ProofModule />
+          <FounderSpotlight />
+          <PricingCards />
+          <KnowledgeList />
+          <CityNetwork />
+          <SeoTextBlock />
+          <FaqTwoCol />
+          <ContactCta />
+        </main>
+        <HomeInteractions />
+      </div>
       <Footer />
     </>
   )
