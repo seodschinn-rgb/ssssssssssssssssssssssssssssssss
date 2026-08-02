@@ -1,10 +1,12 @@
 import { buildStandardMassnahmen } from './massnahmen'
 import {
+  ANWAELTE_FOCUS_KEYWORD,
   ANWAELTE_META_DESCRIPTION,
   ANWAELTE_META_TITLE,
   ANWAELTE_V2_FAQS,
 } from './anwaelte-v2'
 import {
+  HANDWERKER_FOCUS_KEYWORD,
   HANDWERKER_META_DESCRIPTION,
   HANDWERKER_META_TITLE,
   HANDWERKER_V2_FAQS,
@@ -194,6 +196,7 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     hubEmoji: '🔧',
     metaTitle: HANDWERKER_META_TITLE,
     metaDescription: HANDWERKER_META_DESCRIPTION,
+    focusKeyword: HANDWERKER_FOCUS_KEYWORD,
     h1: 'SEO für Handwerker in München. Mehr Aufträge über Google.',
     ctaNoun: 'Aufträge',
     warumParagraphs: [
@@ -235,6 +238,7 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     hubEmoji: '⚖️',
     metaTitle: ANWAELTE_META_TITLE,
     metaDescription: ANWAELTE_META_DESCRIPTION,
+    focusKeyword: ANWAELTE_FOCUS_KEYWORD,
     h1: 'SEO für Anwälte in München. Mehr Mandate über Google.',
     ctaNoun: 'Mandate',
     warumParagraphs: [

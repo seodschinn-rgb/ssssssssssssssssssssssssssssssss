@@ -3,6 +3,7 @@ import type { BrancheFaq } from './types'
 export const HANDWERKER_META_TITLE = 'SEO für Handwerker München | Mehr Aufträge über Google'
 export const HANDWERKER_META_DESCRIPTION =
   'SEO für Handwerker in München: Google Business Profile, lokale Keywords und Leistungsseiten je Gewerk. Ab 990 EUR/Monat. Jetzt kostenlos beraten lassen.'
+export const HANDWERKER_FOCUS_KEYWORD = 'SEO für Handwerker München'
 
 /** FAQs — sichtbar + FAQPage Schema zeichenidentisch */
 export const HANDWERKER_V2_FAQS: BrancheFaq[] = [

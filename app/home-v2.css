@@ -235,7 +235,9 @@
 }
 .home-v2 .bento h3 a{color:var(--ink)}
 .home-v2 .bento h3 a:hover{color:var(--acc2)}
-.home-v2 .tile-geo h3 a:hover{color:#BFDBFE}
+/* Höhere Spezifität: dunkle GEO-Kachel bleibt hell lesbar (sonst gewinnt .bento h3 a) */
+.home-v2 .bento .tile-geo h3 a{color:#E8EDF8}
+.home-v2 .bento .tile-geo h3 a:hover{color:#BFDBFE}
 .home-v2 .sec-foot{margin-top:2rem}
 /* ---------- Beweis-Modul ---------- */
 .home-v2 .proof-grid{display:grid;gap:1rem}

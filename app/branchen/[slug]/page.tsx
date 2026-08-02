@@ -21,8 +21,13 @@ import KfzSchema from '@/components/branchen-v2/kfz/KfzSchema'
 import RestaurantsPage from '@/components/branchen-v2/restaurants/RestaurantsPage'
 import RestaurantsSchema from '@/components/branchen-v2/restaurants/RestaurantsSchema'
 import { getAllBrancheSlugs, getBrancheBySlug } from '@/lib/branchen'
-import { ANWAELTE_META_DESCRIPTION, ANWAELTE_META_TITLE } from '@/lib/branchen/anwaelte-v2'
 import {
+  ANWAELTE_FOCUS_KEYWORD,
+  ANWAELTE_META_DESCRIPTION,
+  ANWAELTE_META_TITLE,
+} from '@/lib/branchen/anwaelte-v2'
+import {
+  HANDWERKER_FOCUS_KEYWORD,
   HANDWERKER_META_DESCRIPTION,
   HANDWERKER_META_TITLE,
 } from '@/lib/branchen/handwerker-v2'
@@ -47,6 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: { absolute: ANWAELTE_META_TITLE },
       description: ANWAELTE_META_DESCRIPTION,
+      keywords: ANWAELTE_FOCUS_KEYWORD,
       robots: { index: true, follow: true },
       alternates: { canonical: absoluteCanonical('/branchen/anwaelte') },
       openGraph: {
@@ -64,6 +70,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: { absolute: HANDWERKER_META_TITLE },
       description: HANDWERKER_META_DESCRIPTION,
+      keywords: HANDWERKER_FOCUS_KEYWORD,
       robots: { index: true, follow: true },
       alternates: { canonical: absoluteCanonical('/branchen/handwerker') },
       openGraph: {

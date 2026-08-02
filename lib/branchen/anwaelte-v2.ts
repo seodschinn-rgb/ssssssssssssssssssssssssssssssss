@@ -3,6 +3,7 @@ import type { BrancheFaq } from './types'
 export const ANWAELTE_META_TITLE = 'SEO für Anwälte München | Mehr Mandate über Google'
 export const ANWAELTE_META_DESCRIPTION =
   'SEO für Anwälte in München: Local SEO, Google Business Profile und Inhalte im Rahmen des Berufsrechts. Mehr Mandate über Google. Jetzt beraten lassen.'
+export const ANWAELTE_FOCUS_KEYWORD = 'SEO für Anwälte München'
 
 /** FAQs — sichtbar + FAQPage Schema zeichenidentisch */
 export const ANWAELTE_V2_FAQS: BrancheFaq[] = [
