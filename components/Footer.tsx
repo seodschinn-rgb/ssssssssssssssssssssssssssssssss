@@ -1,15 +1,5 @@
 import Link from 'next/link'
-
-function BrandMarkDark() {
-  return (
-    <span className="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.35-4.35" />
-      </svg>
-    </span>
-  )
-}
+import BrandMark from '@/components/BrandMark'
 
 const LEISTUNG_LINKS = [
   { href: '/leistungen', label: 'Alle Leistungen' },
@@ -36,7 +26,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div className="foot-brand">
             <Link className="brand" href="/" aria-label="SEO München, zur Startseite">
-              <BrandMarkDark />
+              <BrandMark />
               <span>
                 SEO<span className="muc">&nbsp;München</span>
               </span>

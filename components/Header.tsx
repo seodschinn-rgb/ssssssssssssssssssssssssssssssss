@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LEISTUNGEN } from '@/lib/leistungen-data'
 import { BRANCHE_PAGES } from '@/lib/branchen/pages'
+import BrandMark from '@/components/BrandMark'
 
 const SIMPLE_LINKS = [
   { href: '/preise', label: 'Preise' },
@@ -24,17 +25,6 @@ const BRANCHE_NAV = BRANCHE_PAGES.map((b) => ({
   label: b.name,
   desc: b.hubDescription,
 }))
-
-function BrandMark() {
-  return (
-    <span className="brand-mark" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="11" cy="11" r="8" />
-        <path d="m21 21-4.35-4.35" />
-      </svg>
-    </span>
-  )
-}
 
 function Chevron({ open }: { open?: boolean }) {
   return (

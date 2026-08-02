@@ -1,4 +1,29 @@
 import { buildStandardMassnahmen } from './massnahmen'
+import {
+  ANWAELTE_META_DESCRIPTION,
+  ANWAELTE_META_TITLE,
+  ANWAELTE_V2_FAQS,
+} from './anwaelte-v2'
+import {
+  HANDWERKER_META_DESCRIPTION,
+  HANDWERKER_META_TITLE,
+  HANDWERKER_V2_FAQS,
+} from './handwerker-v2'
+import {
+  HOTELS_META_DESCRIPTION,
+  HOTELS_META_TITLE,
+  HOTELS_V2_FAQS,
+} from './hotels-v2'
+import {
+  KFZ_META_DESCRIPTION,
+  KFZ_META_TITLE,
+  KFZ_V2_FAQS,
+} from './kfz-v2'
+import {
+  RESTAURANTS_META_DESCRIPTION,
+  RESTAURANTS_META_TITLE,
+  RESTAURANTS_V2_FAQS,
+} from './restaurants-v2'
 import type { BrancheFaq, BranchePageData } from './types'
 
 const kostenStandard = (paket: string) => [
@@ -165,13 +190,12 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     slug: 'handwerker',
     name: 'Handwerker',
     hubTitle: 'Handwerker',
-    hubDescription: 'Mehr Aufträge über Google — Elektriker, Sanitär, Maler & Co.',
+    hubDescription: 'Mehr Aufträge über Google: Elektriker, Sanitär, Schreiner, Maler und Co.',
     hubEmoji: '🔧',
-    metaTitle: 'SEO für Handwerker München | Mehr Aufträge über Google [2026]',
-    metaDescription:
-      'SEO für Handwerker in München: Google Business Profile, lokale Keywords & Leistungsseiten. Ab 990 EUR/Monat. Jetzt kostenloses Erstgespräch sichern!',
-    h1: 'SEO für Handwerker in München — Mehr Kunden über Google',
-    ctaNoun: 'Kunden',
+    metaTitle: HANDWERKER_META_TITLE,
+    metaDescription: HANDWERKER_META_DESCRIPTION,
+    h1: 'SEO für Handwerker in München. Mehr Aufträge über Google.',
+    ctaNoun: 'Aufträge',
     warumParagraphs: [
       'Notfall- und Gewerkesuchen („Elektriker München“, „Sanitär Notdienst“) passieren auf dem Handy — wer oben steht, bekommt den Anruf.',
       'Handwerksbetriebe konkurrieren mit Marktplätzen und großen Portalen. Eine starke eigene Domain mit lokaler Autorität sichert dir Leads ohne ständige Provision.',
@@ -200,44 +224,18 @@ export const BRANCHE_PAGES: BranchePageData[] = [
       'Ergebnis nach 6 Monaten: mehr organische Anrufe und Formularanfragen, klar messbar in Search Console und Call-Tracking.',
     ],
     kostenParagraphs: kostenStandard('Handwerksbetriebe'),
-    faqs: [
-      {
-        q: 'Lohnt sich SEO für kleine Handwerksbetriebe?',
-        a: 'Gerade für kleine Betriebe mit 2–10 Mitarbeitern ist SEO besonders effektiv. Ein einziger Auftrag über Google — etwa eine Badsanierung für 8.000–25.000 EUR — finanziert die SEO-Kosten für Monate. Anders als bei Plattformen wie MyHammer zahlst du keine Provision pro Lead, sondern baust nachhaltige Sichtbarkeit auf, die dir langfristig gehört.',
-      },
-      {
-        q: 'Was kostet SEO für Handwerker?',
-        a: 'Professionelle SEO-Betreuung für Handwerksbetriebe beginnt bei 990 EUR pro Monat. Dafür erhältst du Google Business Profile Optimierung, lokale Keyword-Strategie, Leistungsseiten und Bewertungsmanagement. Gemessen am Auftragswert im Handwerk — ein Dachstuhl kostet 5.000–20.000 EUR — amortisiert sich die Investition oft schon mit einem zusätzlichen Auftrag pro Monat.',
-      },
-      {
-        q: 'Wie lange dauert es, bis ich bei Google gefunden werde?',
-        a: 'Erste Verbesserungen über das Google Business Profile sind oft schon nach 4–6 Wochen sichtbar. Für organische Rankings bei Keywords wie „Klempner München“ solltest du mit 3–6 Monaten rechnen. Stadtteil-Keywords wie „Elektriker Schwabing“ zeigen typischerweise schneller Ergebnisse, da der Wettbewerb geringer ist.',
-      },
-      {
-        q: 'Brauche ich eine neue Website für SEO?',
-        a: 'Nicht unbedingt. In vielen Fällen lässt sich die bestehende Website optimieren — mit besserer Struktur, mobiler Darstellung und gezielten Leistungsseiten. Nur wenn die Seite technisch veraltet ist (kein responsives Design, extrem lange Ladezeiten), empfehlen wir einen Relaunch. Das klären wir im kostenlosen Erstgespräch.',
-      },
-      {
-        q: 'Kann ich SEO als Handwerker selbst machen?',
-        a: 'Die Grundlagen wie Google Business Profile einrichten und Bewertungen sammeln kannst du selbst umsetzen. Für eine vollständige Strategie mit Keyword-Recherche, technischer Optimierung und Content-Erstellung fehlt den meisten Handwerkern verständlicherweise die Zeit — wer den ganzen Tag auf der Baustelle ist, hat abends keine Kapazität für SEO. Genau hier setzen wir an.',
-      },
-      {
-        q: 'Was bringt mir Google Business Profile?',
-        a: 'Google Business Profile ist der wichtigste einzelne Hebel für Handwerker — und kostenlos. Es sorgt dafür, dass dein Betrieb bei lokalen Suchen und in Google Maps erscheint, mit Bewertungen, Fotos, Öffnungszeiten und direkter Anruf-Funktion. Für Notdienst-Suchen wie „Klempner Notdienst München“ ist ein optimiertes Profil oft der entscheidende Faktor.',
-      },
-    ],
+    faqs: [...HANDWERKER_V2_FAQS],
     relatedSlugs: [...REL.handwerker],
   },
   {
     slug: 'anwaelte',
     name: 'Anwälte',
     hubTitle: 'Anwälte & Kanzleien',
-    hubDescription: 'SEO für Kanzleien — Mandantenanfragen mit relevanter Suchintention.',
+    hubDescription: 'Mandantenanfragen mit relevanter Suchintention für deine Kanzlei.',
     hubEmoji: '⚖️',
-    metaTitle: 'SEO für Anwälte München | Mehr Mandate über Google | SEO München',
-    metaDescription:
-      'SEO für Anwälte in München: Local SEO, BRAO-konforme Inhalte & Google Business Profile. Erfahre, wie deine Kanzlei mehr Mandate über Google gewinnt. Jetzt beraten lassen.',
-    h1: 'SEO für Anwälte in München — Mehr Mandate über Google',
+    metaTitle: ANWAELTE_META_TITLE,
+    metaDescription: ANWAELTE_META_DESCRIPTION,
+    h1: 'SEO für Anwälte in München. Mehr Mandate über Google.',
     ctaNoun: 'Mandate',
     warumParagraphs: [
       'Mandanten recherchieren Rechtsgebiete und „Anwalt München“ lange vor dem Erstkontakt. Sichtbarkeit bei den richtigen Keywords filtert schon die Zielgruppe.',
@@ -267,25 +265,7 @@ export const BRANCHE_PAGES: BranchePageData[] = [
       'Nach 6 Monaten: mehr qualifizierte Kontaktanfragen und bessere Rankings für relevante Longtail-Begriffe.',
     ],
     kostenParagraphs: kostenStandard('Kanzleien'),
-    faqs: [
-      {
-        q: 'Ist SEO für Rechtsanwälte erlaubt?',
-        a: 'Ja, bei sachlicher Information und Einhaltung der Berufsregeln. Wir vermeiden irreführende Versprechen und achten auf die berufsrechtlichen Vorgaben.',
-      },
-      {
-        q: 'Wie unterscheidet sich SEO von Google Ads für Kanzleien?',
-        a: 'SEO baut langfristig Vertrauen und Traffic; Ads liefern schnell Sichtbarkeit. Oft lohnt die Kombination mit klar getrenntem Budget.',
-      },
-      faqPaket(),
-      {
-        q: 'Braucht jede Kanzlei eigene Landingpages?',
-        a: 'Pro Rechtsgebiet und ggf. Standort helfen dedizierte Seiten — sauber verlinkt und ohne Duplicate Content.',
-      },
-      {
-        q: 'Könnt ihr Inhalte rechtlich prüfen?',
-        a: 'Wir liefern SEO-taugliche Textentwürfe; die finale fachliche und berufsrechtliche Prüfung liegt bei euch.',
-      },
-    ],
+    faqs: [...ANWAELTE_V2_FAQS],
     relatedSlugs: [...REL.anwaelte],
   },
   {
@@ -426,13 +406,12 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     slug: 'restaurants',
     name: 'Restaurants',
     hubTitle: 'Restaurants & Gastronomie',
-    hubDescription: 'Mehr Gäste über Google Maps, Speisekarten und Reservierungen.',
+    hubDescription: 'Mehr Gäste über Google Maps, Speisekarte und Reservierungen.',
     hubEmoji: '🍽️',
-    metaTitle: 'SEO für Restaurants München | Mehr Gäste über Google | SEO München',
-    metaDescription:
-      'SEO für Restaurants in München: Google Maps Optimierung, Bewertungsmanagement & Speisekarten-SEO. 3.127 Gastro-Betriebe — so hebst du dich ab. Ab 990 EUR/Monat.',
+    metaTitle: RESTAURANTS_META_TITLE,
+    metaDescription: RESTAURANTS_META_DESCRIPTION,
     focusKeyword: 'seo für restaurants münchen',
-    h1: 'SEO für Restaurants & Gastronomie in München — Mehr Gäste über Google',
+    h1: 'SEO für Restaurants in München. Mehr Gäste über Google.',
     ctaNoun: 'Gäste',
     warumParagraphs: [
       '„Restaurant in der Nähe“ und Küchen-Stile werden ständig auf dem Handy gesucht — Maps und Bewertungen entscheiden über den Besuch.',
@@ -462,32 +441,7 @@ export const BRANCHE_PAGES: BranchePageData[] = [
       'Ergebnis: mehr Aufrufe in Maps und spürbar mehr Reservierungen über Google.',
     ],
     kostenParagraphs: kostenStandard('Restaurants'),
-    faqs: [
-      {
-        q: 'Braucht mein Restaurant wirklich eine eigene Website?',
-        a: 'Ja, unbedingt. Ohne eigene Website kontrollieren Plattformen wie Lieferando, TripAdvisor und Yelp deine Online-Präsenz. Eine eigene Website gibt dir Kontrolle über dein Branding, deine Speisekarte und vor allem über deine Google-Rankings. Sie ist auch Voraussetzung für viele Local-SEO-Maßnahmen und ermöglicht dir, Reservierungen und Bestellungen ohne Provision entgegenzunehmen.',
-      },
-      {
-        q: 'Was kostet SEO für ein Restaurant?',
-        a: 'Professionelle SEO-Betreuung für Restaurants beginnt bei 990 EUR pro Monat. Dafür erhältst du Google Business Profile Optimierung, lokale Keyword-Strategie, Speisekarten-SEO und Bewertungsmanagement. Bei einem durchschnittlichen Abendessen-Umsatz von 45–65 EUR pro Gast rechnet sich die Investition bereits mit 10 zusätzlichen Gästen pro Woche.',
-      },
-      {
-        q: 'Wie bekomme ich mehr Google-Bewertungen?',
-        a: 'Der effektivste Weg: Erstelle einen kurzen Bewertungslink oder QR-Code und platziere ihn auf dem Tisch, der Rechnung oder einer kleinen Karte. Bitte Gäste nach einem gelungenen Abend persönlich um eine Bewertung. Wichtig: Antworte auf jede Bewertung — positiv wie negativ. Das zeigt Engagement und verbessert dein Ranking. Gefälschte Bewertungen sind tabu, Google erkennt Muster und bestraft Manipulation.',
-      },
-      {
-        q: 'Kann ich mich gegen Lieferando-Schattenwebsites wehren?',
-        a: 'Ja, mit einer starken eigenen SEO-Präsenz. Lieferando erstellt für Restaurants automatisch Unterseiten, die oft für deinen eigenen Restaurantnamen ranken. Dagegen hilft: eine gut optimierte eigene Website, ein vollständiges Google Business Profile und konsistente NAP-Daten (Name, Adresse, Telefon) über alle Verzeichnisse hinweg. Der DEHOGA setzt sich zudem politisch für faire Wettbewerbsbedingungen ein.',
-      },
-      {
-        q: 'Wie wichtig ist die Speisekarte für SEO?',
-        a: 'Extrem wichtig. Die Speisekarte ist oft die meistbesuchte Seite einer Restaurant-Website. Entscheidend: Sie muss als HTML-Text vorliegen, nicht als PDF oder Bild. Nur so kann Google die Inhalte lesen und indexieren. Eine textbasierte Speisekarte mit Gerichten, Beschreibungen und Preisen erzeugt relevante Keywords und verbessert dein Ranking für Suchen wie „italienisches Restaurant München“ oder „Pizza Schwabing“.',
-      },
-      {
-        q: 'Lohnt sich SEO auch für kleine Cafés oder Imbisse?',
-        a: 'Absolut. Gerade kleinere Betriebe profitieren stark von Local SEO, weil der Wettbewerb auf Stadtteil-Ebene geringer ist. Ein Café in Haidhausen muss nicht gegen ganz München konkurrieren, sondern nur gegen die Cafés im gleichen Viertel. Ein optimiertes Google Business Profile mit guten Bewertungen kann hier schnell für deutlich mehr Laufkundschaft sorgen.',
-      },
-    ],
+    faqs: [...RESTAURANTS_V2_FAQS],
     relatedSlugs: [...REL.restaurants],
   },
   {
@@ -562,13 +516,12 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     slug: 'hotels',
     name: 'Hotels',
     hubTitle: 'Hotels',
-    hubDescription: 'Direktbuchungen steigern, OTA-Provision senken — Local SEO & Destination-Content.',
+    hubDescription: 'Mehr Direktbuchungen, weniger Portal-Provision: Local SEO für dein Haus.',
     hubEmoji: '🏨',
-    metaTitle: 'SEO für Hotels München | Mehr Direktbuchungen, weniger OTA | SEO München',
-    metaDescription:
-      'SEO für Hotels in München: Direktbuchungen steigern, OTA-Provisionen senken. Google Business Profile, Destination-Content & Buchungsoptimierung. Ab 1.590 EUR/Monat.',
+    metaTitle: HOTELS_META_TITLE,
+    metaDescription: HOTELS_META_DESCRIPTION,
     focusKeyword: 'seo für hotels münchen',
-    h1: 'SEO für Hotels in München — Mehr Direktbuchungen, weniger OTA-Abhängigkeit',
+    h1: 'SEO für Hotels in München. Direkt gebucht statt vermittelt.',
     ctaNoun: 'Gäste',
     warumParagraphs: [
       'Reisende kombinieren „Hotel München“ mit Anlass, Lage und Preis — wer nicht in organischen Ergebnissen und Maps ist, zahlt höhere OTA-Provisionen.',
@@ -598,45 +551,19 @@ export const BRANCHE_PAGES: BranchePageData[] = [
       'Nach 6 Monaten: höherer Anteil Direktbuchungen und bessere Sichtbarkeit für Nischen-Keywords.',
     ],
     kostenParagraphs: kostenStandard('Hotels'),
-    faqs: [
-      {
-        q: 'Lohnt sich SEO wenn ich bei Booking.com bin?',
-        a: 'Gerade dann. Booking.com nimmt 15–25 % Provision pro Buchung. Jede Direktbuchung über deine eigene Website spart dir diese Provision und gibt dir Zugang zu den Gästedaten für Wiederbuchungs-Marketing. SEO ersetzt Booking.com nicht, aber es reduziert deine Abhängigkeit und verbessert deine Marge erheblich. Hotels, die gezielt in SEO investieren, steigern den Direktbuchungsanteil typischerweise um 20–35 Prozentpunkte innerhalb eines Jahres.',
-      },
-      {
-        q: 'Was kostet SEO für ein Hotel?',
-        a: 'Professionelle Hotel-SEO beginnt bei 1.590 EUR pro Monat (Growth-Paket). Hotels sind wettbewerbsintensiv — Booking.com, HRS und Google Hotel Ads dominieren viele Keywords. Das Growth-Paket umfasst lokale Keyword-Strategie, Google Business Profile Optimierung, Destination-Content, technisches SEO und Buchungsoptimierung. Bei durchschnittlich 100 EUR pro Nacht und 15 % eingesparter OTA-Provision rechnet sich die Investition ab 10–11 zusätzlichen Direktbuchungs-Nächten pro Monat.',
-      },
-      {
-        q: 'Wie lange dauert es bis zu mehr Direktbuchungen?',
-        a: 'Erste Verbesserungen bei Google Business Profile und lokalen Rankings sind nach 4–8 Wochen sichtbar. Spürbare Steigerungen bei Direktbuchungen setzen typischerweise nach 3–4 Monaten ein, wenn die technischen Optimierungen greifen und der Destination-Content indexiert ist. Nach 6 Monaten zeigen die meisten Hotels ein stabiles Wachstum von 20–40 % bei Direktbuchungen. SEO ist eine langfristige Investition — die Ergebnisse wachsen mit jedem Monat.',
-      },
-      {
-        q: 'Kann ich Booking.com komplett ersetzen?',
-        a: 'Das ist weder realistisch noch empfehlenswert. OTAs liefern nach wie vor internationale Reichweite und Sichtbarkeit für Gäste, die dein Hotel noch nicht kennen. Das Ziel ist ein gesundes Verhältnis: 50–65 % Direktbuchungen, der Rest über OTAs und andere Kanäle. So profitierst du von der Reichweite der Plattformen, ohne deine Marge zu ruinieren. Die erfolgreichsten Hotels nutzen OTAs als Schaufenster — und konvertieren Folgegäste über die eigene Website.',
-      },
-      {
-        q: 'Was bringt Destination-Content meinem Hotel?',
-        a: 'Destination-Content (Reiseführer, Stadtteil-Guides, Veranstaltungstipps) fängt Gäste in der Planungsphase ab — lange bevor sie auf Booking.com nach Preisen suchen. 81 % aller Reisenden beginnen ihre Planung mit einer Google-Suche. Wenn dein Hotel für „Sehenswürdigkeiten München“ oder „Oktoberfest Tipps“ rankt, bist du als Unterkunft bereits im Kopf des Gastes, noch bevor er einen Preisvergleich startet. Destination-Content baut zudem thematische Autorität auf, die dein gesamtes Domain-Ranking stärkt.',
-      },
-      {
-        q: 'Wie gehe ich mit negativen Google-Bewertungen um?',
-        a: 'Antworte sachlich, schnell und lösungsorientiert auf jede negative Bewertung. Bedanke dich für das Feedback, entschuldige dich für die schlechte Erfahrung und biete eine Lösung an (z. B. persönlichen Kontakt). Wichtig: Nie emotional oder defensiv reagieren. Potenzielle Gäste lesen deine Antworten und beurteilen danach, wie professionell du mit Kritik umgehst. Das Ziel ist nicht, die negative Bewertung zu entfernen, sondern durch deine Antwort und viele positive Bewertungen den Gesamteindruck zu stärken.',
-      },
-    ],
+    faqs: [...HOTELS_V2_FAQS],
     relatedSlugs: [...REL.hotels],
   },
   {
     slug: 'kfz-werkstatt',
     name: 'KFZ-Werkstätten',
     hubTitle: 'KFZ-Werkstätten',
-    hubDescription: 'Mehr Anfragen über Maps, Leistungsseiten & Bewertungen — gegen Ketten und Portale.',
+    hubDescription: 'Mehr Anfragen über Maps, Leistungsseiten und Bewertungen.',
     hubEmoji: '🚗',
-    metaTitle: 'SEO für KFZ-Werkstätten München | Mehr Kunden über Google | SEO München',
-    metaDescription:
-      'SEO für KFZ-Werkstätten in München: Google Business Profile, Leistungsseiten, Bewertungen. Fallstudie: Freie Werkstatt von Seite 5 auf Top 3. Ab 990 EUR/Monat. Jetzt beraten lassen.',
+    metaTitle: KFZ_META_TITLE,
+    metaDescription: KFZ_META_DESCRIPTION,
     focusKeyword: 'seo für kfz-werkstätten münchen',
-    h1: 'SEO für KFZ-Werkstätten in München — Mehr Kunden über Google',
+    h1: 'SEO für KFZ-Werkstätten in München. Sichtbar, wenn das Auto streikt.',
     ctaNoun: 'Kunden',
     warumParagraphs: [
       'Defekt, TÜV, Reifenwechsel — Nutzer suchen „Werkstatt in der Nähe“ sofort auf dem Handy. Maps entscheidet.',
@@ -666,32 +593,7 @@ export const BRANCHE_PAGES: BranchePageData[] = [
       'Nach 6 Monaten: mehr Anrufe und Termine aus Google Maps und organischen Treffern.',
     ],
     kostenParagraphs: kostenStandard('Werkstätten'),
-    faqs: [
-      {
-        q: 'Wie lange dauert SEO für eine KFZ-Werkstatt, bis Ergebnisse sichtbar werden?',
-        a: 'Erste Verbesserungen über das Google Business Profile sind oft nach 4–6 Wochen sichtbar. Für organische Rankings bei Keywords wie „KFZ Werkstatt München“ solltest du mit 3–6 Monaten rechnen. Stadtteil-Keywords wie „TÜV Schwabing“ zeigen schneller Ergebnisse, da der Wettbewerb geringer ist.',
-      },
-      {
-        q: 'Lohnt sich SEO für eine kleine freie Werkstatt?',
-        a: 'Gerade für freie Werkstätten ist SEO besonders wirkungsvoll. Du konkurrierst online mit Ketten wie ATU oder Euromaster, die große Budgets haben. Mit lokalem SEO kannst du genau die Kunden erreichen, die eine Werkstatt in ihrer Nähe suchen — und die bereit sind, für persönlichen Service zu zahlen. Schon 10 Neukunden pro Monat über Google decken die SEO-Kosten mehrfach.',
-      },
-      {
-        q: 'Was kostet SEO für KFZ-Werkstätten?',
-        a: 'Professionelle SEO-Betreuung für KFZ-Werkstätten beginnt bei 990 EUR pro Monat. Dafür erhältst du Google Business Profile Optimierung, lokale Keyword-Strategie, Leistungsseiten für jeden Service und Bewertungsmanagement. Gemessen am Kundenwert — eine Inspektion bringt 200–500 EUR, ein TÜV-Termin 100–150 EUR — amortisiert sich das schnell.',
-      },
-      {
-        q: 'Brauche ich als Werkstatt eine neue Website für SEO?',
-        a: 'Nicht unbedingt. In vielen Fällen lässt sich die bestehende Website optimieren — mit besserer Struktur, Leistungsseiten und mobiler Darstellung. Nur wenn die Seite technisch veraltet ist (kein responsives Design, extrem langsam), empfehlen wir einen Relaunch. Das klären wir im kostenlosen Erstgespräch.',
-      },
-      {
-        q: 'Ist Google Business Profile wirklich kostenlos?',
-        a: 'Ja, Google Business Profile ist komplett kostenlos. Du erstellst ein Profil, verifizierst deine Werkstatt und pflegst Fotos, Öffnungszeiten, Leistungen und Bewertungen. Es ist der wichtigste einzelne Hebel für lokale Sichtbarkeit — und trotzdem haben viele Werkstätten kein vollständig optimiertes Profil.',
-      },
-      {
-        q: 'Soll ich neben SEO auch Google Ads schalten?',
-        a: 'Google Ads kann sinnvoll sein, um die Zeit zu überbrücken, bis organische Rankings greifen — typischerweise die ersten 3–4 Monate. Langfristig ist SEO kosteneffizienter, weil du nicht für jeden Klick zahlst. Die ideale Strategie: SEO als Basis aufbauen, Ads kurzfristig ergänzen, dann schrittweise reduzieren.',
-      },
-    ],
+    faqs: [...KFZ_V2_FAQS],
     relatedSlugs: [...REL['kfz-werkstatt']],
   },
 ]

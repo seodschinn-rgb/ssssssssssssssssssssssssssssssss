@@ -2,11 +2,15 @@
 
 import { useEffect } from 'react'
 
-/** Scroll-Reveals für Branchen-Hub v2 */
-export default function BranchenInteractions() {
+/** Scroll-Reveals für Branchen-Hub / Branchen-Unterseiten v2 */
+export default function BranchenInteractions({
+  rootSelector = '.branchen-v2',
+}: {
+  rootSelector?: string
+}) {
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const root = document.querySelector('.branchen-v2')
+    const root = document.querySelector(rootSelector)
     if (!root) return
     root.classList.add('js')
 
@@ -31,7 +35,7 @@ export default function BranchenInteractions() {
     }
 
     return () => io?.disconnect()
-  }, [])
+  }, [rootSelector])
 
   return null
 }
