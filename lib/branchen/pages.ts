@@ -22,6 +22,7 @@ import {
   KFZ_V2_FAQS,
 } from './kfz-v2'
 import {
+  RESTAURANTS_FOCUS_KEYWORD,
   RESTAURANTS_META_DESCRIPTION,
   RESTAURANTS_META_TITLE,
   RESTAURANTS_V2_FAQS,
@@ -414,7 +415,7 @@ export const BRANCHE_PAGES: BranchePageData[] = [
     hubEmoji: '🍽️',
     metaTitle: RESTAURANTS_META_TITLE,
     metaDescription: RESTAURANTS_META_DESCRIPTION,
-    focusKeyword: 'seo für restaurants münchen',
+    focusKeyword: RESTAURANTS_FOCUS_KEYWORD,
     h1: 'SEO für Restaurants in München. Mehr Gäste über Google.',
     ctaNoun: 'Gäste',
     warumParagraphs: [

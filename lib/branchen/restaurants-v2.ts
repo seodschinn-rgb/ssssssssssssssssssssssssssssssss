@@ -3,6 +3,7 @@ import type { BrancheFaq } from './types'
 export const RESTAURANTS_META_TITLE = 'SEO für Restaurants München | Mehr Gäste über Google'
 export const RESTAURANTS_META_DESCRIPTION =
   'SEO für Restaurants in München: Google Maps, Speisekarten-SEO und Bewertungen. Mehr Gäste und Reservierungen ohne Portal-Provision. Ab 990 EUR pro Monat.'
+export const RESTAURANTS_FOCUS_KEYWORD = 'SEO für Restaurants München'
 
 /** FAQs — sichtbar + FAQPage Schema zeichenidentisch */
 export const RESTAURANTS_V2_FAQS: BrancheFaq[] = [

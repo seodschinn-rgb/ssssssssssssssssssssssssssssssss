@@ -34,6 +34,7 @@ import {
 import { HOTELS_META_DESCRIPTION, HOTELS_META_TITLE } from '@/lib/branchen/hotels-v2'
 import { KFZ_META_DESCRIPTION, KFZ_META_TITLE } from '@/lib/branchen/kfz-v2'
 import {
+  RESTAURANTS_FOCUS_KEYWORD,
   RESTAURANTS_META_DESCRIPTION,
   RESTAURANTS_META_TITLE,
 } from '@/lib/branchen/restaurants-v2'
@@ -122,6 +123,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     return {
       title: { absolute: RESTAURANTS_META_TITLE },
       description: RESTAURANTS_META_DESCRIPTION,
+      keywords: RESTAURANTS_FOCUS_KEYWORD,
       robots: { index: true, follow: true },
       alternates: { canonical: absoluteCanonical('/branchen/restaurants') },
       openGraph: {
