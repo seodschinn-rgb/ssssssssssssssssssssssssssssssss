@@ -5,10 +5,10 @@ export default function BranchenHero() {
     <section className="hero-b" aria-labelledby="hero-heading">
       <div className="hero-b-media" aria-hidden="true">
         <img
-          src="/images/blog/branchen-hero.png"
+          src="/images/blog/branchen-hero.webp"
           alt=""
-          width={1920}
-          height={900}
+          width={1536}
+          height={1024}
           fetchPriority="high"
           decoding="async"
         />
