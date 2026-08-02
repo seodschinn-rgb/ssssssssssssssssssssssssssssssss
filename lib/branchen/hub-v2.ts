@@ -75,7 +75,7 @@ export const BRANCHEN_HUB_CARDS = [
     go: 'SEO für Restaurants',
     schemaName: 'SEO für Restaurants',
     image: '/images/blog/branche-restaurants.webp',
-    alt: 'Kellner trägt Teller durch ein elegant gedecktes Restaurant',
+    alt: 'Gedeckte Tische in einem warm beleuchteten Restaurant',
     featured: false,
     priority: false,
   },

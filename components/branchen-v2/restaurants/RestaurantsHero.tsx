@@ -51,7 +51,7 @@ export default function RestaurantsHero() {
             </span>
             <img
               src="/images/blog/branche-restaurants.webp"
-              alt="Kellner trägt Teller durch ein elegant gedecktes Restaurant"
+              alt="Gedeckte Tische in einem warm beleuchteten Restaurant"
               width={1200}
               height={800}
               fetchPriority="high"
