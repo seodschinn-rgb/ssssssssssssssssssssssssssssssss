@@ -17,7 +17,7 @@ let footerWatcher: MutationObserver | null = null
 const listeners = new Set<() => void>()
 
 function emit() {
-  for (const listener of listeners) listener()
+  listeners.forEach((listener) => listener())
 }
 
 function setVisible(next: boolean) {
