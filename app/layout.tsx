@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
+import WhatsAppFloat from '@/components/WhatsAppFloat'
 import './globals.css'
 import './site-chrome.css'
 
@@ -58,7 +59,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={dmSans.variable} suppressHydrationWarning>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        {children}
+        <WhatsAppFloat />
+      </body>
     </html>
   )
 }
