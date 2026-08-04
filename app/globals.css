@@ -131,11 +131,19 @@
   border-radius: 50%;
   color: #fff;
   box-shadow: 0 8px 24px rgba(16, 26, 51, 0.22);
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.28s ease,
+    opacity 0.28s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    visibility 0.28s;
   text-decoration: none;
   border: 0;
   cursor: pointer;
   padding: 0;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .wa-float {
   bottom: 1.75rem;
@@ -145,13 +153,20 @@
   bottom: calc(1.75rem + 4rem + 0.85rem);
   background: #2563eb;
 }
-.wa-float:hover {
+.wa-float.is-scroll-hidden,
+.termin-float.is-scroll-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0.85rem);
+}
+.wa-float:hover:not(.is-scroll-hidden) {
   background: #1ebe57;
   color: #fff;
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 12px 28px rgba(16, 26, 51, 0.28);
 }
-.termin-float:hover {
+.termin-float:hover:not(.is-scroll-hidden) {
   background: #1d4ed8;
   color: #fff;
   transform: translateY(-2px) scale(1.04);
@@ -162,17 +177,19 @@
   outline: 2px solid #101a33;
   outline-offset: 3px;
 }
-.wa-float:active,
-.termin-float:active {
+.wa-float:active:not(.is-scroll-hidden),
+.termin-float:active:not(.is-scroll-hidden) {
   transform: scale(0.96);
 }
 @media (prefers-reduced-motion: reduce) {
   .wa-float,
   .termin-float,
-  .wa-float:hover,
-  .termin-float:hover,
-  .wa-float:active,
-  .termin-float:active {
+  .wa-float:hover:not(.is-scroll-hidden),
+  .termin-float:hover:not(.is-scroll-hidden),
+  .wa-float:active:not(.is-scroll-hidden),
+  .termin-float:active:not(.is-scroll-hidden),
+  .wa-float.is-scroll-hidden,
+  .termin-float.is-scroll-hidden {
     transition: none;
     transform: none;
   }

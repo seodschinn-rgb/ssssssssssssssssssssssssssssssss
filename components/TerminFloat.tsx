@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useId, useRef, useState } from 'react'
+import { useFloatChromeVisible } from '@/lib/useFloatChromeVisible'
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || 'xvzbgggb'
 const FORMSPREE_ENDPOINT = `https://formspree.io/f/${FORMSPREE_ID}`
@@ -31,6 +32,8 @@ export default function TerminFloat() {
   const formRef = useRef<HTMLFormElement>(null)
   const closeBtnRef = useRef<HTMLButtonElement>(null)
   const titleId = useId()
+  const chromeVisible = useFloatChromeVisible()
+  const buttonVisible = open || chromeVisible
 
   const selectableDates = Array.from({ length: 5 }, (_, i) => {
     const d = new Date()
@@ -125,7 +128,7 @@ export default function TerminFloat() {
     <>
       <button
         type="button"
-        className="termin-float"
+        className={`termin-float${buttonVisible ? '' : ' is-scroll-hidden'}`}
         onClick={() => {
           setOpen(true)
           if (status === 'success') resetFormState()
@@ -133,6 +136,8 @@ export default function TerminFloat() {
         aria-label="Termin vereinbaren"
         aria-haspopup="dialog"
         aria-expanded={open}
+        aria-hidden={!buttonVisible}
+        tabIndex={buttonVisible ? undefined : -1}
       >
         <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false" fill="none">
           <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" />

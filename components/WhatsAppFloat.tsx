@@ -1,13 +1,21 @@
+'use client'
+
+import { useFloatChromeVisible } from '@/lib/useFloatChromeVisible'
+
 const WHATSAPP_URL = 'https://wa.me/message/PYRC4MEDGMJMF1'
 
 export default function WhatsAppFloat() {
+  const visible = useFloatChromeVisible()
+
   return (
     <a
-      className="wa-float"
+      className={`wa-float${visible ? '' : ' is-scroll-hidden'}`}
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Per WhatsApp schreiben"
+      aria-hidden={!visible}
+      tabIndex={visible ? undefined : -1}
     >
       <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true" focusable="false">
         <path
