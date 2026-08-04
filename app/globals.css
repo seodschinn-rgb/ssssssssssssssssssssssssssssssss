@@ -117,23 +117,33 @@
   }
 }
 
-/* Floating WhatsApp (sitewide) */
-.wa-float {
+/* Floating actions (sitewide): Termin + WhatsApp links unten */
+.wa-float,
+.termin-float {
   position: fixed;
-  left: 1.25rem;
-  bottom: 1.25rem;
+  left: 1.75rem;
   z-index: 60;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 50%;
-  background: #25d366;
   color: #fff;
   box-shadow: 0 8px 24px rgba(16, 26, 51, 0.22);
   transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+}
+.wa-float {
+  bottom: 1.75rem;
+  background: #25d366;
+}
+.termin-float {
+  bottom: calc(1.75rem + 4rem + 0.85rem);
+  background: #2563eb;
 }
 .wa-float:hover {
   background: #1ebe57;
@@ -141,26 +151,251 @@
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 12px 28px rgba(16, 26, 51, 0.28);
 }
-.wa-float:focus-visible {
+.termin-float:hover {
+  background: #1d4ed8;
+  color: #fff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 28px rgba(16, 26, 51, 0.28);
+}
+.wa-float:focus-visible,
+.termin-float:focus-visible {
   outline: 2px solid #101a33;
   outline-offset: 3px;
 }
-.wa-float:active {
+.wa-float:active,
+.termin-float:active {
   transform: scale(0.96);
 }
 @media (prefers-reduced-motion: reduce) {
   .wa-float,
+  .termin-float,
   .wa-float:hover,
-  .wa-float:active {
+  .termin-float:hover,
+  .wa-float:active,
+  .termin-float:active {
     transition: none;
     transform: none;
   }
 }
 @media (max-width: 640px) {
-  .wa-float {
-    left: 1rem;
-    bottom: 1rem;
-    width: 3.25rem;
-    height: 3.25rem;
+  .wa-float,
+  .termin-float {
+    left: 1.35rem;
+    width: 3.65rem;
+    height: 3.65rem;
   }
+  .wa-float {
+    bottom: 1.35rem;
+  }
+  .termin-float {
+    bottom: calc(1.35rem + 3.65rem + 0.8rem);
+  }
+}
+
+/* Termin modal */
+.termin-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+}
+@media (min-width: 640px) {
+  .termin-modal {
+    align-items: center;
+    padding: 1.5rem;
+  }
+}
+.termin-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  background: rgba(16, 26, 51, 0.45);
+  cursor: pointer;
+}
+.termin-modal-panel {
+  position: relative;
+  width: min(100%, 34rem);
+  max-height: min(90vh, 44rem);
+  overflow: auto;
+  background: #fff;
+  color: #101a33;
+  border-radius: 20px;
+  border: 1px solid #e4e7ee;
+  box-shadow: 0 24px 60px rgba(16, 26, 51, 0.28);
+  padding: 1.25rem 1.25rem 1.5rem;
+  -webkit-overflow-scrolling: touch;
+}
+.termin-modal-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+.termin-modal-eyebrow {
+  margin: 0 0 0.35rem;
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #5f6c88;
+}
+.termin-modal-head h2 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.termin-modal-close {
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid #cbd2e0;
+  background: #fff;
+  color: #101a33;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.termin-modal-close:hover {
+  border-color: #2563eb;
+  color: #1d4ed8;
+}
+.termin-modal-form {
+  display: grid;
+  gap: 1rem;
+}
+.termin-modal-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  min-width: 0;
+}
+.termin-modal-fieldset legend {
+  margin-bottom: 0.55rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #101a33;
+}
+.termin-modal-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.termin-chip {
+  border: 1px solid #e4e7ee;
+  background: #f3f5f9;
+  color: #101a33;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.termin-chip:hover {
+  border-color: #2563eb;
+  color: #1d4ed8;
+}
+.termin-chip.is-active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+.termin-modal-fields {
+  display: grid;
+  gap: 0.75rem;
+}
+.termin-modal-fields label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5670;
+}
+.termin-modal-fields input,
+.termin-modal-fields textarea {
+  width: 100%;
+  border: 1px solid #cbd2e0;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  font: inherit;
+  font-size: 16px; /* iOS: kein Auto-Zoom */
+  color: #101a33;
+  background: #fff;
+  outline: none;
+}
+.termin-modal-fields input:focus,
+.termin-modal-fields textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+.termin-modal-summary {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #4a5670;
+}
+.termin-modal-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.25rem;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: #2563eb;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+.termin-modal-submit:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+.termin-modal-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.termin-modal-error {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+  border-radius: 12px;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.875rem;
+}
+.termin-modal-success {
+  text-align: center;
+  padding: 1rem 0 0.25rem;
+}
+.termin-modal-success-icon {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.9rem;
+  border-radius: 999px;
+  background: #10b981;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+.termin-modal-success h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+.termin-modal-success p {
+  margin: 0 0 1.25rem;
+  color: #4a5670;
 }
