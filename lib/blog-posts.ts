@@ -21,6 +21,7 @@ import { websiteNichtGefunden2026Content } from './blog-posts/website-nicht-gefu
 import { aiSeo2026Content } from './blog-posts/ai-seo-2026-content'
 import { aiOverviewsOptimierenContent } from './blog-posts/ai-overviews-optimieren-content'
 import { wasIstGeoContent } from './blog-posts/was-ist-geo-content'
+import { seoTexteSchreibenContent } from './blog-posts/seo-texte-schreiben-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -49,6 +50,52 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'seo-texte-schreiben',
+    title: 'SEO-Texte schreiben: wie du Texte erstellst, die Google und Leser überzeugen',
+    metaTitle: 'SEO-Texte schreiben 2026: Anleitung, Beispiele, Checkliste',
+    metaDescription:
+      'SEO-Texte schreiben in 7 Schritten: von der Suchintention bis zur Messung. Mit Checkliste, Beispielen und dem KI-Teil, der dir ehrlich sagt, was geht.',
+    focusKeyword: 'seo texte',
+    authorName: 'Julian Schäfer',
+    category: 'content-keywords',
+    content: seoTexteSchreibenContent,
+    image: '/images/blog/seo-texte-thumbnail.webp',
+    imageAlt:
+      'SEO-Texte schreiben 2026: Editor-Mockup mit H1- und H2-Gerüst, grün markiertem Keyword und den Chips 7 Schritte, Antwort zuerst und E-E-A-T.',
+    faqs: [
+      {
+        question: 'Was kostet ein SEO-Text?',
+        answer:
+          'Eine seriöse Pauschale gibt es nicht: Der Preis hängt vom Rechercheaufwand, der Länge, dem Thema und davon ab, ob Strategie, Snippet und Erfolgsmessung enthalten sind. Abgerechnet wird je nach Anbieter pro Wort, pro Text oder als monatliches Paket. Als Faustregel gilt: Je erklärungsbedürftiger das Thema und je härter der Wettbewerb, desto mehr Arbeitszeit steckt in einem Text, der wirkt. Unsere Paketpreise findest du transparent auf der Preisseite.',
+      },
+      {
+        question: 'Wie lang muss ein SEO-Text sein?',
+        answer:
+          'So lang, wie die vollständige Antwort braucht: Eine bevorzugte Wortzahl hat Google nach eigener Aussage nicht. Orientiere dich an der Suchintention und an den Texten, die aktuell ranken. Eine lokale Leistungsseite kommt oft mit wenigen hundert Wörtern aus, ein Ratgeber zu einem komplexen Thema braucht deutlich mehr. Füllabsätze, nur um eine Zielzahl zu erreichen, machen den Text schlechter statt besser.',
+      },
+      {
+        question: 'Wie viele Keywords soll ein SEO-Text enthalten?',
+        answer:
+          'Vergiss feste Dichte-Formeln, sie sind seit Jahren überholt. Arbeite mit einem Haupt-Keyword pro Text und einem Umfeld aus Varianten und Unterfragen. Das Haupt-Keyword gehört in den Title, die H1, die ersten Sätze und ein bis zwei Zwischenüberschriften; danach schreibst du normal weiter. Sobald ein Satz durch ein Keyword schlechter wird, lass das Keyword weg.',
+      },
+      {
+        question: 'Erkennt Google KI-Texte, und werden sie abgestraft?',
+        answer:
+          'Google bewertet nach eigener Aussage die Qualität, nicht die Produktionsart: Hochwertige Inhalte werden belohnt, egal ob mit oder ohne KI erstellt, und der angemessene KI-Einsatz verstößt nicht gegen die Richtlinien. Abgestraft wird skalierter Content-Missbrauch, also massenhaft erzeugte Seiten ohne Mehrwert mit dem Hauptzweck der Ranking-Manipulation. Riskant ist damit nicht das Werkzeug, sondern ungeprüfte Massenware.',
+      },
+      {
+        question: 'Wie schnell wirkt ein SEO-Text?',
+        answer:
+          'Erfahrungsgemäß brauchst du Geduld: Neue Texte pendeln sich je nach Wettbewerb, Thema und Stärke deiner Domain über Wochen bis Monate ein. Erste Einblendungen siehst du in der Search Console oft nach wenigen Tagen, belastbare Positionen meist erst nach mehreren Wochen. Plane deine erste Auswertung nach vier bis acht Wochen ein und schärfe dann gezielt nach.',
+      },
+      {
+        question: 'Was unterscheidet einen SEO-Text von einem normalen Text?',
+        answer:
+          'Die Vorarbeit und die Messbarkeit. Ein SEO-Text startet bei einer konkreten Suchanfrage, deckt die Absicht dahinter vollständig ab und ist auf Snippet, Überschriften-Gerüst und interne Verlinkung hin gebaut; nach der Veröffentlichung wird seine Wirkung in der Search Console geprüft. Sprachlich gilt dasselbe wie für jeden guten Text: klar, konkret, für Menschen geschrieben. Ein Text, der nach Suchmaschine klingt, ist kein guter SEO-Text.',
+      },
+    ],
+  },
   {
     slug: 'ai-overviews-optimieren',
     title: 'Google AI Overviews: wie du deine Inhalte dafür optimierst',
