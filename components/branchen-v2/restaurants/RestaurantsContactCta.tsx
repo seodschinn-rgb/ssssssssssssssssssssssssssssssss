@@ -15,8 +15,8 @@ export default function RestaurantsContactCta() {
             Fahrplan für mehr Gäste und Reservierungen. Kostenlos und ohne Bindung.
           </p>
           <div className="contact-ctas">
-            <a className="btn btn-primary" href="tel:+4915565087694">
-              Jetzt anrufen: +49 155 65087694
+            <a className="btn btn-primary" href="tel:+4915233524138">
+              Jetzt anrufen: +49 152 33524138
             </a>
             <a className="btn btn-ghost" href="mailto:info@seomuenchen.com">
               E-Mail schreiben

@@ -38,8 +38,8 @@ export default function ImpressumPage() {
               <p>E-Mail: info@seomuenchen.com</p>
               <p>
                 Telefon:{' '}
-                <a href="tel:+4915565087694" className="text-indigo-600 hover:underline">
-                  +49 155 65087694
+                <a href="tel:+4915233524138" className="text-indigo-600 hover:underline">
+                  +49 152 33524138
                 </a>
               </p>
             </div>

@@ -374,7 +374,7 @@ const aerzteP6 = `
       <a href="/kontakt" class="cta-btn">Kostenlose Erstberatung anfragen</a>
     </p>
     <p style="font-size:0.95rem;margin-top:16px">
-      Oder direkt Kontakt aufnehmen: <a href="tel:+4915565087694">+49 155 65087694</a> &nbsp;|&nbsp; <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a>
+      Oder direkt Kontakt aufnehmen: <a href="tel:+4915233524138">+49 152 33524138</a> &nbsp;|&nbsp; <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a>
     </p>
   </div>
 

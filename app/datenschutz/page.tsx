@@ -26,7 +26,7 @@ export default function DatenschutzPage() {
           <section className="mt-10 space-y-8 text-zinc-700 prose prose-zinc max-w-none">
             <div>
               <h2 className="text-lg font-semibold text-zinc-900 mb-2">1. Verantwortlicher</h2>
-              <p>Venus Management GbR, Ringsdorf<br />E-Mail: info@seomuenchen.com<br />Telefon: <a href="tel:+4915565087694" className="text-indigo-600 hover:underline">+49 155 65087694</a></p>
+              <p>Venus Management GbR, Ringsdorf<br />E-Mail: info@seomuenchen.com<br />Telefon: <a href="tel:+4915233524138" className="text-indigo-600 hover:underline">+49 152 33524138</a></p>
             </div>
 
             <div>

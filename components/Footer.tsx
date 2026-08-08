@@ -60,7 +60,7 @@ export default function Footer() {
             <h2>Kontakt</h2>
             <ul>
               <li>
-                <a href="tel:+4915565087694">+49 155 65087694</a>
+                <a href="tel:+4915233524138">+49 152 33524138</a>
               </li>
               <li>
                 <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a>

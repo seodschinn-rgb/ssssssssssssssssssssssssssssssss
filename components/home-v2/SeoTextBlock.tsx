@@ -187,7 +187,7 @@ export default function SeoTextBlock() {
               <p>
                 Du willst dein <Link href="/blog/google-ranking-verbessern">Google Ranking in München verbessern</Link>
                 ? Vereinbare dein kostenloses Erstgespräch über das Formular weiter unten oder ruf direkt an:{' '}
-                <a href="tel:+4915565087694">+49 155 65087694</a> |{' '}
+                <a href="tel:+4915233524138">+49 152 33524138</a> |{' '}
                 <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a>. Antwort in der Regel innerhalb von 24
                 Stunden.
               </p>

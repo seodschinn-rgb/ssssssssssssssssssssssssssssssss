@@ -294,7 +294,7 @@ export const immobilienmaklerPageInnerHtml = `
     <p>Lass uns gemeinsam herausfinden, wie viel Potenzial in deiner Online-Sichtbarkeit steckt. Wir analysieren dein Google-Ranking, dein Bewertungsprofil und deine Website &mdash; und zeigen dir einen konkreten Fahrplan f&uuml;r mehr Eigent&uuml;mer-Leads ohne Portalabh&auml;ngigkeit.</p>
     <a href="/kontakt" class="cta-btn">Kostenloses Erstgespr&auml;ch vereinbaren</a>
     <p style="font-size:0.88rem; margin-top:16px; margin-bottom:0; opacity:0.85;">
-      Oder direkt: <a href="tel:+4915565087694" style="color:#fff; text-decoration:underline;">+49 155 65087694</a> &nbsp;|&nbsp; <a href="mailto:info@seomuenchen.com" style="color:#fff; text-decoration:underline;">info@seomuenchen.com</a><br>
+      Oder direkt: <a href="tel:+4915233524138" style="color:#fff; text-decoration:underline;">+49 152 33524138</a> &nbsp;|&nbsp; <a href="mailto:info@seomuenchen.com" style="color:#fff; text-decoration:underline;">info@seomuenchen.com</a><br>
       Innerhalb von 24 Stunden &mdash; ohne Bindung
     </p>
   </div>

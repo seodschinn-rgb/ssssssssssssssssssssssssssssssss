@@ -243,7 +243,7 @@ export const preisePageContent =
   <div class="fazit">
     <h2 id="erstgespraech">Starte mit einem kostenlosen Erstgespr&auml;ch</h2>
     <p>Du hast die Preise gesehen, jetzt fehlt nur noch der erste Schritt: Wir analysieren deine Website, zeigen dir dein Potenzial im M&uuml;nchner Markt und empfehlen das Paket, das zu deinen Zielen und deinem Budget passt. Kostenlos und ohne Bindung.</p>
-    <p>Ruf uns an unter <strong>+49 155 65087694</strong>, schreib an <strong>info@seomuenchen.com</strong> oder nutze das <a href="/kontakt" class="internal-link">Kontaktformular</a>. Du bekommst innerhalb von 24 Stunden eine Antwort.</p>
+    <p>Ruf uns an unter <strong>+49 152 33524138</strong>, schreib an <strong>info@seomuenchen.com</strong> oder nutze das <a href="/kontakt" class="internal-link">Kontaktformular</a>. Du bekommst innerhalb von 24 Stunden eine Antwort.</p>
   </div>
 ` +
   '</div>'

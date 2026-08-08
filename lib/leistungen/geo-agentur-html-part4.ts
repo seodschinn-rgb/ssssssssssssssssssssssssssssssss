@@ -20,7 +20,7 @@ export const geoAgenturHtmlPart4 = `
 
     <div class="geo-contact">
       <p>
-        Telefon: <a href="tel:+4915565087694">+49 155 65087694</a><br>
+        Telefon: <a href="tel:+4915233524138">+49 152 33524138</a><br>
         E-Mail: <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a><br>
         <em>Antwort innerhalb von 24 Stunden &mdash; kostenlos und ohne Bindung.</em>
       </p>

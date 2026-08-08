@@ -15,7 +15,7 @@ export default function HomePageSchema() {
         '@type': 'ProfessionalService',
         name: 'SEO München',
         url: SITE_URL,
-        telephone: '+4915565087694',
+        telephone: '+4915233524138',
         email: 'info@seomuenchen.com',
         description:
           'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',

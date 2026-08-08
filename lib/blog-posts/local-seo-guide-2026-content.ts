@@ -463,7 +463,7 @@ export const localSeoGuide2026Content = `
   <p>Local SEO ist 2026 kein optionales Add-on &mdash; es ist die Grundlage f&uuml;r lokale Kundengewinnung. Von der GBP-Optimierung &uuml;ber Bewertungsmanagement bis zur KI-Sichtbarkeit: Die Ma&szlig;nahmen in diesem Guide bilden ein vollst&auml;ndiges System, das dir nachhaltig mehr lokale Kunden bringt.</p>
   <p>Als <strong>SEO-Agentur in M&uuml;nchen</strong> unterst&uuml;tzen wir lokale Unternehmen und KMU dabei, messbar bessere Rankings und mehr Kunden &uuml;ber Google zu gewinnen. Vereinbare jetzt dein kostenloses Erstgespr&auml;ch &mdash; ohne Bindung, ohne Verkaufsdruck.</p>
   <a href="/kontakt" class="cta-btn">Kostenloses Erstgespr&auml;ch vereinbaren</a>
-  <a href="tel:+4915565087694" class="cta-btn">+49 155 65087694</a>
+  <a href="tel:+4915233524138" class="cta-btn">+49 152 33524138</a>
   <div class="cta-contact">
     Oder schreib uns direkt: <a href="mailto:info@seomuenchen.com" style="color:#fff; text-decoration:underline;">info@seomuenchen.com</a>
   </div>

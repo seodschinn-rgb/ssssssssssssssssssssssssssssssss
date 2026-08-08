@@ -736,7 +736,7 @@ export default function LeistungPage({ params }: PageProps) {
   <div class="audit-cta">
     <p>Du willst wissen, wo deine Website steht?</p>
     <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch vereinbaren</a>
-    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915565087694" style="color:#fff; text-decoration:underline;">+49 155 65087694</a></span>
+    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915233524138" style="color:#fff; text-decoration:underline;">+49 152 33524138</a></span>
   </div>
 
   <h2>Was kostet ein SEO-Audit?</h2>
@@ -802,7 +802,7 @@ export default function LeistungPage({ params }: PageProps) {
   <div class="audit-cta">
     <p>Bereit für deinen SEO-Audit in München?</p>
     <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch sichern</a>
-    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915565087694" style="color:#fff; text-decoration:underline;">+49 155 65087694</a></span>
+    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915233524138" style="color:#fff; text-decoration:underline;">+49 152 33524138</a></span>
   </div>
 
   <p class="audit-closing">
@@ -1239,7 +1239,7 @@ export default function LeistungPage({ params }: PageProps) {
   <div class="local-cta">
     <p>Du willst wissen, wo dein lokales Ranking aktuell steht?</p>
     <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch vereinbaren</a>
-    <span class="phone">Oder ruf uns an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+    <span class="phone">Oder ruf uns an: <a href="tel:+4915233524138">+49 152 33524138</a></span>
   </div>
 
   <h2>Was uns von anderen Agenturen unterscheidet</h2>
@@ -1335,7 +1335,7 @@ export default function LeistungPage({ params }: PageProps) {
   <div class="local-cta">
     <p>Bereit für mehr Sichtbarkeit in München?</p>
     <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch sichern</a>
-    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915233524138">+49 152 33524138</a></span>
   </div>
 
   <p class="closing-note">
@@ -1791,7 +1791,7 @@ export default function LeistungPage({ params }: PageProps) {
   <div class="tech-cta">
     <p>Du willst wissen, wo deine Website technisch steht?</p>
     <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch vereinbaren</a>
-    <span class="phone">Oder ruf uns an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+    <span class="phone">Oder ruf uns an: <a href="tel:+4915233524138">+49 152 33524138</a></span>
   </div>
 
   <h2>Was uns von anderen Tech-SEO-Agenturen unterscheidet</h2>
@@ -1887,7 +1887,7 @@ export default function LeistungPage({ params }: PageProps) {
   <div class="tech-cta">
     <p>Bereit für saubere Tech-SEO-Grundlagen?</p>
     <a href="/kontakt/" class="cta-btn">Kostenloses Erstgespräch sichern</a>
-    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915565087694">+49 155 65087694</a></span>
+    <span class="phone">Oder ruf uns direkt an: <a href="tel:+4915233524138">+49 152 33524138</a></span>
   </div>
 
   <p class="closing-note">

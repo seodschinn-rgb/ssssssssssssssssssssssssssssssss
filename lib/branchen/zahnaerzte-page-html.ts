@@ -346,7 +346,7 @@ const z6 = `
     <p>Lass uns gemeinsam herausfinden, wie viel Potenzial in der Online-Sichtbarkeit deiner Praxis steckt. Wir analysieren dein Google-Ranking, dein Bewertungsprofil und deine Website — und zeigen dir einen konkreten Fahrplan für mehr Neupatienten.</p>
     <a href="/kontakt" class="cta-btn">Kostenloses Erstgespräch vereinbaren</a>
     <p style="font-size:0.88rem;margin-top:16px;margin-bottom:0;opacity:0.85;">
-      Oder direkt: <a href="tel:+4915565087694" style="color:#fff;text-decoration:underline;">+49 155 65087694</a> &nbsp;|&nbsp; <a href="mailto:info@seomuenchen.com" style="color:#fff;text-decoration:underline;">info@seomuenchen.com</a><br>
+      Oder direkt: <a href="tel:+4915233524138" style="color:#fff;text-decoration:underline;">+49 152 33524138</a> &nbsp;|&nbsp; <a href="mailto:info@seomuenchen.com" style="color:#fff;text-decoration:underline;">info@seomuenchen.com</a><br>
       Innerhalb von 24 Stunden — ohne Bindung
     </p>
   </div>

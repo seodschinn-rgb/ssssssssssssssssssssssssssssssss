@@ -573,7 +573,7 @@ export const googleBusinessProfileOptimieren2026Content = `
   <p>Du willst dein GBP auf Vordermann bringen, aber die Umsetzung soll ein Profi &uuml;bernehmen? Als <strong>Local-SEO-Agentur in M&uuml;nchen</strong> optimieren wir dein Google Business Profile, bauen deine Bewertungsstrategie auf und sorgen daf&uuml;r, dass du im Local Pack dort erscheinst, wo deine Kunden suchen.</p>
   <a href="/kontakt" class="cta-btn">Kostenlose Erstberatung anfragen</a>
   <a href="/preise" class="cta-btn cta-btn--secondary">Unsere Preise ansehen</a>
-  <a href="tel:+4915565087694" class="cta-btn">+49 155 65087694</a>
+  <a href="tel:+4915233524138" class="cta-btn">+49 152 33524138</a>
   <div class="cta-contact">Oder schreib uns: <a href="mailto:info@seomuenchen.com" style="color:rgba(255,255,255,0.95);text-decoration:underline;">info@seomuenchen.com</a></div>
 </div>
 

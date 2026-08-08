@@ -360,8 +360,8 @@ export default function Header() {
         </div>
 
         <div className="nav-mobile-actions">
-          <a className="nav-mobile-phone" href="tel:+4915565087694">
-            Anrufen: +49 155 65087694
+          <a className="nav-mobile-phone" href="tel:+4915233524138">
+            Anrufen: +49 152 33524138
           </a>
           <Link className="btn btn-primary" href="/kontakt" onClick={() => setMenuOpen(false)}>
             Kostenloses Erstgespräch

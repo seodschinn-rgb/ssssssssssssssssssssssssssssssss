@@ -67,7 +67,7 @@ export const homeSeoTextHtml = `
 
 <p class="home-seo-text-closing">Du willst dein <strong>Google Ranking in München verbessern</strong> und dauerhaft auf Seite&nbsp;1 erscheinen? Starte jetzt mit <strong>SEO München</strong> — vereinbare dein kostenloses Erstgespräch über das <a href="#kontakt">Formular hier unten</a>.</p>
 
-<p class="home-seo-text-contact">Oder direkt anrufen: <a href="tel:+4915565087694">+49 155 65087694</a> | <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a> — Antwort in der Regel innerhalb von 24 Stunden.</p>
+<p class="home-seo-text-contact">Oder direkt anrufen: <a href="tel:+4915233524138">+49 152 33524138</a> | <a href="mailto:info@seomuenchen.com">info@seomuenchen.com</a> — Antwort in der Regel innerhalb von 24 Stunden.</p>
 
 </div>
 `
