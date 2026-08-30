@@ -22,6 +22,7 @@ import { aiSeo2026Content } from './blog-posts/ai-seo-2026-content'
 import { aiOverviewsOptimierenContent } from './blog-posts/ai-overviews-optimieren-content'
 import { wasIstGeoContent } from './blog-posts/was-ist-geo-content'
 import { seoTexteSchreibenContent } from './blog-posts/seo-texte-schreiben-content'
+import { seoRelaunchChecklisteContent } from './blog-posts/seo-relaunch-checkliste-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -50,6 +51,52 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'seo-relaunch-checkliste',
+    title: 'SEO-Relaunch-Checkliste für KMU: Rankings beim Relaunch schützen',
+    metaTitle: 'SEO-Relaunch-Checkliste 2026: Rankings schützen',
+    metaDescription:
+      'SEO-Relaunch-Checkliste für KMU: So sicherst du URLs, Redirects, Indexierung und Tracking vor, beim und nach dem Website-Relaunch Schritt für Schritt.',
+    focusKeyword: 'SEO Relaunch Checkliste',
+    authorName: 'SEO München Redaktion',
+    category: 'technisches-seo',
+    content: seoRelaunchChecklisteContent,
+    image: '/images/blog/seo-relaunch-checkliste-thumbnail.webp',
+    imageAlt:
+      'SEO-Relaunch-Checkliste mit den Phasen Planung, Staging, Go-live und Monitoring',
+    faqs: [
+      {
+        question: 'Kann ein Website-Relaunch ohne Rankingverlust garantiert werden?',
+        answer:
+          'Nein. Auch bei sorgfältiger Vorbereitung können Rankings vorübergehend schwanken, weil Suchmaschinen URLs und Inhalte neu crawlen und bewerten. Ein vollständiges URL-Mapping, korrekt umgesetzte Redirects und enges Monitoring minimieren das Risiko, garantieren aber keine unveränderten Positionen.',
+      },
+      {
+        question: 'Sollte ich beim Relaunch 301 oder 308 verwenden?',
+        answer:
+          'Für dauerhaft umgezogene Inhaltsseiten sind sowohl 301 als auch 308 als permanente serverseitige Redirects geeignet. Ein 308 erhält die HTTP-Methode verbindlich, während ein 301 bei manchen Clients einen Methodenwechsel zulassen kann. Entscheidend sind ein passendes Ziel und eine direkte Weiterleitung ohne Kette.',
+      },
+      {
+        question: 'Wie lange müssen Relaunch-Weiterleitungen bestehen bleiben?',
+        answer:
+          'Permanente Weiterleitungen sollten mindestens ein Jahr aktiv bleiben. Wenn alte URLs weiterhin über Backlinks, Bookmarks oder andere Quellen aufgerufen werden, ist eine längere oder dauerhafte Beibehaltung sinnvoll.',
+      },
+      {
+        question: 'Muss jede gelöschte Seite weitergeleitet werden?',
+        answer:
+          'Nein. Eine gelöschte URL sollte nur dann permanent weitergeleitet werden, wenn es einen inhaltlich passenden Ersatz gibt. Ohne gleichwertiges Ziel sind ein echter 404- oder 410-Status sinnvoller als eine pauschale Weiterleitung zur Startseite.',
+      },
+      {
+        question: 'Darf die Staging-Website über robots.txt gesperrt werden?',
+        answer:
+          'Eine robots.txt-Sperre allein schützt eine Staging-Website nicht zuverlässig vor einer Aufnahme der URL in Suchergebnisse. Nutze vorzugsweise einen Zugriffsschutz. Ein noindex kann nur sicher verarbeitet werden, wenn der Crawler die Seite abrufen darf.',
+      },
+      {
+        question: 'Wann nutze ich Change of Address in der Search Console?',
+        answer:
+          'Nutze Change of Address bei einem vollständigen Wechsel von einer Domain oder Subdomain auf eine andere. Für Pfadänderungen innerhalb derselben Domain, HTTP-zu-HTTPS, www-zu-non-www oder einen reinen Hostingwechsel ist das Tool nicht vorgesehen.',
+      },
+    ],
+  },
   {
     slug: 'seo-texte-schreiben',
     title: 'SEO-Texte schreiben: wie du Texte erstellst, die Google und Leser überzeugen',
