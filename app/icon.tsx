@@ -1,5 +1,8 @@
 import { ImageResponse } from 'next/server'
 
+// Avoid the Node font-file loader; these icons have no filesystem dependencies.
+export const runtime = 'edge'
+
 /**
  * 48×48 PNG-Favicon für Browser und Google Search Console (Google nutzt mind. 48×48).
  */

@@ -74,6 +74,7 @@ const POSTS: BlogPost[] = [
     imageWidth: 1672,
     imageHeight: 941,
     schemaType: 'BlogPosting',
+    publishedAt: '2026-09-05',
     updatedAt: '2026-09-05',
   },
   {

@@ -5,6 +5,20 @@ export const wieLangeDauertSeoContent = `<div class="sm-article">
 <div class="intro">
 <p>Wie lange dauert SEO? <strong>Plane ein SEO-Projekt über mehrere Monate.</strong> Das ist ein Planungsrahmen, keine Frist für Rankings oder Anfragen. Einzelne Änderungen können laut Google innerhalb von Stunden wirksam werden, andere erst nach Monaten. Beurteile ihre Wirkung in der Regel erst nach einigen Wochen. Die sinnvolle Beobachtungsdauer hängt davon ab, <strong>welches Ergebnis</strong> du erwartest: Indexierung, Sichtbarkeit, Besuche, qualifizierte Anfragen oder wirtschaftlichen Nutzen – und wann die Maßnahmen tatsächlich live gingen.</p>
 </div>
+<nav class="sm-toc" aria-label="Inhaltsverzeichnis">
+<p class="sm-toc-title">Inhaltsverzeichnis</p>
+<ol>
+<li><a href="#was-bedeutet-seo-wirkt">Was bedeutet „SEO wirkt“ überhaupt?</a></li>
+<li><a href="#kein-einheitlicher-seo-zeitplan">Warum es keinen einheitlichen SEO-Zeitplan gibt</a></li>
+<li><a href="#typische-ausgangslagen">Typische Ausgangslagen richtig einordnen</a></li>
+<li><a href="#pruefplan">Der 30-/60-/90-Tage-Prüfplan</a></li>
+<li><a href="#fortschritt-messen">Fortschritt messen</a></li>
+<li><a href="#fiktives-beispiel">Ein fiktives lokales Beispiel</a></li>
+<li><a href="#abwarten-oder-nachpruefen">Wann abwarten und wann nachprüfen?</a></li>
+<li><a href="#fazit">Fazit</a></li>
+<li><a href="#faq">Häufige Fragen zur SEO-Dauer</a></li>
+</ol>
+</nav>
 <h2 id="was-bedeutet-seo-wirkt">Was bedeutet „SEO wirkt“ überhaupt?</h2>
 <p>Die Frage „Wie lange dauert SEO?“ klingt nach einem einzigen Ziel. Tatsächlich beschreibt sie mehrere aufeinander aufbauende Zustände. Wer sie vermischt, kann eine indexierte Seite bereits als Erfolg feiern oder eine gute Entwicklung zu früh abbrechen.</p>
 <div class="table-wrapper" role="region" aria-label="SEO-Ergebnisstufen im Vergleich" tabindex="0">
@@ -121,4 +135,3 @@ export const wieLangeDauertSeoContent = `<div class="sm-article">
 <h3>Sind 90 Tage genug, um SEO zu beurteilen?</h3>
 <p>90 Tage können ein sinnvoller Kontrollpunkt sein, aber keine allgemeine Erfolgsgrenze. Entscheidend ist, wann die Maßnahmen tatsächlich live gingen, ob Google sie verarbeiten konnte und ob genügend relevante Daten vorliegen. Nach 90 Tagen solltest du eine begründete nächste Entscheidung treffen können – selbst wenn diese lautet, länger zu beobachten oder einen Blocker zuerst zu lösen.</p>
 </div>`
-

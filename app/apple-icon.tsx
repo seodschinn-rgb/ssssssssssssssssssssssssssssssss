@@ -1,5 +1,7 @@
 import { ImageResponse } from 'next/server'
 
+export const runtime = 'edge'
+
 /**
  * Exakt dieselbe Lupe wie icon.svg – als SVG eingebettet, damit der Stiel nicht knickt.
  */
