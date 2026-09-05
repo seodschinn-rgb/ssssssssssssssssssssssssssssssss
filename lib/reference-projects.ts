@@ -1,0 +1,53 @@
+/** Implementation references only. No unverified performance or client quotes. */
+export const REFERENCE_PROJECTS = [
+  {
+    id: 'vapeoase',
+    number: '01',
+    name: 'VapeOase',
+    domain: 'vapeoase.de',
+    category: 'E-Commerce · Deutschland',
+    platform: 'WordPress & WooCommerce',
+    title: 'SEO-Inhalte für einen bestehenden Online-Shop.',
+    summary: 'Keyword-Recherche, redaktionelle Ratgeber und aufbereitete Seiteninhalte für einen bestehenden WooCommerce-Shop.',
+    task: 'In einem gewachsenen Shop haben Ratgeber, Kategorien und Produktseiten unterschiedliche Aufgaben. Unser Auftrag: passende Inhalte ausarbeiten und neue Themen sinnvoll in die bestehende Website einordnen.',
+    image: '/images/referenzen/vapeoase-ratgeber.webp',
+    imageAlt: 'Einblick in den für VapeOase erstellten Ratgeber Vapen im Zug mit gegliedertem Artikelaufbau',
+    imageCaption: 'Ratgeber „Vapen im Zug“ · Ansicht der erstellten Artikelvorlage.',
+    services: [
+      { title: 'Themen mit klarer Aufgabe', text: 'Suchanfragen und bestehende Artikel prüfen, neue Themen abgrenzen und unnötige Überschneidungen bei der Planung vermeiden.' },
+      { title: 'Redaktionelle Umsetzung', text: 'Ratgeber recherchieren, verständlich gliedern und mit Metadaten, passenden Grafiken und internen Verweisen aufbereiten.' },
+      { title: 'Für WordPress vorbereitet', text: 'HTML-Inhalte für die bestehende Website vorbereiten und Darstellung, Abstände und Lesbarkeit in Artikel- und Seitenvorlagen prüfen.' },
+    ],
+    deliverable: 'Rechercheunterlagen, ausgearbeitete Ratgeber, bearbeitete Seiteninhalte und wiederverwendbare HTML-Bausteine für das vorhandene Shopsystem.',
+    scope: 'Unser Beitrag ist die SEO- und Content-Arbeit im bestehenden Shop. Das ursprüngliche Shopdesign stammt nicht von uns.',
+    links: [
+      { href: '/leistungen/keyword-recherche', label: 'Keyword-Recherche' },
+      { href: '/leistungen/onpage-optimierung', label: 'OnPage-Optimierung' },
+    ],
+  },
+  {
+    id: 'capehart',
+    number: '02',
+    name: 'Capehart Heating & Cooling',
+    domain: 'capeharthc.com',
+    category: 'Lokaler Dienstleister · Oklahoma, USA',
+    platform: 'Individuelles WordPress-Theme',
+    title: 'Von der Leistungsübersicht zur direkten Service-Anfrage.',
+    summary: 'Ein individuelles WordPress-Theme, lokal ausgerichtete Leistungsseiten und eine integrierte Terminbuchung für einen Heizungs- und Klimabetrieb.',
+    task: 'Capehart ist in Kiefer ansässig und betreut Hausbesitzer im Großraum Tulsa. Die Website sollte die Leistungen klar erklären, das Einzugsgebiet richtig abbilden und den Weg zur Kontaktaufnahme vereinfachen.',
+    image: '/images/referenzen/capehart-website.webp',
+    imageAlt: 'Startseite von Capehart Heating and Cooling mit lokalem Leistungsangebot und Teamfoto im individuellen WordPress-Theme',
+    imageCaption: 'Website-Ansicht · Capehart Heating & Cooling · September 2026.',
+    services: [
+      { title: 'Eigenes Design & Technik', text: 'Ein individuelles WordPress-Theme mit überarbeiteter Navigation, mobilen Untermenüs sowie angepassten Kontakt- und Service-Buttons.' },
+      { title: 'Lokale Leistungsstruktur', text: 'Cooling und Heating als eigene Bereiche, darunter Seiten für Reparatur, Wartung und Austausch. Ergänzt durch passende Ratgeber und interne Links.' },
+      { title: 'Buchung auf der Seite', text: 'Amelia-Terminbuchung in die Website integriert und die mobile Bedienung überarbeitet – einschließlich Formularhöhe, Auswahlfeldern und Zoomverhalten.' },
+    ],
+    deliverable: 'Ein eigenes WordPress-Theme, neu aufgebaute Leistungsseiten, ein nach Themen filterbarer Guide-Bereich und direkt eingebundene Terminbuchung.',
+    scope: 'Lokale Ausrichtung: Kiefer als Unternehmenssitz, Greater Tulsa als Einzugsgebiet. Die Inhalte sind für den englischsprachigen Markt erstellt.',
+    links: [
+      { href: '/leistungen/local-seo', label: 'Local SEO' },
+      { href: '/leistungen/technisches-seo', label: 'Technisches SEO' },
+    ],
+  },
+] as const

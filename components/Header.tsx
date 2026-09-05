@@ -8,6 +8,7 @@ import { BRANCHE_PAGES } from '@/lib/branchen/pages'
 import BrandMark from '@/components/BrandMark'
 
 const SIMPLE_LINKS = [
+  { href: '/referenzen', label: 'Referenzen' },
   { href: '/preise', label: 'Preise' },
   { href: '/blog', label: 'Blog' },
   { href: '/standorte', label: 'Standorte' },

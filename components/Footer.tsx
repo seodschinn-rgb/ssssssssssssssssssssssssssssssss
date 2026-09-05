@@ -11,6 +11,7 @@ const LEISTUNG_LINKS = [
 ] as const
 
 const THEMEN_LINKS = [
+  { href: '/referenzen', label: 'Referenzen' },
   { href: '/branchen', label: 'Branchen-SEO' },
   { href: '/standorte', label: 'Standorte' },
   { href: '/preise', label: 'Preise' },

@@ -9,6 +9,7 @@ import TrustMarquee from '@/components/home-v2/TrustMarquee'
 import VisibilityRoute from '@/components/home-v2/VisibilityRoute'
 import ServicesBento from '@/components/home-v2/ServicesBento'
 import ProofModule from '@/components/home-v2/ProofModule'
+import ReferenceTeaser from '@/components/home-v2/ReferenceTeaser'
 import FounderSpotlight from '@/components/home-v2/FounderSpotlight'
 import PricingCards from '@/components/home-v2/PricingCards'
 import KnowledgeList from '@/components/home-v2/KnowledgeList'
@@ -47,6 +48,7 @@ export default function Home() {
           <VisibilityRoute />
           <ServicesBento />
           <ProofModule />
+          <ReferenceTeaser />
           <FounderSpotlight />
           <PricingCards />
           <KnowledgeList />

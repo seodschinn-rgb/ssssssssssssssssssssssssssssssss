@@ -1,3 +1,20 @@
+/* Real project previews, scoped to this module. */
+.home-v2 .reference-teaser{background:#f3f6fb;padding-block:clamp(3rem,5vw,5rem)}
+.home-v2 .reference-teaser-heading{display:flex;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:2rem}
+.home-v2 .reference-teaser-heading h2{margin:0;font-size:clamp(1.8rem,3vw,2.7rem)}
+.home-v2 .reference-teaser-heading .eyebrow{font-size:.875rem;letter-spacing:.1em}
+.home-v2 .reference-teaser-heading>a{flex-shrink:0;font-size:.9375rem;font-weight:600}
+.home-v2 .reference-teaser-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.home-v2 .reference-teaser-card{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:1.35rem;padding:1.25rem;border-radius:1.25rem;border:1px solid #dbe2ee;background:#fff}
+.home-v2 .reference-teaser-card img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:top;border-radius:.65rem;border:1px solid #e1e6ef;align-self:start}
+.home-v2 .reference-teaser-card h3{font-size:1.25rem;margin:0 0 .6rem;line-height:1.2}
+.home-v2 .reference-teaser-card p{font-size:.9375rem;color:#4a5670;line-height:1.6;margin:0 0 .85rem}
+.home-v2 .reference-teaser-card .reference-teaser-category{font-size:.8125rem;margin-bottom:.55rem;color:#59647a}
+.home-v2 .reference-teaser-card a{font-size:.9375rem;font-weight:600;display:inline-block;padding-block:.25rem}
+.home-v2 .reference-teaser-card a:hover{text-decoration:underline}
+@media(max-width:1050px){.home-v2 .reference-teaser-card{grid-template-columns:1fr}.home-v2 .reference-teaser-card img{max-height:16rem}}
+@media(max-width:650px){.home-v2 .reference-teaser-grid{grid-template-columns:1fr}.home-v2 .reference-teaser-heading{align-items:start;flex-direction:column}.home-v2 .reference-teaser-card img{max-height:none}}
+
 /* Homepage v2 — scoped under .home-v2 (from html-neu redesign) */
 .home-v2{
   background:var(--bg);
