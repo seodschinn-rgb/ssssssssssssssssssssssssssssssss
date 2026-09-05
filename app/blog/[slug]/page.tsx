@@ -1549,7 +1549,29 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       openGraph: {
         title: post.metaTitle,
         description: post.metaDescription,
+        ...(post.schemaType === 'BlogPosting' && {
+          type: 'article' as const,
+          url: absoluteCanonical(`/blog/${post.slug}`),
+          ...(post.publishedAt && { publishedTime: post.publishedAt }),
+          ...(post.updatedAt && { modifiedTime: post.updatedAt }),
+          ...(post.image && {
+            images: [{
+              url: absoluteCanonical(post.image),
+              width: post.imageWidth,
+              height: post.imageHeight,
+              alt: post.imageAlt ?? post.title,
+            }],
+          }),
+        }),
       },
+      ...(post.schemaType === 'BlogPosting' && post.image && {
+        twitter: {
+          card: 'summary_large_image' as const,
+          title: post.metaTitle,
+          description: post.metaDescription,
+          images: [absoluteCanonical(post.image)],
+        },
+      }),
     }
   }
   const category = getBlogCategoryBySlug(params.slug)
@@ -1594,6 +1616,11 @@ export default function BlogSlugPage({ params }: PageProps) {
           url={`/blog/${post.slug}`}
           image={post.image}
           imageAlt={post.imageAlt}
+          imageWidth={post.imageWidth}
+          imageHeight={post.imageHeight}
+          schemaType={post.schemaType}
+          publishedAt={post.publishedAt}
+          updatedAt={post.updatedAt}
         />
         {/* Pro Artikel nur ein FAQPage-Schema, um "Duplicate field FAQPage" in der Search Console zu vermeiden */}
         {post.faqs?.length ? <BlogFAQSchema faqs={post.faqs} /> : null}
@@ -1645,7 +1672,7 @@ export default function BlogSlugPage({ params }: PageProps) {
           {/* Thumbnail nur auf Mobile/Tablet oben (auf Desktop in der rechten Spalte) */}
           {post.image && post.showHeroImage !== false && (
             <div className="mb-8 w-full px-4 sm:px-6 lg:hidden">
-              <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} />
+              <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} width={post.imageWidth} height={post.imageHeight} />
             </div>
           )}
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:grid lg:grid-cols-[240px_1fr] lg:gap-10 lg:items-start overflow-visible">
@@ -1660,7 +1687,7 @@ export default function BlogSlugPage({ params }: PageProps) {
               {/* Thumbnail auf Desktop in rechter Spalte */}
               {post.image && post.showHeroImage !== false && (
                 <div className="mb-8 hidden lg:block">
-                  <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} />
+                  <BlogPostThumbnail src={post.image} alt={post.imageAlt ?? post.title} width={post.imageWidth} height={post.imageHeight} />
                 </div>
               )}
               {/* Autorenbox auf jeder Artikel-Seite: unter Thumbnail, über Titel/Artikel */}

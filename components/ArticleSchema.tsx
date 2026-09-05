@@ -8,6 +8,11 @@ interface ArticleSchemaProps {
   url: string
   image?: string
   imageAlt?: string
+  imageWidth?: number
+  imageHeight?: number
+  schemaType?: 'Article' | 'BlogPosting'
+  publishedAt?: string
+  updatedAt?: string
 }
 
 export default function ArticleSchema({
@@ -16,18 +21,30 @@ export default function ArticleSchema({
   url,
   image,
   imageAlt,
+  imageWidth,
+  imageHeight,
+  schemaType = 'Article',
+  publishedAt,
+  updatedAt,
 }: ArticleSchemaProps) {
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': schemaType,
     headline,
     description,
     url: url.startsWith('http') ? url : `${SITE_URL}${url}`,
+    ...(schemaType === 'BlogPosting' && {
+      mainEntityOfPage: { '@type': 'WebPage', '@id': url.startsWith('http') ? url : `${SITE_URL}${url}` },
+      inLanguage: 'de-DE',
+    }),
+    ...(publishedAt && { datePublished: publishedAt }),
+    ...(updatedAt && { dateModified: updatedAt }),
     ...(image && {
       image: {
         '@type': 'ImageObject',
         url: image.startsWith('http') ? image : `${SITE_URL}${image}`,
         ...(imageAlt && { caption: imageAlt }),
+        ...(imageWidth && imageHeight && { width: imageWidth, height: imageHeight }),
       },
     }),
     publisher: {

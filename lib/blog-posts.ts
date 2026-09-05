@@ -23,6 +23,7 @@ import { aiOverviewsOptimierenContent } from './blog-posts/ai-overviews-optimier
 import { wasIstGeoContent } from './blog-posts/was-ist-geo-content'
 import { seoTexteSchreibenContent } from './blog-posts/seo-texte-schreiben-content'
 import { seoRelaunchChecklisteContent } from './blog-posts/seo-relaunch-checkliste-content'
+import { wieLangeDauertSeoContent } from './blog-posts/wie-lange-dauert-seo-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -42,6 +43,13 @@ export interface BlogPost {
   image?: string
   /** Alt-Text für das Thumbnail (für Barrierefreiheit & SEO) */
   imageAlt?: string
+  /** Intrinsische Maße des Beitragsbilds; bestehende Artikel behalten ihre Standardmaße. */
+  imageWidth?: number
+  imageHeight?: number
+  /** Optionale Metadaten für redaktionell vorbereitete BlogPosting-Beiträge. */
+  schemaType?: 'Article' | 'BlogPosting'
+  publishedAt?: string
+  updatedAt?: string
   /** Optional: Hero-Thumbnail auf der Post-Seite ausblenden (Liste/Teaser bleibt über `image`) */
   showHeroImage?: boolean
   /** Optional: FAQs für FAQPage-Schema (Rich Snippets) */
@@ -51,6 +59,23 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'wie-lange-dauert-seo',
+    title: 'Wie lange dauert SEO? Wann du mit Ergebnissen rechnen kannst',
+    metaTitle: 'Wie lange dauert SEO? Zeitrahmen richtig einschätzen',
+    metaDescription:
+      'Wie lange dauert SEO? Erfahre, welche Fortschritte realistisch sind, was den Zeitrahmen beeinflusst und was du nach 30, 60 und 90 Tagen prüfen solltest.',
+    focusKeyword: 'wie lange dauert seo',
+    authorName: 'SEO Agentur München',
+    category: 'seo-grundlagen',
+    content: wieLangeDauertSeoContent,
+    image: '/images/blog/wie-lange-dauert-seo-thumbnail.webp',
+    imageAlt: 'Wie lange dauert SEO? Illustration mit Sanduhr und Suchergebnis-Karte.',
+    imageWidth: 1672,
+    imageHeight: 941,
+    schemaType: 'BlogPosting',
+    updatedAt: '2026-09-05',
+  },
   {
     slug: 'seo-relaunch-checkliste',
     title: 'SEO-Relaunch-Checkliste für KMU: Rankings beim Relaunch schützen',

@@ -6,21 +6,26 @@ export default function BlogPostThumbnail({
   src,
   alt,
   className = '',
+  width = 1200,
+  height = 750,
 }: {
   src: string
   alt: string
   className?: string
+  width?: number
+  height?: number
 }) {
   return (
     <div
-      className={`relative w-full overflow-hidden rounded-xl bg-transparent aspect-[16/10] ${className}`.trim()}
+      className={`relative w-full overflow-hidden rounded-xl bg-transparent ${className}`.trim()}
+      style={{ aspectRatio: `${width} / ${height}` }}
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         alt={alt}
-        width={1200}
-        height={750}
+        width={width}
+        height={height}
         loading="eager"
         decoding="async"
         fetchPriority="high"
