@@ -12,7 +12,7 @@ export default function CityLinks() {
       <div className="absolute inset-0 bg-gradient-to-b from-white via-indigo-50/10 to-zinc-50/70" />
       <div className="relative mx-auto max-w-6xl">
         <div className="mx-auto mb-10 flex max-w-2xl flex-col items-center gap-3 text-center md:mb-12">
-          <HomeSectionLabel>Standorte</HomeSectionLabel>
+          <HomeSectionLabel>Betreuungsgebiete</HomeSectionLabel>
           <h2
             id="city-links-heading"
             className="text-balance text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl md:text-4xl"
@@ -20,9 +20,9 @@ export default function CityLinks() {
             SEO für München und ganz Bayern
           </h2>
           <p className="mt-1 text-sm leading-relaxed text-zinc-600 sm:text-base">
-            Von München aus betreuen wir Unternehmen in der gesamten Region. Ob Handwerker in Rosenheim, Arztpraxis in
-            Starnberg oder IT-Firma in Augsburg — wir helfen dir, dein Google-Ranking in München und Bayern nachhaltig zu
-            verbessern.
+            Mit Geschäftssitz in Engelskirchen betreuen wir Unternehmen in München und ganz Bayern remote.
+            Ob Handwerker in Rosenheim, Arztpraxis in Starnberg oder IT-Firma in Augsburg:
+            Wir stimmen die SEO-Arbeit auf dein Angebot und dein tatsächliches Einzugsgebiet ab.
           </p>
         </div>
 

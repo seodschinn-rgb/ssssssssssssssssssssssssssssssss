@@ -12,7 +12,7 @@ const parts = ['seo-audit-part1.html', 'seo-audit-part2.html', 'seo-audit-part3.
 let html = parts.join('')
 
 html = html.replace(/src="images\//g, 'src="/images/blog/')
-html = html.replace(/href="\/kontakt\//g, 'href="/kontakt"')
+html = html.replace(/href="\/kontakt\/"/g, 'href="/kontakt"')
 html = html.replace(/href="\/technisches-seo\//g, 'href="/leistungen/technisches-seo"')
 html = html.replace(/href="\/ai-seo\//g, 'href="/blog/onpage-seo-checkliste#ai-optimierung"')
 html = html.replace(/href="\/onpage-seo-checkliste\//g, 'href="/blog/onpage-seo-checkliste"')

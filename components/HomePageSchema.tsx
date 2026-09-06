@@ -1,5 +1,6 @@
 import { jsonLdStringify } from '@/lib/safe-json-ld'
 import { HOME_PAGE_FAQ_ITEMS } from '@/lib/home-page-faqs'
+import { BUSINESS_ADDRESS } from '@/lib/business-identity'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
@@ -13,23 +14,19 @@ export default function HomePageSchema() {
     '@graph': [
       {
         '@type': 'ProfessionalService',
+        '@id': `${SITE_URL}/#organization`,
         name: 'SEO München',
         url: SITE_URL,
         telephone: '+4915233524138',
         email: 'info@seomuenchen.com',
         description:
-          'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
+          'Suchmaschinenoptimierung für KMU und lokale Unternehmen in München und Bayern. Geschäftssitz Engelskirchen, fester Ansprechpartner und transparente Pakete.',
         founder: {
           '@type': 'Person',
           name: 'Julian Schäfer',
           jobTitle: 'Gründer & SEO-Stratege',
         },
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'München',
-          addressRegion: 'Bayern',
-          addressCountry: 'DE',
-        },
+        address: BUSINESS_ADDRESS,
         areaServed: [
           { '@type': 'City', name: 'München' },
           { '@type': 'City', name: 'Garching' },

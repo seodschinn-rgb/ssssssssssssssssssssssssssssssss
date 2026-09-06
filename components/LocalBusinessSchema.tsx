@@ -1,4 +1,5 @@
 import { jsonLdStringify } from '@/lib/safe-json-ld'
+import { BUSINESS_ADDRESS } from '@/lib/business-identity'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
@@ -18,13 +19,9 @@ export default function LocalBusinessSchema({
     '@type': 'LocalBusiness',
     name,
     description,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: city,
-      addressRegion: 'Bayern',
-      addressCountry: 'DE',
-    },
+    address: BUSINESS_ADDRESS,
     areaServed: [
+      city,
       'München',
       'Garching',
       'Starnberg',

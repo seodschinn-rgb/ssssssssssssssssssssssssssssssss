@@ -7,14 +7,14 @@ import BreadcrumbSchema from '@/components/BreadcrumbSchema'
 import { absoluteCanonical } from '@/lib/canonical'
 
 export const metadata: Metadata = {
-  title: { absolute: 'Standorte | SEO aus München für ganz Bayern' },
+  title: { absolute: 'Betreuungsgebiete in Bayern | SEO München' },
   description:
-    'Unsere Standorte: Von München aus betreuen wir Unternehmen in Garching, Starnberg, Freising, Augsburg, Regensburg und vielen weiteren Städten in Bayern. SEO und Local SEO für ganz Bayern.',
+    'SEO-Betreuung für Unternehmen in München und Bayern: Local SEO, Technik und Inhalte. Geschäftssitz Engelskirchen, Zusammenarbeit remote.',
   alternates: { canonical: absoluteCanonical('/standorte') },
   openGraph: {
-    title: 'Standorte | SEO aus München für ganz Bayern',
+    title: 'Betreuungsgebiete in Bayern | SEO München',
     description:
-      'Von München aus betreuen wir Unternehmen in Garching, Starnberg, Freising, Augsburg und vielen weiteren Städten in Bayern.',
+      'SEO-Betreuung für Unternehmen in München und Bayern. Geschäftssitz Engelskirchen, Zusammenarbeit remote.',
   },
 }
 
@@ -23,18 +23,19 @@ export default function StandortePage() {
     <>
       <BreadcrumbSchema items={[
         { name: 'Startseite', url: '/' },
-        { name: 'Standorte', url: '/standorte' },
+        { name: 'Betreuungsgebiete', url: '/standorte' },
       ]} />
       <Header />
       <main>
         <section className="pt-32 pb-12 px-6">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-zinc-900">
-              Standorte
+              SEO für Unternehmen in Bayern
             </h1>
             <p className="mt-6 text-lg text-zinc-600">
-              Mit Sitz in München unterstützen wir Unternehmen in ganz Bayern bei
-              Suchmaschinenoptimierung und Local SEO. Wählen Sie Ihren Ort.
+              Unser Geschäftssitz ist Engelskirchen. Wir unterstützen Unternehmen in München und ganz Bayern
+              bei Suchmaschinenoptimierung und Local SEO – die Zusammenarbeit erfolgt remote.
+              Die folgenden Orte zeigen unsere Betreuungsgebiete, keine Niederlassungen. Wähle deinen Ort.
             </p>
           </div>
         </section>

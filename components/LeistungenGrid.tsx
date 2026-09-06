@@ -17,7 +17,7 @@ export default function LeistungenGrid() {
   return (
     <section
       id="leistungen"
-      className="relative overflow-hidden px-6 py-24"
+      className="relative scroll-mt-24 overflow-hidden px-4 py-16 sm:px-6 sm:py-20"
       aria-labelledby="leistungen-heading"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-white via-zinc-50/50 to-blue-50/30" />
@@ -30,8 +30,8 @@ export default function LeistungenGrid() {
             Unsere SEO-Leistungen im Überblick
           </h2>
           <p className="mt-4 leading-relaxed text-zinc-600">
-            Von der Keyword-Recherche bis zum Reporting: Wir bieten die Leistungen, die Ihr Unternehmen für mehr
-            Sichtbarkeit bei Google braucht.
+            Ein klar abgegrenztes Projekt oder laufende Betreuung: Auf jeder Seite siehst du,
+            was wir prüfen, was du erhältst und wie die Zusammenarbeit abläuft.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function LeistungenGrid() {
               <article key={leistung.slug} id={leistung.slug} className="group scroll-mt-28">
                 <Link
                   href={`/leistungen/${leistung.slug}`}
-                  className={`flex h-full flex-col overflow-hidden rounded-3xl border-2 bg-white p-8 shadow-md ${colors.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
+                  className={`flex h-full flex-col overflow-hidden rounded-2xl border bg-white p-6 shadow-sm ${colors.border} transition-colors hover:shadow-md focus-visible:outline-indigo-700`}
                 >
                   <span
                     className={`mb-6 inline-flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl ${colors.icon} transition-all duration-300`}
@@ -56,7 +56,7 @@ export default function LeistungenGrid() {
                   </h3>
                   <p className="mt-3 shrink-0 text-sm leading-relaxed text-zinc-600">{leistung.shortDescription}</p>
                   <div className="mt-4 min-h-0 flex-1">
-                    <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-300 ease-out group-hover:max-h-[140px] group-hover:opacity-100">
+                    <div className="border-t border-zinc-100 pt-4">
                       <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">Im Überblick:</p>
                       <ul className="space-y-1.5">
                         {benefits.map((b) => (
@@ -71,7 +71,7 @@ export default function LeistungenGrid() {
                   <span
                     className={`mt-6 inline-flex shrink-0 items-center gap-2 text-sm font-semibold transition-all group-hover:gap-3 ${colors.link}`}
                   >
-                    Mehr erfahren
+                    Umfang und Ablauf
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

@@ -16,7 +16,7 @@ export default function SeoTextBlock() {
           <p>
             <strong>SEO (Search Engine Optimization)</strong> ist der Prozess, eine Website so zu optimieren, dass
             sie in den organischen Suchergebnissen von Google möglichst weit oben erscheint, ohne dass du für jeden
-            Klick bezahlst. Als <strong>SEO Agentur in München</strong> helfen wir lokalen Unternehmen,
+            Klick bezahlst. Als <strong>SEO Agentur für München</strong> helfen wir lokalen Unternehmen,
             Dienstleistern und Mittelständlern, bei Google sichtbar zu werden und sichtbar zu bleiben. Kein
             Hokuspokus, keine leeren Versprechen, sondern eine datengetriebene SEO-Strategie, die auf deiner
             individuellen Ausgangslage aufbaut.

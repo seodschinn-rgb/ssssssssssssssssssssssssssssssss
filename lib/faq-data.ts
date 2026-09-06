@@ -19,7 +19,7 @@ export function getCityFAQs(cityName: string): FAQItem[] {
     },
     {
       question: `Betreut die SEO Agentur München auch Kunden in ${cityName}?`,
-      answer: `Ja. Von München aus betreuen wir Unternehmen in ganz Bayern – inklusive ${cityName}. Beratung und Umsetzung erfolgen remote; bei Bedarf sind Vor-Ort-Termine möglich.`,
+      answer: `Ja. Unser Geschäftssitz ist Engelskirchen. Wir betreuen Unternehmen in München und ganz Bayern – inklusive ${cityName}. Beratung und Umsetzung stimmen wir remote mit dir ab.`,
     },
     {
       question: `Brauche ich SEO, wenn ich schon bei Google erscheine?`,

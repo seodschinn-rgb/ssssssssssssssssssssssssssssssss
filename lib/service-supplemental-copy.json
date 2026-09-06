@@ -1,0 +1,254 @@
+{
+  "reporting-kpis": {
+    "title": "SEO-Reporting für KMU: Zahlen richtig einordnen",
+    "description": "SEO-Reporting für KMU: Search Console, Website-Nutzung und Leads trennen, Messlücken erkennen und nächste Maßnahmen priorisieren.",
+    "h1": "SEO-Reporting, das Entscheidungen statt Datenberge liefert",
+    "eyebrow": "Kennzahlen mit klarem Zweck",
+    "intro": "Ein Report ist nützlich, wenn klar ist, welche Frage jede Kennzahl beantwortet. Wir trennen Impressionen und Klicks aus der Google Search Console von Website-Sitzungen und qualifizierten Leads. Dazu dokumentieren wir Messlücken, wichtige Änderungen und vergleichbare Zeiträume. So erkennst du, was sich verändert hat, was noch unklar bleibt und welche nächsten Schritte sich daraus ableiten lassen.",
+    "audience": [
+      {
+        "title": "Geschäftsführung",
+        "text": "Du brauchst eine knappe Einordnung von Entwicklung, Unsicherheit und Budgetentscheidung."
+      },
+      {
+        "title": "Marketingteams",
+        "text": "Maßnahmen, Live-Daten und Suchsignale sollen über Teams hinweg nachvollziehbar bleiben."
+      },
+      {
+        "title": "Lückenhafte Messung",
+        "text": "Fehlende Quellen oder Conversions müssen vor der Bewertung sichtbar sein."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "KPI- und Quellenplan",
+        "text": "Kennzahl, Datenquelle, Zeitraum, Verantwortliche und Aussagegrenze werden eindeutig festgehalten."
+      },
+      {
+        "title": "Suchleistungsanalyse",
+        "text": "GSC-Impressionen, Klicks, Suchanfragen, Seiten und Positionen werden passend aggregiert und verglichen."
+      },
+      {
+        "title": "Lead- und Messprüfung",
+        "text": "Vorhandene Analytics- oder CRM-Signale werden getrennt betrachtet; fehlende Messpunkte werden benannt."
+      },
+      {
+        "title": "Handlungsplan",
+        "text": "Aus Befunden entstehen priorisierte Prüfungen, Maßnahmen, Zuständigkeiten und nächste Vergleichstermine."
+      }
+    ],
+    "process": [
+      {
+        "title": "Ziele klären",
+        "text": "Wir bestimmen Geschäftsfragen, Seitengruppen und verfügbare Daten."
+      },
+      {
+        "title": "Messung prüfen",
+        "text": "Quellen, Definitionen, Filter und bekannte Lücken werden dokumentiert."
+      },
+      {
+        "title": "Zeiträume vergleichen",
+        "text": "Gleichartige Perioden werden mit Live-Daten und Sondereffekten eingeordnet."
+      },
+      {
+        "title": "Maßnahmen ableiten",
+        "text": "Der Report endet mit Entscheidungen statt einer reinen Zahlenliste."
+      }
+    ],
+    "boundaries": "Search-Console-Klicks sind weder Analytics-Sitzungen noch Leads. Positionen sind aggregierte Durchschnittswerte, keine feste Ortsmessung. Kleine Stichproben und fehlendes Tracking begrenzen Aussagen. Wir kennzeichnen Lücken, statt Zahlen zu ergänzen oder Kausalität zu behaupten. Reporting garantiert keine positive Entwicklung und ersetzt keine Rechts- oder Consent-Prüfung.",
+    "priceNote": "Ein KPI-Setup kann als Projekt angeboten werden; regelmäßige Analyse gehört in eine laufende Betreuung. Der Preis hängt von Datenquellen, Zielen, Trackingzustand und Empfängern ab. Die allgemeinen SEO-Pakete von 990 bis 2.990 EUR pro Monat können Reporting enthalten, sind aber kein Einzelpreis für dieses Modul.",
+    "faqs": [
+      {
+        "question": "Brauche ich Google Analytics?",
+        "answer": "Nein. Search Console funktioniert eigenständig; Website-Nutzung und Leads benötigen separate, eingerichtete Messquellen."
+      },
+      {
+        "question": "Wie oft wird berichtet?",
+        "answer": "Passend zu Entscheidungstempo und Datenmenge; die Frequenz steht im individuellen Angebot."
+      },
+      {
+        "question": "Sind Positionen exakte Rankings?",
+        "answer": "Nein. Sie sind aggregierte Durchschnittswerte, keine feste lokale Momentaufnahme."
+      },
+      {
+        "question": "Könnt ihr Leads ausweisen?",
+        "answer": "Nur mit geeignetem Messweg. Fehlende oder unvollständige Erfassung benennen wir ausdrücklich."
+      },
+      {
+        "question": "Was passiert nach dem Report?",
+        "answer": "Du erhältst priorisierte Maßnahmen, Zuständigkeiten und den nächsten sinnvollen Vergleichszeitraum."
+      }
+    ],
+    "related": [
+      {
+        "label": "Search Console einrichten",
+        "href": "/blog/google-search-console-einrichten"
+      },
+      {
+        "label": "SEO-Zeiträume einordnen",
+        "href": "/blog/wie-lange-dauert-seo"
+      },
+      {
+        "label": "SEO-Audit: Ursachen und Aufgaben klären",
+        "href": "/leistungen/seo-audit"
+      },
+      {
+        "label": "Technisches SEO und Messgrundlagen",
+        "href": "/leistungen/technisches-seo"
+      }
+    ],
+    "example": {
+      "label": "Qualitatives Muster – keine Kundendaten",
+      "title": "Vom Signal zur nächsten Entscheidung",
+      "intro": "Die Zeilen zeigen nur die Berichtslogik. Sie enthalten keine realen Werte, Ursachen oder Ergebnisse.",
+      "columns": [
+        "Signal",
+        "Einordnung",
+        "Nächste Prüfung"
+      ],
+      "rows": [
+        [
+          "Mehr Impressionen, gleich viele Klicks",
+          "Keine Leadaussage",
+          "Suchanfragen und Darstellung prüfen"
+        ],
+        [
+          "Mehr Sitzungen, keine Leads",
+          "Ursache offen",
+          "Messweg und Zielseite prüfen"
+        ],
+        [
+          "Seite kürzlich geändert",
+          "Vergleich zu früh",
+          "Live-Datum und Vergleichszeitraum festhalten"
+        ]
+      ]
+    }
+  },
+  "linkaufbau": {
+    "title": "Linkaufbau für KMU: relevante Erwähnungen entwickeln",
+    "description": "Linkaufbau für KMU: Linkprofil prüfen, relevante Publikationen und Kontakte recherchieren und individuelle Ansprache vorbereiten. Ohne Linkgarantie.",
+    "h1": "Redaktioneller Linkaufbau ohne gekaufte Rankinglinks",
+    "eyebrow": "Relevanz vor Linkmenge",
+    "intro": "Welche Publikationen passen zu deinem Unternehmen – und welchen Anlass hätten sie, über dich zu berichten? Wir prüfen dein Linkprofil, recherchieren relevante Kontakte und bereiten passende Themen und individuelle Anschreiben vor. Du erhältst eine begründete Kontaktliste und Materialien für die Ansprache. Ob eine Redaktion berichtet oder verlinkt, entscheidet sie selbst.",
+    "audience": [
+      {
+        "title": "Fachlich starke Unternehmen",
+        "text": "Wissen, Daten oder praktische Ressourcen sind vorhanden, aber außerhalb der eigenen Website kaum sichtbar."
+      },
+      {
+        "title": "Unklare Linkhistorie",
+        "text": "Frühere Maßnahmen und ihre Qualität sollen vor neuer Ansprache eingeordnet werden."
+      },
+      {
+        "title": "Gezielter Outreach",
+        "text": "Du willst relevante Kontakte statt automatisierter Massenmails und austauschbarer Gastbeiträge."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Linkprofil-Einordnung",
+        "text": "Vorhandene Quellen, Ankertexte, Auffälligkeiten und thematische Lücken werden im vereinbarten Umfang geprüft."
+      },
+      {
+        "title": "Qualifizierte Kontakte",
+        "text": "Kandidaten werden nach Themenbezug, redaktionellem Umfeld und realistischer Anschlussfähigkeit ausgewählt."
+      },
+      {
+        "title": "Anlass und Material",
+        "text": "Wir entwickeln einen konkreten Themenvorschlag und ein Anschreiben auf Basis deiner freigegebenen Inhalte, Daten oder Ressourcen."
+      },
+      {
+        "title": "Vorbereitung und Übergabe",
+        "text": "Kontaktliste, Auswahlgründe, Themenvorschläge und freigegebene Anschreiben werden mit Zuständigkeiten und Bearbeitungsstand übergeben."
+      }
+    ],
+    "process": [
+      {
+        "title": "Ausgangslage prüfen",
+        "text": "Wir klären Linkprofil, Themen, Risiken und vorhandene Ressourcen."
+      },
+      {
+        "title": "Prospects qualifizieren",
+        "text": "Passende Redaktionen und Seiten werden einzeln bewertet."
+      },
+      {
+        "title": "Ansprache vorbereiten",
+        "text": "Pitch und Material richten sich am Nutzen für die Zielseite aus."
+      },
+      {
+        "title": "Unterlagen übergeben",
+        "text": "Dein Team erhält die Kontaktliste und freigegebene Vorlagen. Die Zuständigkeit für den Versand wird vorab geklärt."
+      }
+    ],
+    "boundaries": "Wir kaufen keine Follow-Links zur Rankingmanipulation, nutzen keine PBNs und garantieren weder Linkzahl noch Rankings. Eine Redaktion schuldet uns keine Veröffentlichung. Bezahlte Platzierungen werden mit sponsored beziehungsweise nofollow qualifiziert. Automatisierte Massenansprache und überoptimierte Ankertexte gehören nicht zu unserem Vorgehen.",
+    "priceNote": "Linkprofil-Analyse und Vorbereitung der Ansprache lassen sich als abgegrenztes Projekt planen. Für fortlaufende Recherche vereinbaren wir einen separaten Umfang. Aufwand und Preis richten sich nach Themenfeld, Zielmarkt und vorhandenen Materialien. Die allgemeinen SEO-Pakete von 990 bis 2.990 EUR pro Monat sind kein Einzelpreis und kein Linkpaket für diese Leistung.",
+    "faqs": [
+      {
+        "question": "Garantiert ihr eine Linkzahl?",
+        "answer": "Nein. Du erhältst die vereinbarte Recherche und vorbereitete Ansprache. Ob daraus eine Veröffentlichung entsteht, entscheidet die jeweilige Redaktion."
+      },
+      {
+        "question": "Kauft ihr Backlinks?",
+        "answer": "Wir bieten keine gekauften Rankinglinks. Falls du Werbeplatzierungen planst, müssen sie transparent und korrekt gekennzeichnet sein."
+      },
+      {
+        "question": "Was macht einen Kontakt passend?",
+        "answer": "Themenbezug, redaktioneller Kontext, passende Zielgruppe und echter Nutzen für die Publikation."
+      },
+      {
+        "question": "Was braucht ihr von uns?",
+        "answer": "Fachwissen, freigegebene Aussagen, geeignete Ressourcen und eine erreichbare Person für Abstimmungen."
+      },
+      {
+        "question": "Ist ein Link automatisch wertvoll?",
+        "answer": "Nein. Relevanz, Kontext, Kennzeichnung, Zielseite und tatsächlicher Nutzen zählen gemeinsam."
+      }
+    ],
+    "related": [
+      {
+        "label": "Grundlagen zum Backlink-Aufbau",
+        "href": "/blog/backlink-aufbau-grundlagen"
+      },
+      {
+        "label": "SEO-Audit für deine Website",
+        "href": "/leistungen/seo-audit"
+      },
+      {
+        "label": "Inhalte und Ressourcen überarbeiten",
+        "href": "/leistungen/onpage-optimierung"
+      },
+      {
+        "label": "Passende Themen recherchieren",
+        "href": "/leistungen/keyword-recherche"
+      }
+    ],
+    "example": {
+      "label": "Qualitatives Muster – keine Platzierungszusage",
+      "title": "Kontakte vor der Ansprache bewerten",
+      "intro": "Das Muster zeigt Auswahlkriterien, keine realen Prospects, Links oder Kooperationen.",
+      "columns": [
+        "Signal",
+        "Einordnung",
+        "Entscheidung"
+      ],
+      "rows": [
+        [
+          "Fachmedium behandelt das Kernthema",
+          "Hohe inhaltliche Nähe",
+          "Individuellen Ressourcen-Pitch prüfen"
+        ],
+        [
+          "Verzeichnis ohne redaktionelle Prüfung",
+          "Geringer erkennbarer Nutzen",
+          "Nicht allein für einen Link eintragen"
+        ],
+        [
+          "Bezahlte Branchenplatzierung",
+          "Werblicher Kontext",
+          "Nur transparent und korrekt qualifiziert"
+        ]
+      ]
+    }
+  }
+}

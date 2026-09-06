@@ -1,70 +1,37 @@
 import Link from 'next/link'
-import { LEISTUNGEN } from '@/lib/leistungen-data'
-import LeistungIcons from './LeistungIcons'
 
-const colorClasses: Record<string, string> = {
-  blue: 'bg-blue-500/15 text-blue-600 border-blue-200 hover:bg-blue-500 hover:text-white hover:border-blue-500',
-  emerald: 'bg-emerald-500/15 text-emerald-600 border-emerald-200 hover:bg-emerald-500 hover:text-white hover:border-emerald-500',
-  violet: 'bg-violet-500/15 text-violet-600 border-violet-200 hover:bg-violet-500 hover:text-white hover:border-violet-500',
-  amber: 'bg-amber-500/15 text-amber-600 border-amber-200 hover:bg-amber-500 hover:text-white hover:border-amber-500',
-  rose: 'bg-rose-500/15 text-rose-600 border-rose-200 hover:bg-rose-500 hover:text-white hover:border-rose-500',
-  cyan: 'bg-cyan-500/15 text-cyan-600 border-cyan-200 hover:bg-cyan-500 hover:text-white hover:border-cyan-500',
-  indigo: 'bg-indigo-500/15 text-indigo-600 border-indigo-200 hover:bg-indigo-500 hover:text-white hover:border-indigo-500',
-}
+const entryPoints = [
+  { question: 'Wo soll ich mit SEO anfangen?', label: 'SEO-Audit: Prioritäten klären', href: '/leistungen/seo-audit' },
+  { question: 'Wie finden mich lokale Kunden?', label: 'Local SEO: Einzugsgebiet abdecken', href: '/leistungen/local-seo' },
+  { question: 'Warum werden Seiten nicht gefunden?', label: 'Technisches SEO: Ursachen prüfen', href: '/leistungen/technisches-seo' },
+  { question: 'Welche Inhalte braucht meine Website?', label: 'Keyword-Recherche: Themen planen', href: '/leistungen/keyword-recherche' },
+]
 
 export default function LeistungenHero() {
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-32">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white to-emerald-50/60" />
-      <div className="absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-violet-300/20 to-transparent blur-3xl" />
-      <div className="absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-amber-300/15 to-transparent blur-3xl" />
-      <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-cyan-200/10 via-transparent to-rose-200/10 blur-3xl" />
-
-      <div className="relative mx-auto max-w-5xl">
-        <div className="mb-12 flex flex-wrap justify-center gap-3 sm:gap-4">
-          {LEISTUNGEN.map((leistung) => (
-            <Link
-              key={leistung.slug}
-              href={`#${leistung.slug}`}
-              className={`inline-flex items-center gap-2 rounded-2xl border-2 px-4 py-2.5 transition-all duration-300 ${colorClasses[leistung.color]}`}
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/50">
-                <LeistungIcons icon={leistung.icon} className="h-4 w-4" />
-              </span>
-              <span className="text-sm font-semibold">{leistung.title}</span>
-            </Link>
-          ))}
+    <section className="border-b border-zinc-200 bg-slate-50 px-4 pb-14 pt-28 sm:px-6 sm:pb-20 sm:pt-36">
+      <div className="mx-auto max-w-6xl">
+        <nav aria-label="Brotkrümelnavigation" className="mb-8 flex gap-3 text-sm text-zinc-600">
+          <Link href="/" className="hover:text-indigo-700 hover:underline">Startseite</Link>
+          <span aria-hidden="true">/</span><span aria-current="page">Leistungen</span>
+        </nav>
+        <p className="mb-4 text-sm font-semibold tracking-wide text-indigo-700">SEO für Unternehmen in München und Bayern</p>
+        <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-zinc-900 sm:text-5xl">Die passende SEO-Leistung für dein Vorhaben.</h1>
+        <p className="mt-6 max-w-3xl text-lg leading-relaxed text-zinc-600">
+          Erst verstehen, was deine Website braucht. Dann gezielt daran arbeiten:
+          mit einem Audit, lokaler Optimierung, technischer Unterstützung oder klar geplanten Inhalten.
+          Hier findest du für jede Leistung Umfang, Ablauf und ein gekennzeichnetes Arbeitsbeispiel.
+        </p>
+        <div className="mt-7 flex flex-wrap gap-3">
+          <a href="#leistungen" className="rounded-xl bg-indigo-700 px-6 py-3 font-semibold text-white hover:bg-indigo-800">Alle acht Leistungen ansehen <span aria-hidden="true">↓</span></a>
+          <a href="#kontakt" className="rounded-xl border border-zinc-300 bg-white px-6 py-3 font-semibold text-zinc-800 hover:border-indigo-700">Vorhaben besprechen</a>
         </div>
-
-        <div className="text-center">
-          <span className="mb-6 inline-block rounded-full bg-gradient-to-r from-blue-500 to-violet-500 px-4 py-1.5 text-sm font-semibold text-white">
-            Unsere Leistungen
-          </span>
-          <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            <span className="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 bg-clip-text text-transparent">
-              SEO Leistungen
-            </span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-600 sm:text-xl">
-            Von der Keyword-Recherche bis zum technischen SEO: Wir bieten ganzheitliche Suchmaschinenoptimierung für
-            Unternehmen in München und ganz Bayern.
-          </p>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-zinc-500">
-            Branchenspezifische Anleitungen und FAQs:{' '}
-            <Link href="/branchen" className="font-semibold text-indigo-600 hover:underline">
-              SEO nach Branche in München
-            </Link>
-            .
-          </p>
-          <Link
-            href="/kontakt"
-            className="mt-10 inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-blue-500 to-violet-500 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-blue-500/30 transition-all duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-blue-500/40"
-          >
-            Kostenloses SEO-Gespräch
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
+        <p className="mt-5 text-sm text-zinc-600">Geschäftssitz Engelskirchen · Betreuung für München und Bayern · Zusammenarbeit remote</p>
+        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label="Einstieg nach deinem Anliegen">
+          {entryPoints.map(p => <Link key={p.href} href={p.href} className="rounded-2xl border border-zinc-200 bg-white p-5 transition-colors hover:border-indigo-400 focus-visible:outline-indigo-600">
+            <span className="block font-semibold leading-snug text-zinc-900">{p.question}</span>
+            <span className="mt-3 block text-sm leading-relaxed text-indigo-700">{p.label} <span aria-hidden="true">↗</span></span>
+          </Link>)}
         </div>
       </div>
     </section>

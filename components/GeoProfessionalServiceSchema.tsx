@@ -9,7 +9,7 @@ export default function GeoProfessionalServiceSchema() {
     '@type': 'ProfessionalService',
     name: 'SEO München — GEO Agentur',
     description:
-      'Generative Engine Optimization (GEO) Agentur in München. Wir optimieren deine Sichtbarkeit in ChatGPT, Google AI Overviews, Perplexity und weiteren KI-Suchsystemen.',
+      'Generative Engine Optimization (GEO) für Unternehmen in München. Analyse und Optimierung der Auffindbarkeit in KI-gestützten Suchsystemen.',
     url: `${SITE_URL}/leistungen/geo-agentur`,
     areaServed: {
       '@type': 'City',

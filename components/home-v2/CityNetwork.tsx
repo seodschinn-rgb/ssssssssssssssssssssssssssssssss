@@ -13,9 +13,9 @@ export default function CityNetwork() {
             </p>
             <h2 id="orte-heading">SEO für München und ganz Bayern</h2>
             <p className="lead">
-              Von München aus betreuen wir Unternehmen in der ganzen Region: Handwerker in Rosenheim, Praxen in
-              Starnberg, IT-Firmen in Augsburg. Wir helfen dir, deine Sichtbarkeit in München und Bayern nachhaltig zu
-              verbessern.
+              Unser Geschäftssitz ist Engelskirchen. Wir betreuen Unternehmen in München und ganz Bayern remote –
+              von Handwerksbetrieben bis zu Praxen und IT-Unternehmen. Strategie und Umsetzung richten wir auf
+              deinen jeweiligen Markt aus.
             </p>
           </div>
           {/* Dekoratives Bayern-Liniennetz (abstrahiert, grobe Geografie; Links laufen über die Chips) */}
@@ -58,7 +58,6 @@ export default function CityNetwork() {
             </svg>
           </div>
         </div>
-        {/* [NAP: nach Entscheidung] "Von München aus" ist Positionierung, keine Adresse. Keine Adresse ergänzen. */}
         <nav className="city-grid rv" aria-label="SEO-Standorte in Bayern">
           <Link className="is-home" href="/">
             München

@@ -1,5 +1,6 @@
 import { jsonLdStringify } from '@/lib/safe-json-ld'
 import { getCityFAQs } from '@/lib/faq-data'
+import { BUSINESS_ADDRESS } from '@/lib/business-identity'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
@@ -39,15 +40,12 @@ export default function CityPageSchema({
       },
       {
         '@type': 'LocalBusiness',
-        name: `SEO Agentur ${cityName}`,
+        '@id': `${SITE_URL}/#organization`,
+        name: 'SEO München',
         description: businessDescription,
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: cityName,
-          addressRegion: 'Bayern',
-          addressCountry: 'DE',
-        },
+        address: BUSINESS_ADDRESS,
         areaServed: [
+          cityName,
           'München',
           'Garching',
           'Starnberg',

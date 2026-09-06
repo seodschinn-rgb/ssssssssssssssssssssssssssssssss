@@ -1,4 +1,5 @@
 import { jsonLdStringify } from '@/lib/safe-json-ld'
+import { LEISTUNGEN } from '@/lib/leistungen-data'
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://seomuenchen.com'
 
@@ -14,14 +15,9 @@ interface ItemListSchemaProps {
   items?: Item[]
 }
 
-const DEFAULT_ITEMS: Item[] = [
-  { name: 'Keyword-Recherche', url: '/leistungen/keyword-recherche', description: 'Zielgruppenorientierte Keyword-Analyse für maximalen Traffic.' },
-  { name: 'Local SEO', url: '/leistungen/local-seo', description: 'Google Business Profile und Maps-Optimierung für München und Bayern.' },
-  { name: 'Technisches SEO', url: '/leistungen/technisches-seo', description: 'Core Web Vitals, Indexierung und technische Grundlagen.' },
-  { name: 'Reporting & KPIs', url: '/leistungen/reporting-kpis', description: 'Transparente Erfolgsmessung mit klaren Kennzahlen.' },
-  { name: 'Linkaufbau', url: '/leistungen/linkaufbau', description: 'Strategischer Aufbau hochwertiger Backlinks.' },
-  { name: 'OnPage-Optimierung', url: '/leistungen/onpage-optimierung', description: 'Content-Strategien, Meta-Daten und interne Verlinkung.' },
-]
+const DEFAULT_ITEMS: Item[] = LEISTUNGEN.map(({ title, slug, shortDescription }) => ({
+  name: title, url: `/leistungen/${slug}`, description: shortDescription,
+}))
 
 export default function ItemListSchema({
   name = 'SEO Leistungen',

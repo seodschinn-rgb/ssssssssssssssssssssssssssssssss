@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | SEO Agentur München',
   },
   description:
-    'Deine SEO Agentur in München: Suchmaschinenoptimierung für KMU und lokale Unternehmen. Fester Ansprechpartner, transparente Pakete. Jetzt kostenlos beraten lassen.',
+    'SEO für Unternehmen in München und Bayern: Suchmaschinenoptimierung, fester Ansprechpartner und transparente Pakete. Geschäftssitz Engelskirchen.',
   keywords: [
     'SEO Agentur München',
     'SEO München',

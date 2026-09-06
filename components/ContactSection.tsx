@@ -7,7 +7,7 @@ import HomeSectionLabel from '@/components/HomeSectionLabel'
 /** Formspree-Endpoint – Sie erhalten Nachrichten unter https://formspree.io/f/xvzbgggb */
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xvzbgggb'
 
-export default function ContactSection() {
+export default function ContactSection({ serviceName }: { serviceName?: string } = {}) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
@@ -15,13 +15,15 @@ export default function ContactSection() {
   // Absenden per Button-Klick statt Form-Submit – funktioniert auf Mobile zuverlässig.
   async function handleSubmitClick() {
     const form = formRef.current
-    if (!form) return
+    if (!form || status === 'sending') return
     if (!form.reportValidity()) return
+    // Snapshot before disabling fields; disabled inputs are excluded from FormData.
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData)
     setStatus('sending')
     setErrorMsg('')
     try {
-      const formData = new FormData(form)
-      formData.append('_subject', `Kontaktanfrage: ${formData.get('name')}`)
+      formData.append('_subject', `${serviceName ? `${serviceName} – ` : ''}Kontaktanfrage: ${formData.get('name')}`)
       const res = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         body: formData,
@@ -29,7 +31,6 @@ export default function ContactSection() {
       })
       const json = await res.json()
       if (json.ok) {
-        const data = Object.fromEntries(new FormData(form))
         try {
           await fetch('/api/termin', {
             method: 'POST',
@@ -67,12 +68,13 @@ export default function ContactSection() {
             id="contact-heading"
             className="text-balance text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl"
           >
-            Deine Konkurrenz wartet nicht. Du solltest es auch nicht tun.
+            {serviceName ? `${serviceName}: Lass uns dein Vorhaben besprechen.` : 'Deine Konkurrenz wartet nicht. Du solltest es auch nicht tun.'}
           </h2>
         </div>
         <p className="mx-auto mt-4 max-w-xl leading-relaxed text-zinc-300">
-          In 30 Minuten analysieren wir gemeinsam deine aktuelle Google-Situation und zeigen dir, wo die größten
-          Chancen liegen. Kostenlos, unverbindlich, konkret.
+          {serviceName
+            ? 'Schreib uns, um welche Website es geht und was du erreichen möchtest. Im kostenlosen Erstgespräch klären wir, welcher Umfang sinnvoll ist und welche nächsten Schritte zu deinem Vorhaben passen.'
+            : 'In 30 Minuten analysieren wir gemeinsam deine aktuelle Google-Situation und zeigen dir, wo die größten Chancen liegen. Kostenlos, unverbindlich, konkret.'}
         </p>
         <p className="mt-4">
           <a
@@ -100,7 +102,7 @@ export default function ContactSection() {
             E-Mail schreiben
           </a>
           <Link
-            href="/kontakt"
+            href={serviceName ? '#contact-form' : '/kontakt'}
             prefetch
             className="inline-flex items-center justify-center gap-2 rounded-full border border-indigo-400/40 bg-indigo-500/15 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:border-indigo-300/60 hover:bg-indigo-500/25 sm:min-w-[14rem]"
           >
@@ -111,25 +113,26 @@ export default function ContactSection() {
                 d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5a2.25 2.25 0 002.25-2.25m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5a2.25 2.25 0 012.25 2.25v7.5"
               />
             </svg>
-            Termin fürs SEO-Erstgespräch
+            {serviceName ? 'Zum Anfrageformular' : 'Termin fürs SEO-Erstgespräch'}
           </Link>
         </div>
-        <p className="mt-4 text-sm italic text-zinc-500">Wir melden uns innerhalb von 24 Stunden.</p>
+        <p className="mt-4 text-sm text-zinc-300">{serviceName ? 'Geschäftssitz Engelskirchen · Betreuung für Unternehmen in München und Bayern.' : 'Wir melden uns innerhalb von 24 Stunden.'}</p>
         <p className="mt-10 text-sm text-zinc-400">Oder schreib uns direkt über das Formular:</p>
         <div className="mt-10 rounded-3xl border border-white/10 bg-white/[0.06] p-6 shadow-2xl shadow-black/20 ring-1 ring-white/[0.06] backdrop-blur-md sm:p-8">
           <form
             ref={formRef}
             id="contact-form"
-            className="space-y-4"
+            className="scroll-mt-24 space-y-4"
             onSubmit={(e) => { e.preventDefault(); handleSubmitClick(); }}
           >
+            {serviceName && <input type="hidden" name="serviceName" value={serviceName} />}
             {status === 'success' && (
-              <div className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
+              <div role="status" className="rounded-2xl bg-emerald-500/20 border border-emerald-400/30 px-4 py-3 text-emerald-200">
                 Vielen Dank! Deine Nachricht wurde gesendet. Wir melden uns in Kürze.
               </div>
             )}
             {status === 'error' && (
-              <div className="rounded-2xl bg-red-500/20 border border-red-400/30 px-4 py-3 text-red-200">
+              <div role="alert" className="rounded-2xl bg-red-500/20 border border-red-400/30 px-4 py-3 text-red-200">
                 {errorMsg}
               </div>
             )}
@@ -138,6 +141,8 @@ export default function ContactSection() {
                 id="contact-name"
                 type="text"
                 name="name"
+                aria-label="Dein Name"
+                autoComplete="name"
                 placeholder="Name"
                 required
                 disabled={status === 'sending'}
@@ -147,6 +152,8 @@ export default function ContactSection() {
                 id="contact-email"
                 type="email"
                 name="email"
+                aria-label="Deine E-Mail-Adresse"
+                autoComplete="email"
                 placeholder="E-Mail"
                 required
                 disabled={status === 'sending'}
@@ -157,6 +164,8 @@ export default function ContactSection() {
               id="contact-phone"
               type="tel"
               name="phone"
+              aria-label="Telefonnummer (optional)"
+              autoComplete="tel"
               placeholder="Telefon"
               disabled={status === 'sending'}
               className="w-full rounded-2xl border border-zinc-600/60 bg-zinc-900/40 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-indigo-400/70 focus:outline-none focus:ring-2 focus:ring-indigo-500/25 transition-colors disabled:opacity-70"
@@ -164,7 +173,8 @@ export default function ContactSection() {
             <textarea
               id="contact-message"
               name="message"
-                placeholder="Dein Anliegen"
+              aria-label="Dein Anliegen"
+              placeholder="Dein Anliegen"
               rows={4}
               disabled={status === 'sending'}
               className="w-full rounded-2xl border border-zinc-600/60 bg-zinc-900/40 px-5 py-3.5 text-white placeholder-zinc-500 focus:border-indigo-400/70 focus:outline-none focus:ring-2 focus:ring-indigo-500/25 resize-none transition-colors disabled:opacity-70"

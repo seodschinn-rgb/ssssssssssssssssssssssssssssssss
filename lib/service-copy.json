@@ -1,0 +1,782 @@
+{
+  "seo-audit": {
+    "title": "SEO-Audit München: klare Prioritäten für deine Website",
+    "description": "SEO-Audit für KMU: Technik, Inhalte und Suchdaten prüfen lassen. Du erhältst belegte Befunde, Prioritäten und einen umsetzbaren Maßnahmenplan.",
+    "h1": "SEO Audit München: klare Prioritäten für deine Website",
+    "eyebrow": "Analyse als klarer Auftrag",
+    "intro": "Du investierst in SEO, aber weißt nicht, welche Änderungen wirklich zuerst anstehen? Wir prüfen Technik, Inhalte und Suchdaten deiner Website und ordnen die Befunde nach Bedeutung und Aufwand. Du erhältst einen nachvollziehbaren Maßnahmenplan mit betroffenen Seiten, konkreten Aufgaben und klaren Zuständigkeiten – als Grundlage für die Umsetzung durch uns oder dein Team.",
+    "audience": [
+      {
+        "title": "Unklare Prioritäten",
+        "text": "Viele Ideen und Einzelbefunde liegen vor, aber niemand kann erklären, welche Aufgabe zuerst gelöst werden sollte."
+      },
+      {
+        "title": "Technische oder inhaltliche Zweifel",
+        "text": "Indexierung, Seitenstruktur, Inhalte oder Suchanfragen entwickeln sich nicht nachvollziehbar und brauchen eine systematische Prüfung."
+      },
+      {
+        "title": "Übergabe oder Neustart",
+        "text": "Vor Relaunch, Agenturwechsel oder neuer Betreuung soll der tatsächliche Zustand dokumentiert und gemeinsam eingeordnet werden."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Geprüfte Datengrundlage",
+        "text": "Crawl-, Indexierungs- und Suchdaten werden mit Zugriffsstand, Zeitraum und Grenzen nachvollziehbar dokumentiert."
+      },
+      {
+        "title": "Technische Befunde",
+        "text": "Statuscodes, Canonicals, interne Verlinkung, Sitemaps, Rendering und Performance kommen passend zum vereinbarten Umfang auf den Prüfstand."
+      },
+      {
+        "title": "Seiten- und Contentanalyse",
+        "text": "Wir prüfen Seitenrollen, Suchintention, Überschriften, Metadaten und Überschneidungen statt nur einzelne Keywords abzuhaken."
+      },
+      {
+        "title": "Priorisierter Maßnahmenplan",
+        "text": "Jeder relevante Befund erhält Fundstelle, Einordnung, nächsten Schritt und eine realistische Zuständigkeit."
+      },
+      {
+        "title": "Ergebnisbesprechung",
+        "text": "Wir erklären Entscheidungen, Unsicherheiten und Abhängigkeiten, damit der Report nach der Übergabe tatsächlich nutzbar bleibt."
+      }
+    ],
+    "process": [
+      {
+        "title": "Umfang klären",
+        "text": "Wir grenzen Website, Ziele, relevante Märkte, Systeme und offene Entscheidungen gemeinsam ein."
+      },
+      {
+        "title": "Zugänge und Daten sichern",
+        "text": "Du stellst vereinbarte Lesezugriffe bereit; wir halten Zeitraum und Qualität der Datengrundlage fest."
+      },
+      {
+        "title": "Prüfen und priorisieren",
+        "text": "Wir verbinden technische, redaktionelle und suchbezogene Befunde zu einer umsetzbaren Reihenfolge."
+      },
+      {
+        "title": "Übergeben und entscheiden",
+        "text": "Du erhältst Report, Maßnahmenübersicht und eine Besprechung der nächsten sinnvollen Aufträge."
+      }
+    ],
+    "boundaries": "Ein Audit diagnostiziert und priorisiert; es ist nicht automatisch die Umsetzung aller gefundenen Aufgaben. Ein Muster zeigt nur das Format und enthält keine realen Befunde, Rankings oder Kundenergebnisse. Der Report ist eine zeitgebundene Bestandsaufnahme und keine Garantie für Indexierung, Positionen oder Umsatz. Auch Datenlücken und nicht abschließend prüfbare Punkte kennzeichnen wir offen. Rechts-, Sicherheits- und Barrierefreiheitsprüfungen gehören nur bei ausdrücklicher Vereinbarung dazu.",
+    "priceNote": "Das SEO-Audit kann als abgegrenztes Projekt beauftragt werden. Umsetzung und laufende Betreuung sind eigene Leistungsumfänge. Der Preis richtet sich unter anderem nach Websitegröße, Systemen, Datenzugängen und Prüftiefe; vor Beginn erhältst du ein individuelles Angebot. Es entsteht erst nach abgestimmtem Leistungsumfang. Die verlinkte Paketspanne von 990 bis 2.990 EUR pro Monat beschreibt die gesamte laufende SEO-Betreuung, nicht den Einzelpreis dieses Audits.",
+    "faqs": [
+      {
+        "question": "Welche Zugänge braucht ihr?",
+        "answer": "Das hängt vom Umfang ab. Häufig genügen Lesezugriffe auf Search Console und Analytics sowie Informationen zu CMS, Hosting und bisherigen Änderungen."
+      },
+      {
+        "question": "Wie lange dauert ein Audit?",
+        "answer": "Das legen wir nach Umfang und Datenlage fest. Eine kleine Website und ein komplexer Shop benötigen unterschiedliche Prüftiefen und Abstimmungen."
+      },
+      {
+        "question": "Ist die Umsetzung enthalten?",
+        "answer": "Nur wenn sie ausdrücklich beauftragt ist. Du kannst Maßnahmen intern, mit deinem bestehenden Dienstleister oder mit unserer Unterstützung umsetzen."
+      },
+      {
+        "question": "Kann meine Agentur eingebunden werden?",
+        "answer": "Ja. Ein gemeinsamer Kick-off und eine klare Übergabe helfen, Befunde ohne doppelte Arbeit in bestehende Prozesse zu überführen."
+      },
+      {
+        "question": "Reicht die kostenlose Checkliste?",
+        "answer": "Für eine erste Eigenprüfung oft ja. Das beauftragte Audit ergänzt Datenauswertung, fachliche Einordnung, Priorisierung und eine konkrete Übergabe."
+      }
+    ],
+    "related": [
+      {
+        "label": "SEO-Audit-Checkliste zum Selberprüfen",
+        "href": "/blog/seo-audit-checkliste"
+      },
+      {
+        "label": "Search Console sauber einrichten",
+        "href": "/blog/google-search-console-einrichten"
+      },
+      {
+        "label": "Technische SEO-Probleme beheben",
+        "href": "/leistungen/technisches-seo"
+      },
+      {
+        "label": "Local SEO für dein Einzugsgebiet",
+        "href": "/leistungen/local-seo"
+      }
+    ],
+    "example": {
+      "label": "Muster – keine realen Website-Befunde",
+      "title": "So kann eine priorisierte Audit-Ausgabe aussehen",
+      "intro": "Die Beispielzeilen zeigen Aufbau und Entscheidungstiefe. Sie beziehen sich weder auf seomuenchen.com noch auf ein Kundenprojekt und behaupten keine gemessene Wirkung.",
+      "columns": [
+        "Musterbefund",
+        "Priorität",
+        "Nächster Schritt"
+      ],
+      "rows": [
+        [
+          "Wichtige Seite ist intern schwer erreichbar",
+          "Hoch",
+          "Navigation und kontextuelle Links prüfen"
+        ],
+        [
+          "Mehrere Seiten erfüllen dieselbe Suchaufgabe",
+          "Nach Datenprüfung",
+          "Seitenrollen und tatsächliche Suchanfragen abgleichen"
+        ],
+        [
+          "Bilddateien belasten ein Seitentemplate",
+          "Mittel",
+          "Formate, Größen und Auslieferung im Template testen"
+        ]
+      ]
+    }
+  },
+  "local-seo": {
+    "title": "Local SEO München für KMU und lokale Dienstleister",
+    "description": "Local SEO für Unternehmen in München und Bayern: Profil, Standortseiten, Firmendaten und Messung professionell prüfen und betreuen lassen.",
+    "h1": "Local SEO München: sichtbar, wo deine Kunden suchen",
+    "eyebrow": "Local SEO als Betreuung",
+    "intro": "Menschen suchen nach deiner Leistung in München oder einer bestimmten Umgebung. Wir prüfen, wie deine Website, lokale Leistungsseiten und – bei berechtigten Unternehmen – dein Google-Unternehmensprofil zusammenwirken. Daraus entsteht ein Plan für passende Inhalte, konsistente Unternehmensdaten und einen einfachen Weg zur Anfrage. Ausgangspunkt sind dein tatsächlicher Standort und dein reales Einzugsgebiet.",
+    "audience": [
+      {
+        "title": "Geschäft mit Kundenbesuch",
+        "text": "Praxis, Laden, Kanzlei oder Betrieb benötigt korrekte Profil-, Öffnungs- und Standortinformationen."
+      },
+      {
+        "title": "Service im Einzugsgebiet",
+        "text": "Ein Dienstleister fährt zu Kunden und muss Leistungen und tatsächlich bediente Orte verständlich abbilden."
+      },
+      {
+        "title": "Mehrere echte Standorte",
+        "text": "Profile und Standortseiten sollen unterscheidbar bleiben, ohne Adressen, Angebote oder Inhalte künstlich zu vervielfachen."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Profilprüfung",
+        "text": "Wir prüfen Inhaberschaft, Kategorien, Kontaktdaten, Öffnungszeiten, Leistungen, Bilder und Richtlinienbezug des Google Business Profile."
+      },
+      {
+        "title": "Lokale Website-Struktur",
+        "text": "Leistungs-, Standort- und Kontaktseiten erhalten klare Rollen, passende interne Links und konsistente Unternehmensangaben."
+      },
+      {
+        "title": "Datenkonsistenz",
+        "text": "Name, Adresse, Telefon, Einzugsgebiet und wichtige Verzeichniseinträge werden auf konkrete Abweichungen geprüft."
+      },
+      {
+        "title": "Bewertungsprozess",
+        "text": "Wir entwickeln einen praktikablen Ablauf für ehrliche Bewertungsanfragen, Antworten und interne Zuständigkeiten."
+      },
+      {
+        "title": "Lokale Messung",
+        "text": "Suchanfragen, Profilinteraktionen, Zielseiten und qualifizierte Kontakte werden getrennt und mit ihren Grenzen ausgewertet."
+      }
+    ],
+    "process": [
+      {
+        "title": "Geschäftsmodell klären",
+        "text": "Wir erfassen reale Standorte, Einzugsgebiet, Leistungen, Zuständigkeiten und vorhandene Profile."
+      },
+      {
+        "title": "Bestand prüfen",
+        "text": "Profil, Website, Firmendaten, Bewertungen und lokale Suchdarstellung werden gemeinsam bewertet."
+      },
+      {
+        "title": "Prioritäten umsetzen",
+        "text": "Wir bearbeiten vereinbarte Profil- und Websiteaufgaben oder koordinieren sie mit deinem Team."
+      },
+      {
+        "title": "Entwicklung beobachten",
+        "text": "Wir prüfen Daten in sinnvollen Abständen und passen Maßnahmen an tatsächliche Befunde an."
+      }
+    ],
+    "boundaries": "Google nennt Relevanz, Entfernung und Bekanntheit als wesentliche Faktoren lokaler Ergebnisse. Entfernung hängt vom Standort des Suchenden ab und lässt sich nicht wegoptimieren. Deshalb versprechen wir weder feste Platzierungen noch feste Fristen. Auch vollständige Profile können je nach Suchort unterschiedlich sichtbar sein. Wir erstellen keine erfundenen Standorte, Bewertungen oder Unternehmenseinträge. Profilfreigaben bleiben bei deinem Unternehmen; Sperren oder Richtlinienentscheidungen kann kein Dienstleister verbindlich verhindern oder aufheben.",
+    "priceNote": "Ein Profil- oder Standort-Setup kann als Projekt abgegrenzt werden; Pflege, Content und Monitoring eignen sich eher für eine laufende Betreuung. Umfang und Angebot hängen von Standortzahl, Profilzustand, Website und Datenlage ab. Ein individuelles Angebot trennt beide Varianten eindeutig. Die Preisübersicht mit 990 bis 2.990 EUR pro Monat bezieht sich auf vollständige SEO-Pakete. Sie ist kein pauschaler Einzelpreis für jede Local-SEO-Aufgabe.",
+    "faqs": [
+      {
+        "question": "Brauche ich ein Ladengeschäft?",
+        "answer": "Nein. Ein Service-Area-Business kann ein Profil führen, wenn es Kunden an deren Standort besucht oder beliefert. Ein rein virtuelles Angebot oder eine Briefkastenadresse genügt nicht."
+      },
+      {
+        "question": "Garantiert Local SEO feste Plätze?",
+        "answer": "Nein. Relevanz, Entfernung, Bekanntheit und Wettbewerb unterscheiden sich je Suche. Wir verbessern kontrollierbare Grundlagen und messen die tatsächliche Entwicklung."
+      },
+      {
+        "question": "Betreut ihr mehrere Standorte?",
+        "answer": "Ja, wenn es sich um reale Standorte handelt. Wir klären Rollen, Profile, Inhalte und Zuständigkeiten für jeden Standort separat."
+      },
+      {
+        "question": "Kauft ihr Bewertungen?",
+        "answer": "Nein. Wir unterstützen einen ehrlichen Anfrage- und Antwortprozess, aber keine gekauften, erfundenen oder unter Druck entstandenen Bewertungen."
+      },
+      {
+        "question": "Müsst ihr vor Ort sein?",
+        "answer": "Nicht für jede Aufgabe. Abstimmung und Umsetzung können remote erfolgen; für Fotos oder betriebliche Details brauchst du gegebenenfalls lokale Mitwirkung."
+      }
+    ],
+    "related": [
+      {
+        "label": "Local-SEO-Guide",
+        "href": "/blog/local-seo-guide"
+      },
+      {
+        "label": "Google Business Profile optimieren",
+        "href": "/blog/google-business-profile-optimieren"
+      },
+      {
+        "label": "SEO-Audit für die gesamte Website",
+        "href": "/leistungen/seo-audit"
+      },
+      {
+        "label": "Lokale Inhalte überarbeiten",
+        "href": "/leistungen/onpage-optimierung"
+      }
+    ],
+    "example": {
+      "label": "Beispielstruktur – keine Rankingprognose",
+      "title": "Lokale Suchsituationen sauber zuordnen",
+      "intro": "Das Muster zeigt, wie Profil und Website unterschiedliche Aufgaben übernehmen können. Die Begriffe und Maßnahmen sind Beispiele, keine Aussage zu einem realen Ranking.",
+      "columns": [
+        "Suchsituation",
+        "Passendes Ziel",
+        "Prüfpunkt"
+      ],
+      "rows": [
+        [
+          "Marke und Öffnungszeiten",
+          "Google Business Profile",
+          "Aktuelle Angaben und verantwortlicher Inhaber"
+        ],
+        [
+          "Konkrete Leistung in einer Stadt",
+          "Relevante Leistungs- oder Standortseite",
+          "Reales Angebot und eindeutige Seitenrolle"
+        ],
+        [
+          "Dienstleister in der Nähe",
+          "Profil plus lokale Website-Signale",
+          "Entfernung nicht als steuerbares Versprechen behandeln"
+        ]
+      ]
+    }
+  },
+  "technisches-seo": {
+    "title": "Technisches SEO München: Fehler finden und beheben",
+    "description": "Technisches SEO für KMU: Crawling, Indexierung, Rendering, Core Web Vitals und strukturierte Daten prüfen, priorisieren und sauber umsetzen.",
+    "h1": "Technisches SEO: Fehler finden, gezielt beheben",
+    "eyebrow": "Prüfung plus Umsetzung",
+    "intro": "Wichtige Seiten werden nicht indexiert, Inhalte erst verspätet geladen oder ein Relaunch steht bevor? Wir untersuchen, welche technischen Hindernisse deine Website betreffen und wie sie sich lösen lassen. Du erhältst überprüfbare Befunde und priorisierte Aufgaben für deine Entwicklung. Auf Wunsch begleiten wir die Umsetzung und kontrollieren anschließend die vereinbarten Änderungen.",
+    "audience": [
+      {
+        "title": "Indexierungsprobleme",
+        "text": "Wichtige URLs fehlen, unerwünschte Varianten erscheinen oder Signale wie Canonicals und Weiterleitungen widersprechen sich."
+      },
+      {
+        "title": "Komplexe Technik",
+        "text": "JavaScript, Shopfilter, mehrere Templates oder ein Headless-System erschweren Crawling, Rendering und Fehleranalyse."
+      },
+      {
+        "title": "Migration oder Relaunch",
+        "text": "URLs, CMS oder Domain ändern sich und technische Signale müssen vor und nach dem Wechsel kontrolliert werden."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Crawling und Indexierung",
+        "text": "Wir prüfen Statuscodes, robots-Regeln, Sitemaps, Canonicals, Weiterleitungen und interne Erreichbarkeit im vereinbarten Bereich."
+      },
+      {
+        "title": "Rendering und Ressourcen",
+        "text": "Server-HTML, JavaScript-Inhalte und benötigte CSS- oder Script-Ressourcen werden auf konkrete Blocker untersucht."
+      },
+      {
+        "title": "Core Web Vitals",
+        "text": "LCP, INP und CLS werden mit Feld- und Labordaten eingeordnet, ohne Einzelwerte als alleinige Rankingursache zu verkaufen."
+      },
+      {
+        "title": "Strukturierte Daten",
+        "text": "Vorhandenes Markup wird auf Syntax, sichtbare Inhalte und Eignung geprüft; neue Typen empfehlen wir nur mit echtem Zweck."
+      },
+      {
+        "title": "Umsetzung und Nachtest",
+        "text": "Aus Befunden entstehen priorisierte Tickets, abgestimmte Änderungen und dokumentierte Kontrollen nach dem Deployment."
+      }
+    ],
+    "process": [
+      {
+        "title": "System und Risiko erfassen",
+        "text": "Wir klären Plattform, Deployments, kritische Seitentypen, frühere Änderungen und verfügbare Zugänge."
+      },
+      {
+        "title": "Fehler reproduzieren",
+        "text": "Crawls, Quelltext, Rendering, Search Console und Messdaten werden passend zur Frage kombiniert."
+      },
+      {
+        "title": "Lösung abstimmen",
+        "text": "Wir priorisieren nach Auswirkung, Aufwand und Abhängigkeiten und formulieren testbare Umsetzungskriterien."
+      },
+      {
+        "title": "Änderung verifizieren",
+        "text": "Nach der Umsetzung prüfen wir Status, Rendering und relevante Messpunkte erneut."
+      }
+    ],
+    "boundaries": "Technisches SEO schafft verlässliche Voraussetzungen, garantiert aber keine Rankings oder festen Trafficgewinn. Wir nennen keine pauschalen Verlustquoten für Migrationen. Bei den Core Web Vitals arbeiten wir mit LCP, INP und CLS; FID ist nicht mehr die aktuelle Interaktionsmetrik. Messwerte und Suchwirkung bewerten wir deshalb getrennt. Rich Results bleiben von Googles Eignung und Darstellung abhängig. Hosting-, Sicherheits- oder Entwicklungsarbeiten erfolgen nur im vereinbarten Verantwortungsbereich.",
+    "priceNote": "Eine klar umrissene Fehlerbehebung oder Relaunch-Prüfung kann als Projekt kalkuliert werden. Fortlaufendes Monitoring und wiederkehrende Umsetzung gehören in eine Betreuung. Der Aufwand hängt von Plattform, Templates, Fehlerbild, Zugriffen und beteiligten Teams ab. Vor Beginn grenzen wir die Verantwortung schriftlich ab. Die Pakete von 990 bis 2.990 EUR pro Monat umfassen die gesamte laufende SEO-Arbeit und sind kein Einzelpreis für jede technische Aufgabe.",
+    "faqs": [
+      {
+        "question": "Braucht ihr Zugriff auf den Code?",
+        "answer": "Nicht für jede Diagnose. Für eine direkte Umsetzung benötigen wir je nach System Repository-, CMS-, Hosting- oder Deployment-Zugriff mit klarer Freigabe."
+      },
+      {
+        "question": "Ist INP wichtiger als FID?",
+        "answer": "INP hat FID als Core Web Vital abgelöst. Wir betrachten trotzdem alle relevanten Nutzungs-, Lade- und Stabilitätssignale im Zusammenhang."
+      },
+      {
+        "question": "Garantieren gute Ladezeiten bessere Rankings?",
+        "answer": "Nein. Gute Messwerte verbessern die technische Nutzererfahrung, ersetzen aber weder relevante Inhalte noch andere Suchsignale."
+      },
+      {
+        "question": "Begleitet ihr einen Relaunch?",
+        "answer": "Ja, nach vereinbartem Umfang. Dazu können URL-Mapping, Weiterleitungen, Staging-Prüfung, Go-live-Kontrolle und anschließende Beobachtung gehören."
+      },
+      {
+        "question": "Brauche ich mehr Schema-Markup?",
+        "answer": "Nicht automatisch. Wir ergänzen nur passende Typen, deren Inhalte sichtbar und korrekt sind. Eine Suchdarstellung lässt sich damit nicht erzwingen."
+      }
+    ],
+    "related": [
+      {
+        "label": "SEO-Relaunch-Checkliste",
+        "href": "/blog/seo-relaunch-checkliste"
+      },
+      {
+        "label": "Indexierungsprobleme einordnen",
+        "href": "/blog/website-nicht-gefunden"
+      },
+      {
+        "label": "SEO-Audit: Technik und Inhalte gemeinsam prüfen",
+        "href": "/leistungen/seo-audit"
+      },
+      {
+        "label": "SEO-Reporting und Erfolgsmessung",
+        "href": "/leistungen/reporting-kpis"
+      }
+    ],
+    "example": {
+      "label": "Muster – kein Befund zu deiner Website",
+      "title": "Technische Aufgaben nach Ursache übergeben",
+      "intro": "Die Beispielzeilen zeigen ein mögliches Ticketformat. Ob diese Themen auf deiner Website bestehen, kann erst eine konkrete Prüfung zeigen.",
+      "columns": [
+        "Beobachtung",
+        "Prüfung",
+        "Abnahmekriterium"
+      ],
+      "rows": [
+        [
+          "INP ist in Felddaten auffällig",
+          "Seitentyp und Interaktion eingrenzen",
+          "Änderung im Labor testen und Felddaten weiter beobachten"
+        ],
+        [
+          "Wichtige Ressource ist für Bots gesperrt",
+          "robots-Regel und Rendering vergleichen",
+          "Benötigte Ressource abrufbar, private Bereiche bleiben geschützt"
+        ],
+        [
+          "Alte URL leitet über mehrere Stationen",
+          "Ziel und Statusfolge prüfen",
+          "Direkte Weiterleitung auf ein inhaltlich passendes Ziel"
+        ]
+      ]
+    }
+  },
+  "geo-agentur": {
+    "title": "GEO Agentur München: Präsenz in KI-Antworten prüfen",
+    "description": "GEO für KMU: Sichtbarkeit, Quellen und Markendarstellung in KI-Antworten systematisch prüfen, Inhalte verbessern und Veränderungen nachvollziehbar messen.",
+    "h1": "GEO Agentur München: deine Präsenz in KI-Antworten",
+    "eyebrow": "Generative Engine Optimization",
+    "intro": "Wie beschreiben KI-Suchsysteme dein Unternehmen – und welche Quellen nennen sie bei Fragen zu deinem Angebot? Wir dokumentieren die aktuelle Ausgangslage, prüfen Inhalte und Unternehmensinformationen und leiten konkrete Verbesserungen ab. Du erhältst einen nachvollziehbaren Prüf- und Maßnahmenplan. Dabei unterscheiden wir sauber zwischen einer Markenerwähnung, einem Quellenzitat und tatsächlichen Besuchen deiner Website.",
+    "audience": [
+      {
+        "title": "Bestehende SEO-Basis",
+        "text": "Deine Website ist auffindbar, doch du möchtest zusätzlich verstehen, wie KI-Antworten Marke und Angebot darstellen."
+      },
+      {
+        "title": "Erklärungsbedürftiges Angebot",
+        "text": "Kunden vergleichen Anbieter, Methoden oder Produkte in längeren Fragen, die klassische Keywordlisten nur teilweise abbilden."
+      },
+      {
+        "title": "Unklare AI-Sichtbarkeit",
+        "text": "Einzelne Screenshots kursieren, aber Prompts, Plattformen, Quellen und Wiederholungen wurden bisher nicht sauber dokumentiert."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Relevantes Prompt-Set",
+        "text": "Wir leiten kaufnahe und fachliche Fragen aus Angebot, Zielgruppe, Suchdaten und tatsächlichen Entscheidungssituationen ab."
+      },
+      {
+        "title": "Dokumentierte Ausgangslage",
+        "text": "Antworten, Erwähnungen, Zitate, Quellen, Plattform und Prüfzeitpunkt werden nachvollziehbar getrennt erfasst."
+      },
+      {
+        "title": "Quellen- und Contentlücken",
+        "text": "Wir prüfen, welche Informationen fehlen, unklar formuliert oder auf deiner Website schwer belegbar sind."
+      },
+      {
+        "title": "Entity-Konsistenz",
+        "text": "Name, Angebot, Verantwortliche und zentrale Fakten werden über eigene relevante Seiten auf Widersprüche untersucht."
+      },
+      {
+        "title": "GEO-Maßnahmenplan",
+        "text": "Du erhältst priorisierte Inhalts-, Technik- und Autoritätsaufgaben mit Messpunkt und klarer Grenze der Aussagekraft."
+      }
+    ],
+    "process": [
+      {
+        "title": "Fragen und Plattformen wählen",
+        "text": "Wir definieren Zielgruppe, Entscheidungsphase, Märkte und ein begrenztes, relevantes Prüfset."
+      },
+      {
+        "title": "Antworten und Quellen erfassen",
+        "text": "Wir protokollieren aktuelle Ergebnisse und unterscheiden Erwähnung, Zitat, Link und bloße Ähnlichkeit."
+      },
+      {
+        "title": "Lücken bearbeiten",
+        "text": "Wir priorisieren belegbare Inhalte, technische Zugänglichkeit und konsistente Unternehmensinformationen."
+      },
+      {
+        "title": "Erneut messen",
+        "text": "Vergleichbare Wiederholungen zeigen Veränderungen, ohne aus einem einzelnen Lauf allgemeine Sichtbarkeit abzuleiten."
+      }
+    ],
+    "boundaries": "GEO kann keine Erwähnung, Empfehlung oder Quellenangabe in ChatGPT, AI Overviews, Perplexity oder anderen Systemen garantieren. Antworten und Quellen können sich zwischen Plattformen und Zeitpunkten ändern. Wir messen öffentlich zugängliche Ausgaben, nicht geheime Modelllogik oder Trainingsdaten. Eine llms.txt-Datei und neue Schema-Typen behandeln wir nicht als Pflicht oder Abkürzung. Bestehende SEO-Arbeit wird deshalb nicht durch ein separates Pflichtprogramm ersetzt.",
+    "priceNote": "Ein GEO-Audit oder ein abgegrenztes Contentprojekt kann separat angeboten werden; Monitoring und fortlaufende Optimierung sind laufende Leistungen. Der Umfang richtet sich nach Märkten, Plattformen, Prompt-Set, Quellenlage und vorhandenen Inhalten. Beides wird im Angebot getrennt ausgewiesen. Die SEO-Pakete von 990 bis 2.990 EUR pro Monat bilden eine umfassende Betreuung ab. Sie sind keine pauschalen Einzelpreise für GEO-Audit oder AI-Monitoring.",
+    "faqs": [
+      {
+        "question": "Was ist der Unterschied zu SEO?",
+        "answer": "SEO fokussiert klassische Suchsysteme und ihre Ergebnisse. GEO ergänzt die Prüfung generierter Antworten, Quellen und Markendarstellung; beide Bereiche überschneiden sich."
+      },
+      {
+        "question": "Könnt ihr KI-Zitate garantieren?",
+        "answer": "Nein. Wir verbessern kontrollierbare Inhalte und Quellen und messen Ergebnisse, können aber keine Plattform zu Erwähnung oder Zitat verpflichten."
+      },
+      {
+        "question": "Brauchen wir eine llms.txt?",
+        "answer": "Für Google Search nein: Google ignoriert llms.txt für Sichtbarkeit und Rankings. Für andere Systeme prüfen wir sie nur, wenn der Anbieter ihre Nutzung dokumentiert und ein konkreter Pflegezweck besteht."
+      },
+      {
+        "question": "Könnt ihr Modelltraining prüfen?",
+        "answer": "Nein. Öffentliche Antworten oder Zitate belegen nicht zuverlässig, ob eine konkrete Seite in Trainingsdaten enthalten war."
+      },
+      {
+        "question": "Wie messt ihr GEO?",
+        "answer": "Mit dokumentierten Prompts, Plattformen, Wiederholungen, Erwähnungen, Quellen und Links. Ein einzelner Lauf reicht nicht für eine belastbare Entwicklungsaussage."
+      }
+    ],
+    "related": [
+      {
+        "label": "Was ist GEO?",
+        "href": "/blog/was-ist-geo"
+      },
+      {
+        "label": "Google AI Overviews verstehen",
+        "href": "/blog/ai-overviews-optimieren"
+      },
+      {
+        "label": "Technisches SEO als Grundlage",
+        "href": "/leistungen/technisches-seo"
+      },
+      {
+        "label": "OnPage-Optimierung für klare Inhalte",
+        "href": "/leistungen/onpage-optimierung"
+      }
+    ],
+    "example": {
+      "label": "Messmuster – keine Zitat- oder Sichtbarkeitszusage",
+      "title": "KI-Antworten mit ihren Grenzen dokumentieren",
+      "intro": "Das Beispiel zeigt die Struktur eines Prüfplans. Es enthält keine realen Plattformergebnisse und erlaubt keine Aussage über Modelltraining.",
+      "columns": [
+        "Prompt-Gruppe",
+        "Beobachtung",
+        "Grenze"
+      ],
+      "rows": [
+        [
+          "Anbietervergleich",
+          "Markenerwähnung und genannte Quellen erfassen",
+          "Antwort gilt nur für Plattform und Prüfzeitpunkt"
+        ],
+        [
+          "Frage zur eigenen Leistung",
+          "Fakten, Auslassungen und falsche Zuordnungen prüfen",
+          "Korrektur der Website erzwingt keine neue Antwort"
+        ],
+        [
+          "Markenfrage",
+          "Verlinkte eigene und externe Quellen unterscheiden",
+          "Öffentliche Ausgabe belegt keine Trainingsquelle"
+        ]
+      ]
+    }
+  },
+  "onpage-optimierung": {
+    "title": "OnPage-Optimierung München: Seiten gezielt verbessern",
+    "description": "OnPage-Optimierung für KMU: Seitenrollen, Suchintention, Inhalte, Metadaten und interne Links analysieren, überarbeiten und kontrolliert veröffentlichen.",
+    "h1": "OnPage-Optimierung für Inhalte, die weiterhelfen",
+    "eyebrow": "Inhalte im Seitenkontext",
+    "intro": "Deine Seiten sollen verständlich zeigen, was du anbietest, wichtige Fragen beantworten und zum passenden nächsten Schritt führen. Wir überarbeiten ausgewählte Leistungs-, Kategorie- oder Ratgeberseiten: von Suchintention und Aufbau bis zu Metadaten und internen Links. Gute bestehende Inhalte bleiben erhalten. Du bekommst fertige Texte oder konkrete Änderungsvorgaben für dein Team.",
+    "audience": [
+      {
+        "title": "Unklare Leistungsseiten",
+        "text": "Das Angebot bleibt allgemein, wichtige Kaufentscheidungen fehlen oder mehrere Seiten sprechen dieselbe Suchabsicht an."
+      },
+      {
+        "title": "Gewachsene Inhalte",
+        "text": "Texte, Titel und interne Links entstanden über Jahre und ergeben keine klare Themen- oder Nutzerführung mehr."
+      },
+      {
+        "title": "Geplante Contentarbeit",
+        "text": "Vor neuen Texten soll feststehen, welche vorhandene Seite gestärkt, getrennt, zusammengeführt oder unverändert gelassen wird."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Seitenrollen und Suchintention",
+        "text": "Wir ordnen Zielgruppe, Suchaufgabe, Angebotsziel und relevante Suchanfragen je ausgewählter URL zusammen."
+      },
+      {
+        "title": "Redaktionelle Überarbeitung",
+        "text": "Überschriften, Textfolge, Argumentation, Belege, Handlungsaufforderung und Lesbarkeit werden im vereinbarten Umfang verbessert."
+      },
+      {
+        "title": "Titles und Descriptions",
+        "text": "Metadaten werden eindeutig und suchnah formuliert, ohne Klick- oder Rankingwirkung zu versprechen."
+      },
+      {
+        "title": "Interne Verlinkung",
+        "text": "Passende Quell- und Zielseiten erhalten verständliche Links, die Nutzern und Suchsystemen die Themenstruktur zeigen."
+      },
+      {
+        "title": "Umsetzungsfähige Übergabe",
+        "text": "Du erhältst fertige Texte oder präzise Änderungsvorgaben sowie eine Kontrolle nach der Veröffentlichung."
+      }
+    ],
+    "process": [
+      {
+        "title": "Seiten auswählen",
+        "text": "Wir priorisieren URLs anhand von Aufgabe, Geschäftswert, Suchdaten, Qualität und bekannten Problemen."
+      },
+      {
+        "title": "Intent und Bestand prüfen",
+        "text": "Suchergebnisse, bestehende Inhalte, interne Links und mögliche Überschneidungen werden gemeinsam eingeordnet."
+      },
+      {
+        "title": "Inhalte bearbeiten",
+        "text": "Wir liefern Text, Metadaten und Verlinkung passend zu Freigabeprozess und CMS."
+      },
+      {
+        "title": "Veröffentlichung kontrollieren",
+        "text": "Nach dem Livegang prüfen wir Darstellung, Links, Metadaten und vereinbarte technische Signale."
+      }
+    ],
+    "boundaries": "OnPage-Optimierung ersetzt weder technische Fehlerbehebung noch Linkaufbau, Nachfrage oder ein überzeugendes Angebot. Wir arbeiten nicht mit pauschaler Keyworddichte und produzieren keine Textmenge um ihrer selbst willen. Ein neuer Title garantiert keine höhere Klickrate, und eine Überarbeitung garantiert kein Ranking. Jede Empfehlung bleibt an Ziel-URL und Änderungsgrund gebunden. Zusammenführung, Weiterleitung oder Löschung empfehlen wir erst nach Prüfung ihrer Funktion und Daten.",
+    "priceNote": "Ein klar abgegrenztes Seitenpaket kann als Projekt angeboten werden; kontinuierliche Optimierung und neue Inhalte passen in eine laufende Betreuung. Kalkuliert werden Seitenzahl, Recherche, Textumfang, CMS-Umsetzung und Freigabeschleifen. Vorab erhältst du eine klare Abgrenzung von Redaktion, Einbau und Nachkontrolle. Die monatlichen SEO-Pakete von 990 bis 2.990 EUR verbinden mehrere Disziplinen. Diese Spanne ist kein pauschaler Preis für die Überarbeitung einer einzelnen Seite.",
+    "faqs": [
+      {
+        "question": "Müssen alle Texte neu geschrieben werden?",
+        "answer": "Nein. Wir erhalten brauchbare Passagen und ändern nur, was Seitenrolle, Suchintention, Verständlichkeit oder Angebotsklarheit tatsächlich verbessert."
+      },
+      {
+        "question": "Ist Keyword-Recherche enthalten?",
+        "answer": "Die nötige Suchintention und Zielbegriffe klären wir immer. Eine umfassende Markt- und Themenrecherche kann ein eigener Leistungsumfang sein."
+      },
+      {
+        "question": "Arbeitet ihr direkt im CMS?",
+        "answer": "Wenn Zugriff und Verantwortlichkeit vereinbart sind, ja. Alternativ liefern wir freigabefertige Texte und genaue Einbauhinweise für dein Team."
+      },
+      {
+        "question": "Garantiert ein neuer Title mehr Klicks?",
+        "answer": "Nein. Ein klarer Title kann die Darstellung verbessern, doch Position, Wettbewerb und Suchkontext beeinflussen die tatsächlichen Klicks."
+      },
+      {
+        "question": "Wie wird die Wirkung geprüft?",
+        "answer": "Wir dokumentieren Live-Datum und Ziel-URLs und betrachten passende Suchanfragen, Seiteninteraktionen und Geschäftssignale über vergleichbare Zeiträume."
+      }
+    ],
+    "related": [
+      {
+        "label": "OnPage-SEO-Checkliste",
+        "href": "/blog/onpage-seo-checkliste"
+      },
+      {
+        "label": "Interne Verlinkung planen",
+        "href": "/blog/interne-verlinkung-anleitung"
+      },
+      {
+        "label": "Keyword-Recherche und Seitenplanung",
+        "href": "/leistungen/keyword-recherche"
+      },
+      {
+        "label": "SEO-Audit für klare Prioritäten",
+        "href": "/leistungen/seo-audit"
+      }
+    ],
+    "example": {
+      "label": "Muster – keine echte Seitenanalyse",
+      "title": "Von der Seitenrolle zum konkreten Arbeitsauftrag",
+      "intro": "Die Beispielzeilen zeigen mögliche Entscheidungen. Sie sagen nicht, dass diese Probleme auf deiner Website bestehen oder eine Änderung bestimmte Ergebnisse erzielt.",
+      "columns": [
+        "Seitenrolle",
+        "Möglicher Konflikt",
+        "Arbeitsauftrag"
+      ],
+      "rows": [
+        [
+          "Leistungsseite",
+          "Erklärt Wissen, aber nicht den Auftrag",
+          "Zielgruppe, Umfang, Ablauf und Anfrageweg ergänzen"
+        ],
+        [
+          "Ratgeber",
+          "Konkurriert sprachlich mit dem Leistungsangebot",
+          "Informationsrolle schärfen und sinnvoll zur Leistung verlinken"
+        ],
+        [
+          "Kategorieseite",
+          "Titel und Inhalt beschreiben verschiedene Themen",
+          "Suchintention prüfen und Seitenelemente auf eine Rolle ausrichten"
+        ]
+      ]
+    }
+  },
+  "keyword-recherche": {
+    "title": "Keyword-Recherche Agentur: Themen und Seiten planen",
+    "description": "Keyword-Recherche als Service: Suchintentionen, Themencluster, Seitenrollen und Prioritäten fundiert ableiten – als Basis für Content und Leistungsseiten.",
+    "h1": "Keyword-Recherche: die richtigen Themen für deine Website",
+    "eyebrow": "Recherche für Entscheidungen",
+    "intro": "Welche Suchanfragen passen zu deinem Angebot – und welche Seite sollte sie beantworten? Wir untersuchen Nachfrage, Suchintention und Wettbewerb und ordnen passende Begriffe deinen bestehenden oder geplanten Seiten zu. Du erhältst eine priorisierte Themen- und Seitenplanung, mit der dein Team Inhalte gezielt überarbeiten oder neu erstellen kann.",
+    "audience": [
+      {
+        "title": "Neues Angebot oder Websiteprojekt",
+        "text": "Leistungsseiten und Navigation sollen auf reale Suchaufgaben ausgerichtet werden, bevor Texte und Templates entstehen."
+      },
+      {
+        "title": "Unsortierter Contentplan",
+        "text": "Viele Ideen konkurrieren um Ressourcen, aber Geschäftswert, Intent und passende Zielseite sind noch nicht geklärt."
+      },
+      {
+        "title": "Überschneidende Seiten",
+        "text": "Mehrere URLs erscheinen für ähnliche Begriffe und brauchen eine Prüfung ihrer tatsächlichen Rollen statt vorschneller Weiterleitungen."
+      }
+    ],
+    "deliverables": [
+      {
+        "title": "Recherchebasis",
+        "text": "Wir kombinieren Angebot, Zielgruppenfragen, vorhandene GSC-Daten, Wettbewerbsthemen und aktuelle Suchergebnisse im vereinbarten Markt."
+      },
+      {
+        "title": "Intent-Klassifikation",
+        "text": "Begriffe werden nach Informations-, Vergleichs-, Transaktions- und Navigationsabsicht eingeordnet, nicht nur nach Volumen sortiert."
+      },
+      {
+        "title": "Themencluster",
+        "text": "Nahe Suchaufgaben werden gebündelt, damit nicht für jede Formulierung eine neue, dünne Seite entsteht."
+      },
+      {
+        "title": "Keyword- und URL-Mapping",
+        "text": "Bestehende und geplante Seiten erhalten eine Hauptrolle, unterstützende Themen und klar dokumentierte Abgrenzungen."
+      },
+      {
+        "title": "Priorisierte Roadmap",
+        "text": "Empfehlungen berücksichtigen Relevanz, Geschäftswert, Wettbewerb, vorhandene Autorität und realistischen Umsetzungsaufwand."
+      }
+    ],
+    "process": [
+      {
+        "title": "Ziele eingrenzen",
+        "text": "Wir klären Angebot, Zielkunden, Regionen, Entscheidungsphasen und gewünschte Seitentypen."
+      },
+      {
+        "title": "Begriffe recherchieren",
+        "text": "Mehrere Datenquellen liefern Kandidaten, Varianten, Fragen und vorhandene Sichtbarkeit."
+      },
+      {
+        "title": "Suchergebnisse validieren",
+        "text": "Wir prüfen, welche Inhalte und Seitentypen die jeweilige Suchabsicht tatsächlich bedienen."
+      },
+      {
+        "title": "Mapping übergeben",
+        "text": "Du erhältst priorisierte Cluster, Zielseiten, Begründungen und nächste Contentaufträge."
+      }
+    ],
+    "boundaries": "Suchvolumen, Wettbewerb und Klickpreise aus Drittanbieterwerkzeugen sind Schätzwerte, keine Nachfrage- oder Trafficgarantie. Auch eine gute Keywordwahl erzwingt kein Ranking. Wir erstellen nicht automatisch für jede Stadt oder Variante eine eigene Landingpage. Markenbegriffe und regionale Varianten ordnen wir separat ein, wenn ihr Zweck abweicht. Bestehende URLs werden nicht allein wegen mehrfacher Query-Zuordnung gelöscht oder umgeleitet; zuerst prüfen wir Intent, Daten und Geschäftszweck.",
+    "priceNote": "Eine Keyword-Recherche kann als eigenständiges Projekt für einen definierten Markt, Angebotsbereich oder Websiteabschnitt beauftragt werden. Laufende Nachrecherche und Contentplanung sind Teil einer Betreuung. Der Preis hängt von Themenbreite, Regionen, Datenquellen und Mappingtiefe ab. Das Angebot benennt Umfang und gewünschte Übergabeform. Die Pakete von 990 bis 2.990 EUR pro Monat umfassen die gesamte SEO-Betreuung und sind kein fester Einzelpreis für jede Recherche.",
+    "faqs": [
+      {
+        "question": "Wie viele Keywords bekomme ich?",
+        "answer": "Wir verkaufen keine willkürliche Mindestzahl. Der Umfang folgt deinem Angebot, den relevanten Suchaufgaben und der vereinbarten Marktbreite."
+      },
+      {
+        "question": "Braucht ihr Search-Console-Zugriff?",
+        "answer": "Nicht zwingend, aber vorhandene Daten helfen, reale Suchanfragen, bestehende Zielseiten und ungenutzte Chancen besser einzuordnen."
+      },
+      {
+        "question": "Sind Suchvolumen exakte Zahlen?",
+        "answer": "Nein. Toolwerte sind Schätzungen und können je Anbieter, Region und Zeitpunkt abweichen. Wir nutzen sie als Signal, nicht als Prognose."
+      },
+      {
+        "question": "Analysiert ihr Wettbewerber?",
+        "answer": "Ja, im vereinbarten Umfang. Wir untersuchen Themen, Suchergebnisse und Lücken, übernehmen aber weder fremde Texte noch ungeprüfte Behauptungen."
+      },
+      {
+        "question": "Was passiert nach der Recherche?",
+        "answer": "Das Mapping kann dein Team umsetzen oder als Grundlage für beauftragte OnPage-Optimierung, Leistungsseiten und Ratgeber dienen."
+      }
+    ],
+    "related": [
+      {
+        "label": "Keyword-Recherche-Anleitung",
+        "href": "/blog/keyword-recherche-anleitung"
+      },
+      {
+        "label": "Keyword- und URL-Mapping",
+        "href": "/blog/keyword-mapping-anleitung"
+      },
+      {
+        "label": "Recherche in Seiteninhalte umsetzen",
+        "href": "/leistungen/onpage-optimierung"
+      },
+      {
+        "label": "SEO-Audit für bestehende Seiten",
+        "href": "/leistungen/seo-audit"
+      }
+    ],
+    "example": {
+      "label": "Muster – keine echte Keywordauswertung",
+      "title": "Suchbegriffe nach Aufgabe statt Volumen ordnen",
+      "intro": "Das Muster zeigt eine mögliche Clusterlogik. Es enthält keine gemessenen Suchvolumina, Rankings oder Aussage über die Nachfrage eines konkreten Unternehmens.",
+      "columns": [
+        "Suchintention",
+        "Sinnvolle Seitenrolle",
+        "Entscheidung"
+      ],
+      "rows": [
+        [
+          "Dienstleistung beauftragen",
+          "Leistungsseite",
+          "Umfang, Ablauf, Abgrenzung und Anfrage beantworten"
+        ],
+        [
+          "Vorgehen selbst verstehen",
+          "Ratgeber",
+          "Anleitung liefern und passend zur Leistung verweisen"
+        ],
+        [
+          "Anbieter oder Methode vergleichen",
+          "Vergleichs- oder Entscheidungsseite",
+          "Kriterien offenlegen und Alternativen sachlich abgrenzen"
+        ]
+      ]
+    }
+  }
+}

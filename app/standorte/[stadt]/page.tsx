@@ -25,8 +25,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const city = getCityBySlug(params.stadt)
   if (!city) return {}
 
-  const title = `SEO Agentur ${city.name} | Suchmaschinenoptimierung aus München`
-  const description = `SEO Agentur für ${city.name}: Suchmaschinenoptimierung und Local SEO aus München. Mehr Sichtbarkeit bei Google für Unternehmen in ${city.name} und Umgebung.`
+  const title = `SEO für ${city.name} | SEO München`
+  const description = `SEO für Unternehmen in ${city.name}: Local SEO, Technik und Inhalte. Geschäftssitz Engelskirchen, Betreuung remote. Jetzt Vorhaben besprechen.`
 
   return {
     title: { absolute: title },
@@ -50,14 +50,14 @@ export default function CityPage({ params }: PageProps) {
   if (!city) notFound()
 
   const headline = `SEO Agentur ${city.name}`
-  const subheadline = `Suchmaschinenoptimierung für Unternehmen in ${city.name} und Umgebung. Als SEO Agentur mit Sitz in München betreuen wir Sie professionell – von Local SEO bis technischem SEO.`
+  const subheadline = `Suchmaschinenoptimierung für Unternehmen in ${city.name} und Umgebung. Unser Geschäftssitz ist Engelskirchen. Wir betreuen dich remote – von Local SEO bis technischem SEO.`
 
   const breadcrumbItems = [
     { name: 'Startseite', url: '/' },
     { name: 'Standorte', url: '/standorte' },
     { name: `SEO Agentur ${city.name}`, url: `/standorte/${city.slug}` },
   ]
-  const businessDescription = `Professionelle Suchmaschinenoptimierung für ${city.name}. Local SEO, technisches SEO und SEO Beratung aus München für Unternehmen in ${city.name}.`
+  const businessDescription = `Suchmaschinenoptimierung für Unternehmen in ${city.name}: Local SEO, technisches SEO und Beratung. Geschäftssitz Engelskirchen; Betreuung remote.`
 
   return (
     <>
