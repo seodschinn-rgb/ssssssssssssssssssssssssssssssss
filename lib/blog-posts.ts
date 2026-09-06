@@ -24,6 +24,7 @@ import { wasIstGeoContent } from './blog-posts/was-ist-geo-content'
 import { seoTexteSchreibenContent } from './blog-posts/seo-texte-schreiben-content'
 import { seoRelaunchChecklisteContent } from './blog-posts/seo-relaunch-checkliste-content'
 import { wieLangeDauertSeoContent } from './blog-posts/wie-lange-dauert-seo-content'
+import { googleSearchConsoleEinrichtenContent } from './blog-posts/google-search-console-einrichten-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -59,6 +60,23 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'google-search-console-einrichten',
+    title: 'Google Search Console einrichten: in 7 Schritten startklar',
+    metaTitle: 'Google Search Console einrichten: Anleitung für KMU',
+    metaDescription:
+      'Google Search Console einrichten: Wähle die passende Property, bestätige die Inhaberschaft, reiche die Sitemap ein und prüfe dein Setup Schritt für Schritt.',
+    focusKeyword: 'google search console einrichten',
+    authorName: 'SEO Agentur München',
+    category: 'tipps-tools',
+    content: googleSearchConsoleEinrichtenContent,
+    image: '/images/blog/google-search-console-einrichten-thumbnail.webp',
+    imageAlt: 'Illustration zur Einrichtung der Google Search Console mit Browserfenster, Lupe und Häkchen',
+    imageWidth: 1672,
+    imageHeight: 941,
+    schemaType: 'BlogPosting',
+    updatedAt: '2026-09-06',
+  },
   {
     slug: 'wie-lange-dauert-seo',
     title: 'Wie lange dauert SEO? Wann du mit Ergebnissen rechnen kannst',

@@ -74,7 +74,7 @@ export const googleRankingVerbessern2026HtmlPart1 = `
 
   <h3>2. Google Search Console einrichten und auswerten</h3>
 
-  <p>Die <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Google Search Console</a> (GSC) ist das wichtigste kostenlose SEO-Tool überhaupt. Wenn du die GSC noch nicht eingerichtet hast, hole das als Erstes nach.</p>
+  <p>Die <a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide" target="_blank" rel="noopener noreferrer">Google Search Console</a> (GSC) ist das wichtigste kostenlose SEO-Tool überhaupt. Wenn du die GSC noch nicht eingerichtet hast, hilft dir unsere <a href="/blog/google-search-console-einrichten" class="internal-link">Schritt-für-Schritt-Anleitung zur Einrichtung</a>.</p>
 
   <p><strong>Was dir die Search Console zeigt:</strong></p>
 

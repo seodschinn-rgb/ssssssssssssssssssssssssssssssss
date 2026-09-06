@@ -156,7 +156,7 @@ export const seoToolsAnfaengerContent =
   </figure>
 
   <ol class="steps-list">
-    <li><strong>Google Search Console einrichten.</strong> Property anlegen, Inhaberschaft best&auml;tigen, Sitemap einreichen. Ab jetzt sammelst du echte Daten: Suchanfragen, Klicks, Positionen und Indexierungsprobleme.</li>
+    <li><strong><a href="/blog/google-search-console-einrichten" class="internal-link">Google Search Console einrichten.</a></strong> Property anlegen, Inhaberschaft best&auml;tigen, Sitemap einreichen. Ab jetzt sammelst du echte Daten: Suchanfragen, Klicks, Positionen und Indexierungsprobleme.</li>
     <li><strong>GA4 und PageSpeed Insights erg&auml;nzen.</strong> Google Analytics 4 zeigt dir, was Besucher auf deiner Website tun. Mit PageSpeed Insights pr&uuml;fst du deine wichtigsten Seiten auf Ladezeit-Bremsen.</li>
     <li><strong>Seobility Free und Keyword Planner verbinden.</strong> Seobility crawlt deine Website und priorisiert OnPage-Fehler, mit dem Keyword Planner sammelst du erste Keyword-Ideen f&uuml;r deine Region.</li>
     <li><strong>Erst bei Bedarf aufr&uuml;sten.</strong> Wenn du nach drei bis sechs Monaten regelm&auml;&szlig;ig an Limits st&ouml;&szlig;t, buchst du gezielt ein einziges Bezahl-Tool, das deine gr&ouml;&szlig;te L&uuml;cke schlie&szlig;t, zum Beispiel Seobility Premium.</li>
