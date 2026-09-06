@@ -1,37 +1,55 @@
+/** One source for the visible pricing page and its structured offers. */
+export const PREISE_PACKAGES = [
+  { id: 'starter', name: 'Starter', price: 990, label: 'Die Basis aufbauen',
+    target: 'Für lokale Unternehmen und Startups.',
+    features: ['SEO-Audit und Setup zum Start', 'Keyword-Recherche für deine wichtigsten Themen', 'Local SEO und Google-Unternehmensprofil', 'OnPage-Optimierung deiner Top-Seiten', 'Monatliches Reporting'] },
+  { id: 'growth', name: 'Growth', price: 1590, label: 'Kontinuierlich optimieren',
+    target: 'Für wachsende KMU mit mehr Umsetzungsbedarf.',
+    features: ['Alles aus Starter, mit mehr Umsetzung pro Monat', 'Erweiterte Keyword-Recherche mit Wettbewerbsblick', 'Technisches SEO: Crawling, Indexierung, Ladezeit', 'Laufende OnPage-Optimierung', 'Strategie-Call pro Quartal'] },
+  { id: 'business', name: 'Business', price: 2390, label: 'Mehr Leistungsbereiche',
+    target: 'Für etablierte Mittelständler mit klaren Geschäftszielen.',
+    features: ['Alles aus Growth, mit höherem Umsetzungsumfang', 'Technisches SEO inklusive strukturierter Daten', 'Linkaufbau', 'SEO-Beratung zu Content, Struktur und Conversion', 'KPI-Reporting für die Geschäftsführung'] },
+  { id: 'professional', name: 'Professional', price: 2590, label: 'SEO und KI-Suche verbinden',
+    target: 'Für ambitionierte Unternehmen in umkämpften Märkten.',
+    features: ['Alles aus Business, plus Fokus auf KI-Suche', 'GEO: ChatGPT, Perplexity und AI Overviews', 'Priorisierter Linkaufbau', 'Engmaschiges Ranking- und Wettbewerbs-Monitoring', 'Monatliche Strategie-Termine'] },
+  { id: 'enterprise', name: 'Enterprise', price: 2990, label: 'Komplexe Projekte begleiten',
+    target: 'Für große Websites und komplexe Anforderungen.',
+    features: ['Alles aus Professional, an die Komplexität angepasst', 'Große Websites, mehrere Standorte oder Relaunches', 'Individuelle SEO-Roadmap mit Meilensteinen', 'Workshops für dein internes Team', 'Enge Abstimmung mit Marketing und IT'] },
+] as const
+
+export function formatPreis(price: number): string {
+  return new Intl.NumberFormat('de-DE', { maximumFractionDigits: 0 }).format(price)
+}
+
+// Owner clarification requested; do not infer net/gross or a VAT exemption.
+export const PREISE_TAX_NOTE = ''
+
+export const PREISE_COMPARISON: { name: string; href?: string; values: readonly (string | boolean)[] }[] = [
+  { name: 'SEO-Audit & Setup zum Start', href: '/leistungen/seo-audit', values: [true, true, true, true, true] },
+  { name: 'Keyword-Recherche', href: '/leistungen/keyword-recherche', values: ['Basis', 'Erweitert', 'Umfassend', 'Umfassend', 'Umfassend'] },
+  { name: 'OnPage-Optimierung', href: '/leistungen/onpage-optimierung', values: ['Top-Seiten', 'Laufend', 'Laufend', 'Laufend', 'Laufend'] },
+  { name: 'Local SEO', href: '/leistungen/local-seo', values: [true, true, true, true, 'Mehrere Standorte'] },
+  { name: 'Technisches SEO', href: '/leistungen/technisches-seo', values: ['Basis-Check', true, 'Inkl. Schema', 'Inkl. Schema', 'Inkl. Schema'] },
+  { name: 'Linkaufbau', href: '/leistungen/linkaufbau', values: [false, false, true, 'Priorisiert', 'Priorisiert'] },
+  { name: 'GEO · KI-Suche', href: '/leistungen/geo-agentur', values: [false, false, false, true, true] },
+  { name: 'Monitoring & Reporting', href: '/leistungen/reporting-kpis', values: ['Monatlich', 'Monatlich', 'KPI-Reporting', 'KPI-Reporting', 'KPI-Reporting'] },
+  { name: 'Fester Ansprechpartner', values: [true, true, true, true, true] },
+  { name: 'Strategie-Termine', values: ['Im Reporting', 'Quartalsweise', 'Quartalsweise', 'Monatlich', 'Monatlich + Workshops'] },
+]
+
 export const PREISE_FAQS = [
-  {
-    question: 'Gibt es bei den SEO-Paketen eine Mindestlaufzeit?',
-    answer:
-      'Wir arbeiten mit festen Monatspreisen und ohne langes Kleingedrucktes: Der Einstieg beginnt mit einem kostenlosen Erstgespräch ohne Bindung, die Konditionen legen wir gemeinsam fest. Ehrlich ist aber auch: SEO entfaltet seine Wirkung erfahrungsgemäß über 6 bis 12 Monate, deshalb empfehlen wir mindestens sechs Monate Zusammenarbeit.',
-  },
-  {
-    question: 'Was passiert im kostenlosen Erstgespräch?',
-    answer:
-      'Wir schauen uns deine Website, deine Rankings und deinen Wettbewerb in München an und sagen dir ehrlich, welches Paket zu deinen Zielen passt. Das Gespräch dauert etwa 30 Minuten, per Telefon oder Video, kostenlos und ohne Bindung. Auf deine Anfrage bekommst du innerhalb von 24 Stunden eine Antwort.',
-  },
-  {
-    question: 'Kann ich mein SEO-Paket später wechseln?',
-    answer:
-      'Ja. Viele Kunden starten mit Starter oder Growth und wechseln in ein größeres Paket, sobald erste Ergebnisse sichtbar werden und mehr Umsetzung sinnvoll ist. Genauso lässt sich der Umfang reduzieren: Sprich einfach deinen festen Ansprechpartner an.',
-  },
-  {
-    question: 'Warum gebt ihr keine Ranking-Garantien?',
-    answer:
-      'Weil niemand Google-Rankings garantieren kann: Rankings entstehen aus hunderten Faktoren, die keine Agentur vollständig kontrolliert. Anbieter, die Platz 1 versprechen, arbeiten meist mit irrelevanten Keywords oder riskanten Methoden. Wir setzen stattdessen auf messbare Ziele und ein monatliches Reporting, das jeden Fortschritt belegt.',
-  },
-  {
-    question: 'Wann sehe ich erste Ergebnisse?',
-    answer:
-      'Erste messbare Verbesserungen zeigen sich erfahrungsgemäß nach zwei bis drei Monaten, etwa bei Impressionen und ersten Rankings. Die erste Google-Seite ist bei umkämpften Münchner Keywords typischerweise in drei bis sechs Monaten erreichbar, abhängig von Ausgangslage, Technik und Autorität deiner Domain.',
-  },
-  {
-    question: 'Was kostet SEO in München üblicherweise?',
-    answer:
-      'Die Spanne am Markt ist groß und reicht von wenigen hundert EUR pro Monat bei einzelnen Freelancern bis zu fünfstelligen Monatsbudgets für Konzernprojekte. Unsere Pakete decken mit 990 bis 2.990 EUR im Monat den Bereich ab, der für lokale Unternehmen, KMU und Mittelständler erfahrungsgemäß das beste Verhältnis aus Budget und Wirkung bietet.',
-  },
-  {
-    question: 'Reicht nicht eine einmalige SEO-Optimierung statt monatlicher Betreuung?',
-    answer:
-      'Eine einmalige Optimierung verbessert die Basis, verliert aber ohne Pflege an Wirkung: Google-Updates, neue Wettbewerber und veränderte Suchintentionen holen statische Websites erfahrungsgemäß schnell wieder ein. Nachhaltige Sichtbarkeit entsteht durch kontinuierliche SEO-Betreuung. Wie sich SEO-Kosten generell zusammensetzen, liest du in unserem Ratgeber zu den SEO-Kosten.',
-  },
+  { question: 'Gibt es eine Mindestlaufzeit?',
+    answer: 'Laufzeit, Kündigungsfrist und genauer Umfang werden im individuellen Angebot vereinbart. Das kostenlose Erstgespräch verpflichtet dich nicht zur Buchung. Eine längere Zusammenarbeit kann für die Umsetzung sinnvoll sein; eine Empfehlung ist jedoch keine Vertragslaufzeit.' },
+  { question: 'Was klären wir im Erstgespräch?',
+    answer: 'Wir besprechen deine Website, Ziele und Ausgangslage und ordnen ein, welcher Leistungsumfang dazu passt. Das Erstgespräch ist kostenlos und unverbindlich und kann telefonisch oder per Video stattfinden.' },
+  { question: 'Kann ich mein Paket später wechseln?',
+    answer: 'Ja, ein größerer oder kleinerer Umfang kann mit deinem Ansprechpartner abgestimmt werden. Die geänderten Leistungen, den Preis und den Zeitpunkt des Wechsels vereinbaren wir gemeinsam.' },
+  { question: 'Ist der Paketumfang fest vorgegeben?',
+    answer: 'Die Karten und der Vergleich zeigen den typischen Zuschnitt. Welche Seiten, Themen und Aufgaben wir konkret bearbeiten, legen wir für deine Website fest. Individuelle Abweichungen werden vor dem Start abgestimmt.' },
+  { question: 'Sind bestimmte Rankings garantiert?',
+    answer: 'Nein. Wir vereinbaren konkrete Arbeitsschritte und dokumentieren die Entwicklung. Eine bestimmte Google-Position, zusätzliche Anfragen oder ein festes Ergebnisdatum lassen sich daraus nicht garantieren.' },
+  { question: 'Wann lässt sich die Entwicklung beurteilen?',
+    answer: 'Das hängt unter anderem vom bisherigen Zustand deiner Website, der Nachfrage, dem Wettbewerb und den umgesetzten Maßnahmen ab. Wir betrachten passende Kennzahlen über vergleichbare Zeiträume. Ein einzelner Monatswert genügt nicht immer für eine belastbare Aussage.' },
+  { question: 'Kann ich auch ein einzelnes Projekt anfragen?',
+    answer: 'Ja. Ein abgegrenztes Audit, eine technische Prüfung oder die Überarbeitung bestimmter Seiten kann separat angeboten werden. Die hier gezeigten Monatspreise gelten für laufende Betreuung und sind keine Einzelpreise für solche Projekte.' },
 ] as const

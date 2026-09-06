@@ -3,6 +3,7 @@ node_modules/
 
 # Next.js
 .next/
+.next-build-check/
 out/
 
 # Env-Dateien (API-Keys nie committen!)
