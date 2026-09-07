@@ -1,7 +1,7 @@
 .page { --pricing-accent:#4338ca; --pricing-ink:#18182d; --pricing-muted:#52525b; color:var(--pricing-ink); font-size:1rem; line-height:1.65; background:#fff; }
 .page *, .page *::before, .page *::after { box-sizing:border-box; }
 .page [id] { scroll-margin-top:7rem; }
-.wrap { width:min(100% - 3rem,88rem); margin-inline:auto; }
+.wrap { width:min(100% - 3rem,88rem); min-width:0; max-width:100%; margin-inline:auto; }
 .hero { padding:7.6rem 0 2.5rem; background:#f8fafc; }
 .breadcrumb { display:flex; flex-wrap:wrap; gap:.65rem; font-size:.875rem; color:var(--pricing-muted); margin-bottom:2rem; }
 .breadcrumb a:hover { text-decoration:underline; }
@@ -59,7 +59,20 @@
 .commonGrid h3 { margin:0; font-size:1rem; font-weight:700; }
 .commonGrid p { margin:.4rem 0 0; font-size:1rem; color:var(--pricing-muted); }
 .tableHint { margin:0 0 .8rem; font-size:.875rem; color:var(--pricing-muted); }
-.tableScroll { width:100%; overflow-x:auto; border:1px solid #dfe1e8; border-radius:1.1rem; }
+.tableScroll {
+  position:relative;
+  width:100%;
+  min-width:0;
+  max-width:100%;
+  /* Keep the wide table's intrinsic width inside its own scroll viewport. */
+  contain:inline-size;
+  overflow-x:auto;
+  overscroll-behavior-x:contain;
+  /* Apply at the scroll boundary: allow swiping/pinch zoom, not double-tap zoom. */
+  touch-action:manipulation;
+  border:1px solid #dfe1e8;
+  border-radius:1.1rem;
+}
 .comparison { width:100%; min-width:64rem; border-collapse:separate; border-spacing:0; font-size:1rem; line-height:1.5; }
 .comparison th,.comparison td { padding:1.2rem 1.1rem; border-bottom:1px solid #e4e4e7; vertical-align:middle; text-align:center; }
 .comparison thead th { background:#f6f7fb; color:#27273d; font-weight:700; }
