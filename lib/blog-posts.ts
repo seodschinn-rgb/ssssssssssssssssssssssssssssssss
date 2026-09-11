@@ -25,6 +25,7 @@ import { seoTexteSchreibenContent } from './blog-posts/seo-texte-schreiben-conte
 import { seoRelaunchChecklisteContent } from './blog-posts/seo-relaunch-checkliste-content'
 import { wieLangeDauertSeoContent } from './blog-posts/wie-lange-dauert-seo-content'
 import { googleSearchConsoleEinrichtenContent } from './blog-posts/google-search-console-einrichten-content'
+import { googleAnalyticsEinrichtenContent, googleAnalyticsEinrichtenFaqs } from './blog-posts/google-analytics-einrichten-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -60,6 +61,25 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'google-analytics-einrichten',
+    title: 'Google Analytics 4 einrichten: Schritt für Schritt für deine Website',
+    metaTitle: 'Google Analytics einrichten: GA4-Anleitung für KMU',
+    metaDescription:
+      'Google Analytics einrichten: Richte GA4 mit Consent sauber ein. Prüfe Tags, Einwilligung und echte Formular-Leads Schritt für Schritt auf deiner Website.',
+    focusKeyword: 'google analytics einrichten',
+    authorName: 'SEO Agentur München',
+    category: 'tipps-tools',
+    content: googleAnalyticsEinrichtenContent,
+    image: '/images/blog/google-analytics-einrichten-thumbnail.webp',
+    imageAlt: 'Illustration zur Einrichtung von Google Analytics 4 mit Datenverbindung, Zahnrad und Prüfhäkchen',
+    imageWidth: 1600,
+    imageHeight: 900,
+    schemaType: 'BlogPosting',
+    publishedAt: '2026-09-11',
+    updatedAt: '2026-09-11',
+    faqs: googleAnalyticsEinrichtenFaqs,
+  },
   {
     slug: 'google-search-console-einrichten',
     title: 'Google Search Console einrichten: in 7 Schritten startklar',
