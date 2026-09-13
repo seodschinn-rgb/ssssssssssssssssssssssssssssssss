@@ -438,6 +438,8 @@ export const googleBusinessProfileOptimieren2026Content = `
   <li><strong>Warten.</strong> Die Bearbeitung dauert in der Regel 3&ndash;7 Werktage.</li>
 </ol>
 
+<p>Die einzelnen Pr&uuml;fschritte, geeignete Nachweise und den Ablauf des Einspruchs erkl&auml;rt unser Ratgeber <a href="/blog/google-unternehmensprofil-gesperrt">Google Unternehmensprofil gesperrt: Ursache pr&uuml;fen und Einspruch einlegen</a>.</p>
+
 <h3>Pr&auml;vention</h3>
 
 <ul>

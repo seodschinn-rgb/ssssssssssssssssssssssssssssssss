@@ -26,6 +26,7 @@ import { seoRelaunchChecklisteContent } from './blog-posts/seo-relaunch-checklis
 import { wieLangeDauertSeoContent } from './blog-posts/wie-lange-dauert-seo-content'
 import { googleSearchConsoleEinrichtenContent } from './blog-posts/google-search-console-einrichten-content'
 import { googleAnalyticsEinrichtenContent, googleAnalyticsEinrichtenFaqs } from './blog-posts/google-analytics-einrichten-content'
+import { googleUnternehmensprofilGesperrtContent, googleUnternehmensprofilGesperrtFaqs } from './blog-posts/google-unternehmensprofil-gesperrt-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -61,6 +62,25 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'google-unternehmensprofil-gesperrt',
+    title: 'Google Unternehmensprofil gesperrt? Ursache prüfen und Einspruch einlegen',
+    metaTitle: 'Google Unternehmensprofil gesperrt: Einspruch einlegen',
+    metaDescription:
+      'Dein Google Unternehmensprofil wurde gesperrt? Prüfe Ursachen, bereite passende Nachweise vor und erfahre, wie du korrekt Einspruch bei Google einlegst.',
+    focusKeyword: 'google unternehmensprofil gesperrt',
+    authorName: 'SEO Agentur München',
+    category: 'local-seo',
+    content: googleUnternehmensprofilGesperrtContent,
+    image: '/images/blog/google-unternehmensprofil-gesperrt-thumbnail.webp',
+    imageAlt: 'Gesperrtes Google Unternehmensprofil mit Dokumenten-Check und Einspruchsprozess',
+    imageWidth: 1600,
+    imageHeight: 900,
+    schemaType: 'BlogPosting',
+    publishedAt: '2026-09-13',
+    updatedAt: '2026-09-13',
+    faqs: googleUnternehmensprofilGesperrtFaqs,
+  },
   {
     slug: 'google-analytics-einrichten',
     title: 'Google Analytics 4 einrichten: Schritt für Schritt für deine Website',
