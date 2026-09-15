@@ -112,6 +112,8 @@ export const googleBusinessProfileOptimieren2026Content = `
 
 <p>Tipp: &Auml;ndere w&auml;hrend des Verifizierungsprozesses <strong>keine Profildaten</strong>. Jede &Auml;nderung kann den Prozess zur&uuml;cksetzen oder eine erneute Verifizierung ausl&ouml;sen.</p>
 
+<p>Wie du den angebotenen Best&auml;tigungsweg pr&uuml;fst und eine Videoaufnahme vorbereitest, erkl&auml;rt unser Leitfaden <a href="/blog/google-unternehmensprofil-bestaetigen">Google Unternehmensprofil best&auml;tigen</a>.</p>
+
 <h3 id="schritt-3">3. Alle Daten vollst&auml;ndig ausf&uuml;llen</h3>
 
 <p>Vollst&auml;ndigkeit ist ein direkter Ranking-Faktor. Google bevorzugt Profile, bei denen <strong>jedes verf&uuml;gbare Feld</strong> ausgef&uuml;llt ist. Achte besonders auf:</p>

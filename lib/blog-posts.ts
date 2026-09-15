@@ -27,6 +27,7 @@ import { wieLangeDauertSeoContent } from './blog-posts/wie-lange-dauert-seo-cont
 import { googleSearchConsoleEinrichtenContent } from './blog-posts/google-search-console-einrichten-content'
 import { googleAnalyticsEinrichtenContent, googleAnalyticsEinrichtenFaqs } from './blog-posts/google-analytics-einrichten-content'
 import { googleUnternehmensprofilGesperrtContent, googleUnternehmensprofilGesperrtFaqs } from './blog-posts/google-unternehmensprofil-gesperrt-content'
+import { googleUnternehmensprofilBestaetigenContent, googleUnternehmensprofilBestaetigenFaqs } from './blog-posts/google-unternehmensprofil-bestaetigen-content'
 
 export interface BlogPostFAQ {
   question: string
@@ -62,6 +63,25 @@ export interface BlogPost {
 }
 
 const POSTS: BlogPost[] = [
+  {
+    slug: 'google-unternehmensprofil-bestaetigen',
+    title: 'Google Unternehmensprofil bestätigen: Video in 5 Schritten',
+    metaTitle: 'Google Unternehmensprofil bestätigen: Video-Checkliste',
+    metaDescription:
+      'Google Unternehmensprofil bestätigen: Bereite das Video gezielt vor, zeige Ort, Betrieb und Befugnis und behebe Probleme nach einer Ablehnung.',
+    focusKeyword: 'google unternehmensprofil bestätigen',
+    authorName: 'SEO Agentur München',
+    category: 'local-seo',
+    content: googleUnternehmensprofilBestaetigenContent,
+    image: '/images/blog/google-unternehmensprofil-bestaetigen-thumbnail.webp',
+    imageAlt: 'Symbolbild zur Video-Verifizierung: Smartphone vor einem Geschäft und einem Servicefahrzeug auf einer Karte',
+    imageWidth: 1600,
+    imageHeight: 900,
+    schemaType: 'BlogPosting',
+    publishedAt: '2026-09-15',
+    updatedAt: '2026-09-15',
+    faqs: googleUnternehmensprofilBestaetigenFaqs,
+  },
   {
     slug: 'google-unternehmensprofil-gesperrt',
     title: 'Google Unternehmensprofil gesperrt? Ursache prüfen und Einspruch einlegen',
